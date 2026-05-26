@@ -10508,6 +10508,106 @@ var QUESTIONS = [
     we:{ 1: '21.9% は前年データでの値。', 2: '10.9% は非流動負債のみ（80,000/640,000）。', 3: '76.6% は自己資本比率（1 − 23.4%）。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Clarence Ltd.</b> — 2025: Net sales £700,000; COGS £420,000; Gross profit £280,000; Net income £44,000. Total assets £640,000 (2025) vs £600,000 (2024). Total liabilities = Non-current £80,000 + Current £70,000. Retained earnings £145,000 (2025) vs £123,000 (2024). Ordinary shares £10 par; weighted-average shares 32,000 (2025). Market price per share £7.00 at end of 2025. All dividends paid in cash.</div>',
     source:'FA1B Problem'
+  },
+  {
+    id:'q_hw_e26', conceptId:'c2_journal', ch:2, type:'A',
+    q:'[HW E2.6] For Lennon Industries (below), what is the journal entry to record transaction (3): purchased €650 of supplies on account?',
+    opts:['A) Dr Supplies 650 / Cr Accounts Payable 650','B) Dr Supplies 650 / Cr Cash 650','C) Dr Accounts Payable 650 / Cr Supplies 650','D) Dr Supplies Expense 650 / Cr Cash 650'],
+    ans:0,
+    exp:'掛けで消耗品購入：資産 Supplies 増加（借方）+ 負債 Accounts Payable 増加（貸方）。現金は動かない（後払い）。',
+    we:{ 1: '掛け（on account）なので貸方は Cash ではなく Accounts Payable。', 2: '借方貸方が逆。', 3: '購入時は資産 Supplies に計上（使用時に費用化）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Lennon Industries</b> transactions: (1) Borrowed €5,000 from the bank by signing a note. (2) Paid €3,900 cash for a computer. (3) Purchased €650 of supplies on account.</div>',
+    source:'FA1B Exercise'
+  },
+  {
+    id:'q_hw_e27', conceptId:'c1_transaction', ch:2, type:'A',
+    q:'[HW E2.7] For Ong Enterprises (below), how does transaction (3) "performed consulting services and billed a client $52,000" affect the accounting equation?',
+    opts:['A) Increase in assets and increase in equity','B) Increase in assets and increase in liabilities','C) Increase in one asset and decrease in another','D) No effect until cash is collected'],
+    ans:0,
+    exp:'掛けでサービス提供：資産 Accounts Receivable 増加 + 資本 増加（Service Revenue → 利益剰余金）。Dr A/R / Cr Service Revenue 52,000。',
+    we:{ 1: '負債は増えない。収益（資本）が増える。', 2: '売掛金の増加であり、資産内振替ではない。', 3: '発生主義では役務提供時に収益認識（現金回収を待たない）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Ong Enterprises</b> selected transactions: (1) Shareholders invested $40,000 cash for ordinary shares. (2) Paid office rent $8,400. (3) Performed consulting services and billed a client $52,000. (4) Declared and paid a $7,500 dividend.</div>',
+    source:'FA1B Exercise'
+  },
+  {
+    id:'q_hw_e52', conceptId:'c5_purchase', ch:5, type:'C',
+    q:'[HW E5.2] For Duffy Yachts (perpetual, below), how much cash is paid to Thomas on April 15 (within the discount period)?',
+    opts:['A) ₤21,952','B) ₤22,400','C) ₤24,500','D) ₤25,000'],
+    ans:0,
+    exp:'買掛金 = 25,000 − 返品 2,600 = 22,400（運賃 900 は別途現金払い済み、割引対象外）。2% 割引 = 22,400 × 2% = 448。現金支払 = 22,400 − 448 = ₤21,952。割引分は Inventory を減額。',
+    we:{ 1: '₤22,400 は割引前の買掛金。', 2: '₤24,500 は返品を引き忘れ等の誤り。', 3: '₤25,000 は当初の総額。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Duffy Yachts</b> (perpetual system): Apr 5 purchased merchandise on account ₤25,000, terms 2/10 n/30, FOB shipping point. Apr 6 paid ₤900 freight. Apr 8 returned damaged goods, granted ₤2,600 credit. Apr 15 paid the amount due in full (within the discount period).</div>',
+    source:'FA1B Exercise'
+  },
+  {
+    id:'q_hw_e55', conceptId:'c5_sales_returns', ch:5, type:'C',
+    q:'[HW E5.5] For Li Gourmet (perpetual, below), how much cash is received from South China on December 13 (within the discount period)?',
+    opts:['A) $546,480','B) $552,000','C) $574,200','D) $580,000'],
+    ans:0,
+    exp:'売掛金 = 580,000 − 値引 28,000 = 552,000。1% 売上割引 = 552,000 × 1% = 5,520。受取現金 = 552,000 − 5,520 = $546,480（Sales Discounts 5,520 を計上）。',
+    we:{ 1: '$552,000 は割引前の売掛金残高。', 2: '$574,200 は計算誤り。', 3: '$580,000 は当初の売上総額。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Li Gourmet</b> (perpetual system): Dec 3 sold $580,000 of merchandise on account, terms 1/10 n/30, FOB shipping point (cost of goods sold $364,800). Dec 8 granted the customer a $28,000 allowance. Dec 13 received the balance due (within the discount period).</div>',
+    source:'FA1B Exercise'
+  },
+  {
+    id:'q_hw_e520', conceptId:'c5_periodic_appendix', ch:5, type:'C',
+    q:'[HW E5.20] For Olaf Decor (periodic, below), how much cash is paid to DeVito on April 15 (within the discount period)?',
+    opts:['A) €14,896','B) €15,200','C) €17,640','D) €18,000'],
+    ans:0,
+    exp:'買掛金 = 18,000 − 返品 2,800 = 15,200（運賃 820 は別途。periodic では Freight-in 勘定）。2% 割引 = 15,200 × 2% = 304（Purchase Discounts）。現金支払 = 15,200 − 304 = €14,896。',
+    we:{ 1: '€15,200 は割引前の買掛金。', 2: '€17,640 は計算誤り。', 3: '€18,000 は当初総額。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Olaf Decor</b> (periodic system): Apr 5 purchased merchandise on account €18,000, terms 2/10 n/30. Apr 6 paid €820 freight. Apr 8 returned €2,800 of the merchandise. Apr 15 paid the amount due in full (within the discount period).</div>',
+    source:'FA1B Exercise'
+  },
+  {
+    id:'q_hw_p68', conceptId:'c6_perp_period_fifo_wa', ch:6, type:'C',
+    q:'[HW P6.8] For Tempo Ltd. (perpetual, below), what is the ending inventory under FIFO?',
+    opts:['A) £1,560','B) £1,406','C) £2,850','D) £1,440'],
+    ans:0,
+    exp:'FIFO（継続記録）：1/30 の販売後、残るのは最新仕入。期末 60単位 × £26（1/23 仕入単価）= £1,560。COGS 合計 = £7,430、粗利 = £8,420。',
+    we:{ 1: '£1,406 は移動平均法の期末在庫。', 2: '£2,850 は期首在庫（150×£19）。', 3: '£1,440 は別問題の値。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.86em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Tempo Ltd.</b> (perpetual; sales returns go back to inventory; all cash). January 2025:<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Cost/Sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Dec 31</td><td style="padding:4px;border:1px solid #475569;">Ending inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">150</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£19</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 2</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£21</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 6</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">150</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 9</td><td style="padding:4px;border:1px solid #475569;">Sales return</td><td style="padding:4px;border:1px solid #475569;text-align:right;">10</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">75</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 10</td><td style="padding:4px;border:1px solid #475569;">Purchase return</td><td style="padding:4px;border:1px solid #475569;text-align:right;">15</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 10</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">50</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£45</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 23</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 30</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">160</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£50</td></tr></tbody></table></div>',
+    source:'FA1B Problem'
+  },
+  {
+    id:'q_hw_p68b', conceptId:'c6_perp_period_fifo_wa', ch:6, type:'C',
+    q:'[HW P6.8] For Tempo Ltd. (perpetual, below), what is the cost of goods sold under the moving-average method?',
+    opts:['A) £7,584','B) £7,430','C) £8,266','D) £1,406'],
+    ans:0,
+    exp:'移動平均（perpetual）：仕入の都度 平均単価を更新し、販売時にその時点の平均単価で COGS を計上。合計 COGS = £7,584（FIFO の £7,430 と異なる）。',
+    we:{ 1: '£7,430 は FIFO の COGS。', 2: '£8,266 は移動平均の粗利。', 3: '£1,406 は移動平均の期末在庫。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.86em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Tempo Ltd.</b> (perpetual; sales returns go back to inventory; all cash). January 2025:<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Cost/Sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Dec 31</td><td style="padding:4px;border:1px solid #475569;">Ending inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">150</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£19</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 2</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£21</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 6</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">150</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 9</td><td style="padding:4px;border:1px solid #475569;">Sales return</td><td style="padding:4px;border:1px solid #475569;text-align:right;">10</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">75</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 10</td><td style="padding:4px;border:1px solid #475569;">Purchase return</td><td style="padding:4px;border:1px solid #475569;text-align:right;">15</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 10</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">50</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£45</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 23</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Jan 30</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">160</td><td style="padding:4px;border:1px solid #475569;text-align:right;">£50</td></tr></tbody></table></div>',
+    source:'FA1B Problem'
+  },
+  {
+    id:'q_hw_p144', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[HW P14.4] For Toby Zed NV (direct method, below), what is cash receipts from customers?',
+    opts:['A) €7,300,000','B) €7,500,000','C) €7,700,000','D) €7,000,000'],
+    ans:0,
+    exp:'直接法：顧客からの現金回収 = 売上 7,500,000 − 売掛金の増加 200,000 = €7,300,000。売掛金が増えた分は未回収。',
+    we:{ 1: '€7,500,000 は売上高（売掛金増加を調整していない）。', 2: '€7,700,000 は売掛金増加を加算した誤り。', 3: '€7,000,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Toby Zed NV</b> (direct method) — Sales revenue €7,500,000; during the year Accounts Receivable increased €200,000.</div>',
+    source:'FA1B Problem'
+  },
+  {
+    id:'q_hw_p148', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[HW P14.8] For Rajesh Ltd. (direct method, below), what is cash receipts from customers?',
+    opts:['A) £223,000','B) £242,000','C) £261,000','D) £209,000'],
+    ans:0,
+    exp:'直接法：顧客からの現金回収 = 売上 242,000 − 売掛金の増加（33,000 − 14,000 = 19,000）= £223,000。',
+    we:{ 1: '£242,000 は売上高（売掛金増加 19,000 を調整していない）。', 2: '£261,000 は売掛金増加を加算した誤り。', 3: '£209,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rajesh Ltd.</b> (direct method) — Sales revenue £242,000; Accounts Receivable rose from £14,000 to £33,000 during the year (all sales on account).</div>',
+    source:'FA1B Problem'
+  },
+  {
+    id:'q_hw_p155', conceptId:'c15_solvency', ch:15, type:'A',
+    q:'[HW P15.5] Based on the Target vs Walmart ratio analysis (below), which statement is correct?',
+    opts:['A) Walmart is more profitable and more solvent than Target','B) Target is more profitable than Walmart','C) Target has much better liquidity (current ratio) than Walmart','D) The two companies are identical on every ratio'],
+    ans:0,
+    exp:'P15.5 の結論：流動比率は両社ほぼ同じ（約0.9:1）だが、Walmart は在庫回転率・売上債権回転率が高く、収益性・支払能力（solvency）のすべての比率で Target を上回る → Walmart の方が収益性も支払能力も高い。',
+    we:{ 1: '収益性は Walmart が上回る。', 2: '流動比率は両社ほぼ同じ（0.9:1）で大差ない。', 3: '比率には明確な差がある（特に回転率・収益性）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Target vs Walmart</b> (P15.5) — ratio analysis conclusions: both companies have a current ratio of about 0.9:1; Walmart has a higher inventory turnover and a substantially higher accounts-receivable turnover than Target; Walmart beats Target in every profitability ratio and in both solvency ratios.</div>',
+    source:'FA1B Problem'
   }
 ];
 
