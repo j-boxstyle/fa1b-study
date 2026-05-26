@@ -2199,6 +2199,94 @@ body { padding-top:112px; }
         <span class="wk-flow-step">④ Dividends → RE</span>
       </div>
       <div class="wk-tip"><b>覚え方：</b>「Revenue を閉じる → Expense を閉じる → 残高（NI）を RE に振る → Dividends を RE で引く」。<b>Dividends は IS を経由しない</b>のがポイント。</div>
+
+      <h3 class="wk-section-h">🎨 期末調整 ビジュアル例 — Prepaid Insurance</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引：</b>10/1 に 1年分の保険料 $12,000 を現金前払い。12/31 決算で 3ヶ月経過。
+      </div>
+      <div class="post-flow">
+        <div class="post-box"><span class="ic">💵</span><span class="lb">Oct 1<br>支払時</span><span class="ds">Dr. Prepaid Ins 12,000<br>Cr. Cash 12,000</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">⏳</span><span class="lb">3ヶ月経過</span><span class="ds">$12,000 ÷ 12 × 3<br>= <b style="color:#fcd34d;">$3,000</b> 失効</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">📝</span><span class="lb">Dec 31<br>調整仕訳</span><span class="ds" style="color:#a5f3fc;">Dr. Insurance Exp 3,000<br>Cr. Prepaid Ins 3,000</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">📊</span><span class="lb">期末 BS<br>残高</span><span class="ds">Prepaid Ins<br>= <b style="color:#fcd34d;">$9,000</b></span></div>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">Adjusting Entry — December 31</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Dec 31</td><td class="acct-debit">Insurance Expense</td><td class="amt">3,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Prepaid Insurance</td><td class="amt"></td><td class="amt">3,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(3 months of insurance expired, 9/12 still asset)</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>2つの諸表に同時影響：</b> IS の Expense ↑ $3,000（NI ↓）／ BS の Asset ↓ $3,000。<br><span style="font-size:0.85em;">⚠ Cash は <b>絶対に動かない</b>（既に Oct 1 で支払い済み）。これが調整仕訳の本質。</span></div>
+
+      <h3 class="wk-section-h">🎨 4種マトリクス（現金タイミング × 損益種類）</h3>
+      <div class="wk-tbl-wrap"><table class="wk-tbl" style="text-align:center;">
+        <tr>
+          <th></th>
+          <th style="background:#1e3a5f;color:#a5f3fc;">💵 現金が <b>先</b><br>(Deferred / Prepaid)</th>
+          <th style="background:#7c2d12;color:#fde68a;">⏰ 現金が <b>後</b><br>(Accrued)</th>
+        </tr>
+        <tr>
+          <td style="background:#243047;color:#fcd34d;font-weight:800;">💰 <b>収益</b><br>(Revenue)</td>
+          <td style="background:#0f1726;"><b style="color:#22d3ee;">② Unearned Revenue</b><br><code>Dr. Unearned Rev (L−)<br>Cr. Revenue</code><br><span style="font-size:0.8em;color:#94a3b8;">前受金 → 提供で収益化</span></td>
+          <td style="background:#0f1726;"><b style="color:#fcd34d;">③ Accrued Revenue</b><br><code>Dr. A/R (A+)<br>Cr. Revenue</code><br><span style="font-size:0.8em;color:#94a3b8;">提供済み・未請求</span></td>
+        </tr>
+        <tr>
+          <td style="background:#243047;color:#fcd34d;font-weight:800;">💸 <b>費用</b><br>(Expense)</td>
+          <td style="background:#0f1726;"><b style="color:#22d3ee;">① Prepaid Expense</b><br><code>Dr. Expense<br>Cr. Prepaid (A−)</code><br><span style="font-size:0.8em;color:#94a3b8;">前払い → 期間経過で費用化</span></td>
+          <td style="background:#0f1726;"><b style="color:#fcd34d;">④ Accrued Expense</b><br><code>Dr. Expense<br>Cr. Payable (L+)</code><br><span style="font-size:0.8em;color:#94a3b8;">使用済み・未払い</span></td>
+        </tr>
+      </table></div>
+      <div class="wk-tip"><b>🎯 一発判定：</b>「現金がもう動いた？」→ Yes なら <b>Deferred</b>（左列）／ No なら <b>Accrued</b>（右列）。「これは収益？費用？」で行を決定。</div>
+
+      <h3 class="wk-section-h">🎨 締切仕訳 完全ビジュアル — Income Summary T勘定</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">設定：</b>期末調整後、Service Revenue $50,000 / Salary Exp $20,000 / Rent Exp $8,000 / Dividends $5,000
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">Closing Entries — 4 Steps</div>
+        <table class="je-tbl">
+          <tr><th style="width:60px;">#</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">①</td><td class="acct-debit">Service Revenue</td><td class="amt">50,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Income Summary</td><td class="amt"></td><td class="amt">50,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(Close Revenue to Income Summary)</td></tr>
+          <tr><td class="date">②</td><td class="acct-debit">Income Summary</td><td class="amt">28,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Salary Expense</td><td class="amt"></td><td class="amt">20,000</td></tr>
+          <tr><td></td><td class="acct-credit">Rent Expense</td><td class="amt"></td><td class="amt">8,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(Close Expenses to Income Summary)</td></tr>
+          <tr><td class="date">③</td><td class="acct-debit">Income Summary</td><td class="amt">22,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Retained Earnings</td><td class="amt"></td><td class="amt">22,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(Transfer NI to RE — balance of Income Summary)</td></tr>
+          <tr><td class="date">④</td><td class="acct-debit">Retained Earnings</td><td class="amt">5,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Dividends</td><td class="amt"></td><td class="amt">5,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(Close Dividends directly to RE — NOT through Income Summary)</td></tr>
+        </table>
+      </div>
+      <div class="tacc-row">
+        <div class="tacc">
+          <div class="tacc-title">Income Summary (一時勘定)</div>
+          <div class="tacc-body">
+            <div class="tacc-side dr">
+              <div class="tacc-head">Debit</div>
+              <div class="tacc-entry"><span class="lbl">② Expenses</span><span>28,000</span></div>
+              <div class="tacc-entry"><span class="lbl">③ to RE</span><span>22,000</span></div>
+            </div>
+            <div class="tacc-mid"></div>
+            <div class="tacc-side cr">
+              <div class="tacc-head">Credit</div>
+              <div class="tacc-entry"><span class="lbl">① Revenues</span><span>50,000</span></div>
+            </div>
+          </div>
+          <div class="tacc-bal"><span>Bal.</span><span>0 (締切後)</span></div>
+        </div>
+      </div>
+      <div class="fs-articulation">🔗 <b>Income Summary の役割：</b>Revenue と Expense を一旦集約 → 残高 (=NI) を RE に振替 → ゼロに戻す <b>一時勘定</b>。<br><span style="font-size:0.85em;">⚠ Dividends は <b>Income Summary を経由しない</b> — 直接 RE を減らす。配当は費用ではなく所有者への分配のため。</span></div>
+
       <h3 class="wk-section-h">⚖️ 発生主義 vs 現金主義</h3>
       <div class="wk-cmp">
         <div class="wk-cmp-col left"><h4>Accrual Basis（発生主義）✓ GAAP/IFRS</h4><ul>
@@ -2274,6 +2362,90 @@ body { padding-top:112px; }
         <span class="frac"><span>Cost of Goods Available for Sale</span><span>Units Available for Sale</span></span><br>
         <span class="label">Cost of Goods Available：</span>Beginning Inv + Purchases
       </div>
+      <h3 class="wk-section-h">🎨 FIFO / LIFO / 加重平均 完全比較ビジュアル</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">同じ取引データ・3つの単価想定法</b>で COGS と Ending Inventory がどう変わるかを並べて見る。物価上昇局面の典型ケース。
+      </div>
+      <div class="wk-formula-box" style="margin-bottom:14px;">
+        <span class="label">取引データ (XYZ Co.)：</span><br>
+        Beginning Inv: 10 units @ $10 = <b>$100</b><br>
+        Purchase #1 (Mar): 10 units @ $12 = <b>$120</b><br>
+        Purchase #2 (Jun): 10 units @ $14 = <b>$140</b><br>
+        <b style="color:#fcd34d;">Goods Available = 30 units / $360</b><br>
+        Sold during year: <b>20 units</b> → Ending Inv = 10 units
+      </div>
+
+      <!-- 3 methods side-by-side -->
+      <div class="wk-grid" style="grid-template-columns:repeat(3,1fr);gap:14px;">
+
+        <!-- FIFO -->
+        <div class="fs-doc" style="padding:18px 20px;">
+          <div class="fs-doc-head"><div class="fs-doc-co" style="font-size:20px;">FIFO</div><div class="fs-doc-title" style="font-size:16px;color:#1d4ed8;">First-In, First-Out</div></div>
+          <div class="fs-row section" style="font-size:18px;">COGS (古い順に売れた想定)</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $10 (BI)</span><span class="fs-amt">100</span></div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $12 (P1)</span><span class="fs-amt">120</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#dbeafe;color:#1d4ed8;"><span>COGS</span><span class="fs-amt">$ 220</span></div>
+          <div class="fs-row section" style="font-size:18px;margin-top:10px;">Ending Inv (新しいのが残る)</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $14 (P2)</span><span class="fs-amt">140</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#dbeafe;color:#1d4ed8;"><span>Ending Inv</span><span class="fs-amt">$ 140</span></div>
+        </div>
+
+        <!-- LIFO -->
+        <div class="fs-doc" style="padding:18px 20px;">
+          <div class="fs-doc-head"><div class="fs-doc-co" style="font-size:20px;">LIFO</div><div class="fs-doc-title" style="font-size:16px;color:#b91c1c;">Last-In, First-Out</div></div>
+          <div class="fs-row section" style="font-size:18px;">COGS (新しい順に売れた想定)</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $14 (P2)</span><span class="fs-amt">140</span></div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $12 (P1)</span><span class="fs-amt">120</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#fee2e2;color:#b91c1c;"><span>COGS</span><span class="fs-amt">$ 260</span></div>
+          <div class="fs-row section" style="font-size:18px;margin-top:10px;">Ending Inv (古いのが残る)</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 @ $10 (BI)</span><span class="fs-amt">100</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#fee2e2;color:#b91c1c;"><span>Ending Inv</span><span class="fs-amt">$ 100</span></div>
+        </div>
+
+        <!-- Weighted Avg -->
+        <div class="fs-doc" style="padding:18px 20px;">
+          <div class="fs-doc-head"><div class="fs-doc-co" style="font-size:20px;">Weighted Avg</div><div class="fs-doc-title" style="font-size:16px;color:#7c2d12;">加重平均</div></div>
+          <div class="fs-row section" style="font-size:18px;">Avg Cost / Unit</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>$360 ÷ 30 units</span><span class="fs-amt">$ 12.00</span></div>
+          <div class="fs-row section" style="font-size:18px;margin-top:10px;">COGS</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>20 units × $12</span><span class="fs-amt">240</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#fef3c7;"><span>COGS</span><span class="fs-amt">$ 240</span></div>
+          <div class="fs-row section" style="font-size:18px;margin-top:10px;">Ending Inv</div>
+          <div class="fs-row indent" style="font-size:17px;"><span>10 units × $12</span><span class="fs-amt">120</span></div>
+          <div class="fs-row total" style="font-size:18px;background:#fef3c7;"><span>Ending Inv</span><span class="fs-amt">$ 120</span></div>
+        </div>
+      </div>
+
+      <!-- Net Income comparison -->
+      <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">📈 NI への影響比較（物価上昇局面）</h4>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th></th><th style="color:#1d4ed8;">FIFO</th><th style="color:#b91c1c;">LIFO</th><th style="color:#7c2d12;">Weighted Avg</th></tr>
+        <tr><td>Sales (仮: 20 units × $20)</td><td class="amt" style="text-align:right;">400</td><td class="amt" style="text-align:right;">400</td><td class="amt" style="text-align:right;">400</td></tr>
+        <tr><td>COGS</td><td style="text-align:right;color:#22d3ee;">(220) 最小</td><td style="text-align:right;color:#fca5a5;">(260) 最大</td><td style="text-align:right;">(240) 中間</td></tr>
+        <tr><td><b>Gross Profit</b></td><td style="text-align:right;color:#22d3ee;font-weight:800;">180 最大</td><td style="text-align:right;color:#fca5a5;font-weight:800;">140 最小</td><td style="text-align:right;font-weight:800;">160</td></tr>
+        <tr><td><b>Ending Inv (BS)</b></td><td style="text-align:right;color:#22d3ee;font-weight:800;">140 最大</td><td style="text-align:right;color:#fca5a5;font-weight:800;">100 最小</td><td style="text-align:right;font-weight:800;">120</td></tr>
+        <tr><td><b>Tax (仮 30%)</b></td><td style="text-align:right;">54</td><td style="text-align:right;color:#22d3ee;">42 最小 💰</td><td style="text-align:right;">48</td></tr>
+      </table></div>
+      <div class="fs-articulation">🎯 <b>暗記の鉄則（物価上昇時）：</b><br>
+        ・<b style="color:#22d3ee;">FIFO</b> → NI 高、Inv 高、Tax 高（株主向けには良く見える）<br>
+        ・<b style="color:#fca5a5;">LIFO</b> → NI 低、Inv 低、Tax 低（節税向き／GAAPでは選択可・IFRS禁止）<br>
+        ・<b>Weighted Avg</b> → 中間（変動が少なく安定）
+      </div>
+
+      <h3 class="wk-section-h">🎨 棚卸誤謬の連鎖（2期にわたる影響）</h3>
+      <div class="post-flow">
+        <div class="post-box" style="border-color:#ef4444;"><span class="ic">⚠️</span><span class="lb">Year 1<br>EI 過大</span><span class="ds" style="color:#fca5a5;">EI ↑ $X<br>(誤って多く計上)</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">📉</span><span class="lb">Year 1<br>COGS</span><span class="ds">EI↑ → <b style="color:#22d3ee;">COGS ↓ $X</b><br>(BI+P−EI)</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">📈</span><span class="lb">Year 1<br>NI</span><span class="ds" style="color:#a5f3fc;"><b>NI ↑ $X</b><br>(過大計上)</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">🔄</span><span class="lb">Year 2<br>BI = Y1 EI</span><span class="ds">BI ↑ $X<br>(誤りが繰越)</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#ef4444;"><span class="ic">📉</span><span class="lb">Year 2<br>NI</span><span class="ds" style="color:#fca5a5;"><b>NI ↓ $X</b><br>(逆方向)</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>"EI と NI は同方向、BI と NI は逆方向"</b><br><span style="font-size:0.85em;">2期合計では誤差は <b>相殺</b>されるが、各期の NI と RE は誤りのまま。試験では「2期影響」を必ず問われる。</span></div>
+
       <h3 class="wk-section-h">⚖️ LCNRV</h3>
       <div class="wk-overview">各品目について <b>Cost と NRV を比較し、低い方</b>で BS に計上。下げた分は COGS（or Loss）へ。<br><b>NRV = 見積売却価格 − 完成・販売に必要な費用</b></div>
       <div class="wk-callout"><b>注意：</b>LCNRV は <b>切り下げ専用・切り上げ不可</b>。</div>
@@ -2331,6 +2503,43 @@ body { padding-top:112px; }
         <span class="label">③ Units-of-Production：</span>
         Dep/unit = <span class="frac"><span>Cost − Salvage</span><span>Total Estimated Units</span></span> × Units Used
       </div>
+      <h3 class="wk-section-h">🎨 取得原価ビジュアル — 何が含まれるか？</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引例：</b>機械を購入。次のうち <b>Equipment 勘定に算入する</b>のはどれ？
+      </div>
+      <div class="wk-grid" style="grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="wk-hooks" style="border-left-color:#10b981;">
+          <h4 style="color:#22d3ee;margin:0 0 10px;font-size:21px;">✅ 取得原価に含める (Get it ready)</h4>
+          <ul>
+            <li><b>購入代金</b> $50,000</li>
+            <li><b>運送費 (Freight-in)</b> $1,200</li>
+            <li><b>据付費 (Installation)</b> $800</li>
+            <li><b>試運転費 (Testing)</b> $500</li>
+            <li><b>不動産取得税・関税</b> $300</li>
+            <li><b>合計 → Equipment</b> = <b style="color:#fcd34d;">$52,800</b></li>
+          </ul>
+        </div>
+        <div class="wk-mistakes" style="border-left-color:#ef4444;">
+          <h4 style="color:#fca5a5;margin:0 0 10px;font-size:21px;">❌ 取得原価に含めない (Expense として処理)</h4>
+          <ul>
+            <li><b>保険料（継続的）</b> → Insurance Exp</li>
+            <li><b>従業員訓練費</b> → Training Exp</li>
+            <li><b>定期メンテ・修理</b> → Repair Exp</li>
+            <li><b>事故・破損による修理</b> → Repair Exp</li>
+            <li><b>取得後の運送費</b> → Freight-out / Delivery Exp</li>
+          </ul>
+        </div>
+      </div>
+      <div class="je-doc" style="margin-top:12px;">
+        <div class="je-doc-title">取得時の仕訳</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Jan 1</td><td class="acct-debit">Equipment</td><td class="amt">52,800</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td class="amt"></td><td class="amt">52,800</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(All "get it ready" costs capitalized into Equipment)</td></tr>
+        </table>
+      </div>
+
       <h3 class="wk-section-h">⚖️ SL vs DDB vs UOP</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
         <tr><th>方式</th><th>パターン</th><th>Salvage の扱い</th><th>使う場面</th></tr>
@@ -2338,6 +2547,34 @@ body { padding-top:112px; }
         <tr><td>DDB</td><td>初期に多く・後で少なく</td><td><b>計算式に入れない</b></td><td>陳腐化が早い機器</td></tr>
         <tr><td>UOP</td><td>使用量比例</td><td>引いてから割る</td><td>機械・トラック</td></tr>
       </table></div>
+      <h3 class="wk-section-h">🎨 3減価償却法 ビジュアル — 同じ資産で比較</h3>
+      <div class="wk-formula-box" style="margin-bottom:14px;">
+        <span class="label">設定：</span>Equipment Cost $50,000 / Salvage $5,000 / Useful Life 5年 / 総生産量 100,000 units<br>
+        <span class="label">Year 1 使用量：</span>25,000 units &nbsp;|&nbsp; <span class="label">DDB Rate：</span>2 / 5 = <b>40%</b>
+      </div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>Year</th><th style="color:#22d3ee;">SL<br>($45,000 ÷ 5)</th><th style="color:#fcd34d;">DDB<br>(NBV × 40%)</th><th style="color:#10b981;">UOP<br>($0.45 × units)</th></tr>
+        <tr><td><b>1</b></td><td style="text-align:right;">9,000</td><td style="text-align:right;">50,000 × 40% = <b>20,000</b></td><td style="text-align:right;">25,000 × 0.45 = <b>11,250</b></td></tr>
+        <tr><td><b>2</b></td><td style="text-align:right;">9,000</td><td style="text-align:right;">30,000 × 40% = <b>12,000</b></td><td style="text-align:right;">(使用量次第)</td></tr>
+        <tr><td><b>3</b></td><td style="text-align:right;">9,000</td><td style="text-align:right;">18,000 × 40% = <b>7,200</b></td><td style="text-align:right;">(使用量次第)</td></tr>
+        <tr><td><b>4</b></td><td style="text-align:right;">9,000</td><td style="text-align:right;">10,800 × 40% = <b>4,320</b></td><td style="text-align:right;">(使用量次第)</td></tr>
+        <tr><td><b>5</b></td><td style="text-align:right;">9,000</td><td style="text-align:right;"><b>1,480</b> (Salvage調整)</td><td style="text-align:right;">(使用量次第)</td></tr>
+        <tr style="background:#243047;"><td><b>合計</b></td><td style="text-align:right;font-weight:800;color:#fcd34d;">45,000</td><td style="text-align:right;font-weight:800;color:#fcd34d;">45,000</td><td style="text-align:right;font-weight:800;color:#fcd34d;">45,000</td></tr>
+      </table></div>
+      <div class="wk-tip"><b>📌 重要：</b>3方式とも <b>5年間累計で同じ $45,000</b>（= Cost − Salvage）。違うのは <b>各年への配分パターン</b>のみ。DDB は <b>Salvage を計算式に入れず</b>、最終年で NBV が Salvage に到達するよう調整。</div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">📊 Year 1 末の BS 表示（SL の場合）</h4>
+      <div class="fs-doc" style="padding:18px 22px;">
+        <div class="fs-doc-head" style="border-bottom:1.5px solid #1f2937;padding-bottom:6px;margin-bottom:8px;">
+          <div class="fs-doc-title" style="font-size:18px;">Balance Sheet (Excerpt) — Dec 31, Year 1</div>
+        </div>
+        <div class="fs-row section">Property, Plant & Equipment</div>
+        <div class="fs-row indent"><span>Equipment</span><span class="fs-amt">$ 50,000</span></div>
+        <div class="fs-row indent"><span>Less: Accumulated Depreciation</span><span class="fs-amt neg">(9,000)</span></div>
+        <div class="fs-row total"><span>Net Book Value (NBV)</span><span class="fs-amt">$ 41,000</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>BS 表示の鉄則：</b>Cost と Accumulated Depreciation を <b>別表示</b>し、NBV は差額として示す。これにより資産の経過状況（どれだけ使い古したか）が読める。</div>
+
       <h3 class="wk-section-h">📒 NBV と Disposal</h3>
       <div class="wk-formula-box">
         <span class="label">NBV：</span>NBV = Cost − Accumulated Depreciation<br>
@@ -2347,6 +2584,55 @@ body { padding-top:112px; }
         ・Cash = 0（廃棄）→ <b>Loss = NBV</b>
       </div>
       <div class="wk-callout"><b>Disposal 仕訳：</b>Dr. Cash / Dr. Acc Dep (全額消す) / Dr. Loss <i>or</i> Cr. Gain / Cr. Asset (Cost 全額消す)</div>
+
+      <h3 class="wk-section-h">🎨 Disposal 3パターン 完全比較</h3>
+      <div class="wk-formula-box" style="margin-bottom:14px;">
+        <span class="label">共通設定：</span>Equipment Cost $50,000 / Acc Dep $30,000 → <b>NBV = $20,000</b>
+      </div>
+      <div class="wk-grid" style="grid-template-columns:repeat(3,1fr);gap:14px;">
+
+        <!-- Gain -->
+        <div class="je-doc" style="padding:14px 16px;">
+          <div class="je-doc-title" style="font-size:18px;color:#10b981;">① $25,000 で売却<br>(Cash > NBV → Gain)</div>
+          <table class="je-tbl" style="font-size:17px;">
+            <tr><td class="acct-debit">Cash</td><td class="amt">25,000</td><td></td></tr>
+            <tr><td class="acct-debit">Acc Dep</td><td class="amt">30,000</td><td></td></tr>
+            <tr><td class="acct-credit">Equipment</td><td></td><td class="amt">50,000</td></tr>
+            <tr><td class="acct-credit" style="color:#10b981;">Gain on Sale</td><td></td><td class="amt">5,000</td></tr>
+          </table>
+          <div style="font-size:16px;color:#10b981;margin-top:8px;text-align:center;font-weight:700;">25,000 − 20,000 = +$5,000 Gain</div>
+        </div>
+
+        <!-- Loss -->
+        <div class="je-doc" style="padding:14px 16px;">
+          <div class="je-doc-title" style="font-size:18px;color:#ef4444;">② $12,000 で売却<br>(Cash &lt; NBV → Loss)</div>
+          <table class="je-tbl" style="font-size:17px;">
+            <tr><td class="acct-debit">Cash</td><td class="amt">12,000</td><td></td></tr>
+            <tr><td class="acct-debit">Acc Dep</td><td class="amt">30,000</td><td></td></tr>
+            <tr><td class="acct-debit" style="color:#ef4444;">Loss on Sale</td><td class="amt">8,000</td><td></td></tr>
+            <tr><td class="acct-credit">Equipment</td><td></td><td class="amt">50,000</td></tr>
+          </table>
+          <div style="font-size:16px;color:#ef4444;margin-top:8px;text-align:center;font-weight:700;">12,000 − 20,000 = −$8,000 Loss</div>
+        </div>
+
+        <!-- Scrap -->
+        <div class="je-doc" style="padding:14px 16px;">
+          <div class="je-doc-title" style="font-size:18px;color:#fcd34d;">③ 廃棄 (Cash $0)<br>(Loss = NBV 全額)</div>
+          <table class="je-tbl" style="font-size:17px;">
+            <tr><td class="acct-debit">Acc Dep</td><td class="amt">30,000</td><td></td></tr>
+            <tr><td class="acct-debit" style="color:#ef4444;">Loss on Disposal</td><td class="amt">20,000</td><td></td></tr>
+            <tr><td class="acct-credit">Equipment</td><td></td><td class="amt">50,000</td></tr>
+          </table>
+          <div style="font-size:16px;color:#fcd34d;margin-top:8px;text-align:center;font-weight:700;">Cash 0 − NBV 20,000 = Loss</div>
+        </div>
+      </div>
+      <div class="fs-articulation">🔗 <b>Disposal 仕訳の鉄則：</b><br>
+        ① <b>Asset (Cost 全額) と Acc Dep (全額)</b> を必ず帳簿から消す（残してはダメ）<br>
+        ② Cash 受領額があれば計上<br>
+        ③ 差額が <b>Gain (Cr) or Loss (Dr)</b><br>
+        <span style="font-size:0.85em;">公式: <code style="color:#fcd34d;">Gain/Loss = Cash − NBV</code></span>
+      </div>
+
       <h3 class="wk-section-h">🔑 試験キーワード → アクション</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl wk-keyword-tbl">
         <tr><th>キーワード</th><th>判断</th><th>処理</th></tr>
@@ -2385,6 +2671,82 @@ body { padding-top:112px; }
         <span class="label">Bad Debt (Aging)：</span>必要 Allowance 残高 − 現在の Allowance 残高
       </div>
       <div class="wk-tip"><b>% of Sales vs Aging：</b>前者は <b>Expense を直接計算</b>（加算）、後者は <b>Allowance の目標残高を計算</b>し差額を Expense。</div>
+
+      <h3 class="wk-section-h">🎨 Allowance Method ライフサイクル ビジュアル</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引例（XYZ Co.）：</b>Net Credit Sales $500,000 / 期末 A/R $80,000 / 期首 Allowance $1,500（Cr）/ 不良率推定 2%
+      </div>
+      <div class="post-flow">
+        <div class="post-box"><span class="ic">💳</span><span class="lb">① 売上</span><span class="ds">通常の信用売上<br>Dr. A/R / Cr. Sales</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">📊</span><span class="lb">② 期末見積</span><span class="ds" style="color:#a5f3fc;">% of Sales or Aging<br>でAllowance計上</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#ef4444;"><span class="ic">❌</span><span class="lb">③ 貸倒確定</span><span class="ds" style="color:#fca5a5;">Write-off<br>(Expense経由しない)</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#10b981;"><span class="ic">💰</span><span class="lb">④ 回収（稀）</span><span class="ds" style="color:#bbf7d0;">Recovery<br>(2仕訳で復活)</span></div>
+      </div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">📒 ② 期末見積 — % of Sales 法</h4>
+      <div class="je-doc">
+        <div class="je-doc-title">Year-end Adjusting Entry — % of Sales</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Dec 31</td><td class="acct-debit">Bad Debt Expense</td><td class="amt">10,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Allowance for Doubtful Accounts</td><td class="amt"></td><td class="amt">10,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">($500,000 Sales × 2% = $10,000 — 加算式で計算)</td></tr>
+        </table>
+      </div>
+      <div class="wk-tip"><b>% of Sales の特徴：</b>IS 重視（"Bad Debt Exp を直接決める"）。<b>既存 Allowance 残高は無視</b>して計算。</div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">📒 ② 期末見積 — Aging 法（別アプローチ）</h4>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>経過日数</th><th>金額</th><th>不良率</th><th>必要 Allowance</th></tr>
+        <tr><td>0–30 days</td><td class="amt" style="text-align:right;">50,000</td><td style="text-align:center;">1%</td><td class="amt" style="text-align:right;">500</td></tr>
+        <tr><td>31–60 days</td><td class="amt" style="text-align:right;">20,000</td><td style="text-align:center;">5%</td><td class="amt" style="text-align:right;">1,000</td></tr>
+        <tr><td>61–90 days</td><td class="amt" style="text-align:right;">7,000</td><td style="text-align:center;">15%</td><td class="amt" style="text-align:right;">1,050</td></tr>
+        <tr><td>90+ days</td><td class="amt" style="text-align:right;">3,000</td><td style="text-align:center;">40%</td><td class="amt" style="text-align:right;">1,200</td></tr>
+        <tr style="background:#243047;font-weight:800;"><td>合計 A/R</td><td class="amt" style="text-align:right;color:#fcd34d;">80,000</td><td></td><td class="amt" style="text-align:right;color:#fcd34d;">3,750 (必要)</td></tr>
+      </table></div>
+      <div class="wk-formula-box" style="margin:10px 0;">
+        <span class="label">Aging 法 計算：</span><br>
+        必要 Allowance 残高 = <b>$3,750</b><br>
+        − 現在の Allowance 残高 = <b>$1,500</b> (Cr)<br>
+        = 追加計上額 = <b style="color:#fcd34d;">$2,250</b><br><br>
+        <span class="label">仕訳：</span>Dr. Bad Debt Exp <b>2,250</b> / Cr. Allowance <b>2,250</b>
+      </div>
+      <div class="wk-tip"><b>Aging の特徴：</b>BS 重視（"Allowance の目標残高を決める"）。<b>差額のみ Expense 計上</b>するので既存残高を必ず考慮。</div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">📒 ③ Write-off (貸倒確定)</h4>
+      <div class="je-doc">
+        <div class="je-doc-title">Write-off — Customer ABC's $2,000 確定不良</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Feb 15</td><td class="acct-debit">Allowance for Doubtful Accounts</td><td class="amt">2,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Accounts Receivable — ABC</td><td class="amt"></td><td class="amt">2,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(Bad Debt Expense は計上済み — Allowance を減らすだけ)</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>Write-off の重要ポイント：</b><br>
+        ① <b>Bad Debt Expense を計上しない</b>（期末に見積で既に計上済み）<br>
+        ② Net A/R は <b>変わらない</b> → (80,000−2,000) − (3,750−2,000) = 78,000 − 1,750 = <b>76,250</b>（write-off前: 80,000−3,750 = 76,250 と同じ）<br>
+        <span style="font-size:0.85em;">これが Allowance Method の本質。Direct Write-off (GAAP不可) と区別すること。</span>
+      </div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">📒 ④ Recovery — 後で回収した場合（2仕訳）</h4>
+      <div class="je-doc">
+        <div class="je-doc-title">Recovery — Customer ABC が後日 $500 返済</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Jun 1</td><td class="acct-debit">Accounts Receivable — ABC</td><td class="amt">500</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Allowance for Doubtful Accounts</td><td class="amt"></td><td class="amt">500</td></tr>
+          <tr class="entry-end"><td></td><td class="desc" colspan="3">仕訳①: Write-off を <b>取消</b>（A/R 復活、Allowance 戻す）</td></tr>
+          <tr><td class="date">Jun 1</td><td class="acct-debit">Cash</td><td class="amt">500</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Accounts Receivable — ABC</td><td class="amt"></td><td class="amt">500</td></tr>
+          <tr><td></td><td class="desc" colspan="3">仕訳②: 通常の現金回収</td></tr>
+        </table>
+      </div>
+      <div class="wk-tip"><b>Recovery は必ず 2 仕訳：</b>① Write-off を <b>逆仕訳</b>（A/R 復活）→ ② 普通に現金回収。1つにまとめてはダメ（A/R の履歴管理のため）。</div>
+
       <h3 class="wk-section-h">📝 Notes の利息計算</h3>
       <div class="wk-formula-box">
         <span class="label">Interest：</span>Principal × Rate × <span class="frac"><span>Time</span><span>12 (months)</span></span><br>
@@ -2440,6 +2802,32 @@ body { padding-top:112px; }
         <span class="label">株式発行：</span>Dr. Cash (発行価額) / Cr. CS (par × shares) / Cr. PIC (差額)<br>
         <span class="label">自己株式取得：</span>Dr. Treasury Stock / Cr. Cash
       </div>
+
+      <h3 class="wk-section-h">🎨 株式発行 仕訳ビジュアル例</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引：</b>Common Stock を 1,000株 発行（額面 $5、発行価額 $12/株）
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">Stock Issuance — At Premium</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Jan 1</td><td class="acct-debit">Cash <span style="color:#94a3b8;font-size:14px;">(1,000 × $12)</span></td><td class="amt">12,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Common Stock <span style="color:#94a3b8;font-size:14px;">(1,000 × $5 par)</span></td><td class="amt"></td><td class="amt">5,000</td></tr>
+          <tr><td></td><td class="acct-credit">PIC in Excess of Par <span style="color:#94a3b8;font-size:14px;">($12 − $5) × 1,000</span></td><td class="amt"></td><td class="amt">7,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(額面分は CS、超過分は PIC に分離)</td></tr>
+        </table>
+      </div>
+      <div class="fs-doc" style="margin-top:10px;">
+        <div class="fs-doc-head"><div class="fs-doc-title" style="font-size:18px;">Balance Sheet (Excerpt) — Equity Section</div></div>
+        <div class="fs-row section">Stockholders' Equity</div>
+        <div class="fs-row indent"><span>Common Stock, $5 par, 1,000 shares issued</span><span class="fs-amt">$ 5,000</span></div>
+        <div class="fs-row indent"><span>Paid-in Capital in Excess of Par</span><span class="fs-amt">7,000</span></div>
+        <div class="fs-row sub"><span>Total Contributed Capital</span><span class="fs-amt">12,000</span></div>
+        <div class="fs-row indent"><span>Retained Earnings (例)</span><span class="fs-amt">8,000</span></div>
+        <div class="fs-row total"><span>Total Stockholders' Equity</span><span class="fs-amt">$ 20,000</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>par は法的最低額：</b>債権者保護のため CS には par 分のみ計上。実際の入金との <b>差額が PIC</b>。Total Equity への影響は同じ ($12,000) だが、内訳の表示が異なる。</div>
+
       <h3 class="wk-section-h">💵 配当 3つのキー日付</h3>
       <div class="wk-flow">
         <span class="wk-flow-step">① Declaration<br>(宣言日)</span><span class="wk-flow-arrow">→</span>
@@ -2452,6 +2840,26 @@ body { padding-top:112px; }
         <tr><td>② Record</td><td><b>仕訳なし</b></td></tr>
         <tr><td>③ Payment</td><td>Dr. Dividends Payable / Cr. Cash</td></tr>
       </table></div>
+
+      <h3 class="wk-section-h">🎨 配当 3日付 完全タイムラインビジュアル</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引：</b>1,000株保有、$2/株の現金配当を宣言 → 総額 <b>$2,000</b>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">Cash Dividend — 3 Key Dates</div>
+        <table class="je-tbl">
+          <tr><th style="width:120px;">Date</th><th>Account Title</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">① Mar 1<br><span style="color:#94a3b8;font-size:14px;">Declaration</span></td><td class="acct-debit">Retained Earnings (or Dividends)</td><td class="amt">2,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Dividends Payable</td><td class="amt"></td><td class="amt">2,000</td></tr>
+          <tr class="entry-end"><td></td><td class="desc" colspan="3">(法的負債が発生 — BS に Liability 計上)</td></tr>
+          <tr><td class="date">② Mar 15<br><span style="color:#94a3b8;font-size:14px;">Record</span></td><td colspan="3" class="desc" style="text-align:center;padding:18px;background:#faedc0;"><b style="color:#92400e;">No Journal Entry</b> — 株主名簿の確認のみ（受給者を確定）</td></tr>
+          <tr><td class="date">③ Apr 1<br><span style="color:#94a3b8;font-size:14px;">Payment</span></td><td class="acct-debit">Dividends Payable</td><td class="amt">2,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td class="amt"></td><td class="amt">2,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">(負債を消し、現金支払)</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>3日付の意味：</b>① <b>宣言日</b>で法的義務発生 → ② <b>基準日</b>で受給者確定（仕訳なし！）→ ③ <b>支払日</b>で現金実行。<br><span style="font-size:0.85em;">⚠ よくある間違い: 宣言日で Cash を Cr する → ❌。宣言と支払は別タイミング。基準日に仕訳を切る → ❌。</span></div>
+
       <h3 class="wk-section-h">🪙 Stock Dividend vs Stock Split</h3>
       <div class="wk-cmp">
         <div class="wk-cmp-col left"><h4>Stock Dividend</h4><ul>
@@ -2485,6 +2893,69 @@ body { padding-top:112px; }
         = <b>Cash from Operating</b>
       </div>
       <div class="wk-tip"><b>覚え方：</b>「<b>資産↑ は cash↓</b>、<b>負債↑ は cash↑</b>」。A/R 増加 = 売ったが未回収 = cash 減。</div>
+
+      <h3 class="wk-section-h">🎨 CFS 間接法 完全ビジュアル（NI → Cash 変換）</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">設定（DEF Co. 2025年）：</b>
+        Net Income $50,000 / Depreciation $8,000 / Gain on Sale $2,000 /
+        A/R 増 $3,000 / Inventory 減 $1,500 / A/P 増 $2,500 /
+        Equipment 売却 Cash $5,000 / 新規 Equipment 取得 $20,000 /
+        株式発行 $15,000 / 配当支払 $4,000
+      </div>
+      <div class="fs-doc">
+        <div class="fs-doc-head">
+          <div class="fs-doc-co">DEF Co.</div>
+          <div class="fs-doc-title">Statement of Cash Flows (Indirect Method)</div>
+          <div class="fs-doc-period">For the Year Ended December 31, 2025</div>
+        </div>
+
+        <!-- OPERATING -->
+        <div class="fs-row section" style="color:#1d4ed8;">Cash Flows from Operating Activities</div>
+        <div class="fs-row indent"><span>Net Income <span class="note">(from IS)</span></span><span class="fs-amt">$ 50,000</span></div>
+        <div class="fs-row indent" style="color:#6b7280;font-style:italic;font-size:18px;padding:4px 0 4px 30px;">Adjustments to reconcile NI to net cash:</div>
+        <div class="fs-row indent2"><span>+ Depreciation Expense <span class="note">(non-cash)</span></span><span class="fs-amt">8,000</span></div>
+        <div class="fs-row indent2"><span>− Gain on Sale of Equipment <span class="note">(belongs in ICF)</span></span><span class="fs-amt neg">(2,000)</span></div>
+        <div class="fs-row indent2"><span>− Increase in A/R <span class="note">(売上未回収)</span></span><span class="fs-amt neg">(3,000)</span></div>
+        <div class="fs-row indent2"><span>+ Decrease in Inventory <span class="note">(在庫減=現金化)</span></span><span class="fs-amt">1,500</span></div>
+        <div class="fs-row indent2"><span>+ Increase in A/P <span class="note">(支払先延ばし)</span></span><span class="fs-amt">2,500</span></div>
+        <div class="fs-row sub" style="color:#1d4ed8;"><span>Net cash from operating activities</span><span class="fs-amt">57,000</span></div>
+
+        <!-- INVESTING -->
+        <div class="fs-row section" style="color:#7c2d12;margin-top:12px;">Cash Flows from Investing Activities</div>
+        <div class="fs-row indent"><span>+ Sale of Equipment</span><span class="fs-amt">5,000</span></div>
+        <div class="fs-row indent"><span>− Purchase of new Equipment</span><span class="fs-amt neg">(20,000)</span></div>
+        <div class="fs-row sub" style="color:#7c2d12;"><span>Net cash from investing activities</span><span class="fs-amt neg">(15,000)</span></div>
+
+        <!-- FINANCING -->
+        <div class="fs-row section" style="color:#10b981;margin-top:12px;">Cash Flows from Financing Activities</div>
+        <div class="fs-row indent"><span>+ Issued Common Stock</span><span class="fs-amt">15,000</span></div>
+        <div class="fs-row indent"><span>− Paid Cash Dividends</span><span class="fs-amt neg">(4,000)</span></div>
+        <div class="fs-row sub" style="color:#10b981;"><span>Net cash from financing activities</span><span class="fs-amt">11,000</span></div>
+
+        <!-- BOTTOM LINE -->
+        <div class="fs-row sub" style="margin-top:12px;font-size:22px;"><span>Net Increase in Cash</span><span class="fs-amt">53,000</span></div>
+        <div class="fs-row"><span>Cash, January 1</span><span class="fs-amt">17,000</span></div>
+        <div class="fs-row total"><span>Cash, December 31 <span class="note" style="color:#fef3c7;">→ matches BS Cash</span></span><span class="fs-amt">$ 70,000</span></div>
+      </div>
+
+      <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">🎯 各調整の理由（NI を Cash に戻す論理）</h4>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>調整項目</th><th>方向</th><th>理由</th></tr>
+        <tr><td>Depreciation</td><td style="text-align:center;color:#22d3ee;">＋ Add back</td><td>非現金費用。IS で引かれたが現金は出ていない</td></tr>
+        <tr><td>Loss on Sale</td><td style="text-align:center;color:#22d3ee;">＋ Add back</td><td>非現金損失 / Cash の動きは ICF で別計上</td></tr>
+        <tr><td>Gain on Sale</td><td style="text-align:center;color:#fca5a5;">− Subtract</td><td>NI を増やしたが本体は ICF / 二重計上を防止</td></tr>
+        <tr><td>A/R ↑（増加）</td><td style="text-align:center;color:#fca5a5;">− Subtract</td><td>売上計上したが現金未回収</td></tr>
+        <tr><td>A/R ↓（減少）</td><td style="text-align:center;color:#22d3ee;">＋ Add</td><td>過去の売掛を回収 = 現金流入</td></tr>
+        <tr><td>Inventory ↑</td><td style="text-align:center;color:#fca5a5;">− Subtract</td><td>現金で在庫を買った</td></tr>
+        <tr><td>Inventory ↓</td><td style="text-align:center;color:#22d3ee;">＋ Add</td><td>在庫減 = 売れた / COGS 化</td></tr>
+        <tr><td>A/P ↑</td><td style="text-align:center;color:#22d3ee;">＋ Add</td><td>仕入はしたが支払い遅延 = 現金保持</td></tr>
+        <tr><td>A/P ↓</td><td style="text-align:center;color:#fca5a5;">− Subtract</td><td>過去の買掛を支払い = 現金流出</td></tr>
+      </table></div>
+      <div class="fs-articulation">🎯 <b>シンプルな鉄則：</b><br>
+        <span style="font-size:1.1em;"><b style="color:#fca5a5;">資産 ↑ → Cash ↓</b>（資産を増やすには現金を使う）<br><b style="color:#22d3ee;">負債 ↑ → Cash ↑</b>（負債を増やせば現金保持）</span><br>
+        <span style="font-size:0.85em;">逆方向も同じ論理で考える。これを覚えれば全ての調整を即判断できる。</span>
+      </div>
+
       <h3 class="wk-section-h">🔑 試験キーワード → アクション</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl wk-keyword-tbl">
         <tr><th>キーワード</th><th>判断</th><th>処理</th></tr>
@@ -2531,6 +3002,97 @@ body { padding-top:112px; }
         <tr><td>P/E Ratio</td><td><code>Market Price / EPS</code></td></tr>
         <tr><td>Payout Ratio</td><td><code>Cash Dividends / NI</code></td></tr>
       </table></div>
+      <h3 class="wk-section-h">🎨 サンプル財務諸表で全比率を計算してみる</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">GHI Co. のデータ（2025年末）</b>を使って、4カテゴリ × 12比率をすべて実数値で計算する。
+      </div>
+
+      <!-- Sample BS + IS -->
+      <div class="wk-grid" style="grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="fs-doc">
+          <div class="fs-doc-head"><div class="fs-doc-co">GHI Co.</div><div class="fs-doc-title">Balance Sheet</div><div class="fs-doc-period">Dec 31, 2025</div></div>
+          <div class="fs-row section">Current Assets</div>
+          <div class="fs-row indent"><span>Cash</span><span class="fs-amt">20,000</span></div>
+          <div class="fs-row indent"><span>ST Investments</span><span class="fs-amt">5,000</span></div>
+          <div class="fs-row indent"><span>Net A/R</span><span class="fs-amt">35,000</span></div>
+          <div class="fs-row indent"><span>Inventory</span><span class="fs-amt">40,000</span></div>
+          <div class="fs-row indent"><span>Prepaid</span><span class="fs-amt">10,000</span></div>
+          <div class="fs-row sub"><span>Total Current Assets</span><span class="fs-amt">110,000</span></div>
+          <div class="fs-row indent"><span>PPE (Net)</span><span class="fs-amt">90,000</span></div>
+          <div class="fs-row total"><span>Total Assets</span><span class="fs-amt">$ 200,000</span></div>
+          <div class="fs-row section">Liabilities & Equity</div>
+          <div class="fs-row indent"><span>Current Liabilities</span><span class="fs-amt">50,000</span></div>
+          <div class="fs-row indent"><span>Long-term Debt</span><span class="fs-amt">30,000</span></div>
+          <div class="fs-row sub"><span>Total Liabilities</span><span class="fs-amt">80,000</span></div>
+          <div class="fs-row indent"><span>Common Equity</span><span class="fs-amt">120,000</span></div>
+          <div class="fs-row total"><span>Total L + E</span><span class="fs-amt">$ 200,000</span></div>
+        </div>
+
+        <div class="fs-doc">
+          <div class="fs-doc-head"><div class="fs-doc-co">GHI Co.</div><div class="fs-doc-title">Income Statement</div><div class="fs-doc-period">Year Ended Dec 31, 2025</div></div>
+          <div class="fs-row"><span>Net Sales (all on credit)</span><span class="fs-amt">$ 300,000</span></div>
+          <div class="fs-row"><span>COGS</span><span class="fs-amt neg">(180,000)</span></div>
+          <div class="fs-row sub"><span>Gross Profit</span><span class="fs-amt">120,000</span></div>
+          <div class="fs-row"><span>Operating Expenses</span><span class="fs-amt neg">(70,000)</span></div>
+          <div class="fs-row"><span>Interest Expense</span><span class="fs-amt neg">(5,000)</span></div>
+          <div class="fs-row"><span>Tax Expense</span><span class="fs-amt neg">(15,000)</span></div>
+          <div class="fs-row total"><span>Net Income</span><span class="fs-amt">$ 30,000</span></div>
+          <div class="fs-row section" style="margin-top:14px;">Other Info</div>
+          <div class="fs-row indent"><span>Avg A/R</span><span class="fs-amt">30,000</span></div>
+          <div class="fs-row indent"><span>Avg Total Assets</span><span class="fs-amt">180,000</span></div>
+          <div class="fs-row indent"><span>Avg Common Equity</span><span class="fs-amt">110,000</span></div>
+          <div class="fs-row indent"><span>Shares Outstanding</span><span class="fs-amt">10,000</span></div>
+          <div class="fs-row indent"><span>Market Price / Share</span><span class="fs-amt">$ 24</span></div>
+          <div class="fs-row indent"><span>Cash Dividends Paid</span><span class="fs-amt">9,000</span></div>
+        </div>
+      </div>
+
+      <!-- Ratio Dashboard -->
+      <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">📊 比率ダッシュボード（4カテゴリ × 12比率）</h4>
+
+      <!-- Liquidity -->
+      <div class="fs-link"><span class="fs-link-tag" style="background:#1d4ed8;">① Liquidity 流動性</span></div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
+        <tr><td>Current Ratio</td><td><code>CA / CL</code></td><td>110,000 / 50,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">2.20</td></tr>
+        <tr><td>Quick Ratio</td><td><code>(Cash + STI + A/R) / CL</code></td><td>(20,000 + 5,000 + 35,000) / 50,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">1.20</td></tr>
+        <tr><td>A/R Turnover</td><td><code>Net Credit Sales / Avg A/R</code></td><td>300,000 / 30,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">10.0×</td></tr>
+      </table></div>
+
+      <!-- Solvency -->
+      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#7c2d12;">② Solvency 支払能力</span></div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
+        <tr><td>Debt to Assets</td><td><code>Total Liab / Total Assets</code></td><td>80,000 / 200,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">40%</td></tr>
+        <tr><td>Times Interest Earned</td><td><code>(NI + Int + Tax) / Int Exp</code></td><td>(30,000 + 5,000 + 15,000) / 5,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">10.0×</td></tr>
+      </table></div>
+
+      <!-- Profitability -->
+      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#059669;">③ Profitability 収益性</span></div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
+        <tr><td>Profit Margin</td><td><code>NI / Net Sales</code></td><td>30,000 / 300,000</td><td style="color:#10b981;font-weight:800;text-align:right;">10%</td></tr>
+        <tr><td>Gross Profit Rate</td><td><code>GP / Sales</code></td><td>120,000 / 300,000</td><td style="color:#10b981;font-weight:800;text-align:right;">40%</td></tr>
+        <tr><td>ROA</td><td><code>NI / Avg Total Assets</code></td><td>30,000 / 180,000</td><td style="color:#10b981;font-weight:800;text-align:right;">16.7%</td></tr>
+        <tr><td>ROE</td><td><code>NI / Avg Common Equity</code></td><td>30,000 / 110,000</td><td style="color:#10b981;font-weight:800;text-align:right;">27.3%</td></tr>
+      </table></div>
+
+      <!-- Market -->
+      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#9333ea;">④ Market 市場性</span></div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
+        <tr><td>EPS</td><td><code>(NI − Pref Div) / Avg Shares</code></td><td>(30,000 − 0) / 10,000</td><td style="color:#a855f7;font-weight:800;text-align:right;">$ 3.00</td></tr>
+        <tr><td>P/E Ratio</td><td><code>Market Price / EPS</code></td><td>$24 / $3.00</td><td style="color:#a855f7;font-weight:800;text-align:right;">8.0×</td></tr>
+        <tr><td>Payout Ratio</td><td><code>Cash Dividends / NI</code></td><td>9,000 / 30,000</td><td style="color:#a855f7;font-weight:800;text-align:right;">30%</td></tr>
+      </table></div>
+
+      <div class="fs-articulation">🎯 <b>比率の読み方：</b><br>
+        ・<b style="color:#22d3ee;">Liquidity</b> = 短期支払能力（CR &gt; 1.0 推奨、QR &gt; 1.0 でより厳格）<br>
+        ・<b style="color:#fcd34d;">Solvency</b> = 長期支払能力（D/A 低い方が安全、TIE 高い方が安全）<br>
+        ・<b style="color:#10b981;">Profitability</b> = 稼ぐ力（ROE &gt; ROA は財務レバレッジ効果あり）<br>
+        ・<b style="color:#a855f7;">Market</b> = 市場評価（P/E 高 = 成長期待大、Payout 高 = 成熟企業）
+      </div>
+
       <h3 class="wk-section-h">📈 Horizontal vs Vertical</h3>
       <div class="wk-cmp">
         <div class="wk-cmp-col left"><h4>Horizontal（横）</h4><ul>
