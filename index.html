@@ -8900,8 +8900,8 @@ var QUESTIONS = [
     q: 'Bonding (insuring) employees who handle cash is an example of which internal control category?',
     opts: ['A) Other controls — specifically a Human Resource Control (HR-based safeguard)','B) Segregation of duties — separating custody, recording, and authorization roles','C) Documentation procedures — pre-numbered receipts and audit trail maintenance','D) Physical controls — safes, vaults, access cards, surveillance cameras for assets'],
     ans: 0,
-    exp: '**Bonding** (employee dishonesty insurance) is a **Human Resource Control** (an "other control" category). Other HR examples: mandatory vacations, background checks, rotation of duties. Bonding transfers the risk of employee theft to an insurance company.',
-    we: { 1: 'Bonding does **not separate duties** — it insures against theft regardless of role assignment.', 2: 'Bonding is **not documentation** — it is an insurance contract, not a paper trail control.', 3: 'Bonding is **not physical** — physical controls protect assets directly (safes, locks), bonding handles risk financially.' }
+    exp: '身元保証保険（Bonding／従業員不正保険）は『人的資源統制（その他統制）』の一種です。他のHR例：強制休暇・身元調査・職務ローテーション。Bonding は従業員による窃盗リスクを保険会社へ移転します。',
+    we: { 1: 'Bonding は職務を分離しません。役割配分に関係なく窃盗に対し保険をかけます。', 2: 'Bonding は文書化ではなく、保険契約であって証憑統制ではありません。', 3: 'Bonding は物理的統制ではありません。物理統制（金庫・施錠）は資産を直接守り、Bonding はリスクを財務的に処理します。' }
   },
   // ===========================================================
   // CHAPTER 8 - Receivables
@@ -8911,88 +8911,88 @@ var QUESTIONS = [
     q: 'Which of the following is NOT a type of receivable?',
     opts: ['A) Accounts Receivable','B) Notes Receivable','C) Interest Receivable (other receivable)','D) Accounts Payable'],
     ans: 3,
-    exp: 'Accounts Payable is a LIABILITY, not a receivable. AR, NR, and Interest Receivable are all types of receivables (rights to receive money).',
-    we: { 0: 'AR is a type of receivable', 1: 'NR is a type', 2: 'Interest Receivable is "Other Receivable"' }
+    exp: 'Accounts Payable は『負債』であって債権ではありません。AR・NR・Interest Receivable はすべて債権（金銭を受け取る権利）の一種です。',
+    we: { 0: 'AR は債権の一種です。', 1: 'NR は債権の一種です。', 2: 'Interest Receivable は『その他債権』です。' }
   },
   {
     id: 'q521', conceptId: 'c8_uncollectibles', ch: 8, type: 'A',
     q: 'Under the Allowance Method, the journal entry to record bad debt expense at year-end is:',
     opts: ['A) Dr Bad Debt Expense / Cr Allowance for Doubtful Accounts','B) Dr Bad Debt Expense / Cr Accounts Receivable','C) Dr Allowance for Doubtful Accounts / Cr Accounts Receivable','D) Dr Accounts Receivable / Cr Allowance for Doubtful Accounts'],
     ans: 0,
-    exp: 'The Allowance Method estimates uncollectibles at year-end: Dr Bad Debt Expense (IS) / Cr Allowance for Doubtful Accounts (Contra-Asset on SOFP). AR is NOT reduced at this estimate stage.',
-    we: { 1: 'This is the Direct Write-off Method', 2: 'This is the actual write-off entry (after estimate)', 3: 'Wrong direction' }
+    exp: 'Allowance Method は期末に貸倒を見積もります：借方 Bad Debt Expense（IS）/ 貸方 Allowance for Doubtful Accounts（SOFP の評価資産）。この見積段階では AR を減らしません。',
+    we: { 1: 'これは Direct Write-off Method（直接償却法）です。', 2: 'これは実際の write-off 仕訳（見積の後）です。', 3: '方向が誤りです。' }
   },
   {
     id: 'q522', conceptId: 'c8_uncollectibles', ch: 8, type: 'B',
     q: 'When a specific account is written off under the Allowance Method, the entry is:',
     opts: ['A) Dr Bad Debt Expense / Cr AR','B) Dr Allowance for Doubtful Accounts / Cr AR','C) Dr AR / Cr Bad Debt Expense','D) Dr Allowance / Cr Bad Debt Expense'],
     ans: 1,
-    exp: 'Write-off: Dr Allowance for Doubtful Accounts / Cr Accounts Receivable. NO expense is recognized — the expense was already recorded as an estimate. Both Allowance and AR decrease by the same amount, leaving Net AR (NRV) unchanged.',
-    we: { 0: 'This is Direct Write-off Method (not Allowance)', 2: 'Wrong direction', 3: 'Both wrong' }
+    exp: 'Write-off：借方 Allowance for Doubtful Accounts / 貸方 Accounts Receivable。費用は認識しません — 費用は既に見積で計上済みです。Allowance と AR が同額減り、Net AR（NRV）は変わりません。',
+    we: { 0: 'これは Direct Write-off Method（Allowance ではない）です。', 2: '方向が誤りです。', 3: '両方とも誤りです。' }
   },
   {
     id: 'q523', conceptId: 'c8_uncollectibles', ch: 8, type: 'C',
     q: 'Allowance for Doubtful Accounts has a beginning credit balance of €500. Using % of Sales method (2% of credit sales of €200,000), what is the ending balance of Allowance?',
     opts: ['A) €4,000','B) €4,500','C) €3,500','D) €500'],
     ans: 1,
-    exp: '% of Sales: Bad Debt Expense = €200,000 × 2% = €4,000 (ADDED to existing balance, ignores starting balance). Ending Allowance = €500 + €4,000 = €4,500. (% of Sales method adds the full amount; % of Receivables adjusts to a target.)',
-    we: { 0: 'Forgot existing balance', 2: 'Subtracted instead of added', 3: 'No adjustment' }
+    exp: '売上比率法：Bad Debt Expense = €200,000 × 2% = €4,000（既存残高を無視し、全額を加算）。期末 Allowance = €500 + €4,000 = €4,500。（売上比率法は全額加算、債権比率法は目標へ調整。）',
+    we: { 0: '既存残高を忘れています。', 2: '加算すべきところを減算しています。', 3: '調整なしです。' }
   },
   {
     id: 'q524', conceptId: 'c8_estimation_methods', ch: 8, type: 'C',
     q: 'Using Aging of Receivables method, target Allowance is €3,000. Current Allowance has a credit balance of €800. Bad Debt Expense for the year is:',
     opts: ['A) €3,000','B) €2,200','C) €3,800','D) €800'],
     ans: 1,
-    exp: '% of Receivables (Aging) sets a TARGET ending balance for Allowance. Bad Debt Expense = Target − Existing balance = €3,000 − €800 = €2,200. The entry: Dr BDE 2,200 / Cr Allowance 2,200. This brings Allowance balance to €3,000.',
-    we: { 0: 'This is the target Allowance, not BDE', 2: 'Wrong: would over-allowance', 3: 'Existing balance only' }
+    exp: '債権比率法（Aging）は Allowance の『目標』期末残高を設定します。Bad Debt Expense = 目標 − 既存残高 = €3,000 − €800 = €2,200。仕訳：借方 BDE 2,200 / 貸方 Allowance 2,200。これで Allowance 残高が €3,000 になります。',
+    we: { 0: 'これは目標 Allowance で、BDE ではありません。', 2: '誤り：Allowance が過大になります。', 3: '既存残高だけです。' }
   },
   {
     id: 'q525', conceptId: 'c8_estimation_methods', ch: 8, type: 'C',
     q: 'Aging Schedule: target Allowance €4,500. Current Allowance has a DEBIT balance of €200 (write-offs exceeded estimate). Bad Debt Expense should be:',
     opts: ['A) €4,300','B) €4,500','C) €4,700','D) €200'],
     ans: 2,
-    exp: 'When Allowance has a DEBIT balance (unusual, means write-offs > prior estimates), BDE must clear the debit AND build to target. BDE = Target + Debit balance = €4,500 + €200 = €4,700. Entry: Dr BDE 4,700 / Cr Allowance 4,700 (resulting in €4,500 credit balance).',
-    we: { 0: 'Subtracted instead of added', 1: 'Ignored Dr balance', 3: 'Only the existing imbalance' }
+    exp: 'Allowance が借方残高（異例、write-off が過去の見積を上回った）のとき、BDE は借方を消し目標まで積み増します。BDE = 目標 + 借方残高 = €4,500 + €200 = €4,700。仕訳：借方 BDE 4,700 / 貸方 Allowance 4,700（結果は €4,500 の貸方残高）。',
+    we: { 0: '加算すべきところを減算しています。', 1: '借方残高を無視しています。', 3: '既存の不均衡分だけです。' }
   },
   {
     id: 'q526', conceptId: 'c8_uncollectibles', ch: 8, type: 'B',
     q: 'A customer pays €300 on an account previously written off. Under the Allowance Method, the journal entries are:',
     opts: ['A) Single entry: Dr Cash / Cr Bad Debt Expense','B) Two entries: (1) Dr AR / Cr Allowance, (2) Dr Cash / Cr AR','C) Single entry: Dr Cash / Cr AR','D) Single entry: Dr Cash / Cr Sales Revenue'],
     ans: 1,
-    exp: 'Recovery requires 2 entries: (1) Reinstate AR: Dr AR 300 / Cr Allowance 300; (2) Collect: Dr Cash 300 / Cr AR 300. This properly tracks the customer\'s payment history and adjusts the Allowance.',
-    we: { 0: 'Single entry skips reinstating AR; loses customer payment history', 2: 'Skips Allowance adjustment', 3: 'Not a sale, recovery of bad debt' }
+    exp: 'Recovery には2仕訳が必要：(1)AR を復活：借方 AR 300 / 貸方 Allowance 300、(2)回収：借方 Cash 300 / 貸方 AR 300。これで顧客の支払履歴を適切に追跡し Allowance を調整します。',
+    we: { 0: '単一仕訳は AR の復活を省き、顧客の支払履歴が失われます。', 2: 'Allowance の調整を省いています。', 3: 'これは売上ではなく、貸倒の回収です。' }
   },
   {
     id: 'q527', conceptId: 'c8_notes_receivable', ch: 8, type: 'C',
     q: 'On July 1, J-BOX accepts a 6-month, 8%, €12,000 note receivable. What is the interest revenue accrual at December 31?',
     opts: ['A) €480','B) €960','C) €240','D) €80'],
     ans: 0,
-    exp: 'Interest = Face × Rate × Time = €12,000 × 8% × 6/12 = €480. Time = 6/12 because July 1 to Dec 31 = exactly 6 months. At Dec 31: Dr Interest Receivable 480 / Cr Interest Revenue 480.',
-    we: { 1: '€960 = full year interest (wrong)', 2: '€240 = 3 months only', 3: '€80 = 1 month' }
+    exp: '利息 = 額面 × 利率 × 期間 = €12,000 × 8% × 6/12 = €480。期間は6/12（7月1日から12月31日でちょうど6か月）。12月31日：借方 Interest Receivable 480 / 貸方 Interest Revenue 480。',
+    we: { 1: '€960 は1年分の利息（誤り）です。', 2: '€240 は3か月分だけです。', 3: '€80 は1か月分です。' }
   },
   {
     id: 'q528', conceptId: 'c8_notes_receivable', ch: 8, type: 'C',
     q: 'When a Note Receivable is dishonored (defaulted), the correct entry is:',
     opts: ['A) Write it off — Dr Bad Debt Expense / Cr NR','B) Transfer to AR — Dr AR / Cr NR + Interest items','C) Keep as NR and pursue collection','D) Reverse the original NR entry'],
     ans: 1,
-    exp: 'When a Note is dishonored (maker fails to pay at maturity), transfer the total amount (principal + accrued interest) to AR for continued collection efforts: Dr Accounts Receivable / Cr Notes Receivable + Cr Interest Receivable + Cr Interest Revenue (for current period). If ultimately uncollectible, use Allowance Method.',
-    we: { 0: 'Premature; AR transfer first', 2: 'Should be transferred to AR', 3: 'Original sale stands' }
+    exp: '手形が不渡り（満期に支払不能）になると、総額（元本 + 発生利息）を継続回収のため AR に振り替えます：借方 Accounts Receivable / 貸方 Notes Receivable + 貸方 Interest Receivable + 貸方 Interest Revenue（当期分）。最終的に回収不能なら Allowance Method を使います。',
+    we: { 0: '早すぎます。まず AR へ振り替えます。', 2: 'AR へ振り替えるべきです。', 3: '元の売上はそのままです。' }
   },
   {
     id: 'q529', conceptId: 'c8_ar_disposal', ch: 8, type: 'A',
     q: 'A company factors €50,000 of receivables to a finance company at 4% factor fee, without recourse. The journal entry includes:',
     opts: ['A) Dr Cash 48,000, Dr Service Charge Expense 2,000 / Cr AR 50,000','B) Dr Cash 50,000 / Cr AR 48,000, Cr Service Charge Revenue 2,000','C) Dr Cash 50,000 / Cr Notes Payable 50,000','D) Dr AR 48,000, Dr Service Charge Expense 2,000 / Cr Cash 50,000'],
     ans: 0,
-    exp: 'Factor fee = €50,000 × 4% = €2,000. Cash received = €48,000. AR is sold (removed from books). Entry: Dr Cash 48,000, Dr Service Charge Expense 2,000 / Cr AR 50,000. "Without recourse" means risk transferred to factor.',
-    we: { 1: 'Service Charge is an expense, not revenue', 2: 'This is factoring (sale), not borrowing', 3: 'Wrong direction' }
+    exp: 'ファクタリング手数料 = €50,000 × 4% = €2,000。受取現金 = €48,000。AR を売却（帳簿から除く）。仕訳：借方 Cash 48,000 / 借方 Service Charge Expense 2,000 / 貸方 AR 50,000。『償還請求権なし（without recourse）』はリスクがファクターに移転することを意味します。',
+    we: { 1: 'Service Charge は費用であって収益ではありません。', 2: 'これはファクタリング（売却）で、借入ではありません。', 3: '方向が誤りです。' }
   },
   {
     id: 'q530', conceptId: 'c8_uncollectibles', ch: 8, type: 'A',
     q: 'Why does GAAP/IFRS prefer the Allowance Method over the Direct Write-off Method?',
     opts: ['A) The Allowance Method better matches bad debt expense with related sales revenues (Matching Principle)','B) The Allowance Method requires simpler computations and less estimation work than the Direct Write-off Method','C) The Direct Write-off Method overstates Accounts Receivable until specific accounts are written off','D) Both (A) Matching Principle compliance AND (C) Direct Write-off overstates AR are valid reasons'],
     ans: 3,
-    exp: 'Both (A) and (C) are valid reasons: (1) Allowance Method matches bad debt expense with revenue **in the period of sale** (Matching Principle); (2) Direct Write-off keeps AR at gross until specific accounts are determined uncollectible, **overstating receivables**. Direct Write-off may be used only when amounts are immaterial.',
-    we: { 0: 'Correct reason but **incomplete** — option (C) AR overstatement is also a valid reason GAAP/IFRS prefer Allowance.', 1: 'Direct Write-off is actually **easier** to compute (no estimation required) — ease of computation is NOT a preference reason.', 2: 'Correct reason but **incomplete** — option (A) Matching Principle compliance is also a valid reason.' }
+    exp: '(A)も(C)も妥当な理由です：(1)Allowance Method は貸倒費用を『販売の期間』に収益と対応させる（対応の原則）、(2)Direct Write-off は特定の勘定が回収不能と判明するまで AR を総額のままにし、『債権を過大計上』する。Direct Write-off は金額が重要でない場合のみ使用可。',
+    we: { 0: '正しい理由ですが『不完全』です。(C) の債権過大も GAAP/IFRS が Allowance を好む妥当な理由です。', 1: 'Direct Write-off はむしろ計算が『容易』（見積不要）です。計算の容易さは好まれる理由ではありません。', 2: '正しい理由ですが『不完全』です。(A) の対応の原則順守も妥当な理由です。' }
   },
   // ===========================================================
   // CHAPTER 9 - Plant Assets (Additional)
@@ -9002,112 +9002,112 @@ var QUESTIONS = [
     q: 'Which of the following costs should NOT be capitalized as part of Equipment?',
     opts: ['A) Sales tax','B) Freight-in (transportation)','C) Annual operating license fee','D) Installation cost'],
     ans: 2,
-    exp: 'Annual license fees are a RECURRING (annual) cost, not part of getting the asset ready for use. They are expensed each year as License Expense. Sales tax, freight-in, and installation are one-time costs to acquire and prepare the asset → capitalize.',
-    we: { 0: 'Sales tax is part of acquisition cost', 1: 'Freight is part of acquisition cost', 3: 'Installation is needed to use the asset' }
+    exp: '年間ライセンス料は『毎年の経常費用』で、資産を使用可能にする費用ではありません。毎年 License Expense として費用化します。売上税・引取運賃・据付費は取得・準備の一回限りの費用 → 資産計上。',
+    we: { 0: '売上税は取得原価の一部です。', 1: '運賃は取得原価の一部です。', 3: '据付は資産を使うために必要です。' }
   },
   {
     id: 'q541', conceptId: 'c9_plant_assets_acquisition', ch: 9, type: 'C',
     q: 'Company purchases equipment with list price €50,000. Receives 10% trade discount, pays €2,000 freight, €500 sales tax, €1,000 installation, €300 testing. Equipment cost:',
     opts: ['A) €48,800','B) €50,800','C) €45,000','D) €52,800'],
     ans: 0,
-    exp: 'List €50,000 × (1 − 10% trade discount) = €45,000 + €2,000 (freight) + €500 (sales tax) + €1,000 (installation) + €300 (testing) = €48,800.',
-    we: { 1: 'Didn\'t apply trade discount', 2: 'Only discounted price, missed other costs', 3: 'Used list price not discounted' }
+    exp: '定価 €50,000 × (1 − 値引10%) = €45,000 + €2,000（運賃）+ €500（売上税）+ €1,000（据付）+ €300（試運転）= €48,800。',
+    we: { 1: '値引を適用していません。', 2: '値引価格だけで、他の費用を漏らしています。', 3: '値引前の定価を使っています。' }
   },
   {
     id: 'q542', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
     q: 'Equipment cost €40,000, residual €4,000, 6-year useful life. Straight-Line depreciation for Year 1:',
     opts: ['A) €6,667','B) €6,000','C) €7,333','D) €4,000'],
     ans: 1,
-    exp: 'SL = (Cost − Residual) / Life = (€40,000 − €4,000) / 6 = €36,000 / 6 = €6,000 per year.',
-    we: { 0: 'Used €40,000/6 (forgot residual)', 2: 'Calculation error', 3: 'Used residual value, not depreciation' }
+    exp: '定額法 = (原価 − 残存価額) / 耐用年数 = (€40,000 − €4,000) / 6 = €36,000 / 6 = 年 €6,000。',
+    we: { 0: '€40,000/6 を使い残存価額を忘れています。', 2: '計算ミスです。', 3: '減価償却費ではなく残存価額を使っています。' }
   },
   {
     id: 'q543', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
     q: 'Equipment cost €60,000, 5-year life, residual €5,000. Double-Declining-Balance depreciation for Year 1:',
     opts: ['A) €22,000','B) €24,000','C) €12,000','D) €11,000'],
     ans: 1,
-    exp: 'DDB rate = 2 × (1/5) = 40%. Year 1 = €60,000 × 40% = €24,000. NOTE: DDB ignores residual in early years; check that NBV doesn\'t go below residual in final years.',
-    we: { 0: 'Used (Cost − Residual) × 40% = wrong formula', 2: 'Used SL rate instead of doubled', 3: '(60k − 5k)/5 = SL formula' }
+    exp: 'DDB 率 = 2 × (1/5) = 40%。Year 1 = €60,000 × 40% = €24,000。注：DDB は初期に残存価額を無視し、最終年に NBV が残存価額を下回らないか確認します。',
+    we: { 0: '(原価 − 残存価額) × 40% は誤った公式です。', 2: '2倍ではなく定額法の率を使っています。', 3: '(60k − 5k)/5 は定額法の公式です。' }
   },
   {
     id: 'q544', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
     q: 'Equipment cost €50,000, residual €5,000, expected to produce 100,000 units. Year 1: 22,000 units produced. Units-of-Activity depreciation:',
     opts: ['A) €9,900','B) €11,000','C) €9,000','D) €22,000'],
     ans: 0,
-    exp: 'Per-unit rate = (€50,000 − €5,000) / 100,000 = €0.45/unit. Year 1 = 22,000 × €0.45 = €9,900.',
-    we: { 1: 'Forgot residual: €50,000/100,000 × 22,000', 2: 'SL method', 3: 'Used cost as depreciation' }
+    exp: '単位あたり率 = (€50,000 − €5,000) / 100,000 = €0.45/単位。Year 1 = 22,000 × €0.45 = €9,900。',
+    we: { 1: '残存価額を忘れ：€50,000/100,000 × 22,000 です。', 2: '定額法です。', 3: '原価を減価償却費として使っています。' }
   },
   {
     id: 'q545', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
     q: 'On July 1, 2024, Equipment cost €24,000, residual €4,000, 5-year SL. Depreciation for the year ending Dec 31, 2024:',
     opts: ['A) €4,000','B) €2,000','C) €2,400','D) €4,800'],
     ans: 1,
-    exp: 'Annual SL = (€24,000 − €4,000) / 5 = €4,000. Partial year (July 1 - Dec 31 = 6 months): €4,000 × 6/12 = €2,000.',
-    we: { 0: 'Full year (forgot proration)', 2: 'Used Cost/Life (no residual)', 3: 'Wrong months' }
+    exp: '年間定額法 = (€24,000 − €4,000) / 5 = €4,000。部分年（7月1日〜12月31日 = 6か月）：€4,000 × 6/12 = €2,000。',
+    we: { 0: '1年分（月割りを忘れ）です。', 2: '原価/耐用年数（残存価額なし）を使っています。', 3: '月数が誤りです。' }
   },
   {
     id: 'q546', conceptId: 'c9_disposal', ch: 9, type: 'C',
     q: 'Equipment cost €30,000, Accumulated Depreciation €25,000. Sold for €8,000. Gain/(Loss):',
     opts: ['A) Gain €3,000','B) Loss €3,000','C) Gain €8,000','D) Gain €5,000'],
     ans: 0,
-    exp: 'NBV = €30,000 − €25,000 = €5,000. Gain = Proceeds − NBV = €8,000 − €5,000 = Gain €3,000. Entry: Dr Cash 8,000, Dr Accum Dep 25,000 / Cr Equipment 30,000, Cr Gain on Disposal 3,000.',
-    we: { 1: 'Should be gain, not loss', 2: 'That\'s the proceeds', 3: 'That\'s the NBV' }
+    exp: 'NBV = €30,000 − €25,000 = €5,000。利得 = 売却額 − NBV = €8,000 − €5,000 = 利得 €3,000。仕訳：借方 Cash 8,000 / 借方 Accum Dep 25,000 / 貸方 Equipment 30,000 / 貸方 Gain on Disposal 3,000。',
+    we: { 1: '損失ではなく利得です。', 2: 'それは売却額です。', 3: 'それは NBV です。' }
   },
   {
     id: 'q547', conceptId: 'c9_disposal', ch: 9, type: 'C',
     q: 'Equipment cost €15,000, Accumulated Depreciation €13,500. Retired (discarded) with no salvage value. Loss:',
     opts: ['A) €0','B) €1,500','C) €15,000','D) €13,500'],
     ans: 1,
-    exp: 'Retirement with no proceeds: Loss = NBV = €15,000 − €13,500 = €1,500. Entry: Dr Accum Dep 13,500, Dr Loss on Disposal 1,500 / Cr Equipment 15,000.',
-    we: { 0: 'Loss = NBV when proceeds = 0', 2: 'Used cost', 3: 'Used Accum Dep' }
+    exp: '売却額なしの除却：損失 = NBV = €15,000 − €13,500 = €1,500。仕訳：借方 Accum Dep 13,500 / 借方 Loss on Disposal 1,500 / 貸方 Equipment 15,000。',
+    we: { 0: '売却額0のとき損失 = NBV です。', 2: '原価を使っています。', 3: '減価償却累計額を使っています。' }
   },
   {
     id: 'q548', conceptId: 'c9_intangibles', ch: 9, type: 'A',
     q: 'Which intangible asset is NOT amortized (only impairment tested)?',
     opts: ['A) Patent','B) Copyright','C) Trademark','D) Franchise (with definite life)'],
     ans: 2,
-    exp: 'Trademarks are renewable indefinitely, so they have an indefinite useful life → NOT amortized; only tested for impairment. Patents (max 20 yrs), Copyrights (50-70 yrs), and Franchises (definite contract period) all have definite lives and ARE amortized.',
-    we: { 0: 'Patent has max 20-year life, amortized', 1: 'Copyright has definite life, amortized', 3: 'Franchise has contract period' }
+    exp: '商標は無期限に更新できるため耐用年数が無期限 → 償却せず、減損のみテスト。特許（最長20年）・著作権（50〜70年）・フランチャイズ（契約期間）は耐用年数が確定で償却します。',
+    we: { 0: '特許は最長20年の耐用年数で償却します。', 1: '著作権は確定耐用年数で償却します。', 3: 'フランチャイズは契約期間があります。' }
   },
   {
     id: 'q549', conceptId: 'c9_intangibles', ch: 9, type: 'C',
     q: 'Foreigncandy.nl buys Candyislife BV for €200,000. Fair value of identifiable net assets: Assets €120,000 − Liabilities €30,000 = €90,000. Goodwill recognized:',
     opts: ['A) €110,000','B) €200,000','C) €120,000','D) €0'],
     ans: 0,
-    exp: 'Goodwill = Purchase Price − Fair Value of Net Assets = €200,000 − €90,000 = €110,000. Goodwill is recorded only on purchase of another company. Internally-generated goodwill is NOT recognized.',
-    we: { 1: 'Total purchase price (not goodwill)', 2: 'Asset value (not goodwill)', 3: 'Goodwill IS recognized when purchased' }
+    exp: 'のれん = 買収価額 − 取得純資産の公正価値 = €200,000 − €90,000 = €110,000。のれんは他社買収時のみ計上します。自己創設のれんは認識しません。',
+    we: { 1: '総買収価額（のれんではない）です。', 2: '資産価額（のれんではない）です。', 3: 'のれんは購入時に認識します。' }
   },
   {
     id: 'q550', conceptId: 'c9_intangibles', ch: 9, type: 'B',
     q: 'Under IFRS, research and development costs are treated as:',
     opts: ['A) Both research AND development costs are always immediately expensed in the income statement','B) Research is Expense; Development is Expense UNLESS technical and commercial feasibility is established','C) Both research AND development costs are always capitalized as intangible assets on the SOFP','D) Research is capitalized as an intangible asset; Development costs are expensed in the period'],
     ans: 1,
-    exp: '**IFRS IAS 38**: **Research** costs are ALWAYS expensed (uncertain economic benefit). **Development** costs are expensed unless ALL conditions for capitalization are met (technical feasibility, commercial feasibility, intent to complete, ability to use/sell, demonstrable future benefit, reliable cost measurement).',
-    we: { 0: 'Development CAN be **capitalized** if all six IAS 38 criteria are met — not always expensed.', 2: 'Research is **always expensed** under IFRS — never capitalized (this is US GAAP\'s position too).', 3: '**Backwards** — the IFRS rule is the opposite: Research is expensed, Development may be capitalized.' }
+    exp: 'IFRS（IAS 38）：研究（Research）費は常に費用化（経済的便益が不確実）。開発（Development）費は資本化の全条件（技術的実現可能性・商業的実現可能性・完成意図・使用/売却能力・将来便益の証明・信頼できる原価測定）を満たさない限り費用化します。',
+    we: { 0: '開発費は IAS 38 の6条件すべてを満たせば『資本化可能』で、常に費用化ではありません。', 2: '研究費は IFRS で『常に費用化』 — 資本化しません（US GAAP も同じ立場）。', 3: '逆です。IFRS のルールは反対：研究は費用化、開発は資本化し得ます。' }
   },
   {
     id: 'q551', conceptId: 'c9_revaluation', ch: 9, type: 'A',
     q: 'Under IFRS Revaluation Model, when fair value > NBV, the gain is recorded as:',
     opts: ['A) Revaluation Surplus (Equity / OCI, not Net Income)','B) Gain on Revaluation (Income Statement)','C) Other Income (Income Statement)','D) Direct increase to Retained Earnings'],
     ans: 0,
-    exp: 'IFRS conservatism: Revaluation GAINS go to Revaluation Surplus in Equity (reported in OCI — Other Comprehensive Income). They do NOT affect Net Income. LOSSES, however, go to Impairment Loss in Income Statement.',
-    we: { 1: 'Gains do NOT hit Net Income', 2: 'Not Other Income', 3: 'Goes through OCI, not directly to RE' }
+    exp: 'IFRS の保守主義：再評価『益』は Equity の Revaluation Surplus（OCI＝その他包括利益で報告）へ。Net Income には影響しません。一方『損』は損益計算書の Impairment Loss へ。',
+    we: { 1: '益は Net Income に影響しません。', 2: 'Other Income ではありません。', 3: 'OCI を通り、直接 RE へではありません。' }
   },
   {
     id: 'q552', conceptId: 'c9_revaluation', ch: 9, type: 'C',
     q: 'Equipment cost €600,000, Accum Dep €150,000 (NBV €450,000). Fair value €250,000. Impairment Loss:',
     opts: ['A) €150,000','B) €200,000','C) €350,000','D) €250,000'],
     ans: 1,
-    exp: 'Impairment Loss = NBV − Fair Value = €450,000 − €250,000 = €200,000. Entry: Dr Accum Dep 150,000, Dr Impairment Loss 200,000 / Cr Equipment 250,000. New carrying = €250,000.',
-    we: { 0: 'That\'s the original Accum Dep', 2: 'Used cost − fair value', 3: 'Fair value itself' }
+    exp: '減損損失 = NBV − 公正価値 = €450,000 − €250,000 = €200,000。仕訳：借方 Accum Dep 150,000 / 借方 Impairment Loss 200,000 / 貸方 Equipment 250,000。新帳簿価額 = €250,000。',
+    we: { 0: 'それは元の減価償却累計額です。', 2: '原価 − 公正価値を使っています。', 3: '公正価値そのものです。' }
   },
   {
     id: 'q553', conceptId: 'c9_maintenance_capital', ch: 9, type: 'B',
     q: 'A company spends €30,000 to replace the engine of a delivery truck, extending its useful life by 3 years. The proper treatment is:',
     opts: ['A) Expense as Repair Expense','B) Capitalize to the Truck account','C) Capitalize to a new "Engine" account, depreciated separately','D) Either A or B is acceptable'],
     ans: 1,
-    exp: 'Engine replacement that EXTENDS useful life is a Capital Expenditure: Dr Truck (or Equipment) / Cr Cash. Depreciation must be recalculated based on the new NBV (Original NBV + €30,000) over the revised useful life (original remaining + 3 years).',
-    we: { 0: 'Wrong — extends life means capitalize', 2: 'Generally added to existing asset, not separate', 3: 'Only one treatment is correct' }
+    exp: '耐用年数を『延長』するエンジン交換は資本的支出：借方 Truck（または Equipment）/ 貸方 Cash。減価償却は新 NBV（元 NBV + €30,000）を改訂耐用年数（元の残り + 3年）で再計算します。',
+    we: { 0: '誤り — 延長するなら資本化します。', 2: '通常は既存資産に加え、別資産にはしません。', 3: '正しい処理は1つだけです。' }
   },
   // ===========================================================
   // CHAPTER 10 - Current Liabilities
@@ -9117,16 +9117,16 @@ var QUESTIONS = [
     q: 'Which of the following is NOT a current liability?',
     opts: ['A) Accounts Payable','B) Salaries Payable','C) Mortgage Payable (due in 10 years)','D) Unearned Revenue (subscription due in 6 months)'],
     ans: 2,
-    exp: 'A Mortgage Payable due in 10 years is a NON-current liability (>1 year). However, the portion due within the next 12 months is reclassified as "Current Maturities of Long-Term Debt." AP, Salaries Payable, and short-term Unearned Revenue are current.',
-    we: { 0: 'AP is typically <30 days → Current', 1: 'Salaries Payable accrues weekly/monthly → Current', 3: 'Due in 6 months → Current' }
+    exp: '10年後返済の Mortgage Payable は非流動負債（>1年）です。ただし次の12か月以内に返済期限が来る部分は『長期債務の流動部分』に再分類します。AP・Salaries Payable・短期の Unearned Revenue は流動です。',
+    we: { 0: 'AP は通常30日未満 → 流動です。', 1: 'Salaries Payable は週次・月次で発生 → 流動です。', 3: '6か月後 → 流動です。' }
   },
   {
     id: 'q561', conceptId: 'c10_notes_payable', ch: 10, type: 'C',
     q: 'On October 1, J-BOX borrows €20,000 from a bank with a 6-month, 6% note. Adjusting entry on December 31 for accrued interest:',
     opts: ['A) Dr Interest Expense 1,200 / Cr Interest Payable 1,200','B) Dr Interest Expense 300 / Cr Interest Payable 300','C) Dr Interest Expense 100 / Cr Interest Payable 100','D) Dr Interest Expense 600 / Cr Interest Payable 600'],
     ans: 1,
-    exp: 'Interest = €20,000 × 6% × 3/12 = €300. (Time = 3 months from Oct 1 to Dec 31.)',
-    we: { 0: 'Full year', 2: '1 month only', 3: '6 months (full note period)' }
+    exp: '利息 = €20,000 × 6% × 3/12 = €300。（期間は10月1日から12月31日で3か月。）',
+    we: { 0: '1年分です。', 2: '1か月分だけです。', 3: '6か月分（手形全期間）です。' }
   },
   {
     id: 'q562', conceptId: 'c10_vat', ch: 10, type: 'C',
