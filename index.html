@@ -7391,7 +7391,7 @@ var QUESTIONS = [
     id: 'q68', conceptId: 'c6_lifo',
     ch: 6,
     type: 'C',
-    q: 'Using the same data as above: Beginning 50 units@$20; Purchase 150 units@$24; 120 units sold. Under LIFO, what is the ending inventory value?',
+    q: 'Beginning inventory 50 units @ $20; a purchase adds 150 units @ $24; 120 units are sold. Under the periodic LIFO method, what is the ending inventory value?',
     opts: [
       'A) $1,920',
       'B) $1,720',
@@ -7665,7 +7665,7 @@ var QUESTIONS = [
     id: 'q86', conceptId: 'c6_lifo',
     ch: 6,
     type: 'C',
-    q: 'Using the same data (q85): Beginning 200@$5; Purchase 300@$8; 350 units sold. Under LIFO, what is COGS?',
+    q: 'Beginning inventory 200 units @ $5; a purchase adds 300 units @ $8; 350 units are sold. Under the periodic LIFO method, what is the cost of goods sold (COGS)?',
     opts: [
       'A) $2,200',
       'B) $2,650',
@@ -7680,7 +7680,7 @@ var QUESTIONS = [
     id: 'q87', conceptId: 'c6_avg_cost',
     ch: 6,
     type: 'C',
-    q: 'Using the same data (q85): Beginning 200@$5=$1,000; Purchase 300@$8=$2,400; Total 500 units=$3,400. 350 units sold. Under AVERAGE COST, what is COGS (rounded)?',
+    q: 'Beginning inventory 200 units @ $5 = $1,000; a purchase adds 300 units @ $8 = $2,400 (total 500 units = $3,400); 350 units are sold. Under the weighted-average method, what is COGS (rounded)?',
     opts: [
       'A) $2,380',
       'B) $2,200',
@@ -7967,7 +7967,7 @@ var QUESTIONS = [
 { id:'q170',conceptId:'c5_multistep_is',ch:5,type:'E', q:'Gross profit ratio = Gross Profit ÷ Net Sales. If Net Sales = $200,000 and COGS = $140,000, the gross profit ratio is:', opts:['A) 70%','B) 30%','C) 43%','D) 140%'], ans:1, exp:'売上総利益 = $200,000 − $140,000 = $60,000。売上総利益率 = $60,000 ÷ $200,000 = 30%。', we:{ 0: '70% = COGS ÷ 純売上で、原価率であり売上総利益率ではありません。', 2: '43% ≈ 売上総利益 ÷ COGS（分母が誤り）です。', 3: '140% は誤りです。売上総利益率が100%を超えることはありません。' } },
 // ===== CHAPTER 6 EXTRA (Inventory Costing) =====
 { id:'q171',conceptId:'c6_fifo',ch:6,type:'E', q:'Purchases: 100 units @ $10 (Batch 1); 100 units @ $12 (Batch 2). 150 units sold. FIFO COGS =', opts:['A) $1,600','B) $1,800','C) $1,500','D) $2,200'], ans:0, exp:'FIFO：古い単位から販売。100@$10 = $1,000 + 50@$12 = $600。COGS = $1,600。', we:{ 1: '$1,800 = 150@$12 は誤り（古い単位から先に売る）。', 2: '$1,500 = 150@$10 は誤り（$10は100単位だけ）。', 3: '$2,200 は高原価の単位を多く含みすぎています。' } },
-{ id:'q172',conceptId:'c6_fifo',ch:6,type:'E', q:'Using the FIFO example above (100@$10, 100@$12), ending inventory after selling 150 units is:', opts:['A) $600','B) $1,000','C) $1,600','D) $1,200'], ans:0, exp:'残り：Batch 2 の50単位@$12 = $600。FIFO では新しい原価が期末棚卸に残ります。', we:{ 1: '$1,000 = 100@$10 は、FIFOでBatch 1が全部売れています。', 2: '$1,600 は COGS であり、期末棚卸ではありません。', 3: '$1,200 = 100@$12 は残り数量が誤りです。' } },
+{ id:'q172',conceptId:'c6_fifo',ch:6,type:'E', q:'A company has two inventory layers: 100 units @ $10 and 100 units @ $12. Under FIFO, after selling 150 units, what is the ending inventory value?', opts:['A) $600','B) $1,000','C) $1,600','D) $1,200'], ans:0, exp:'残り：Batch 2 の50単位@$12 = $600。FIFO では新しい原価が期末棚卸に残ります。', we:{ 1: '$1,000 = 100@$10 は、FIFOでBatch 1が全部売れています。', 2: '$1,600 は COGS であり、期末棚卸ではありません。', 3: '$1,200 = 100@$12 は残り数量が誤りです。' } },
 { id:'q173',conceptId:'c6_avg_cost',ch:6,type:'E', q:'100 units @ $10, 100 units @ $12 purchased. Weighted average cost per unit is:', opts:['A) $10.00','B) $12.00','C) $11.00','D) $22.00'], ans:2, exp:'総原価 = (100×$10) + (100×$12) = $1,000 + $1,200 = $2,200。総数量 = 200。平均単価 = $2,200 ÷ 200 = $11.00。', we:{ 0: '$10 は第1バッチの原価のみです。', 1: '$12 は第2バッチの原価のみです。', 3: '$22 は $10 + $12 の合計で、単価平均ではありません。' } },
 { id:'q174',conceptId:'c6_avg_cost',ch:6,type:'E', q:'Using weighted average ($11/unit), COGS for 150 units sold is:', opts:['A) $1,500','B) $1,650','C) $1,200','D) $2,200'], ans:1, exp:'COGS = 150単位 × $11.00 = $1,650。', we:{ 0: '$1,500 = 150 × $10 は第1バッチ価格だけを使っています。', 2: '$1,200 = 100 × $12 は数量と価格が誤りです。', 3: '$2,200 は仕入れた全在庫の総原価です。' } },
 { id:'q175',conceptId:'c6_fifo_avg_lifo_compare',ch:6,type:'A', q:'During a period of RISING prices, which inventory method produces the LOWEST net income?', opts:['A) FIFO — oldest (lowest) costs go to COGS','B) Weighted Average — blended cost across batches','C) LIFO — newest (highest) costs go to COGS','D) Specific Identification — actual cost per unit'], ans:2, exp:'物価上昇時：LIFO は直近（最も高い）原価を COGS にするため COGS 最大 → 売上総利益最小 → 純利益最小。FIFO は古い（最も安い）原価を使うため純利益最大です。', we:{ 0: 'FIFO は古い（安い）原価を COGS にするため COGS 最小 → 純利益が『最大』です（逆向き）。', 1: '加重平均は FIFO と LIFO の中間で、純利益が最大でも最小でもありません。', 3: '個別法の結果はどの単位が売れたかで決まり、物価上昇時に体系的に最小とは限りません。' } },
@@ -8070,7 +8070,7 @@ var QUESTIONS = [
 { id:'q261',conceptId:'c6_fifo',ch:6,type:'E', q:'Purchases: Jan 1 beg. inv 50 units @ $8; Mar 5 bought 100 @ $10; Aug 12 bought 60 @ $12. Sold 140 units. FIFO COGS =', opts:['A) $1,300','B) $1,480','C) $1,360','D) $1,530'], ans:0, exp:'FIFO: 最も古いものから売る。50 @ $8 = $400、続いて 90 @ $10 = $900 (50+90=140 ✓)。COGS = $400 + $900 = $1,300。', we:{1:'$1,480 = LIFO COGS の近似 (60@$12 + 80@$10 = $720+$800 = $1,520ベース)。',2:'$1,360 = 計算誤り。',3:'$1,530 = 50@$8 + 100@$10 + 10@$12 = 150単位 FIFO COGS (販売量が140でなく150)。'} },
 { id:'q262',conceptId:'c6_fifo',ch:6,type:'E', q:'Beginning inventory: 20 units @ $5. Purchased 30 units @ $7. Sold 35 units. FIFO ending inventory value =', opts:['A) $150','B) $105','C) $175','D) $70'], ans:1, exp:'Total 50 units available. Sold 35 (FIFO: 20@$5=$100, 15@$7=$105 COGS=$205). Remaining 15 units @ $7 = $105. FIFO keeps newest in ending inventory.', we:{0:'$150 = 30@$5 (wrong units and wrong price).',2:'$175 = 25@$7 (wrong quantity).',3:'$70 = 10@$7 (wrong quantity).'} },
 { id:'q263',conceptId:'c6_avg_cost',ch:6,type:'E', q:'Beginning 40 units @ $6; Purchased 60 units @ $9. Weighted average cost per unit (periodic):', opts:['A) $7.50','B) $7.80','C) $6.00','D) $9.00'], ans:1, exp:'Total cost = (40×$6) + (60×$9) = $240 + $540 = $780. Total units = 100. Avg = $780 ÷ 100 = $7.80.', we:{0:'$7.50 = ($6+$9)÷2 (simple average ignores different quantities).',2:'$6.00 is only the beginning inventory cost.',3:'$9.00 is only the purchase cost.'} },
-{ id:'q264',conceptId:'c6_avg_cost',ch:6,type:'E', q:'Using the weighted average above ($7.80/unit), if 70 units are sold, ending inventory value is:', opts:['A) $546','B) $234','C) $780','D) $270'], ans:1, exp:'Ending units = 100 − 70 = 30. Ending inventory = 30 × $7.80 = $234.', we:{0:'$546 = 70 × $7.80 = COGS, not ending inventory.',2:'$780 is total cost of goods available.',3:'$270 = 30 × $9 (uses only purchase price).'} },
+{ id:'q264',conceptId:'c6_avg_cost',ch:6,type:'E', q:'A company\'s weighted-average cost is $7.80 per unit, with 100 units available for sale. If 70 units are sold, what is the ending inventory value?', opts:['A) $546','B) $234','C) $780','D) $270'], ans:1, exp:'期末数量 = 100 − 70 = 30個。期末棚卸 = 30 × $7.80 = $234。', we:{0:'$546 = 70 × $7.80 = COGS, not ending inventory.',2:'$780 is total cost of goods available.',3:'$270 = 30 × $9 (uses only purchase price).'} },
 { id:'q265',conceptId:'c6_fifo_avg_lifo_compare',ch:6,type:'E', q:'Rising prices scenario: FIFO COGS $50,000; LIFO COGS $65,000; Avg COGS $57,000. Which method gives HIGHEST ending inventory?', opts:['A) LIFO — newest costs to COGS, oldest cheap costs left in inventory','B) Average — blended cost regardless of timing of inflows','C) FIFO — oldest costs to COGS, newest expensive costs left in inventory','D) All three methods give the same ending inventory when prices change'], ans:2, exp:'With rising prices: **FIFO** uses oldest (lowest) costs for COGS, leaving newest (highest) costs in **ending inventory** → HIGHEST ending inventory balance. Note the mirror relationship: highest COGS method (LIFO) has lowest ending inventory.', we:{0:'LIFO uses newest (highest) costs for COGS → leaves oldest (lowest) costs in inventory → **LOWEST** ending inventory.',1:'Weighted Average sits between FIFO and LIFO — neither highest nor lowest in ending inventory.',3:'Methods produce **different** ending inventory amounts when prices change — that is the whole point of choosing a method.'} },
 { id:'q266',conceptId:'c6_inv_errors_is',ch:6,type:'E', q:'Ending inventory understated by $10,000. Effect on net income in THAT period:', opts:['A) Net income overstated $10,000','B) Net income understated $10,000','C) Net income unaffected','D) Net income understated $20,000'], ans:1, exp:'Understated ending inventory → COGS overstated → Gross Profit understated → Net Income understated by $10,000.', we:{0:'Understated ending inventory raises COGS and lowers (understates) net income.',2:'Inventory errors directly impact COGS and net income.',3:'The error amount is $10,000, not doubled.'} },
 { id:'q267',conceptId:'c6_inv_errors_is',ch:6,type:'E', q:'2024 ending inventory understated $8,000. Effect on 2025 net income (the NEXT year):', opts:['A) 2025 net income overstated $8,000','B) 2025 net income understated $8,000','C) No effect on 2025','D) 2025 net income understated $16,000'], ans:0, exp:'2024 ending inventory = 2025 BEGINNING inventory. Understated beginning inventory → understated COGS in 2025 → overstated 2025 net income. Errors self-correct after two years.', we:{1:'Understated beginning inventory lowers COGS and RAISES (overstates) 2025 income.',2:'Inventory errors affect the current AND next period.',3:'$16,000 would double the error.'} },
@@ -9867,26 +9867,26 @@ var QUESTIONS = [
   },
   {
     id: 'q720', conceptId: 'c8_notes_receivable', ch: 8, type: 'E',
-    q: '2024-04-01にAgriproducts BVは€10,000額面、年利6%、満期2025-04-01のnotes receivableを受け取った。年末調整仕訳 (2024-12-31) は？',
-    opts: ['A) Dr Interest Receivable 600 / Cr Interest Revenue 600', 'B) Dr Interest Receivable 450 / Cr Interest Revenue 450', 'C) Dr Cash 450 / Cr Interest Revenue 450', 'D) Dr Notes Receivable 450 / Cr Interest Revenue 450', 'E) 仕訳不要 (満期日に一括認識)', 'F) わからない'],
+    q: 'On April 1, 2024, Agriproducts BV received a €10,000 face value, 6% annual-interest note receivable maturing April 1, 2025. What is the year-end adjusting entry on December 31, 2024?',
+    opts: ['A) Dr Interest Receivable 600 / Cr Interest Revenue 600', 'B) Dr Interest Receivable 450 / Cr Interest Revenue 450', 'C) Dr Cash 450 / Cr Interest Revenue 450', 'D) Dr Notes Receivable 450 / Cr Interest Revenue 450', 'E) No entry required (recognize all at maturity)', 'F) Not sure'],
     ans: 1,
-    exp: '4/1 から 12/31 は 9ヶ月。利息発生額 = €10,000 × 6% × 9/12 = €450。発生主義により未受領でも認識: Dr Interest Receivable 450 / Cr Interest Revenue 450。',
+    exp: '4/1 から 12/31 までは9か月。発生利息 = €10,000 × 6% × 9/12 = €450。発生主義により未受領でも認識します：Dr Interest Receivable 450 / Cr Interest Revenue 450。',
     we: { 0: '€600 = 12ヶ月分の利息。4/1から12/31は9ヶ月のみ。', 2: 'Cashはまだ受け取っていない (満期は2025-04-01)。Receivableで計上。', 3: 'Notes Receivable (元本) は触らない。利息は別勘定 (Interest Receivable)。', 4: 'matching原則違反。発生した期間に認識すべき。', 5: '「わからない」を選択。利息発生 = Face × Rate × Time/12、未受領なら Dr Interest Receivable。' }
   },
   {
     id: 'q721', conceptId: 'c8_notes_maturity', ch: 8, type: 'E',
-    q: '上記Q720続き。2025-04-01に元本と利息を満額受領。仕訳は？',
-    opts: ['A) Dr Cash 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 600', 'B) Dr Cash 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150', 'C) Dr Cash 10,450 / Cr Notes Receivable 10,000 / Cr Interest Revenue 450', 'D) Dr Cash 10,600 / Cr Notes Receivable 10,600', 'E) Dr Cash 10,000 / Cr Notes Receivable 10,000', 'F) わからない'],
+    q: 'On April 1, 2024, Agriproducts BV received a €10,000, 6% note receivable maturing April 1, 2025, and accrued €450 of interest at December 31, 2024. On April 1, 2025, it collects the full principal plus interest. What is the entry?',
+    opts: ['A) Dr Cash 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 600', 'B) Dr Cash 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150', 'C) Dr Cash 10,450 / Cr Notes Receivable 10,000 / Cr Interest Revenue 450', 'D) Dr Cash 10,600 / Cr Notes Receivable 10,600', 'E) Dr Cash 10,000 / Cr Notes Receivable 10,000', 'F) Not sure'],
     ans: 1,
-    exp: '受領総額 = €10,000 + (€10,000 × 6%) = €10,600。Interest Receivable €450 は2024年末に既に計上済 → 取り崩し。2025年1〜3月の利息 = €10,000 × 6% × 3/12 = €150 (新規認識)。仕訳: Dr Cash 10,600 / Cr Notes 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150。',
+    exp: '受領総額 = €10,000 + (€10,000 × 6%) = €10,600。Interest Receivable €450 は2024年末に計上済み → 取り崩し。2025年1〜3月の利息 = €10,000 × 6% × 3/12 = €150（新規認識）。仕訳：Dr Cash 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150。',
     we: { 0: '€600全額を Revenue にすると、前期計上分€450を二重計上。', 2: '元本+利息は€10,600なのに€10,450しか受け取っていない計算は誤り。', 3: 'Notes Receivable 額面は元本€10,000だけ。利息は別勘定。', 4: '利息分€600を完全に無視。', 5: '「わからない」を選択。期首にReceivable取り崩し、当期利息は新規認識。' }
   },
   {
     id: 'q722', conceptId: 'c8_dishonored_note', ch: 8, type: 'E',
-    q: '上記Q720 で Karnemelk が満期に支払不能 (default) となった。Agriproductsは将来回収可能と判断しARに振替。仕訳は？',
-    opts: ['A) Dr Accounts Receivable 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 150 / Cr Interest Receivable 450', 'B) Dr Accounts Receivable 10,000 / Cr Notes Receivable 10,000', 'C) Dr Bad Debt Expense 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150', 'D) Dr Allowance for Doubtful Accounts 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 150 / Cr Interest Receivable 450', 'E) 仕訳不要 (将来回収する予定なので)', 'F) わからない'],
+    q: 'Agriproducts BV holds a €10,000, 6% note receivable (€450 interest accrued at Dec 31, 2024, plus €150 accrued in 2025). At maturity the maker defaults, but collection is still expected, so the balance is transferred to Accounts Receivable. What is the entry?',
+    opts: ['A) Dr Accounts Receivable 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 150 / Cr Interest Receivable 450', 'B) Dr Accounts Receivable 10,000 / Cr Notes Receivable 10,000', 'C) Dr Bad Debt Expense 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150', 'D) Dr Allowance for Doubtful Accounts 10,600 / Cr Notes Receivable 10,000 / Cr Interest Revenue 150 / Cr Interest Receivable 450', 'E) No entry required (since collection is still expected)', 'F) Not sure'],
     ans: 0,
-    exp: '将来回収見込ならNotes Receivable を Accounts Receivable に振替 (元本 + 既発生利息 + 期中追加利息)。€10,000 + €450 + €150 = €10,600。利息も「収益」として認識する (まだ回収可能と見ている)。',
+    exp: '将来回収見込みなら Notes Receivable を Accounts Receivable に振り替えます（元本 + 既発生利息 + 期中追加利息）。€10,000 + €450 + €150 = €10,600。まだ回収可能とみているので利息も収益として認識します。仕訳：Dr Accounts Receivable 10,600 / Cr Notes Receivable 10,000 / Cr Interest Receivable 450 / Cr Interest Revenue 150。',
     we: { 1: '元本だけでなく利息分€600も AR に移すべき (回収を期待しているから)。', 2: 'Bad Debt Expense は「回収不能と確定」した時の処理。回収見込なら使わない。', 3: 'Dも回収不能扱い。回収見込ならまずARに振替し、後に必要なら write-off。', 4: '何もしないと Notes Receivable 残高がそのまま残り、報告書が誤る。', 5: '「わからない」を選択。Dishonored + 回収見込 = ARへ振替 + 利息も認識。' }
   },
   {
@@ -9976,18 +9976,18 @@ var QUESTIONS = [
   },
   {
     id: 'q737', conceptId: 'c9_ddb_method', ch: 9, type: 'E',
-    q: '€50,000の機械、耐用年数5年、残存価額€5,000。Double-Declining-Balance 法での2021年 (購入1年目) 減価償却費は？',
-    opts: ['A) €18,000', 'B) €20,000', 'C) €9,000', 'D) €25,000', 'E) €10,000', 'F) わからない'],
+    q: 'A €50,000 machine has a 5-year useful life and €5,000 residual value. Under the double-declining-balance method, what is the Year 1 (2021) depreciation?',
+    opts: ['A) €18,000', 'B) €20,000', 'C) €9,000', 'D) €25,000', 'E) €10,000', 'F) Not sure'],
     ans: 1,
-    exp: 'DDB rate = (1/5) × 2 = 40%。Year 1: €50,000 × 40% = €20,000。注: DDB は残存価額を式に含めない (NBV × 2倍率)。ただし最終年に残存価額以下にならないよう調整。',
+    exp: 'DDB 率 = (1/5) × 2 = 40%。Year 1：€50,000 × 40% = €20,000。注：DDB は残存価額を計算式に含めません（NBV × 2倍率）。ただし最終年に残存価額を下回らないよう調整します。',
     we: { 0: '€18,000 = (€50,000-€5,000) × 40% (DDBは残存価額を引かない)。', 2: '€9,000 = Straight-line の額。DDB は accelerated で初期に多く償却。', 3: '€25,000 = 50% rate (5年なら40%が正)。', 4: '€10,000 = 20% rate (5年なら40%)。', 5: '「わからない」を選択。DDB rate = 2/life、Year1 = Cost × rate。' }
   },
   {
     id: 'q738', conceptId: 'c9_ddb_year2', ch: 9, type: 'E',
-    q: 'Q737続き。2021年€20,000償却後、2022年 (2年目) のDDB償却額は？',
-    opts: ['A) €20,000', 'B) €12,000', 'C) €18,000', 'D) €30,000', 'E) €10,000', 'F) わからない'],
+    q: 'A €50,000 machine (5-year life, €5,000 residual value) is depreciated by the double-declining-balance method, with €20,000 taken in Year 1 (2021). What is the Year 2 (2022) DDB depreciation?',
+    opts: ['A) €20,000', 'B) €12,000', 'C) €18,000', 'D) €30,000', 'E) €10,000', 'F) Not sure'],
     ans: 1,
-    exp: '2022年期首NBV = €50,000 − €20,000 = €30,000。DDB rate = 40%。\n2022年償却 = €30,000 × 40% = €12,000。',
+    exp: '2022年期首 NBV = €50,000 − €20,000 = €30,000。DDB 率 = 40%。2022年償却 = €30,000 × 40% = €12,000。',
     we: { 0: '€20,000 = Year 1 の金額。Year 2 は NBV が減るため償却額も減る。', 2: '€18,000 = €45,000 × 40% (残存価額控除誤り)。', 3: '€30,000 = 期首NBV自体。倍率を乗じる必要あり。', 4: '€10,000 = SL額。DDBはYear 2でも12,000。', 5: '「わからない」を選択。DDB Year N = (期首NBV) × 2/Life。' }
   },
   {
@@ -10068,18 +10068,18 @@ var QUESTIONS = [
   },
   {
     id: 'q751', conceptId: 'c10_notes_payable', ch: 10, type: 'E',
-    q: '10月1日に€10,000の銀行借入 (3ヶ月、年利8%)。10月1日の仕訳は？',
-    opts: ['A) Dr Cash 10,000 / Cr Notes Payable 10,000', 'B) Dr Cash 9,800 / Dr Interest Expense 200 / Cr Notes Payable 10,000', 'C) Dr Cash 10,200 / Cr Notes Payable 10,000 / Cr Interest Revenue 200', 'D) Dr Notes Payable 10,000 / Cr Cash 10,000', 'E) Dr Cash 10,000 / Cr Notes Payable 9,800 / Cr Interest Payable 200', 'F) わからない'],
+    q: 'On October 1, a company borrows €10,000 on a 3-month, 8% note payable. What is the October 1 journal entry?',
+    opts: ['A) Dr Cash 10,000 / Cr Notes Payable 10,000', 'B) Dr Cash 9,800 / Dr Interest Expense 200 / Cr Notes Payable 10,000', 'C) Dr Cash 10,200 / Cr Notes Payable 10,000 / Cr Interest Revenue 200', 'D) Dr Notes Payable 10,000 / Cr Cash 10,000', 'E) Dr Cash 10,000 / Cr Notes Payable 9,800 / Cr Interest Payable 200', 'F) Not sure'],
     ans: 0,
-    exp: '借入時点では元本のみを記録: Dr Cash 10,000 / Cr Notes Payable 10,000。利息は経過と共に accrual で計上。',
+    exp: '借入時点では元本のみを記録します：Dr Cash 10,000 / Cr Notes Payable 10,000。利息は期間の経過に応じて発生主義で計上します。',
     we: { 1: '利息は前払いではない (期末 or 満期に発生主義で認識)。', 2: '借入なので Revenue ではなく Liability。', 3: '完全に逆 (返済時の仕訳)。', 4: 'Notes Payable は額面 (€10,000) で計上。差額計上は誤り。', 5: '「わからない」を選択。借入時 = 元本のみ Dr Cash / Cr Notes Payable。' }
   },
   {
     id: 'q752', conceptId: 'c10_interest_accrual', ch: 10, type: 'E',
-    q: 'Q751続き。12月31日 (3ヶ月経過) の利息調整仕訳は？',
-    opts: ['A) Dr Interest Expense 200 / Cr Cash 200', 'B) Dr Interest Expense 200 / Cr Interest Payable 200', 'C) Dr Interest Payable 200 / Cr Interest Expense 200', 'D) Dr Notes Payable 200 / Cr Interest Revenue 200', 'E) 仕訳不要', 'F) わからない'],
+    q: 'On October 1, a company borrowed €10,000 on a 3-month, 8% note payable. What is the December 31 adjusting entry for accrued interest (3 months elapsed)?',
+    opts: ['A) Dr Interest Expense 200 / Cr Cash 200', 'B) Dr Interest Expense 200 / Cr Interest Payable 200', 'C) Dr Interest Payable 200 / Cr Interest Expense 200', 'D) Dr Notes Payable 200 / Cr Interest Revenue 200', 'E) No entry required', 'F) Not sure'],
     ans: 1,
-    exp: '利息 = €10,000 × 8% × 3/12 = €200。発生主義により未払でも費用認識: Dr Interest Expense 200 / Cr Interest Payable 200。Cash は満期日に支払う。',
+    exp: '利息 = €10,000 × 8% × 3/12 = €200。発生主義により未払でも費用を認識します：Dr Interest Expense 200 / Cr Interest Payable 200。現金は満期日に支払います。',
     we: { 0: '現金支払は満期日。期末時点では未払。', 2: '借方/貸方が逆。費用は借方が増加。', 3: 'Notes Payable (元本) は触らない。利息は別勘定。', 4: 'matching違反。発生期間に認識すべき。', 5: '「わからない」を選択。期末利息発生 = Dr Int Exp / Cr Int Payable。' }
   },
   {
@@ -10092,18 +10092,18 @@ var QUESTIONS = [
   },
   {
     id: 'q754', conceptId: 'c10_unearned_revenue', ch: 10, type: 'E',
-    q: '12月にコンサート前売券€600 (3公演分、各€200) を販売。12月の仕訳は？',
-    opts: ['A) Dr Cash 600 / Cr Service Revenue 600', 'B) Dr Cash 600 / Cr Unearned Revenue 600', 'C) Dr Cash 600 / Cr Accounts Receivable 600', 'D) Dr Unearned Revenue 600 / Cr Cash 600', 'E) Dr Accounts Receivable 600 / Cr Service Revenue 600', 'F) わからない'],
+    q: 'In December, a theater sells €600 of advance concert tickets (3 performances at €200 each). What is the December journal entry?',
+    opts: ['A) Dr Cash 600 / Cr Service Revenue 600', 'B) Dr Cash 600 / Cr Unearned Revenue 600', 'C) Dr Cash 600 / Cr Accounts Receivable 600', 'D) Dr Unearned Revenue 600 / Cr Cash 600', 'E) Dr Accounts Receivable 600 / Cr Service Revenue 600', 'F) Not sure'],
     ans: 1,
-    exp: '前売券販売時点ではサービス未提供 (performance obligation 未充足)。受取現金は将来サービス提供義務 = Unearned Revenue (Liability)。Dr Cash 600 / Cr Unearned Revenue 600。',
+    exp: '前売券販売時点ではサービス未提供（履行義務 未充足）です。受取現金は将来のサービス提供義務 = Unearned Revenue（負債）。Dr Cash 600 / Cr Unearned Revenue 600。',
     we: { 0: 'まだ収益認識できない。サービス提供 (公演) 時に Revenue。', 2: 'ARではない (Cash 受領済)。', 3: '逆方向。Cash を支払っていない。', 4: 'AR は信用販売の場合。Cash 受領済なら Cash 借方。', 5: '「わからない」を選択。前受 = Liability (Unearned Revenue)。サービス提供で Revenue に振替。' }
   },
   {
     id: 'q755', conceptId: 'c10_unearned_to_revenue', ch: 10, type: 'E',
-    q: 'Q754続き。1月に1回目の公演実施。1月の仕訳は？',
-    opts: ['A) Dr Cash 200 / Cr Service Revenue 200', 'B) Dr Unearned Revenue 200 / Cr Service Revenue 200', 'C) Dr Service Revenue 200 / Cr Unearned Revenue 200', 'D) Dr Unearned Revenue 600 / Cr Service Revenue 600', 'E) 仕訳不要', 'F) わからない'],
+    q: 'In December, a theater sold €600 of advance tickets for 3 concerts (€200 each), recorded as Unearned Revenue. In January, it holds the first concert. What is the January entry?',
+    opts: ['A) Dr Cash 200 / Cr Service Revenue 200', 'B) Dr Unearned Revenue 200 / Cr Service Revenue 200', 'C) Dr Service Revenue 200 / Cr Unearned Revenue 200', 'D) Dr Unearned Revenue 600 / Cr Service Revenue 600', 'E) No entry required', 'F) Not sure'],
     ans: 1,
-    exp: '1回目の公演で1/3の義務充足。Unearned Revenue (Liability) を減らし Service Revenue (収益) を計上。Dr Unearned Revenue 200 / Cr Service Revenue 200。',
+    exp: '1回目の公演で1/3の義務を充足します。Unearned Revenue（負債）を減らし Service Revenue（収益）を計上：Dr Unearned Revenue 200 / Cr Service Revenue 200。',
     we: { 0: 'Cashは既に12月に受領済。再度受け取らない。', 2: '逆方向。Unearned (Liability) は借方で減らす、Revenue は貸方で増やす。', 3: '€600全額を計上すると2回目・3回目分も収益化してしまう (時期尚早)。', 4: 'matching違反。サービス提供時に必ず振替仕訳が必要。', 5: '「わからない」を選択。義務充足分を Liability → Revenue へ振替。' }
   },
   {
@@ -10168,8 +10168,8 @@ var QUESTIONS = [
   },
   {
     id: 'q765', conceptId: 'c11_mortgage_payment', ch: 11, type: 'E',
-    q: '€500,000のmortgage (年利5%) で毎月€5,303の元利均等返済。1回目支払の元本/利息内訳は？',
-    opts: ['A) 利息 €2,083、元本 €3,220', 'B) 利息 €5,303、元本 €0', 'C) 利息 €0、元本 €5,303', 'D) 利息 €25,000、元本 € -19,697', 'E) 利息 €4,167、元本 €1,136', 'F) わからない'],
+    q: 'A €500,000 mortgage (5% annual interest) is repaid in fixed monthly payments of €5,303. For the first payment, what is the split between principal and interest?',
+    opts: ['A) Interest €2,083, Principal €3,220', 'B) Interest €5,303, Principal €0', 'C) Interest €0, Principal €5,303', 'D) Interest €25,000, Principal €−19,697', 'E) Interest €4,167, Principal €1,136', 'F) Not sure'],
     ans: 0,
     exp: '月次利息 = 期首元本 × 年利 ÷ 12 = €500,000 × 5% ÷ 12 = €2,083。元本返済 = 固定支払 − 利息 = €5,303 − €2,083 = €3,220。',
     we: { 1: '全額利息ではない。元利均等は利息+元本の分割。', 2: '元本のみではない。利息も支払う。', 3: '年利を月次に換算していない (€500k × 5% = €25,000は年額)。', 4: '€500k × 5% × 1/12 ではなく €500k × 5% ÷ 12 で計算。同じ結果だが€4,167は8%換算らしき誤り。', 5: '「わからない」を選択。月次利息 = 期首残高 × 年利 ÷ 12。' },
@@ -10177,10 +10177,10 @@ var QUESTIONS = [
   },
   {
     id: 'q766', conceptId: 'c11_mortgage_payment', ch: 11, type: 'E',
-    q: '上記Q765の1回目支払仕訳は？',
-    opts: ['A) Dr Mortgage Payable 5,303 / Cr Cash 5,303', 'B) Dr Interest Expense 2,083 / Dr Mortgage Payable 3,220 / Cr Cash 5,303', 'C) Dr Interest Expense 5,303 / Cr Cash 5,303', 'D) Dr Mortgage Payable 5,303 / Cr Interest Revenue 2,083 / Cr Cash 3,220', 'E) Dr Cash 5,303 / Cr Mortgage Payable 5,303', 'F) わからない'],
+    q: 'A €500,000 mortgage (5% annual) is repaid in fixed monthly payments of €5,303 (first payment: interest €2,083, principal €3,220). What is the journal entry for the first payment?',
+    opts: ['A) Dr Mortgage Payable 5,303 / Cr Cash 5,303', 'B) Dr Interest Expense 2,083 / Dr Mortgage Payable 3,220 / Cr Cash 5,303', 'C) Dr Interest Expense 5,303 / Cr Cash 5,303', 'D) Dr Mortgage Payable 5,303 / Cr Interest Revenue 2,083 / Cr Cash 3,220', 'E) Dr Cash 5,303 / Cr Mortgage Payable 5,303', 'F) Not sure'],
     ans: 1,
-    exp: '月次返済仕訳: Dr Interest Expense (利息部分) / Dr Mortgage Payable (元本部分) / Cr Cash (固定支払額)。\nDr Interest Expense 2,083 / Dr Mortgage Payable 3,220 / Cr Cash 5,303。',
+    exp: '月次返済の仕訳：Dr Interest Expense（利息部分）/ Dr Mortgage Payable（元本部分）/ Cr Cash（固定支払額）。Dr Interest Expense 2,083 / Dr Mortgage Payable 3,220 / Cr Cash 5,303。',
     we: { 0: '利息費用を計上していない。費用認識漏れ。', 2: '全額利息にすると元本が減らない (残高そのまま)。', 3: '完全に逆。借入側にとっては支払う費用、受け取る側の利息収益ではない。', 4: '逆方向 (借入時の仕訳)。', 5: '「わからない」を選択。Mortgage 返済 = Dr Int Exp + Dr Mortgage Pay / Cr Cash。' }
   },
   {
@@ -10245,18 +10245,18 @@ var QUESTIONS = [
   },
   {
     id: 'q776', conceptId: 'c12_dividend_declaration', ch: 12, type: 'E',
-    q: '€50,000の現金配当を取締役会で宣言 (Declaration Date) した日の仕訳は？',
-    opts: ['A) Dr Cash Dividends 50,000 / Cr Dividends Payable 50,000', 'B) Dr Cash Dividends 50,000 / Cr Cash 50,000', 'C) 仕訳不要', 'D) Dr Dividends Payable 50,000 / Cr Retained Earnings 50,000', 'E) Dr Retained Earnings 50,000 / Cr Cash 50,000', 'F) わからない'],
+    q: 'A company declares a €50,000 cash dividend at the board meeting (declaration date). What is the journal entry on the declaration date?',
+    opts: ['A) Dr Cash Dividends 50,000 / Cr Dividends Payable 50,000', 'B) Dr Cash Dividends 50,000 / Cr Cash 50,000', 'C) No entry required', 'D) Dr Dividends Payable 50,000 / Cr Retained Earnings 50,000', 'E) Dr Retained Earnings 50,000 / Cr Cash 50,000', 'F) Not sure'],
     ans: 0,
-    exp: 'Declaration Date で会社は法的支払義務発生 → Dividends Payable (Liability)。Cash Dividends は Retained Earnings の控除項目 (期末に振替)。Dr Cash Dividends 50,000 / Cr Dividends Payable 50,000。',
+    exp: '宣言日（Declaration Date）に会社は法的な支払義務が発生 → Dividends Payable（負債）。Cash Dividends は Retained Earnings の控除項目（期末に振替）。Dr Cash Dividends 50,000 / Cr Dividends Payable 50,000。',
     we: { 1: '宣言日にはまだ支払っていない。Cash 流出は Payment Date。', 2: '法的義務発生なので仕訳必要。', 3: '逆方向。Liabilityを増やし、配当 (Equity減) を計上するべき。', 4: 'Cash はまだ出ていない (Payment Date まで)。', 5: '「わからない」を選択。Declaration = Dr Dividends / Cr Dividends Payable。' }
   },
   {
     id: 'q777', conceptId: 'c12_dividend_payment', ch: 12, type: 'E',
-    q: 'Q776続き。Payment Date で€50,000の配当支払。仕訳は？',
-    opts: ['A) Dr Cash Dividends 50,000 / Cr Cash 50,000', 'B) Dr Dividends Payable 50,000 / Cr Cash 50,000', 'C) Dr Retained Earnings 50,000 / Cr Cash 50,000', 'D) Dr Cash 50,000 / Cr Dividends Payable 50,000', 'E) 仕訳不要', 'F) わからない'],
+    q: 'A company declared a €50,000 cash dividend (recorded Dr Cash Dividends / Cr Dividends Payable). On the payment date, it pays the €50,000. What is the entry?',
+    opts: ['A) Dr Cash Dividends 50,000 / Cr Cash 50,000', 'B) Dr Dividends Payable 50,000 / Cr Cash 50,000', 'C) Dr Retained Earnings 50,000 / Cr Cash 50,000', 'D) Dr Cash 50,000 / Cr Dividends Payable 50,000', 'E) No entry required', 'F) Not sure'],
     ans: 1,
-    exp: 'Payment Date: 既に Liability 計上済 (Dividends Payable)。これを取り崩して Cash 流出。Dr Dividends Payable 50,000 / Cr Cash 50,000。',
+    exp: '支払日（Payment Date）：既に負債（Dividends Payable）を計上済みです。これを取り崩して現金が流出します。Dr Dividends Payable 50,000 / Cr Cash 50,000。',
     we: { 0: 'Cash Dividends は Declaration Date に計上済。再計上はダブル。', 2: 'Retained Earnings は期末振替で減らす (Cash Dividends 経由)。', 3: '逆方向 (受取の仕訳)。', 4: 'Liability 取り崩しと Cash 流出の両方が必要。', 5: '「わからない」を選択。Payment = Dr Dividends Payable / Cr Cash。' }
   },
   {
