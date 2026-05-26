@@ -10461,56 +10461,56 @@ var QUESTIONS = [
   },
   {
     id: 'q819', conceptId: 'c15_roa', ch: 15, type: 'E',
-    q: 'Net Income €100,000、平均 Total Assets €500,000。Return on Assets (ROA) は？',
-    opts: ['A) 20%', 'B) 5%', 'C) 25%', 'D) 80%', 'E) 200%', 'F) わからない'],
+    q: 'Net income is €100,000 and average total assets are €500,000. What is the return on assets (ROA)?',
+    opts: ['A) 20%', 'B) 5%', 'C) 25%', 'D) 80%', 'E) 200%', 'F) Not sure'],
     ans: 0,
     exp: 'ROA = Net Income ÷ Average Total Assets = €100,000 ÷ €500,000 = **20%**。「資産1円につき0.20円の利益」= 資産効率指標。',
     we: { 1: '5% = €100k ÷ €2,000k (平均資産を1桁多く誤計算)。', 2: '25% = €100k ÷ €400k (平均でなく期末/期首単独)。', 3: '80% = €400k ÷ €500k = Asset Utilization 的な誤公式。', 4: '200% = €100k ÷ €50k (資産を1桁少なく)。桁誤り。', 5: '「わからない」を選択。ROA = NI ÷ 平均Total Assets。常に%表示。' }
   },
   {
     id: 'q820', conceptId: 'c15_roe', ch: 15, type: 'E',
-    q: 'Net Income €100,000、平均 Total Equity €400,000。Return on Equity (ROE) は？',
-    opts: ['A) 25%', 'B) 20%', 'C) 40%', 'D) 4%', 'E) 75%', 'F) わからない'],
+    q: 'Net income is €100,000 and average total equity is €400,000. What is the return on equity (ROE)?',
+    opts: ['A) 25%', 'B) 20%', 'C) 40%', 'D) 4%', 'E) 75%', 'F) Not sure'],
     ans: 0,
     exp: 'ROE = Net Income ÷ Average Total Equity = €100,000 ÷ €400,000 = **25%**。「株主資本1円につき0.25円の利益」。投資家視点で最重要指標の一つ。',
     we: { 1: '20% = NI ÷ Total Assets (ROA)。Equity と Assets を混同。よくある間違い。', 2: '40% = NI×4 ÷ Equity (誤って4倍した) または計算誤り。', 3: '4% = €100k ÷ €2,500k (Equity を1桁多く誤計算)。', 4: '75% = Equity の前期比増加率のような誤公式。', 5: '「わからない」を選択。ROE = NI ÷ 平均Total Equity。常に%表示。' }
   },
   {
     id: 'q821', conceptId: 'c15_eps', ch: 15, type: 'E',
-    q: 'Net Income €500,000、Preference Dividend €50,000、流通普通株 100,000株。EPS (Earnings per Share) は？',
-    opts: ['A) €5.00', 'B) €4.50', 'C) €5.50', 'D) €4.00', 'E) €0.45', 'F) わからない'],
+    q: 'Net income is €500,000, preference dividends are €50,000, and 100,000 ordinary shares are outstanding. What is the earnings per share (EPS)?',
+    opts: ['A) €5.00', 'B) €4.50', 'C) €5.50', 'D) €4.00', 'E) €0.45', 'F) Not sure'],
     ans: 1,
     exp: 'EPS = (Net Income − Preference Dividend) ÷ Weighted Avg Ordinary Shares = (€500,000 − €50,000) ÷ 100,000 = **€4.50/株**。優先配当を引いて普通株主に帰属する利益を算出。',
     we: { 0: '€5.00 = €500k ÷ 100k (優先配当を引いていない)。優先株主分を控除すべき。', 2: '€5.50 = (€500k + €50k) ÷ 100k (優先配当を「加算」してしまった符号エラー)。', 3: '€4.00 = (€500k − €100k) ÷ 100k (優先配当を倍にした誤り)。', 4: '€0.45 = €4.50 ÷ 10 (桁誤り、株数を1桁多く100万株で計算)。', 5: '「わからない」を選択。EPS = (NI − 優先配当) ÷ 普通株加重平均株数。' }
   },
   {
     id: 'q822', conceptId: 'c15_pe_ratio', ch: 15, type: 'E',
-    q: '株価€60、EPS €4.50。P/E Ratio は？',
-    opts: ['A) 13.33', 'B) 7.50', 'C) 0.075', 'D) 12.00', 'E) 15.00', 'F) わからない'],
+    q: 'The share price is €60 and EPS is €4.50. What is the P/E ratio?',
+    opts: ['A) 13.33', 'B) 7.50', 'C) 0.075', 'D) 12.00', 'E) 15.00', 'F) Not sure'],
     ans: 0,
     exp: 'P/E Ratio = 株価 ÷ EPS = €60 ÷ €4.50 = **13.33**。「1円の利益に対し13.33円払う = 13.33年で投資回収」と解釈可能。高いほど将来期待大 (or 過大評価)。',
     we: { 1: '7.50 = €60 ÷ €8 (異なるEPS基準) または計算誤り。', 2: '0.075 = €4.50 ÷ €60 = 逆数 (Earnings Yield = 7.5%)。', 3: '12.00 = €60 ÷ €5 (EPSの四捨五入誤り)。', 4: '15.00 = €60 ÷ €4 (EPSの切り下げ誤り)。', 5: '「わからない」を選択。P/E = Price ÷ EPS (常に倍数)。' }
   },
   {
     id: 'q823', conceptId: 'c15_payout_ratio', ch: 15, type: 'E',
-    q: 'Net Income €200,000、Cash Dividends €50,000。Payout Ratio は？',
-    opts: ['A) 25%', 'B) 75%', 'C) 40%', 'D) 4%', 'E) 400%', 'F) わからない'],
+    q: 'Net income is €200,000 and cash dividends are €50,000. What is the payout ratio?',
+    opts: ['A) 25%', 'B) 75%', 'C) 40%', 'D) 4%', 'E) 400%', 'F) Not sure'],
     ans: 0,
     exp: 'Payout Ratio = Cash Dividends ÷ Net Income = €50,000 ÷ €200,000 = **25%**。「利益の25%を配当として株主に還元、残り75%は内部留保」を意味する。',
     we: { 1: '75% = (NI − Dividends) ÷ NI = Retention Ratio (内部留保率、=1−Payout)。Payoutの補数。', 2: '40% = €50k ÷ €125k = Dividends ÷ (NI/2) のような誤分母。', 3: '4% = €50k ÷ €1,250k (NIを1桁多く誤計算)。桁誤り。', 4: '400% = NI ÷ Dividends = 逆数 (Dividend Coverage Ratio)。比率方向が逆。', 5: '「わからない」を選択。Payout = Dividends ÷ NI、Retention = 1 − Payout。' }
   },
   {
     id: 'q824', conceptId: 'c15_ratio_summary', ch: 15, type: 'A',
-    q: '次の比率と「測定するもの」の組合せで誤っているものは？',
-    opts: ['A) Current Ratio = Liquidity', 'B) Debt to Assets = Solvency', 'C) Profit Margin = Profitability', 'D) Inventory Turnover = Liquidity/Activity', 'E) Times Interest Earned = Liquidity', 'F) わからない'],
+    q: 'Which pairing of a ratio with what it measures is INCORRECT?',
+    opts: ['A) Current ratio = Liquidity', 'B) Debt-to-assets = Solvency', 'C) Profit margin = Profitability', 'D) Inventory turnover = Liquidity/Activity', 'E) Times interest earned = Liquidity', 'F) Not sure'],
     ans: 4,
     exp: 'TIE は Solvency (長期支払能力) 指標。利息支払余力を見るので長期負債の支払い能力を示す。Liquidity (短期支払能力) ではない。',
     we: { 0: 'Current Ratio = Liquidity ✓ 正しい組合せ。', 1: 'Debt to Assets = Solvency ✓ 正しい組合せ。', 2: 'Profit Margin = Profitability ✓ 正しい組合せ。', 3: 'Inventory Turnover = Liquidity/Activity ✓ 正しい組合せ。', 5: '「わからない」を選択。Liquidity = 短期 (Current, Quick, AR Turnover)、Solvency = 長期 (Debt to Assets, TIE)、Profitability = 利益率 (Margin, ROA, ROE)。' }
   },
   {
     id: 'q825', conceptId: 'c15_limitations', ch: 15, type: 'A',
-    q: '財務分析の限界として認識すべき事項は？',
-    opts: ['A) 業界差・会計方針の違い (FIFO vs LIFO、減価償却法等) により比較困難', 'B) 過去データに基づくため将来業績を保証する性質のものではない', 'C) 質的要因 (経営陣の能力、ブランド、企業文化等) を反映できない', 'D) 上記 (A) 比較困難、(B) 将来不保証、(C) 質的要因無視 のすべてが該当する', 'E) インフレ影響を歴史的原価ベースの数値では適切に反映できない', 'F) わからない'],
+    q: 'Which of the following should be recognized as limitations of financial statement analysis?',
+    opts: ['A) Differences in industry and accounting policies (FIFO vs LIFO, depreciation methods, etc.) make comparison difficult', 'B) Being based on historical data, it does not guarantee future performance', 'C) It cannot reflect qualitative factors (management quality, brand, corporate culture, etc.)', 'D) All of (A) comparison difficulty, (B) no future guarantee, and (C) ignoring qualitative factors apply', 'E) Historical-cost figures cannot properly reflect the effect of inflation', 'F) Not sure'],
     ans: 3,
     exp: '**財務分析の主要な限界**: (1) 会計方針/業界差で比較困難、(2) 過去ベースで将来を予測する保証なし、(3) 経営力・ブランド等の質的要因を反映しない、(4) インフレ影響を反映しない。(A)(B)(C) すべてが該当 (E も別の限界として有効だが、選択肢の枠組では D が最完全)。',
     we: { 0: '(A) 比較困難は正しいが、(B)(C) も同時に限界。**すべて正しい** が完全な答え。', 1: '(B) 将来不保証は正しいが、(A)(C) も同時に限界。**すべて正しい** が完全。', 2: '(C) 質的要因無視は正しいが、(A)(B) も同時に限界。**すべて正しい** が完全。', 4: '(E) インフレ無視も別の限界として正しいが、ここでは (A)(B)(C) を集約した (D) が出題者の意図する完全解。', 5: '「わからない」を選択。財務分析 ≠ 万能。複数の限界を理解する必要あり。' }
@@ -10521,8 +10521,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q830', conceptId: 'c7_bank_recon', ch: 7, type: 'E',
-    q: '下記のbank reconciliationで、調整後 (correct) cash balanceは？',
-    opts: ['A) €4,500', 'B) €5,150', 'C) €5,260', 'D) €4,940', 'E) €5,000', 'F) わからない'],
+    q: 'In the bank reconciliation below, what is the adjusted (correct) cash balance?',
+    opts: ['A) €4,500', 'B) €5,150', 'C) €5,260', 'D) €4,940', 'E) €5,000', 'F) Not sure'],
     ans: 1,
     exp: '銀行側: €5,000 + 預金未達€500 − 未取付小切手€350 = €5,150。会社側: €5,200 + 代理回収利息€80 − NSF小切手€100 − 銀行手数料€30 = €5,150。両側一致 → 正しいCash残高 €5,150。',
     we: { 0: '銀行側残高そのまま (調整を反映していない)。', 2: '預金未達と利息を両方加算してしまっている (片側のみ)。', 3: 'NSFと手数料を二重計上。', 4: '会社側残高そのまま。', 5: '「わからない」を選択。両側の調整を行い、両側残高一致が答え。' },
@@ -10530,8 +10530,8 @@ var QUESTIONS = [
   },
   {
     id: 'q831', conceptId: 'c7_petty_cash', ch: 7, type: 'E',
-    q: '下記のpetty cashフローで「補充時の現金支出額」は？',
-    opts: ['A) €500', 'B) €450', 'C) €350', 'D) €300', 'E) €150', 'F) わからない'],
+    q: 'In the petty cash flow below, what is the cash outlay at the time of replenishment?',
+    opts: ['A) €500', 'B) €450', 'C) €350', 'D) €300', 'E) €150', 'F) Not sure'],
     ans: 2,
     exp: '補充額 = 設立額 − 残金 = €500 − €150 = €350。これは使用済の費用合計 (Postage €100 + Supplies €150 + Meals €100 = €350) と一致する。',
     we: { 0: '設立額そのまま。残金を控除していない。', 1: '€450 = 設立額 − Postage単独。', 3: '€300 = Supplies+Meals。Postage が抜けている。', 4: '€150 = 残金そのもの (補充額ではない)。', 5: '「わからない」を選択。補充額 = 使用額 = 設立額 − 残金。' },
@@ -10539,8 +10539,8 @@ var QUESTIONS = [
   },
   {
     id: 'q832', conceptId: 'c7_cash_t_account', ch: 7, type: 'E',
-    q: '下記のCash T勘定で月末残高は？',
-    opts: ['A) €18,400', 'B) €17,400', 'C) €20,400', 'D) €13,400', 'E) €22,000', 'F) わからない'],
+    q: 'In the Cash T-account below, what is the month-end balance?',
+    opts: ['A) €18,400', 'B) €17,400', 'C) €20,400', 'D) €13,400', 'E) €22,000', 'F) Not sure'],
     ans: 0,
     exp: '期首€10,000 + 借方合計€18,000 (顧客回収€12,000+ローン受領€6,000) − 貸方合計€9,600 (給与€5,000+仕入€3,600+家賃€1,000) = €18,400。',
     we: { 1: '€17,400 = 借方項目を1つ漏らした。', 2: '€20,400 = 貸方項目を1つ漏らした。', 3: '€13,400 = 期首を加算していない。', 4: '€22,000 = 全て借方として加算 (貸方を引かず)。', 5: '「わからない」を選択。T勘定残高 = 借方合計 − 貸方合計 (現金は借方が正常)。' },
@@ -10548,8 +10548,8 @@ var QUESTIONS = [
   },
   {
     id: 'q833', conceptId: 'c7_internal_control', ch: 7, type: 'A',
-    q: '下記のフローで「不正リスクが最も高い」段階は？',
-    opts: ['A) 顧客が現金を会社に支払う段階 (取引そのものの発生時点)', 'B) 同一人物が現金受領・帳簿記録・銀行入金の3つすべてを兼務する', 'C) 銀行入金完了後に独立した管理者が金額と取引を確認する段階', 'D) 顧客への領収書 (pre-numbered receipt) を発行・控え保管する段階', 'E) 期末/月末に経理部が銀行勘定調整 (reconciliation) を実施する', 'F) わからない'],
+    q: 'In the flow below, which stage has the HIGHEST fraud risk?',
+    opts: ['A) When the customer pays cash to the company (at the moment the transaction occurs)', 'B) When one person handles all three: receiving cash, recording the books, and depositing at the bank', 'C) When an independent supervisor verifies the amount and transaction after the deposit is complete', 'D) When a pre-numbered receipt is issued to the customer and a copy is retained', 'E) When the accounting department performs the bank reconciliation at month/period end', 'F) Not sure'],
     ans: 1,
     exp: '同一人物による「**資産保管** (現金受領)」「**記録**」「**処理** (銀行入金)」の3つを兼務することが **segregation of duties 違反**。横領しても自分で記録偽装でき発覚しにくい。3者を**別人**にすべき。',
     we: { 0: '顧客側の行動 — 会社の内部統制とは別領域。取引自体に内部不正リスクはない。', 2: '管理者確認はむしろ **統制を強化** する活動 (検知統制)。リスク低減側。', 3: '領収書発行自体はリスクでない。発行 vs 入金記録の **照合** がリスク低減効果を持つ。', 4: '銀行勘定調整は **統制活動** (リスク低減策)。差異検知メカニズム。', 5: '「わからない」を選択。Segregation of duties = 1人に保管+記録+処理を集中させない。' },
@@ -10557,8 +10557,8 @@ var QUESTIONS = [
   },
   {
     id: 'q834', conceptId: 'c7_cash_class', ch: 7, type: 'A',
-    q: '下記の項目分類表で「Cash and cash equivalents」に集計される合計額は？',
-    opts: ['A) €15,000', 'B) €17,500', 'C) €20,000', 'D) €13,500', 'E) €25,000', 'F) わからない'],
+    q: 'In the classification table below, what is the total amount aggregated as \'Cash and cash equivalents\'?',
+    opts: ['A) €15,000', 'B) €17,500', 'C) €20,000', 'D) €13,500', 'E) €25,000', 'F) Not sure'],
     ans: 1,
     exp: '小口現金 €500 + 当座預金 €12,000 + 90日Money Market €5,000 = €17,500。180日CD (€2,500) と上場株式 (€5,000) は除外 (90日超 or 価額変動)。',
     we: { 0: '€15,000 = 小口+当座のみ (Money Market 漏れ)。', 2: '€20,000 = 180日CDを含めた。', 3: '€13,500 = Money Market 抜け + 小口 1k差。', 4: '€25,000 = 全項目合計 (除外項目含む)。', 5: '「わからない」を選択。Cash equivalents = 取得時≤90日 + 価額変動リスク低。' },
@@ -10566,8 +10566,8 @@ var QUESTIONS = [
   },
   {
     id: 'q835', conceptId: 'c7_cash_over_short', ch: 7, type: 'E',
-    q: '1週間のレジ集計で下記の差額が出た。Cash Over and Shortの「期末残高」と性質は？',
-    opts: ['A) 借方€18 (純損失)', 'B) 貸方€18 (純利得)', 'C) 借方€42', 'D) 貸方€42', 'E) ゼロ', 'F) わからない'],
+    q: 'A week of register counts produced the differences below. What is the \'Cash Over and Short\' ending balance and its nature?',
+    opts: ['A) €18 debit (net loss)', 'B) €18 credit (net gain)', 'C) €42 debit', 'D) €42 credit', 'E) Zero', 'F) Not sure'],
     ans: 0,
     exp: '月-木: 不足€10+€8+€5+€12=€35 (借方35)。金: 過剰€17 (貸方17)。純借方残高 = €35 − €17 = €18 (借方=不足)。Cash Over and Short は損益勘定なので、借方残高=費用 (純損失)。',
     we: { 1: '不足の方が大きいため借方残。', 2: '€42 = 借方合計のみ (相殺前)。', 3: '€42 を貸方とするのも誤り。', 4: '差額がある限りゼロでない。', 5: '「わからない」を選択。借方=Short、貸方=Over、純額を見る。' },
@@ -10579,8 +10579,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q840', conceptId: 'c8_pct_receivables', ch: 8, type: 'E',
-    q: '下記のAging Schedule (allowance現在貸方残€1,000) で期末Bad Debt Expense計上額は？',
-    opts: ['A) €9,500', 'B) €10,500', 'C) €11,500', 'D) €1,000', 'E) €2,500', 'F) わからない'],
+    q: 'In the aging schedule below (Allowance current credit balance €1,000), how much Bad Debt Expense is recorded at year-end?',
+    opts: ['A) €9,500', 'B) €10,500', 'C) €11,500', 'D) €1,000', 'E) €2,500', 'F) Not sure'],
     ans: 0,
     exp: '希望Allowance期末残: €200k×1% + €60k×5% + €30k×10% + €10k×25% = €2,000 + €3,000 + €3,000 + €2,500 = €10,500。\nBad Debt Expense = 希望期末Allowance − 現在残高 = €10,500 − €1,000 = €9,500。\n仕訳: Dr Bad Debt Expense 9,500 / Cr Allowance for Doubtful Accounts 9,500。',
     we: { 1: '€10,500 = 希望期末Allowance残高そのもの。現在残高€1,000を引いていない (ダブル計上のリスク)。', 2: '€11,500 = €10,500 + €1,000 (現在残高を加算した符号エラー)。', 3: '€1,000 = 現在Allowance残高のみ。Bad Debt Expense は差額。', 4: '€2,500 = >90日カテゴリのみ。他カテゴリも合算が必要。', 5: '「わからない」を選択。差額アプローチ: 希望期末Allowance − 現在残高 = Bad Debt Expense。' },
@@ -10588,8 +10588,8 @@ var QUESTIONS = [
   },
   {
     id: 'q841', conceptId: 'c8_allowance_t', ch: 8, type: 'E',
-    q: '下記のAllowance T勘定で期末残高は？',
-    opts: ['A) €4,500 Cr', 'B) €3,500 Cr', 'C) €5,500 Cr', 'D) €2,500 Cr', 'E) €4,500 Dr', 'F) わからない'],
+    q: 'In the Allowance T-account below, what is the ending balance?',
+    opts: ['A) €4,500 Cr', 'B) €3,500 Cr', 'C) €5,500 Cr', 'D) €2,500 Cr', 'E) €4,500 Dr', 'F) Not sure'],
     ans: 0,
     exp: '期首貸方€3,000 + 期中write-off (Dr) €2,000 − 期末調整 (Cr) €3,500 → 計算: 貸方期首€3,000 − write-off€2,000 + 調整Cr€3,500 = 期末貸方€4,500。',
     we: { 1: '期末調整を加算していない。', 2: 'Write-off を加算してしまっている。', 3: '期末調整を引いてしまっている。', 4: '借方残高は不可 (Allowance は contra-asset で貸方残)。', 5: '「わからない」を選択。Allowance T勘定: 期首Cr + 調整Cr − Write-off Dr = 期末Cr。' },
@@ -10597,8 +10597,8 @@ var QUESTIONS = [
   },
   {
     id: 'q842', conceptId: 'c8_ar_change', ch: 8, type: 'E',
-    q: '下記のAR推移表で、当期回収額 (Cash collected from customers) は？',
-    opts: ['A) €580,000', 'B) €620,000', 'C) €600,000', 'D) €100,000', 'E) €500,000', 'F) わからない'],
+    q: 'In the AR roll-forward below, what is the cash collected from customers during the period?',
+    opts: ['A) €580,000', 'B) €620,000', 'C) €600,000', 'D) €100,000', 'E) €500,000', 'F) Not sure'],
     ans: 0,
     exp: 'AR T勘定: 期首€80k + 信用販売€600k − 回収X = 期末€100k。X = €80k + €600k − €100k = €580k。',
     we: { 1: '€620k = 信用販売 + (期首-期末差) を逆方向。', 2: '€600k = 信用販売額そのまま (期首期末調整なし)。', 3: '€100k = 期末残高。', 4: '€500k = 信用販売 − €100k (誤計算)。', 5: '「わからない」を選択。回収 = 期首 + 信用販売 − 期末。' },
