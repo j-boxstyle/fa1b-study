@@ -22055,6 +22055,232 @@ function showAiMilestone() {
   } catch(e){}
 }
 
+/* ════════════════════════════════════════════════════════════
+   BOP-style AI prompt system (Opus 4.7) — batch + per-question
+   Builds on existing loadBatches()/saveBatches() (raw 'quiz_batches').
+   ════════════════════════════════════════════════════════════ */
+function copyTextToClipboard(text, btn, onSuccess) {
+  var ok = false;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text); ok = true; }
+    else { var ta=document.createElement('textarea'); ta.value=text; ta.style.cssText='position:fixed;opacity:0;'; document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy'); document.body.removeChild(ta); }
+  } catch(e){ ok=false; }
+  if (btn) {
+    var orig = btn.innerHTML;
+    btn.innerHTML = ok ? '✓ コピー済み' : '× 失敗';
+    btn.style.background = ok ? '#10b981' : '#ef4444'; btn.style.color = '#fff';
+    setTimeout(function(){ btn.innerHTML=orig; btn.style.background=''; btn.style.color='';
+      if (ok && typeof onSuccess==='function'){ onSuccess(); if(document.getElementById('batch-picker-modal')) showBatchPicker(); } }, 1200);
+  }
+}
+function flashCopySuccess(btn, ok) {
+  if (!btn) return;
+  var orig = btn.innerHTML, origBg = btn.style.background;
+  btn.innerHTML = ok ? '✓ コピーしました！AIに貼り付け' : '⚠️ 失敗 — 手動コピー';
+  btn.style.background = ok ? '#22c55e' : '#ef4444'; btn.style.color = '#fff';
+  setTimeout(function(){ btn.innerHTML=orig; btn.style.background=origBg||''; btn.style.color=''; }, 2500);
+}
+// records: use existing batch.answers ({qid, chosenOrig, correct, ts})
+function accRecords(b){ return (b && (b.records || b.answers)) || []; }
+function accAllRecords(){ var all=[]; loadBatches().forEach(function(b){ all=all.concat(accRecords(b)); }); return all; }
+function accSealActiveStartNew(){
+  var bs = loadBatches(); if (!bs.length) return;
+  var last = bs[bs.length-1];
+  if (last.sealed || accRecords(last).length===0) return;
+  last.sealed = true; last.copiedAt = Date.now();
+  bs.push({ id:'batch-'+Date.now(), sealed:false, createdAt:Date.now(), answers:[] });
+  saveBatches(bs);
+}
+function accBatchRange(b, all){
+  var start=1; for (var i=0;i<all.length;i++){ if (all[i].id===b.id) break; start += accRecords(all[i]).length; }
+  return { start:start, end:start + accRecords(b).length - 1 };
+}
+var ACC_LATEX = 'LaTeX：分数 `\\dfrac{}{}` / 平方根 `\\sqrt{}` / 添字 `_{}` / 上付 `^{}`\n例：`$\\text{COGS} = \\text{BI} + \\text{Purchases} - \\text{EI}$`';
+
+// ── 分析用プロンプト（弱点診断 / Part 1-2）──
+function accBuildAnalysisPrompt(records, title){
+  if (!records || !records.length) return '';
+  var byCh = {};
+  records.forEach(function(r){
+    var q = findQuestionById(r.qid); if (!q) return;
+    var key = 'Ch' + q.ch;
+    if (!byCh[key]) byCh[key] = { total:0, wrong:0, items:[] };
+    byCh[key].total++;
+    if (!r.correct || r.rating==='notunderstood'){ byCh[key].wrong++; byCh[key].items.push({ q:q, r:r }); }
+  });
+  var order = Object.keys(byCh).sort(function(a,b){ return (byCh[b].wrong/Math.max(byCh[b].total,1)) - (byCh[a].wrong/Math.max(byCh[a].total,1)); });
+  var totalWrong = 0; order.forEach(function(ch){ totalWrong += byCh[ch].wrong; });
+  var out = '# 苦手分野診断【Opus 4.7】\n\n';
+  out += '**解答 ' + records.length + '問 / 誤答 ' + totalWrong + '問**' + (title ? '（' + title + '）' : '') + '\n\n';
+  out += '## 章別誤答率（高い順）\n';
+  order.forEach(function(ch){ var c=byCh[ch]; if(!c.wrong) return; out += '- ' + ch + ': ' + c.wrong + '/' + c.total + ' 誤答 (' + Math.round(100*c.wrong/Math.max(c.total,1)) + '%)\n'; });
+  out += '\n## 誤答リスト（圧縮）\n';
+  order.forEach(function(ch){ byCh[ch].items.forEach(function(it){
+    var qShort = (it.q.q||'').replace(/\s+/g,' ').slice(0,120);
+    out += '- **' + (it.q.id) + '** ' + ch + ' | 選' + String.fromCharCode(65+(it.r.chosenOrig||0)) + '/正' + String.fromCharCode(65+it.q.ans) + ' | ' + qShort + '\n';
+  }); });
+  out += '\n---\n\n# 出力指示（厳守）\n\n上記の誤答パターンを分析し、以下の順序で回答。\n\n';
+  out += '## Part 1: 🎯 弱点 TOP 3\n**1. [弱点名]**（該当: Q####, Q####）\n- 誤解：1文\n- 正解ルール：1文（数式は LaTeX）\n- 5秒判別：「[キーワード]」を見たら[判断]\n- 覚え方：1行\n\n**2. ... / 3. ...**（同形式）\n\n';
+  out += '## Part 2: ⚡ 試験直前30秒チェック\n3行のみ（各弱点1行）\n\n';
+  out += '<details>\n<summary>🧠 推論過程</summary>\n誤答パターンの分類と弱点抽出を簡潔に。\n</details>\n\n';
+  out += '## 🌐 言語ルール\n- 問題文・選択肢：英語\n- 解説・推論：日本語\n\n';
+  out += '## 📐 数式\n' + ACC_LATEX + '\n\n';
+  out += '## 禁止\n- 教科書全般のまとめ / 例題追加 / 一般論\n- Part 1〜2 合わせて 1500字以内\n';
+  return out;
+}
+// ── 確認テスト用プロンプト（同概念・新問題）──
+function accBuildVerifyPrompt(records, title){
+  if (!records || !records.length) return '';
+  var L = [];
+  L.push('# 🎯 ' + (title || 'バッチ確認テスト') + '【Opus 4.7】\n');
+  L.push('以下の問題群の **核心概念** について、各概念につき **新しい5択問題を5問ずつ** 作成。\n');
+  L.push('## 対象問題（' + records.length + '問）\n');
+  records.forEach(function(r,i){
+    var q = findQuestionById(r.qid); if (!q) return;
+    L.push('### Q' + (i+1) + ' (Ch ' + q.ch + ')');
+    L.push('元問題: ' + (q.q||'').slice(0,200));
+    L.push('正解: ' + (q.opts ? q.opts[q.ans] : '?'));
+    if (r.chosenOrig!==undefined && q.opts && !r.correct) L.push('私の誤答: ' + (q.opts[r.chosenOrig]||''));
+    L.push('');
+  });
+  L.push('## 依頼');
+  L.push('1. 頻出概念トップ3を抽出（重複は統合）');
+  L.push('2. 各概念につき新しい5択問題を5問（合計15問）');
+  L.push('3. 元問題のコピペ禁止・新シナリオ/数値');
+  L.push('4. 5択（A〜E）+ F) わからない');
+  L.push('5. 計算問題は選択肢を substitution 形式（代入式、最終値ではなく）');
+  L.push('6. 難易度 基礎→応用 順\n');
+  L.push('各問題：');
+  L.push('## Q1 (基礎)\n[英語問題文]\n\nA) ... B) ... C) ... D) ... E) ... F) わからない\n');
+  L.push('<details>\n<summary>解答と解説</summary>\n\n**正解: X**\n\n[日本語：なぜ正解か / 各誤答の理由 / 覚え方]\n</details>\n');
+  L.push('## 🌐 言語ルール\n- 問題文・選択肢：英語\n- 解説・判定：日本語\n');
+  L.push('## 📐 数式\n' + ACC_LATEX + '\n');
+  L.push('最後に **総合判定（日本語）**：元の正答率（' + records.filter(function(r){return r.correct;}).length + '/' + records.length + '）+ 新問題結果から各概念の理解度評価。');
+  return L.join('\n');
+}
+// ── 1問ごと：分析プロンプト（閾値ゼロ）──  q は表示中の（シャッフル済み）問題オブジェクト
+function accSingleAnalysis(q, chosen, correct){
+  if (!q) return null;
+  var letters = ['A','B','C','D','E','F'];
+  var ci = chosen;
+  var isDK = /わから(ない|ん)|not\s*sure|don'?t know/i.test((q.opts[ci]||''));
+  var L = [];
+  L.push('# 📖 問題の徹底分析【Opus 4.7】\n');
+  L.push('## 問題 (Ch ' + q.ch + ')\n\n' + q.q + '\n');
+  L.push('## 選択肢\n');
+  for (var i=0;i<q.opts.length;i++){ var m=(i===q.ans)?'':(i===ci?' ← 自分の選択':''); L.push('- **' + letters[i] + ')** ' + q.opts[i] + m); }
+  L.push('');
+  L.push('## 結果\n');
+  if (correct) L.push('**正解。より深く理解したい。**');
+  else if (isDK) L.push('**「わからない」を選択。** 一から教えて。');
+  else L.push('**間違えた**。私: ' + letters[ci] + ') / 正解: ' + letters[q.ans] + ')');
+  L.push('');
+  if (q.exp || q.expl) L.push('## 公式解説（参考）\n' + (q.exp||q.expl) + '\n');
+  L.push('---\n## 出力フォーマット\n');
+  L.push('### 🎯 核心概念\n[該当章に沿って3〜5文・日英用語併記]\n');
+  L.push('### なぜ正解か\n[step-by-step。計算なら途中式全部]\n');
+  L.push('### ❌ 各誤答の誤解パターン（markdown表）\n');
+  L.push('| 選択肢 | 取り違えた公式/概念 | 試験で見抜く瞬間 |\n|---|---|---|\n| A) ... | ... | ... |\n（全選択肢）\n');
+  if (!correct && !isDK) L.push('### 🔍 あなたの誤答の根本原因\n仮説2つ + 克服法\n');
+  L.push('### 🧠 覚え方（3案）\n単位ベース / 構造ベース / メタファー\n');
+  L.push('### 🚦 5秒判断フロー\n番号付き5ステップ + ひっかけパターン2つ\n');
+  L.push('### 🎯 1行サマリー\n> [記憶のフックになる短文]\n');
+  L.push('---\n## ルール\n- 数式は LaTeX（`\\dfrac{}{}` `\\sqrt{}`）\n- 専門用語は日英併記\n- 問題・選択肢=英語、解説=日本語\n- 一般論禁止');
+  return L.join('\n');
+}
+// ── 1問ごと：確認テスト ──
+function accSingleVerify(q, chosen, correct){
+  if (!q) return null;
+  var letters = ['A','B','C','D','E','F'];
+  var ci = chosen;
+  var L = [];
+  L.push('# 🎯 確認テスト生成【Opus 4.7】\n');
+  L.push('以下の概念について、私が理解しているか新しい5択問題で確認。\n');
+  L.push('## 元の問題（参考）\n**Ch ' + q.ch + '**\n\n' + q.q + '\n');
+  L.push('正解: ' + letters[q.ans] + ') ' + (q.opts[q.ans]||''));
+  if (!correct) L.push('私の解答: ' + letters[ci] + ') ' + (q.opts[ci]||'') + ' （間違えた）');
+  L.push('\n---\n## 作問ルール\n');
+  L.push('1. 同じ概念・新シナリオ/数値（コピペ禁止）');
+  L.push('2. 5択 A〜E + F) わからない');
+  L.push('3. 正解は A〜E に分散');
+  L.push('4. 計算問題は選択肢を substitution 形式');
+  L.push('5. 難易度 基礎→試験本番 で5問\n');
+  L.push('各問題：\n## Q1 (基礎)\n[英語問題文]\n\nA)... B)... C)... D)... E)... F) わからない\n');
+  L.push('<details>\n<summary>解答と解説</summary>\n\n**正解: X**\n\n[日本語解説]\n</details>\n');
+  L.push('最後に総合判定（日本語）：基礎理解 / 応用可 / 試験本番OK\n');
+  L.push('## 🌐 言語：問題・選択肢=英語、解説=日本語\n## 📐 数式：LaTeX 必須（`\\dfrac{}{}` / `\\sqrt{}`）');
+  return L.join('\n');
+}
+// ── バッチピッカー モーダル ──
+function showBatchPicker(){
+  var batches = loadBatches();
+  var ex = document.getElementById('batch-picker-modal'); if (ex) ex.remove();
+  var ov = document.createElement('div'); ov.id='batch-picker-modal';
+  ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:12px;';
+  var box = document.createElement('div');
+  box.style.cssText='background:#0f1c2e;border:2px solid #f97316;border-radius:14px;padding:18px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;display:flex;flex-direction:column;gap:12px;';
+  var all = accAllRecords();
+  var rows = '';
+  batches.forEach(function(b){
+    if (accRecords(b).length===0 && !b.sealed) return;
+    var r = accBatchRange(b, batches);
+    rows += '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px;background:#1a2940;border-radius:10px;border:1px solid #1e3a5f;">';
+    rows += '<div style="flex:1 1 100%;color:#e2e8f0;font-size:15px;font-weight:600;margin-bottom:6px;">' + (b.sealed?'🔒 バッチ ':'✏️ バッチ（進行中）') + '：' + r.start + '〜' + r.end + ' 問目（' + accRecords(b).length + '問）</div>';
+    rows += '<button onclick="accCopyBatch(\'' + b.id + '\',this)" style="background:#f97316;color:#0f1c2e;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;">📖 分析用</button>';
+    rows += '<button onclick="accCopyBatchVerify(\'' + b.id + '\',this)" style="background:#a855f7;color:#fff;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;">🎯 確認テスト</button>';
+    rows += '</div>';
+  });
+  if (all.length>0){
+    rows += '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px;background:#1e293b;border-radius:10px;border:2px dashed #3b82f6;">';
+    rows += '<div style="flex:1 1 100%;color:#a5b4fc;font-size:15px;font-weight:700;margin-bottom:6px;">📚 全バッチまとめて（' + all.length + '問）</div>';
+    rows += '<button onclick="accCopyAll(this)" style="background:#3b82f6;color:#fff;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;">📖 分析用</button>';
+    rows += '<button onclick="accCopyAllVerify(this)" style="background:#a855f7;color:#fff;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;">🎯 確認テスト</button>';
+    rows += '</div>';
+  }
+  if (rows==='') rows = '<div style="color:#94a3b8;text-align:center;padding:20px;">まだ解答履歴がありません。クイズを解くと記録されます。</div>';
+  box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:20px;font-weight:800;color:#f97316;">🤖 AI 学習プロンプト</div><button onclick="document.getElementById(\'batch-picker-modal\').remove()" style="background:transparent;border:none;color:#94a3b8;font-size:28px;cursor:pointer;">×</button></div><div style="color:#94a3b8;font-size:14px;">コピーすると進行中バッチが封印され次が開始。過去バッチも個別コピー可。</div>' + rows;
+  ov.appendChild(box); document.body.appendChild(ov);
+  ov.addEventListener('click', function(e){ if (e.target===ov) ov.remove(); });
+}
+function accFindBatch(id){ return loadBatches().filter(function(x){ return x.id===id; })[0]; }
+function accCopyBatch(id, btn){ var bs=loadBatches(), b=accFindBatch(id); if(!b)return; var r=accBatchRange(b,bs); copyTextToClipboard(accBuildAnalysisPrompt(accRecords(b), r.start+'〜'+r.end+'問目'), btn, function(){ if(!b.sealed) accSealActiveStartNew(); }); }
+function accCopyBatchVerify(id, btn){ var bs=loadBatches(), b=accFindBatch(id); if(!b)return; var r=accBatchRange(b,bs); copyTextToClipboard(accBuildVerifyPrompt(accRecords(b), r.start+'〜'+r.end+'問目の確認テスト'), btn, function(){ if(!b.sealed) accSealActiveStartNew(); }); }
+function accCopyAll(btn){ copyTextToClipboard(accBuildAnalysisPrompt(accAllRecords(), '全バッチ統合'), btn); }
+function accCopyAllVerify(btn){ copyTextToClipboard(accBuildVerifyPrompt(accAllRecords(), '全バッチ統合 確認テスト'), btn); }
+// ── 1問ごとコピー（現在表示中の問題） ──
+function accCopySingle(type, btn){
+  try {
+    var q = quizState.block[quizState.index];
+    var chosen = quizState.chosen;
+    if (!q || chosen < 0) { alert('解答後に使えます'); return; }
+    var correct = (chosen === q.ans);
+    var p = (type==='verify') ? accSingleVerify(q,chosen,correct) : accSingleAnalysis(q,chosen,correct);
+    copyTextToClipboard(p, btn);
+  } catch(e){ alert('生成失敗'); }
+}
+// ── 1問ごとAIボタンを解答フィードバックに注入（閾値ゼロ）──
+(function injectSingleAiButtons(){
+  var prev = window.selectOption;
+  if (typeof prev !== 'function') return;
+  window.selectOption = function(idx){
+    prev(idx);
+    try {
+      var q = quizState.block[quizState.index]; if (!q) return;
+      var expEl = document.getElementById('q-explanation'); if (!expEl) return;
+      if (expEl.querySelector('.acc-single-ai')) return;
+      var div = document.createElement('div');
+      div.className = 'acc-single-ai';
+      div.style.cssText = 'margin-top:14px;padding:12px 14px;background:rgba(59,130,246,0.08);border-radius:10px;border:1px dashed #3b82f6;';
+      div.innerHTML = '<div style="font-size:16px;color:#3b82f6;font-weight:700;margin-bottom:8px;">🤖 AI でさらに学ぶ（この問題）</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+        '<button onclick="accCopySingle(\'analysis\',this)" style="background:#3b82f6;color:#fff;border:none;padding:9px 14px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;">📋 分析プロンプト</button>' +
+        '<button onclick="accCopySingle(\'verify\',this)" style="background:#a855f7;color:#fff;border:none;padding:9px 14px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;">🎯 確認テスト</button>' +
+        '</div>';
+      expEl.appendChild(div);
+    } catch(e){}
+  };
+})();
+
 /* ─── Render-time injection: pass-filter pills + AI prompt button ─── */
 (function patchQH_v2(){
   var origQH = typeof renderQuizHome === 'function' ? renderQuizHome : null;
@@ -22107,7 +22333,7 @@ function showAiMilestone() {
               (n >= 10 ? ' (コピー可能)' : ' (10問でコピー有効化)') +
             '</div>' +
           '</div>' +
-          '<button onclick="toggleAiPromptModal()" style="' +
+          '<button onclick="showBatchPicker()" style="' +
             'background:#a78bfa;color:#1e1b4b;border:none;border-radius:8px;' +
             'padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;flex:0 0 auto;">' +
             '📋 プロンプト管理' +
