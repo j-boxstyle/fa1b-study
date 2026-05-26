@@ -10608,6 +10608,188 @@ var QUESTIONS = [
     we:{ 1: '収益性は Walmart が上回る。', 2: '流動比率は両社ほぼ同じ（0.9:1）で大差ない。', 3: '比率には明確な差がある（特に回転率・収益性）。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Target vs Walmart</b> (P15.5) — ratio analysis conclusions: both companies have a current ratio of about 0.9:1; Walmart has a higher inventory turnover and a substantially higher accounts-receivable turnover than Target; Walmart beats Target in every profitability ratio and in both solvency ratios.</div>',
     source:'FA1B Problem'
+  },
+  {
+    id:'qp1_1', conceptId:'c1_acct_eq', ch:1, type:'C',
+    q:'Hoshi Ltd. reports total assets of €820,000 and total liabilities of €350,000. What is total equity?',
+    opts:['A) €470,000','B) €1,170,000','C) €350,000','D) €820,000','E) €235,000','F) わからない'],
+    ans:0,
+    exp:'会計等式 A = L + E より E = A − L = 820,000 − 350,000 = €470,000。',
+    we:{ 1: '€1,170,000 は A + L（加算は誤り）。', 2: '€350,000 は負債。', 3: '€820,000 は総資産。', 4: '€235,000 は半分にした誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_2', conceptId:'c1_share_retained', ch:1, type:'C',
+    q:'Mei SA began the year with equity of €150,000. During the year it issued shares for €40,000, earned revenues of €210,000, incurred expenses of €160,000, and paid dividends of €15,000. What is ending equity?',
+    opts:['A) €225,000','B) €185,000','C) €250,000','D) €265,000','E) €210,000','F) わからない'],
+    ans:0,
+    exp:'期末資本 = 期首150,000 + 増資40,000 + 純利益(210,000−160,000=50,000) − 配当15,000 = €225,000。',
+    we:{ 1: '€185,000 は増資40,000を除外。', 2: '€250,000 は配当を引き忘れ。', 3: '€265,000 は配当を加算した誤り。', 4: '€210,000 は収益総額。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_3', conceptId:'c1_share_retained', ch:1, type:'C',
+    q:'Akkar Ltd. had beginning retained earnings of €90,000, net income of €48,000, and declared dividends of €20,000 during the year. What is ending retained earnings?',
+    opts:['A) €118,000','B) €158,000','C) €138,000','D) €70,000','E) €98,000','F) わからない'],
+    ans:0,
+    exp:'期末RE = 期首90,000 + 純利益48,000 − 配当20,000 = €118,000。',
+    we:{ 1: '€158,000 は配当を加算した誤り。', 2: '€138,000 は配当を引き忘れ。', 3: '€70,000 は純利益を引いた誤り。', 4: '€98,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_4', conceptId:'c1_transaction', ch:1, type:'C',
+    q:'A company purchases supplies for €1,500 on account. How does this transaction affect the accounting equation?',
+    opts:['A) Increase in assets and increase in liabilities','B) Increase in assets and increase in equity','C) Increase in one asset and decrease in another','D) Decrease in assets and decrease in liabilities','E) No effect on the accounting equation','F) わからない'],
+    ans:0,
+    exp:'掛けで消耗品購入：資産（Supplies）増加 + 負債（Accounts Payable）増加。現金は動かない。',
+    we:{ 1: '資本は増えない（負債で賄う）。', 2: '資産内の振替ではない（負債が増える）。', 3: '増加であり減少ではない。', 4: '等式に影響する。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_5', conceptId:'c1_fin_stmts', ch:1, type:'A',
+    q:'Which of the following items would appear on the statement of financial position rather than the income statement?',
+    opts:['A) Unearned revenue','B) Service revenue','C) Salaries expense','D) Depreciation expense','E) Sales revenue','F) わからない'],
+    ans:0,
+    exp:'Unearned Revenue は前受収益＝負債で、財政状態計算書（SFP）に表示。残りはすべて損益計算書の収益・費用項目。',
+    we:{ 1: 'Service Revenue は損益計算書の収益。', 2: 'Salaries Expense は損益計算書の費用。', 3: 'Depreciation Expense は損益計算書の費用。', 4: 'Sales Revenue は損益計算書の収益。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_6', conceptId:'c1_fin_stmts', ch:1, type:'A',
+    q:'Using the account balances below, what is net income for the year?',
+    opts:['A) €38,000','B) €30,000','C) €46,000','D) €55,000','E) €95,000','F) わからない'],
+    ans:0,
+    exp:'純利益 = 収益 − 費用 = Service revenue 95,000 − (Salaries 40,000 + Rent 12,000 + Supplies expense 5,000) = €38,000。配当8,000は費用ではない。',
+    we:{ 1: '€30,000 は配当8,000も費用に含めた誤り。', 2: '€46,000 は一部費用の漏れ。', 3: '€55,000 は費用の計算誤り。', 4: '€95,000 は収益総額。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Selected account balances (year)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Service revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€95,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Salaries expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€40,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Rent expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€12,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Supplies expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€5,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Dividends</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€8,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp1_7', conceptId:'c2_sfp_structure', ch:1, type:'A',
+    q:'In preparing the financial statements, net income from the income statement flows directly into which statement/account?',
+    opts:['A) Retained Earnings (via the retained earnings statement)','B) Share Capital on the SFP','C) Cash on the statement of cash flows','D) Accounts Receivable','E) Sales Revenue','F) わからない'],
+    ans:0,
+    exp:'純利益は利益剰余金計算書を経由して Retained Earnings に流れ、SFPの資本に反映される（IS → RE → SFP）。',
+    we:{ 1: '純利益は株式資本金には流れない。', 2: '純利益とキャッシュ残高は直接結びつかない。', 3: '売掛金とは無関係。', 4: '売上は損益計算書の収益。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp2_1', conceptId:'c2_accounts', ch:2, type:'A',
+    q:'Which of the following accounts normally has a DEBIT balance?',
+    opts:['A) Prepaid Insurance','B) Accounts Payable','C) Service Revenue','D) Share Capital—Ordinary','E) Unearned Revenue','F) わからない'],
+    ans:0,
+    exp:'正常残高：資産・費用・配当 = 借方(Dr)。Prepaid Insurance は資産 → 借方残高。残りは負債・資本・収益で貸方残高。',
+    we:{ 1: 'Accounts Payable は負債 → 貸方。', 2: 'Service Revenue は収益 → 貸方。', 3: 'Share Capital は資本 → 貸方。', 4: 'Unearned Revenue は負債 → 貸方。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp2_2', conceptId:'c2_journal', ch:2, type:'C',
+    q:'On June 1, Sora Studio received €7,200 cash from a client for services to be provided evenly over the next 6 months. What is the correct journal entry on June 1?',
+    opts:['A) Dr Cash 7,200 / Cr Unearned Revenue 7,200','B) Dr Cash 7,200 / Cr Service Revenue 7,200','C) Dr Unearned Revenue 7,200 / Cr Cash 7,200','D) Dr Cash 1,200 / Cr Service Revenue 1,200','E) Dr Service Revenue 7,200 / Cr Cash 7,200','F) わからない'],
+    ans:0,
+    exp:'受取時点では未提供 → 前受収益（負債）。Dr Cash 7,200 / Cr Unearned Revenue 7,200。各月の提供時に収益へ振替。',
+    we:{ 1: '受取時に全額を収益計上するのは誤り（まだ未提供）。', 2: '借方貸方が逆。', 3: '€1,200 は1か月分（受取時は全額を前受計上）。', 4: '方向が逆。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp2_3', conceptId:'c2_trial_balance', ch:2, type:'A',
+    q:'Using the account balances below, what is the total of each column on the trial balance?',
+    opts:['A) €113,000','B) €226,000','C) €131,000','D) €95,000','E) €68,000','F) わからない'],
+    ans:0,
+    exp:'借方 = Cash 25,000 + A/R 12,000 + Equipment 60,000 + Salaries Exp 16,000 = 113,000。貸方 = A/P 18,000 + Share Capital 50,000 + Service Rev 45,000 = 113,000。各列合計 €113,000。',
+    we:{ 1: '€226,000 は借方+貸方の合算。', 2: '€131,000 は分類誤り。', 3: '€95,000 は一部項目の漏れ。', 4: '€68,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Account balances</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Cash</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€25,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Accounts Receivable</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€12,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Equipment</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€60,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Accounts Payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€18,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Share Capital—Ordinary</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€50,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Service Revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€45,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Salaries Expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€16,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp2_4', conceptId:'c2_journal', ch:2, type:'C',
+    q:'A company pays €2,000 cash to settle an account payable. How does this affect the accounting equation?',
+    opts:['A) Decrease in assets and decrease in liabilities','B) Decrease in assets and decrease in equity','C) Increase in assets and increase in liabilities','D) No effect on total assets','E) Decrease in one asset and increase in another','F) わからない'],
+    ans:0,
+    exp:'買掛金の現金支払：資産（現金）減少 + 負債（買掛金）減少。',
+    we:{ 1: '資本は減らない（負債の決済）。', 2: '増加ではなく減少。', 3: '総資産は減少する。', 4: '資産内振替ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp2_5', conceptId:'c2_trial_balance', ch:2, type:'C',
+    q:'A €600 purchase of equipment for cash was correctly journalized but posted as a €600 debit to Supplies (and the correct credit to Cash). What is the effect on the trial balance?',
+    opts:['A) The trial balance still balances (debits = credits)','B) Debits exceed credits by €600','C) Credits exceed debits by €600','D) Debits exceed credits by €1,200','E) The trial balance cannot be prepared','F) わからない'],
+    ans:0,
+    exp:'借方の勘定を間違えた（Equipment→Supplies）だけで、借方金額・貸方は正しい。借方合計=貸方合計は崩れない → 試算表は一致する（ただし勘定分類は誤り）。',
+    we:{ 1: '借方金額は正しいので差は生じない。', 2: '同上。', 3: '二重計上していない。', 4: '試算表は作成できる。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_1', conceptId:'c3_prepaid', ch:3, type:'C',
+    q:'On April 1, Vela Ltd. paid €7,200 for a 12-month insurance policy and debited Prepaid Insurance. What is the December 31 adjusting entry?',
+    opts:['A) Dr Insurance Expense 5,400 / Cr Prepaid Insurance 5,400','B) Dr Insurance Expense 7,200 / Cr Prepaid Insurance 7,200','C) Dr Insurance Expense 1,800 / Cr Prepaid Insurance 1,800','D) Dr Prepaid Insurance 5,400 / Cr Insurance Expense 5,400','E) Dr Insurance Expense 600 / Cr Prepaid Insurance 600','F) わからない'],
+    ans:0,
+    exp:'月額 = 7,200 ÷ 12 = 600。経過 = 4/1〜12/31 = 9か月 → 9 × 600 = €5,400 を費用化。Dr Insurance Expense / Cr Prepaid Insurance 5,400。',
+    we:{ 1: '€7,200 は1年分全額。経過は9か月。', 2: '€1,800 は未経過3か月分（費用は経過分）。', 3: '借方貸方が逆。', 4: '€600 は1か月分のみ。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_2', conceptId:'c3_prepaid', ch:3, type:'C',
+    q:'On September 1, Tashi Ltd. received €12,000 for a one-year service subscription and credited Unearned Revenue. What is the December 31 adjusting entry?',
+    opts:['A) Dr Unearned Revenue 4,000 / Cr Service Revenue 4,000','B) Dr Unearned Revenue 12,000 / Cr Service Revenue 12,000','C) Dr Service Revenue 4,000 / Cr Unearned Revenue 4,000','D) Dr Unearned Revenue 8,000 / Cr Service Revenue 8,000','E) Dr Cash 4,000 / Cr Service Revenue 4,000','F) わからない'],
+    ans:0,
+    exp:'月額 = 12,000 ÷ 12 = 1,000。稼得 = 9/1〜12/31 = 4か月 → €4,000 を収益へ。Dr Unearned Revenue / Cr Service Revenue 4,000。',
+    we:{ 1: '€12,000 は全額（稼得は4か月分のみ）。', 2: '借方貸方が逆。', 3: '€8,000 は未稼得分（収益は稼得分）。', 4: '現金は受取時に計上済み。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_3', conceptId:'c3_accrued_rev', ch:3, type:'C',
+    q:'Kemi Ltd. pays employees €15,000 for a 5-day work week (Monday–Friday), paid each Friday. The accounting period ends on a Tuesday. What salaries should be accrued at period-end?',
+    opts:['A) €6,000','B) €15,000','C) €9,000','D) €3,000','E) €12,000','F) わからない'],
+    ans:0,
+    exp:'1日当たり = 15,000 ÷ 5 = 3,000。期末は火曜＝月・火の2日経過 → 2 × 3,000 = €6,000 を未払計上。',
+    we:{ 1: '€15,000 は1週間分全額。', 2: '€9,000 は3日分（経過は2日）。', 3: '€3,000 は1日分。', 4: '€12,000 は4日分。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_4', conceptId:'c3_depreciation', ch:3, type:'C',
+    q:'Nuru Ltd. buys a machine for €72,000 with a €12,000 residual value and a 10-year useful life. What is the annual straight-line depreciation expense?',
+    opts:['A) €6,000','B) €7,200','C) €8,400','D) €60,000','E) €12,000','F) わからない'],
+    ans:0,
+    exp:'定額法 = (取得原価 − 残存価額) ÷ 耐用年数 = (72,000 − 12,000) ÷ 10 = €6,000/年。',
+    we:{ 1: '€7,200 は残存価額を引かず 72,000÷10。', 2: '€8,400 は計算誤り。', 3: '€60,000 は減価償却対象額（全期間）。', 4: '€12,000 は残存価額。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_5', conceptId:'c3_accrued_rev', ch:3, type:'C',
+    q:'On November 1, Obi Ltd. signed a €30,000, 6%, one-year note payable. What interest should be accrued in the December 31 adjusting entry?',
+    opts:['A) €300','B) €1,800','C) €150','D) €600','E) €900','F) わからない'],
+    ans:0,
+    exp:'利息 = 元本 × 利率 × 期間 = 30,000 × 6% × 2/12（11/1〜12/31 = 2か月）= €300。',
+    we:{ 1: '€1,800 は12か月分。', 2: '€150 は1か月分。', 3: '€600 は計算誤り。', 4: '€900 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_6', conceptId:'c3_prepaid', ch:3, type:'C',
+    q:'Sena Ltd.’s Supplies account shows €3,200. A year-end count finds €1,100 of supplies still on hand. What is the adjusting entry?',
+    opts:['A) Dr Supplies Expense 2,100 / Cr Supplies 2,100','B) Dr Supplies Expense 1,100 / Cr Supplies 1,100','C) Dr Supplies Expense 3,200 / Cr Supplies 3,200','D) Dr Supplies 2,100 / Cr Supplies Expense 2,100','E) No adjusting entry needed','F) わからない'],
+    ans:0,
+    exp:'使用分 = 帳簿 3,200 − 手元 1,100 = €2,100 を費用化。Dr Supplies Expense / Cr Supplies 2,100。手元の1,100が資産として残る。',
+    we:{ 1: '€1,100 は手元残高（資産、費用化しない）。', 2: '€3,200 全額を費用化すると手元分を無視。', 3: '借方貸方が逆。', 4: '調整は必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_7', conceptId:'c3_accrued_rev', ch:3, type:'C',
+    q:'At year-end, Lira Ltd. has performed €4,500 of services for a client but has not yet billed or recorded them. What is the adjusting entry?',
+    opts:['A) Dr Accounts Receivable 4,500 / Cr Service Revenue 4,500','B) Dr Cash 4,500 / Cr Service Revenue 4,500','C) Dr Service Revenue 4,500 / Cr Accounts Receivable 4,500','D) Dr Unearned Revenue 4,500 / Cr Service Revenue 4,500','E) No entry until cash is received','F) わからない'],
+    ans:0,
+    exp:'未収収益：稼得済み未請求 → Dr Accounts Receivable / Cr Service Revenue 4,500。発生主義では請求前でも収益認識。',
+    we:{ 1: '現金はまだ受け取っていない（売掛金が増える）。', 2: '借方貸方が逆。', 3: '前受収益ではない（受取はまだ）。', 4: '発生主義では計上が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp3_8', conceptId:'c3_adj_overview', ch:3, type:'A',
+    q:'Which statement about adjusting entries is correct?',
+    opts:['A) Every adjusting entry affects one income statement account and one SFP account, and never Cash','B) Adjusting entries always involve Cash','C) Adjusting entries are optional under accrual accounting','D) Adjusting entries only affect statement of financial position accounts','E) Adjusting entries are made only at the start of the period','F) わからない'],
+    ans:0,
+    exp:'決算整理仕訳は必ず損益計算書の勘定1つとSFPの勘定1つに影響し、現金は動かさない（現金主義との違い）。',
+    we:{ 1: '現金は動かさないのが原則。', 2: '発生主義では必須。', 3: '損益勘定にも影響する。', 4: '期末に行う。' },
+    source:'FA1B Predicted'
   }
 ];
 
@@ -21366,7 +21548,8 @@ var PASSES = [
   { id:2, label:'📚 教科書',  desc:'教科書練習問題' },
   { id:3, label:'📝 過去問',  desc:'Sample Final/Midterm' },
   { id:4, label:'📘 Exercise', desc:'宿題 Exercise（E問題）' },
-  { id:5, label:'📗 Problem',  desc:'宿題 Problem（P問題）' }
+  { id:5, label:'📗 Problem',  desc:'宿題 Problem（P問題）' },
+  { id:6, label:'📕 予想問題', desc:'試験予想・追加練習（exam-style）' }
 ];
 
 // Auto-assign a `source` to every question by ID (user mapping):
@@ -21387,6 +21570,7 @@ var PASSES = [
 function getQuestionSource(q) {
   if (!q) return '教科書';
   if (q.source && /Sample (Midterm|Final|Exam)|Past Exam|過去問/i.test(q.source)) return '過去問';
+  if (q.source && /Predicted|予想/i.test(q.source)) return '予想問題';
   if (q.source && /Exercise/i.test(q.source)) return 'Exercise';
   if (q.source && /Problem/i.test(q.source)) return 'Problem';
   if (q.source && /Canvas/i.test(q.source)) return 'Canvas';
@@ -21396,6 +21580,7 @@ function getQuestionSource(q) {
 function getQuestionSourceId(q) {
   var s = getQuestionSource(q);
   if (s === '過去問') return 3;
+  if (s === '予想問題') return 6;
   if (s === 'Exercise') return 4;
   if (s === 'Problem') return 5;
   if (s === 'Canvas') return 8;
