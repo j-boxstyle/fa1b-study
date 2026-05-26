@@ -11214,6 +11214,126 @@ var QUESTIONS = [
     we:{ 1: '資産ではない。受け取る権利（receivable）なら資産だが、payable は支払義務。', 2: '資本ではない。', 3: '費用（Salaries Expense）とは別。payable は未払いの「義務」=負債。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Diehl Cleaners</b> — SFP items: Accounts payable, Accounts receivable, Cash, Notes payable, Equipment, Salaries and wages payable, Supplies, Share capital – ordinary.</div>',
     source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t2_1', conceptId:'c2_trial_balance', ch:2, type:'C',
+    q:'[Canvas HW T2 / E2.17] After journalizing and posting Beyers Security&#39;s October transactions (below), what is the total of each column on the October 31 trial balance?',
+    opts:['A) $70,000','B) $66,000','C) $73,200','D) $43,452'],
+    ans:0,
+    exp:'試算表は借方合計=貸方合計。すべての仕訳を転記後、各列合計は $70,000 で一致する（借方：Cash 43,452 + Supplies 410 + Equipment 18,000 + 各費用 ＝ 70,000／貸方：A/P 800 + Share Capital 66,000 + Service Rev 3,200 ＝ 70,000）。',
+    we:{ 1: '$66,000 は当初出資のみ。全取引を反映していない。', 2: '$73,200 は計算誤り。', 3: '$43,452 は Cash 残高（試算表の1項目）であり列合計ではない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Beyers Security</b> — selected October transactions:<ul style="margin:6px 0 0;padding-left:18px;list-style:none;"><li>Oct 1 — Received $66,000 cash for ordinary shares.</li><li>Oct 2 — Hired a part-time consultant ($2,000/month); first work day Oct 15.</li><li>Oct 4 — Paid one month rent $2,000.</li><li>Oct 7 — Purchased equipment $18,000: paid $4,000 cash, balance on account.</li><li>Oct 8 — Paid $500 for advertising.</li><li>Oct 10 — Received bill for equipment repair $390.</li><li>Oct 12 — Provided services for $3,200 on account.</li><li>Oct 16 — Purchased supplies $410 on account.</li><li>Oct 21 — Paid the balance due from the Oct 7 purchase.</li><li>Oct 24 — Received and paid utility bill $148.</li><li>Oct 27 — Received payment for the Oct 12 services.</li><li>Oct 31 — Paid salaries and wages $5,100.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_2', conceptId:'c2_journal', ch:2, type:'A',
+    q:'[Canvas HW T2 / E2.17] Among Beyers Security&#39;s October transactions (below), which one requires NO journal entry?',
+    opts:['A) Oct 2 — Hired a part-time consultant (work starts Oct 15)','B) Oct 4 — Paid one month rent $2,000','C) Oct 10 — Received a $390 equipment repair bill','D) Oct 16 — Purchased supplies on account'],
+    ans:0,
+    exp:'Oct 2 は雇用契約の締結のみ。まだ役務提供も支払いも発生していない＝経済的事象なし → 仕訳不要。実際の給与は勤務後（Oct 31）に記録。',
+    we:{ 1: '家賃支払は費用＋現金減少 → 仕訳必要。', 2: '修理費の請求書受領は費用＋買掛金 → 仕訳必要（未払でも発生主義で計上）。', 3: '掛けの消耗品購入は資産＋買掛金 → 仕訳必要。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Beyers Security</b> — selected October transactions:<ul style="margin:6px 0 0;padding-left:18px;list-style:none;"><li>Oct 1 — Received $66,000 cash for ordinary shares.</li><li>Oct 2 — Hired a part-time consultant ($2,000/month); first work day Oct 15.</li><li>Oct 4 — Paid one month rent $2,000.</li><li>Oct 7 — Purchased equipment $18,000: paid $4,000 cash, balance on account.</li><li>Oct 8 — Paid $500 for advertising.</li><li>Oct 10 — Received bill for equipment repair $390.</li><li>Oct 12 — Provided services for $3,200 on account.</li><li>Oct 16 — Purchased supplies $410 on account.</li><li>Oct 21 — Paid the balance due from the Oct 7 purchase.</li><li>Oct 24 — Received and paid utility bill $148.</li><li>Oct 27 — Received payment for the Oct 12 services.</li><li>Oct 31 — Paid salaries and wages $5,100.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_3', conceptId:'c2_journal', ch:2, type:'C',
+    q:'[Canvas HW T2 / E2.17] Using Beyers Security&#39;s October transactions (below), what is the Cash balance at October 31?',
+    opts:['A) $43,452','B) $48,552','C) $45,352','D) $66,000'],
+    ans:0,
+    exp:'現金のみ集計：+66,000 −2,000(rent) −4,000(equip) −500(adv) −14,000(Oct21 balance) −148(util) +3,200(Oct27) −5,100(salaries) = $43,452。掛け取引（修理$390・消耗品$410・Oct12売上$3,200計上）は現金に影響しない。',
+    we:{ 1: '$48,552 は Oct31 給与 $5,100 を引き忘れ。', 2: '$45,352 は計算途中の値。', 3: '$66,000 は当初出資のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Beyers Security</b> — selected October transactions:<ul style="margin:6px 0 0;padding-left:18px;list-style:none;"><li>Oct 1 — Received $66,000 cash for ordinary shares.</li><li>Oct 2 — Hired a part-time consultant ($2,000/month); first work day Oct 15.</li><li>Oct 4 — Paid one month rent $2,000.</li><li>Oct 7 — Purchased equipment $18,000: paid $4,000 cash, balance on account.</li><li>Oct 8 — Paid $500 for advertising.</li><li>Oct 10 — Received bill for equipment repair $390.</li><li>Oct 12 — Provided services for $3,200 on account.</li><li>Oct 16 — Purchased supplies $410 on account.</li><li>Oct 21 — Paid the balance due from the Oct 7 purchase.</li><li>Oct 24 — Received and paid utility bill $148.</li><li>Oct 27 — Received payment for the Oct 12 services.</li><li>Oct 31 — Paid salaries and wages $5,100.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_4', conceptId:'c3_prepaid', ch:3, type:'A',
+    q:'[Canvas HW T2 / E3.5] For the Yilmaz situation below, which type of adjusting entry is needed at December 31, 2025?',
+    opts:['A) Prepaid expense (deferral)','B) Unearned revenue (deferral)','C) Accrued expense','D) Accrued revenue'],
+    ans:0,
+    exp:'12/1 に4か月分の家賃を前払い＝資産（Prepaid Rent）。期末に経過1か月分を費用へ振替 → 前払費用（Prepaid Expense）の調整。',
+    we:{ 1: '前受収益は現金を「受け取った」場合。これは支払い。', 2: '未払費用は発生済み未払いの費用。これは前払い済み。', 3: '未収収益は稼得済み未回収の収益。家賃支払とは無関係。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Yilmaz A.S.</b> situation: On December 1, 2025, Yilmaz paid $2,800 rent for the 4 months starting December 1. (Identify the December 31 adjusting-entry type.)</div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_5', conceptId:'c3_prepaid', ch:3, type:'A',
+    q:'[Canvas HW T2 / E3.5] For the Yilmaz situation below, which type of adjusting entry is needed at December 31, 2025?',
+    opts:['A) Unearned revenue (deferral)','B) Prepaid expense (deferral)','C) Accrued revenue','D) Accrued expense'],
+    ans:0,
+    exp:'2025年に翌年分のサービス代金 $1,300 を前受け＝負債（Unearned Revenue）。期末時点で未提供なら前受収益のまま。→ 前受収益（Unearned Revenue）の調整区分。',
+    we:{ 1: '前払費用は現金を「支払った」場合。これは受取り。', 2: '未収収益は稼得済み未回収。これは前受け（未稼得）。', 3: '未払費用は無関係。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Yilmaz A.S.</b> situation: Yilmaz collects $1,300 from a customer in 2025 for services to be performed in 2026. (Identify the December 31 adjusting-entry type.)</div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_6', conceptId:'c3_accrued_rev', ch:3, type:'C',
+    q:'[Canvas HW T2 / E3.6] Hwang borrowed NT$10,000 on a 9% one-year note on September 1, 2025 (see below). What is the December 31 adjusting entry for accrued interest?',
+    opts:['A) Dr Interest Expense 300 / Cr Interest Payable 300','B) Dr Interest Expense 900 / Cr Interest Payable 900','C) Dr Interest Expense 225 / Cr Interest Payable 225','D) Dr Interest Expense 300 / Cr Notes Payable 300'],
+    ans:0,
+    exp:'利息 = 元本 × 利率 × 期間 = NT$10,000 × 9% × 4/12（9/1〜12/31 ＝ 4か月）= NT$300。Dr Interest Expense / Cr Interest Payable 300。',
+    we:{ 1: 'NT$900 は12か月分（10,000×9%）。経過は4か月のみ。', 2: 'NT$225 は3か月分の誤り（経過は9〜12月の4か月）。', 3: '貸方は Interest Payable（未払利息）。Notes Payable は元本で増えない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hwang Ltd.</b> — information at December 31, 2025 (all accounts have normal balances):<ul style="margin:6px 0 0;padding-left:18px;"><li>Borrowed NT$10,000 by signing a 9%, one-year note on September 1, 2025.</li><li>Prepaid Insurance NT$2,100 — paid for 12 months of coverage on June 1, 2025.</li><li>Supplies account NT$2,450; a count shows NT$900 on hand at year-end.</li><li>Depreciation on equipment for 2025 is NT$1,000.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_7', conceptId:'c3_prepaid', ch:3, type:'C',
+    q:'[Canvas HW T2 / E3.6] Hwang paid NT$2,100 for 12 months of insurance on June 1, 2025 (see below). What is the December 31 adjusting entry for insurance expense?',
+    opts:['A) Dr Insurance Expense 1,225 / Cr Prepaid Insurance 1,225','B) Dr Insurance Expense 2,100 / Cr Prepaid Insurance 2,100','C) Dr Insurance Expense 875 / Cr Prepaid Insurance 875','D) Dr Prepaid Insurance 1,225 / Cr Insurance Expense 1,225'],
+    ans:0,
+    exp:'月額 = NT$2,100 ÷ 12 = NT$175。経過 = 6/1〜12/31 = 7か月。費用 = 7 × 175 = NT$1,225。Dr Insurance Expense / Cr Prepaid Insurance 1,225。',
+    we:{ 1: 'NT$2,100 は1年分全額。経過は7か月のみ。', 2: 'NT$875 は5か月分の誤り（経過は6〜12月の7か月）。', 3: '借方貸方が逆。費用を借方、前払を貸方（減少）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hwang Ltd.</b> — information at December 31, 2025 (all accounts have normal balances):<ul style="margin:6px 0 0;padding-left:18px;"><li>Borrowed NT$10,000 by signing a 9%, one-year note on September 1, 2025.</li><li>Prepaid Insurance NT$2,100 — paid for 12 months of coverage on June 1, 2025.</li><li>Supplies account NT$2,450; a count shows NT$900 on hand at year-end.</li><li>Depreciation on equipment for 2025 is NT$1,000.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_8', conceptId:'c3_prepaid', ch:3, type:'C',
+    q:'[Canvas HW T2 / E3.6] Hwang&#39;s Supplies account shows NT$2,450; a year-end count finds NT$900 on hand (see below). What is the adjusting entry?',
+    opts:['A) Dr Supplies Expense 1,550 / Cr Supplies 1,550','B) Dr Supplies Expense 900 / Cr Supplies 900','C) Dr Supplies Expense 2,450 / Cr Supplies 2,450','D) Dr Supplies 1,550 / Cr Supplies Expense 1,550'],
+    ans:0,
+    exp:'使用した消耗品 = 帳簿 2,450 − 手元 900 = NT$1,550 が費用。Dr Supplies Expense / Cr Supplies 1,550。手元の 900 が資産として残る。',
+    we:{ 1: 'NT$900 は期末の手元残高（資産）であり、費用化する使用分ではない。', 2: 'NT$2,450 全額を費用化すると手元の 900 を無視。', 3: '借方貸方が逆。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hwang Ltd.</b> — information at December 31, 2025 (all accounts have normal balances):<ul style="margin:6px 0 0;padding-left:18px;"><li>Borrowed NT$10,000 by signing a 9%, one-year note on September 1, 2025.</li><li>Prepaid Insurance NT$2,100 — paid for 12 months of coverage on June 1, 2025.</li><li>Supplies account NT$2,450; a count shows NT$900 on hand at year-end.</li><li>Depreciation on equipment for 2025 is NT$1,000.</li></ul></div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_9', conceptId:'c4_closing', ch:4, type:'C',
+    q:'[Canvas HW T2 / E4.7] From Je Ju Consultants&#39; adjusted trial balance (below), what is the net income transferred to Retained Earnings by the closing entries?',
+    opts:['A) ₩884','B) ₩4,300','C) ₩3,416','D) ₩550'],
+    ans:0,
+    exp:'純利益 = 収益 − 費用 = 4,300 − (1,260 + 256 + 1,900) = 4,300 − 3,416 = ₩884。締切で Income Summary の貸方残 ₩884 を Retained Earnings へ振替。',
+    we:{ 1: '₩4,300 は収益総額（費用を引いていない）。', 2: '₩3,416 は費用合計。', 3: '₩550 は配当（純利益とは別に RE から控除）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Je Ju Consultants</b> — from the Adjusted Trial Balance for the month ended June 30, 2025: Service Revenue ₩4,300; Salaries &amp; Wages Expense ₩1,260; Miscellaneous Expense ₩256; Supplies Expense ₩1,900; Dividends ₩550; Retained Earnings (beginning) ₩1,660.</div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_10', conceptId:'c4_closing', ch:4, type:'C',
+    q:'[Canvas HW T2 / E4.7] From Je Ju Consultants&#39; data (below), what is the ending Retained Earnings after all closing entries?',
+    opts:['A) ₩1,994','B) ₩2,544','C) ₩1,660','D) ₩884'],
+    ans:0,
+    exp:'期末RE = 期首RE 1,660 + 純利益 884 − 配当 550 = ₩1,994。',
+    we:{ 1: '₩2,544 は配当 550 を引き忘れ（1,660+884）。', 2: '₩1,660 は期首RE（純利益・配当を反映していない）。', 3: '₩884 は当期純利益のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Je Ju Consultants</b> — from the Adjusted Trial Balance for the month ended June 30, 2025: Service Revenue ₩4,300; Salaries &amp; Wages Expense ₩1,260; Miscellaneous Expense ₩256; Supplies Expense ₩1,900; Dividends ₩550; Retained Earnings (beginning) ₩1,660.</div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_11', conceptId:'c2_is_structure', ch:4, type:'C',
+    q:'[Canvas HW T2 / E4.17] From Basten Tax Services&#39; year-end items (below), what is the net income or loss for the year?',
+    opts:['A) Net loss of £3,800','B) Net income of £3,800','C) Net income of £8,500','D) Net loss of £12,300'],
+    ans:0,
+    exp:'収益 = Service 63,000 + Rent 8,500 = 71,500。費用 = Salaries 48,700 + Utilities 22,600 + Depreciation 4,000 = 75,300。71,500 − 75,300 = 純損失 £3,800。',
+    we:{ 1: '符号が逆。費用が収益を上回るため「損失」。', 2: '£8,500 は家賃収益のみ。', 3: '£12,300 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Basten Tax Services</b> — year-end items (July 31, 2025): Service revenue £63,000; Rent revenue £8,500; Salaries &amp; wages expense £48,700; Utilities expense £22,600; Depreciation expense £4,000; Dividends £3,000; Equipment £34,400; Accumulated depreciation £6,000; Cash £14,200; Accounts receivable £9,780; Accounts payable £4,100; Salaries payable £2,080; Notes payable (long-term) £1,800; Share capital £20,000; Retained earnings (beg.) £31,200.</div>',
+    source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t2_12', conceptId:'c4_classified_assets', ch:4, type:'C',
+    q:'[Canvas HW T2 / E4.17] From Basten Tax Services&#39; year-end items (below), what are total assets on the July 31 classified statement of financial position?',
+    opts:['A) £52,380','B) £58,380','C) £44,400','D) £28,400'],
+    ans:0,
+    exp:'資産 = 設備 34,400 − 減価償却累計額 6,000 = 28,400（純額）+ 現金 14,200 + 売掛金 9,780 = £52,380。（検算：資本 44,400 + 負債 7,980 = 52,380）。',
+    we:{ 1: '£58,380 は減価償却累計額 6,000 を控除していない（34,400 を総額で計上）。', 2: '£44,400 は資本合計。', 3: '£28,400 は非流動資産（純設備）のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Basten Tax Services</b> — year-end items (July 31, 2025): Service revenue £63,000; Rent revenue £8,500; Salaries &amp; wages expense £48,700; Utilities expense £22,600; Depreciation expense £4,000; Dividends £3,000; Equipment £34,400; Accumulated depreciation £6,000; Cash £14,200; Accounts receivable £9,780; Accounts payable £4,100; Salaries payable £2,080; Notes payable (long-term) £1,800; Share capital £20,000; Retained earnings (beg.) £31,200.</div>',
+    source:'FA1B Canvas Homework T2'
   }
 ];
 
