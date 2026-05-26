@@ -9366,8 +9366,8 @@ var QUESTIONS = [
     q: 'Sales Revenue €500,000, AR increased by €40,000. Cash from customers (Direct Method) =',
     opts: ['A) €540,000','B) €460,000','C) €500,000','D) €40,000'],
     ans: 1,
-    exp: 'Cash from customers = Sales Revenue − Increase in AR = €500,000 − €40,000 = €460,000. (AR increased means more sales NOT collected as cash.)',
-    we: { 0: 'Wrong direction', 2: 'Ignored AR change', 3: 'Just the change in AR' }
+    exp: '顧客からの現金 = 売上 − AR の増加 = €500,000 − €40,000 = €460,000。（AR 増加は、より多くの売上が現金回収されていないことを意味します。）',
+    we: { 0: '方向が誤りです。', 2: 'AR の変動を無視しています。', 3: 'AR の変動分だけです。' }
   },
   // ===========================================================
   // CHAPTER 15 - Financial Statement Analysis (Additional)
@@ -9377,96 +9377,96 @@ var QUESTIONS = [
     q: 'Horizontal analysis is also called:',
     opts: ['A) Trend analysis','B) Common-size analysis','C) Ratio analysis','D) Vertical analysis'],
     ans: 0,
-    exp: 'Horizontal Analysis = Trend Analysis: compares amounts across periods, with a base year = 100%. Common-Size and Vertical Analysis are the same thing (each line as % of a total in the SAME period).',
-    we: { 1: 'Vertical = Common-Size', 2: 'Different concept', 3: 'Vertical is Common-Size' }
+    exp: '水平分析（Horizontal Analysis）= トレンド分析：複数期間で金額を比較し、基準年を100%とします。Common-Size と垂直分析（Vertical）は同じもの（同一期間内で各項目を合計に対する%で表示）。',
+    we: { 1: 'Vertical = Common-Size です。', 2: '別概念です。', 3: 'Vertical は Common-Size です。' }
   },
   {
     id: 'q641', conceptId: 'c15_horizontal_vertical', ch: 15, type: 'C',
     q: 'On a Common-Size Income Statement, each item is expressed as a percentage of:',
     opts: ['A) Total Assets','B) Net Sales Revenue','C) Net Income','D) Total Equity'],
     ans: 1,
-    exp: 'On Common-Size IS, base = Net Sales Revenue (= 100%). On Common-Size SOFP, base = Total Assets (= 100%).',
-    we: { 0: 'That\'s SOFP base', 2: 'Not a base for any common-size', 3: 'Not a base' }
+    exp: 'Common-Size の損益計算書では基準 = 純売上（= 100%）。Common-Size の SOFP では基準 = 総資産（= 100%）。',
+    we: { 0: 'それは SOFP の基準です。', 2: 'どの common-size の基準でもありません。', 3: '基準ではありません。' }
   },
   {
     id: 'q642', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
     q: 'Net Income €600,000, Net Sales €4,000,000, Average Total Assets €5,000,000. Profit Margin =',
     opts: ['A) 12% (calculated as Net Income ÷ Average Total Assets)','B) 15% (calculated as Net Income ÷ Net Sales)','C) 120% (calculated as Net Sales ÷ Net Income, inverted)','D) 80% (calculated as Net Sales ÷ Average Total Assets)'],
     ans: 1,
-    exp: '**Profit Margin** = Net Income ÷ Net Sales = €600,000 ÷ €4,000,000 = **15%**. Measures how much of each sales dollar becomes profit.',
-    we: { 0: '12% = €600,000 ÷ €5,000,000 = **ROA** (Return on Assets), not Profit Margin. ROA uses Assets as denominator; Profit Margin uses Sales.', 2: '120% = €4,000,000 ÷ €600,000 × 18% — actually inverse ratio. Profit Margin denominator must be Sales (larger), not Income (smaller).', 3: '80% = €4,000,000 ÷ €5,000,000 = **Asset Turnover** (Sales ÷ Assets), not Profit Margin. Different ratio measuring asset utilization.' }
+    exp: 'Profit Margin = 純利益 ÷ 純売上 = €600,000 ÷ €4,000,000 = 15%。売上1単位がどれだけ利益になるかを測ります。',
+    we: { 0: '12% = €600,000 ÷ €5,000,000 = ROA（総資産利益率）で、Profit Margin ではありません。ROA は分母が資産、Profit Margin は売上です。', 2: '120% は逆比です。Profit Margin の分母は売上（大きい方）で、利益（小さい方）ではありません。', 3: '80% = €4,000,000 ÷ €5,000,000 = Asset Turnover（売上÷資産）で、Profit Margin ではありません。資産効率を測る別の比率です。' }
   },
   {
     id: 'q643', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
     q: 'Net Income €120,000, Beginning Total Assets €800,000, Ending Total Assets €1,000,000. Return on Assets (ROA) =',
     opts: ['A) 12%','B) 13.33%','C) 15%','D) 10%'],
     ans: 1,
-    exp: 'Average Total Assets = (€800,000 + €1,000,000) / 2 = €900,000. ROA = €120,000 / €900,000 = 13.33%.',
-    we: { 0: 'Used Ending Assets', 2: 'Used Beginning Assets', 3: 'Used Ending Assets' }
+    exp: '平均総資産 = (€800,000 + €1,000,000) / 2 = €900,000。ROA = €120,000 / €900,000 = 13.33%。',
+    we: { 0: '期末資産を使っています。', 2: '期首資産を使っています。', 3: '期末資産を使っています。' }
   },
   {
     id: 'q644', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
     q: 'Net Income €500,000, Preference Dividends €50,000, Average Ordinary Shareholders Equity €3,000,000. Return on Equity =',
     opts: ['A) 16.67%','B) 15%','C) 18.33%','D) 14%'],
     ans: 1,
-    exp: 'ROE = (NI − Pref Div) / Avg Ordinary SH Equity = (€500,000 − €50,000) / €3,000,000 = €450,000 / €3,000,000 = 15%.',
-    we: { 0: 'Forgot to subtract pref dividends', 2: 'Wrong math', 3: 'Wrong subtraction' }
+    exp: 'ROE = (NI − 優先配当) / 平均普通株主資本 = (€500,000 − €50,000) / €3,000,000 = €450,000 / €3,000,000 = 15%。',
+    we: { 0: '優先配当の差し引きを忘れています。', 2: '計算が誤りです。', 3: '引き方が誤りです。' }
   },
   {
     id: 'q645', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
     q: 'Net Income €240,000, Preference Dividends €40,000, Weighted Avg Ordinary Shares 100,000. EPS =',
     opts: ['A) €2.40','B) €2.00','C) €2.80','D) €0.40'],
     ans: 1,
-    exp: 'EPS = (NI − Pref Div) / Weighted Avg Ordinary Shares = (€240,000 − €40,000) / 100,000 = €200,000 / 100,000 = €2.00.',
-    we: { 0: 'Forgot pref dividends', 2: 'Wrong subtraction', 3: 'Used pref dividends only' }
+    exp: 'EPS = (NI − 優先配当) / 加重平均普通株式数 = (€240,000 − €40,000) / 100,000 = €200,000 / 100,000 = €2.00。',
+    we: { 0: '優先配当を忘れています。', 2: '引き方が誤りです。', 3: '優先配当だけを使っています。' }
   },
   {
     id: 'q646', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
     q: 'Profit Margin 8%, Asset Turnover 1.5. Using DuPont, ROA =',
     opts: ['A) 12%','B) 9.5%','C) 6.5%','D) 0.12%'],
     ans: 0,
-    exp: 'DuPont: ROA = Profit Margin × Asset Turnover = 8% × 1.5 = 12%.',
-    we: { 1: 'Addition', 2: 'Subtraction', 3: 'Decimal error' }
+    exp: 'DuPont：ROA = Profit Margin × Asset Turnover = 8% × 1.5 = 12%。',
+    we: { 1: '加算しています。', 2: '減算しています。', 3: '小数点の誤りです。' }
   },
   {
     id: 'q647', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'C',
     q: 'Current Assets €450,000 (Cash €50, ST Inv €30, AR €120, Inventory €200, Prepaid €50). Current Liabilities €200,000. Acid-Test (Quick) Ratio =',
     opts: ['A) 1.0','B) 2.25','C) 0.85','D) 1.5'],
     ans: 0,
-    exp: 'Acid-Test = (Cash + ST Investments + Net AR) / Current Liabilities = (50 + 30 + 120) / 200 = 200/200 = 1.0. Inventory and Prepaid are excluded.',
-    we: { 1: 'Current Ratio (includes Inventory)', 2: 'Wrong arithmetic', 3: 'Wrong calculation' }
+    exp: '当座比率（Acid-Test）= (Cash + 短期投資 + Net AR) / 流動負債 = (50 + 30 + 120) / 200 = 200/200 = 1.0。棚卸資産と前払費用は除外します。',
+    we: { 1: '流動比率（棚卸資産を含む）です。', 2: '計算が誤りです。', 3: '計算が誤りです。' }
   },
   {
     id: 'q648', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'C',
     q: 'Total Liabilities €600,000, Total Assets €1,000,000. Debt-to-Total Assets Ratio =',
     opts: ['A) 0.6 (60%) — calculated as Total Liabilities ÷ Total Assets','B) 1.67 — calculated as Total Assets ÷ Total Liabilities (inverted)','C) 0.4 (40%) — calculated as Total Equity ÷ Total Assets','D) 1.0 — calculated as Total Liabilities ÷ Total Liabilities'],
     ans: 0,
-    exp: '**Debt-to-Total Assets** = Total Liabilities ÷ Total Assets = €600,000 ÷ €1,000,000 = **0.6 (60%)**. Indicates 60% of assets are financed by debt. (Equity = 40% of assets — confirms accounting equation.)',
-    we: { 1: '1.67 = €1,000,000 ÷ €600,000 = **Assets ÷ Liabilities** (inverse). Debt-to-Assets always uses Liabilities as numerator.', 2: '0.4 = €400,000 (Equity) ÷ €1,000,000 = **Equity-to-Assets ratio** (complement = 1 − D/A). Different ratio measuring equity proportion.', 3: '1.0 means Liabilities = Assets (Equity = 0), which would imply technical insolvency. Not applicable to this scenario.' }
+    exp: '負債比率（Debt-to-Total Assets）= 総負債 ÷ 総資産 = €600,000 ÷ €1,000,000 = 0.6（60%）。資産の60%が負債で賄われていることを示します。（資本 = 資産の40% で会計等式と整合。）',
+    we: { 1: '1.67 = €1,000,000 ÷ €600,000 = 資産÷負債（逆数）です。負債比率は常に負債を分子にします。', 2: '0.4 = €400,000（資本）÷ €1,000,000 = 資本比率（1 − D/A の補数）で、別の比率です。', 3: '1.0 は負債 = 資産（資本 = 0）を意味し、実質債務超過です。本問には当てはまりません。' }
   },
   {
     id: 'q649', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'C',
     q: 'Income before Interest and Tax (EBIT) €500,000, Interest Expense €100,000. Times Interest Earned =',
     opts: ['A) 5 times — calculated as EBIT ÷ Interest Expense','B) 4 times — calculated as (EBIT − Interest) ÷ Interest','C) 0.2 — calculated as Interest Expense ÷ EBIT (inverted)','D) 6 times — calculated as (EBIT + Interest) ÷ Interest'],
     ans: 0,
-    exp: '**Times Interest Earned (TIE)** = EBIT ÷ Interest Expense = €500,000 ÷ €100,000 = **5 times**. Measures how many times the company can cover its interest payments from operating earnings.',
-    we: { 1: '4 = (€500k − €100k) ÷ €100k. **Subtracted then divided** — incorrectly removes interest from EBIT first. EBIT is already pre-interest.', 2: '0.2 = €100k ÷ €500k = **inverse ratio**. Coverage ratios place earnings in numerator, expense in denominator (not the other way).', 3: '6 = (€500k + €100k) ÷ €100k. **Added interest twice** — EBIT already excludes interest, so adding it back double-counts.' }
+    exp: '利息カバー率（TIE）= EBIT ÷ 支払利息 = €500,000 ÷ €100,000 = 5回。営業利益で利息を何回賄えるかを測ります。',
+    we: { 1: '4 = (€500k − €100k) ÷ €100k。先に引いてから割っており、EBIT から利息を誤って除いています。EBIT は既に利息前です。', 2: '0.2 = €100k ÷ €500k = 逆比です。カバー率は利益を分子、費用を分母にします。', 3: '6 = (€500k + €100k) ÷ €100k。利息を二重に足しています。EBIT は既に利息を除くので、足し戻すと二重計上です。' }
   },
   {
     id: 'q650', conceptId: 'c15_sustainable_income', ch: 15, type: 'A',
     q: 'Sustainable Income excludes which of the following?',
     opts: ['A) Ongoing salaries expense','B) Discontinued Operations','C) Cost of Goods Sold from continuing operations','D) Interest expense on long-term debt'],
     ans: 1,
-    exp: 'Discontinued Operations are one-time items reported separately (net of tax) on the IS. Sustainable Income excludes such non-recurring items. The other options are recurring operating items that ARE part of Sustainable Income.',
-    we: { 0: 'Recurring', 2: 'Recurring', 3: 'Recurring' }
+    exp: '廃止事業（Discontinued Operations）は IS で別途（税引後）表示する一時項目です。Sustainable Income はそうした非経常項目を除きます。他の選択肢は Sustainable Income に含まれる経常的な営業項目です。',
+    we: { 0: '経常的です。', 2: '経常的です。', 3: '経常的です。' }
   },
   {
     id: 'q651', conceptId: 'c15_sustainable_income', ch: 15, type: 'B',
     q: 'Comprehensive Income equals:',
     opts: ['A) Net Income only (the bottom line of the Income Statement, before OCI items)','B) Net Income plus Other Comprehensive Income (OCI items reported in equity)','C) Net Sales plus Other Comprehensive Income (top-line revenue + OCI adjustments)','D) Gross Profit plus Other Comprehensive Income (after COGS deduction + OCI items)'],
     ans: 1,
-    exp: '**Comprehensive Income = Net Income + Other Comprehensive Income (OCI)**. OCI includes items like Revaluation Surplus on PPE, unrealized gains on non-trading securities, foreign currency translation, and actuarial gains/losses on pensions.',
-    we: { 0: 'NI alone is NOT comprehensive — it excludes OCI items that bypass the income statement (like Revaluation Surplus).', 2: 'Net Sales is the **top line** of the IS (before COGS and expenses). Comprehensive Income uses **Net Income** (after all expenses).', 3: 'Gross Profit is **mid-IS** (after COGS but before operating expenses). Comprehensive Income uses **Net Income** (after all expenses & tax).' }
+    exp: '包括利益 = 純利益 + その他包括利益（OCI）。OCI は PPE の Revaluation Surplus・非売買有価証券の未実現益・為替換算・年金の数理損益などを含みます。',
+    we: { 0: 'NI 単独は包括的ではありません。損益計算書を経由しない OCI 項目（Revaluation Surplus 等）を除きます。', 2: '純売上は IS の最上行（COGS・費用の前）です。包括利益は（全費用後の）純利益を使います。', 3: '売上総利益は IS の中間（COGS 後・営業費前）です。包括利益は（全費用・税引後の）純利益を使います。' }
   },
   // ===========================================================
   // FA1B SAMPLE FINAL EXAM 2026 (Q1-Q30)
@@ -9484,24 +9484,24 @@ var QUESTIONS = [
     q: '[Sample Final Q2] Bingeau Inc. April data: Inv 4/1: 15,000@€7 = €105,000. Purchases: 4/11: 15,000@€6, 4/24: 20,000@€5. Sales: 4/18: 20,000, 4/30: 25,000. Periodic system, average-cost. COGS in April 2018 is:',
     opts: ['A) €295,000','B) €270,000','C) €265,500','D) €255,800'],
     ans: 2,
-    exp: 'Total cost available = €105,000+€90,000+€100,000 = €295,000. Total units = 15,000+15,000+20,000 = 50,000. Avg cost = €295,000/50,000 = €5.90/unit. Units sold = 20,000+25,000 = 45,000. COGS = 45,000 × €5.90 = €265,500.',
-    we: { 0: '€295,000は商品全部の原価。販売分のみ', 1: '€270,000は計算誤り', 3: '€255,800は計算誤り' }
+    exp: '販売可能総原価 = €105,000+€90,000+€100,000 = €295,000。総単位 = 15,000+15,000+20,000 = 50,000。平均原価 = €295,000/50,000 = €5.90/単位。販売単位 = 20,000+25,000 = 45,000。COGS = 45,000 × €5.90 = €265,500。',
+    we: { 0: '€295,000 は商品全部の原価です。販売分のみ。', 1: '€270,000 は計算誤りです。', 3: '€255,800 は計算誤りです。' }
   },
   {
     id: 'q_fe3', conceptId: 'c5_purchase', ch: 5, type: 'C',
     q: '[Sample Final Q3] Black Belt &Co. perpetual system: (1) Received goods €50,000, terms 2/10 n/30. (2) Returned €1,000. (3) Paid €250 freight. (4) Paid invoice within discount period. Inventory:',
     opts: ['A) increased by €48,020','B) increased by €48,270','C) increased by €48,265','D) increased by €49,250'],
     ans: 1,
-    exp: 'Net purchase: €50,000 − €1,000 = €49,000. Discount: €49,000 × 2% = €980. Discounted amount: €49,000 − €980 = €48,020. Add Freight: €48,020 + €250 = €48,270.',
-    we: { 0: '€48,020 = €49,000 − €980 (割引適用) のみ。**Freight €250 の追加を忘れている**。Freight-in は perpetual で Inventory に加算する。', 2: '€48,265 = €49,000 − €985 (割引を間違えて€985で計算) + €250 のような **計算ミス**。正しい割引は €49,000 × 2% = €980。', 3: '€49,250 = €49,000 + €250 (Freight 加算のみ)。**Discount €980 適用を忘れている**。期間内支払なので 2% 割引が必要。' }
+    exp: '純仕入：€50,000 − €1,000 = €49,000。割引：€49,000 × 2% = €980。割引後：€49,000 − €980 = €48,020。運賃を加算：€48,020 + €250 = €48,270。',
+    we: { 0: '€48,020 = €49,000 − €980（割引適用）のみ。運賃 €250 の追加を忘れています。引取運賃は perpetual で Inventory に加算します。', 2: '€48,265 は割引を誤って €985 で計算したような計算ミスです。正しい割引は €49,000 × 2% = €980。', 3: '€49,250 = €49,000 + €250（運賃加算のみ）。割引 €980 の適用を忘れています。期間内支払なので2%割引が必要です。' }
   },
   {
     id: 'q_fe4', conceptId: 'c9_depreciation_methods', ch: 9, type: 'A',
     q: '[Sample Final Q4] Oct 1 2017, press cost €160,000, 5-yr life, €40,000 residual. Book value Dec 31 2017 using DDB?',
     opts: ['A) €144,000','B) €120,000','C) €104,000','D) €150,000'],
     ans: 0,
-    exp: 'DDB rate = 2/5 = 40%. Year 1 (Oct 1 - Dec 31 = 3/12 = 0.25 year). Depreciation = €160,000 × 40% × 3/12 = €16,000. Book Value = €160,000 − €16,000 = €144,000. Note: DDB ignores residual value in calculation.',
-    we: { 1: '€120,000 = €160,000 − €40,000。**残存価額を控除した誤り** または **12ヶ月分の DDB 償却 (€64k×6/12=€32k → €128k近似)** など。3ヶ月のみ償却が正。', 2: '€104,000 = €160k − €56k (誤った償却額)。例: €160,000 × 35% × 1 = €56,000 のような率/期間ミス。正しくは40%×3/12=10%で€16,000。', 3: '€150,000 = €160k − €10k のような **計算誤り** または取得直後の中途半端な値。正しい NBV は €144,000 (3ヶ月分€16,000 控除)。' }
+    exp: 'DDB 率 = 2/5 = 40%。Year 1（10月1日〜12月31日 = 3/12 = 0.25年）。減価償却 = €160,000 × 40% × 3/12 = €16,000。簿価 = €160,000 − €16,000 = €144,000。注：DDB は計算で残存価額を無視します。',
+    we: { 1: '€120,000 は残存価額を控除した誤り、または12か月分の DDB 償却などです。3か月のみの償却が正しいです。', 2: '€104,000 は誤った償却額（率/期間ミス）です。正しくは40%×3/12=10%で €16,000。', 3: '€150,000 は計算誤り、または取得直後の中途半端な値です。正しい NBV は €144,000（3か月分 €16,000 控除）。' }
   },
   {
     id: 'q_fe5', conceptId: 'c8_uncollectibles', ch: 8, type: 'A',
@@ -9516,8 +9516,8 @@ var QUESTIONS = [
     q: '[Sample Final Q6] Smelly Fingers Inc. retires €2,000,000 face value bonds at 105 (€2,100,000). Carrying value €2,074,900. Entry includes:',
     opts: ['A) debit of €25,100 to Loss on Bond Redemption','B) credit of €25,100 to Loss on Bond Redemption','C) credit of €2,074,900 to Bonds Payable','D) debit of €2,000,000 to Bonds Payable'],
     ans: 0,
-    exp: 'Redemption price €2,100,000 − Carrying value €2,074,900 = Loss €25,100. Dr Bonds Payable €2,074,900, Dr Loss €25,100 / Cr Cash €2,100,000.',
-    we: { 1: '**Loss は借方 (Debit)** が正常残高 — 費用/損失系勘定は Debit で増加する。Credit にすると損失が利益として誤計上される。', 2: '**Bonds Payable は借方 (Debit) で減らす (取消)** — Carrying Value €2,074,900 を Dr する。Credit すると逆に増えてしまう。', 3: '**Face Value €2,000,000 ではなく Carrying Value €2,074,900 を Bonds Payable から取り消す** — 帳簿残高を完全にゼロにするため、未償却 Premium を含む値を使う。' }
+    exp: '償還価額 €2,100,000 − 帳簿価額 €2,074,900 = 損失 €25,100。借方 Bonds Payable €2,074,900 / 借方 Loss €25,100 / 貸方 Cash €2,100,000。',
+    we: { 1: 'Loss は借方（Debit）が正常残高です。費用/損失系は Debit で増加。Credit にすると損失が利益として誤計上されます。', 2: 'Bonds Payable は借方（Debit）で減らす（取消）。帳簿価額 €2,074,900 を Dr します。Credit すると逆に増えます。', 3: '額面 €2,000,000 ではなく帳簿価額 €2,074,900 を Bonds Payable から取り消します。未償却 Premium を含む値で帳簿残高を完全にゼロにします。' }
   },
   {
     id: 'q_fe7', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'A',
@@ -9532,8 +9532,8 @@ var QUESTIONS = [
     q: '[Sample Final Q8] Shady Brook Winery: NI €2,000,000, dividends €400,000, 50,000 shares avg, market price €300. P/E ratio:',
     opts: ['A) 4 times — calculated using EPS €75 (€2.0M/€400k dividends × 50k)','B) 6 times — calculated using Net Sales or other unrelated metric','C) 7.5 times — Market Price €300 ÷ EPS €40','D) 9.4 times — calculated subtracting dividends from NI before EPS'],
     ans: 2,
-    exp: '**EPS** = NI ÷ Shares = €2,000,000 ÷ 50,000 = **€40**。**P/E** = Market Price ÷ EPS = €300 ÷ €40 = **7.5 times**。',
-    we: { 0: '4 times = €300 ÷ €75 (誤った EPS €75)。EPS は NI ÷ Shares = €40 が正しい。配当は EPS 計算に含めない (Preference Dividendsのみ控除)。', 1: '6 times = 計算根拠不明。Market Price ÷ €50 のような誤った EPS で計算した場合などが該当。', 3: '9.4 times = €300 ÷ €32 (EPS = (NI−Div)÷Shares = €1.6M÷50k = €32)。**配当を NI から控除した誤り** — Cash Dividend は EPS 公式で引かない (Preference Dividend のみ控除)。' }
+    exp: 'EPS = NI ÷ 株式数 = €2,000,000 ÷ 50,000 = €40。P/E = 市場価格 ÷ EPS = €300 ÷ €40 = 7.5回。',
+    we: { 0: '4回 = €300 ÷ €75（誤った EPS €75）。EPS は NI ÷ 株式数 = €40 が正しい。普通配当は EPS 計算に含めません（優先配当のみ控除）。', 1: '6回 = 計算根拠不明。誤った EPS で計算した場合などです。', 3: '9.4回 = €300 ÷ €32（EPS = (NI−Div)÷株式数 = €1.6M÷50k = €32）。配当を NI から控除した誤りです。普通配当は EPS 公式で引きません（優先配当のみ控除）。' }
   },
   {
     id: 'q_fe9', conceptId: 'c11_bonds_basics', ch: 11, type: 'C',
@@ -9572,8 +9572,8 @@ var QUESTIONS = [
     q: '[Sample Final Q13] Tonkatsu: Beg Inv ¥500k, Purchases ¥2,000k, End Inv ¥800k, Sales ¥2,500k. Gross Profit Rate:',
     opts: ['A) 32% — Gross Profit ¥800k ÷ Sales ¥2,500k','B) 24% — used wrong COGS (e.g., included End Inv)','C) 80% — incorrectly computed COGS/Sales × 100','D) 20% — Gross Profit ¥800k ÷ Net Purchases ¥2,000k (wrong denominator)'],
     ans: 0,
-    exp: '**COGS** = Beg Inv + Purchases − End Inv = ¥500k + ¥2,000k − ¥800k = **¥1,700k**。**Gross Profit** = Sales − COGS = ¥2,500k − ¥1,700k = **¥800k**。**GP rate** = ¥800k ÷ ¥2,500k = **32%**。',
-    we: { 1: '24% = 計算順序誤り。Beg Inv + Purchases + End Inv = ¥3,300k のように End Inv を加えて COGS を求めた場合の誤値。', 2: '80% = ¥2,000k ÷ ¥2,500k (Net Purchases ÷ Sales) または COGS Ratio の補完値。GP Rate は GP ÷ Sales。', 3: '20% = ¥800k ÷ ¥4,000k のような誤分母 (Sales 以外で割った) 結果。GP Rate は必ず Sales を分母に使う。' }
+    exp: 'COGS = 期首棚卸 + 仕入 − 期末棚卸 = ¥500k + ¥2,000k − ¥800k = ¥1,700k。売上総利益 = 売上 − COGS = ¥2,500k − ¥1,700k = ¥800k。GP率 = ¥800k ÷ ¥2,500k = 32%。',
+    we: { 1: '24% は計算順序の誤り。期首 + 仕入 + 期末 = ¥3,300k のように期末を加えて COGS を求めた誤値です。', 2: '80% = ¥2,000k ÷ ¥2,500k（純仕入÷売上）または原価率の補数です。GP率 = 売上総利益 ÷ 売上。', 3: '20% = ¥800k ÷ ¥4,000k のような誤分母（売上以外で割った）結果です。GP率は必ず売上を分母に使います。' }
   },
   {
     id: 'q_fe14', conceptId: 'c5_perpetual_periodic', ch: 5, type: 'B',
@@ -9604,8 +9604,8 @@ var QUESTIONS = [
     q: '[Sample Final Q17] Equipment cost €230,000, Accum Dep €184,000, sold for €69,000. Beginning Equipment €575,000, Ending €690,000. Cash Dividends €12,500. Investing CF:',
     opts: ['A) €276,000 outflow — Sale proceeds €69k − Purchase €345k','B) €115,000 outflow — used Ending €690k − Beginning €575k (gross)','C) €264,500 outflow — added dividends to investing total in error','D) €368,000 outflow — counted disposal cost as additional cash outflow'],
     ans: 0,
-    exp: '**Equipment T-account**: Beginning €575,000 + Purchase X − Disposal cost €230,000 = Ending €690,000 → Purchase = **€345,000**。**Investing CF** = Sale proceeds €69,000 − Purchase €345,000 = **€276,000 outflow**。',
-    we: { 1: '€115,000 = €690k − €575k のネット変動だけで計算。実際は **売却 (Disposal €230k, 売却額€69k) と購入 (€345k) を分けて記録** する必要あり。', 2: '€264,500 = €276,000 − €11,500 (端数調整) のような **配当を Investing に含めてしまった** 誤計算。配当は Financing。', 3: '€368,000 = €345k (Purchase) + €23k (端数)。Disposal cost (€230k) を追加 cash outflow と勘違いした可能性。実際の cash out は Purchase のみ。' }
+    exp: 'Equipment の T勘定：期首 €575,000 + 購入 X − 処分原価 €230,000 = 期末 €690,000 → 購入 = €345,000。投資 CF = 売却額 €69,000 − 購入 €345,000 = €276,000 の流出。',
+    we: { 1: '€115,000 = €690k − €575k のネット変動だけで計算。実際は売却（処分 €230k・売却額 €69k）と購入（€345k）を分けて記録する必要があります。', 2: '€264,500 = €276,000 − €11,500 のような、配当を投資に含めてしまった誤計算です。配当は財務です。', 3: '€368,000 = €345k（購入）+ €23k。処分原価（€230k）を追加の現金流出と勘違いした可能性。実際の現金流出は購入のみです。' }
   },
   {
     id: 'q_fe18', conceptId: 'c9_plant_assets_acquisition', ch: 9, type: 'A',
@@ -9620,8 +9620,8 @@ var QUESTIONS = [
     q: '[Sample Final Q19] Nguyen: Beg Equity €651k, Issued shares €882k, Expenses €2,520k, Dividends €168k, End Equity €1,593k. Revenue?',
     opts: ['A) €2,748,000','B) €2,580,000','C) €3,630,000','D) €3,462,000'],
     ans: 0,
-    exp: 'End Equity = Beg + Shares + NI − Dividends → €1,593,000 = €651,000 + €882,000 + NI − €168,000 → NI = €228,000. NI = Revenue − Expenses → Revenue = €228,000 + €2,520,000 = €2,748,000.',
-    we: { 1: 'Sharesを含めず', 2: 'Sharesを引いた', 3: 'Dividendsを含めず' }
+    exp: '期末資本 = 期首 + 株式発行 + NI − 配当 → €1,593,000 = €651,000 + €882,000 + NI − €168,000 → NI = €228,000。NI = 収益 − 費用 → 収益 = €228,000 + €2,520,000 = €2,748,000。',
+    we: { 1: '株式発行を含めていません。', 2: '株式発行を引いています。', 3: '配当を含めていません。' }
   },
   {
     id: 'q_fe20', conceptId: 'c3_prepaid', ch: 3, type: 'A',
@@ -9644,8 +9644,8 @@ var QUESTIONS = [
     q: '[Sample Final Q22] Machinery list £160k, 10% discount, +£1k shipping, +£7.5k sales tax, 10年, residual £50k. SL annual depreciation:',
     opts: ['A) £10,180','B) £15,250','C) £10,250','D) £9,400'],
     ans: 2,
-    exp: 'Cost = £160,000 × 90% + £1,000 + £7,500 = £144,000 + £8,500 = £152,500. Annual Dep = (£152,500 − £50,000)/10 = £10,250.',
-    we: { 0: 'shipping/tax含めずか計算誤り', 1: 'Residualを引かなかった', 3: 'List priceで計算' }
+    exp: '原価 = £160,000 × 90% + £1,000 + £7,500 = £144,000 + £8,500 = £152,500。年間減価償却 = (£152,500 − £50,000)/10 = £10,250。',
+    we: { 0: '運賃/税を含めない、または計算誤りです。', 1: '残存価額を引いていません。', 3: '定価で計算しています。' }
   },
   {
     id: 'q_fe23', conceptId: 'c2_debit_credit', ch: 2, type: 'A',
@@ -9700,8 +9700,8 @@ var QUESTIONS = [
     q: '[Sample Final Q29] AR turnover 2025: Beg AR €960k, End AR €1,710k. Sales €3,700k, returns €50k. AR Turnover:',
     opts: ['A) 123 days','B) 2.95 times','C) 2.32 times','D) 2.89 times'],
     ans: 1,
-    exp: 'Net Credit Sales = €3,700,000 − €50,000 = €3,650,000。\nNet AR Beg = €960k − €80k Allowance = €880k。\nNet AR End = €1,710k − €115k Allowance = €1,595k。\nAvg Net AR = (€880k + €1,595k)/2 = €1,237,500.\nAR Turnover = €3,650,000 / €1,237,500 = 2.95 times.',
-    we: { 0: 'Daysでなくtimesを聞かれている', 2: 'Allowanceを引かなかった', 3: 'Salesでreturnsを引かなかった' }
+    exp: '純信用売上 = €3,700,000 − €50,000 = €3,650,000。期首 Net AR = €960k − €80k Allowance = €880k。期末 Net AR = €1,710k − €115k Allowance = €1,595k。平均 Net AR = (€880k + €1,595k)/2 = €1,237,500。AR 回転率 = €3,650,000 / €1,237,500 = 2.95回。',
+    we: { 0: '日数ではなく回数（times）が問われています。', 2: 'Allowance を引いていません。', 3: '売上で returns を引いていません。' }
   },
   {
     id: 'q_fe30', conceptId: 'c4_closing', ch: 4, type: 'A',
@@ -9970,8 +9970,8 @@ var QUESTIONS = [
     q: '€50,000の機械、生涯生産量100,000ユニット、残存価額€5,000。2021年22,000ユニット生産。Units-of-Activity法での2021年減価償却費は？',
     opts: ['A) €11,000', 'B) €9,900', 'C) €10,000', 'D) €22,000', 'E) €4,500', 'F) わからない'],
     ans: 1,
-    exp: 'Step 1: Per Unit = (€50,000 − €5,000) / 100,000 = €0.45/unit。\nStep 2: 2021 Depreciation = €0.45 × 22,000 = €9,900。',
-    we: { 0: '€11,000 = €50,000/100,000 × 22,000 (残存価額未控除)。', 2: '€10,000 = round figure error。正解は€9,900。', 3: '€22,000 = ユニット数そのまま (per unit を乗じていない)。', 4: '€4,500 = 残存価額×0.9? 計算根拠不明。', 5: '「わからない」を選択。2-step: ①per unit = depreciable/total units、②expense = per unit × actual units。' },
+    exp: 'ステップ1：単位あたり = (€50,000 − €5,000) / 100,000 = €0.45/単位。ステップ2：2021年減価償却 = €0.45 × 22,000 = €9,900。',
+    we: { 0: '€11,000 = €50,000/100,000 × 22,000（残存価額未控除）。', 2: '€10,000 は概数の誤り。正解は €9,900。', 3: '€22,000 は単位数そのまま（単価を乗じていない）。', 4: '€4,500 は残存価額×0.9 など計算根拠不明。', 5: '「わからない」を選択。2段階：①単位あたり = 償却対象額/総単位、②費用 = 単価 × 実際単位。' },
     fig: '<div style="background:#0a1628;border:1px solid #475569;border-radius:8px;padding:14px;color:#cbd5e1;font-size:18px;"><div style="font-weight:700;color:#fbbf24;margin-bottom:8px;">Units-of-Activity Method</div><div style="font-family:monospace;line-height:2;"><div><span style="color:#94a3b8;">Step 1:</span> Per unit = (Cost − Residual) ÷ Total units</div><div style="padding-left:24px;">= (€50,000 − €5,000) ÷ 100,000 = <b style="color:#86efac;">€0.45/unit</b></div><div style="margin-top:6px;"><span style="color:#94a3b8;">Step 2:</span> Expense = Per unit × Units used</div><div style="padding-left:24px;">= €0.45 × 22,000 = <b style="color:#86efac;">€9,900</b></div></div></div>'
   },
   {
@@ -10667,8 +10667,8 @@ var QUESTIONS = [
     q: '下記の評価替えで「Revaluation Surplus」増加額は？',
     opts: ['A) ¥100,000', 'B) ¥150,000', 'C) ¥50,000', 'D) ¥550,000', 'E) ¥450,000', 'F) わからない'],
     ans: 0,
-    exp: 'NBV = ¥600,000 − ¥150,000 = ¥450,000。Fair Value ¥550,000。Gain = ¥550,000 − ¥450,000 = ¥100,000 → Revaluation Surplus (OCI)。',
-    we: { 1: '¥150,000 = Accumulated Depreciation。', 2: '¥50,000 = 計算誤り。', 3: '¥550,000 = Fair Value全額。', 4: '¥450,000 = NBV。Gainは差額。', 5: '「わからない」を選択。Revaluation Gain = Fair Value − NBV。' },
+    exp: 'NBV = ¥600,000 − ¥150,000 = ¥450,000。公正価値 ¥550,000。利得 = ¥550,000 − ¥450,000 = ¥100,000 → Revaluation Surplus（OCI）。',
+    we: { 1: '¥150,000 は減価償却累計額です。', 2: '¥50,000 は計算誤りです。', 3: '¥550,000 は公正価値全額です。', 4: '¥450,000 は NBV です。利得は差額です。', 5: '「わからない」を選択。再評価益 = 公正価値 − NBV。' },
     fig: '<div style="color:#cbd5e1;font-size:17px;"><div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;"><div style="border:2px solid #60a5fa;padding:12px;border-radius:8px;min-width:200px;background:rgba(59,130,246,0.1);"><div style="font-weight:700;color:#60a5fa;text-align:center;margin-bottom:8px;">評価替前 (NBV)</div>Equipment ¥600,000<br>− Acc Dep ¥150,000<br><div style="border-top:1px solid #94a3b8;padding-top:4px;font-weight:700;">NBV ¥450,000</div></div><div style="font-size:36px;color:#eab308;align-self:center;">→</div><div style="border:2px solid #fbbf24;padding:12px;border-radius:8px;min-width:200px;background:rgba(234,179,8,0.1);"><div style="font-weight:700;color:#fbbf24;text-align:center;margin-bottom:8px;">評価後 (Fair Value)</div><div style="text-align:center;font-size:22px;font-weight:700;">¥550,000</div><div style="text-align:center;color:#86efac;margin-top:4px;">↑ ¥? Gain</div></div></div></div>'
   },
   {
@@ -10698,8 +10698,8 @@ var QUESTIONS = [
     q: '下記のB/S 流動負債節で合計額は？',
     opts: ['A) €165,000', 'B) €150,000', 'C) €145,000', 'D) €185,000', 'E) €200,000', 'F) わからない'],
     ans: 0,
-    exp: 'AP €60,000 + Salaries Payable €25,000 + Interest Payable €5,000 + Unearned Revenue €15,000 + Current Maturities LT €40,000 + Tax Payable €20,000 = €165,000。',
-    we: { 1: 'Tax Payable 漏れ。', 2: 'Interest Payable も漏れ。', 3: 'Mortgage LT (Non-Current) 部分も含めてしまった。', 4: 'すべての負債を加算 (LT分含む)。', 5: '「わからない」を選択。Current = 1年以内決済予定のみ合計。' },
+    exp: 'AP €60,000 + 未払給料 €25,000 + 未払利息 €5,000 + 前受収益 €15,000 + 長期債務の流動部分 €40,000 + 未払税 €20,000 = €165,000。',
+    we: { 1: '未払税が漏れています。', 2: '未払利息も漏れています。', 3: 'Mortgage の長期（非流動）部分も含めています。', 4: 'すべての負債を加算（長期分含む）しています。', 5: '「わからない」を選択。流動 = 1年以内決済予定のみ合計。' },
     fig: '<table style="width:100%;color:#cbd5e1;border-collapse:collapse;font-size:16px;"><thead><tr style="background:#1e3a5f;"><th style="padding:6px;border:1px solid #475569;">負債項目</th><th style="padding:6px;border:1px solid #475569;">金額</th><th style="padding:6px;border:1px solid #475569;">分類</th></tr></thead><tbody><tr><td style="padding:5px;border:1px solid #475569;">Accounts Payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€60,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Salaries Payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€25,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Interest Payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€5,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Unearned Revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€15,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Current Maturities LT Debt</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€40,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Tax Payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€20,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#fbbf24;">Current</td></tr><tr style="color:#94a3b8;"><td style="padding:5px;border:1px solid #475569;">Mortgage Payable (LT分)</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€460,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;">Non-current</td></tr><tr style="background:rgba(234,179,8,0.15);font-weight:700;"><td style="padding:6px;border:1px solid #475569;" colspan="2">Total Current Liabilities</td><td style="padding:6px;border:1px solid #475569;text-align:right;">?</td></tr></tbody></table>'
   },
   {
@@ -10948,8 +10948,8 @@ var QUESTIONS = [
     q: '下記のRatio Dashboardで「Current Ratio」と「Profit Margin」の数値は？',
     opts: ['A) 2.0 と 10%', 'B) 0.5 と 50%', 'C) 2.0 と 50%', 'D) 0.5 と 10%', 'E) 1.0 と 20%', 'F) わからない'],
     ans: 0,
-    exp: 'Current = CA €300k / CL €150k = 2.0。Profit Margin = NI €100k / Net Sales €1,000k = 10%。',
-    we: { 1: 'Current Ratio が逆数 (CL÷CA = €150k/€300k = 0.5)、かつ Profit Margin が桁誤り (50% は NI/Sales が0.5の場合)。', 2: 'Current Ratio は正しい (2.0) が、Profit Margin が50% は計算誤り (€100k/€1,000k = 10%、50% にはならない)。', 3: 'Current Ratio が逆数 (0.5) かつ Profit Margin も誤り (50%)。両方とも公式適用ミス。', 4: 'Current Ratio 1.0 = CA=CL の場合 (本問は€300k/€150k=2.0)、Profit Margin 20% も計算根拠なし。', 5: '「わからない」を選択。Current Ratio = CA ÷ CL、Profit Margin = NI ÷ Net Sales。' },
+    exp: '流動比率 = CA €300k / CL €150k = 2.0。Profit Margin = NI €100k / 純売上 €1,000k = 10%。',
+    we: { 1: '流動比率が逆数（CL÷CA = €150k/€300k = 0.5）で、Profit Margin も桁誤り（50%）です。', 2: '流動比率は正しい（2.0）が、Profit Margin 50% は計算誤り（€100k/€1,000k = 10%）です。', 3: '流動比率が逆数（0.5）かつ Profit Margin も誤り（50%）。両方とも公式適用ミスです。', 4: '流動比率1.0 = CA=CL の場合（本問は €300k/€150k=2.0）、Profit Margin 20% も計算根拠なし。', 5: '「わからない」を選択。流動比率 = CA ÷ CL、Profit Margin = NI ÷ 純売上。' },
     fig: '<div style="color:#cbd5e1;font-size:16px;display:flex;justify-content:center;"><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;min-width:420px;"><div style="border:2px solid #60a5fa;background:rgba(96,165,250,0.1);padding:12px;border-radius:8px;text-align:center;"><div style="color:#60a5fa;font-weight:700;font-size:14px;">LIQUIDITY</div><div style="margin-top:6px;">Current Assets €300k<br>Current Liab €150k</div><div style="margin-top:6px;font-weight:700;color:#fbbf24;">Current Ratio = ?</div></div><div style="border:2px solid #86efac;background:rgba(34,197,94,0.1);padding:12px;border-radius:8px;text-align:center;"><div style="color:#86efac;font-weight:700;font-size:14px;">PROFITABILITY</div><div style="margin-top:6px;">Net Income €100k<br>Net Sales €1,000k</div><div style="margin-top:6px;font-weight:700;color:#fbbf24;">Profit Margin = ?</div></div><div style="border:2px solid #fbbf24;background:rgba(234,179,8,0.1);padding:12px;border-radius:8px;text-align:center;"><div style="color:#fbbf24;font-weight:700;font-size:14px;">SOLVENCY</div><div style="margin-top:6px;">Total Liab €400k<br>Total Assets €1,000k</div><div style="margin-top:6px;font-weight:700;">Debt-to-Assets = 40%</div></div><div style="border:2px solid #cbd5e1;background:rgba(148,163,184,0.1);padding:12px;border-radius:8px;text-align:center;"><div style="color:#cbd5e1;font-weight:700;font-size:14px;">ACTIVITY</div><div style="margin-top:6px;">COGS €600k<br>Avg Inv €100k</div><div style="margin-top:6px;font-weight:700;">Inv Turnover = 6.0x</div></div></div></div>'
   },
   {
@@ -10957,8 +10957,8 @@ var QUESTIONS = [
     q: '下記のDuPont分解で「ROE」の計算結果は？',
     opts: ['A) 20%', 'B) 10%', 'C) 30%', 'D) 50%', 'E) 100%', 'F) わからない'],
     ans: 0,
-    exp: 'DuPont: ROE = Profit Margin × Asset Turnover × Financial Leverage = 10% × 1.0 × 2.0 = 20%。',
-    we: { 1: 'Profit Marginのみ。', 2: '誤計算 (×1.5にしてしまった)。', 3: '0.5×100=50% 計算誤り。', 4: '加算してしまった。', 5: '「わからない」を選択。ROE = PM × AT × Leverage (3要素積)。' },
+    exp: 'DuPont（3要素版）：ROE = Profit Margin × Asset Turnover × Financial Leverage = 10% × 1.0 × 2.0 = 20%。',
+    we: { 1: 'Profit Margin だけです。', 2: '誤計算（×1.5 にしてしまった）です。', 3: '0.5×100=50% の計算誤りです。', 4: '加算してしまっています。', 5: '「わからない」を選択。ROE = PM × AT × Leverage（3要素の積）。' },
     fig: '<div style="color:#cbd5e1;font-size:16px;"><div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;"><div style="border:2px solid #60a5fa;padding:12px;border-radius:8px;text-align:center;min-width:130px;background:rgba(96,165,250,0.1);"><div style="color:#60a5fa;font-weight:700;font-size:13px;">Profit Margin</div><div style="margin-top:4px;">NI/Sales</div><div style="margin-top:4px;font-weight:700;font-size:18px;">10%</div></div><div style="font-size:28px;color:#eab308;">×</div><div style="border:2px solid #86efac;padding:12px;border-radius:8px;text-align:center;min-width:130px;background:rgba(34,197,94,0.1);"><div style="color:#86efac;font-weight:700;font-size:13px;">Asset Turnover</div><div style="margin-top:4px;">Sales/Assets</div><div style="margin-top:4px;font-weight:700;font-size:18px;">1.0x</div></div><div style="font-size:28px;color:#eab308;">×</div><div style="border:2px solid #fbbf24;padding:12px;border-radius:8px;text-align:center;min-width:130px;background:rgba(234,179,8,0.1);"><div style="color:#fbbf24;font-weight:700;font-size:13px;">Leverage</div><div style="margin-top:4px;">Assets/Equity</div><div style="margin-top:4px;font-weight:700;font-size:18px;">2.0x</div></div><div style="font-size:28px;color:#eab308;">=</div><div style="border:2px solid #ef4444;padding:12px;border-radius:8px;text-align:center;min-width:130px;background:rgba(239,68,68,0.1);"><div style="color:#fca5a5;font-weight:700;font-size:13px;">ROE</div><div style="margin-top:4px;font-weight:700;font-size:22px;">?</div></div></div></div>'
   },
   {
