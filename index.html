@@ -21949,7 +21949,7 @@ function buildAiPrompt(batch) {
   p += '<details>\n<summary>🧠 推論過程</summary>\n誤答パターンの分類と弱点抽出ロジックを簡潔に。\n</details>\n\n';
   p += '---\n\n';
   p += '## 🌐 言語ルール\n- 問題文・選択肢：英語\n- 解説・判定・推論：日本語\n\n';
-  p += '## 📐 数式\nLaTeX：分数 `\\dfrac{}{}` / 平方根 `\\sqrt{}` / 添字 `_{}` / 上付 `^{}`\n例：`$EOQ = \\sqrt{\\dfrac{2C_oD}{C_h}}$`\n\n';
+  p += '## 📐 数式\nLaTeX：分数 `\\dfrac{}{}` / 平方根 `\\sqrt{}` / 添字 `_{}` / 上付 `^{}`\n例：`$\\text{COGS} = \\text{BI} + \\text{Purchases} - \\text{EI}$`\n\n';
   p += '## 禁止\n- 教科書全般のまとめ\n- 一般論（「もう一度勉強しましょう」系）\n- Part 1〜2 合わせて 1500字以内\n';
   return p;
 }
