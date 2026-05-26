@@ -1210,6 +1210,51 @@ body { padding-top:112px; }
 .jfrac>.den{padding:3px 10px 1px;display:block;}
 .wk-tbl .jfrac{font-size:18px;color:#cbd5e1;}
 .jeq{font-weight:700;margin:0 4px;}
+/* ═══════ 🗺️ 概念ツリー型ロードマップ ═══════ */
+#tab-roadmap{padding:14px 18px 90px;}
+.rm-hero{background:linear-gradient(135deg,#0f766e,#0891b2);color:#fff;padding:20px 24px;border-radius:16px;margin-bottom:16px;box-shadow:0 6px 20px rgba(8,145,178,0.3);}
+.rm-hero h1{font-size:30px;font-weight:800;margin:0 0 6px;}
+.rm-hero p{font-size:17px;line-height:1.6;margin:0;opacity:0.95;}
+.rm-controls{position:fixed;top:112px;left:0;right:0;z-index:40;background:#0b1422;border-bottom:2px solid #1e2a44;padding:12px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 4px 14px rgba(0,0,0,0.4);}
+.rm-search{flex:1 1 240px;min-width:200px;background:#0f1726;border:1px solid #2d3a55;border-radius:10px;color:#e8eef7;font-size:17px;padding:10px 14px;}
+.rm-search:focus{outline:none;border-color:#22d3ee;}
+.rm-fbtn{background:#1a2438;border:1px solid #2d3a55;color:#94a3b8;padding:8px 14px;border-radius:18px;font-size:15px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.rm-fbtn:hover{border-color:#22d3ee;color:#22d3ee;}
+.rm-fbtn.active{background:#22d3ee;border-color:#22d3ee;color:#0b1422;}
+.rm-spacer{height:64px;}
+.rooms-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.room{background:#0f1726;border:2px solid #2d3a55;border-radius:14px;padding:18px 20px;}
+.room-title{font-size:21px;font-weight:800;color:#fcd34d;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #243047;}
+.room-ch{font-size:14px;color:#64748b;font-weight:600;margin-left:8px;}
+.leaf{background:#1a2438;border:1px solid #2d3a55;border-left:4px solid #3a5478;border-radius:8px;padding:11px 14px;margin:7px 0;cursor:pointer;transition:all .15s;font-size:17px;color:#e8eef7;line-height:1.4;}
+.leaf:hover{background:#243047;transform:translateX(4px);border-left-color:#22d3ee;}
+.leaf.calc{border-left-color:#d9b94a;}
+.leaf.star::before{content:"⭐ ";}
+.leaf .leaf-en{display:block;font-size:13px;color:#64748b;margin-top:2px;}
+.leaf .ic-calc{color:#d9b94a;font-weight:800;margin-left:6px;}
+.leaf .ic-cmp{color:#d97a4a;font-weight:800;margin-left:6px;}
+.rm-empty{color:#64748b;text-align:center;padding:40px;font-size:18px;}
+/* modal */
+.rm-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:200;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px;}
+.rm-modal-bg.open{display:flex;}
+.rm-modal{background:#0f1726;border:2px solid #22d3ee;border-radius:16px;max-width:760px;width:100%;padding:24px 28px;box-shadow:0 10px 40px rgba(0,0,0,0.6);}
+.rm-modal h2{font-size:26px;font-weight:800;color:#fcd34d;margin:0 0 4px;line-height:1.3;}
+.rm-modal .rm-ch-tag{display:inline-block;background:#1e3a5f;color:#a5f3fc;font-size:13px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:12px;}
+.rm-modal h3{font-size:17px;font-weight:700;color:#22d3ee;margin:18px 0 6px;}
+.rm-modal p,.rm-modal li{font-size:17px;line-height:1.75;color:#cbd5e1;}
+.rm-modal .rm-punch{background:#0a1421;border-left:4px solid #6366f1;border-radius:8px;padding:12px 16px;color:#fde68a;font-weight:600;}
+.rm-modal .rm-mistakes{background:#1a2438;border-left:4px solid #ef4444;border-radius:8px;padding:10px 16px;}
+.rm-modal .rm-mem{background:#1a2438;border-left:4px solid #10b981;border-radius:8px;padding:10px 16px;}
+.rm-modal ul{margin:6px 0;padding-left:22px;}
+.rm-close{float:right;background:#243047;border:1px solid #2d3a55;color:#e8eef7;font-size:22px;font-weight:800;width:38px;height:38px;border-radius:10px;cursor:pointer;line-height:1;}
+.rm-close:hover{background:#ef4444;}
+@media (max-width:768px){
+  .rooms-grid{grid-template-columns:1fr;}
+  .rm-controls{top:104px;padding:10px 12px;}
+  .rm-hero h1{font-size:22px;}
+  .leaf{font-size:15px;}
+  .rm-modal{padding:18px 16px;}
+}
 .wk-tbl-wrap{overflow-x:auto;margin:12px 0;}
 .wk-tbl{width:100%;border-collapse:collapse;font-size:20px;background:#1a2438;border-radius:10px;overflow:hidden;}
 .wk-tbl th{background:#243047;color:#fcd34d;padding:14px 16px;text-align:left;font-weight:700;border-bottom:2px solid #fcd34d;font-size:21px;line-height:1.4;}
@@ -1367,6 +1412,7 @@ body { padding-top:112px; }
     <button class="tab-btn" data-tab="tab-doit" onclick="switchTab('tab-doit')">✏️ DO IT!</button>
     <button class="tab-btn" data-tab="tab-practice" onclick="switchTab('tab-practice')">💪 練習</button>
 
+    <button class="tab-btn" data-tab="tab-roadmap" onclick="switchTab('tab-roadmap')">🗺️ ロードマップ</button>
     <button class="tab-btn" data-tab="tab-radar" onclick="switchTab('tab-radar')">📊 レーダー</button>
   <div class="mode-switch-wrap">
     <button class="mode-btn active" data-mode="browse" onclick="setStudyMode('browse')">📖 流し見</button>
@@ -3926,6 +3972,30 @@ body { padding-top:112px; }
     if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
   }
   </script>
+
+  <div class="panel" id="tab-roadmap">
+    <div class="rm-controls" id="rm-controls">
+      <input type="text" class="rm-search" id="rm-search" placeholder="🔍 概念を検索（例: FIFO, COGS, NBV, 仕訳...）" oninput="rmFilter()">
+      <button class="rm-fbtn active" data-room="all" onclick="rmSetRoom('all',this)">全部屋</button>
+      <button class="rm-fbtn" data-room="journal" onclick="rmSetRoom('journal',this)">📒 仕訳</button>
+      <button class="rm-fbtn" data-room="period" onclick="rmSetRoom('period',this)">📅 期末</button>
+      <button class="rm-fbtn" data-room="merch" onclick="rmSetRoom('merch',this)">📊 棚卸</button>
+      <button class="rm-fbtn" data-room="cash" onclick="rmSetRoom('cash',this)">🏦 現金債権</button>
+      <button class="rm-fbtn" data-room="ppe" onclick="rmSetRoom('ppe',this)">🏭 固定資産負債</button>
+      <button class="rm-fbtn" data-room="equity" onclick="rmSetRoom('equity',this)">💼 資本CF</button>
+      <button class="rm-fbtn" data-room="analysis" onclick="rmSetRoom('analysis',this)">📈 財務分析</button>
+    </div>
+    <div class="rm-spacer"></div>
+    <div class="rm-hero">
+      <h1>🗺️ 会計 概念ツリー・ロードマップ</h1>
+      <p>FA1B の全概念をドメイン別「部屋」にツリー配置。概念をクリックすると定義・例・典型ミス・暗記法・図解が見られます。<b>⭐=重要 / <span style="color:#fde68a;">●計算/公式</span> / ⇄対比概念</b></p>
+    </div>
+    <div id="rm-rooms"></div>
+  </div>
+
+  <div class="rm-modal-bg" id="rm-modal-bg" onclick="if(event.target===this)rmCloseModal()">
+    <div class="rm-modal" id="rm-modal"></div>
+  </div>
 
   <div class="panel" id="tab-radar">
     <div id="radar-content"></div>
@@ -19746,7 +19816,130 @@ switchTab = function(tabId) {
   // Render batch widgets for the tab
   if (tabId === 'tab-radar') renderRadarTab();
   if (tabId === 'tab-wave') renderWaveTab();
+  if (tabId === 'tab-roadmap') renderRoadmap();
+  // Toggle the fixed roadmap controls bar visibility with the tab
+  try {
+    var rmc = document.getElementById('rm-controls');
+    if (rmc) rmc.style.display = (tabId === 'tab-roadmap') ? 'flex' : 'none';
+  } catch(e){}
 };
+
+// ╔══════════════════════════════════════════════╗
+// ║  FEATURE 3: 概念ツリー型ロードマップ            ║
+// ╚══════════════════════════════════════════════╝
+var RM_ROOMS = [
+  { id:'journal',  title:'📒 仕訳・記録',        chs:[1,2],     desc:'Ch1-2' },
+  { id:'period',   title:'📅 期末調整・サイクル', chs:[3,4],     desc:'Ch3-4' },
+  { id:'merch',    title:'📊 商品売買・棚卸',     chs:[5,6],     desc:'Ch5-6' },
+  { id:'cash',     title:'🏦 現金・債権',        chs:[7,8],     desc:'Ch7-8' },
+  { id:'ppe',      title:'🏭 固定資産・負債',     chs:[9,10,11], desc:'Ch9-11' },
+  { id:'equity',   title:'💼 株主資本・キャッシュフロー', chs:[12,13,14], desc:'Ch12-14' },
+  { id:'analysis', title:'📈 財務分析',          chs:[15],      desc:'Ch15' }
+];
+var rmCurrentRoom = 'all';
+
+function rmRoomOf(ch){
+  for (var i=0;i<RM_ROOMS.length;i++){ if (RM_ROOMS[i].chs.indexOf(ch)>=0) return RM_ROOMS[i].id; }
+  return null;
+}
+function rmIsCalc(c){
+  // calc/formula concept: has a renderable diagram OR formula-ish wording
+  try { if (typeof renderConceptDiagram==='function' && renderConceptDiagram(c.id)) return true; } catch(e){}
+  var t = (c.name||'') + ' ' + (c.punchline||'');
+  return /=|公式|ratio|比率|計算|depreciat|減価償却|COGS|FIFO|LIFO|turnover|interest|利息|EPS|ROA|ROE|formula/i.test(t);
+}
+function rmRenderRoadmap_inner(){
+  var host = document.getElementById('rm-rooms');
+  if (!host) return;
+  if (typeof CONCEPTS === 'undefined' || !CONCEPTS.length){ host.innerHTML = '<div class="rm-empty">概念データを読み込めませんでした。</div>'; return; }
+  var q = (document.getElementById('rm-search')||{}).value || '';
+  q = q.trim().toLowerCase();
+  var html = '<div class="rooms-grid">';
+  var anyShown = false;
+  for (var r=0;r<RM_ROOMS.length;r++){
+    var room = RM_ROOMS[r];
+    if (rmCurrentRoom !== 'all' && rmCurrentRoom !== room.id) continue;
+    // collect concepts for this room
+    var leaves = [];
+    for (var i=0;i<CONCEPTS.length;i++){
+      var c = CONCEPTS[i];
+      if (rmRoomOf(c.ch) !== room.id) continue;
+      if (q){
+        var hay = ((c.name||'')+' '+(c.defEN||'')+' '+(c.defJA||'')+' '+(c.scene||'')+' '+(c.punchline||'')).toLowerCase();
+        if (hay.indexOf(q) < 0) continue;
+      }
+      leaves.push(c);
+    }
+    if (!leaves.length) continue;
+    anyShown = true;
+    html += '<div class="room"><div class="room-title">'+room.title+'<span class="room-ch">'+room.desc+'</span></div>';
+    for (var j=0;j<leaves.length;j++){
+      var c2 = leaves[j];
+      var cls = 'leaf' + (rmIsCalc(c2)?' calc':'') + (c2.star?' star':'');
+      var icons = (rmIsCalc(c2)?'<span class="ic-calc">●</span>':'') + (c2.compare?'<span class="ic-cmp">⇄</span>':'');
+      var nm = escapeHtmlSafe(c2.name||c2.id);
+      var en = c2.defEN ? '<span class="leaf-en">'+escapeHtmlSafe((c2.defEN||'').replace(/\*\*/g,'').slice(0,72))+'…</span>' : '';
+      html += '<div class="'+cls+'" onclick="rmOpenModal(\''+c2.id+'\')">'+nm+icons+en+'</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  if (!anyShown) html = '<div class="rm-empty">「'+escapeHtmlSafe(q)+'」に一致する概念がありません。</div>';
+  host.innerHTML = html;
+}
+function renderRoadmap(){ rmRenderRoadmap_inner(); }
+function rmFilter(){ rmRenderRoadmap_inner(); }
+function rmSetRoom(id, el){
+  rmCurrentRoom = id;
+  var btns = document.querySelectorAll('#rm-controls .rm-fbtn');
+  for (var i=0;i<btns.length;i++) btns[i].classList.remove('active');
+  if (el) el.classList.add('active');
+  rmRenderRoadmap_inner();
+}
+function rmConceptById(id){
+  if (typeof CONCEPTS==='undefined') return null;
+  for (var i=0;i<CONCEPTS.length;i++) if (CONCEPTS[i].id===id) return CONCEPTS[i];
+  return null;
+}
+function rmMd(s){ // minimal markdown: **bold**, \n -> <br>
+  if (!s) return '';
+  s = escapeHtmlSafe(s);
+  s = s.replace(/\*\*(.+?)\*\*/g,'<b style="color:#fde68a;">$1</b>');
+  s = s.replace(/\n/g,'<br>');
+  return s;
+}
+function rmOpenModal(id){
+  var c = rmConceptById(id);
+  var box = document.getElementById('rm-modal');
+  var bg = document.getElementById('rm-modal-bg');
+  if (!c || !box || !bg) return;
+  var h = '<button class="rm-close" onclick="rmCloseModal()">×</button>';
+  h += '<h2>'+(c.star?'⭐ ':'')+escapeHtmlSafe(c.name||c.id)+'</h2>';
+  h += '<span class="rm-ch-tag">Chapter '+c.ch+'</span>';
+  if (c.punchline) h += '<div class="rm-punch">💡 '+rmMd(c.punchline)+'</div>';
+  if (c.scene) { h += '<h3>📘 シーン（具体例）</h3><p>'+rmMd(c.scene)+'</p>'; }
+  if (c.defJA) { h += '<h3>🇯🇵 定義（日本語）</h3><p>'+rmMd(c.defJA)+'</p>'; }
+  if (c.defEN) { h += '<h3>🇬🇧 Definition (English)</h3><p style="color:#94a3b8;">'+rmMd(c.defEN)+'</p>'; }
+  if (c.example) { h += '<h3>🧮 例</h3><p>'+rmMd(c.example)+'</p>'; }
+  if (c.whyNeeded) { h += '<h3>❓ なぜ必要か</h3><p>'+rmMd(c.whyNeeded)+'</p>'; }
+  // visual diagram if available
+  try { if (typeof renderConceptDiagram==='function'){ var d=renderConceptDiagram(c.id); if (d) h += '<h3>🎨 図解</h3>'+d; } } catch(e){}
+  if (c.mistakes && c.mistakes.length){
+    h += '<h3>⚠ よくある間違い</h3><div class="rm-mistakes"><ul>';
+    for (var i=0;i<c.mistakes.length;i++) h += '<li>'+rmMd(c.mistakes[i])+'</li>';
+    h += '</ul></div>';
+  }
+  if (c.memorize && c.memorize.length){
+    h += '<h3>🧠 暗記法</h3><div class="rm-mem"><ul>';
+    for (var k=0;k<c.memorize.length;k++) h += '<li>'+rmMd(c.memorize[k])+'</li>';
+    h += '</ul></div>';
+  }
+  box.innerHTML = h;
+  bg.classList.add('open');
+  bg.scrollTop = 0;
+}
+function rmCloseModal(){ var bg=document.getElementById('rm-modal-bg'); if (bg) bg.classList.remove('open'); }
+document.addEventListener('keydown', function(e){ if (e.key==='Escape') rmCloseModal(); });
 
 // ╔══════════════════════════════════════════════╗
 // ║  ENHANCEMENT: Active Recall Mode              ║
