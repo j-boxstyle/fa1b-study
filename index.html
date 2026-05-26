@@ -7196,8 +7196,8 @@ var QUESTIONS = [
       'D) $7,200'
     ],
     ans: 1,
-    exp: 'Purchase discount = $8,000 x 2% = $160. Amount paid = $8,000 - $160 = $7,840.',
-    we: { 0: '$8,000 is the full invoice amount; taking the 2% discount reduces the payment.', 2: '$6,400 would imply a 20% discount, not 2%.', 3: '$7,200 = $8,000 x 90% — that would be a 10% discount, not 2%.' }
+    exp: '仕入割引 = $8,000 × 2% = $160。支払額 = $8,000 − $160 = $7,840。',
+    we: { 0: '$8,000 は割引前の請求額です。2%割引を取ると支払額は減ります。', 2: '$6,400 は20%割引を意味し、2%ではありません。', 3: '$7,200 = $8,000 × 90% は10%割引で、2%ではありません。' }
   },
   {
     id: 'q56', conceptId: 'c5_fob',
@@ -7211,8 +7211,8 @@ var QUESTIONS = [
       'D) Freight costs are split equally between buyer and seller'
     ],
     ans: 1,
-    exp: 'FOB (Free On Board) shipping point means ownership transfers to the buyer when goods leave the seller\'s shipping point. The buyer is responsible for freight costs and bears the risk of loss in transit.',
-    we: { 0: 'Under FOB shipping point, the seller does NOT pay freight; the buyer pays freight costs.', 2: 'Under FOB shipping point, the seller does NOT retain ownership during transit; ownership passes when goods leave the seller.', 3: 'Freight costs are not split under FOB shipping point; the buyer pays all freight.' }
+    exp: 'FOB shipping point（積出地条件）は、商品が売手の積出地点を離れた時点で所有権が買手に移転することを意味します。運送費は買手が負担し、輸送中の危険も買手が負います。',
+    we: { 0: 'FOB shipping point では売手は運送費を負担しません。買手が運送費を支払います。', 2: 'FOB shipping point では輸送中も売手が所有権を保持することはありません。商品が売手を離れた時点で移転します。', 3: 'FOB shipping point では運送費は分担されません。買手が全額負担します。' }
   },
   {
     id: 'q57', conceptId: 'c5_multistep_is',
@@ -7226,8 +7226,8 @@ var QUESTIONS = [
       'D) 60%'
     ],
     ans: 0,
-    exp: 'Net Sales = $200,000 - $5,000 - $3,000 = $192,000. Gross Profit = $192,000 - $120,000 = $72,000. Gross Profit Ratio = $72,000 / $192,000 = 37.5%.',
-    we: { 1: '40% = $72,000 / $180,000 — this deducts only the $5,000 returns from gross sales (giving $180,000 net sales) but forgets the $3,000 sales discounts.', 2: '36% = $72,000 / $200,000 — this divides by gross sales ($200,000) rather than net sales ($192,000).', 3: '60% is the cost ratio (COGS/Net Sales), not the gross profit ratio.' }
+    exp: '純売上高 = $200,000 − $5,000 − $3,000 = $192,000。売上総利益 = $192,000 − $120,000 = $72,000。売上総利益率 = $72,000 ÷ $192,000 = 37.5%。',
+    we: { 1: '40% = $72,000 ÷ $180,000 は、戻り $5,000 だけを総売上から引いて（純売上 $180,000）、割引 $3,000 を忘れています。', 2: '36% = $72,000 ÷ $200,000 は、純売上（$192,000）ではなく総売上（$200,000）で割っています。', 3: '60% は原価率（COGS ÷ 純売上）であり、売上総利益率ではありません。' }
   },
   {
     id: 'q58', conceptId: 'c5_purchase_returns',
@@ -7241,8 +7241,8 @@ var QUESTIONS = [
       'D) Debit Accounts Payable $500; Credit Purchase Returns $500'
     ],
     ans: 1,
-    exp: 'Returning merchandise purchased on account: Debit Accounts Payable $500 (liability decreases) and Credit Inventory $500 (asset decreases). Under perpetual, Inventory is directly credited.',
-    we: { 0: 'Under perpetual inventory, "Purchase Returns" is not used; Inventory is directly credited.', 2: 'Inventory decreases (credit) when returned, not increases (debit). Accounts Payable decreases (debit).', 3: '"Purchase Returns" is a periodic system account; under perpetual, Inventory is used.' }
+    exp: '掛けで仕入れた商品を返品する取引：借方 Accounts Payable $500（負債が減少）/ 貸方 Inventory $500（資産が減少）。継続記録法では Inventory を直接貸方記入します。',
+    we: { 0: '継続記録法では『Purchase Returns』は使わず、Inventory を直接貸方記入します。', 2: '返品時は Inventory は減少（貸方）であって増加（借方）ではありません。Accounts Payable は減少（借方）します。', 3: '『Purchase Returns』は棚卸計算法の勘定です。継続記録法では Inventory を使います。' }
   },
   {
     id: 'q59', conceptId: 'c5_cogs',
@@ -7256,8 +7256,8 @@ var QUESTIONS = [
       'D) $100,000'
     ],
     ans: 1,
-    exp: 'COGS = Beginning Inventory + Net Purchases - Ending Inventory = $20,000 + ($80,000 - $5,000) - $15,000 = $20,000 + $75,000 - $15,000 = $80,000.',
-    we: { 0: '$75,000 = Net Purchases only ($80,000 - $5,000); this ignores beginning and ending inventory.', 2: '$85,000 = $20,000 + $80,000 - $15,000; this forgets to subtract purchase returns from purchases.', 3: '$100,000 = $20,000 + $80,000; this ignores purchase returns and ending inventory.' }
+    exp: '売上原価 = 期首棚卸 + 純仕入 − 期末棚卸 = $20,000 + ($80,000 − $5,000) − $15,000 = $20,000 + $75,000 − $15,000 = $80,000。',
+    we: { 0: '$75,000 は純仕入（$80,000 − $5,000）だけで、期首・期末棚卸を無視しています。', 2: '$85,000 = $20,000 + $80,000 − $15,000 は、仕入から仕入戻しを差し引き忘れています。', 3: '$100,000 = $20,000 + $80,000 は、仕入戻しと期末棚卸を無視しています。' }
   },
   {
     id: 'q60', conceptId: 'c5_sales_returns',
@@ -7271,8 +7271,8 @@ var QUESTIONS = [
       'D) Gross sales - Cost of goods sold'
     ],
     ans: 1,
-    exp: 'Net Sales = Gross (Total) Sales - Sales Returns and Allowances - Sales Discounts. Both are contra-revenue accounts that reduce gross sales.',
-    we: { 0: 'Sales returns and sales discounts REDUCE net sales; they should be subtracted, not added.', 2: 'Both sales discounts and returns reduce net sales; they should both be subtracted.', 3: 'Gross sales minus COGS gives gross profit, not net sales.' }
+    exp: '純売上高 = 総売上高 − 売上戻り・値引 − 売上割引。どちらも総売上を減らす評価収益勘定（contra-revenue）です。',
+    we: { 0: '売上戻りと売上割引は純売上を減らします。加算ではなく減算すべきです。', 2: '売上割引も売上戻りも純売上を減らすので、両方とも減算すべきです。', 3: '総売上 − COGS は売上総利益であり、純売上ではありません。' }
   },
 
   // ============================================================
@@ -7290,8 +7290,8 @@ var QUESTIONS = [
       'D) Goods sold on consignment by the company and held by the consignee'
     ],
     ans: 0,
-    exp: 'Goods held on consignment FROM another company should NOT be included in your inventory — you do not own them. Goods consigned OUT (sold on consignment) still belong to you until sold.',
-    we: { 1: 'Goods in transit shipped FOB destination still belong to the seller; they should be included in the seller\'s inventory until they arrive.', 2: 'Goods stored at an outside warehouse still belong to the company and should be included in inventory.', 3: 'Goods consigned out (sent to another party to sell on your behalf) still belong to the company until sold and should be included.' }
+    exp: '他社から預かった委託販売品（consignment）は所有していないため、自社の棚卸資産に含めてはいけません。逆に自社が委託して送り出した商品は、売れるまで自社の所有なので含めます。',
+    we: { 1: 'FOB destination（到着地条件）で輸送中の商品は、到着まで売手の所有です。売手の棚卸資産に含めます。', 2: '外部倉庫に保管中の商品も自社の所有であり、棚卸資産に含めます。', 3: '委託のため他者に送り出した商品は、売れるまで自社の所有であり棚卸資産に含めます。' }
   },
   {
     id: 'q62', conceptId: 'c6_cost_available',
@@ -7305,8 +7305,8 @@ var QUESTIONS = [
       'D) Cost of goods sold + Ending inventory - Beginning inventory'
     ],
     ans: 1,
-    exp: 'Cost of Goods Available for Sale = Beginning Inventory + Cost of Goods Purchased (net purchases). This total is then split between Cost of Goods Sold and Ending Inventory.',
-    we: { 0: 'Ending inventory + COGS gives you Goods Available for Sale, but this is a rearrangement of the formula, not how it is computed from primary data.', 2: 'Net sales - Gross profit gives COGS, not Goods Available for Sale.', 3: 'This formula is algebraically manipulated but does not represent how COGA is built from beginning inventory and purchases.' }
+    exp: '販売可能商品原価（Cost of Goods Available for Sale）= 期首棚卸 + 当期商品仕入原価（純仕入）。この合計が売上原価（COGS）と期末棚卸に配分されます。',
+    we: { 0: '期末棚卸 + COGS で販売可能商品原価になりますが、これは式の変形であって、基礎データから計算する手順ではありません。', 2: '純売上 − 売上総利益 = COGS であり、販売可能商品原価ではありません。', 3: 'これは代数的に変形しただけで、期首棚卸と仕入から販売可能商品原価を組み立てる方法を表していません。' }
   },
   {
     id: 'q63', conceptId: 'c6_fifo_avg_lifo_compare',
@@ -7320,8 +7320,8 @@ var QUESTIONS = [
       'D) The same net income as FIFO'
     ],
     ans: 2,
-    exp: 'During rising prices, LIFO assigns higher costs to COGS (most recent, higher-cost units are expensed first), resulting in lower gross profit and lower net income compared to FIFO. LIFO also produces a lower ending inventory value.',
-    we: { 0: 'LIFO produces LOWER ending inventory (older, lower-cost units remain) and LOWER net income during rising prices.', 1: 'LIFO produces lower ending inventory (not higher) during rising prices because the older, cheaper units are still in ending inventory.', 3: 'LIFO and FIFO produce different results when prices change; they give the same results only when prices are constant.' }
+    exp: '物価上昇局面では、LIFO は新しい（高い）原価を先に COGS に割り当てるため、FIFO より売上総利益・純利益が低くなります。また期末棚卸の評価額も低くなります。',
+    we: { 0: 'LIFO は物価上昇時、期末棚卸が低く（古く安い単位が残る）、純利益も低くなります。', 1: 'LIFO は物価上昇時、期末棚卸が低く（高くなく）なります。古く安い単位が期末に残るためです。', 3: 'LIFO と FIFO は価格が変動すれば異なる結果になります。同じ結果になるのは価格一定のときだけです。' }
   },
   {
     id: 'q64', conceptId: 'c6_inv_errors_is',
@@ -7335,8 +7335,8 @@ var QUESTIONS = [
       'D) COGS overstated and net income overstated'
     ],
     ans: 1,
-    exp: 'If ending inventory is understated: COGS = COGA - Ending Inventory. Lower ending inventory means higher COGS. Higher COGS leads to lower gross profit and lower net income. So COGS is overstated and net income is understated.',
-    we: { 0: 'Lower ending inventory increases (overstates) COGS, which decreases (understates) net income — the opposite of option A.', 2: 'COGS is overstated (not understated) when ending inventory is understated.', 3: 'COGS is overstated but net income is understated (not overstated) when ending inventory is understated.' }
+    exp: '期末棚卸が過小だと、COGS = 販売可能原価 − 期末棚卸 なので、期末棚卸が低い分 COGS が高くなります。COGS 増 → 売上総利益・純利益が低下。よって COGS は過大、純利益は過小です。',
+    we: { 0: '期末棚卸の過小は COGS を増やし（過大）、純利益を減らします（過小）。Aは逆です。', 2: '期末棚卸が過小のとき COGS は過大（過小ではありません）です。', 3: '期末棚卸が過小のとき COGS は過大ですが、純利益は過小（過大ではありません）です。' }
   },
   {
     id: 'q65', conceptId: 'c6_turnover',
@@ -7350,8 +7350,8 @@ var QUESTIONS = [
       'D) Decreased its ending inventory and increased sales'
     ],
     ans: 3,
-    exp: 'Inventory Turnover = COGS / Average Inventory. Turnover increases when COGS increases (more sales) and/or average inventory decreases. Decreasing inventory on hand and increasing sales both increase turnover.',
-    we: { 0: 'Increasing ending inventory raises average inventory (denominator up) and decreasing sales lowers COGS (numerator down), both of which DECREASE turnover.', 1: 'Increasing ending inventory raises average inventory, which reduces turnover. More sales partially offset this but both effects together are unclear — option D is clearly correct.', 2: 'Decreasing sales reduces COGS (numerator down), which would decrease turnover even if inventory also decreases.' }
+    exp: '棚卸資産回転率 = COGS ÷ 平均棚卸資産。回転率は COGS が増える（売上増）か、平均棚卸が減ると上がります。在庫を減らし売上を増やすと、両方とも回転率を高めます。',
+    we: { 0: '期末棚卸を増やすと平均棚卸（分母）が増え、売上減は COGS（分子）を減らすので、どちらも回転率を下げます。', 1: '期末棚卸を増やすと平均棚卸が増え回転率が下がります。売上増が一部相殺しますが、両効果の合算は不明確で、Dが明確に正解です。', 2: '売上減は COGS（分子）を減らすので、在庫も減っても回転率を下げる可能性があります。' }
   },
 
   // ============================================================
@@ -7369,8 +7369,8 @@ var QUESTIONS = [
       'D) $3,500'
     ],
     ans: 2,
-    exp: 'FIFO sells oldest units first. 250 units sold: 100 units @ $10 = $1,000; then 150 units @ $12 = $1,800. Total = 100 + 150 = 250 units. COGS = $1,000 + $1,800 = $2,800. Ending inventory = 100 units @ $15 = $1,500.',
-    we: { 0: '$2,650 — uses incorrect unit costs or quantities.', 1: '$3,150 — applies LIFO-style costs (newest units first) to this question.', 3: '$3,500 — uses the highest unit cost ($15) for all 250 units sold, ignoring the FIFO layering.' }
+    exp: 'FIFO は古い単位から販売します。250個販売：100個@$10 = $1,000、次に150個@$12 = $1,800。合計 100+150=250個。COGS = $1,000+$1,800 = $2,800。期末棚卸 = 100個@$15 = $1,500。',
+    we: { 0: '$2,650 は誤った単価または数量を使っています。', 1: '$3,150 はこの問題に LIFO 式（新しい単位を先に）の原価を当てています。', 3: '$3,500 は販売250個すべてに最も高い単価$15を使い、FIFO の層構造を無視しています。' }
   },
   {
     id: 'q67', conceptId: 'c6_fifo',
@@ -7384,8 +7384,8 @@ var QUESTIONS = [
       'D) $2,400'
     ],
     ans: 0,
-    exp: 'FIFO sells oldest first. 120 sold: 50 units@$20 + 70 units@$24 = $1,000 + $1,680 = $2,680 COGS. Ending inventory = 80 remaining units @ $24 = $1,920. (Total units = 200, sold = 120, ending = 80 units from the most recent purchase.)',
-    we: { 1: '$2,040 does not follow from the FIFO calculation.', 2: '$1,600 = 80 units x $20 — incorrectly uses the beginning inventory cost ($20) for the remaining units. Under FIFO, the oldest units are sold first, so remaining units carry the newer $24 cost.', 3: '$2,400 = 100 units x $24 — uses 100 units instead of the correct 80 remaining units.' }
+    exp: 'FIFO は古い単位から販売します。120個販売：50個@$20 + 70個@$24 = $1,000 + $1,680 = $2,680 が COGS。期末棚卸 = 残り80個@$24 = $1,920。（総数200、販売120、期末80個は直近仕入分）',
+    we: { 1: '$2,040 は FIFO 計算からは導けません。', 2: '$1,600 = 80個 × $20 は、残り単位に誤って期首原価$20を使っています。FIFOでは古い単位を先に売るので、残りは新しい$24原価です。', 3: '$2,400 = 100個 × $24 は、正しい残り80個ではなく100個を使っています。' }
   },
   {
     id: 'q68', conceptId: 'c6_lifo',
@@ -7399,8 +7399,8 @@ var QUESTIONS = [
       'D) $2,880'
     ],
     ans: 1,
-    exp: 'LIFO sells newest (most recent) units first. 120 units sold from the $24 purchase layer. COGS = 120 x $24 = $2,880. Ending inventory = 30 remaining units@$24 + 50 units@$20 = $720 + $1,000 = $1,720.',
-    we: { 0: '$1,920 is the FIFO ending inventory value (80 units@$24), not LIFO.', 2: '$1,000 would be correct only if ALL 150 purchased units were sold, leaving only the 50 beginning units@$20 — but only 120 were sold.', 3: '$2,880 is the LIFO cost of goods sold (120 x $24), not ending inventory.' }
+    exp: 'LIFO は新しい（直近）単位から販売します。120個を$24仕入層から販売。COGS = 120 × $24 = $2,880。期末棚卸 = 残り30個@$24 + 50個@$20 = $720 + $1,000 = $1,720。',
+    we: { 0: '$1,920 は FIFO の期末棚卸（80個@$24）であり、LIFO ではありません。', 2: '$1,000 は、仕入150個すべてを売って期首50個@$20だけが残る場合のみ正しいですが、実際は120個しか売っていません。', 3: '$2,880 は LIFO の売上原価（120 × $24）であり、期末棚卸ではありません。' }
   },
   {
     id: 'q69', conceptId: 'c6_avg_cost',
@@ -7414,8 +7414,8 @@ var QUESTIONS = [
       'D) $13.00'
     ],
     ans: 2,
-    exp: 'Weighted average cost per unit = Total cost / Total units = (100x$10 + 200x$13) / 300 = ($1,000 + $2,600) / 300 = $3,600 / 300 = $12.00 per unit.',
-    we: { 0: '$10.00 is the beginning inventory cost per unit only; it does not account for the new purchase.', 1: '$11.00 = ($10 + $13) / 2 — this is a simple average of unit prices, not weighted by quantities.', 3: '$13.00 is the most recent purchase price; this would be used under LIFO, not average cost.' }
+    exp: '加重平均単価 = 総原価 ÷ 総数量 = (100×$10 + 200×$13) ÷ 300 = ($1,000 + $2,600) ÷ 300 = $3,600 ÷ 300 = 単価 $12.00。',
+    we: { 0: '$10.00 は期首棚卸の単価のみで、新規仕入を反映していません。', 1: '$11.00 = ($10 + $13) ÷ 2 は単価の単純平均で、数量で加重していません。', 3: '$13.00 は直近仕入価格で、LIFO で使うものです。加重平均ではありません。' }
   },
   {
     id: 'q70', conceptId: 'c6_avg_cost',
@@ -7429,8 +7429,8 @@ var QUESTIONS = [
       'D) $3,600'
     ],
     ans: 1,
-    exp: 'Total units available = 300. Units sold = 180. Ending units = 120. Ending inventory = 120 x $12.00 = $1,440.',
-    we: { 0: '$1,200 = 100 x $12 — uses 100 units instead of 120 remaining units.', 2: '$2,160 = 180 x $12 — this is COGS, not ending inventory.', 3: '$3,600 is the total cost of goods available for sale, not ending inventory.' }
+    exp: '販売可能総数 = 300個。販売 = 180個。期末 = 120個。期末棚卸 = 120 × $12.00 = $1,440。',
+    we: { 0: '$1,200 = 100 × $12 は、残り120個ではなく100個を使っています。', 2: '$2,160 = 180 × $12 は COGS であり、期末棚卸ではありません。', 3: '$3,600 は販売可能商品原価の総額で、期末棚卸ではありません。' }
   },
   {
     id: 'q71', conceptId: 'c6_turnover',
@@ -7444,8 +7444,8 @@ var QUESTIONS = [
       'D) 4.0 times'
     ],
     ans: 1,
-    exp: 'Average Inventory = ($60,000 + $90,000) / 2 = $75,000. Inventory Turnover = COGS / Average Inventory = $450,000 / $75,000 = 6.0 times.',
-    we: { 0: '5.0 = $450,000 / $90,000 — this uses only ending inventory instead of average inventory.', 2: '7.5 = $450,000 / $60,000 — this uses only beginning inventory instead of average inventory.', 3: '4.0 is not derived from the given data using the correct formula.' }
+    exp: '平均棚卸 = ($60,000 + $90,000) ÷ 2 = $75,000。棚卸資産回転率 = COGS ÷ 平均棚卸 = $450,000 ÷ $75,000 = 6.0回。',
+    we: { 0: '5.0 = $450,000 ÷ $90,000 は、平均ではなく期末棚卸だけを使っています。', 2: '7.5 = $450,000 ÷ $60,000 は、平均ではなく期首棚卸だけを使っています。', 3: '4.0 は正しい式で与件から導けません。' }
   },
   {
     id: 'q72', conceptId: 'c6_turnover',
@@ -7459,8 +7459,8 @@ var QUESTIONS = [
       'D) 365 days'
     ],
     ans: 2,
-    exp: 'Days in Inventory = 365 / Inventory Turnover = 365 / 8 = approximately 45.6 days, which rounds to approximately 46 days.',
-    we: { 0: '8 days is the turnover number, not the days in inventory.', 1: '30 days would require a turnover of about 12 times per year.', 3: '365 days is a full year; that would mean inventory turns over only once per year.' }
+    exp: '棚卸日数（Days in Inventory）= 365 ÷ 棚卸資産回転率 = 365 ÷ 8 ≒ 45.6日、約46日に丸めます。',
+    we: { 0: '8日は回転率の数値であり、棚卸日数ではありません。', 1: '30日は年約12回の回転を要します。', 3: '365日は1年丸ごとで、在庫が年に1回しか回転しないことを意味します。' }
   },
   {
     id: 'q73', conceptId: 'c6_gross_profit_method',
@@ -7474,8 +7474,8 @@ var QUESTIONS = [
       'D) $300,000'
     ],
     ans: 0,
-    exp: 'Estimated COGS = Net Sales x Cost Ratio = $500,000 x 60% = $300,000. Estimated Ending Inventory = Goods Available - Estimated COGS = $350,000 - $300,000 = $50,000.',
-    we: { 1: '$150,000 = $500,000 x 30% — this applies 30% (the gross profit rate) instead of 60% (cost ratio) to sales to estimate COGS.', 2: '$200,000 = $350,000 - $150,000 — uses gross profit rate applied to sales as estimated COGS, which is incorrect.', 3: '$300,000 is the estimated COGS, not ending inventory.' }
+    exp: '推定 COGS = 純売上 × 原価率 = $500,000 × 60% = $300,000。推定期末棚卸 = 販売可能原価 − 推定COGS = $350,000 − $300,000 = $50,000。',
+    we: { 1: '$150,000 = $500,000 × 30% は、原価率60%ではなく粗利率30%を売上に当てて COGS を推定しています。', 2: '$200,000 = $350,000 − $150,000 は、粗利率を売上に当てた額を推定COGSとした誤りです。', 3: '$300,000 は推定COGSであり、期末棚卸ではありません。' }
   },
   {
     id: 'q74', conceptId: 'c6_inv_errors_is',
@@ -7489,8 +7489,8 @@ var QUESTIONS = [
       'D) No effect on net income'
     ],
     ans: 1,
-    exp: 'Overstated ending inventory leads to understated COGS (because Ending Inventory is subtracted: COGS = COGA - Ending Inventory). Lower COGS means higher gross profit and higher net income. Higher net income means owner\'s equity is also overstated.',
-    we: { 0: 'Overstated ending inventory causes COGS to be understated (not overstated), which leads to overstated (not understated) net income.', 2: 'COGS is understated, but net income is overstated (not understated) because lower COGS increases profit.', 3: 'There is a definite effect on net income — it is overstated when ending inventory is overstated.' }
+    exp: '期末棚卸の過大は COGS を過小にします（COGS = 販売可能原価 − 期末棚卸で、期末棚卸を引くため）。COGS が低い → 売上総利益・純利益が高い。純利益が高い → 自己資本も過大になります。',
+    we: { 0: '期末棚卸の過大は COGS を過小（過大ではない）にし、純利益を過大（過小ではない）にします。', 2: 'COGS は過小ですが、純利益は過大（過小ではない）です。COGS が低い分、利益が増えるためです。', 3: '純利益には確かに影響があります。期末棚卸が過大なら純利益は過大になります。' }
   },
   {
     id: 'q75', conceptId: 'c6_inv_errors_is',
@@ -7504,8 +7504,8 @@ var QUESTIONS = [
       'D) Year 2 COGS is understated by $8,000'
     ],
     ans: 1,
-    exp: 'Year 1\'s understated ending inventory becomes Year 2\'s understated beginning inventory. Lower beginning inventory in Year 2 means lower COGS in Year 2, which means higher (overstated) net income in Year 2. The errors offset over two years.',
-    we: { 0: 'In Year 1, net income is understated. But in Year 2, the understated beginning inventory leads to overstated net income — the opposite effect.', 2: 'Year 2 net income IS affected because Year 1 ending inventory rolls into Year 2 as beginning inventory.', 3: 'Year 2 COGS is understated (not explicitly calculated in D), but net income is overstated as a result, not understated.' }
+    exp: '1年目の過小な期末棚卸は、2年目の過小な期首棚卸になります。2年目の期首棚卸が低い → 2年目の COGS が低い → 2年目の純利益が過大になります。誤りは2年間で相殺されます。',
+    we: { 0: '1年目は純利益が過小です。しかし2年目は過小な期首棚卸により純利益が過大になり、逆の影響が生じます。', 2: '2年目の純利益は影響を受けます。1年目の期末棚卸が2年目の期首棚卸になるためです。', 3: '2年目の COGS は過小になりますが、その結果純利益は過大になります（過小ではありません）。' }
   },
   {
     id: 'q76', conceptId: 'c6_lcnrv',
@@ -7519,8 +7519,8 @@ var QUESTIONS = [
       'D) The inventory is more than one year old'
     ],
     ans: 1,
-    exp: 'Under LCNRV, if the net realizable value (estimated selling price minus costs to complete and sell) falls below cost, inventory must be written down to the lower net realizable value.',
-    we: { 0: 'When market value exceeds cost, inventory is reported at cost (the lower of the two) — no write-down is needed.', 2: 'The rule compares cost to NRV; if NRV is lower, you write down to NRV. The reference to "market value" is not part of LCNRV under current GAAP.', 3: 'Inventory age alone does not trigger a write-down; the comparison is between cost and NRV.' }
+    exp: '低価法（LCNRV）では、正味実現可能価額（NRV＝見積売却価格 − 完成・販売に要する費用）が原価を下回る場合、棚卸資産を低い方の NRV まで切り下げます。',
+    we: { 0: '時価が原価を上回る場合は、低い方の原価で計上し、切り下げは不要です。', 2: 'このルールは原価と NRV を比較します。NRV が低ければ NRV へ切り下げます。現行基準では『市場価格』は判定基準ではありません。', 3: '在庫の古さだけでは切り下げは生じません。比較するのは原価と NRV です。' }
   },
 
   // ============================================================
@@ -7538,8 +7538,8 @@ var QUESTIONS = [
       'D) $35,000'
     ],
     ans: 0,
-    exp: 'Beginning OE = $80,000 - $30,000 = $50,000. Ending OE = $105,000 - $40,000 = $65,000. Change in OE = $65,000 - $50,000 = $15,000 = Net income (since no investments or withdrawals).',
-    we: { 1: '$25,000 = change in assets ($105K - $80K); this ignores the increase in liabilities.', 2: '$10,000 = change in liabilities ($40K - $30K); this is the liability increase, not net income.', 3: '$35,000 is not supported by the calculation.' }
+    exp: '期首自己資本 = $80,000 − $30,000 = $50,000。期末自己資本 = $105,000 − $40,000 = $65,000。自己資本の変動 = $65,000 − $50,000 = $15,000 = 純利益（出資・引出がないため）。',
+    we: { 1: '$25,000 = 資産の変動（$105K − $80K）で、負債の増加を無視しています。', 2: '$10,000 = 負債の変動（$40K − $30K）で、これは負債増加分であり純利益ではありません。', 3: '$35,000 は計算で裏付けられません。' }
   },
   {
     id: 'q78', conceptId: 'c2_accounts',
@@ -7553,8 +7553,8 @@ var QUESTIONS = [
       'D) $6,000'
     ],
     ans: 0,
-    exp: 'Ending Cash = $5,000 + $18,000 - $12,000 - $3,000 = $8,000.',
-    we: { 1: '$10,000 = $5,000 + $18,000 - $12,000 — omits the $3,000 equipment payment.', 2: '$23,000 = $5,000 + $18,000 — ignores all cash payments.', 3: '$6,000 does not follow from the given data.' }
+    exp: '期末現金 = $5,000 + $18,000 − $12,000 − $3,000 = $8,000。',
+    we: { 1: '$10,000 = $5,000 + $18,000 − $12,000 は、$3,000 の設備購入支払いを漏らしています。', 2: '$23,000 = $5,000 + $18,000 は、すべての現金支出を無視しています。', 3: '$6,000 は与件から導けません。' }
   },
   {
     id: 'q79', conceptId: 'c3_accrued_rev',
@@ -7568,8 +7568,8 @@ var QUESTIONS = [
       'D) $600'
     ],
     ans: 1,
-    exp: 'Interest = Principal x Rate x Time = $60,000 x 8% x (6/12) = $60,000 x 0.08 x 0.5 = $2,400. Six months have passed (July through December).',
-    we: { 0: '$4,800 = $60,000 x 8% x 1 — this calculates a full year of interest, but only 6 months have elapsed.', 2: '$1,200 = $60,000 x 8% x (3/12) — this is only 3 months of interest.', 3: '$600 = $60,000 x 8% x (1.5/12) — this is only 1.5 months of interest.' }
+    exp: '利息 = 元本 × 利率 × 期間 = $60,000 × 8% × (6/12) = $60,000 × 0.08 × 0.5 = $2,400。6か月経過（7月〜12月）です。',
+    we: { 0: '$4,800 = $60,000 × 8% × 1 は1年分の利息ですが、経過は6か月だけです。', 2: '$1,200 = $60,000 × 8% × (3/12) は3か月分の利息です。', 3: '$600 = $60,000 × 8% × (1.5/12) は1.5か月分の利息です。' }
   },
   {
     id: 'q80', conceptId: 'c3_depreciation',
@@ -7583,8 +7583,8 @@ var QUESTIONS = [
       'D) $30,000'
     ],
     ans: 1,
-    exp: 'Annual depreciation = ($36,000 - $6,000) / 6 = $5,000. After 2 years: Accumulated Depreciation = $10,000. Book value = $36,000 - $10,000 = $26,000.',
-    we: { 0: '$24,000 = $36,000 - $12,000 — uses $6,000/year (ignoring salvage) for 2 years.', 2: '$22,000 = $36,000 - $14,000 — uses incorrect depreciation amount.', 3: '$30,000 = $36,000 - $6,000 — subtracts only one year of depreciation ($5,000 x 1, but this gives $31,000) or confusingly uses the salvage value.' }
+    exp: '年間減価償却費 = ($36,000 − $6,000) ÷ 6 = $5,000。2年後：減価償却累計額 = $10,000。簿価 = $36,000 − $10,000 = $26,000。',
+    we: { 0: '$24,000 = $36,000 − $12,000 は、残存価額を無視して年$6,000を2年分使っています。', 2: '$22,000 = $36,000 − $14,000 は誤った償却額を使っています。', 3: '$30,000 = $36,000 − $6,000 は、1年分の償却だけを引くか、残存価額と混同した誤りです。' }
   },
   {
     id: 'q81', conceptId: 'c4_closing',
@@ -7598,8 +7598,8 @@ var QUESTIONS = [
       'D) Close all expense accounts to Income Summary'
     ],
     ans: 2,
-    exp: 'Closing entries are made in this order: (1) Close revenues to Income Summary, (2) Close expenses to Income Summary, (3) Close Income Summary to Owner\'s Capital, (4) Close Owner\'s Drawings to Owner\'s Capital.',
-    we: { 0: 'Closing Income Summary to Owner\'s Capital is step 3, not step 1.', 1: 'Closing Owner\'s Drawings is the 4th and last closing entry.', 3: 'Closing expenses to Income Summary is step 2, after revenues are closed.' }
+    exp: '締切仕訳の順序：(1)収益を Income Summary へ締切 (2)費用を Income Summary へ締切 (3)Income Summary を Owner\'s Capital へ締切 (4)Owner\'s Drawings を Owner\'s Capital へ締切。',
+    we: { 0: 'Income Summary を Owner\'s Capital へ締め切るのはステップ3であり、ステップ1ではありません。', 1: 'Owner\'s Drawings の締切は4番目（最後）の締切仕訳です。', 3: '費用を Income Summary へ締め切るのはステップ2で、収益を締め切った後です。' }
   },
   {
     id: 'q82', conceptId: 'c4_closing',
@@ -7613,8 +7613,8 @@ var QUESTIONS = [
       'D) $85,000'
     ],
     ans: 0,
-    exp: 'Net income = $60,000 - $22,000 - $8,000 = $30,000. Closing entries: Capital + Net Income - Drawings = $40,000 + $30,000 - $5,000 = $65,000.',
-    we: { 1: '$70,000 = $40,000 + $30,000 — omits the $5,000 drawings reduction.', 2: '$75,000 = $40,000 + $60,000 - $22,000 - $8,000 + $5,000 — incorrectly adds drawings.', 3: '$85,000 = $40,000 + $60,000 - $15,000 — incorrect calculation.' }
+    exp: '純利益 = $60,000 − $22,000 − $8,000 = $30,000。締切後：資本 + 純利益 − 引出 = $40,000 + $30,000 − $5,000 = $65,000。',
+    we: { 1: '$70,000 = $40,000 + $30,000 は、$5,000 の引出による減少を漏らしています。', 2: '$75,000 は引出を誤って加算しています。', 3: '$85,000 = $40,000 + $60,000 − $15,000 は計算が誤っています。' }
   },
   {
     id: 'q83', conceptId: 'c5_multistep_is',
@@ -7628,8 +7628,8 @@ var QUESTIONS = [
       'D) $39,000'
     ],
     ans: 0,
-    exp: 'Net Sales = $180,000 - $4,000 - $2,000 = $174,000. Net Purchases = $90,000 - $3,000 = $87,000. COGS = $25,000 + $87,000 - $22,000 = $90,000. Gross Profit = $174,000 - $90,000 = $84,000. Net Income = $84,000 - $35,000 = $49,000.',
-    we: { 1: '$54,000 = $84,000 - $30,000 — uses incorrect operating expenses or omits some costs.', 2: '$84,000 is gross profit; operating expenses ($35,000) must still be deducted to get net income.', 3: '$39,000 = $49,000 - $10,000 — uses an incorrect figure somewhere in the calculation.' }
+    exp: '純売上高 = $180,000 − $4,000 − $2,000 = $174,000。純仕入 = $90,000 − $3,000 = $87,000。COGS = $25,000 + $87,000 − $22,000 = $90,000。売上総利益 = $174,000 − $90,000 = $84,000。純利益 = $84,000 − $35,000 = $49,000。',
+    we: { 1: '$54,000 = $84,000 − $30,000 は、営業費を誤るか一部費用を漏らしています。', 2: '$84,000 は売上総利益です。営業費（$35,000）をさらに差し引いて純利益を出します。', 3: '$39,000 = $49,000 − $10,000 は、計算のどこかで誤った数値を使っています。' }
   },
   {
     id: 'q84', conceptId: 'c5_multistep_is',
@@ -7643,8 +7643,8 @@ var QUESTIONS = [
       'D) $75,000'
     ],
     ans: 0,
-    exp: 'Gross Profit = $300,000 - $180,000 = $120,000. Income from Operations = Gross Profit - Operating Expenses = $120,000 - $30,000 - $25,000 = $65,000. Other Revenue is added after income from operations.',
-    we: { 1: '$70,000 = $120,000 - $30,000 - $25,000 + $5,000 — includes Other Revenue in operating income, but Other Revenue is a non-operating item.', 2: '$120,000 is gross profit, not income from operations.', 3: '$75,000 = $120,000 - $30,000 - $25,000 + $10,000 — does not match the given data.' }
+    exp: '売上総利益 = $300,000 − $180,000 = $120,000。営業利益 = 売上総利益 − 営業費 = $120,000 − $30,000 − $25,000 = $65,000。Other Revenue（営業外収益）は営業利益の後で加算します。',
+    we: { 1: '$70,000 = $120,000 − $30,000 − $25,000 + $5,000 は、営業外収益を営業利益に含めていますが、Other Revenue は営業外項目です。', 2: '$120,000 は売上総利益であり、営業利益ではありません。', 3: '$75,000 は与件と一致しません。' }
   },
   {
     id: 'q85', conceptId: 'c6_fifo',
@@ -7658,8 +7658,8 @@ var QUESTIONS = [
       'D) $3,000'
     ],
     ans: 0,
-    exp: 'FIFO: sell oldest first. 200 units @ $5 = $1,000; then 150 units @ $8 = $1,200. COGS = $1,000 + $1,200 = $2,200. Ending inventory = 150 units @ $8 = $1,200.',
-    we: { 1: '$2,600 = 350 x $8 — uses only the $8/unit cost, ignoring that the first 200 units cost $5 each.', 2: '$2,800 is not derivable from FIFO with the given data.', 3: '$3,000 = $3,400 - $400 — uses incorrect ending inventory.' }
+    exp: 'FIFO：古い単位から販売。200個@$5 = $1,000、次に150個@$8 = $1,200。COGS = $1,000 + $1,200 = $2,200。期末棚卸 = 150個@$8 = $1,200。',
+    we: { 1: '$2,600 = 350 × $8 は、最初の200個が$5であることを無視して$8だけを使っています。', 2: '$2,800 は与件の FIFO では導けません。', 3: '$3,000 = $3,400 − $400 は誤った期末棚卸を使っています。' }
   },
   {
     id: 'q86', conceptId: 'c6_lifo',
@@ -7673,8 +7673,8 @@ var QUESTIONS = [
       'D) $3,000'
     ],
     ans: 1,
-    exp: 'LIFO sells newest units first. 350 sold: 300 units @ $8 = $2,400 (entire purchase layer); then 50 units @ $5 = $250 (from beginning inventory). COGS = $2,400 + $250 = $2,650. Ending inventory = 150 units @ $5 = $750.',
-    we: { 0: '$2,200 is the FIFO COGS (200@$5 + 150@$8), not LIFO.', 2: '$2,800 = 350 x $8 — incorrectly applies the $8 unit cost to all 350 units sold, ignoring the layering.', 3: '$3,000 = 350 x $5 + 350 x $3 — does not follow from correct LIFO calculation.' }
+    exp: 'LIFO：新しい単位から販売。350個販売：300個@$8 = $2,400（仕入層全部）、次に50個@$5 = $250（期首棚卸から）。COGS = $2,400 + $250 = $2,650。期末棚卸 = 150個@$5 = $750。',
+    we: { 0: '$2,200 は FIFO の COGS（200@$5 + 150@$8）であり、LIFO ではありません。', 2: '$2,800 = 350 × $8 は、層構造を無視し全350個に$8を当てた誤りです。', 3: '$3,000 = 350×$5 + 350×$3 は正しい LIFO 計算から導けません。' }
   },
   {
     id: 'q87', conceptId: 'c6_avg_cost',
@@ -7688,8 +7688,8 @@ var QUESTIONS = [
       'D) $3,400'
     ],
     ans: 0,
-    exp: 'Average cost per unit = $3,400 / 500 = $6.80. COGS = 350 x $6.80 = $2,380. Ending inventory = 150 x $6.80 = $1,020.',
-    we: { 1: '$2,200 is the FIFO COGS, not average cost.', 2: '$1,020 is the average cost ending inventory, not COGS.', 3: '$3,400 is the total cost of all goods available for sale.' }
+    exp: '平均単価 = $3,400 ÷ 500 = $6.80。COGS = 350 × $6.80 = $2,380。期末棚卸 = 150 × $6.80 = $1,020。',
+    we: { 1: '$2,200 は FIFO の COGS であり、平均原価法ではありません。', 2: '$1,020 は平均原価法の期末棚卸であり、COGS ではありません。', 3: '$3,400 は販売可能商品原価の総額です。' }
   },
   {
     id: 'q88', conceptId: 'c6_gross_profit_method',
@@ -7703,8 +7703,8 @@ var QUESTIONS = [
       'D) $200,000'
     ],
     ans: 2,
-    exp: 'Estimated COGS = Net Sales x (1 - Gross Profit Rate) = $150,000 x 60% = $90,000. Estimated Ending Inventory = Goods Available - Estimated COGS = $200,000 - $90,000 = $110,000.',
-    we: { 0: '$60,000 = $150,000 x 40% — this applies the gross profit rate to sales to get estimated COGS, which is incorrect. The COST ratio (60%) should be applied to sales.', 1: '$80,000 — does not follow from the formula.', 3: '$200,000 is the goods available for sale before deducting COGS.' }
+    exp: '推定 COGS = 純売上 × (1 − 粗利率) = $150,000 × 60% = $90,000。推定期末棚卸 = 販売可能原価 − 推定COGS = $200,000 − $90,000 = $110,000。',
+    we: { 0: '$60,000 = $150,000 × 40% は、粗利率を売上に当てて COGS を求めた誤りです。原価率(60%)を売上に当てます。', 1: '$80,000 は式から導けません。', 3: '$200,000 は COGS 控除前の販売可能商品原価です。' }
   },
   {
     id: 'q89', conceptId: 'c6_fifo_avg_lifo_compare',
@@ -7718,8 +7718,8 @@ var QUESTIONS = [
       'D) Under LIFO, ending inventory reflects the most recent costs'
     ],
     ans: 2,
-    exp: 'Under FIFO (First-In, First-Out), the oldest costs are matched to COGS, so the most recent (newer) costs remain in ending inventory.',
-    we: { 0: 'FIFO and LIFO produce the same results only when unit costs are constant; otherwise they produce different COGS and ending inventory values.', 1: 'The average cost (weighted-average) method is allowed under GAAP and IFRS.', 3: 'Under LIFO, the most recent costs are matched to COGS, so ending inventory reflects the OLDEST costs, not the most recent.' }
+    exp: 'FIFO（先入先出法）では古い原価が COGS に対応するため、新しい（直近の）原価が期末棚卸に残ります。',
+    we: { 0: 'FIFO と LIFO が同じ結果になるのは単価一定のときだけです。価格が変動すれば COGS も期末棚卸も異なります。', 1: '加重平均法は GAAP でも IFRS でも認められています。', 3: 'LIFO では直近原価が COGS に対応するため、期末棚卸には最も古い原価が残ります。直近原価ではありません。' }
   },
   {
     id: 'q90', conceptId: 'c6_turnover',
@@ -7733,8 +7733,8 @@ var QUESTIONS = [
       'D) Turnover = 6 times; Days = 45.6 days'
     ],
     ans: 1,
-    exp: 'Inventory Turnover = COGS / Average Inventory = $360,000 / $45,000 = 8 times. Days in Inventory = 365 / 8 = 45.6 days.',
-    we: { 0: 'Turnover = $360,000 / $60,000 = 6 — uses $60,000 as average inventory, not $45,000.', 2: 'Turnover is correctly 8 times, but 60.8 days = 365/6, not 365/8.', 3: 'Turnover of 6 would require average inventory of $60,000; Days of 45.6 days matches 8 times turnover — these two don\'t go together.' }
+    exp: '棚卸資産回転率 = COGS ÷ 平均棚卸 = $360,000 ÷ $45,000 = 8回。棚卸日数 = 365 ÷ 8 = 45.6日。',
+    we: { 0: '回転率 = $360,000 ÷ $60,000 = 6 は、平均棚卸を$45,000ではなく$60,000としています。', 2: '回転率は正しく8回ですが、60.8日 = 365÷6 であって 365÷8 ではありません。', 3: '回転率6は平均棚卸$60,000を要し、45.6日は8回に対応します。この2つは整合しません。' }
   },
 
   // ============================================================
@@ -7752,8 +7752,8 @@ var QUESTIONS = [
       'D) Notes to financial statements to replace the statements themselves'
     ],
     ans: 1,
-    exp: 'The full-disclosure principle requires that financial statements and their accompanying notes disclose all circumstances and events that are material and relevant to financial statement users.',
-    we: { 0: 'Assets are generally reported at historical cost under GAAP, not fair market value — unless fair value accounting applies.', 2: 'While materiality affects what is disclosed, the full-disclosure principle broadly requires disclosure of all relevant information, not only material items.', 3: 'Notes supplement financial statements; they do not replace them.' }
+    exp: '完全開示の原則（full-disclosure principle）は、財務諸表とその注記において、利用者にとって重要かつ関連性のあるすべての状況・事象を開示することを要求します。',
+    we: { 0: 'GAAP では資産は原則として歴史的原価で報告します。公正価値会計が適用される場合を除き、時価ではありません。', 2: '重要性は開示内容に影響しますが、完全開示の原則は広く関連情報の開示を求めるもので、重要項目だけに限りません。', 3: '注記は財務諸表を補足するもので、置き換えるものではありません。' }
   },
   {
     id: 'q92', conceptId: 'c2_journal',
@@ -7767,8 +7767,8 @@ var QUESTIONS = [
       'D) Debit Cash $2,000; Credit Owner\'s Drawings $2,000'
     ],
     ans: 2,
-    exp: 'Owner\'s withdrawal: Debit Owner\'s Drawings $2,000 (drawings increase, reducing owner\'s equity); Credit Cash $2,000 (asset decreases).',
-    we: { 0: 'Owner withdrawals are not salaries expense; they are personal drawings and do not appear on the income statement.', 1: 'Owner\'s Capital is directly debited only in closing entries; during the period, Owner\'s Drawings is used.', 3: 'Cash is paid out (credit), not received (debit).' }
+    exp: '所有者の引出：借方 Owner\'s Drawings $2,000（引出金が増加し自己資本を減らす）/ 貸方 Cash $2,000（資産が減少）。',
+    we: { 0: '所有者の引出は給料費用ではありません。個人的な引出であり損益計算書には載りません。', 1: 'Owner\'s Capital を直接借方にするのは締切仕訳のときだけです。期中は Owner\'s Drawings を使います。', 3: '現金は支払われる（貸方）のであって、受け取る（借方）のではありません。' }
   },
   {
     id: 'q93', conceptId: 'c3_prepaid',
@@ -7782,8 +7782,8 @@ var QUESTIONS = [
       'D) Debit Service Revenue $1,200; Credit Cash $1,200'
     ],
     ans: 1,
-    exp: 'When cash is received before services are performed, it creates a liability (Unearned Revenue). Entry: Debit Cash $1,200; Credit Unearned Revenue $1,200.',
-    we: { 0: 'Revenue should not be credited until it is earned. At receipt, it is unearned and recorded as a liability.', 2: 'Unearned Revenue is debited (reduced) when revenue is earned, not when cash is first received.', 3: 'Cash is received (debit) not paid out; and Revenue has not been earned yet.' }
+    exp: 'サービス提供前に現金を受け取ると負債（Unearned Revenue 前受収益）が生じます。仕訳：借方 Cash $1,200 / 貸方 Unearned Revenue $1,200。',
+    we: { 0: '収益は稼得するまで貸方計上しません。受領時点では未稼得で、負債として記録します。', 2: 'Unearned Revenue を借方（減少）にするのは収益を稼得したときで、現金受領時ではありません。', 3: '現金は受け取る（借方）のであって支払う（貸方）のではなく、収益もまだ稼得していません。' }
   },
   {
     id: 'q94', conceptId: 'c4_worksheet',
@@ -7797,8 +7797,8 @@ var QUESTIONS = [
       'D) Adjusting entries are not needed when a worksheet is prepared'
     ],
     ans: 2,
-    exp: 'The worksheet is an optional internal working paper used by accountants to organize information and facilitate the preparation of financial statements and closing entries. It is not a required financial statement.',
-    we: { 0: 'The worksheet is not a required financial statement under GAAP; it is an optional tool for accountants.', 1: 'Worksheets are optional tools that make preparation easier, but financial statements can be prepared without them.', 3: 'Adjusting entries ARE still needed even when a worksheet is prepared; the worksheet has columns for adjusting entries.' }
+    exp: '精算表（worksheet）は、会計担当者が情報を整理し財務諸表や締切仕訳の作成を容易にするために使う任意の内部作業資料です。正式な財務諸表ではありません。',
+    we: { 0: '精算表は GAAP 上の必須財務諸表ではなく、会計担当者向けの任意ツールです。', 1: '精算表は作成を容易にする任意ツールで、なくても財務諸表は作成できます。', 3: '精算表を作成しても決算整理仕訳は依然必要です。精算表には調整記入欄があります。' }
   },
   {
     id: 'q95', conceptId: 'c5_sales_recording',
@@ -7812,8 +7812,8 @@ var QUESTIONS = [
       'D) Sales Revenue'
     ],
     ans: 2,
-    exp: 'Under perpetual inventory, when goods are sold, Cost of Goods Sold is debited and Inventory is credited to record the cost of merchandise sold.',
-    we: { 0: 'Purchases is an account used only in the periodic inventory system, not perpetual.', 1: 'Inventory is credited (decreased) when goods are sold; Cost of Goods Sold is debited.', 3: 'Sales Revenue is credited when goods are sold (to record the selling price), not debited.' }
+    exp: '継続記録法では、商品を販売したとき Cost of Goods Sold を借方、Inventory を貸方にして、販売した商品の原価を記録します。',
+    we: { 0: 'Purchases は棚卸計算法だけで使う勘定で、継続記録法では使いません。', 1: '商品販売時は Inventory を貸方（減少）、Cost of Goods Sold を借方にします。', 3: '商品販売時は Sales Revenue を貸方（売価の記録）にします。借方ではありません。' }
   },
   {
     id: 'q96', conceptId: 'c5_purchase_returns',
@@ -7827,8 +7827,8 @@ var QUESTIONS = [
       'D) $10,300'
     ],
     ans: 1,
-    exp: 'Purchase discount = $10,000 x 2% = $200. Net invoice cost = $10,000 - $200 = $9,800. Add freight-in: $9,800 + $300 = $10,100. Freight-in is part of the cost of inventory and is not subject to the discount.',
-    we: { 0: '$9,800 = $10,000 - $200 — correctly applies the discount but forgets to add freight-in costs.', 2: '$10,000 = original invoice amount, ignoring both the discount and freight.', 3: '$10,300 = $10,000 + $300 — adds freight but forgets to take the 2% discount.' }
+    exp: '仕入割引 = $10,000 × 2% = $200。割引後の請求原価 = $10,000 − $200 = $9,800。引取運賃を加算：$9,800 + $300 = $10,100。引取運賃は棚卸原価の一部で、割引の対象にはなりません。',
+    we: { 0: '$9,800 = $10,000 − $200 は割引は正しく適用していますが、引取運賃の加算を忘れています。', 2: '$10,000 は元の請求額で、割引も運賃も無視しています。', 3: '$10,300 = $10,000 + $300 は運賃を加えていますが、2%割引を取り忘れています。' }
   },
   {
     id: 'q97', conceptId: 'c6_cost_available',
@@ -7842,8 +7842,8 @@ var QUESTIONS = [
       'D) 45%'
     ],
     ans: 0,
-    exp: 'COGS = $30,000 + $120,000 - $25,000 = $125,000. Gross Profit = $200,000 - $125,000 = $75,000. Gross Profit Ratio = $75,000 / $200,000 = 37.5%.',
-    we: { 1: '40% = $80,000 / $200,000 — COGS would need to be $120,000 for this; that ignores beginning and ending inventory.', 2: '62.5% = $125,000 / $200,000 — this divides COGS (not gross profit) by net sales.', 3: '45% — does not follow from correct computation.' }
+    exp: 'COGS = $30,000 + $120,000 − $25,000 = $125,000。売上総利益 = $200,000 − $125,000 = $75,000。売上総利益率 = $75,000 ÷ $200,000 = 37.5%。',
+    we: { 1: '40% = $80,000 ÷ $200,000 は COGS が$120,000である必要があり、期首・期末棚卸を無視しています。', 2: '62.5% = $125,000 ÷ $200,000 は、売上総利益ではなく COGS を純売上で割っています。', 3: '45% は正しい計算から導けません。' }
   },
   {
     id: 'q98', conceptId: 'c3_accrued_rev',
@@ -7857,8 +7857,8 @@ var QUESTIONS = [
       'D) $250'
     ],
     ans: 1,
-    exp: 'Accrued interest = $50,000 x 6% x (2/12) = $50,000 x 0.005 = $500. Only 2 months (November and December) have elapsed by December 31.',
-    we: { 0: '$3,000 = $50,000 x 6% — full year\'s interest; only 2 months have elapsed.', 2: '$1,500 = $50,000 x 6% x (6/12) — 6 months of interest; only 2 months have passed.', 3: '$250 = $50,000 x 6% x (1/12) — only 1 month of interest; 2 months have elapsed.' }
+    exp: '未収（未払）利息 = $50,000 × 6% × (2/12) = $50,000 × 0.005 = $500。12月31日までに2か月（11月・12月）だけ経過しています。',
+    we: { 0: '$3,000 = $50,000 × 6% は1年分の利息で、経過は2か月だけです。', 2: '$1,500 = $50,000 × 6% × (6/12) は6か月分で、経過は2か月です。', 3: '$250 = $50,000 × 6% × (1/12) は1か月分で、経過は2か月です。' }
   },
   {
     id: 'q99', conceptId: 'c2_double_entry',
@@ -7872,8 +7872,8 @@ var QUESTIONS = [
       'D) Company purchases supplies on account'
     ],
     ans: 3,
-    exp: 'Purchasing supplies on account increases assets (Supplies) and increases liabilities (Accounts Payable). Owner\'s equity is not affected because no revenue is earned and no expense is incurred.',
-    we: { 0: 'An owner\'s cash investment increases both assets and owner\'s equity (Owner\'s Capital).', 1: 'Earning revenue increases both assets (or decreases liabilities) and owner\'s equity.', 2: 'Paying a utility bill decreases assets (Cash) and decreases owner\'s equity (through Utilities Expense).' }
+    exp: '消耗品を掛けで購入すると資産（Supplies）が増加し負債（Accounts Payable）が増加します。収益も費用も生じないため自己資本は影響を受けません。',
+    we: { 0: '所有者の現金出資は資産と自己資本（Owner\'s Capital）の両方を増やします。', 1: '収益の獲得は資産（または負債の減少）と自己資本の両方を増やします。', 2: '光熱費の支払いは資産（Cash）を減らし、自己資本（Utilities Expense を通じて）を減らします。' }
   },
   {
     id: 'q100', conceptId: 'c5_sales_recording',
@@ -7887,19 +7887,19 @@ var QUESTIONS = [
       'D) Debit AR $8,000; Credit COGS $5,000; Credit Inventory $3,000'
     ],
     ans: 1,
-    exp: 'A sale on account under perpetual requires TWO entries: (1) Debit Accounts Receivable $8,000; Credit Sales Revenue $8,000 — to record the sale at selling price; AND (2) Debit COGS $5,000; Credit Inventory $5,000 — to record the cost of goods sold.',
-    we: { 0: 'Recording only the sale entry is incomplete under the perpetual system; the cost entry is also required.', 2: 'In entry 2, Inventory is credited (decreased) when goods are sold, and COGS is debited — not the reverse.', 3: 'This entry incorrectly credits two different accounts to make the entry balance and does not properly record both the sale and cost transactions.' }
+    exp: '継続記録法の掛け売上には2つの仕訳が必要です：(1)借方 Accounts Receivable $8,000 / 貸方 Sales Revenue $8,000（売価で売上を記録）、(2)借方 COGS $5,000 / 貸方 Inventory $5,000（販売した在庫の原価を記録）。',
+    we: { 0: '売上仕訳だけでは継続記録法では不完全です。原価の仕訳も必要です。', 2: '仕訳(2)では商品販売時に Inventory を貸方（減少）、COGS を借方にします。逆ではありません。', 3: 'この仕訳は2つの異なる勘定を貸方にしてバランスを取っているだけで、売上と原価の両方を適切に記録していません。' }
   }  ,
-  { id:'q101',conceptId:'c1_three_activities',ch:1,type:'A', q:'What are the three core activities of accounting in the correct order?', opts:['A) Record, Identify, Communicate','B) Identify, Record, Communicate','C) Communicate, Record, Identify','D) Identify, Communicate, Record'], ans:1, exp:'Accounting three activities in order: (1) Identify — determine which events are economic transactions; (2) Record — enter them in the journal; (3) Communicate — prepare financial statements for users.', we:{0:'Recording comes after identifying.',2:'Communicating is the final step, not the first.',3:'Recording always comes before communicating.'} },
-  { id:'q102',conceptId:'c1_three_activities',ch:1,type:'A', q:'Which accounting activity involves preparing financial statements for investors and creditors?', opts:['A) Identifying','B) Recording','C) Communicating','D) Summarizing'], ans:2, exp:'Communicating is the third activity — preparing and distributing financial statements so internal and external users can make informed decisions.', we:{0:'Identifying is the first step — determining which events qualify as economic transactions.',1:'Recording is the second step — entering transactions in the journal.',3:'Summarizing is not one of the three official activities; the correct term is Communicating.'} },
-  { id:'q103',conceptId:'c1_users',ch:1,type:'A', q:'Which of the following is an INTERNAL user of accounting information?', opts:['A) A bank considering a loan to the company','B) An investor evaluating whether to buy shares','C) A company production manager','D) A government tax authority'], ans:2, exp:'Internal users are people inside the company — managers, officers, and employees — who use accounting information to make operating, investing, and financing decisions.', we:{0:'A bank is an external user — it uses published financial statements to decide whether to lend.',1:'An investor is an external user who relies on published financial statements.',3:'Government tax authorities are external users who receive legally required filings.'} },
-  { id:'q104',conceptId:'c1_users',ch:1,type:'A', q:'External users of accounting information primarily rely on:', opts:['A) Detailed internal management reports','B) Published financial statements prepared under GAAP or IFRS','C) Direct access to all company accounting records','D) Budget projections prepared by management'], ans:1, exp:'External users — investors, creditors, regulators — only have access to published financial statements. That is why GAAP and IFRS exist: to ensure these statements are reliable and comparable.', we:{0:'Internal management reports are private and not shared with external parties.',2:'External users do not have direct access to internal accounting records.',3:'Budget projections are internal planning documents not available to external users.'} },
-  { id:'q105',conceptId:'c1_ethics',ch:1,type:'A', q:'Which BEST describes the Full Disclosure Principle?', opts:['A) Report only transactions above a material threshold','B) Disclose all circumstances and events that would make a difference to financial statement users','C) Simplify financial statements by omitting complex notes','D) Disclose only positive financial information'], ans:1, exp:'The Full Disclosure Principle requires companies to disclose all information that would influence the decisions of financial statement users — nothing material may be omitted or hidden.', we:{0:'Materiality guides level of detail, but the principle is about full disclosure, not selective reporting.',2:'Notes are required disclosures, not optional simplifications.',3:'Disclosing only positive information would be an ethics violation.'} },
-  { id:'q106',conceptId:'c1_biz_types',ch:1,type:'A', q:'Which business organization form offers shareholders LIMITED liability?', opts:['A) Sole proprietorship — single owner with full personal asset exposure','B) General partnership — co-owners with joint unlimited liability for debts','C) Corporation — separate legal entity with shareholder liability capped','D) Both sole proprietorship and general partnership forms (small-business protection)'], ans:2, exp:'A **corporation** is a separate legal entity; shareholders\' personal assets are protected — they can only lose the amount they invested. Proprietorships and partnerships have **unlimited personal liability**.', we:{0:'A sole proprietor has **unlimited** liability — personal assets can be seized to pay business debts.',1:'General partners have **unlimited** liability — jointly and severally responsible for all partnership debts.',3:'Neither proprietorships nor partnerships offer limited liability — only the corporate form (and LLCs) provide it.'} },
-  { id:'q107',conceptId:'c1_biz_types',ch:1,type:'A', q:'Double taxation is a disadvantage of which business form?', opts:['A) Sole proprietorship','B) Partnership','C) Corporation','D) All business forms equally'], ans:2, exp:'Corporations face double taxation: the corporation pays corporate income tax on profits, and shareholders pay personal income tax again when dividends are received.', we:{0:'Proprietorships are taxed only once — at the owner personal income level.',1:'Partnerships are taxed only once — each partner pays tax on their share of income.',3:'Double taxation is unique to corporations, not all business forms.'} },
-  { id:'q108',conceptId:'c1_transaction',ch:1,type:'A', q:'The dual effect of every accounting transaction means:', opts:['A) Every transaction is recorded in two separate journals','B) Every transaction affects at least two accounts','C) Transactions always affect both assets and liabilities','D) Every transaction requires two management approvals'], ans:1, exp:'Double-entry bookkeeping is based on the dual effect: every transaction affects at least two accounts. One account is debited and another credited, keeping the accounting equation in balance.', we:{0:'Transactions are recorded in one journal; they are posted to multiple ledger accounts.',2:'Transactions do not always affect both assets and liabilities — e.g., paying rent affects Cash and Rent Expense, not a liability.',3:'The dual effect is an accounting concept about accounts, not an approval process.'} },
-  { id:'q109',conceptId:'c2_journal',ch:2,type:'A', q:'Posting is the process of:', opts:['A) Recording transactions in the journal','B) Transferring journal entry amounts to the individual ledger accounts','C) Preparing the trial balance from ledger balances','D) Identifying which transactions to record'], ans:1, exp:'Posting transfers amounts from the journal to the appropriate ledger accounts. After posting, each ledger account shows all increases, decreases, and its running balance.', we:{0:'Recording in the journal is called journalizing, not posting.',2:'Preparing the trial balance comes after posting.',3:'Identifying transactions is the first step in the accounting cycle, not posting.'} },
-  { id:'q110',conceptId:'c2_sfp_structure',ch:2,type:'A', q:'On a classified Statement of Financial Position, cash and accounts receivable appear under:', opts:['A) Non-current assets','B) Current assets','C) Current liabilities','D) Shareholders equity'], ans:1, exp:'Current assets include cash and other assets expected to be converted to cash or used within one year. Cash and Accounts Receivable are always current assets.', we:{0:'Non-current assets include long-lived items such as property, plant, and equipment — not cash or receivables.',2:'Current liabilities are amounts owed within one year; Cash and AR are assets, not liabilities.',3:'Shareholders equity represents owners claims, not specific assets.'} },
+  { id:'q101',conceptId:'c1_three_activities',ch:1,type:'A', q:'What are the three core activities of accounting in the correct order?', opts:['A) Record, Identify, Communicate','B) Identify, Record, Communicate','C) Communicate, Record, Identify','D) Identify, Communicate, Record'], ans:1, exp:'会計の3活動の順序：(1)Identify（識別）＝どの事象が経済的取引かを判断 (2)Record（記録）＝仕訳帳に記入 (3)Communicate（伝達）＝利用者向けに財務諸表を作成。', we:{ 0: '記録（Record）は識別（Identify）の後です。', 2: '伝達（Communicate）は最後の段階で、最初ではありません。', 3: '記録（Record）は伝達（Communicate）より必ず前です。' } },
+  { id:'q102',conceptId:'c1_three_activities',ch:1,type:'A', q:'Which accounting activity involves preparing financial statements for investors and creditors?', opts:['A) Identifying','B) Recording','C) Communicating','D) Summarizing'], ans:2, exp:'伝達（Communicating）は第3の活動で、財務諸表を作成・配布し、内部・外部の利用者が情報に基づく意思決定をできるようにします。', we:{ 0: '識別（Identifying）は第1段階で、どの事象が経済的取引かを判断します。', 1: '記録（Recording）は第2段階で、取引を仕訳帳に記入します。', 3: 'Summarizing は公式の3活動には含まれません。正しい用語は Communicating です。' } },
+  { id:'q103',conceptId:'c1_users',ch:1,type:'A', q:'Which of the following is an INTERNAL user of accounting information?', opts:['A) A bank considering a loan to the company','B) An investor evaluating whether to buy shares','C) A company production manager','D) A government tax authority'], ans:2, exp:'内部利用者（internal users）は社内の人々（経営者・役員・従業員）で、会計情報を使って営業・投資・財務の意思決定を行います。', we:{ 0: '銀行は外部利用者です。公表財務諸表を使って融資の可否を判断します。', 1: '投資家は外部利用者で、公表財務諸表に依存します。', 3: '税務当局は外部利用者で、法的に義務付けられた提出書類を受け取ります。' } },
+  { id:'q104',conceptId:'c1_users',ch:1,type:'A', q:'External users of accounting information primarily rely on:', opts:['A) Detailed internal management reports','B) Published financial statements prepared under GAAP or IFRS','C) Direct access to all company accounting records','D) Budget projections prepared by management'], ans:1, exp:'外部利用者（投資家・債権者・規制当局）は公表財務諸表しか入手できません。だからこそ GAAP や IFRS が存在し、これらの諸表の信頼性と比較可能性を担保します。', we:{ 0: '内部の経営報告書は非公開で、外部には共有されません。', 2: '外部利用者は内部の会計記録に直接アクセスできません。', 3: '予算予測は内部の計画資料で、外部利用者は入手できません。' } },
+  { id:'q105',conceptId:'c1_ethics',ch:1,type:'A', q:'Which BEST describes the Full Disclosure Principle?', opts:['A) Report only transactions above a material threshold','B) Disclose all circumstances and events that would make a difference to financial statement users','C) Simplify financial statements by omitting complex notes','D) Disclose only positive financial information'], ans:1, exp:'完全開示の原則（Full Disclosure Principle）は、財務諸表利用者の意思決定に影響を与えるすべての情報の開示を企業に求めます。重要な情報を省略・隠蔽してはいけません。', we:{ 0: '重要性は詳細度を左右しますが、この原則は完全な開示についてのもので、選択的報告ではありません。', 2: '注記は必須の開示であり、任意の簡略化ではありません。', 3: '良い情報だけを開示するのは倫理違反になります。' } },
+  { id:'q106',conceptId:'c1_biz_types',ch:1,type:'A', q:'Which business organization form offers shareholders LIMITED liability?', opts:['A) Sole proprietorship — single owner with full personal asset exposure','B) General partnership — co-owners with joint unlimited liability for debts','C) Corporation — separate legal entity with shareholder liability capped','D) Both sole proprietorship and general partnership forms (small-business protection)'], ans:2, exp:'株式会社（corporation）は独立した法的主体で、株主個人の財産は保護されます（出資額しか失わない＝有限責任）。個人企業や組合は無限責任です。', we:{ 0: '個人事業主は無限責任で、事業の債務のために個人財産が差し押さえられ得ます。', 1: '無限責任組合員は無限責任で、組合の全債務に連帯して責任を負います。', 3: '個人企業も組合も有限責任を提供しません。有限責任は株式会社（やLLC）の形態だけが提供します。' } },
+  { id:'q107',conceptId:'c1_biz_types',ch:1,type:'A', q:'Double taxation is a disadvantage of which business form?', opts:['A) Sole proprietorship','B) Partnership','C) Corporation','D) All business forms equally'], ans:2, exp:'株式会社は二重課税に直面します：会社が利益に法人税を払い、株主が配当受領時に再び個人所得税を払います。', we:{ 0: '個人企業は一度だけ課税されます（所有者個人の所得レベルで）。', 1: '組合は一度だけ課税され、各組合員が自分の取り分に課税されます。', 3: '二重課税は株式会社特有で、すべての事業形態に当てはまるわけではありません。' } },
+  { id:'q108',conceptId:'c1_transaction',ch:1,type:'A', q:'The dual effect of every accounting transaction means:', opts:['A) Every transaction is recorded in two separate journals','B) Every transaction affects at least two accounts','C) Transactions always affect both assets and liabilities','D) Every transaction requires two management approvals'], ans:1, exp:'複式簿記は二重の効果（dual effect）に基づきます：すべての取引は少なくとも2つの勘定に影響します。一方を借方、他方を貸方に記入し、会計等式の均衡を保ちます。', we:{ 0: '取引は1つの仕訳帳に記録され、複数の元帳勘定に転記されます。', 2: '取引は必ずしも資産と負債の両方に影響するわけではありません。例えば家賃支払いは Cash と Rent Expense に影響し、負債は関係しません。', 3: '二重の効果は勘定に関する会計概念で、承認プロセスではありません。' } },
+  { id:'q109',conceptId:'c2_journal',ch:2,type:'A', q:'Posting is the process of:', opts:['A) Recording transactions in the journal','B) Transferring journal entry amounts to the individual ledger accounts','C) Preparing the trial balance from ledger balances','D) Identifying which transactions to record'], ans:1, exp:'転記（posting）は仕訳帳から該当する元帳勘定へ金額を移します。転記後、各元帳勘定はすべての増減と残高を示します。', we:{ 0: '仕訳帳への記入は journalizing（仕訳）と呼び、posting ではありません。', 2: '試算表の作成は転記の後に行います。', 3: '取引の識別は会計サイクルの最初の段階で、転記ではありません。' } },
+  { id:'q110',conceptId:'c2_sfp_structure',ch:2,type:'A', q:'On a classified Statement of Financial Position, cash and accounts receivable appear under:', opts:['A) Non-current assets','B) Current assets','C) Current liabilities','D) Shareholders equity'], ans:1, exp:'流動資産（current assets）は、現金と、1年以内に現金化・費消されると見込まれる資産を含みます。Cash と Accounts Receivable は常に流動資産です。', we:{ 0: '非流動資産は有形固定資産などの長期項目を含み、現金や売掛金は含みません。', 2: '流動負債は1年以内に支払う債務です。Cash と AR は資産であって負債ではありません。', 3: '株主資本は所有者の請求権を表し、特定の資産を表しません。' } },
   { id:'q111',conceptId:'c2_is_structure',ch:2,type:'A', q:'The income statement reports:', opts:['A) Assets, liabilities, and equity at a specific point in time','B) Revenues and expenses over a specific period of time','C) Cash inflows and outflows during an accounting period','D) Changes in share capital only'], ans:1, exp:'The income statement covers a period of time and shows revenues earned minus expenses incurred during that period.', we:{0:'Reporting assets, liabilities, and equity at a point in time is the Statement of Financial Position.',2:'Cash inflows and outflows are reported in the Statement of Cash Flows.',3:'Changes in share capital appear in the Statement of Changes in Equity.'} },
   { id:'q112',conceptId:'c2_sfp_structure',ch:2,type:'A', q:'Which item LINKS the income statement to the Statement of Financial Position?', opts:['A) Cash balance at period end','B) Accounts Receivable','C) Net income flows into Retained Earnings','D) Total dividends paid'], ans:2, exp:'Net income from the income statement flows into Retained Earnings on the SFP: Ending RE = Beginning Retained Earnings (RE) + Net Income - Dividends. This is how the two statements connect.', we:{0:'The cash balance appears on the SFP but does not directly link it to the income statement.',1:'AR is a balance sheet item; it does not directly connect the income statement.',3:'Dividends reduce Retained Earnings, but the primary link is Net Income flowing into RE.'} },
   { id:'q113',conceptId:'c3_accrual_cash',ch:3,type:'A', q:'Under accrual-basis accounting, revenue is recognized when:', opts:['A) Cash is collected from the customer (cash inflow triggers revenue)','B) The performance obligation is satisfied (goods or services delivered)','C) The sales invoice is issued and sent to the customer for billing','D) The customer signs a contract or promises to pay in the future'], ans:1, exp:'Accrual accounting recognizes revenue when the **performance obligation** is satisfied — when goods are delivered or services performed — regardless of when cash is received.', we:{0:'Recognizing revenue only when cash is received is the **cash-basis** method, which violates IFRS/GAAP for most entities.',2:'Issuing an invoice is administrative paperwork — it does not trigger revenue recognition; the actual delivery does.',3:'A signed contract or promise creates a contractual asset, but revenue is recognized when the performance is **complete**.'} },
