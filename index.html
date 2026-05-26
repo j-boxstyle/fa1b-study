@@ -11444,6 +11444,136 @@ var QUESTIONS = [
     we:{ 1: '€64,200 は推定期末在庫の総額（焼失分は70%）。', 2: '€19,260 は焼け残った30%分。', 3: '€156,000 は3月の推定COGS。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Lisbon Pottery</b> lost 70% of its inventory in a fire on March 25, 2025. Gross profit data: <b>February</b> — Net sales €300,000, Net purchases €197,800, Freight-in €2,900, Beginning inventory €4,500, Ending inventory €25,200. <b>March (to 3/25)</b> — Net sales €260,000, Net purchases €191,000, Freight-in €4,000, Beginning inventory €25,200, Ending inventory = ?</div>',
     source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t4_1', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'[Canvas HW T4 / E7.6] For Rhone Bakery (below), procedure (3) — one person ships goods, bills customers, AND receives payment — is an example of:',
+    opts:['A) Weak control — violates Segregation of Duties','B) Good control — Establishment of responsibility','C) Good control — Independent internal verification','D) Weak control — violates Physical controls'],
+    ans:0,
+    exp:'1人が出荷・請求・現金受領をすべて担当＝職務分掌（Segregation of Duties）の欠如。不正やミスを発見できない。→ 弱い内部統制。',
+    we:{ 1: '責任の明確化ではない。複数の相反する職務を1人に集中させている点が問題。', 2: '独立した検証ではなく、検証不在が問題。', 3: '物理的統制（金庫・施錠等）の話ではない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rhone Bakery</b> — internal control procedures: (1) Employees are required to take vacations. (2) Any member of the sales department can approve credit sales. (3) Paul Jaggard ships goods to customers, bills customers, AND receives payment from customers. (4) Total cash receipts are compared to bank deposits daily by someone with no other cash responsibilities. (5) Time clocks record time worked by employees.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_2', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'[Canvas HW T4 / E7.6] For Rhone Bakery (below), procedure (1) — requiring employees to take vacations — is an example of:',
+    opts:['A) Good control — Human Resource controls','B) Weak control — Segregation of Duties','C) Good control — Physical controls','D) Weak control — Establishment of responsibility'],
+    ans:0,
+    exp:'休暇取得の義務付けは人的資源管理（Human Resource Controls）の一例。担当者が休む間に他者が業務を行うことで不正を発見しやすくする。→ 良い統制。',
+    we:{ 1: '職務分掌の話ではない。', 2: '物理的統制ではない。', 3: '責任の明確化の欠如ではない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rhone Bakery</b> — internal control procedures: (1) Employees are required to take vacations. (2) Any member of the sales department can approve credit sales. (3) Paul Jaggard ships goods to customers, bills customers, AND receives payment from customers. (4) Total cash receipts are compared to bank deposits daily by someone with no other cash responsibilities. (5) Time clocks record time worked by employees.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_3', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / E8.4] Using Coe Ltd.&#39;s data below, what is the bad debt expense for the period (allowance method, estimate of £25,000)?',
+    opts:['A) £20,200','B) £25,000','C) £16,000','D) £23,200'],
+    ans:0,
+    exp:'Allowance のT勘定：期首 9,000(Cr) − 貸倒償却 7,300 + 回収 3,100 = 調整前残高 4,800(Cr)。期末必要額 25,000。貸倒費用 = 25,000 − 4,800 = £20,200。',
+    we:{ 1: '£25,000 は必要な期末残高であり、当期の費用ではない（調整前残高を差し引く）。', 2: '£16,000 は回収 3,100 を無視した誤り。', 3: '£23,200 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Coe Ltd.</b> — current period: Beginning Accounts Receivable £200,000; Allowance for Doubtful Accounts £9,000 (credit). Net credit sales £800,000; collections £763,000; wrote off £7,300 as uncollectible; recovered £3,100 previously written off. Uncollectible accounts are estimated to total £25,000 at period-end.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_4', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / E8.4] Using Coe Ltd.&#39;s data below, what is the ending balance of Accounts Receivable?',
+    opts:['A) £229,700','B) £230,000','C) £232,800','D) £204,700'],
+    ans:0,
+    exp:'期末AR = 期首 200,000 + 信用売上 800,000 − 回収 763,000 − 貸倒償却 7,300 = £229,700。回収済み債権の回収・再計上は相殺されAR純額に影響しない。',
+    we:{ 1: '£230,000 は貸倒償却 7,300 の控除漏れ。', 2: '£232,800 は計算誤り。', 3: '£204,700 は正味実現可能価額（AR − Allowance）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Coe Ltd.</b> — current period: Beginning Accounts Receivable £200,000; Allowance for Doubtful Accounts £9,000 (credit). Net credit sales £800,000; collections £763,000; wrote off £7,300 as uncollectible; recovered £3,100 previously written off. Uncollectible accounts are estimated to total £25,000 at period-end.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_5', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / E8.4] Using Coe Ltd.&#39;s data below, what is the net realizable value of receivables at period-end?',
+    opts:['A) £204,700','B) £229,700','C) £225,000','D) £254,700'],
+    ans:0,
+    exp:'NRV = 期末AR 229,700 − 期末Allowance 25,000 = £204,700。',
+    we:{ 1: '£229,700 は AR 総額（引当金控除前）。', 2: '£225,000 は計算誤り。', 3: '£254,700 は引当金を加算した誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Coe Ltd.</b> — current period: Beginning Accounts Receivable £200,000; Allowance for Doubtful Accounts £9,000 (credit). Net credit sales £800,000; collections £763,000; wrote off £7,300 as uncollectible; recovered £3,100 previously written off. Uncollectible accounts are estimated to total £25,000 at period-end.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_6', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / E8.14] For Vandiver Company (below), what interest is accrued on the Goodwin note in the December 31, 2025 adjusting entry?',
+    opts:['A) $1,350','B) $1,800','C) $900','D) $450'],
+    ans:0,
+    exp:'利息 = 元本 × 利率 × 期間 = $30,000 × 6% × 9/12（4/1〜12/31 = 9か月）= $1,350。',
+    we:{ 1: '$1,800 は12か月分（30,000×6%）。経過は9か月。', 2: '$900 は6か月分の誤り。', 3: '$450 は3か月分の誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Vandiver Company</b> notes receivable: On <b>April 1, 2025</b> accepted Goodwin Company&#39;s 12-month, 6% note for a $30,000 receivable. On July 1, 2025 loaned $25,000 on a 9-month, 10% note to Thomas Slocombe. Adjusting entries are made once a year on December 31.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_7', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / P8.1] Using Catu Medical&#39;s 2025 data below, what is the bad debt expense for 2025 (expected bad debts $115,000)?',
+    opts:['A) $96,000','B) $115,000','C) $134,000','D) $86,000'],
+    ans:0,
+    exp:'Allowance：期首 80,000(Cr) − 貸倒償却 90,000 + 回収 29,000 = 調整前 19,000(Cr)。期末必要額 115,000。貸倒費用 = 115,000 − 19,000 = $96,000。',
+    we:{ 1: '$115,000 は必要な期末残高（当期費用ではない）。', 2: '$134,000 は回収を引かず加えた誤り。', 3: '$86,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Catu Medical</b> — at Dec 31, 2024: Accounts Receivable $960,000, less Allowance for doubtful accounts $80,000. During 2025: sales on account $3,700,000; sales returns &amp; allowances $50,000; collections $2,810,000; write-offs $90,000; recovery of previously written-off bad debts $29,000. Expected bad debts at year-end are $115,000.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_8', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'[Canvas HW T4 / P8.1] Using Catu Medical&#39;s 2025 data below, what is the ending balance of Accounts Receivable at Dec 31, 2025?',
+    opts:['A) $1,710,000','B) $1,800,000','C) $1,760,000','D) $880,000'],
+    ans:0,
+    exp:'期末AR = 期首 960,000 + 信用売上 3,700,000 − 返品 50,000 − 回収 2,810,000 − 貸倒償却 90,000 = $1,710,000。',
+    we:{ 1: '$1,800,000 は貸倒償却 90,000 の控除漏れ。', 2: '$1,760,000 は返品 50,000 を引き忘れ。', 3: '$880,000 は期首の正味AR（960,000−80,000）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Catu Medical</b> — at Dec 31, 2024: Accounts Receivable $960,000, less Allowance for doubtful accounts $80,000. During 2025: sales on account $3,700,000; sales returns &amp; allowances $50,000; collections $2,810,000; write-offs $90,000; recovery of previously written-off bad debts $29,000. Expected bad debts at year-end are $115,000.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_9', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'[Canvas HW T4 / E9.7] For Tanger Interiors&#39; truck (below), what is the depreciation expense for 2025 under the double-declining-balance method?',
+    opts:['A) R$9,500','B) R$4,000','C) R$4,800','D) R$8,000'],
+    ans:0,
+    exp:'DDB率 = 2 ÷ 8年 = 25%。2025年 = 簿価38,000 × 25% = R$9,500（残存価額は初年度の計算では無視）。',
+    we:{ 1: 'R$4,000 は定額法（(38,000−6,000)/8）。', 2: 'R$4,800 は生産高比例法（15,000マイル×0.32）。', 3: 'R$8,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Tanger Interiors</b> purchased a delivery truck for R$38,000 on January 1, 2025. Expected residual value R$6,000; expected to be driven 100,000 miles over an 8-year useful life. Actual miles: 15,000 in 2025 and 12,000 in 2026.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_10', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'[Canvas HW T4 / E9.7] For Tanger Interiors&#39; truck (below), what is the 2025 depreciation under the units-of-activity method?',
+    opts:['A) R$4,800','B) R$4,000','C) R$9,500','D) R$3,840'],
+    ans:0,
+    exp:'単位当たり = (38,000 − 6,000) ÷ 100,000マイル = R$0.32/マイル。2025年 = 15,000マイル × 0.32 = R$4,800。',
+    we:{ 1: 'R$4,000 は定額法。', 2: 'R$9,500 は DDB。', 3: 'R$3,840 は2026年（12,000マイル×0.32）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Tanger Interiors</b> purchased a delivery truck for R$38,000 on January 1, 2025. Expected residual value R$6,000; expected to be driven 100,000 miles over an 8-year useful life. Actual miles: 15,000 in 2025 and 12,000 in 2026.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_11', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'[Canvas HW T4 / E9.11] Franklin SA (IFRS, below) revalues equipment to a fair value of €660,000 at Dec 31, 2025. What is the 2026 depreciation (4-year remaining life, no residual)?',
+    opts:['A) €165,000','B) €150,000','C) €60,000','D) €187,500'],
+    ans:0,
+    exp:'評価替後の帳簿価額 = 公正価値 €660,000。これを残存4年で定額償却 → 660,000 ÷ 4 = €165,000/年。（評価益 60,000 は OCI の再評価剰余金）。',
+    we:{ 1: '€150,000 は評価替前の簿価 600,000 ÷ 4。評価替後は 660,000 を使う。', 2: '€60,000 は再評価剰余金（増価額）であり減価償却費ではない。', 3: '€187,500 は計算誤り（750,000/4）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Franklin SA</b> (IFRS revaluation model) — at Dec 31, 2025 (end of its first year): Equipment €750,000, Accumulated Depreciation €150,000 (carrying amount €600,000). Independent appraisers determine a fair value of €660,000. Assume a 4-year remaining life, no residual value, and no further value change in 2026.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_12', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'[Canvas HW T4 / E9.12] Ingles Company (below) sold the computer on June 30, 2025 for £14,600. What gain or loss is recognized?',
+    opts:['A) Gain of £2,600','B) Loss of £2,600','C) Gain of £14,600','D) No gain or loss'],
+    ans:0,
+    exp:'年償却 = 40,000 ÷ 5 = 8,000。減価償却累計額 = 3年(2022-24) × 8,000 + 半年(2025) 4,000 = 28,000。簿価 = 40,000 − 28,000 = 12,000。売却益 = 14,600 − 12,000 = £2,600。',
+    we:{ 1: '符号が逆（売却額 > 簿価のため利益）。', 2: '£14,600 は売却額であり損益ではない。', 3: '簿価12,000 と売却額14,600 が異なるため損益が発生する。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Ingles Company</b> (straight-line; depreciation up to date as of Dec 31, 2024) sold a computer on June 30, 2025. The computer was purchased January 1, 2022 for £40,000, with a 5-year useful life and no residual value. It was sold for £14,600.</div>',
+    source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t4_13', conceptId:'c3_depreciation', ch:9, type:'A',
+    q:'[Canvas HW T4 / E9.16] For Nelson Company&#39;s intangibles (below), which item is NOT amortized?',
+    opts:['A) Goodwill (indefinite life)','B) The patent (7-year life)','C) The franchise (8-year life)','D) All are amortized equally'],
+    ans:0,
+    exp:'耐用年数が確定できる無形資産（特許・フランチャイズ）は償却。耐用年数が不確定の Goodwill は償却せず、毎期 減損テストを行う。なお R&D費 448,000 は技術的実現可能性以前のため即時費用処理（資産計上しない）。',
+    we:{ 1: '特許は7年で償却する。', 2: 'フランチャイズは8年で償却する。', 3: 'Goodwill は償却しない（減損のみ）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Nelson Company</b> (organized 2025) intangible-asset transactions, all for cash: Jan 2 — purchased a patent (7-year life) $560,000; Apr 1 — goodwill (indefinite life) $360,000; Jul 1 — 8-year franchise $440,000; Nov 1 — R&amp;D costs incurred prior to technological feasibility $448,000.</div>',
+    source:'FA1B Canvas Homework T4'
   }
 ];
 
