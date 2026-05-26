@@ -9133,48 +9133,48 @@ var QUESTIONS = [
     q: 'A company sells goods for €1,210 inclusive of 21% VAT. The journal entry is:',
     opts: ['A) Dr Cash 1,210 / Cr Sales Revenue 1,000, Cr VAT Payable 210','B) Dr Cash 1,210 / Cr Sales Revenue 1,210','C) Dr Cash 1,000, Dr VAT Receivable 210 / Cr Sales Revenue 1,210','D) Dr Cash 1,210 / Cr Sales Revenue 990, Cr VAT Payable 220'],
     ans: 0,
-    exp: '€1,210 inclusive of 21% VAT: Net price = €1,210 / 1.21 = €1,000. VAT = €1,000 × 21% = €210. Entry: Dr Cash 1,210 / Cr Sales Revenue 1,000 / Cr VAT Payable 210. VAT Payable is collected on behalf of government.',
-    we: { 1: 'Forgot to separate VAT', 2: 'VAT on sales is Payable, not Receivable', 3: 'Wrong calculation' }
+    exp: '21% VAT 込みの €1,210：税抜価格 = €1,210 / 1.21 = €1,000。VAT = €1,000 × 21% = €210。仕訳：借方 Cash 1,210 / 貸方 Sales Revenue 1,000 / 貸方 VAT Payable 210。VAT Payable は政府に代わって預かるものです。',
+    we: { 1: 'VAT を分離し忘れています。', 2: '売上の VAT は Payable で、Receivable ではありません。', 3: '計算が誤りです。' }
   },
   {
     id: 'q563', conceptId: 'c10_provisions', ch: 10, type: 'A',
     q: 'Under IFRS (IAS 37), which is NOT a criterion for recognizing a Provision?',
     opts: ['A) Present obligation from past event','B) Probable outflow of resources','C) Certainty of timing and amount','D) Reliable estimate possible'],
     ans: 2,
-    exp: 'IFRS requires only that the timing/amount be ESTIMABLE, not certain. The defining feature of a Provision (vs. a "liability") is UNCERTAINTY of timing or amount. The 3 criteria are: (1) Present obligation, (2) Probable outflow, (3) Reliable estimate.',
-    we: { 0: 'Present obligation is required', 1: 'Probable is required', 3: 'Reliable estimate is required' }
+    exp: 'IFRS が要求するのは時期・金額が『見積可能』であることで、確実であることではありません。Provision（『負債』との違い）の定義的特徴は時期・金額の『不確実性』です。3要件：(1)現在の義務 (2)流出の可能性が高い (3)信頼できる見積り。',
+    we: { 0: '現在の義務は必須です。', 1: '発生可能性が高いことは必須です。', 3: '信頼できる見積りは必須です。' }
   },
   {
     id: 'q564', conceptId: 'c10_provisions', ch: 10, type: 'C',
     q: 'CrazyCargo sells 200 bikes in 2024 with a 1-year warranty. Estimated 8% need repair, average cost €60. 6 bikes were actually repaired (€360). Year-end Warranty Provision adjustment:',
     opts: ['A) Dr Warranty Expense 960 / Cr Warranty Provision 960','B) Dr Warranty Expense 600 / Cr Warranty Provision 600','C) Dr Warranty Expense 360 / Cr Warranty Provision 360','D) No adjustment needed'],
     ans: 1,
-    exp: 'Total expected warranty expense = 200 × 8% × €60 = €960. Already recognized as expense for 6 actual repairs = €360. Remaining provision needed = €960 − €360 = €600. Dr Warranty Expense 600 / Cr Warranty Provision 600.',
-    we: { 0: 'Total without adjustment for actual', 2: 'Already-recorded amount', 3: 'Adjustment is required' }
+    exp: '予想保証費用合計 = 200 × 8% × €60 = €960。実際の6件の修理で既に費用計上 = €360。必要な追加引当 = €960 − €360 = €600。借方 Warranty Expense 600 / 貸方 Warranty Provision 600。',
+    we: { 0: '実際分の調整をしていない合計です。', 2: '既に計上済みの金額です。', 3: '調整が必要です。' }
   },
   {
     id: 'q565', conceptId: 'c10_current_liab_overview', ch: 10, type: 'B',
     q: 'Unearned Revenue (e.g., subscription paid in advance) is classified as:',
     opts: ['A) Revenue on Income Statement','B) Liability on SOFP','C) Deferred Asset','D) Equity'],
     ans: 1,
-    exp: 'Unearned Revenue = obligation to provide goods/services in the future (cash already received). It is a LIABILITY (deferral). Recognized as revenue only when earned (services provided / goods delivered). Adjusting entry: Dr Unearned Revenue / Cr Revenue.',
-    we: { 0: 'Not yet earned', 2: 'Liability, not Asset', 3: 'Not Equity' }
+    exp: 'Unearned Revenue = 将来に財・サービスを提供する義務（現金は受領済み）。これは負債（繰延べ）です。稼得時（提供時）にのみ収益認識。整理仕訳：借方 Unearned Revenue / 貸方 Revenue。',
+    we: { 0: 'まだ稼得していません。', 2: '資産ではなく負債です。', 3: '資本ではありません。' }
   },
   {
     id: 'q566', conceptId: 'c10_notes_payable', ch: 10, type: 'A',
     q: 'A 9-month, 8% note payable for €30,000 was issued on April 1. At Dec 31 (year-end), accrued interest is:',
     opts: ['A) €1,800 (9 months elapsed × monthly interest)','B) €2,400 (full 12-month annual interest amount)','C) €600 (only 3 months elapsed since issue date)','D) €200 (only 1 month accrued at year-end)'],
     ans: 0,
-    exp: 'Time elapsed April 1 → Dec 31 = **9 months**. Interest = Principal × Rate × Time = €30,000 × 8% × 9/12 = **€1,800**.',
-    we: { 1: '€2,400 = €30,000 × 8% × 12/12 (**full year** interest). Only 9 months have elapsed since April 1, not 12.', 2: '€600 = €30,000 × 8% × 3/12 (only **3 months**). Mistakes the elapsed period — actual is April 1 → Dec 31 = 9 months.', 3: '€200 = €30,000 × 8% × 1/12 (only **1 month**). Mistakes the elapsed period entirely; April 1 to Dec 31 is 9 months.' }
+    exp: '経過期間 4月1日→12月31日 = 9か月。利息 = 元本 × 利率 × 期間 = €30,000 × 8% × 9/12 = €1,800。',
+    we: { 1: '€2,400 = €30,000 × 8% × 12/12（1年分）。4月1日以降の経過は9か月で、12か月ではありません。', 2: '€600 = €30,000 × 8% × 3/12（3か月だけ）。経過期間を誤り、実際は9か月です。', 3: '€200 = €30,000 × 8% × 1/12（1か月だけ）。経過期間を完全に誤り、4月1日〜12月31日は9か月です。' }
   },
   {
     id: 'q567', conceptId: 'c10_current_liab_overview', ch: 10, type: 'A',
     q: 'Which of these payroll-related amounts is recorded by the EMPLOYER (in addition to employee withholdings)?',
     opts: ['A) Payroll Tax Expense and Social Security Fees Payable','B) Federal Income Tax Withholding','C) Employee union dues','D) Employee charitable contribution'],
     ans: 0,
-    exp: 'Employer pays its own payroll taxes and social security contributions (e.g., FICA matching, unemployment insurance) in ADDITION to the employee withholdings. Entry: Dr Payroll Tax Expense / Cr Payroll Tax Payable, Cr Social Security Fees Payable.',
-    we: { 1: 'Withheld FROM employees, not employer', 2: 'Employee deduction', 3: 'Employee deduction' }
+    exp: '雇用主は従業員からの源泉控除に『加えて』、自社の給与税・社会保険料（FICA のマッチング・失業保険など）を負担します。仕訳：借方 Payroll Tax Expense / 貸方 Payroll Tax Payable・貸方 Social Security Fees Payable。',
+    we: { 1: '従業員から源泉控除するもので、雇用主ではありません。', 2: '従業員の控除です。', 3: '従業員の控除です。' }
   },
   // ===========================================================
   // CHAPTER 11 - Bonds (Additional)
@@ -9184,56 +9184,56 @@ var QUESTIONS = [
     q: 'If a bond\'s stated interest rate is LOWER than the market interest rate, the bond will sell:',
     opts: ['A) At face value','B) At a discount','C) At a premium','D) Cannot determine'],
     ans: 1,
-    exp: 'Stated < Market: bond pays less interest than market demands → bond is less attractive → investors pay LESS than face value → Discount. Conversely, Stated > Market → Premium.',
-    we: { 0: 'Only when Stated = Market', 2: 'Premium when Stated > Market', 3: 'Can determine from given info' }
+    exp: 'Stated < Market：社債が市場の要求より低い利息しか払わない → 魅力が低い → 投資家は額面より『安く』払う → Discount。逆に Stated > Market → Premium。',
+    we: { 0: 'Stated = Market のときだけです。', 2: 'Stated > Market のとき Premium です。', 3: '与件から判定できます。' }
   },
   {
     id: 'q581', conceptId: 'c11_bonds_journal', ch: 11, type: 'C',
     q: 'A company issues €500,000 face value bonds at 98 (98% of face). The journal entry for issuance:',
     opts: ['A) Dr Cash 500,000 / Cr Bonds Payable 500,000','B) Dr Cash 490,000 / Cr Bonds Payable 490,000','C) Dr Cash 490,000, Dr Discount on Bonds 10,000 / Cr Bonds Payable 500,000','D) Dr Cash 490,000 / Cr Bonds Payable 500,000, Cr Premium 10,000'],
     ans: 1,
-    exp: 'Bonds issued at 98 → Cash = €500,000 × 98% = €490,000. Using the simplified approach (no separate Discount account), Bonds Payable is credited at the carrying amount: Dr Cash 490,000 / Cr Bonds Payable 490,000. Amortization will later increase Bonds Payable to face value €500,000 by maturity.',
-    we: { 0: 'Face value, not cash received', 2: 'Discount account approach (not used in this textbook)', 3: 'Discount, not Premium' }
+    exp: '98で発行 → 受取現金 = €500,000 × 98% = €490,000。簡略法（独立 Discount 勘定なし）では Bonds Payable を帳簿額で貸方：借方 Cash 490,000 / 貸方 Bonds Payable 490,000。償却が後に Bonds Payable を満期までに額面 €500,000 へ増やします。',
+    we: { 0: '受取現金ではなく額面です。', 2: 'Discount 勘定法（この教科書では不使用）です。', 3: 'Discount であって Premium ではありません。' }
   },
   {
     id: 'q582', conceptId: 'c11_bond_amortization', ch: 11, type: 'C',
     q: 'Bond face €1,000,000, 5-year, 10% stated, issued at discount €100,000. Using Straight-Line, annual Interest Expense:',
     opts: ['A) €100,000','B) €120,000','C) €80,000','D) €20,000'],
     ans: 1,
-    exp: 'Cash Interest = €1,000,000 × 10% = €100,000/year. Discount Amortization (SL) = €100,000 / 5 years = €20,000/year. Interest Expense = Cash Interest + Discount Amortization = €100,000 + €20,000 = €120,000.',
-    we: { 0: 'Cash interest only', 2: 'Cash interest minus amortization (wrong direction)', 3: 'Amortization only' }
+    exp: '現金利息 = €1,000,000 × 10% = 年 €100,000。Discount 償却（定額）= €100,000 / 5年 = 年 €20,000。利息費用 = 現金利息 + Discount 償却 = €100,000 + €20,000 = €120,000。',
+    we: { 0: '現金利息だけです。', 2: '現金利息 − 償却（方向が誤り）です。', 3: '償却だけです。' }
   },
   {
     id: 'q583', conceptId: 'c11_bond_amortization', ch: 11, type: 'C',
     q: 'Bond face €600,000, 4-year, 8% stated, issued at premium €40,000. Using Straight-Line, annual Interest Expense:',
     opts: ['A) €48,000','B) €58,000','C) €38,000','D) €10,000'],
     ans: 2,
-    exp: 'Cash Interest = €600,000 × 8% = €48,000/year. Premium Amortization (SL) = €40,000 / 4 = €10,000/year. Interest Expense = Cash Interest − Premium Amortization = €48,000 − €10,000 = €38,000. (Premium REDUCES interest expense.)',
-    we: { 0: 'Cash interest only', 1: 'Cash + amortization (wrong direction for premium)', 3: 'Amortization only' }
+    exp: '現金利息 = €600,000 × 8% = 年 €48,000。Premium 償却（定額）= €40,000 / 4 = 年 €10,000。利息費用 = 現金利息 − Premium 償却 = €48,000 − €10,000 = €38,000。（Premium は利息費用を『減らす』。）',
+    we: { 0: '現金利息だけです。', 1: '現金 + 償却（Premium の方向が誤り）です。', 3: '償却だけです。' }
   },
   {
     id: 'q584', conceptId: 'c11_bonds_journal', ch: 11, type: 'C',
     q: 'A €1,000,000 face value bond is retired at maturity. Bonds Payable balance is €1,000,000. The entry:',
     opts: ['A) Dr Bonds Payable 1,000,000 / Cr Cash 1,000,000','B) Dr Cash 1,000,000 / Cr Bonds Payable 1,000,000','C) Dr Bonds Payable 1,000,000, Dr Gain 0 / Cr Cash 1,000,000','D) No entry needed'],
     ans: 0,
-    exp: 'At maturity, redemption at face value: Dr Bonds Payable 1,000,000 / Cr Cash 1,000,000. Bonds Payable balance always equals Face Value at maturity (regardless of original issue price) because amortization brings it there.',
-    we: { 1: 'Wrong direction', 2: 'No gain if at maturity face value', 3: 'Entry is required' }
+    exp: '満期に額面で償還：借方 Bonds Payable 1,000,000 / 貸方 Cash 1,000,000。Bonds Payable 残高は（当初発行価格に関係なく）満期で常に額面に等しくなります。償却がそこへ収束させるためです。',
+    we: { 1: '方向が誤りです。', 2: '満期に額面なら利得は生じません。', 3: '仕訳は必要です。' }
   },
   {
     id: 'q585', conceptId: 'c11_bonds_journal', ch: 11, type: 'C',
     q: 'Bonds with carrying value €980,000 are retired (called) at €1,010,000. The gain/(loss) on redemption:',
     opts: ['A) Gain €30,000','B) Loss €30,000','C) Loss €10,000','D) No gain or loss'],
     ans: 1,
-    exp: 'Cash paid (€1,010,000) > Carrying value (€980,000) → Loss €30,000. Entry: Dr Bonds Payable 980,000, Dr Loss on Bond Redemption 30,000 / Cr Cash 1,010,000.',
-    we: { 0: 'Loss, not gain (paid more than carrying value)', 2: 'Wrong amount', 3: 'Loss exists' }
+    exp: '支払現金（€1,010,000）> 帳簿価額（€980,000）→ 損失 €30,000。仕訳：借方 Bonds Payable 980,000 / 借方 Loss on Bond Redemption 30,000 / 貸方 Cash 1,010,000。',
+    we: { 0: '利得ではなく損失です（帳簿価額より多く支払った）。', 2: '金額が誤りです。', 3: '損失が生じます。' }
   },
   {
     id: 'q586', conceptId: 'c11_long_term_notes', ch: 11, type: 'C',
     q: 'A 10-year, 6%, €300,000 mortgage with monthly installments. Month 1: total payment €3,330. Interest portion?',
     opts: ['A) €1,500','B) €1,800','C) €3,330','D) €1,830'],
     ans: 0,
-    exp: 'Monthly interest = Beginning Balance × Monthly Rate = €300,000 × (6%/12) = €300,000 × 0.5% = €1,500. Principal portion = €3,330 − €1,500 = €1,830.',
-    we: { 1: 'Used annual rate', 2: 'Total payment', 3: 'Principal portion (not interest)' }
+    exp: '月次利息 = 期首残高 × 月利 = €300,000 × (6%/12) = €300,000 × 0.5% = €1,500。元本部分 = €3,330 − €1,500 = €1,830。',
+    we: { 1: '年利を使っています。', 2: '支払総額です。', 3: '元本部分（利息ではない）です。' }
   },
   // ===========================================================
   // CHAPTER 12 - Equity (Additional)
@@ -9243,64 +9243,64 @@ var QUESTIONS = [
     q: 'A company issues 5,000 ordinary shares, par value €10, at €25 per share. The entry includes:',
     opts: ['A) Cr Share Capital Ordinary 125,000','B) Cr Share Capital Ordinary 50,000; Cr Share Premium Ordinary 75,000','C) Cr Share Capital Ordinary 75,000; Cr Share Premium Ordinary 50,000','D) Cr Share Capital Ordinary 25,000'],
     ans: 1,
-    exp: 'Cash = 5,000 × €25 = €125,000. Share Capital Ordinary = par × shares = €10 × 5,000 = €50,000. Share Premium Ordinary = excess = €125,000 − €50,000 = €75,000. Entry: Dr Cash 125,000 / Cr SC Ordinary 50,000, Cr SP Ordinary 75,000.',
-    we: { 0: 'No split between SC and SP', 2: 'Reversed amounts', 3: 'Per-share price' }
+    exp: 'Cash = 5,000 × €25 = €125,000。Share Capital Ordinary = par × 株数 = €10 × 5,000 = €50,000。Share Premium Ordinary = 超過分 = €125,000 − €50,000 = €75,000。仕訳：借方 Cash 125,000 / 貸方 SC Ordinary 50,000 / 貸方 SP Ordinary 75,000。',
+    we: { 0: 'SC と SP に分けていません。', 2: '金額が逆です。', 3: '1株あたり価格です。' }
   },
   {
     id: 'q601', conceptId: 'c12_treasury_dividends', ch: 12, type: 'C',
     q: 'A company repurchases 1,000 shares of its own stock at €30 per share. The entry:',
     opts: ['A) Dr Treasury Shares 30,000 / Cr Cash 30,000','B) Dr Cash 30,000 / Cr Treasury Shares 30,000','C) Dr Share Capital 30,000 / Cr Cash 30,000','D) Dr Retained Earnings 30,000 / Cr Cash 30,000'],
     ans: 0,
-    exp: 'Treasury Shares (Cost Method) records repurchase at cost: Dr Treasury Shares 30,000 / Cr Cash 30,000. Treasury Shares is a CONTRA-EQUITY account (deducted from total equity on SOFP).',
-    we: { 1: 'Wrong direction', 2: 'Treasury method not Share Capital reduction', 3: 'Treasury not RE' }
+    exp: '自己株式（原価法）は取得を原価で記録：借方 Treasury Shares 30,000 / 貸方 Cash 30,000。Treasury Shares は評価資本勘定（SOFP で総資本から控除）です。',
+    we: { 1: '方向が誤りです。', 2: 'Share Capital の減少ではなく Treasury 法です。', 3: 'Treasury であって RE ではありません。' }
   },
   {
     id: 'q602', conceptId: 'c12_treasury_dividends', ch: 12, type: 'C',
     q: 'Treasury Shares originally bought at €30 are resold at €40. For 100 shares sold, the entry includes:',
     opts: ['A) Dr Cash 4,000 / Cr Treasury Shares 3,000, Cr Gain on Sale 1,000','B) Dr Cash 4,000 / Cr Treasury Shares 3,000, Cr Share Premium - Treasury 1,000','C) Dr Cash 4,000 / Cr Treasury Shares 4,000','D) Dr Cash 4,000 / Cr Share Capital 1,000, Cr Share Premium 3,000'],
     ans: 1,
-    exp: 'Treasury Shares are credited at cost (€30 × 100 = €3,000). Excess goes to Share Premium - Treasury (€1,000) — NOT to Gain on Income Statement (treasury transactions are equity-only).',
-    we: { 0: 'No gains/losses to IS for treasury transactions', 2: 'Treasury Cr at cost only', 3: 'Wrong accounts' }
+    exp: 'Treasury Shares は原価（€30 × 100 = €3,000）で貸方記入。超過分は Share Premium - Treasury（€1,000）へ — 損益計算書の Gain ではありません（自己株式取引は資本のみ）。',
+    we: { 0: '自己株式取引で IS に損益は生じません。', 2: 'Treasury は原価で貸方のみです。', 3: '勘定が誤りです。' }
   },
   {
     id: 'q603', conceptId: 'c12_treasury_dividends', ch: 12, type: 'B',
     q: 'A company declares a cash dividend of €0.50 per share on 100,000 outstanding shares. The journal entry on the DECLARATION date:',
     opts: ['A) Dr Cash Dividends (or RE) 50,000 / Cr Dividends Payable 50,000','B) Dr Cash 50,000 / Cr Dividends Payable 50,000','C) Dr Dividends Payable 50,000 / Cr Cash 50,000','D) No entry until payment date'],
     ans: 0,
-    exp: 'On the DECLARATION date, the company creates a legal obligation to pay: Dr Cash Dividends or Retained Earnings (€50,000) / Cr Dividends Payable (€50,000). Dividend payment is later: Dr Dividends Payable / Cr Cash.',
-    we: { 1: 'Cash is paid later, not at declaration', 2: 'This is the PAYMENT entry, not declaration', 3: 'Entry is required at declaration' }
+    exp: '『宣言日』に会社は法的支払義務を生じます：借方 Cash Dividends または Retained Earnings（€50,000）/ 貸方 Dividends Payable（€50,000）。配当の支払は後：借方 Dividends Payable / 貸方 Cash。',
+    we: { 1: '現金は宣言時ではなく後で支払います。', 2: 'これは『支払』の仕訳で、宣言ではありません。', 3: '宣言時に仕訳は必要です。' }
   },
   {
     id: 'q604', conceptId: 'c12_treasury_dividends', ch: 12, type: 'B',
     q: 'A 3-for-1 stock split on 100,000 shares with par value €30 results in:',
     opts: ['A) 300,000 shares at par €10; no journal entry (memorandum only)','B) 300,000 shares at par €30; Dr Share Capital recorded','C) 33,333 shares at par €90','D) 300,000 shares at par €10; Dr Share Capital 200,000 / Cr Cash'],
     ans: 0,
-    exp: 'Stock split: 3-for-1 means each share becomes 3 shares. New shares = 300,000. Par value drops proportionally: €30 / 3 = €10. Total Share Capital UNCHANGED (€3M). No journal entry required — only a MEMORANDUM entry. Purpose: improve liquidity by lowering share price.',
-    we: { 1: 'Par must change in a split', 2: 'Wrong direction (1-for-3 reverse split)', 3: 'No journal entry' }
+    exp: '株式分割：3対1は1株が3株に。新株数 = 300,000。額面が比例して低下：€30 / 3 = €10。総 Share Capital は不変（€3M）。仕訳不要 — 備忘記録のみ。目的：株価を下げて流動性を高める。',
+    we: { 1: '分割では額面が変わる必要があります。', 2: '方向が誤り（1対3の株式併合）です。', 3: '仕訳は不要です。' }
   },
   {
     id: 'q605', conceptId: 'c12_preference_shares', ch: 12, type: 'C',
     q: '500 preference shares, 6% cumulative, par €100. Dividends not declared for 2 years. To declare ordinary dividends, what minimum preference dividend must be paid?',
     opts: ['A) €3,000','B) €6,000','C) €9,000','D) €30,000'],
     ans: 2,
-    exp: 'Annual pref dividend = 500 × €100 × 6% = €3,000. Cumulative means unpaid years accumulate. Arrears (2 years) = €6,000. Plus current year = €3,000. Total = €9,000 before ordinary dividends.',
-    we: { 0: 'Only current year', 1: 'Only arrears (missed current)', 3: 'Used par value × shares' }
+    exp: '年間優先配当 = 500 × €100 × 6% = €3,000。Cumulative なので未払年が累積。延滞（2年）= €6,000。当年分 = €3,000。普通配当の前に合計 €9,000。',
+    we: { 0: '当年分だけです。', 1: '延滞だけ（当年分を漏らした）です。', 3: '額面 × 株数を使っています。' }
   },
   {
     id: 'q606', conceptId: 'c12_equity_overview', ch: 12, type: 'A',
     q: 'Which of the following is reported in Equity but NOT included in Net Income?',
     opts: ['A) Sales Revenue','B) Revaluation Surplus','C) Cost of Goods Sold','D) Interest Expense'],
     ans: 1,
-    exp: 'Revaluation Surplus is a component of Other Comprehensive Income (OCI), reported in Equity (Accumulated OCI). It does NOT flow through Net Income. The others (Sales, COGS, Interest Expense) all flow through Net Income.',
-    we: { 0: 'Goes through Net Income', 2: 'Goes through Net Income', 3: 'Goes through Net Income' }
+    exp: 'Revaluation Surplus はその他包括利益（OCI）の構成要素で、Equity（Accumulated OCI）に報告されます。Net Income を通りません。他（Sales・COGS・Interest Expense）はすべて Net Income を通ります。',
+    we: { 0: 'Net Income を通ります。', 2: 'Net Income を通ります。', 3: 'Net Income を通ります。' }
   },
   {
     id: 'q607', conceptId: 'c12_changes_in_equity', ch: 12, type: 'B',
     q: 'Which transaction does NOT change Total Equity?',
     opts: ['A) Issuance of ordinary shares','B) Payment of cash dividend','C) Stock split (2-for-1)','D) Net income for the period'],
     ans: 2,
-    exp: 'Stock split changes only the par value and number of shares — Total Share Capital and Total Equity remain unchanged. Share issuance increases Equity (Cash in); cash dividends decrease Equity (RE out); Net income increases Equity (through RE).',
-    we: { 0: 'Increases Equity (Cash in)', 1: 'Decreases Equity (Cash out)', 3: 'Increases Equity via RE' }
+    exp: '株式分割は額面と株数だけを変え、総 Share Capital と総 Equity は不変です。株式発行は Equity を増やし（現金流入）、現金配当は Equity を減らし（RE 流出）、純利益は（RE を通じて）Equity を増やします。',
+    we: { 0: 'Equity を増やします（現金流入）。', 1: 'Equity を減らします（現金流出）。', 3: 'RE を通じて Equity を増やします。' }
   },
   // ===========================================================
   // CHAPTER 14 - Statement of Cash Flows (Additional)
@@ -9310,56 +9310,56 @@ var QUESTIONS = [
     q: 'Which of the following is an INVESTING activity on the Statement of Cash Flows?',
     opts: ['A) Cash paid to employees','B) Cash received from sale of equipment','C) Cash paid for dividends','D) Cash received from a bank loan'],
     ans: 1,
-    exp: 'Sale of equipment is an INVESTING activity (related to non-current assets). Payments to employees are Operating; dividends are Financing; bank loan proceeds are Financing.',
-    we: { 0: 'Operating', 2: 'Financing', 3: 'Financing' }
+    exp: '設備の売却は投資活動（非流動資産に関連）です。従業員への支払は営業、配当は財務、銀行借入の入金は財務です。',
+    we: { 0: '営業です。', 2: '財務です。', 3: '財務です。' }
   },
   {
     id: 'q621', conceptId: 'c14_cf_classification', ch: 14, type: 'A',
     q: 'Cash paid for interest on bonds is classified as:',
     opts: ['A) Operating activity — the most common treatment under both IFRS and US GAAP','B) Financing activity — always required because it relates to debt-financing cash flows','C) Investing activity — alongside other non-current liability-related cash flows','D) Not reported on the Cash Flow Statement — disclosed only in notes to statements'],
     ans: 0,
-    exp: '**Interest paid** is typically classified as **OPERATING** under both IFRS (where it can also be Financing — optional) and US GAAP (always Operating). It relates to financing the operations of the business. Note: **Dividends PAID** are Financing under US GAAP.',
-    we: { 1: 'Under **IFRS** Financing classification is **optional** for interest paid, but Operating is more common. US GAAP requires Operating.', 2: 'Not Investing — Investing activities cover non-current **assets** (PPE, investments), not interest payments on borrowings.', 3: 'Interest paid **must be reported** on the CF Statement — it is a material cash outflow that users need to see.' }
+    exp: '『支払利息』は通常『営業（OPERATING）』に分類されます（IFRS では財務も任意で可、US GAAP は常に営業）。事業の資金調達に関連します。注：『支払配当』は US GAAP で財務です。',
+    we: { 1: 'IFRS では支払利息の財務分類は『任意』ですが、営業がより一般的です。US GAAP は営業が必須です。', 2: '投資ではありません。投資活動は非流動『資産』（PPE・投資）を扱い、借入の利息支払ではありません。', 3: '支払利息は CF 計算書に『報告必須』です。利用者が見るべき重要な現金流出です。' }
   },
   {
     id: 'q622', conceptId: 'c14_indirect_method', ch: 14, type: 'C',
     q: 'Net Income €100, Depreciation Expense €30, AR decreased by €20, Inventory increased by €15, AP increased by €10. Operating Cash Flow (Indirect Method) =',
     opts: ['A) €100','B) €145','C) €125','D) €155'],
     ans: 1,
-    exp: 'OCF = NI + Depreciation + ΔAR (decrease = +) − ΔInventory (increase = −) + ΔAP (increase = +) = 100 + 30 + 20 − 15 + 10 = €145.',
-    we: { 0: 'Net Income only', 2: 'Missed AR or AP', 3: 'Reversed sign somewhere' }
+    exp: 'OCF = NI + 減価償却 + ΔAR（減少 = +）− ΔInventory（増加 = −）+ ΔAP（増加 = +）= 100 + 30 + 20 − 15 + 10 = €145。',
+    we: { 0: '純利益だけです。', 2: 'AR か AP を漏らしています。', 3: 'どこかで符号を逆にしています。' }
   },
   {
     id: 'q623', conceptId: 'c14_indirect_method', ch: 14, type: 'A',
     q: 'In the Indirect Method, an INCREASE in Accounts Receivable is treated as:',
     opts: ['A) Subtracted from Net Income','B) Added to Net Income','C) Reported in Investing activities','D) Reported in Financing activities'],
     ans: 0,
-    exp: 'Increase in AR means MORE sales were on credit (not yet collected as cash) → less cash than NI suggests → SUBTRACT from NI to arrive at cash from operations.',
-    we: { 1: 'Wrong direction', 2: 'Operating, not Investing', 3: 'Operating, not Financing' }
+    exp: 'AR の増加は、より多くの売上が掛け（未回収）だったことを意味 → NI が示すより現金が少ない → NI から『差し引く』ことで営業現金に至ります。',
+    we: { 1: '方向が誤りです。', 2: '投資ではなく営業です。', 3: '財務ではなく営業です。' }
   },
   {
     id: 'q624', conceptId: 'c14_indirect_method', ch: 14, type: 'A',
     q: 'In the Indirect Method, a GAIN on sale of equipment is treated as:',
     opts: ['A) Subtracted from Net Income in Operating (full sale cash is reported in Investing)','B) Added back to Net Income in Operating (similar to depreciation reversal)','C) Reclassified entirely as a Financing activity outflow on the Cash Flow Statement','D) Ignored — gains and losses on equipment sales have no Cash Flow Statement effect'],
     ans: 0,
-    exp: 'A **Gain on sale of equipment** is included in Net Income, but the **FULL cash received** from the sale is reported in Investing activities. To avoid **double-counting**, the gain is SUBTRACTED from Net Income in the Operating section. (Losses are added back for the same reason.)',
-    we: { 1: 'Adding back would **double-count** — the gain is already in NI, and full sale proceeds appear in Investing. Subtract to avoid duplication.', 2: 'The cash from sale appears in Investing, but the **NI adjustment** (subtraction of gain) happens in Operating to clean NI of non-operating items.', 3: 'Must adjust — ignoring the gain would leave it double-counted (once in NI Operating, once in Investing as sale proceeds).' }
+    exp: '設備売却の『利得』は Net Income に含まれますが、売却で受け取った『全額』は投資活動に報告されます。『二重計上』を避けるため、利得を営業区分で Net Income から差し引きます。（損失は同じ理由で足し戻します。）',
+    we: { 1: '足し戻すと『二重計上』になります。利得は既に NI にあり、売却代金全額が投資に現れます。重複を避けるため差し引きます。', 2: '売却の現金は投資に現れますが、NI の調整（利得の控除）は営業区分で行い、NI から営業外項目を除きます。', 3: '調整は必要です。利得を無視すると二重計上のまま（NI 営業に1回、投資の売却代金に1回）です。' }
   },
   {
     id: 'q625', conceptId: 'c14_cf_classification', ch: 14, type: 'C',
     q: 'A company issued €500,000 in bonds, repurchased €100,000 of treasury shares, paid €40,000 in cash dividends, and borrowed €200,000 from the bank. Net financing cash flow =',
     opts: ['A) €560,000','B) €640,000','C) €440,000','D) €60,000'],
     ans: 0,
-    exp: 'Financing CF = +Bonds 500,000 +Bank 200,000 −Treasury 100,000 −Dividends 40,000 = +€560,000.',
-    we: { 1: 'Math error', 2: 'Wrong sign', 3: 'Subtracted bonds' }
+    exp: '財務 CF = +社債 500,000 +銀行 200,000 −自己株式 100,000 −配当 40,000 = +€560,000。',
+    we: { 1: '計算ミスです。', 2: '符号が誤りです。', 3: '社債を差し引いています。' }
   },
   {
     id: 'q626', conceptId: 'c14_free_cash_flow', ch: 14, type: 'C',
     q: 'Operating Cash Flow €800,000, Capital Expenditures (PPE) €350,000, Dividends paid €100,000. Free Cash Flow =',
     opts: ['A) €450,000','B) €350,000','C) €550,000','D) €750,000'],
     ans: 0,
-    exp: 'FCF = Operating CF − Capital Expenditures = €800,000 − €350,000 = €450,000. Some definitions also subtract dividends, but standard FCF excludes dividends.',
-    we: { 1: 'Capital expenditures itself', 2: 'Subtracted dividends', 3: 'Subtracted only dividends' }
+    exp: 'FCF = 営業 CF − 設備投資 = €800,000 − €350,000 = €450,000。配当も差し引く定義もありますが、標準的な FCF は配当を除きます。',
+    we: { 1: '設備投資そのものです。', 2: '配当を差し引いています。', 3: '配当だけを差し引いています。' }
   },
   {
     id: 'q627', conceptId: 'c14_direct_method', ch: 14, type: 'C',
