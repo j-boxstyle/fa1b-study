@@ -2760,13 +2760,6 @@ body { padding-top:112px; }
         <span style="font-size:0.85em;">⚠ "Per Bank" 側の Deposits in Transit や Outstanding Checks には<b>仕訳しない</b>（時差で自然解消）。</span>
       </div>
 
-      <h3 class="wk-section-h">💵 Ch7 — Petty Cash（小口現金）</h3>
-      <div class="wk-formula-box">
-        <span class="label">設置：</span>Dr. Petty Cash / Cr. Cash<br>
-        <span class="label">補充（Replenishment）：</span>Dr. 各 Expense / Cr. Cash（Petty Cash は動かさない！）<br>
-        <span class="label">不一致：</span>不足 → <b>Dr. Cash Over/Short (loss)</b>、過剰 → <b>Cr. Cash Over/Short (gain)</b>
-      </div>
-
       <h3 class="wk-section-h">🎯 核心の1行（Ch9 PPE）</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「使用期間にわたり、取得原価を費用化する＝減価償却」</b><br>現金支出は取得時の一回だけ。費用は耐用年数にわたり配分。<b>Land は減価償却しない</b>。</div>
       <h3 class="wk-section-h">💰 取得原価に含めるもの</h3>
@@ -2992,7 +2985,7 @@ body { padding-top:112px; }
 
     <section class="wk-summary" id="wk-sum-5">
       <h2 class="wk-title">📒 Week 5 ── 流動負債・売掛・社債 (Ch8, 10, 11)</h2>
-      <p class="wk-meta">A/R と貸倒 / Notes / VAT / Provisions / Warranty / Bonds (Discount・Premium・Interest)</p>
+      <p class="wk-meta">A/R と貸倒 / Notes / VAT・Sales Tax / 流動負債 / Bonds (Discount・Premium・Interest)</p>
       <h3 class="wk-section-h">🎯 核心の1行</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「将来確実に発生する支出・回収不能リスクを、見積りで現在の決算に反映」</b><br>Matching Principle の応用。</div>
       <h3 class="wk-section-h">💳 貸倒引当金（Allowance Method）</h3>
@@ -3171,31 +3164,11 @@ body { padding-top:112px; }
         <span style="font-size:0.8em;color:#94a3b8;">* オランダ標準VATは21%。問題文の率を必ず使用。</span>
       </div>
 
-      <h3 class="wk-section-h">⚖️ Ch10 — Provisions vs Contingent Liabilities</h3>
-      <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>発生可能性</th><th>金額の見積</th><th>会計処理（IFRS）</th></tr>
-        <tr><td><b>Probable</b>（&gt;50%）</td><td>信頼できる見積可</td><td style="color:#86efac;"><b>Provision 計上</b>（負債認識 + 費用）</td></tr>
-        <tr><td>Probable</td><td>見積不可</td><td>注記のみ（Disclose）</td></tr>
-        <tr><td><b>Possible</b>（&lt;50%）</td><td>—</td><td>注記のみ（Contingent Liability）</td></tr>
-        <tr><td><b>Remote</b>（ほぼ無）</td><td>—</td><td>処理不要（無視）</td></tr>
-      </table></div>
-      <div class="je-doc" style="margin-top:10px;">
-        <div class="je-doc-title">Warranty Provision 例（売上の3%を保証費用と見積）</div>
-        <table class="je-tbl">
-          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
-          <tr><td class="date">Dec 31</td><td class="acct-debit">Warranty Expense <span style="color:#94a3b8;font-size:14px;">(Sales $500,000 × 3%)</span></td><td class="amt">15,000</td><td></td></tr>
-          <tr><td></td><td class="acct-credit">Warranty Provision (Liability)</td><td></td><td class="amt">15,000</td></tr>
-          <tr><td></td><td class="desc" colspan="3">売上計上した期に <b>見積</b>で費用認識（Matching Principle）</td></tr>
-        </table>
-      </div>
-      <div class="wk-tip"><b>📌 実際の修理時：</b><code>Dr. Warranty Provision / Cr. Cash or Parts Inventory</code> — Provision（負債）を取崩すだけ。<b>費用は計上済み</b>なので二度計上しない。</div>
-
       <h3 class="wk-section-h">🔑 試験キーワード → アクション</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl wk-keyword-tbl">
         <tr><th>キーワード</th><th>判断</th><th>処理</th></tr>
         <tr><td>"Write off uncollectible"</td><td>Allowance 法</td><td><code>Dr. Allowance / Cr. A/R</code></td></tr>
         <tr><td>"$X note, 8%, 90 days"</td><td>Interest = X × 8% × 90/360</td><td>満期に Cash & Int Rev 計上</td></tr>
-        <tr><td>"Warranty 3% of sales"</td><td>売上時に見積</td><td>Dr. Warranty Exp / Cr. Liab</td></tr>
         <tr><td>"Sales tax 6%"</td><td>売上 = X / 1.06</td><td>Cr. Sales Tax Payable</td></tr>
         <tr><td>"Goodwill"</td><td>償却しない</td><td>毎年 impairment test</td></tr>
       </table></div>
@@ -3207,7 +3180,6 @@ body { padding-top:112px; }
         <li><b>Goodwill を償却する：</b>減損のみ。</li>
         <li><b>Bond の Discount を資産に計上：</b>Discount は <b>contra-liability</b>（Bonds Payable の控除）。</li>
         <li><b>Interest Expense に Stated Rate を使う：</b>Effective Interest 法では <b>Market Rate × Carrying Value</b>。</li>
-        <li><b>Remote な訴訟を負債計上：</b>Probable + 見積可能 のときだけ Provision。</li>
       </ul></div>
       <h3 class="wk-section-h">💡 暗記フック</h3>
       <div class="wk-hooks"><ul>
@@ -3216,13 +3188,12 @@ body { padding-top:112px; }
         <li><b>Goodwill・Trademark は不滅・償却なし。</b></li>
         <li><b>Bond：</b>「Stated &lt; Market → Discount」「Stated &gt; Market → Premium」。<b>CV は満期で必ず Face に収束</b>。</li>
         <li><b>Interest Exp = 期首CV × Market、Cash = Face × Stated、差額が償却。</b></li>
-        <li><b>Provision の閾値：</b>Probable（&gt;50%）＋見積可能 = 計上。それ以外は注記か無視。</li>
       </ul></div>
     </section>
 
     <section class="wk-summary" id="wk-sum-6">
       <h2 class="wk-title">📓 Week 6 ── 株主資本 + キャッシュフロー (Ch12, Ch14)</h2>
-      <p class="wk-meta">CS / PIC / RE / Preferred Stock / 累積配当 / OCI / Treasury / OCF・ICF・FCF / Direct & Indirect / FCF</p>
+      <p class="wk-meta">CS / PIC / RE / Preferred Stock / 累積配当 / Treasury / 配当3日付 / OCF・ICF・FCF / Direct & Indirect / FCF</p>
       <h3 class="wk-section-h">🎯 核心の1行</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「Equity の中身を分けて表示」</b>＝ Contributed Capital（投資された）と Retained Earnings（稼いだ）。<br>Cash Flow Statement は <b>NI と Cash の差</b>を 3 区分で説明する装置。</div>
       <h3 class="wk-section-h">🏛 株主資本の構造</h3>
@@ -3285,18 +3256,18 @@ body { padding-top:112px; }
         ⚠ Dividends in arrears は <b>負債ではない</b>（宣言まで）→ <b>注記（disclose）</b>のみ。
       </div>
 
-      <h3 class="wk-section-h">🌐 OCI（その他包括利益）と Statement of Changes in Equity</h3>
+      <h3 class="wk-section-h">📋 Statement of Changes in Equity（株主資本等変動計算書）</h3>
       <div class="wk-overview" style="margin-bottom:14px;">
-        <b>Comprehensive Income = Net Income + OCI</b>。OCI は <b>未実現の損益</b>を集めた区分で、IS の NI には含めず Equity に直接計上する。
+        各 Equity 項目（Share Capital / Share Premium / Retained Earnings / Treasury）の <b>期首→期末の増減を一覧</b>で示す財務諸表。Retained Earnings Statement の拡張版。
       </div>
-      <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>OCI に入る項目（例）</th><th>理由</th></tr>
-        <tr><td>Revaluation Surplus（PPE 再評価益）</td><td>未実現の評価益</td></tr>
-        <tr><td>FV 測定の金融資産の未実現損益（FVOCI）</td><td>売却まで未実現</td></tr>
-        <tr><td>為替換算調整勘定</td><td>在外子会社の換算差</td></tr>
-        <tr><td>確定給付年金の再測定</td><td>数理計算上の差異</td></tr>
-      </table></div>
-      <div class="wk-callout"><b>Statement of Changes in Equity：</b>期首 Equity → +株式発行 +Net Income +OCI −配当 −Treasury 取得 → 期末 Equity。各 Equity 項目の <b>増減を一覧</b>で示す財務諸表。RE Statement の拡張版。</div>
+      <div class="wk-formula-box">
+        期首 Total Equity<br>
+        + Share Issuance（株式発行）<br>
+        + Net Income<br>
+        − Dividends（配当）<br>
+        − Treasury Stock 取得<br>
+        = <b style="color:#fcd34d;">期末 Total Equity</b>
+      </div>
 
       <h3 class="wk-section-h">💵 配当 3つのキー日付</h3>
       <div class="wk-flow">
@@ -3482,7 +3453,6 @@ body { padding-top:112px; }
         <li><b>配当支払を OCF に：</b>GAAP では FCF。</li>
         <li><b>Dividends in arrears を負債計上：</b>宣言まで負債ではない → <b>注記のみ</b>。</li>
         <li><b>Cumulative 優先株で過年度未払を忘れる：</b>arrears を先に Preferred へ配分。</li>
-        <li><b>OCI を Net Income に含める：</b>OCI は <b>NI の外</b>（Equity 直接）。</li>
       </ul></div>
       <h3 class="wk-section-h">💡 暗記フック</h3>
       <div class="wk-hooks"><ul>
@@ -3491,7 +3461,6 @@ body { padding-top:112px; }
         <li><b>OCF 間接法：A↑ なら −、L↑ なら +。</b></li>
         <li><b>配当支払だけが FCF、利息は OCF。</b></li>
         <li><b>Cumulative：</b>未払は繰越・先取り。Non-cumulative は消滅。</li>
-        <li><b>Comprehensive Income = NI + OCI。</b></li>
         <li><b>FCF = OCF − CapEx − 配当 = 自由に使える現金。</b></li>
         <li><b>Direct と Indirect は OCF が同額。表示法だけの違い。</b></li>
       </ul></div>
@@ -3701,7 +3670,7 @@ body { padding-top:112px; }
         <span class="wk-pill">Fraud Triangle</span><span class="wk-pill">内部統制5原則</span><span class="wk-pill">Bank Reconciliation</span>
         <span class="wk-pill">Allowance法</span><span class="wk-pill">PPE取得原価</span><span class="wk-pill">SL/DDB/UOP</span><span class="wk-pill">Disposal</span>
         <span class="wk-pill">Revaluation/Depletion</span><span class="wk-pill">Bonds Disc/Prem</span><span class="wk-pill">Effective Interest</span>
-        <span class="wk-pill">VAT/Provision</span><span class="wk-pill">CS+PIC+RE−TS</span><span class="wk-pill">Preferred累積</span><span class="wk-pill">配当3日付</span>
+        <span class="wk-pill">VAT/Sales Tax</span><span class="wk-pill">CS+PIC+RE−TS</span><span class="wk-pill">Preferred累積</span><span class="wk-pill">配当3日付</span>
         <span class="wk-pill">CF 3区分</span><span class="wk-pill">OCF間接法</span><span class="wk-pill">Direct法</span><span class="wk-pill">FCF</span>
         <span class="wk-pill">DuPont</span><span class="wk-pill">15比率公式</span>
       </div>
