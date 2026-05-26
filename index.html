@@ -11112,6 +11112,197 @@ var QUESTIONS = [
     exp:'総資産回転率 = 純売上 ÷ 平均総資産 = 960,000 ÷ 640,000 = 1.5 回。',
     we:{ 1: '0.67 は逆数。', 2: '2.0 は計算誤り。', 3: '1.2 は計算誤り。', 4: '6.7 は桁誤り。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qp10_1', conceptId:'c3_prepaid', ch:10, type:'C',
+    q:'A retailer rings up total cash receipts of €21,600, which includes 8% sales tax. What amount is recorded as Sales Taxes Payable?',
+    opts:['A) €1,600','B) €1,728','C) €21,600','D) €20,000','E) €1,728','F) わからない'],
+    ans:0,
+    exp:'税込21,600 = 売上 × 1.08 → 売上 = 20,000。仮受消費税 = 21,600 − 20,000 = €1,600。',
+    we:{ 1: '€1,728 は税込額×8%の誤り。', 2: '€21,600 は税込総額。', 3: '€20,000 は税抜売上高。', 4: '€1,728 は同じ誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp10_2', conceptId:'c3_accrued_rev', ch:10, type:'C',
+    q:'On December 1, a company signs a €40,000, 9%, 3-month note payable. What interest is accrued in the December 31 adjusting entry?',
+    opts:['A) €300','B) €900','C) €3,600','D) €100','E) €1,200','F) わからない'],
+    ans:0,
+    exp:'利息 = 40,000 × 9% × 1/12（12/1〜12/31 = 1か月）= €300。',
+    we:{ 1: '€900 は3か月分（満期まで）。', 2: '€3,600 は12か月分。', 3: '€100 は計算誤り。', 4: '€1,200 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp10_3', conceptId:'c3_prepaid', ch:10, type:'C',
+    q:'A company sells products with a one-year warranty. This period’s sales are €500,000 and warranty costs are estimated at 3% of sales. What is the warranty expense recorded this period?',
+    opts:['A) €15,000','B) €500,000','C) €1,500','D) €30,000','E) €5,000','F) わからない'],
+    ans:0,
+    exp:'保証費用 = 売上 × 見積率 = 500,000 × 3% = €15,000（発生主義で販売時に費用・負債計上）。',
+    we:{ 1: '€500,000 は売上高。', 2: '€1,500 は率の誤り。', 3: '€30,000 は率の誤り。', 4: '€5,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp10_4', conceptId:'c4_classified_assets', ch:10, type:'C',
+    q:'A company has a €600,000 long-term bank loan; €60,000 of the principal is due within the next 12 months. How is this reported on the statement of financial position?',
+    opts:['A) €60,000 current liability and €540,000 non-current liability','B) €600,000 non-current liability','C) €600,000 current liability','D) €60,000 non-current liability only','E) €540,000 current liability','F) わからない'],
+    ans:0,
+    exp:'翌期に返済予定の元本（current maturities）€60,000は流動負債、残り€540,000は非流動負債に区分表示する。',
+    we:{ 1: '全額を非流動にはしない（翌期分は流動）。', 2: '全額流動でもない。', 3: '区分が逆。', 4: '区分が逆。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp10_5', conceptId:'c3_prepaid', ch:10, type:'C',
+    q:'A magazine publisher receives €36,000 cash on July 1 for a 12-month subscription and credits Unearned Revenue. What is the balance of Unearned Revenue at December 31?',
+    opts:['A) €18,000','B) €36,000','C) €0','D) €3,000','E) €24,000','F) わからない'],
+    ans:0,
+    exp:'月額 = 36,000 ÷ 12 = 3,000。7/1〜12/31 = 6か月稼得（18,000を収益へ）。残る前受収益 = 36,000 − 18,000 = €18,000。',
+    we:{ 1: '€36,000 は調整前の全額。', 2: '€0 は全額稼得の誤り。', 3: '€3,000 は1か月分。', 4: '€24,000 は8か月分の誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_1', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'A bond has a stated (coupon) rate of 6% while the market (effective) rate at issuance is 8%. The bond will be issued at:',
+    opts:['A) A discount (below face value)','B) A premium (above face value)','C) Face value','D) Cannot be determined','E) Twice face value','F) わからない'],
+    ans:0,
+    exp:'表面利率 < 市場利率 → 投資家は額面では買わない（利回り不足）→ 額面割れ（ディスカウント）発行。',
+    we:{ 1: 'プレミアムは表面>市場のとき。', 2: '額面は表面=市場のとき。', 3: '判定可能（表面<市場→discount）。', 4: '誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_2', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'A company issues €500,000 of bonds at 96. How much cash is received?',
+    opts:['A) €480,000','B) €500,000','C) €520,000','D) €4,800','E) €96,000','F) わからない'],
+    ans:0,
+    exp:'発行価額 = 額面 × 96% = 500,000 × 0.96 = €480,000（ディスカウント €20,000）。',
+    we:{ 1: '€500,000 は額面。', 2: '€520,000 は104（premium）の金額。', 3: '€4,800 は桁誤り。', 4: '€96,000 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_3', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'A company issues €500,000 of 5-year, 6% bonds at 96 (interest paid annually). What is the total cost of borrowing over the life of the bonds?',
+    opts:['A) €170,000','B) €150,000','C) €130,000','D) €20,000','E) €180,000','F) わからない'],
+    ans:0,
+    exp:'年利払 = 500,000 × 6% = 30,000 × 5年 = 150,000。割引額 = 500,000 − 480,000 = 20,000（借入コスト）。総借入コスト = 150,000 + 20,000 = €170,000。',
+    we:{ 1: '€150,000 は利払のみ。', 2: '€130,000 は割引を控除した誤り（加算が正しい）。', 3: '€20,000 は割引のみ。', 4: '€180,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_4', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'A €800,000 bond has a stated rate of 5% (interest paid annually). What is the annual cash interest payment?',
+    opts:['A) €40,000','B) €80,000','C) €4,000','D) €45,000','E) €20,000','F) わからない'],
+    ans:0,
+    exp:'現金利払 = 額面 × 表面利率 = 800,000 × 5% = €40,000（実効金利法でも現金利払は額面×表面利率）。',
+    we:{ 1: '€80,000 は率の誤り。', 2: '€4,000 は桁誤り。', 3: '€45,000 は計算誤り。', 4: '€20,000 は半年分。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_5', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'A company redeems €1,000,000 face value bonds at 103 when the carrying value is €1,012,000 (interest already paid). What gain or loss results?',
+    opts:['A) Loss of €18,000','B) Gain of €18,000','C) Loss of €30,000','D) Gain of €12,000','E) No gain or loss','F) わからない'],
+    ans:0,
+    exp:'買戻額 = 1,000,000 × 1.03 = 1,030,000。損失 = 買戻額 1,030,000 − 帳簿価額 1,012,000 = €18,000の損失。',
+    we:{ 1: '符号が逆（買戻額>帳簿価額のため損失）。', 2: '€30,000 は額面ベースの誤り。', 3: '€12,000 は未償却プレミアム。', 4: '差があるため損益が出る。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_6', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'Bonds with a face value of €600,000 were issued at a premium; the unamortized premium is €18,000. What is the carrying value of the bonds?',
+    opts:['A) €618,000','B) €582,000','C) €600,000','D) €18,000','E) €636,000','F) わからない'],
+    ans:0,
+    exp:'プレミアム発行の帳簿価額 = 額面 + 未償却プレミアム = 600,000 + 18,000 = €618,000。',
+    we:{ 1: '€582,000 はプレミアムを控除した誤り（ディスカウントの扱い）。', 2: '€600,000 は額面。', 3: '€18,000 は未償却プレミアム。', 4: '€636,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_7', conceptId:'c15_solvency', ch:11, type:'C',
+    q:'A company has net income of €90,000, interest expense of €20,000, and income tax expense of €30,000. What is its times-interest-earned ratio?',
+    opts:['A) 7.0 times','B) 4.5 times','C) 6.0 times','D) 5.5 times','E) 2.0 times','F) わからない'],
+    ans:0,
+    exp:'TIE = EBIT ÷ 支払利息 = (純利益90,000 + 利息20,000 + 税金30,000) ÷ 20,000 = 140,000 ÷ 20,000 = 7.0回。',
+    we:{ 1: '4.5 は純利益のみ/利息の誤り。', 2: '6.0 は税金を除外。', 3: '5.5 は計算誤り。', 4: '2.0 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp11_8', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'On May 1, a company issues €600,000, 8%, 10-year bonds at face value (interest paid each May 1). What interest is accrued at the December 31 year-end?',
+    opts:['A) €32,000','B) €48,000','C) €24,000','D) €4,000','E) €40,000','F) わからない'],
+    ans:0,
+    exp:'5/1〜12/31 = 8か月。利息 = 600,000 × 8% × 8/12 = €32,000。',
+    we:{ 1: '€48,000 は12か月分。', 2: '€24,000 は6か月分。', 3: '€4,000 は1か月分。', 4: '€40,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_1', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company issues 50,000 ordinary shares with a €10 par value for €12 cash per share. What is the Share Premium—Ordinary recorded?',
+    opts:['A) €100,000','B) €600,000','C) €500,000','D) €0','E) €120,000','F) わからない'],
+    ans:0,
+    exp:'Share Premium = (発行価格 − 額面) × 株数 = (12 − 10) × 50,000 = €100,000。Dr Cash 600,000 / Cr SC 500,000 / Cr Share Premium 100,000。',
+    we:{ 1: '€600,000 は受取現金総額。', 2: '€500,000 は額面分（資本金）。', 3: '発行価格が額面超のため払込剰余金が生じる。', 4: '€120,000 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_2', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company purchases 1,000 of its own shares (treasury shares) for €15 per share. What is the effect on total equity?',
+    opts:['A) Decrease of €15,000','B) Increase of €15,000','C) No change','D) Decrease of €10,000','E) Increase of €1,000','F) わからない'],
+    ans:0,
+    exp:'自己株式の取得は資本の控除 → 総資本が取得原価分 1,000 × 15 = €15,000 減少する。',
+    we:{ 1: '増加ではなく減少。', 2: '変化なしではない（資本減）。', 3: '€10,000 は額面ベースの誤り（cost法では取得原価）。', 4: '€1,000 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_3', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company declares a €0.50 per share cash dividend. It has 220,000 shares issued, of which 20,000 are held as treasury shares. What is the total dividend?',
+    opts:['A) €100,000','B) €110,000','C) €10,000','D) €120,000','E) €440,000','F) わからない'],
+    ans:0,
+    exp:'配当は発行済のうち流通株式（outstanding）のみ。流通株式 = 220,000 − 20,000（自己株式）= 200,000。配当 = 200,000 × €0.50 = €100,000。',
+    we:{ 1: '€110,000 は発行済220,000で計算（自己株式を除外していない）。', 2: '€10,000 は桁誤り。', 3: '€120,000 は誤り。', 4: '€440,000 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_4', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company with 100,000 shares of €10 par ordinary shares declares a 2-for-1 share split. After the split, what are the number of shares and par value?',
+    opts:['A) 200,000 shares at €5 par','B) 50,000 shares at €20 par','C) 200,000 shares at €10 par','D) 100,000 shares at €5 par','E) 200,000 shares at €20 par','F) わからない'],
+    ans:0,
+    exp:'2-for-1 株式分割：株数2倍 = 200,000株、額面1/2 = €5。資本金総額は不変。仕訳不要（注記のみ）。',
+    we:{ 1: '分割は株数増・額面減（株数50,000・額面€20 は逆＝併合）。', 2: '額面も半分になる。', 3: '株数も増える。', 4: '額面は下がる（上がらない）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_5', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'Using the equity accounts below, what is total equity?',
+    opts:['A) €1,000,000','B) €1,040,000','C) €1,020,000','D) €680,000','E) €860,000','F) わからない'],
+    ans:0,
+    exp:'Total equity = Share Capital 500,000 + Share Premium 180,000 + Retained Earnings 340,000 − Treasury Shares 20,000 = €1,000,000。',
+    we:{ 1: '€1,040,000 は自己株式を加算した誤り。', 2: '€1,020,000 は自己株式の扱い誤り。', 3: '€680,000 は利益剰余金の漏れ。', 4: '€860,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Equity accounts (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Share Capital—Ordinary</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€500,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Share Premium—Ordinary</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€180,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Retained Earnings</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€340,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Treasury Shares (cost)</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€20,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_6', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'Using the data below, what is the book value per ordinary share?',
+    opts:['A) €12.00','B) €10.00','C) €120.00','D) €8.33','E) €1.20','F) わからない'],
+    ans:0,
+    exp:'1株当たり純資産 = 普通株主資本 ÷ 流通株式数 = 1,200,000 ÷ 100,000 = €12.00。',
+    we:{ 1: '€10.00 は額面の誤り。', 2: '€120.00 は桁誤り。', 3: '€8.33 は逆数的誤り。', 4: '€1.20 は桁誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Equity (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Total ordinary shareholders equity</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€1,200,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Ordinary shares outstanding</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">100,000 shares</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_7', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'Which of the following correctly distinguishes a share dividend from a share split?',
+    opts:['A) A share dividend requires a journal entry and capitalizes retained earnings; a share split does not require a journal entry','B) Both reduce total equity','C) A share split capitalizes retained earnings','D) A share dividend reduces total equity','E) Neither changes the number of shares','F) わからない'],
+    ans:0,
+    exp:'株式配当は仕訳を伴い、利益剰余金を資本へ振り替える（資本化）。株式分割は仕訳不要（注記のみ）で、額面と株数のみ変わる。どちらも総資本は不変。',
+    we:{ 1: 'どちらも総資本は変えない。', 2: '資本化するのは株式配当。', 3: '株式配当も総資本を変えない（内部振替）。', 4: 'どちらも株数を増やす。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp12_8', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A 10% share dividend is declared on 200,000 ordinary shares (€5 par) when the market price is €18 per share. By how much is Retained Earnings reduced (capitalized) for this small share dividend?',
+    opts:['A) €360,000','B) €100,000','C) €260,000','D) €3,600,000','E) €36,000','F) わからない'],
+    ans:0,
+    exp:'小規模株式配当（≤20-25%）は時価で資本化。配当株数 = 200,000 × 10% = 20,000株。Retained Earnings 減少 = 20,000 × €18（時価）= €360,000。',
+    we:{ 1: '€100,000 は額面ベース（小規模配当は時価）。', 2: '€260,000 は差額の誤り。', 3: '€3,600,000 は桁誤り。', 4: '€36,000 は桁誤り。' },
+    source:'FA1B Predicted'
   }
 ];
 
