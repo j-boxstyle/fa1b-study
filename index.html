@@ -6365,8 +6365,8 @@ var QUESTIONS = [
       'D) Assets should be recorded at their net realizable value'
     ],
     ans: 2,
-    exp: 'The historical cost principle requires that assets be recorded at their original acquisition cost, not at current market value or replacement cost.',
-    we: { 0: 'Fair market value is used under fair value accounting, not the historical cost principle.', 1: 'Replacement cost reflects what it would cost to replace the asset today, which is not the historical cost principle.', 3: 'Net realizable value is used for inventory under certain methods, but it is not the historical cost principle.' }
+    exp: '歴史的原価主義（historical cost principle）は、資産を取得時に実際に支払った金額（取得原価）で記録するという原則です。市場価格が後で変動しても、原則として帳簿価額は取得原価のまま据え置きます。これにより記録の客観性・検証可能性が保たれます。よって「at their cost（取得原価で記録）」が正解です。',
+    we: { 0: '公正価値（fair market value）で記録するのは公正価値会計（fair value accounting）の考え方であり、歴史的原価主義ではありません。決算日時点の時価で評価し直すのは別のルールです。', 1: '再調達原価（replacement cost）は『今その資産を買い直すといくらか』という金額で、取得時に実際に支払った歴史的原価とは異なります。', 3: '正味実現可能価額（net realizable value, NRV）は一部の棚卸資産評価（低価法）で使われる概念で、歴史的原価主義そのものではありません。' }
   },
   {
     id: 'q2', conceptId: 'c1_share_retained',
@@ -6380,8 +6380,8 @@ var QUESTIONS = [
       'D) Revenues exceed expenses'
     ],
     ans: 3,
-    exp: 'Net income occurs when total revenues are greater than total expenses during an accounting period.',
-    we: { 0: 'Assets exceeding liabilities indicates a positive net worth (owner\'s equity), not net income.', 1: 'When revenues equal expenses, net income is zero — this is the break-even point.', 2: 'Owner\'s equity exceeding liabilities describes the balance sheet relationship, not income.' }
+    exp: '純利益（net income）は、一会計期間における総収益（revenues）が総費用（expenses）を上回ったときに生じます。つまり Net Income = Revenues − Expenses が正の値になる状態です。したがって『Revenues exceed expenses（収益が費用を上回る）』が正解です。',
+    we: { 0: '資産が負債を上回る状態は、純資産（自己資本）がプラスであることを示すだけで、当期に利益が出たかどうか（純利益）とは別の話です。', 1: '収益と費用が等しいときは純利益はゼロ（損益分岐点）であり、利益が生じている状態ではありません。', 2: '自己資本が負債を上回るのは貸借対照表上の関係を述べたものであり、損益計算書が示す『利益』とは異なります。' }
   },
   {
     id: 'q3', conceptId: 'c1_acct_eq',
@@ -6395,8 +6395,8 @@ var QUESTIONS = [
       'D) Increase assets and increase liabilities'
     ],
     ans: 1,
-    exp: 'Performing services on account increases Accounts Receivable (an asset) and increases owner\'s equity through revenues earned.',
-    we: { 0: 'Owner\'s equity increases when revenue is earned, not decreases.', 2: 'No liability is involved when performing services on account; an asset (Accounts Receivable) is created.', 3: 'A liability is not created when services are performed on account; owner\'s equity increases.' }
+    exp: '掛け（on account）でサービスを提供すると、売掛金（Accounts Receivable＝資産）が増加し、同時に収益の獲得を通じて自己資本（owner\'s equity）が増加します。会計等式 A = L + E では、左辺の資産増加と右辺の自己資本増加が釣り合います。よって『資産増加・自己資本増加』が正解です。',
+    we: { 0: '収益を獲得すると自己資本は増加します。減少するという記述は逆で誤りです。', 2: '掛けでのサービス提供では負債は関係せず、資産である売掛金（Accounts Receivable）が新たに生じます。', 3: 'サービスを掛けで提供しても負債は発生しません。発生するのは資産（売掛金）であり、自己資本も増加します。' }
   },
   {
     id: 'q4', conceptId: 'c1_acct_eq',
@@ -6410,8 +6410,8 @@ var QUESTIONS = [
       'D) Neither financial statement'
     ],
     ans: 1,
-    exp: 'Buying a machine on credit increases assets (Equipment +$900) and increases liabilities (Accounts Payable +$900). Both are balance sheet items only; no expense is recorded at purchase.',
-    we: { 0: 'Purchasing equipment does not immediately affect revenues or expenses, so the income statement is not affected.', 2: 'The income statement is not affected by this purchase transaction.', 3: 'The balance sheet is definitely affected — both assets and liabilities increase by $900.' }
+    exp: '機械を掛け（credit）で購入すると、資産（Equipment 機械 +$900）が増加し、同時に負債（Accounts Payable 買掛金 +$900）が増加します。どちらも貸借対照表（balance sheet）の項目で、購入時点では費用は計上しません（減価償却は後の期間で配分）。したがって影響するのは『貸借対照表のみ』が正解です。',
+    we: { 0: '機械の購入は購入時点では収益・費用に直接影響しないため、損益計算書（income statement）は影響を受けません。', 2: 'この購入取引では損益計算書は影響を受けません。費用化は使用に応じて後で行います。', 3: '貸借対照表は確実に影響を受けます（資産・負債がともに $900 増加）。『影響しない』は誤りです。' }
   },
   {
     id: 'q5', conceptId: 'c1_fin_stmts',
@@ -6425,8 +6425,8 @@ var QUESTIONS = [
       'D) Statement of cash flows'
     ],
     ans: 2,
-    exp: 'The balance sheet (also called the statement of financial position) reports a company\'s assets, liabilities, and owner\'s equity at a specific point in time.',
-    we: { 0: 'The income statement reports revenues and expenses, not assets, liabilities, and owner\'s equity.', 1: 'The statement of owner\'s equity shows changes in owner\'s equity, but does not list assets or liabilities.', 3: 'The statement of cash flows reports cash inflows and outflows, not the balance sheet elements.' }
+    exp: '貸借対照表（balance sheet、IFRSでは statement of financial position）は、ある一時点における企業の資産（assets）・負債（liabilities）・自己資本（owner\'s equity）を報告する財務諸表です。よって正解は balance sheet です。',
+    we: { 0: '損益計算書（income statement）は収益と費用を報告するもので、資産・負債・自己資本は載せません。', 1: '自己資本変動計算書は自己資本の増減を示しますが、資産や負債の一覧は示しません。', 3: 'キャッシュフロー計算書は現金の流入・流出を報告するもので、貸借対照表の構成要素は示しません。' }
   },
 
   // ============================================================
@@ -6444,8 +6444,8 @@ var QUESTIONS = [
       'D) Owner\'s Equity = Assets + Liabilities'
     ],
     ans: 1,
-    exp: 'The fundamental accounting equation is Assets = Liabilities + Owner\'s Equity. Every transaction must keep this equation in balance.',
-    we: { 0: 'Assets = Revenues - Expenses is not the accounting equation; this relates to the income statement.', 2: 'Liabilities = Assets + Owner\'s Equity is algebraically incorrect.', 3: 'Owner\'s Equity = Assets + Liabilities is algebraically incorrect; it should be Owner\'s Equity = Assets - Liabilities.' }
+    exp: '基本となる会計等式（accounting equation）は『Assets = Liabilities + Owner\'s Equity（資産 = 負債 + 自己資本）』です。すべての取引はこの等式の左右が常に一致するように記録されます。',
+    we: { 0: 'Assets = Revenues − Expenses は会計等式ではありません。これは損益計算書（純利益の算定）に関する関係です。', 2: 'Liabilities = Assets + Owner\'s Equity は代数的に誤りです（移項すると不一致）。', 3: 'Owner\'s Equity = Assets + Liabilities は誤りです。正しくは Owner\'s Equity = Assets − Liabilities です。' }
   },
   {
     id: 'q7', conceptId: 'c1_acct_eq',
@@ -6459,8 +6459,8 @@ var QUESTIONS = [
       'D) Equipment'
     ],
     ans: 2,
-    exp: 'Accounts Payable is a liability — it represents amounts owed to creditors for goods or services purchased on credit.',
-    we: { 0: 'Accounts Receivable is an asset — amounts owed TO the company by customers.', 1: 'Cash is an asset — a current asset representing money on hand or in the bank.', 3: 'Equipment is a long-term (plant) asset, not a liability.' }
+    exp: 'Accounts Payable（買掛金）は負債（liability）です。掛けで購入した商品やサービスについて、債権者に対して将来支払う義務を表します。',
+    we: { 0: 'Accounts Receivable（売掛金）は資産です。顧客が会社に対して支払うべき金額を表します（向きが逆）。', 1: 'Cash（現金）は資産です。手元や銀行にある資金を表す流動資産です。', 3: 'Equipment（設備）は長期の有形固定資産であり、負債ではありません。' }
   },
   {
     id: 'q9', conceptId: 'c1_assumptions',
@@ -6474,8 +6474,8 @@ var QUESTIONS = [
       'D) The life of a business is divided into time periods'
     ],
     ans: 1,
-    exp: 'The economic entity assumption requires that the activities of the business be kept separate and distinct from the personal activities of its owner(s).',
-    we: { 0: 'Assuming a business continues indefinitely is the going concern assumption.', 2: 'Recording assets at cost is the historical cost principle.', 3: 'Dividing the life of a business into time periods is the time period assumption (periodicity assumption).' }
+    exp: '経済的実体の公準（economic entity assumption）は、企業の活動を所有者個人の活動と明確に分離して記録することを要求します。会社と個人の財布を混ぜてはいけない、という考え方です。',
+    we: { 0: '企業が無期限に継続すると仮定するのは継続企業の公準（going concern assumption）です。', 2: '資産を取得原価で記録するのは歴史的原価主義（historical cost principle）です。', 3: '企業の存続期間を一定の期間に区切るのは会計期間の公準（time period / periodicity assumption）です。' }
   },
   {
     id: 'q10', conceptId: 'c1_acct_eq',
@@ -6489,8 +6489,8 @@ var QUESTIONS = [
       'D) Liabilities decrease $10,000; Owner\'s Equity increases $10,000'
     ],
     ans: 1,
-    exp: 'When the owner invests cash, Cash (an asset) increases by $10,000 and Owner\'s Capital (owner\'s equity) increases by $10,000.',
-    we: { 0: 'No liability is created when an owner invests personal funds; owner\'s equity increases instead.', 2: 'Assets increase (not decrease) when cash is received from the owner.', 3: 'No liability is reduced; Cash (an asset) increases along with owner\'s equity.' }
+    exp: '所有者が現金を出資すると、Cash（現金＝資産）が $10,000 増加し、Owner\'s Capital（資本金＝自己資本）が $10,000 増加します。会計等式の左右がともに増えて釣り合います。',
+    we: { 0: '所有者が自己資金を出資しても負債は生じません。代わりに自己資本が増加します。', 2: '所有者から現金を受け取ると資産は増加します（減少ではありません）。', 3: '負債は減少しません。Cash（資産）と自己資本がともに増加します。' }
   },
   {
     id: 'q11', conceptId: 'c1_acct_eq',
@@ -6504,8 +6504,8 @@ var QUESTIONS = [
       'D) Assets increase $500; Owner\'s Equity increases $500'
     ],
     ans: 2,
-    exp: 'Paying a utility bill with cash decreases Cash (asset) by $500 and decreases Owner\'s Equity (through Utilities Expense) by $500.',
-    we: { 0: 'Paying cash reduces assets; it does not increase them. No liability is created when paying with cash.', 1: 'Cash (an asset) decreases, not a liability. A liability would decrease only if the bill had been previously recorded as Accounts Payable.', 3: 'Assets decrease (cash goes out), and owner\'s equity decreases due to the expense.' }
+    exp: '光熱費を現金で支払うと、Cash（資産）が $500 減少し、Utilities Expense（光熱費）を通じて Owner\'s Equity（自己資本）が $500 減少します。費用の発生は自己資本を減らします。',
+    we: { 0: '現金で支払うと資産は減少します。増加はしません。また現金払いでは負債は生じません。', 1: '減るのは Cash（資産）であって負債ではありません。負債が減るのは、すでに Accounts Payable として計上済みの請求を支払う場合のみです。', 3: '資産は減少し（現金が出ていく）、費用の発生により自己資本も減少します。' }
   },
   {
     id: 'q12', conceptId: 'c1_fin_stmts',
@@ -6519,8 +6519,8 @@ var QUESTIONS = [
       'D) The income statement is also called the statement of financial position'
     ],
     ans: 1,
-    exp: 'The income statement reports revenues and expenses over a specific period of time (e.g., "For the Month Ended December 31").',
-    we: { 0: 'Reporting financial position at a point in time is the function of the balance sheet, not the income statement.', 2: 'Assets, liabilities, and owner\'s equity appear on the balance sheet, not the income statement.', 3: 'The statement of financial position is another name for the balance sheet, not the income statement.' }
+    exp: '損益計算書（income statement）は、一定期間（例：『12月31日に終了する月間』）にわたる収益と費用を報告します。『期間』にわたる業績を示すのが特徴です。',
+    we: { 0: '一時点の財政状態を報告するのは貸借対照表の役割で、損益計算書ではありません。', 2: '資産・負債・自己資本は貸借対照表に載るもので、損益計算書には載りません。', 3: 'statement of financial position は貸借対照表の別名であり、損益計算書ではありません。' }
   },
   {
     id: 'q13', conceptId: 'c1_share_retained',
@@ -6534,8 +6534,8 @@ var QUESTIONS = [
       'D) $70,000'
     ],
     ans: 1,
-    exp: 'Net income = Revenues - Expenses = $85,000 - $62,000 = $23,000. Owner withdrawals are NOT subtracted when calculating net income; they reduce owner\'s equity but are not an expense.',
-    we: { 0: '$8,000 = $23,000 - $15,000 — this incorrectly deducts the owner\'s withdrawal from net income. Withdrawals are not expenses.', 2: '$38,000 = $85,000 - $62,000 + $15,000 — this incorrectly adds back the withdrawal.', 3: '$70,000 = $85,000 - $15,000 — this ignores expenses and deducts only withdrawals.' }
+    exp: '純利益 = 収益 − 費用 = $85,000 − $62,000 = $23,000 です。所有者の引出金（withdrawals / drawings）は純利益の計算では差し引きません。引出金は自己資本を減らしますが費用ではないためです。よって $23,000 が正解です。',
+    we: { 0: '$8,000 = $23,000 − $15,000 は、引出金を純利益から誤って差し引いています。引出金は費用ではありません。', 2: '$38,000 = $85,000 − $62,000 + $15,000 は、引出金を誤って足し戻しています。', 3: '$70,000 = $85,000 − $15,000 は、費用を無視して引出金だけを差し引いた誤りです。' }
   },
   {
     id: 'q14', conceptId: 'c1_share_retained',
@@ -6549,8 +6549,8 @@ var QUESTIONS = [
       'D) $115,000'
     ],
     ans: 1,
-    exp: 'Beginning Owner\'s Equity = $120,000 - $45,000 = $75,000. Ending Owner\'s Equity = $75,000 + $30,000 (net income) - $10,000 (withdrawals) = $95,000.',
-    we: { 0: '$75,000 is only the beginning owner\'s equity; it ignores net income and withdrawals.', 2: '$105,000 = $75,000 + $30,000 — this forgets to subtract the $10,000 withdrawal.', 3: '$115,000 = $75,000 + $30,000 + $10,000 — this incorrectly adds the withdrawal instead of subtracting it.' }
+    exp: '期首自己資本 = 資産 $120,000 − 負債 $45,000 = $75,000。期末自己資本 = $75,000 + 純利益 $30,000 − 引出金 $10,000 = $95,000 です。',
+    we: { 0: '$75,000 は期首自己資本にすぎず、純利益と引出金を反映していません。', 2: '$105,000 = $75,000 + $30,000 は、$10,000 の引出金を差し引き忘れています。', 3: '$115,000 = $75,000 + $30,000 + $10,000 は、引出金を引かずに足してしまった誤りです。' }
   },
   {
     id: 'q15', conceptId: 'c1_assumptions',
@@ -6564,8 +6564,8 @@ var QUESTIONS = [
       'D) Going concern assumption'
     ],
     ans: 3,
-    exp: 'The going concern assumption states that the business will continue operating for the foreseeable future and will not be liquidated.',
-    we: { 0: 'The economic entity assumption requires keeping the business\'s records separate from the owner\'s personal records.', 1: 'The monetary unit assumption says only transactions expressed in money are recorded.', 2: 'The time period assumption divides a business\'s life into distinct accounting periods.' }
+    exp: '継続企業の公準（going concern assumption）は、企業が予見可能な将来にわたって事業を継続し、清算されないことを前提とする考え方です。この前提があるからこそ取得原価主義や減価償却が成り立ちます。',
+    we: { 0: '企業の記録を所有者個人の記録と分離するのは経済的実体の公準です。', 1: '金額で表せる取引のみを記録するのは貨幣的測定の公準（monetary unit assumption）です。', 2: '企業の存続期間を会計期間に区切るのは会計期間の公準（time period assumption）です。' }
   },
 
   // ============================================================
@@ -6583,8 +6583,8 @@ var QUESTIONS = [
       'D) An account is prepared only at the end of each accounting period as part of the year-end closing procedures'
     ],
     ans: 1,
-    exp: 'An **account** is an individual accounting record that shows increases and decreases for a specific item such as Cash, Accounts Receivable, or Accounts Payable. The full collection of accounts forms the **ledger**.',
-    we: { 0: 'A **ledger** is the entire **collection** of accounts; a single account is just **one record** within the ledger — the two terms are NOT synonymous.', 2: 'Accounts can have **either debit OR credit normal balances** depending on the type — assets/expenses/dividends are debit; liabilities/equity/revenues are credit.', 3: 'Accounts are **maintained continuously** throughout the period as transactions occur — not prepared only at year-end.' }
+    exp: '勘定（account）とは、現金・売掛金・買掛金など特定の項目について増減を記録する個々の記録です。すべての勘定を集めたものが元帳（ledger）になります。よって『個々の項目の増減を記録する記録』が正解です。',
+    we: { 0: '元帳（ledger）は勘定の集合体全体であり、1つの勘定はその中の1つの記録にすぎません。両者は同義ではありません。', 2: '勘定の通常残高は種類によって借方・貸方のどちらにもなり得ます（資産・費用・引出金は借方、負債・資本・収益は貸方）。', 3: '勘定は取引の発生に応じて期中ずっと継続的に記入されます。期末にだけ作成するものではありません。' }
   },
   {
     id: 'q17', conceptId: 'c2_accounts',
@@ -6598,8 +6598,8 @@ var QUESTIONS = [
       'D) Assets, owner\'s drawings, and expenses'
     ],
     ans: 3,
-    exp: 'Assets, owner\'s drawings, and expenses normally have debit balances. Liabilities, owner\'s capital, and revenues normally have credit balances.',
-    we: { 0: 'Liabilities and owner\'s capital have normal credit balances, not debit balances.', 1: 'Revenues have normal credit balances, not debit balances.', 2: 'Liabilities have normal credit balances, not debit balances.' }
+    exp: '資産（assets）・引出金（owner\'s drawings）・費用（expenses）は通常『借方（debit）』残高、負債（liabilities）・資本金（owner\'s capital）・収益（revenues）は通常『貸方（credit）』残高を持ちます。暗記法『DEAD CLR』が便利です。',
+    we: { 0: '負債と資本金は通常『貸方』残高であり、借方残高ではありません。', 1: '収益は通常『貸方』残高であり、借方残高ではありません。', 2: '負債は通常『貸方』残高であり、借方残高ではありません。' }
   },
   {
     id: 'q18', conceptId: 'c2_accounts',
@@ -6613,8 +6613,8 @@ var QUESTIONS = [
       'D) A = L + OC - OD + R - E'
     ],
     ans: 3,
-    exp: 'The expanded accounting equation is: Assets = Liabilities + Owner\'s Capital - Owner\'s Drawings + Revenues - Expenses. Drawings and Expenses reduce owner\'s equity.',
-    we: { 0: 'Owner\'s Drawings reduces equity, so it should be subtracted, not added. Expenses also reduce equity.', 1: 'Revenues increase equity (should be added) and Expenses decrease equity (should be subtracted), not the reverse.', 2: 'Owner\'s Capital increases equity (should be added, not subtracted).' }
+    exp: '拡張会計等式は『Assets = Liabilities + Owner\'s Capital − Owner\'s Drawings + Revenues − Expenses』です。引出金（Drawings）と費用（Expenses）は自己資本を減らすのでマイナス、収益はプラスになります。',
+    we: { 0: '引出金は自己資本を減らすので、加算ではなく減算すべきです。費用も同様に減算項目です。', 1: '収益は自己資本を増やすので加算、費用は減らすので減算です。符号が逆です。', 2: '資本金（Owner\'s Capital）は自己資本を増やすので、減算ではなく加算すべきです。' }
   },
   {
     id: 'q19', conceptId: 'c2_journal',
@@ -6628,8 +6628,8 @@ var QUESTIONS = [
       'D) A summary of debit and credit balances'
     ],
     ans: 2,
-    exp: 'The ledger (also called the general ledger) is the entire collection of all accounts used by a company, providing a complete record of all financial transactions by account.',
-    we: { 0: 'A chronological list of all transactions describes the journal (book of original entry), not the ledger.', 1: 'The book of original entry is the journal, where transactions are first recorded.', 3: 'A summary of debit and credit balances describes the trial balance, not the ledger.' }
+    exp: '元帳（ledger、総勘定元帳 general ledger）は、企業が使用するすべての勘定を集めたもので、勘定ごとにすべての取引の完全な記録を提供します。',
+    we: { 0: '取引を発生順に並べた記録は仕訳帳（journal、本来の記入帳）の説明であり、元帳ではありません。', 1: '取引を最初に記入する『本来の記入帳』は仕訳帳（journal）です。', 3: '借方・貸方残高の一覧は試算表（trial balance）の説明であり、元帳ではありません。' }
   },
   {
     id: 'q20', conceptId: 'c2_trial_balance',
@@ -6643,8 +6643,8 @@ var QUESTIONS = [
       'D) A $300 service revenue was credited to Accounts Payable instead of Service Revenue'
     ],
     ans: 2,
-    exp: 'Debiting $1,000 but crediting only $100 creates a $900 difference between total debits and total credits, causing the trial balance to be out of balance.',
-    we: { 0: 'If a transaction is not recorded at all, both debits and credits are equally omitted, so the trial balance still balances.', 1: 'Debiting the wrong account (Equipment vs. Supplies) is a misclassification; total debits still equal total credits.', 3: 'Crediting the wrong account still keeps total debits equal to total credits; the trial balance would still balance.' }
+    exp: '借方に $1,000、貸方に $100 だけ記入すると、借方合計と貸方合計に $900 の差が生じ、試算表（trial balance）の貸借が一致しなくなります。',
+    we: { 0: '取引をまったく記録しない場合、借方も貸方も等しく抜け落ちるため、試算表は依然として一致します（誤りは検出されません）。', 1: '勘定を取り違える（Equipment と Supplies）のは分類の誤りですが、借方合計と貸方合計は依然一致します。', 3: '貸方の勘定を取り違えても借方合計と貸方合計は一致したままなので、試算表は釣り合います。' }
   },
 
   // ============================================================
@@ -6662,8 +6662,8 @@ var QUESTIONS = [
       'D) Rent Expense'
     ],
     ans: 2,
-    exp: 'Revenue accounts (like Service Revenue) have normal credit balances. Debiting a revenue account decreases it; crediting increases it.',
-    we: { 0: 'Accounts Receivable is an asset and has a normal debit balance.', 1: 'Owner\'s Drawings reduces owner\'s equity and has a normal debit balance.', 3: 'Rent Expense is an expense account and has a normal debit balance.' }
+    exp: '収益勘定（Service Revenue など）は通常『貸方』残高を持ちます。収益勘定を借方記入すると減少し、貸方記入すると増加します。よって借方記入で減るのは収益勘定です。',
+    we: { 0: 'Accounts Receivable（売掛金）は資産であり、通常『借方』残高です。', 1: 'Owner\'s Drawings（引出金）は自己資本を減らす項目で、通常『借方』残高です。', 3: 'Rent Expense（支払家賃）は費用勘定であり、通常『借方』残高です。' }
   },
   {
     id: 'q22', conceptId: 'c2_journal',
@@ -6677,8 +6677,8 @@ var QUESTIONS = [
       'D) Debit Accounts Receivable $2,000; Credit Service Revenue $2,000'
     ],
     ans: 2,
-    exp: 'Receiving cash for services: Debit Cash (asset increases) $2,000; Credit Service Revenue (revenue increases) $2,000.',
-    we: { 0: 'Debiting Service Revenue would decrease it, which is incorrect. Cash is received, so it should be debited.', 1: 'No Accounts Receivable is involved when payment is received in cash immediately.', 3: 'Accounts Receivable is debited when services are performed on account, not when cash is immediately received.' }
+    exp: 'サービス提供の対価を現金で受け取る取引：借方 Cash（資産増加）$2,000 / 貸方 Service Revenue（収益増加）$2,000。現金を受け取るので Cash は借方です。',
+    we: { 0: 'Service Revenue を借方記入すると収益が減ってしまい誤りです。現金を受け取るので Cash を借方にします。', 1: '代金を即現金で受け取る場合、Accounts Receivable（売掛金）は関係しません。', 3: 'Accounts Receivable を借方にするのは掛けでサービスを提供した場合であり、即現金受領の場合ではありません。' }
   },
   {
     id: 'q23', conceptId: 'c2_journal',
@@ -6692,8 +6692,8 @@ var QUESTIONS = [
       'D) Debit Cash $1,200; Credit Prepaid Rent $1,200'
     ],
     ans: 1,
-    exp: 'Paying rent expense: Debit Rent Expense (expense increases) $1,200; Credit Cash (asset decreases) $1,200.',
-    we: { 0: 'Debiting Cash would increase it, but cash is being paid out — it should decrease (credit).', 2: 'Prepaid Rent is used when rent is paid in advance for future periods. If it is for the current month, it is immediately an expense.', 3: 'Cash is paid out (credit Cash), not received.' }
+    exp: '家賃を支払う取引：借方 Rent Expense（費用増加）$1,200 / 貸方 Cash（資産減少）$1,200。現金が出ていくので Cash は貸方です。',
+    we: { 0: 'Cash を借方記入すると増加しますが、現金は支払われて出ていくので減少（貸方）が正しいです。', 2: 'Prepaid Rent（前払家賃）は将来期間分を前払いした場合に使います。当月分なら即座に費用（Rent Expense）です。', 3: '現金は支払われる（Cash を貸方）のであって、受け取るのではありません。' }
   },
   {
     id: 'q24', conceptId: 'c2_journal',
@@ -6707,8 +6707,8 @@ var QUESTIONS = [
       'D) Summarizing'
     ],
     ans: 2,
-    exp: 'Journalizing is the process of entering transaction data in the journal (the book of original entry).',
-    we: { 0: 'Posting is the process of transferring amounts from the journal to the ledger accounts.', 1: 'Balancing refers to making the trial balance or closing entries, not recording in the journal.', 3: 'Summarizing is a general term; the specific accounting term for recording in the journal is journalizing.' }
+    exp: '仕訳（journalizing）とは、取引データを仕訳帳（journal、本来の記入帳）に記入する手続きです。',
+    we: { 0: '転記（posting）は、仕訳帳から元帳の各勘定へ金額を移す手続きです。', 1: 'balancing は試算表の作成や締切に関する用語で、仕訳帳への記入そのものではありません。', 3: 'summarizing（要約）は一般的な語で、仕訳帳への記入を指す会計用語は journalizing です。' }
   },
   {
     id: 'q25', conceptId: 'c2_journal',
@@ -6722,8 +6722,8 @@ var QUESTIONS = [
       'D) Debit Cash $400; Credit Supplies $400'
     ],
     ans: 2,
-    exp: 'Purchasing supplies on account: Debit Supplies (asset increases) $400; Credit Accounts Payable (liability increases) $400.',
-    we: { 0: 'Accounts Payable increases (credit) when you owe money, and Supplies increases (debit) — the debits and credits are reversed here.', 1: 'Supplies Expense is only recorded when supplies are actually used, not at the time of purchase.', 3: 'No cash is paid when purchasing on account; Accounts Payable is credited instead.' }
+    exp: '消耗品を掛けで購入する取引：借方 Supplies（資産増加）$400 / 貸方 Accounts Payable（負債増加）$400。掛け（後払い）なので買掛金が増えます。',
+    we: { 0: '買掛金（Accounts Payable）は債務が生じたとき増加（貸方）、消耗品（Supplies）も増加（借方）です。借方・貸方が逆になっています。', 1: 'Supplies Expense（消耗品費）は実際に消耗品を使用したときに計上するもので、購入時点ではありません。', 3: '掛けで購入する場合、現金は支払われません。代わりに Accounts Payable を貸方記入します。' }
   },
   {
     id: 'q26', conceptId: 'c2_accounts',
@@ -6737,8 +6737,8 @@ var QUESTIONS = [
       'D) $1,200 credit balance'
     ],
     ans: 1,
-    exp: 'Ending balance = Beginning balance + Debits - Credits = $3,000 + $7,500 - $4,200 = $6,300 debit balance.',
-    we: { 0: '$300 credit balance is incorrect; the debits far exceed the credits.', 2: '$4,500 = $3,000 + $7,500 - $4,200 is miscalculated; the correct answer is $6,300.', 3: '$1,200 does not follow from the given numbers.' }
+    exp: '期末残高 = 期首残高 + 借方合計 − 貸方合計 = $3,000 + $7,500 − $4,200 = $6,300 の借方残高です。',
+    we: { 0: '$300 の貸方残高は誤りです。借方が貸方を大きく上回っています。', 2: '$4,500 = $3,000 + $7,500 − $4,200 の計算が誤っています。正しくは $6,300 です。', 3: '$1,200 は与えられた数値からは導けません。' }
   },
   {
     id: 'q27', conceptId: 'c2_chart',
@@ -6752,8 +6752,8 @@ var QUESTIONS = [
       'D) A summary report prepared at year-end'
     ],
     ans: 2,
-    exp: 'A chart of accounts is a listing of all the accounts and their identifying numbers used by a company in its accounting system.',
-    we: { 0: 'Listing transactions is the function of the journal, not the chart of accounts.', 1: 'A list of accounts and their balances describes the trial balance, not the chart of accounts.', 3: 'The chart of accounts is not a year-end report; it is a reference tool maintained throughout the accounting period.' }
+    exp: '勘定科目表（chart of accounts）は、企業が会計システムで使用するすべての勘定と、その識別番号を一覧にしたものです。',
+    we: { 0: '取引を列挙するのは仕訳帳（journal）の役割で、勘定科目表ではありません。', 1: '勘定とその残高の一覧は試算表（trial balance）の説明であり、勘定科目表ではありません。', 3: '勘定科目表は期末の報告書ではなく、会計期間を通じて使う参照ツールです。' }
   },
 
   // ============================================================
@@ -6771,8 +6771,8 @@ var QUESTIONS = [
       'D) Financial statements should be prepared using generally accepted accounting principles'
     ],
     ans: 2,
-    exp: 'The time period assumption (also called the periodicity assumption) states that the economic life of a business can be divided into artificial time periods such as months, quarters, or years.',
-    we: { 0: 'Recognizing revenue when earned describes the revenue recognition principle, not the time period assumption.', 1: 'Matching expenses to revenues in the period incurred describes the expense recognition (matching) principle.', 3: 'Using GAAP is a general accounting requirement, not the time period assumption.' }
+    exp: '会計期間の公準（time period / periodicity assumption）は、企業の経済的存続期間を、月・四半期・年といった人為的な期間に区切ることができるとする考え方です。',
+    we: { 0: '収益を稼得時に認識するのは収益認識の原則（revenue recognition principle）であり、会計期間の公準ではありません。', 1: '費用を発生した期間の収益に対応させるのは費用認識（対応）の原則（matching principle）です。', 3: 'GAAPに従うことは一般的な会計上の要求であり、会計期間の公準ではありません。' }
   },
   {
     id: 'q29', conceptId: 'c3_adj_overview',
@@ -6786,8 +6786,8 @@ var QUESTIONS = [
       'D) Revenues and expenses are reported in the correct accounting period'
     ],
     ans: 3,
-    exp: 'Adjusting entries ensure that revenues are recognized in the period in which they are earned and expenses are recognized in the period in which they occur (matching principle).',
-    we: { 0: 'Adjusting entries often involve non-cash items (depreciation, accruals) and are not focused solely on cash transactions.', 1: 'Adjusting entries are meant to correct balances, not to intentionally understate liabilities.', 2: 'The trial balance ensures the ledger is in balance; adjusting entries ensure proper period matching.' }
+    exp: '決算整理仕訳（adjusting entries）は、収益を稼得した期間に、費用を発生した期間に正しく認識させるための仕訳です（対応の原則）。これにより発生主義に基づく適正な期間損益が計算されます。',
+    we: { 0: '決算整理仕訳は減価償却や見越し・繰延べなど非現金項目を扱うことが多く、現金取引だけが対象ではありません。', 1: '決算整理仕訳は残高を適正に調整するためのもので、意図的に負債を過小計上するためのものではありません。', 2: '元帳の貸借一致を確認するのは試算表です。決算整理仕訳は適正な期間対応を実現するために行います。' }
   },
   {
     id: 'q30', conceptId: 'c3_adj_overview',
@@ -6801,8 +6801,8 @@ var QUESTIONS = [
       'D) Recognized revenues (cash basis)'
     ],
     ans: 3,
-    exp: 'The four types of adjusting entries are: prepaid expenses, unearned revenues, accrued revenues, and accrued expenses. "Recognized revenues (cash basis)" is not a category of adjusting entry.',
-    we: { 0: 'Prepaid expenses (deferred expenses) ARE a type of adjusting entry where an asset is converted to an expense.', 1: 'Accrued revenues ARE a type of adjusting entry where revenue earned but not yet received is recorded.', 2: 'Unearned revenues (deferred revenues) ARE a type of adjusting entry where a liability is converted to revenue.' }
+    exp: '決算整理仕訳の4類型は、前払費用（prepaid expenses）・前受収益（unearned revenues）・未収収益（accrued revenues）・未払費用（accrued expenses）です。『現金主義での収益認識』は決算整理仕訳の類型ではありません。',
+    we: { 0: '前払費用（繰延費用）は、資産を費用に振り替える決算整理仕訳の一類型です。', 1: '未収収益は、稼得済みだが未受領の収益を計上する決算整理仕訳の一類型です。', 2: '前受収益（繰延収益）は、負債を収益に振り替える決算整理仕訳の一類型です。' }
   },
   {
     id: 'q31', conceptId: 'c3_prepaid',
@@ -6816,8 +6816,8 @@ var QUESTIONS = [
       'D) A decrease in liabilities and an increase in revenues'
     ],
     ans: 2,
-    exp: 'When prepaid expenses are adjusted, an asset (prepaid account) decreases and an expense increases. For example: Debit Insurance Expense; Credit Prepaid Insurance.',
-    we: { 0: 'Prepaid expense adjustments do not affect revenues; they convert assets to expenses.', 1: 'No liability is created by a prepaid expense adjustment; an asset decreases.', 3: 'Prepaid expense adjustments reduce assets and increase expenses, not the reverse.' }
+    exp: '前払費用を整理するときは、資産（前払勘定）が減少し費用が増加します。例：借方 Insurance Expense（保険料）/ 貸方 Prepaid Insurance（前払保険料）。',
+    we: { 0: '前払費用の整理は収益には影響しません。資産を費用へ振り替えるだけです。', 1: '前払費用の整理で負債は生じません。資産が減少します。', 3: '前払費用の整理は資産を減らし費用を増やします。逆ではありません。' }
   },
   {
     id: 'q32', conceptId: 'c3_accrued_rev',
@@ -6831,8 +6831,8 @@ var QUESTIONS = [
       'D) Revenues that reduce liabilities when adjusted'
     ],
     ans: 1,
-    exp: 'Accrued revenues are revenues earned during a period but not yet received in cash or recorded. Adjusting for them creates an asset (Accounts Receivable) and records the revenue earned.',
-    we: { 0: 'Cash received before services are performed describes unearned revenues (a liability), not accrued revenues.', 2: 'Revenues already recorded and received need no adjusting entry.', 3: 'Accrued revenue adjustments increase assets (Accounts Receivable) and revenues, not liabilities.' }
+    exp: '未収収益（accrued revenues）は、期中に稼得したがまだ現金受領も記録もしていない収益です。整理仕訳で資産（売掛金）を計上し、稼得した収益を記録します。',
+    we: { 0: 'サービス提供前に現金を受け取るのは前受収益（負債）であり、未収収益ではありません。', 2: 'すでに記録・受領済みの収益には整理仕訳は不要です。', 3: '未収収益の整理は資産（売掛金）と収益を増やすもので、負債を増やすものではありません。' }
   },
 
   // ============================================================
@@ -6850,8 +6850,8 @@ var QUESTIONS = [
       'D) Debit Unearned Revenue $3,600; Credit Service Revenue $3,600'
     ],
     ans: 1,
-    exp: 'Three months of service have been earned by Dec 31 (Oct, Nov, Dec). Earned amount = $3,600 x 3/12 = $900. Debit Unearned Revenue (liability decreases) $900; Credit Service Revenue (revenue increases) $900.',
-    we: { 0: 'Debiting Service Revenue would decrease it, which is incorrect. The revenue earned should be credited.', 2: 'The cash was already received on October 1; it should not be debited again. Also, all $3,600 has not yet been earned.', 3: 'The full $3,600 has not been earned yet — only 3 of 12 months have passed, so only $900 is earned.' }
+    exp: '12月31日までに3か月分（10月・11月・12月）のサービスを提供済みです。稼得額 = $3,600 × 3/12 = $900。借方 Unearned Revenue（前受収益＝負債が減少）$900 / 貸方 Service Revenue（収益が増加）$900。',
+    we: { 0: 'Service Revenue を借方記入すると収益が減ってしまい誤りです。稼得した収益は貸方記入します。', 2: '現金は10月1日にすでに受領済みで、再度借方にはしません。また $3,600 全額がまだ稼得されたわけではありません。', 3: '$3,600 全額はまだ稼得されていません。12か月のうち3か月だけ経過したので $900 のみが稼得分です。' }
   },
   {
     id: 'q34', conceptId: 'c3_depreciation',
@@ -6865,8 +6865,8 @@ var QUESTIONS = [
       'D) $48,000'
     ],
     ans: 1,
-    exp: 'Annual depreciation = (Cost - Salvage Value) / Useful Life = ($48,000 - $0) / 8 = $6,000 per year.',
-    we: { 0: '$4,000 = $48,000 / 12 — this divides by 12 (perhaps months) instead of 8 years.', 2: '$8,000 = $48,000 / 6 — this uses 6 years instead of 8 years.', 3: '$48,000 is the total cost, not the annual depreciation; you must divide by the useful life.' }
+    exp: '年間減価償却費 = (取得原価 − 残存価額) ÷ 耐用年数 = ($48,000 − $0) ÷ 8 = 年 $6,000 です（定額法）。',
+    we: { 0: '$4,000 = $48,000 ÷ 12 は、8年ではなく12（おそらく月数）で割った誤りです。', 2: '$8,000 = $48,000 ÷ 6 は、8年ではなく6年を使った誤りです。', 3: '$48,000 は取得原価の総額であり、年間減価償却費ではありません。耐用年数で割る必要があります。' }
   },
   {
     id: 'q35', conceptId: 'c3_accrued_rev',
@@ -6880,8 +6880,8 @@ var QUESTIONS = [
       'D) Debit Salaries Expense; Credit Cash'
     ],
     ans: 1,
-    exp: 'Accrued salaries: Debit Salaries Expense (expense increases) and Credit Salaries Payable (liability increases). Cash is not involved because the salaries have not yet been paid.',
-    we: { 0: 'The entry is reversed — Salaries Expense should be debited (it increases) and Salaries Payable should be credited (it increases).', 2: 'Cash is not debited for accrued (unpaid) salaries; the salaries have not been paid yet.', 3: 'Cash is not credited when recording accrued (unpaid) salaries; Salaries Payable is credited because the salaries are still owed.' }
+    exp: '未払給料の整理：借方 Salaries Expense（費用が増加）/ 貸方 Salaries Payable（負債が増加）。まだ支払っていないので Cash は登場しません。',
+    we: { 0: '借方・貸方が逆です。Salaries Expense を借方（増加）、Salaries Payable を貸方（増加）にします。', 2: '未払（未支給）の給料では Cash を借方にしません。給料はまだ支払われていないためです。', 3: '未払給料を計上する時点では Cash を貸方にしません。まだ債務が残っているので Salaries Payable を貸方にします。' }
   },
   {
     id: 'q36', conceptId: 'c3_prepaid',
@@ -6895,8 +6895,8 @@ var QUESTIONS = [
       'D) $600'
     ],
     ans: 2,
-    exp: 'Monthly expense = $7,200 / 12 = $600 per month. Months used (Sep, Oct, Nov, Dec) = 4 months. Adjustment = $600 x 4 = $2,400.',
-    we: { 0: '$7,200 is the total cost; not all of it has expired by December 31.', 1: '$3,600 = $7,200 / 2 (6 months) — this assumes 6 months have passed, but only 4 have (Sep through Dec).', 3: '$600 is the monthly amount — only one month\'s expense, not four months.' }
+    exp: '月額費用 = $7,200 ÷ 12 = 月 $600。経過月数（9月・10月・11月・12月）= 4か月。整理額 = $600 × 4 = $2,400。',
+    we: { 0: '$7,200 は総額で、12月31日までに全額が費消されたわけではありません。', 1: '$3,600 = $7,200 ÷ 2（6か月）は、6か月経過を仮定していますが、実際は4か月（9〜12月）です。', 3: '$600 は1か月分にすぎません。4か月分が必要です。' }
   },
   {
     id: 'q37', conceptId: 'c3_depreciation',
@@ -6910,8 +6910,8 @@ var QUESTIONS = [
       'D) An owner\'s equity account'
     ],
     ans: 2,
-    exp: 'Accumulated Depreciation is a contra-asset account. It is deducted from the related asset (e.g., Equipment) on the balance sheet to show the asset\'s book (carrying) value.',
-    we: { 0: 'Depreciation Expense is the expense account; Accumulated Depreciation is the contra-asset that accumulates total depreciation taken.', 1: 'Accumulated Depreciation is not a liability; it represents the portion of an asset\'s cost already expensed.', 3: 'Accumulated Depreciation is reported on the balance sheet as a deduction from the asset, not in the owner\'s equity section.' }
+    exp: 'Accumulated Depreciation（減価償却累計額）は評価勘定（contra-asset）です。貸借対照表で関連資産（例：Equipment）から控除して表示し、資産の帳簿価額（簿価）を示します。',
+    we: { 0: '費用勘定は Depreciation Expense（減価償却費）です。Accumulated Depreciation はこれまでの減価償却の累計を表す評価勘定です。', 1: 'Accumulated Depreciation は負債ではありません。資産原価のうち既に費用化された部分を表します。', 3: 'Accumulated Depreciation は貸借対照表で資産からの控除として表示され、自己資本の部には載りません。' }
   },
   {
     id: 'q38', conceptId: 'c3_adj_overview',
@@ -6925,8 +6925,8 @@ var QUESTIONS = [
       'D) Adjusting entries are only made for accrued items'
     ],
     ans: 2,
-    exp: 'Every adjusting entry affects at least one income statement account (revenue or expense) and at least one balance sheet account (asset or liability). This is a key characteristic of all adjusting entries.',
-    we: { 0: 'Adjusting entries typically do NOT involve cash; they adjust non-cash items like prepaid expenses, depreciation, and accruals.', 1: 'Adjusting entries are recorded AFTER the unadjusted trial balance is prepared and BEFORE the adjusted trial balance.', 3: 'Adjusting entries are made for both deferrals (prepaid expenses, unearned revenues) and accruals (accrued revenues, accrued expenses).' }
+    exp: 'すべての決算整理仕訳は、少なくとも1つの損益計算書項目（収益または費用）と、少なくとも1つの貸借対照表項目（資産または負債）に影響します。これは整理仕訳の重要な特徴です。',
+    we: { 0: '決算整理仕訳は通常 Cash を伴いません。前払費用・減価償却・見越しなど非現金項目を調整します。', 1: '決算整理仕訳は未調整試算表の作成後・調整後試算表の作成前に記入されます。', 3: '決算整理仕訳は繰延べ（前払費用・前受収益）と見越し（未収収益・未払費用）の両方について行います。' }
   },
 
   // ============================================================
@@ -6944,8 +6944,8 @@ var QUESTIONS = [
       'D) Income Statement credit and Balance Sheet credit columns'
     ],
     ans: 2,
-    exp: 'Net income appears as a debit in the Income Statement columns (because total credits exceed total debits there) and as a credit in the Balance Sheet columns (to complete the balance — it will be added to owner\'s equity).',
-    we: { 0: 'Net income in the IS debit column would mean expenses exceed revenues (a net loss), not net income. Balance Sheet debit is also incorrect.', 1: 'Net income is a credit in IS (revenues exceed expenses) but in the Balance Sheet it appears as a credit, not a debit.', 3: 'Net income cannot appear as a credit in both columns simultaneously; it must balance the worksheet by appearing as IS debit and BS credit.' }
+    exp: '純利益は精算表上、損益計算書（IS）列では借方に現れ（IS列は貸方＝収益が借方＝費用を上回るため、差額を借方に置いてバランスさせる）、貸借対照表（BS）列では貸方に現れます（自己資本に加算されるため）。',
+    we: { 0: 'IS列の借方に純利益が来るのは費用が収益を上回る純損失の場合で、純利益ではありません。BS列借方も誤りです。', 1: '純利益はIS列では貸方側の超過（収益>費用）に対応しますが、BS列では貸方に現れます。借方ではありません。', 3: '純利益が両方の列で同時に貸方に現れることはありません。IS列借方・BS列貸方として精算表をバランスさせます。' }
   },
   {
     id: 'q40', conceptId: 'c4_closing',
@@ -6959,8 +6959,8 @@ var QUESTIONS = [
       'D) Credited; Owner\'s Drawings is debited'
     ],
     ans: 1,
-    exp: 'With a net loss, expenses exceed revenues, so Income Summary has a debit balance. To close it, you credit Income Summary and debit Owner\'s Capital (reducing equity by the loss amount).',
-    we: { 0: 'If Income Summary is debited, it is being closed from a credit balance — that means net income, not net loss.', 2: 'Owner\'s Drawings is not used in the closing entry for Income Summary; Owner\'s Capital is used.', 3: 'Owner\'s Drawings is closed to Owner\'s Capital, not to Income Summary.' }
+    exp: '純損失の場合は費用が収益を上回るため、Income Summary（損益勘定）は借方残高になります。これを締め切るには Income Summary を貸方、Owner\'s Capital を借方にして、損失分だけ自己資本を減らします。',
+    we: { 0: 'Income Summary を借方記入して締め切るのは貸方残高（＝純利益）の場合であり、純損失ではありません。', 2: 'Income Summary の締切で使うのは Owner\'s Capital であり、Owner\'s Drawings ではありません。', 3: 'Owner\'s Drawings は Owner\'s Capital に振り替えて締め切るもので、Income Summary には振り替えません。' }
   },
   {
     id: 'q41', conceptId: 'c4_correcting',
@@ -6974,8 +6974,8 @@ var QUESTIONS = [
       'D) Cash overstated, Supplies understated'
     ],
     ans: 3,
-    exp: 'If Supplies should be $300 but shows $0, Supplies is understated by $300. If Cash shows $800 but should be $500 (since $300 went to buy supplies), Cash is overstated by $300. Cash is overstated and Supplies is understated.',
-    we: { 0: 'The wording is the same as D — Cash overstated and Supplies understated. If the order matters, option D more clearly states it.', 1: 'Supplies is understated (not overstated) and Cash is overstated (not understated).', 2: 'There is clearly an error — Supplies shows $0 but should show $300.' }
+    exp: 'Supplies が $300 あるべきなのに $0 と表示されていれば、Supplies は $300 過小計上です。Cash が $800 と表示されているが本来 $500（$300 を消耗品購入に支出）なら、Cash は $300 過大計上です。よって『Cash 過大・Supplies 過小』です。',
+    we: { 0: '記述内容はD（Cash 過大・Supplies 過小）と同じです。順序を厳密に問う場合、Dの方が明確に述べています。', 1: 'Supplies は過小（過大ではない）、Cash は過大（過小ではない）です。向きが逆です。', 2: '誤りは明らかに存在します。Supplies が $0 ですが本来 $300 あるべきです。' }
   },
   {
     id: 'q42', conceptId: 'c4_classified_assets',
@@ -6989,8 +6989,8 @@ var QUESTIONS = [
       'D) Accounts receivable, cash, prepaid insurance, inventory'
     ],
     ans: 2,
-    exp: 'Current assets are listed in order of liquidity (how quickly they can be converted to cash): Cash first, then Accounts Receivable, then Inventory, then Prepaid Insurance (least liquid).',
-    we: { 0: 'Prepaid Insurance is the least liquid current asset and should be listed last, not first.', 1: 'Inventory is less liquid than Accounts Receivable and Cash; the order starts with the most liquid (Cash) first.', 3: 'Cash is the most liquid and should be listed first, not Accounts Receivable.' }
+    exp: '流動資産は流動性（現金化の速さ）の高い順に並べます：Cash（現金）→ Accounts Receivable（売掛金）→ Inventory（棚卸資産）→ Prepaid Insurance（前払保険料、最も流動性が低い）。',
+    we: { 0: 'Prepaid Insurance は最も流動性が低い流動資産で、最後に並べます。先頭ではありません。', 1: 'Inventory は Accounts Receivable や Cash より流動性が低いです。最も流動性の高い Cash から並べます。', 3: '最も流動性が高いのは Cash で、先頭に来ます。Accounts Receivable ではありません。' }
   },
   {
     id: 'q43', conceptId: 'c4_classified_assets',
@@ -7004,8 +7004,8 @@ var QUESTIONS = [
       'D) Intangible asset'
     ],
     ans: 2,
-    exp: 'Land not currently used in business operations is classified as a long-term investment on the balance sheet, not as property, plant, and equipment (which is for assets used in operations).',
-    we: { 0: 'Current assets are expected to be converted to cash or used within one year; idle land is a long-term item.', 1: 'Property, plant, and equipment (PP&E) refers to assets actively used in business operations. Idle land held for future use is a long-term investment.', 3: 'Intangible assets are non-physical assets like patents, copyrights, and trademarks — not land.' }
+    exp: '事業活動に現在使用していない土地は、貸借対照表上『長期投資（long-term investment）』に分類され、有形固定資産（PP&E、事業で使用する資産）には分類されません。',
+    we: { 0: '流動資産は1年以内に現金化・費消されるものです。遊休地は長期項目です。', 1: '有形固定資産（PP&E）は事業活動で実際に使用される資産を指します。将来利用目的で保有する遊休地は長期投資です。', 3: '無形資産は特許・著作権・商標などの非物理的資産で、土地ではありません。' }
   },
 
   // ============================================================
@@ -7023,8 +7023,8 @@ var QUESTIONS = [
       'D) Correct errors found after the trial balance'
     ],
     ans: 2,
-    exp: 'Closing entries transfer the balances of all temporary accounts (revenues, expenses, and owner\'s drawings) to the Owner\'s Capital account at the end of the accounting period.',
-    we: { 0: 'Closing entries affect Owner\'s Capital (not Retained Earnings in a sole proprietorship) and involve all temporary accounts, not just one account.', 1: 'Permanent accounts (assets, liabilities, owner\'s capital) are NOT closed; only temporary accounts are closed.', 3: 'Correcting errors is done with correcting entries, not closing entries.' }
+    exp: '締切仕訳（closing entries）は、会計期末にすべての一時勘定（収益・費用・引出金）の残高を Owner\'s Capital（資本金）勘定に振り替えます。',
+    we: { 0: '締切仕訳は（個人企業では Retained Earnings ではなく）Owner\'s Capital に影響し、1つの勘定だけでなくすべての一時勘定が対象です。', 1: '恒久勘定（資産・負債・資本金）は締め切りません。一時勘定だけを締め切ります。', 3: '誤りの訂正は訂正仕訳（correcting entries）で行うもので、締切仕訳ではありません。' }
   },
   {
     id: 'q45', conceptId: 'c4_closing',
@@ -7038,8 +7038,8 @@ var QUESTIONS = [
       'D) Service Revenue'
     ],
     ans: 3,
-    exp: 'Service Revenue is a temporary account. Temporary accounts (revenues, expenses, and owner\'s drawings) are closed to zero at the end of each accounting period.',
-    we: { 0: 'Accounts Payable is a permanent (real) account — its balance carries forward to the next period.', 1: 'Owner\'s Capital is a permanent account; its balance is carried forward (though it is affected by closing entries).', 2: 'Accumulated Depreciation is a permanent contra-asset account; its balance accumulates over time and is not closed.' }
+    exp: 'Service Revenue は一時勘定（temporary account）です。一時勘定（収益・費用・引出金）は各会計期末にゼロへ締め切ります。',
+    we: { 0: 'Accounts Payable は恒久（実在）勘定で、残高は翌期へ繰り越されます。', 1: 'Owner\'s Capital は恒久勘定で残高は繰り越されます（締切仕訳の影響は受けますが締め切られて消えはしません）。', 2: 'Accumulated Depreciation は恒久的な評価勘定で、残高が累積し締め切られません。' }
   },
   {
     id: 'q46', conceptId: 'c4_cycle',
@@ -7053,8 +7053,8 @@ var QUESTIONS = [
       'D) Journalize adjusting entries, journalize transactions, post to ledger, prepare trial balance, prepare financial statements'
     ],
     ans: 1,
-    exp: 'The correct order: (1) Analyze transactions, (2) Journalize, (3) Post to ledger, (4) Prepare unadjusted trial balance, (5) Journalize and post adjusting entries, (6) Prepare adjusted trial balance, (7) Prepare financial statements, (8) Journalize and post closing entries, (9) Prepare post-closing trial balance.',
-    we: { 0: 'Adjusting entries come BEFORE preparing financial statements, not after.', 2: 'Journalizing always comes before posting to the ledger; you cannot post before you record.', 3: 'Adjusting entries are made AFTER transactions are journalized and posted to the ledger.' }
+    exp: '正しい会計サイクルの順序：(1)取引の分析 (2)仕訳 (3)元帳への転記 (4)未調整試算表 (5)決算整理仕訳の記入・転記 (6)調整後試算表 (7)財務諸表の作成 (8)締切仕訳の記入・転記 (9)締切後試算表。',
+    we: { 0: '決算整理仕訳は財務諸表の作成『前』に行います。後ではありません。', 2: '仕訳は必ず元帳転記の前に行います。記録する前に転記はできません。', 3: '決算整理仕訳は取引を仕訳・転記した『後』に行います。' }
   },
   {
     id: 'q47', conceptId: 'c4_post_closing_tb',
@@ -7068,8 +7068,8 @@ var QUESTIONS = [
       'D) Revenue and expense accounts only'
     ],
     ans: 2,
-    exp: 'The post-closing trial balance contains only permanent accounts (assets, liabilities, and owner\'s capital) with their ending balances after closing entries have been made. Temporary accounts have zero balances and are not listed.',
-    we: { 0: 'The post-closing trial balance does NOT include all ledger accounts — temporary accounts with zero balances are typically excluded.', 1: 'Temporary accounts are not included in the post-closing trial balance (or shown with zero balances if included), but this option says "only temporary accounts" which is wrong.', 3: 'Revenue and expense accounts are temporary and would have zero balances after closing; they are not the focus of the post-closing trial balance.' }
+    exp: '締切後試算表（post-closing trial balance）には、締切仕訳後の恒久勘定（資産・負債・資本金）のみが期末残高とともに載ります。一時勘定はゼロ残高であり載りません。',
+    we: { 0: '締切後試算表はすべての元帳勘定を含むわけではありません。ゼロ残高の一時勘定は通常除外されます。', 1: '一時勘定は締切後試算表に含まれません（含めてもゼロ残高）。『一時勘定のみ』という記述は誤りです。', 3: '収益・費用勘定は一時勘定で、締切後はゼロ残高になります。締切後試算表の中心ではありません。' }
   },
   {
     id: 'q48', conceptId: 'c4_closing',
@@ -7083,8 +7083,8 @@ var QUESTIONS = [
       'D) $75,000'
     ],
     ans: 1,
-    exp: 'Net Income = Revenues - Expenses = $75,000 - $28,000 - $12,000 = $35,000. Owner\'s Drawings ($8,000) is NOT an expense and does not affect net income.',
-    we: { 0: '$27,000 = $75,000 - $28,000 - $12,000 - $8,000 — this incorrectly treats drawings as an expense.', 2: '$43,000 = $75,000 - $28,000 - $8,000 — this omits rent expense and uses drawings.', 3: '$75,000 is revenue before deducting expenses.' }
+    exp: '純利益 = 収益 − 費用 = $75,000 − $28,000 − $12,000 = $35,000。Owner\'s Drawings（引出金 $8,000）は費用ではなく、純利益には影響しません。',
+    we: { 0: '$27,000 = $75,000 − $28,000 − $12,000 − $8,000 は、引出金を費用として誤って差し引いています。', 2: '$43,000 = $75,000 − $28,000 − $8,000 は、家賃費用を漏らし引出金を使った誤りです。', 3: '$75,000 は費用控除前の収益額です。' }
   },
 
   // ============================================================
@@ -7102,8 +7102,8 @@ var QUESTIONS = [
       'D) Merchandise Expense'
     ],
     ans: 0,
-    exp: 'Under a perpetual inventory system, purchases of merchandise are debited directly to the Inventory account, which is continuously updated.',
-    we: { 1: 'The "Purchases" account is used in a periodic inventory system, not a perpetual system.', 2: 'Cost of Goods Sold is debited when inventory is sold (at the time of sale), not when it is purchased.', 3: '"Merchandise Expense" is not a standard accounting account in either perpetual or periodic systems.' }
+    exp: '継続記録法（perpetual inventory system）では、商品の仕入は直接 Inventory（棚卸資産）勘定に借方記入され、在庫が常時更新されます。',
+    we: { 1: '『Purchases（仕入）』勘定を使うのは棚卸計算法（periodic system）であり、継続記録法ではありません。', 2: 'Cost of Goods Sold（売上原価）は商品を販売した時点（売上時）に借方記入するもので、仕入時ではありません。', 3: '『Merchandise Expense』は継続・棚卸どちらの制度でも標準的な勘定ではありません。' }
   },
   {
     id: 'q50', conceptId: 'c5_contra',
@@ -7117,8 +7117,8 @@ var QUESTIONS = [
       'D) Sales Revenue and Sales Discounts'
     ],
     ans: 2,
-    exp: 'Sales Discounts and Sales Returns and Allowances are contra-revenue accounts with normal debit balances (they reduce net sales). Sales Revenue has a normal credit balance.',
-    we: { 0: 'Sales Revenue has a normal credit balance; only COGS has a debit balance in this pair.', 1: 'Sales Revenue has a normal credit balance, not a debit balance.', 3: 'Sales Revenue has a normal credit balance; Sales Discounts has a debit balance — this pair is mixed.' }
+    exp: 'Sales Discounts（売上割引）と Sales Returns and Allowances（売上戻り・値引）は、通常『借方』残高を持つ評価収益勘定（contra-revenue）で、純売上高を減らします。Sales Revenue は通常『貸方』残高です。',
+    we: { 0: 'Sales Revenue は通常『貸方』残高です。この組のうち借方残高なのは COGS だけです。', 1: 'Sales Revenue は通常『貸方』残高であり、借方ではありません。', 3: 'Sales Revenue は通常『貸方』残高、Sales Discounts は借方残高で、この組は混在しています。' }
   },
   {
     id: 'q51', conceptId: 'c5_cogs',
@@ -7132,8 +7132,8 @@ var QUESTIONS = [
       'D) $410,000'
     ],
     ans: 1,
-    exp: 'Gross Profit = Net Sales - Cost of Goods Sold = $250,000 - $160,000 = $90,000.',
-    we: { 0: '$160,000 is the cost of goods sold, not the gross profit.', 2: '$250,000 is net sales, not gross profit.', 3: '$410,000 = $250,000 + $160,000 — this adds instead of subtracts.' }
+    exp: '売上総利益（Gross Profit）= 純売上高 − 売上原価 = $250,000 − $160,000 = $90,000。',
+    we: { 0: '$160,000 は売上原価であり、売上総利益ではありません。', 2: '$250,000 は純売上高であり、売上総利益ではありません。', 3: '$410,000 = $250,000 + $160,000 は、引き算すべきところを足し算した誤りです。' }
   },
   {
     id: 'q52', conceptId: 'c5_multistep_is',
@@ -7147,8 +7147,8 @@ var QUESTIONS = [
       'D) Cost of goods sold'
     ],
     ans: 3,
-    exp: 'Cost of Goods Sold (COGS) appears on both single-step and multi-step income statements. The single-step format lists all revenues together and all expenses (including COGS) together. The multi-step format separates COGS to compute gross profit.',
-    we: { 0: 'Gross profit is calculated and displayed only on the multi-step income statement, not the single-step format.', 1: 'Operating income is a subtotal only on the multi-step income statement.', 2: 'Income from operations is the same as operating income — only on the multi-step statement.' }
+    exp: '売上原価（COGS）は単一段階・多段階どちらの損益計算書にも現れます。単一段階方式は全収益と全費用（COGS含む）をそれぞれまとめ、多段階方式は COGS を分けて売上総利益を計算します。',
+    we: { 0: '売上総利益が計算・表示されるのは多段階式の損益計算書のみで、単一段階式では表示されません。', 1: '営業利益（operating income）は多段階式のみに現れる小計です。', 2: 'income from operations は operating income と同じで、多段階式のみに現れます。' }
   },
   {
     id: 'q53', conceptId: 'c5_sales_recording',
@@ -7162,8 +7162,8 @@ var QUESTIONS = [
       'D) Two journal entries: one to record cash and one to update Accounts Receivable'
     ],
     ans: 2,
-    exp: 'Under perpetual inventory, a cash sale requires two entries: (1) Debit Cash, Credit Sales Revenue (to record the sale); and (2) Debit Cost of Goods Sold, Credit Inventory (to transfer the cost from Inventory to COGS).',
-    we: { 0: 'A single entry recording only the sale price is incomplete — it does not record the cost of inventory sold.', 1: 'Debiting Cash and crediting Inventory is incorrect; when selling, you debit Cash and credit Sales Revenue (and separately debit COGS and credit Inventory).', 3: 'A cash sale does not involve Accounts Receivable; Accounts Receivable is used for sales on account.' }
+    exp: '継続記録法では現金売上に2つの仕訳が必要です：(1)借方 Cash / 貸方 Sales Revenue（売上の記録）、(2)借方 Cost of Goods Sold / 貸方 Inventory（販売した在庫の原価を Inventory から COGS へ振替）。',
+    we: { 0: '売価のみを記録する1仕訳は不完全で、販売した在庫の原価を記録していません。', 1: 'Cash を借方・Inventory を貸方にするのは誤りです。販売時は Cash 借方・Sales Revenue 貸方、別に COGS 借方・Inventory 貸方とします。', 3: '現金売上では Accounts Receivable は関係しません。売掛金は掛け売上で使います。' }
   },
 
   // ============================================================
@@ -7181,8 +7181,8 @@ var QUESTIONS = [
       'D) $3,500'
     ],
     ans: 1,
-    exp: 'Sales discount = $5,000 x 2% = $100. Cash received = $5,000 - $100 = $4,900. Terms 2/10, n/30 mean a 2% discount if paid within 10 days.',
-    we: { 0: '$5,000 is the full amount; the customer receives a 2% discount for paying within the discount period.', 2: '$4,000 would imply a 20% discount, which is not the 2% stated.', 3: '$3,500 does not follow from the given discount terms.' }
+    exp: '売上割引 = $5,000 × 2% = $100。受取現金 = $5,000 − $100 = $4,900。条件 2/10, n/30 は『10日以内の支払いで2%割引』を意味します。',
+    we: { 0: '$5,000 は割引前の全額です。割引期間内の支払いなので顧客は2%割引を受けます。', 2: '$4,000 は20%割引を意味し、提示された2%とは異なります。', 3: '$3,500 は与えられた割引条件からは導けません。' }
   },
   {
     id: 'q55', conceptId: 'c5_purchase_returns',
