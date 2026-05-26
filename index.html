@@ -17816,6 +17816,395 @@ function renderMockVisual(v) {
   return h;
 }
 
+/* ═══════════════════════════════════════════════════════
+   Feature 1: AI 苦手分野診断＋確認テストプロンプト (Opus 4.7)
+   ═══════════════════════════════════════════════════════ */
+
+var PASSES = [
+  { id:0, label:'🌐 全範囲',  desc:'全ソース' },
+  { id:2, label:'📚 教科書',  desc:'教科書練習問題 (254問)' },
+  { id:3, label:'📝 過去問',  desc:'Sample Midterm 等' },
+  { id:8, label:'🎨 Canvas',  desc:'Canvas のみ' }
+];
+
+function getQuestionSource(q) {
+  if (!q) return '教科書';
+  if (q.source && /Sample Midterm|Past Exam|過去問/i.test(q.source)) return '過去問';
+  if (q.source && /Canvas/i.test(q.source)) return 'Canvas';
+  return q.source || '教科書';
+}
+
+function getQuestionSourceId(q) {
+  var s = getQuestionSource(q);
+  if (s === '過去問') return 3;
+  if (s === 'Canvas') return 8;
+  return 2; // default 教科書
+}
+
+// quizState 拡張（既存 quizState を尊重）
+(function ensureFilterState(){
+  if (typeof quizState !== 'undefined') {
+    if (!Array.isArray(quizState.passModes)) quizState.passModes = [0];
+  }
+})();
+
+function saveFilterState() {
+  if (typeof quizState === 'undefined') return;
+  try {
+    localStorage.setItem('quiz_filters', JSON.stringify({
+      passModes: quizState.passModes,
+      mode: quizState.mode,
+      weekFilter: quizState.weekFilter,
+      selectedChs: quizState.selectedChs
+    }));
+  } catch(e) {}
+}
+
+function loadFilterState() {
+  if (typeof quizState === 'undefined') return;
+  try {
+    var s = JSON.parse(localStorage.getItem('quiz_filters') || 'null');
+    if (!s) return;
+    if (Array.isArray(s.passModes)) quizState.passModes = s.passModes;
+    if (typeof s.mode === 'string') quizState.mode = s.mode;
+    if (typeof s.weekFilter === 'number') quizState.weekFilter = s.weekFilter;
+    if (Array.isArray(s.selectedChs)) quizState.selectedChs = s.selectedChs;
+  } catch(e) {}
+}
+
+function setPassMode(p) {
+  if (typeof quizState === 'undefined') return;
+  if (!Array.isArray(quizState.passModes)) quizState.passModes = [0];
+  if (p === 0 || p === 8) {
+    quizState.passModes = [p];
+  } else {
+    var arr = quizState.passModes.filter(function(x){ return x !== 0 && x !== 8; });
+    var i = arr.indexOf(p);
+    if (i >= 0) arr.splice(i,1); else arr.push(p);
+    if (arr.length === 0) arr = [0];
+    quizState.passModes = arr;
+  }
+  saveFilterState();
+  if (typeof renderQuizHome === 'function') renderQuizHome();
+}
+
+// patch getFilteredQuestions to also apply source filter (additive wrapper)
+(function patchFiltered(){
+  var orig = typeof getFilteredQuestions === 'function' ? getFilteredQuestions : null;
+  if (!orig) return;
+  window.getFilteredQuestions = function() {
+    var base = orig();
+    if (typeof quizState === 'undefined' || !Array.isArray(quizState.passModes)) return base;
+    var pm = quizState.passModes;
+    if (pm.length === 0 || pm.indexOf(0) >= 0) return base;
+    var canvasOnly = (pm.indexOf(8) >= 0);
+    return base.filter(function(q){
+      var sid = getQuestionSourceId(q);
+      if (canvasOnly) return sid === 8;
+      return pm.indexOf(sid) >= 0;
+    });
+  };
+})();
+
+/* ─── Quiz history & batch management ─── */
+
+function loadBatches() {
+  try {
+    var raw = localStorage.getItem('quiz_batches');
+    var arr = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(arr)) arr = [];
+    return arr;
+  } catch(e) { return []; }
+}
+
+function saveBatches(arr) {
+  try { localStorage.setItem('quiz_batches', JSON.stringify(arr)); } catch(e) {}
+}
+
+function getActiveBatch() {
+  var arr = loadBatches();
+  var active = arr.filter(function(b){ return !b.sealed; })[0];
+  if (!active) {
+    active = { id: 'batch-' + Date.now(), sealed: false, createdAt: Date.now(), answers: [] };
+    arr.push(active);
+    saveBatches(arr);
+  }
+  return active;
+}
+
+function logAnswer(qid, chosenOrig, correct) {
+  var arr = loadBatches();
+  var active = arr.filter(function(b){ return !b.sealed; })[0];
+  if (!active) {
+    active = { id: 'batch-' + Date.now(), sealed: false, createdAt: Date.now(), answers: [] };
+    arr.push(active);
+  }
+  active.answers.push({ qid: qid, chosenOrig: chosenOrig, correct: correct, ts: Date.now() });
+  saveBatches(arr);
+  // Milestone notification at 50 answers
+  if (active.answers.length === 50 && typeof window !== 'undefined') {
+    try { showAiMilestone(); } catch(e){}
+  }
+}
+
+function findQuestionById(qid) {
+  // Search both QUESTIONS and QUESTIONS_FA1B_MOCK
+  if (typeof QUESTIONS !== 'undefined') {
+    for (var i = 0; i < QUESTIONS.length; i++) if (QUESTIONS[i].id === qid) return QUESTIONS[i];
+  }
+  if (typeof QUESTIONS_FA1B_MOCK !== 'undefined') {
+    for (var j = 0; j < QUESTIONS_FA1B_MOCK.length; j++) if (QUESTIONS_FA1B_MOCK[j].id === qid) return QUESTIONS_FA1B_MOCK[j];
+  }
+  return null;
+}
+
+// Patch selectOption to log answers into active batch
+(function patchSO_log(){
+  var orig = typeof selectOption === 'function' ? selectOption : null;
+  if (!orig) return;
+  var _origLogPatched = window.selectOption;
+  window.selectOption = function(idx) {
+    _origLogPatched(idx);
+    try {
+      if (typeof quizState === 'undefined' || !quizState.block) return;
+      var q = quizState.block[quizState.index];
+      if (!q || !q.id) return;
+      logAnswer(q.id, idx, idx === q.ans);
+    } catch(e){}
+  };
+})();
+
+/* ─── AI prompt generation (Opus 4.7) ─── */
+
+function buildAiPrompt(batch) {
+  if (!batch || !batch.answers || batch.answers.length === 0) return '';
+  var total = batch.answers.length;
+  var wrong = batch.answers.filter(function(a){ return !a.correct; });
+  var chCount = {};
+  var chWrong = {};
+  for (var i = 0; i < batch.answers.length; i++) {
+    var a = batch.answers[i];
+    var q = findQuestionById(a.qid);
+    if (!q) continue;
+    var ch = 'Ch' + (q.ch || '?');
+    chCount[ch] = (chCount[ch] || 0) + 1;
+    if (!a.correct) chWrong[ch] = (chWrong[ch] || 0) + 1;
+  }
+  var chLines = Object.keys(chCount).map(function(ch){
+    var tot = chCount[ch];
+    var w = chWrong[ch] || 0;
+    var pct = tot > 0 ? Math.round(100 * w / tot) : 0;
+    return { ch: ch, line: '- ' + ch + ': ' + w + '/' + tot + ' (' + pct + '%)', pct: pct };
+  }).sort(function(a,b){ return b.pct - a.pct; });
+
+  var wrongLines = wrong.slice(0, 30).map(function(a){
+    var q = findQuestionById(a.qid);
+    if (!q) return '- ' + a.qid + ': (問題情報なし)';
+    var chosenLet = String.fromCharCode(65 + a.chosenOrig);
+    var ansLet = String.fromCharCode(65 + q.ans);
+    var qSummary = (q.q || '').replace(/\s+/g,' ').slice(0, 120);
+    return '- ' + (q.id || a.qid) + ': 選' + chosenLet + '/正' + ansLet + ' | ' + qSummary;
+  });
+
+  var p = '';
+  p += '# 苦手分析＋確認テスト【Opus 4.7】\n\n';
+  p += '**解答 ' + total + '問 / 誤答 ' + wrong.length + '問**\n\n';
+  p += '## 章別誤答率（高い順）\n';
+  p += (chLines.map(function(x){ return x.line; }).join('\n') || '- (データなし)') + '\n\n';
+  p += '## 誤答リスト\n';
+  p += (wrongLines.join('\n') || '- (誤答なし)') + '\n\n';
+  p += '---\n\n';
+  p += '# 出力フォーマット\n\n';
+  p += '以下を **4パート** で順に出力。\n\n';
+  p += '## Part 1: 🎯 弱点 TOP 3\n\n';
+  p += '**1. [弱点名]**（該当: Q####, Q####）\n';
+  p += '- 誤解：1文\n';
+  p += '- 正解ルール：1文（数式は LaTeX）\n';
+  p += '- 5秒判別：「[キーワード]」を見たら[判断]\n';
+  p += '- 覚え方：1行\n\n';
+  p += '**2. ... / 3. ...**（同形式）\n\n';
+  p += '## Part 2: ⚡ 試験直前30秒チェック\n3行のみ（各弱点1行）\n\n';
+  p += '## Part 3: 📝 確認テスト（同概念・新シナリオ）\n\n';
+  p += 'Part 1 の3弱点それぞれにつき、新しい5択問題を **各3問・計9問** 出題。\n\n';
+  p += '各問題:\n\n';
+  p += '```\n### Q1 (弱点1・基礎)\n[英語問題文]\n\nA) ... B) ... C) ... D) ... E) ... F) わからない\n\n<details>\n<summary>解答と解説</summary>\n\n**正解: X**\n\n[日本語：なぜ正解か / 各誤答がなぜ違うか / 覚え方]\n</details>\n```\n\n';
+  p += '**作問ルール**：\n- 元問題のコピペ禁止、新シナリオ・新数値\n- 計算問題は選択肢に substitution 形式（最終値ではなく代入式）\n- 難易度：基礎→応用→試験本番レベル の順\n- 正解は A〜E に分散\n\n';
+  p += '## Part 4: 🏆 総合判定（日本語）\n各弱点について「基礎理解 / 応用可 / 試験本番OK」を一言で判定。\n\n';
+  p += '<details>\n<summary>🧠 推論過程</summary>\n誤答パターンの分類と弱点抽出ロジックを簡潔に。\n</details>\n\n';
+  p += '---\n\n';
+  p += '## 🌐 言語ルール\n- 問題文・選択肢：英語\n- 解説・判定・推論：日本語\n\n';
+  p += '## 📐 数式\nLaTeX：分数 `\\dfrac{}{}` / 平方根 `\\sqrt{}` / 添字 `_{}` / 上付 `^{}`\n例：`$EOQ = \\sqrt{\\dfrac{2C_oD}{C_h}}$`\n\n';
+  p += '## 禁止\n- 教科書全般のまとめ\n- 一般論（「もう一度勉強しましょう」系）\n- Part 1〜2 合わせて 1500字以内\n';
+  return p;
+}
+
+function copyAiPrompt(batchId) {
+  var arr = loadBatches();
+  var batch = arr.filter(function(b){ return b.id === batchId; })[0];
+  if (!batch) { alert('バッチが見つかりません'); return; }
+  var prompt = buildAiPrompt(batch);
+  if (!prompt) { alert('解答データがありません'); return; }
+  var seal = function(){
+    // seal the batch on first copy of an active batch
+    if (!batch.sealed) {
+      batch.sealed = true;
+      batch.sealedAt = Date.now();
+      saveBatches(arr);
+    }
+    if (typeof renderAiBatchList === 'function') renderAiBatchList();
+  };
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(prompt).then(function(){
+      seal();
+      alert('✅ プロンプトをコピーしました\n(' + batch.answers.length + '問分 / ' + prompt.length + '字)');
+    }).catch(function(){
+      // fallback
+      _fallbackCopy(prompt);
+      seal();
+    });
+  } else {
+    _fallbackCopy(prompt);
+    seal();
+  }
+}
+
+function _fallbackCopy(text) {
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('✅ プロンプトをコピーしました (' + text.length + '字)');
+  } catch(e) {
+    alert('コピー失敗。手動でモーダル内のテキストを選択してください。');
+  }
+}
+
+function renderAiBatchList() {
+  var listEl = document.getElementById('ai-batch-list');
+  if (!listEl) return;
+  var arr = loadBatches();
+  if (arr.length === 0) {
+    listEl.innerHTML = '<div style="color:#94a3b8;text-align:center;padding:20px;">解答履歴がありません。クイズを解いてみましょう。</div>';
+    return;
+  }
+  // newest first
+  var sorted = arr.slice().sort(function(a,b){ return (b.sealedAt||b.createdAt) - (a.sealedAt||a.createdAt); });
+  var html = sorted.map(function(b){
+    var n = (b.answers||[]).length;
+    var w = (b.answers||[]).filter(function(a){return !a.correct;}).length;
+    var status = b.sealed ?
+      '<span style="color:#94a3b8;font-size:11px;">封印済 ' + new Date(b.sealedAt||b.createdAt).toLocaleString('ja-JP') + '</span>' :
+      '<span style="color:#34d399;font-size:11px;">● アクティブ</span>';
+    var canCopy = n >= 10 || b.sealed;
+    var btn = canCopy ?
+      '<button onclick="copyAiPrompt(\'' + b.id + '\')" style="background:#7c3aed;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;">📋 コピー</button>' :
+      '<span style="color:#64748b;font-size:11px;">10問解くと有効化</span>';
+    return '<div style="background:#0f1c2e;border:1px solid #2d3a55;border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:12px;">' +
+      '<div style="flex:1;min-width:0;">' +
+        '<div style="font-size:13px;color:#e8eef7;font-weight:700;">' + n + '問 (誤答 ' + w + '問)</div>' +
+        '<div style="margin-top:2px;">' + status + '</div>' +
+      '</div>' +
+      '<div style="flex:0 0 auto;">' + btn + '</div>' +
+    '</div>';
+  }).join('');
+  listEl.innerHTML = html;
+}
+
+function toggleAiPromptModal() {
+  var ov = document.getElementById('ai-modal-overlay');
+  var md = document.getElementById('ai-modal');
+  if (!ov || !md) return;
+  var open = md.classList.contains('open');
+  if (open) {
+    md.classList.remove('open');
+    ov.classList.remove('open');
+  } else {
+    renderAiBatchList();
+    md.classList.add('open');
+    ov.classList.add('open');
+  }
+}
+
+function showAiMilestone() {
+  try {
+    if (typeof showToast === 'function') {
+      showToast('🎉 50問達成！AIプロンプトを生成できます');
+    } else {
+      console.log('[milestone] 50 questions answered');
+    }
+  } catch(e){}
+}
+
+/* ─── Render-time injection: pass-filter pills + AI prompt button ─── */
+(function patchQH_v2(){
+  var origQH = typeof renderQuizHome === 'function' ? renderQuizHome : null;
+  if (!origQH) return;
+  window.renderQuizHome = function() {
+    origQH();
+    var quizHomeDiv = document.getElementById('quiz-home');
+    if (!quizHomeDiv) return;
+
+    // 1) Source filter pills (passes)
+    if (!quizHomeDiv.querySelector('.pass-filter-bar')) {
+      var pmArr = (typeof quizState !== 'undefined' && Array.isArray(quizState.passModes)) ? quizState.passModes : [0];
+      var passBar = document.createElement('div');
+      passBar.className = 'pass-filter-bar';
+      passBar.style.cssText = 'margin:14px 0;padding:12px 14px;background:#0f1c2e;border:1px solid #1e3a5f;border-radius:10px;';
+      var ph = '<div style="font-size:13px;font-weight:700;color:#22d3ee;margin-bottom:8px;">📂 ソース別フィルタ</div>';
+      ph += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+      ph += PASSES.map(function(p){
+        var active = pmArr.indexOf(p.id) >= 0;
+        return '<button onclick="setPassMode(' + p.id + ')" style="' +
+          'background:' + (active ? '#22d3ee' : '#1a2940') + ';' +
+          'color:' + (active ? '#0a1421' : '#cbd5e1') + ';' +
+          'border:1px solid ' + (active ? '#22d3ee' : '#2d3a55') + ';' +
+          'padding:6px 12px;border-radius:18px;font-size:12px;font-weight:700;cursor:pointer;" ' +
+          'title="' + p.desc.replace(/"/g,'&quot;') + '">' + p.label + '</button>';
+      }).join('');
+      ph += '</div>';
+      passBar.innerHTML = ph;
+      // insert near top
+      var firstChild = quizHomeDiv.firstChild;
+      quizHomeDiv.insertBefore(passBar, firstChild ? firstChild.nextSibling : null);
+    }
+
+    // 2) AI prompt FAB (inside quiz tab)
+    if (!quizHomeDiv.querySelector('.ai-prompt-card')) {
+      var batches = loadBatches();
+      var active = batches.filter(function(b){return !b.sealed;})[0];
+      var n = active ? active.answers.length : 0;
+      var card = document.createElement('div');
+      card.className = 'ai-prompt-card';
+      card.style.cssText = 'margin:14px 0;padding:14px 16px;background:linear-gradient(135deg,#581c87,#1e3a8a);border:1.5px solid #a78bfa;border-radius:12px;';
+      card.innerHTML =
+        '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">' +
+          '<div style="flex:1;min-width:200px;">' +
+            '<div style="font-size:15px;font-weight:800;color:#ede9fe;">🤖 AI 苦手分析プロンプト</div>' +
+            '<div style="font-size:12px;color:#c4b5fd;margin-top:2px;">' +
+              '現在のバッチ: <b>' + n + '問</b> 解答済' +
+              (n >= 10 ? ' (コピー可能)' : ' (10問でコピー有効化)') +
+            '</div>' +
+          '</div>' +
+          '<button onclick="toggleAiPromptModal()" style="' +
+            'background:#a78bfa;color:#1e1b4b;border:none;border-radius:8px;' +
+            'padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;flex:0 0 auto;">' +
+            '📋 プロンプト管理' +
+          '</button>' +
+        '</div>';
+      quizHomeDiv.insertBefore(card, quizHomeDiv.children[1] || null);
+    }
+  };
+})();
+
+// Load filter state once on page load
+document.addEventListener('DOMContentLoaded', function() {
+  loadFilterState();
+});
+
 </script>
 
 <!-- Enhancement overlays & panels -->
@@ -17853,6 +18242,25 @@ function renderMockVisual(v) {
     <div id="abbr-list"></div>
   </div>
 </div>
+
+<!-- AI 苦手分析プロンプト モーダル -->
+<div class="ai-modal-overlay" id="ai-modal-overlay" onclick="toggleAiPromptModal()" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:300;opacity:0;pointer-events:none;transition:opacity .25s;"></div>
+<div class="ai-modal" id="ai-modal" role="dialog" aria-modal="true" style="position:fixed;top:5vh;left:50%;width:min(720px,92vw);max-height:90vh;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0f1c2e;border:2px solid #a78bfa;border-radius:16px;z-index:301;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,0.6);transition:opacity .25s,transform .25s;">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:2px solid #2d3a55;background:#0f1c2e;border-radius:14px 14px 0 0;">
+    <div style="font-size:18px;font-weight:800;color:#a78bfa;">🤖 AI 苦手分析プロンプト</div>
+    <button onclick="toggleAiPromptModal()" aria-label="閉じる" style="background:#1a2940;border:2px solid #ef4444;border-radius:50%;color:#ef4444;width:36px;height:36px;font-size:20px;cursor:pointer;">×</button>
+  </div>
+  <div style="padding:14px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1;">
+    <div style="font-size:12px;color:#cbd5e1;background:#0a1421;border-left:3px solid #a78bfa;border-radius:6px;padding:10px 12px;margin-bottom:14px;line-height:1.6;">
+      <b style="color:#ede9fe;">使い方:</b> 10問以上解いたら「📋 コピー」→ Claude (Opus 4.7) に貼り付け → 弱点分析＋確認テスト9問が一度に生成されます。コピーするとバッチが封印され新バッチが始まります。
+    </div>
+    <div id="ai-batch-list"></div>
+  </div>
+</div>
+<style>
+  .ai-modal-overlay.open{opacity:1!important;pointer-events:auto!important;}
+  .ai-modal.open{opacity:1!important;pointer-events:auto!important;transform:translate(-50%,0)!important;}
+</style>
 
 <button class="roadmap-fab" id="roadmap-fab" onclick="toggleRoadmapModal()" title="学習ロードマップ">🏠</button>
 <div class="roadmap-modal-overlay" id="roadmap-modal-overlay" onclick="toggleRoadmapModal()"></div>
