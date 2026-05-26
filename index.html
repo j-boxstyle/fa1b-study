@@ -163,7 +163,11 @@
     .mode-btn { background: #1a2940; border: 2px solid #1e3a5f; border-radius: 10px; padding: 14px; font-size: 24px; cursor: pointer; color: #e2e8f0; transition: all 0.2s; text-align: center; }
     .mode-btn.active { border-color: #eab308; background: rgba(234,179,8,0.1); color: #eab308; }
     .mode-btn:hover { border-color: #eab308; }
-    
+    .qcount-selector { display: flex; gap: 8px; flex-wrap: wrap; }
+    .qcount-btn { background: #1a2438; color: #aab8d0; border: 1px solid #2d3a55; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 19px; font-weight: 600; transition: all 0.2s; }
+    .qcount-btn:hover { background: #2a4373; color: #fff; }
+    .qcount-btn.active { background: #f97316; color: #0f1c2e; border-color: #f97316; font-weight: 700; }
+
     .start-btn { width: 100%; background: #eab308; color: #0f1c2e; font-size: 28px; font-weight: 700; border: none; border-radius: 12px; padding: 18px; cursor: pointer; margin-top: 12px; }
     .start-btn:hover { background: #ca9a07; }
     .start-btn:disabled { background: #4a4a2a; color: #94a3b8; cursor: not-allowed; }
@@ -12667,12 +12671,25 @@ function renderQuizHome() {
   }
   html += '</div>';
   var qCount = getFilteredQuestions().length;
-  html += '<button class="start-btn" onclick="startQuiz()">Start Quiz — ' + qCount + '問中5問出題</button>';
+  var savedCount = parseInt(loadState('quiz_count', 5), 10) || 5;
+  var willAsk = Math.min(savedCount, qCount);
+  html += '<div style="font-size:22px;font-weight:700;margin:16px 0 8px;color:#94a3b8;">問題数</div>';
+  html += '<div class="qcount-selector">';
+  [5, 10, 15, 20, 30].forEach(function(n) {
+    html += '<div class="qcount-btn' + (savedCount === n ? ' active' : '') + '" onclick="setQuizCount(' + n + ')">' + n + '問</div>';
+  });
+  html += '</div>';
+  html += '<button class="start-btn" onclick="startQuiz(' + savedCount + ')">Start Quiz — ' + qCount + '問中' + willAsk + '問出題</button>';
   document.getElementById('quiz-home').innerHTML = html;
 }
 
 function setQuizMode(mode) {
   quizState.mode = mode;
+  renderQuizHome();
+}
+
+function setQuizCount(n) {
+  saveState('quiz_count', n);
   renderQuizHome();
 }
 
@@ -12776,14 +12793,16 @@ function shuffleBlockOptions(block) {
   return out;
 }
 
-function startQuiz() {
+function startQuiz(n) {
   var pool = getFilteredQuestions();
   if (pool.length === 0) {
     alert('該当する問題がありません。モードを変更してください。');
     return;
   }
+  var count = n || parseInt(loadState('quiz_count', 5), 10) || 5;
+  if (count > pool.length) count = pool.length;
   var shuffled = shuffleArray(pool);
-  quizState.block = shuffleBlockOptions(shuffled.slice(0, 5));
+  quizState.block = shuffleBlockOptions(shuffled.slice(0, count));
   quizState.index = 0;
   quizState.answered = false;
   quizState.chosen = -1;
