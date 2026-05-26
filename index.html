@@ -11114,6 +11114,106 @@ var QUESTIONS = [
     exp: 'P/E = 株価 / EPS = €50 / €4 = 12.5×。「1円利益に対し12.5円払う」を意味する。',
     we: { 1: '8.0× = €4 ÷ €0.5 のような誤分母計算。P/E 公式は Price ÷ EPS = €50 ÷ €4 = 12.5。', 2: '0.08 = €4 ÷ €50 = **逆数** (Earnings Yield = 8%、利回り指標)。P/E は Price/EPS で逆方向。', 3: '€50 は **株価そのもの**。P/E は比率 (倍数) なので単位は「times」、金額表記は不適切。', 4: '25% は €50 ÷ €200 のような誤計算。P/E は **%表記しない** (倍数 = times で表現する慣習)。', 5: '「わからない」を選択。P/E = Market Price ÷ EPS。利益1円に対し株価何倍を支払うか。' },
     fig: '<div style="color:#cbd5e1;font-size:16px;display:flex;justify-content:center;"><div style="border:2px solid #475569;padding:14px;border-radius:8px;min-width:380px;"><div style="text-align:center;font-weight:700;color:#fbbf24;margin-bottom:10px;">Shareholder Metrics Dashboard</div><table style="width:100%;font-size:16px;"><tr><td style="padding:5px;">Share price (Market Price)</td><td style="padding:5px;text-align:right;">€50.00</td></tr><tr><td style="padding:5px;">Net Income</td><td style="padding:5px;text-align:right;">€400,000</td></tr><tr><td style="padding:5px;">Ordinary shares o/s</td><td style="padding:5px;text-align:right;">100,000shares</td></tr><tr><td style="padding:5px;color:#86efac;">EPS = NI / Shares</td><td style="padding:5px;text-align:right;color:#86efac;">€4.00</td></tr><tr><td style="padding:5px;">Cash Dividend per Share</td><td style="padding:5px;text-align:right;">€1.50</td></tr><tr><td style="padding:5px;">Payout Ratio = Div/EPS</td><td style="padding:5px;text-align:right;">37.5%</td></tr><tr style="background:rgba(234,179,8,0.15);font-weight:700;"><td style="padding:6px;border-top:1px dashed #fbbf24;">P/E Ratio = Price/EPS</td><td style="padding:6px;text-align:right;border-top:1px dashed #fbbf24;">?</td></tr></table></div></div>'
+  },
+  {
+    id:'q_hw_t1_1', conceptId:'c1_transaction', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.1] Using Miaoli&#39;s Travel Agency&#39;s April transactions below, compute the net income (or loss) for April.',
+    opts:['A) $6,200 net income','B) $10,000 net income','C) $6,800 net income','D) $5,600 net income'],
+    ans:0,
+    exp:'純利益 = 収益 − 費用。収益 = サービス $10,000（取引6）。費用 = 家賃 $600 + 広告 $700 + 給与 $2,500 = $3,800。純利益 = $10,000 − $3,800 = $6,200。配当 $600 や設備・備品の購入は費用ではない点に注意。',
+    we:{ 1: '$10,000 は収益総額。費用 $3,800 を引いていない。', 2: '$6,800 は配当 $600 を引き忘れた等の誤り。費用のみ差し引く。', 3: '$5,600 は配当 $600 を費用に含めた誤り。配当は費用ではない（資本の分配）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Miaoli&#39;s Travel Agency</b> — transactions completed during April:<ol style="margin:6px 0 0;padding-left:20px;"><li>Shareholders invested $15,000 cash for ordinary shares.</li><li>Paid $600 cash for April office rent.</li><li>Purchased equipment for $3,000 cash.</li><li>Incurred $700 of advertising costs (on account).</li><li>Paid $900 cash for office supplies.</li><li>Performed services worth $10,000: $3,000 received in cash, $7,000 billed on account.</li><li>Declared and paid $600 dividend.</li><li>Paid $500 of the advertising amount due in (4).</li><li>Paid employees&#39; salaries $2,500.</li><li>Received $4,000 cash from customers billed in (6).</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_2', conceptId:'c1_acct_eq', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.1] Using Miaoli&#39;s Travel Agency&#39;s April transactions below, what is the ending Cash balance at April 30?',
+    opts:['A) $13,900','B) $15,000','C) $14,500','D) $9,900'],
+    ans:0,
+    exp:'現金の増減のみ集計：+15,000 −600 −3,000 −900 +3,000 −600 −500 −2,500 +4,000 = $13,900。掛け取引（広告 $700、売上 $7,000）は現金に影響しない。',
+    we:{ 1: '$15,000 は当初出資のみ。その後の現金収支を反映していない。', 2: '$14,500 は計算誤り。', 3: '$9,900 は掛売上 $7,000 を現金に含めた等の誤り（$7,000 は売掛金）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Miaoli&#39;s Travel Agency</b> — transactions completed during April:<ol style="margin:6px 0 0;padding-left:20px;"><li>Shareholders invested $15,000 cash for ordinary shares.</li><li>Paid $600 cash for April office rent.</li><li>Purchased equipment for $3,000 cash.</li><li>Incurred $700 of advertising costs (on account).</li><li>Paid $900 cash for office supplies.</li><li>Performed services worth $10,000: $3,000 received in cash, $7,000 billed on account.</li><li>Declared and paid $600 dividend.</li><li>Paid $500 of the advertising amount due in (4).</li><li>Paid employees&#39; salaries $2,500.</li><li>Received $4,000 cash from customers billed in (6).</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_3', conceptId:'c1_acct_eq', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.1] Using Miaoli&#39;s Travel Agency&#39;s April transactions below, what is the Accounts Receivable balance at April 30?',
+    opts:['A) $3,000','B) $7,000','C) $0','D) $10,000'],
+    ans:0,
+    exp:'取引6で $7,000 を掛け（売掛金）計上。取引10で $4,000 を回収。期末売掛金 = $7,000 − $4,000 = $3,000。',
+    we:{ 1: '$7,000 は当初の掛売上。$4,000 の回収を引いていない。', 2: '$0 は全額回収を仮定した誤り（回収は $4,000 のみ）。', 3: '$10,000 はサービス総額（うち $3,000 は現金）。掛分は $7,000。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Miaoli&#39;s Travel Agency</b> — transactions completed during April:<ol style="margin:6px 0 0;padding-left:20px;"><li>Shareholders invested $15,000 cash for ordinary shares.</li><li>Paid $600 cash for April office rent.</li><li>Purchased equipment for $3,000 cash.</li><li>Incurred $700 of advertising costs (on account).</li><li>Paid $900 cash for office supplies.</li><li>Performed services worth $10,000: $3,000 received in cash, $7,000 billed on account.</li><li>Declared and paid $600 dividend.</li><li>Paid $500 of the advertising amount due in (4).</li><li>Paid employees&#39; salaries $2,500.</li><li>Received $4,000 cash from customers billed in (6).</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_4', conceptId:'c1_transaction', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.4] Using Stiner Deliveries Ltd.&#39;s June transactions below, compute the net income for June.',
+    opts:['A) £4,450','B) £6,300','C) £4,750','D) £3,150'],
+    ans:0,
+    exp:'収益 = サービス £4,800（6/5）+ £1,500（6/20）= £6,300。費用 = 家賃 £500 + ガソリン £100 + 光熱費 £250 + 給与 £1,000 = £1,850。純利益 = £6,300 − £1,850 = £4,450。配当 £300・備品/借入返済は損益に無関係。',
+    we:{ 1: '£6,300 は収益総額。費用 £1,850 を引いていない。', 2: '£4,750 は計算誤り。', 3: '£3,150 は配当 £300 等を費用に含めた誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Stiner Deliveries Ltd.</b> — transactions during June 2025:<ul style="margin:6px 0 0;padding-left:20px;list-style:none;"><li>Jun 1 — Shareholders invested £10,000 cash for ordinary shares.</li><li>Jun 2 — Purchased a used van for £14,000: paid £2,000 cash, signed a note payable for the balance.</li><li>Jun 3 — Paid £500 office rent for the month.</li><li>Jun 5 — Performed services worth £4,800 on account.</li><li>Jun 9 — Declared and paid £300 cash dividends.</li><li>Jun 12 — Purchased supplies for £150 on account.</li><li>Jun 15 — Received £1,250 cash for services performed on June 5.</li><li>Jun 17 — Purchased gasoline for £100 on account.</li><li>Jun 20 — Received £1,500 cash for services performed.</li><li>Jun 23 — Made a £500 cash payment on the note payable.</li><li>Jun 26 — Paid £250 for utilities.</li><li>Jun 29 — Paid for the gasoline purchased on June 17.</li><li>Jun 30 — Paid £1,000 for employee salaries.</li></ul></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_5', conceptId:'c4_classified_assets', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.4] Using Stiner Deliveries Ltd.&#39;s June transactions below, what are total assets at June 30, 2025?',
+    opts:['A) £25,800','B) £14,150','C) £11,650','D) £8,100'],
+    ans:0,
+    exp:'資産 = 現金 £8,100 + 売掛金 £3,550 + 備品（van）£14,000 + 消耗品 £150 = £25,800。（A=L+E の検算：負債 £11,650 + 資本 £14,150 = £25,800）。',
+    we:{ 1: '£14,150 は資本合計（資産ではない）。', 2: '£11,650 は負債合計。', 3: '£8,100 は現金のみ。他の資産（売掛金・van・消耗品）を含めていない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Stiner Deliveries Ltd.</b> — transactions during June 2025:<ul style="margin:6px 0 0;padding-left:20px;list-style:none;"><li>Jun 1 — Shareholders invested £10,000 cash for ordinary shares.</li><li>Jun 2 — Purchased a used van for £14,000: paid £2,000 cash, signed a note payable for the balance.</li><li>Jun 3 — Paid £500 office rent for the month.</li><li>Jun 5 — Performed services worth £4,800 on account.</li><li>Jun 9 — Declared and paid £300 cash dividends.</li><li>Jun 12 — Purchased supplies for £150 on account.</li><li>Jun 15 — Received £1,250 cash for services performed on June 5.</li><li>Jun 17 — Purchased gasoline for £100 on account.</li><li>Jun 20 — Received £1,500 cash for services performed.</li><li>Jun 23 — Made a £500 cash payment on the note payable.</li><li>Jun 26 — Paid £250 for utilities.</li><li>Jun 29 — Paid for the gasoline purchased on June 17.</li><li>Jun 30 — Paid £1,000 for employee salaries.</li></ul></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_6', conceptId:'c4_classified_assets', ch:1, type:'C',
+    q:'[Canvas HW T1 / P1.4] Using Stiner Deliveries Ltd.&#39;s June transactions below, what are total liabilities at June 30, 2025?',
+    opts:['A) £11,650','B) £11,500','C) £14,150','D) £150'],
+    ans:0,
+    exp:'負債 = 支払手形（note payable）£11,500 + 買掛金（A/P, 消耗品 £150）= £11,650。van £14,000 のうち £2,000 は現金、£12,000 が手形 → 6/23 に £500 返済 → 残 £11,500。',
+    we:{ 1: '£11,500 は支払手形のみ。買掛金 £150 を加えていない。', 2: '£14,150 は資本合計。', 3: '£150 は買掛金のみ。支払手形 £11,500 を含めていない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Stiner Deliveries Ltd.</b> — transactions during June 2025:<ul style="margin:6px 0 0;padding-left:20px;list-style:none;"><li>Jun 1 — Shareholders invested £10,000 cash for ordinary shares.</li><li>Jun 2 — Purchased a used van for £14,000: paid £2,000 cash, signed a note payable for the balance.</li><li>Jun 3 — Paid £500 office rent for the month.</li><li>Jun 5 — Performed services worth £4,800 on account.</li><li>Jun 9 — Declared and paid £300 cash dividends.</li><li>Jun 12 — Purchased supplies for £150 on account.</li><li>Jun 15 — Received £1,250 cash for services performed on June 5.</li><li>Jun 17 — Purchased gasoline for £100 on account.</li><li>Jun 20 — Received £1,500 cash for services performed.</li><li>Jun 23 — Made a £500 cash payment on the note payable.</li><li>Jun 26 — Paid £250 for utilities.</li><li>Jun 29 — Paid for the gasoline purchased on June 17.</li><li>Jun 30 — Paid £1,000 for employee salaries.</li></ul></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_7', conceptId:'c1_transaction', ch:1, type:'A',
+    q:'[Canvas HW T1 / E1.7] For Collins Computer Timeshare (below), which transaction results in an INCREASE in assets and an INCREASE in liabilities?',
+    opts:['A) (1) Purchased computers on account','B) (4) Performed services for cash','C) (6) Shareholders invested cash','D) (2) Paid cash for rent'],
+    ans:0,
+    exp:'(1) 掛けでコンピュータ購入：資産（備品）増加 + 負債（買掛金）増加 → 答え。',
+    we:{ 1: '(4) 現金サービス：資産増 + 資本増（収益）。負債は動かない。', 2: '(6) 出資：資産増 + 資本増。負債は動かない。', 3: '(2) 家賃現金払：資産減 + 資本減（費用）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Collins Computer Timeshare</b> — transactions during May 2025:<ol style="margin:6px 0 0;padding-left:20px;"><li>Purchased computers for R$20,000 from Digital Equipment on account.</li><li>Paid R$4,000 cash for May rent on storage space.</li><li>Received R$17,000 cash from customers for contracts billed in April.</li><li>Performed computer services for Viking Construction for R$4,000 cash.</li><li>Paid Tri-State Power R$11,000 cash for energy usage in May.</li><li>Shareholders invested an additional R$29,000 in exchange for ordinary shares.</li><li>Paid Digital Equipment for the computers purchased in (1).</li><li>Incurred advertising expense for May of R$1,200 on account.</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_8', conceptId:'c1_transaction', ch:1, type:'A',
+    q:'[Canvas HW T1 / E1.7] For Collins Computer Timeshare (below), which transaction results in a DECREASE in assets and a DECREASE in liabilities?',
+    opts:['A) (7) Paid Digital Equipment for the computers','B) (2) Paid cash for rent','C) (5) Paid for energy usage','D) (3) Received cash from April billings'],
+    ans:0,
+    exp:'(7) 買掛金の支払：資産（現金）減少 + 負債（買掛金）減少 → 答え。',
+    we:{ 1: '(2) 家賃払：資産減 + 資本減（費用）。負債は動かない。', 2: '(5) 電気代払：資産減 + 資本減（費用）。', 3: '(3) 売掛金回収：資産内の振替（現金増・売掛金減）。負債・資本は不変。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Collins Computer Timeshare</b> — transactions during May 2025:<ol style="margin:6px 0 0;padding-left:20px;"><li>Purchased computers for R$20,000 from Digital Equipment on account.</li><li>Paid R$4,000 cash for May rent on storage space.</li><li>Received R$17,000 cash from customers for contracts billed in April.</li><li>Performed computer services for Viking Construction for R$4,000 cash.</li><li>Paid Tri-State Power R$11,000 cash for energy usage in May.</li><li>Shareholders invested an additional R$29,000 in exchange for ordinary shares.</li><li>Paid Digital Equipment for the computers purchased in (1).</li><li>Incurred advertising expense for May of R$1,200 on account.</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_9', conceptId:'c1_transaction', ch:1, type:'A',
+    q:'[Canvas HW T1 / E1.6] For Spring Cruises (below), how does transaction (3) "Purchased equipment on account" affect the accounting equation?',
+    opts:['A) Increase in assets and increase in liabilities','B) Increase in assets and increase in equity','C) Decrease in assets and decrease in liabilities','D) No effect on the accounting equation'],
+    ans:0,
+    exp:'掛けで設備購入：資産（設備）増加 + 負債（買掛金）増加。現金は動かない（後払い）。',
+    we:{ 1: '資本は増えない。代金は負債（買掛金）として計上される。', 2: '資産は増加（減少ではない）。', 3: '取引は等式に影響する（資産↑・負債↑）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Spring Cruises</b> — selected transactions:<ol style="margin:6px 0 0;padding-left:20px;"><li>Received cash investment from shareholders in exchange for ordinary shares.</li><li>Paid monthly rent.</li><li>Purchased equipment on account.</li><li>Billed customers for services performed.</li><li>Paid dividends.</li></ol></div>',
+    source:'FA1B Canvas Homework T1'
+  },
+  {
+    id:'q_hw_t1_10', conceptId:'c1_acct_eq', ch:1, type:'A',
+    q:'[Canvas HW T1 / E1.5] In Diehl Cleaners&#39; statement of financial position items, how is "Salaries and wages payable" classified?',
+    opts:['A) Liability','B) Asset','C) Equity','D) Expense'],
+    ans:0,
+    exp:'"...payable"（未払◯◯）は将来支払う義務 → 負債。Salaries and wages payable = 未払給与 → Liability。',
+    we:{ 1: '資産ではない。受け取る権利（receivable）なら資産だが、payable は支払義務。', 2: '資本ではない。', 3: '費用（Salaries Expense）とは別。payable は未払いの「義務」=負債。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Diehl Cleaners</b> — SFP items: Accounts payable, Accounts receivable, Cash, Notes payable, Equipment, Salaries and wages payable, Supplies, Share capital – ordinary.</div>',
+    source:'FA1B Canvas Homework T1'
   }
 ];
 
