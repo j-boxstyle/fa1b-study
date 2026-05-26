@@ -9597,15 +9597,16 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe2', conceptId: 'c6_periodic_average', ch: 6, type: 'C',
-    q: '[Sample Final Q2] Bingeau Inc. April data: Inv 4/1: 15,000@€7 = €105,000. Purchases: 4/11: 15,000@€6, 4/24: 20,000@€5. Sales: 4/18: 20,000, 4/30: 25,000. Periodic system, average-cost. COGS in April 2018 is:',
+    q: '[Sample Final Q2] The following data is available for the month of April 2018 for Bingeau Inc. (see table below). If Bingeau Inc. uses a periodic inventory system and an average-cost inventory cost assumption, the cost of the goods sold in April 2018 is:',
     opts: ['A) €295,000','B) €270,000','C) €265,500','D) €255,800'],
+    fig: '<table style="width:100%;color:#cbd5e1;border-collapse:collapse;font-size:0.9em;"><thead><tr style="background:#1e3a5f;"><th style="padding:6px;border:1px solid #475569;text-align:left;">April 2018</th><th style="padding:6px;border:1px solid #475569;">Date</th><th style="padding:6px;border:1px solid #475569;">Units</th><th style="padding:6px;border:1px solid #475569;">Price/unit</th><th style="padding:6px;border:1px solid #475569;">Total</th></tr></thead><tbody><tr><td style="padding:5px;border:1px solid #475569;font-weight:700;">Inventory</td><td style="padding:5px;border:1px solid #475569;text-align:center;">April 1</td><td style="padding:5px;border:1px solid #475569;text-align:right;">15,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€7</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€105,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;font-weight:700;">Purchases</td><td style="padding:5px;border:1px solid #475569;text-align:center;">April 11</td><td style="padding:5px;border:1px solid #475569;text-align:right;">15,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€6</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€90,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;"></td><td style="padding:5px;border:1px solid #475569;text-align:center;">April 24</td><td style="padding:5px;border:1px solid #475569;text-align:right;">20,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€5</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€100,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;font-weight:700;">Sales</td><td style="padding:5px;border:1px solid #475569;text-align:center;">April 18</td><td style="padding:5px;border:1px solid #475569;text-align:right;">20,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#64748b;">—</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#64748b;">—</td></tr><tr><td style="padding:5px;border:1px solid #475569;"></td><td style="padding:5px;border:1px solid #475569;text-align:center;">April 30</td><td style="padding:5px;border:1px solid #475569;text-align:right;">25,000</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#64748b;">—</td><td style="padding:5px;border:1px solid #475569;text-align:center;color:#64748b;">—</td></tr></tbody></table>',
     ans: 2,
     exp: '販売可能総原価 = €105,000+€90,000+€100,000 = €295,000。総単位 = 15,000+15,000+20,000 = 50,000。平均原価 = €295,000/50,000 = €5.90/単位。販売単位 = 20,000+25,000 = 45,000。COGS = 45,000 × €5.90 = €265,500。',
     we: { 0: '€295,000 は商品全部の原価です。販売分のみ。', 1: '€270,000 は計算誤りです。', 3: '€255,800 は計算誤りです。' }
   },
   {
     id: 'q_fe3', conceptId: 'c5_purchase', ch: 5, type: 'C',
-    q: '[Sample Final Q3] Black Belt &Co. perpetual system: (1) Received goods €50,000, terms 2/10 n/30. (2) Returned €1,000. (3) Paid €250 freight. (4) Paid invoice within discount period. Inventory:',
+    q: '[Sample Final Q3] Black Belt & Co. uses a perpetual inventory system. It recorded the following events involving a recent purchase of merchandise: (1) Received goods for €50,000, terms 2/10, n/30. (2) Returned €1,000 of the shipment for credit. (3) Paid €250 freight on the shipment. (4) Paid the invoice within the discount period. As a result of these events, the company\'s inventory:',
     opts: ['A) increased by €48,020','B) increased by €48,270','C) increased by €48,265','D) increased by €49,250'],
     ans: 1,
     exp: '純仕入：€50,000 − €1,000 = €49,000。割引：€49,000 × 2% = €980。割引後：€49,000 − €980 = €48,020。運賃を加算：€48,020 + €250 = €48,270。',
@@ -9613,7 +9614,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe4', conceptId: 'c9_depreciation_methods', ch: 9, type: 'A',
-    q: '[Sample Final Q4] Oct 1 2017, press cost €160,000, 5-yr life, €40,000 residual. Book value Dec 31 2017 using DDB?',
+    q: '[Sample Final Q4] On October 1, 2017, Boerhaave Printing Services installs a new printing press. The cost of the press is €160,000. It has an estimated 5-year life and €40,000 residual value at the end of its useful life. What is the book value of the printing press on the December 31, 2017, statement of financial position, assuming that Boerhaave Printing Services uses the double-declining-balance method of depreciation?',
     opts: ['A) €144,000','B) €120,000','C) €104,000','D) €150,000'],
     ans: 0,
     exp: 'DDB 率 = 2/5 = 40%。Year 1（10月1日〜12月31日 = 3/12 = 0.25年）。減価償却 = €160,000 × 40% × 3/12 = €16,000。簿価 = €160,000 − €16,000 = €144,000。注：DDB は計算で残存価額を無視します。',
@@ -9621,7 +9622,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe5', conceptId: 'c8_uncollectibles', ch: 8, type: 'A',
-    q: '[Sample Final Q5] Which transaction affects ONLY SOFP accounts?',
+    q: '[Sample Final Q5] Which of the following transactions affects only statement of financial position accounts?',
     opts: ['A) Recovery of a bad debt using the allowance method','B) Writing off a bad debt using the direct write-off method','C) Recording bad debt expense using the allowance method','D) Recording bad debt expense using the percentage of receivables basis'],
     ans: 0,
     exp: 'Recovery (Allowance Method) = 2 entries: (a) Dr AR / Cr Allowance, (b) Dr Cash / Cr AR. すべてSOFP勘定 (AR, Allowance, Cash)。費用勘定なし。',
@@ -9629,7 +9630,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe6', conceptId: 'c11_bonds_journal', ch: 11, type: 'A',
-    q: '[Sample Final Q6] Smelly Fingers Inc. retires €2,000,000 face value bonds at 105 (€2,100,000). Carrying value €2,074,900. Entry includes:',
+    q: '[Sample Final Q6] Smelly Fingers Inc. retires its €2,000,000 face value bonds at 105 on January 1, following the payment of annual interest. The carrying value of the bonds at the redemption date is €2,074,900. The entry to record the redemption will include a:',
     opts: ['A) debit of €25,100 to Loss on Bond Redemption','B) credit of €25,100 to Loss on Bond Redemption','C) credit of €2,074,900 to Bonds Payable','D) debit of €2,000,000 to Bonds Payable'],
     ans: 0,
     exp: '償還価額 €2,100,000 − 帳簿価額 €2,074,900 = 損失 €25,100。借方 Bonds Payable €2,074,900 / 借方 Loss €25,100 / 貸方 Cash €2,100,000。',
@@ -9637,7 +9638,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe7', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'A',
-    q: '[Sample Final Q7] La Petite Mort SA had €375,000 CA and €150,000 CL. After borrowing €75,000 via 3-month note. Effect on Current Ratio?',
+    q: '[Sample Final Q7] La Petite Mort SA had €375,000 of current assets and €150,000 of current liabilities before borrowing €75,000 from the bank with a 3-month note payable. What effect did the borrowing transaction have on La Petite Mort SA\'s current ratio?',
     opts: ['A) The ratio increased — borrowing adds to Cash (CA) faster than CL grows','B) The ratio decreased — both CA and CL increase by €75k, ratio shifts toward 1','C) The ratio remained unchanged — same amount added to numerator and denominator','D) Cannot be determined without additional information about other balances'],
     ans: 1,
     exp: '**Before**: 375/150 = **2.50**. **After**: CA = €450k (Cash増)、CL = €225k → 450/225 = **2.00**。**Ratio decreased**。短期借入で同額を CA (Cash) と CL (Notes Payable) に加算 → 元の比率が1より大なら比率は1に近づく (低下)。',
@@ -9645,7 +9646,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe8', conceptId: 'c15_profitability_ratios', ch: 15, type: 'C',
-    q: '[Sample Final Q8] Shady Brook Winery: NI €2,000,000, dividends €400,000, 50,000 shares avg, market price €300. P/E ratio:',
+    q: '[Sample Final Q8] Shady Brook Winery Inc. has net income of €2,000,000 and paid dividends to ordinary shareholders of €400,000 in 2017. The weighted average number of shares outstanding in 2017 was 50,000 shares. Shady Brook Winery Inc. ordinary shares are selling for €300 per share. Shady Brook Winery Inc.\'s price-earnings ratio is:',
     opts: ['A) 4 times — calculated using EPS €75 (€2.0M/€400k dividends × 50k)','B) 6 times — calculated using Net Sales or other unrelated metric','C) 7.5 times — Market Price €300 ÷ EPS €40','D) 9.4 times — calculated subtracting dividends from NI before EPS'],
     ans: 2,
     exp: 'EPS = NI ÷ 株式数 = €2,000,000 ÷ 50,000 = €40。P/E = 市場価格 ÷ EPS = €300 ÷ €40 = 7.5回。',
@@ -9653,7 +9654,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe9', conceptId: 'c11_bonds_basics', ch: 11, type: 'C',
-    q: '[Sample Final Q9] A company issues 10-year, 12%, €1,000,000 bonds at 105 (issued at a premium). The total cost of borrowing is:',
+    q: '[Sample Final Q9] On January 1, 2025 a company issues 10-year, 12%, €1,000,000 bonds, at 105. The total cost of borrowing is:',
     opts: ['A) €120,000','B) €1,200,000','C) €1,150,000','D) €1,250,000'],
     ans: 2,
     exp: 'Cash received = €1,000,000 × 105% = €1,050,000. Interest payments over 10 years = €1,000,000 × 12% × 10 = €1,200,000. Total cash paid = €1,200,000 (interest) + €1,000,000 (principal) = €2,200,000. Total cost = Cash paid − Cash received = €2,200,000 − €1,050,000 = €1,150,000. または: €1,200,000 (interest) − €50,000 (premium amort) = €1,150,000.',
@@ -9661,7 +9662,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe10', conceptId: 'c12_equity_overview', ch: 12, type: 'C',
-    q: '[Sample Final Q10] 5%, €200 par value cumulative preference share issued for €150, currently trades for €180. Annual dividend per share:',
+    q: '[Sample Final Q10] The annual per share dividend requirement of a 5%, €200 par value cumulative preference share that was issued for €150 and currently trades for €180...',
     opts: ['A) depends on the current market interest rate environment','B) is €20 per share (based on 10% effective rate calculation)','C) is €10 per share (calculated as €200 par value × 5%)','D) is €7.50 per share (calculated as €150 issue price × 5%)'],
     ans: 2,
     exp: '優先株の配当は **Par Value** に対する%で計算: €200 × 5% = **€10/year**。Issue price (€150) や market price (€180) は配当計算に**無関係**。',
@@ -9669,7 +9670,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe11', conceptId: 'c3_accrued_rev', ch: 3, type: 'A',
-    q: '[Sample Final Q11] Cauca Inc. 32 employees, Mon-Fri, €150/day, paid Friday. Period ends Wednesday. Wage accrual:',
+    q: '[Sample Final Q11] Cauca, Inc. has 32 employees who work Monday through Friday each week; each employee earns €150 per day and is paid every Friday. The end of the accounting period is on a Wednesday. How much wages expense should Cauca accrue at the end of the period?',
     opts: ['A) €14,400 — 3 days (Mon, Tue, Wed) × 32 employees × €150','B) €9,600 — only 2 days counted (excludes either start or end day)','C) €24,000 — full 5-day week accrued (ignores partial period)','D) €19,200 — 4 days (incorrectly includes Thursday before period end)'],
     ans: 0,
     exp: '水曜まで **3日分** (Mon, Tue, Wed) 未払い: 32 employees × €150/day × 3 days = **€14,400**。',
@@ -9677,7 +9678,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe12', conceptId: 'c5_fob', ch: 5, type: 'C',
-    q: '[Sample Final Q12] Kroos & Van Triest BV (perpetual) purchases €9,000 FOB shipping point. Pays €500 freight Sept 13. Journal entry for freight:',
+    q: '[Sample Final Q12] Kroos & Van Triest BV uses a perpetual inventory system. On September 12, Kroos & Van Triest BV purchased €9,000 of merchandise from O\'Dwyer Ltd, FOB shipping point, credit terms 3/10, n/30. Kroos & Van Triest BV pays the freight cost of €500 on September 13. Which journal entry does Kroos & Van Triest BV make to record the payment of the freight costs of €500 on September 13?',
     opts: ['A) Dr Freight out 500 / Cr Cash 500','B) Dr Freight out 500 / Cr AP 500','C) Dr Inventory 500 / Cr Cash 500','D) No journal entry'],
     ans: 2,
     exp: 'FOB shipping point + perpetual system → 買手が運賃負担、Inventory に加算。Dr Inventory 500 / Cr Cash 500.',
@@ -9685,7 +9686,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe13', conceptId: 'c5_multistep_is', ch: 6, type: 'A',
-    q: '[Sample Final Q13] Tonkatsu: Beg Inv ¥500k, Purchases ¥2,000k, End Inv ¥800k, Sales ¥2,500k. Gross Profit Rate:',
+    q: '[Sample Final Q13] At the beginning of the year, Tonkatsu Company had inventory of ¥500,000. During the year, the company purchased goods costing ¥2,000,000. If Tonkatsu Company reported ending inventory of ¥800,000 and sales of ¥2,500,000, the company\'s gross profit rate must be:',
     opts: ['A) 32% — Gross Profit ¥800k ÷ Sales ¥2,500k','B) 24% — used wrong COGS (e.g., included End Inv)','C) 80% — incorrectly computed COGS/Sales × 100','D) 20% — Gross Profit ¥800k ÷ Net Purchases ¥2,000k (wrong denominator)'],
     ans: 0,
     exp: 'COGS = 期首棚卸 + 仕入 − 期末棚卸 = ¥500k + ¥2,000k − ¥800k = ¥1,700k。売上総利益 = 売上 − COGS = ¥2,500k − ¥1,700k = ¥800k。GP率 = ¥800k ÷ ¥2,500k = 32%。',
@@ -9693,7 +9694,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe14', conceptId: 'c5_perpetual_periodic', ch: 5, type: 'B',
-    q: '[Sample Final Q14] In periodic system, normal balances of Purchases, Purchase Discounts, and Freight-in are:',
+    q: '[Sample Final Q14] In a company that uses a periodic inventory system, the respective normal account balances of Purchases, Purchase Discounts, and Freight-in are:',
     opts: ['A) debit, credit, credit','B) debit, credit, debit','C) debit, debit, debit','D) credit, credit, debit'],
     ans: 1,
     exp: 'Purchases = 費用相当 = Debit。Purchase Discounts = 値引 (Purchasesの控除) = Credit (Contra)。Freight-in = COGS構成費用 = Debit。',
@@ -9701,7 +9702,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe15', conceptId: 'c3_prepaid', ch: 3, type: 'A',
-    q: '[Sample Final Q15] July 1: €12,000 for 4 months rent. Prepaid Rent debited. Adjusting entry July 31:',
+    q: '[Sample Final Q15] On July 1, Schabus Sports Store paid €12,000 to Clune Real Estate for 4 months\' rent beginning July 1. Prepaid Rent was debited for the full amount. If financial statements are prepared on July 31, the adjusting entry to be made by Schabus Sports Store is:',
     opts: ['A) Dr Prepaid Rent 3,000 / Cr Rent Exp 3,000 (debits and credits reversed)','B) Dr Rent Exp 3,000 / Cr Prepaid Rent 3,000 (1 month of €12,000/4 consumed)','C) Dr Rent Exp 12,000 / Cr Prepaid Rent 12,000 (full prepayment expensed at once)','D) Dr Rent Exp 12,000 / Cr Prepaid Rent 3,000 (unbalanced: debits ≠ credits)'],
     ans: 1,
     exp: '1ヶ月分使用 (July): €12,000 ÷ 4 = **€3,000**。Dr Rent Expense €3,000 / Cr Prepaid Rent €3,000 (Asset 減少 + Expense 発生)。',
@@ -9709,7 +9710,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe16', conceptId: 'c4_cycle', ch: 4, type: 'B',
-    q: '[Sample Final Q16] Correct sequence in accounting cycle:',
+    q: '[Sample Final Q16] Which is the correct sequence in the accounting cycle?',
     opts: ['A) Journalize, post, closing entries, adjusting entries','B) Journalize, adjusting entries, post, closing entries','C) Journalize, post, adjusting entries, closing entries','D) Journalize, adjusting entries, closing entries, post'],
     ans: 2,
     exp: '正しい順序: ①Journalize (仕訳) → ②Post (元帳転記) → ③Trial Balance → ④Adjusting Entries (調整仕訳) → ⑤Adjusted TB → ⑥Financial Statements → ⑦Closing Entries → ⑧Post-closing TB.',
@@ -9717,15 +9718,16 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe17', conceptId: 'c14_cf_classification', ch: 14, type: 'C',
-    q: '[Sample Final Q17] Equipment cost €230,000, Accum Dep €184,000, sold for €69,000. Beginning Equipment €575,000, Ending €690,000. Cash Dividends €12,500. Investing CF:',
+    q: '[Sample Final Q17] The following comparative financial statements are available for a firm (all amounts in €, see table below). Additional information: (i) Equipment which cost €230,000, and had accumulated depreciation of €184,000, was sold for €69,000. (ii) The company paid cash dividends of €12,500. (iii) All changes in non-current account balances, except for the change in accumulated depreciation, had a direct effect on cash flows. What is the cash flow from investing activities of the firm over 2024?',
     opts: ['A) €276,000 outflow — Sale proceeds €69k − Purchase €345k','B) €115,000 outflow — used Ending €690k − Beginning €575k (gross)','C) €264,500 outflow — added dividends to investing total in error','D) €368,000 outflow — counted disposal cost as additional cash outflow'],
+    fig: '<table style="width:100%;color:#cbd5e1;border-collapse:collapse;font-size:0.82em;"><thead><tr style="background:#1e3a5f;"><th style="padding:6px;border:1px solid #475569;text-align:left;">Assets</th><th style="padding:6px;border:1px solid #475569;">31-12-2024</th><th style="padding:6px;border:1px solid #475569;">31-12-2023</th><th style="padding:6px;border:1px solid #475569;text-align:left;">Liabilities &amp; Equity</th><th style="padding:6px;border:1px solid #475569;">31-12-2024</th><th style="padding:6px;border:1px solid #475569;">31-12-2023</th></tr></thead><tbody><tr><td style="padding:5px;border:1px solid #475569;">Equipment</td><td style="padding:5px;border:1px solid #475569;text-align:right;">690,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">575,000</td><td style="padding:5px;border:1px solid #475569;">Share capital – ordinary</td><td style="padding:5px;border:1px solid #475569;text-align:right;">115,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">103,500</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Accumulated depr.</td><td style="padding:5px;border:1px solid #475569;text-align:right;">(138,000)</td><td style="padding:5px;border:1px solid #475569;text-align:right;">(287,500)</td><td style="padding:5px;border:1px solid #475569;">Share premium – ordinary</td><td style="padding:5px;border:1px solid #475569;text-align:right;">92,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">57,500</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Inventory</td><td style="padding:5px;border:1px solid #475569;text-align:right;">287,500</td><td style="padding:5px;border:1px solid #475569;text-align:right;">345,000</td><td style="padding:5px;border:1px solid #475569;">Retained earnings</td><td style="padding:5px;border:1px solid #475569;text-align:right;">287,500</td><td style="padding:5px;border:1px solid #475569;text-align:right;">230,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Accounts receivable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">184,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">195,500</td><td style="padding:5px;border:1px solid #475569;">Bonds payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">1,035,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">690,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Cash</td><td style="padding:5px;border:1px solid #475569;text-align:right;">517,500</td><td style="padding:5px;border:1px solid #475569;text-align:right;">345,000</td><td style="padding:5px;border:1px solid #475569;">Accounts payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;">11,500</td><td style="padding:5px;border:1px solid #475569;text-align:right;">92,000</td></tr><tr style="font-weight:700;background:rgba(234,179,8,0.1);"><td style="padding:5px;border:1px solid #475569;">Total assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;">1,541,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">1,173,000</td><td style="padding:5px;border:1px solid #475569;">Total L &amp; E</td><td style="padding:5px;border:1px solid #475569;text-align:right;">1,541,000</td><td style="padding:5px;border:1px solid #475569;text-align:right;">1,173,000</td></tr></tbody></table>',
     ans: 0,
     exp: 'Equipment の T勘定：期首 €575,000 + 購入 X − 処分原価 €230,000 = 期末 €690,000 → 購入 = €345,000。投資 CF = 売却額 €69,000 − 購入 €345,000 = €276,000 の流出。',
     we: { 1: '€115,000 = €690k − €575k のネット変動だけで計算。実際は売却（処分 €230k・売却額 €69k）と購入（€345k）を分けて記録する必要があります。', 2: '€264,500 = €276,000 − €11,500 のような、配当を投資に含めてしまった誤計算です。配当は財務です。', 3: '€368,000 = €345k（購入）+ €23k。処分原価（€230k）を追加の現金流出と勘違いした可能性。実際の現金流出は購入のみです。' }
   },
   {
     id: 'q_fe18', conceptId: 'c9_plant_assets_acquisition', ch: 9, type: 'A',
-    q: '[Sample Final Q18] Marxy delivery truck: cost €56,000, sales tax €3,000, logo paint €1,200, license €120, safety test €220. Total cost:',
+    q: '[Sample Final Q18] Marxy Company purchases a new delivery truck for €56,000. The sales taxes are €3,000. The logo of the company is painted on the side of the truck for €1,200. The truck license is €120. The truck undergoes safety testing for €220. What does Marxy record as the cost of the new truck?',
     opts: ['A) €60,540','B) €60,420','C) €59,000','D) €58,420'],
     ans: 1,
     exp: 'Capitalize: €56,000 + €3,000 (tax) + €1,200 (logo, part of get ready) + €220 (test) = €60,420. License (€120) は反復経費でExpense。',
@@ -9733,7 +9735,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe19', conceptId: 'c4_classified_assets', ch: 4, type: 'A',
-    q: '[Sample Final Q19] Nguyen: Beg Equity €651k, Issued shares €882k, Expenses €2,520k, Dividends €168k, End Equity €1,593k. Revenue?',
+    q: '[Sample Final Q19] Nguyen Company began the year with equity of €651,000. During the year, Nguyen issued ordinary shares for €882,000, recorded expenses of €2,520,000, and paid dividends of €168,000. If Nguyen\'s ending equity was €1,593,000, what was the company\'s revenue for the year?',
     opts: ['A) €2,748,000','B) €2,580,000','C) €3,630,000','D) €3,462,000'],
     ans: 0,
     exp: '期末資本 = 期首 + 株式発行 + NI − 配当 → €1,593,000 = €651,000 + €882,000 + NI − €168,000 → NI = €228,000。NI = 収益 − 費用 → 収益 = €228,000 + €2,520,000 = €2,748,000。',
@@ -9741,7 +9743,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe20', conceptId: 'c3_prepaid', ch: 3, type: 'A',
-    q: '[Sample Final Q20] Magazine publisher has "Unearned Subscription Revenue". Which transaction decreases its balance?',
+    q: '[Sample Final Q20] A magazine publisher has an account called "Unearned Subscription Revenue". A transaction that causes the balance of this account to decrease is:',
     opts: ['A) Subscriptions sold to new subscribers','B) Magazines mailed to subscribers','C) Magazines printed','D) Cash received from new subscribers'],
     ans: 1,
     exp: '雑誌が配達されてサービス提供完了 → Unearned Revenue (負債) を Revenue (収益) に振替。Dr Unearned Subscription Revenue / Cr Subscription Revenue.',
@@ -9749,7 +9751,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe21', conceptId: 'c9_disposal', ch: 9, type: 'B',
-    q: '[Sample Final Q21] On May 1, 2017, a company sells furniture for €80,000. The furniture originally cost €200,000 (purchased Jan 1, 2010) and is depreciated straight-line over 10 years with a €20,000 residual value. What gain is recognized on the sale?',
+    q: '[Sample Final Q21] On May 1, 2017, Szeles Company sells office furniture for €80,000 cash. The office furniture originally cost €200,000 when purchased on January 1, 2010. Depreciation is recorded using the straight-line method over 10 years with a residual value of €20,000. What gain should be recognized on the sale?',
     opts: ['A) €6,000', 'B) €12,000', 'C) €20,000', 'D) €25,000'],
     ans: 1,
     exp: '**Annual Dep** = (€200,000 − €20,000)/10 = €18,000。**期間** = Jan 1 2010 → May 1 2017 = **7年4ヶ月**。**Accum Dep** = 7×€18,000 + €18,000×4/12 = €126,000 + €6,000 = **€132,000**。**NBV** = €200,000 − €132,000 = €68,000。**Gain** = €80,000 − €68,000 = **€12,000**。',
@@ -9757,7 +9759,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe22', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
-    q: '[Sample Final Q22] Machinery has a list price of £160,000 with a 10% discount, plus £1,000 shipping and £7,500 sales tax. Useful life is 10 years with a £50,000 residual value. Using straight-line depreciation, the annual depreciation is:',
+    q: '[Sample Final Q22] Dutch Oven Ltd. purchased machinery with a list price of £160,000. They were given a 10% discount by the manufacturer. They paid £1,000 for shipping and sales tax of £7,500. Dutch Oven Ltd. estimates that the machinery will have a useful life of 10 years and a residual value of £50,000. If Dutch Oven Ltd. uses straight-line depreciation, annual depreciation will be:',
     opts: ['A) £10,180','B) £15,250','C) £10,250','D) £9,400'],
     ans: 2,
     exp: '原価 = £160,000 × 90% + £1,000 + £7,500 = £144,000 + £8,500 = £152,500。年間減価償却 = (£152,500 − £50,000)/10 = £10,250。',
@@ -9765,7 +9767,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe23', conceptId: 'c2_debit_credit', ch: 2, type: 'A',
-    q: '[Sample Final Q23] Which account increases with a debit entry?',
+    q: '[Sample Final Q23] Which of the following accounts would be increased with a debit entry?',
     opts: ['A) Interest Payable (a current liability account on the balance sheet)','B) Share Capital - Ordinary (a stockholders\' equity account)','C) Service Revenue (an income statement revenue account)','D) Dividends (a contra-equity account reducing retained earnings)'],
     ans: 3,
     exp: '**Dividends** = Equity の **Contra account** → Debit で増加 (Equity減少効果)。Interest Payable (Liability)、Share Capital (Equity)、Service Revenue (Revenue) はすべて **Credit** で増加。',
@@ -9773,7 +9775,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe24', conceptId: 'c3_prepaid', ch: 3, type: 'A',
-    q: '[Sample Final Q24] Dec 2018: UvA pays €50,000 cash for Feb-Mar 2019 TV commercials. Correct journal entry:',
+    q: '[Sample Final Q24] Which journal entry could be correct to record the following transaction? In December 2018, the University of Amsterdam pays €50,000 cash to a regional TV station for commercials that will be broadcasted in February and March 2019.',
     opts: ['A) Dr Prepaid Expenses 50,000 / Cr Cash 50,000','B) Dr Advertising expenses 50,000 / Cr Cash 50,000','C) Dr Cash 50,000 / Cr Advertising Expenses 50,000','D) Dr Cash 50,000 / Cr Advertising Expenses Payable 50,000'],
     ans: 0,
     exp: '広告は将来 (Feb-Mar 2019) に提供されるサービス → 現時点では Prepaid Asset。Dr Prepaid Expenses €50,000 / Cr Cash €50,000.',
@@ -9781,7 +9783,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe25', conceptId: 'c5_perpetual_periodic', ch: 5, type: 'C',
-    q: '[Sample Final Q25] Toy store: sells puzzle for €55 cash, inventory cost €20 (perpetual). Correct journal entry:',
+    q: '[Sample Final Q25] A toy store sells a puzzle for €55 cash. The inventory cost of the puzzle is €20 (perpetual system). Which journal entry could be correct to record the transaction?',
     opts: ['A) Dr Sales Rev 20, Dr Cash 55 / Cr Inventory 20, Cr COGS 55 (debits/credits inverted)','B) Dr Cash 55 / Cr COGS 20, Cr Sales Rev 35 (incorrectly nets revenue against COGS)','C) Dr Cash 55, Dr COGS 20 / Cr Sales Revenue 55, Cr Inventory 20 (proper 2-entry perpetual)','D) Dr Sales Rev 55, Dr Inventory 20 / Cr Cash 55, Cr COGS 20 (all accounts reversed)'],
     ans: 2,
     exp: 'Perpetual sale = **2仕訳同時**:\n(1) Dr Cash 55 / Cr Sales Revenue 55 (現金受取 + 収益認識)\n(2) Dr COGS 20 / Cr Inventory 20 (Inventory減 + Cost計上)',
@@ -9789,7 +9791,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe26', conceptId: 'c11_bonds_journal', ch: 11, type: 'C',
-    q: '[Sample Final Q26] Issue 5-year bond, 5% stated, face value €2,000,000, raises €1,800,000 (Discount). Journal entry includes:',
+    q: '[Sample Final Q26] A corporation issues a five-year bond with stated interest 5% and a total face value of €2,000,000 and raises a total amount of €1,800,000. The journal entry to record the bond issuance will include:',
     opts: ['A) Debit Bonds Payable €1,800,000 (treats liability as debit, opposite of normal)','B) Debit Loss on Bond Redemption €200,000 (issuance is not a redemption event)','C) Credit Bonds Payable €1,800,000 (records liability at carrying amount received)','D) Credit Loss on Bond Redemption €200,000 (no loss arises at original issuance)'],
     ans: 2,
     exp: '**Discount発行**: Dr Cash €1,800,000 / Cr Bonds Payable €1,800,000 (受領額で記録、Discount は将来 Amortize で増加)。Loss/Gain は **発行時には発生しない** (Redemption時のみ)。',
@@ -9797,7 +9799,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe27', conceptId: 'c12_treasury_dividends', ch: 12, type: 'C',
-    q: '[Sample Final Q27] 1% share dividend on 880,000 ordinary shares, par €25, market €50. Journal entry includes:',
+    q: '[Sample Final Q27] On November 11, 2019, a corporation declares a 1% share dividend on its 880,000 ordinary shares outstanding. The par value is €25 per share and on the date of the declaration the shares are trading for €50 per share. The new shares will be issued in December 2019. The journal entry to record the declaration of share dividends will include:',
     opts: ['A) Credit to Share Dividends €440,000','B) Debit to Ordinary Share Dividends Distributable €220,000','C) Credit to Ordinary Share Dividends Distributable €220,000','D) Credit to Ordinary Share Dividends Distributable €440,000'],
     ans: 2,
     exp: 'Small share dividend (<20-25%) → Fair Value で記録。新株数 = 880,000 × 1% = 8,800株。Total Fair Value = 8,800 × €50 = €440,000.\n仕訳: Dr Share Dividends €440,000 / Cr Ord Share Div Distributable €220,000 (8,800 × €25 par) / Cr Share Premium €220,000 (差額).',
@@ -9805,7 +9807,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe28', conceptId: 'c9_revaluation', ch: 9, type: 'D',
-    q: '[Sample Final Q28] On Dec 1, 2017, the fair value of a computer system is €200,000. It was bought on Dec 1, 2015 for €600,000, depreciated straight-line over 10 years with a €25,000 residual value; accumulated depreciation is €115,000. The journal entry to record the revaluation includes:',
+    q: '[Sample Final Q28] On December 1, 2017 an independent auditor determines the fair value of Vic Inc.\'s computer system to be €200,000. The computer system was bought on December 1, 2015 for €600,000. The computer system is depreciated in 10 years using the straight-line method, assuming a residual value of €25,000. Accumulated depreciation for the computer system on December 1, 2017 is €115,000. The journal entry to record revaluation of the computer system will include:',
     opts: ['A) Debit Loss on Disposal €260,000','B) Debit Loss on Disposal €285,000','C) Credit to Equipment €285,000','D) Debit Impairment Loss €285,000'],
     ans: 3,
     exp: 'NBV = €600,000 − €115,000 = €485,000。Fair Value €200,000 < NBV → Impairment Loss = €485,000 − €200,000 = €285,000。Loss on Disposal は売却/廃棄時、Impairment Lossは保有中の評価減。仕訳: Dr Accum Dep €115k, **Dr Impairment Loss €285k** / Cr Equipment €400k.',
@@ -9813,7 +9815,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe29', conceptId: 'c15_liquidity_solvency', ch: 15, type: 'C',
-    q: '[Sample Final Q29] AR turnover 2025: Beg AR €960k, End AR €1,710k. Sales €3,700k, returns €50k. AR Turnover:',
+    q: '[Sample Final Q29] At Dec. 31, 2024, a firm reported Accounts Receivable of €960,000 and Allowance for doubtful accounts of €80,000 (both normal balances). During 2025, the firm had: Sales on account of €3,700,000; Sales returns and allowances of €50,000; Collections of accounts receivable of €2,810,000. At Dec. 31, 2025 the firm reported Accounts Receivable of €1,710,000 and Allowance for doubtful accounts of €115,000 (both normal balances). What is the firm\'s Accounts Receivable Turnover ratio for 2025? (Rounded to 2 decimals)',
     opts: ['A) 123 days','B) 2.95 times','C) 2.32 times','D) 2.89 times'],
     ans: 1,
     exp: '純信用売上 = €3,700,000 − €50,000 = €3,650,000。期首 Net AR = €960k − €80k Allowance = €880k。期末 Net AR = €1,710k − €115k Allowance = €1,595k。平均 Net AR = (€880k + €1,595k)/2 = €1,237,500。AR 回転率 = €3,650,000 / €1,237,500 = 2.95回。',
@@ -9821,7 +9823,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe30', conceptId: 'c4_closing', ch: 4, type: 'A',
-    q: '[Sample Final Q30] Income Summary €250k credit balance. Which statement is correct about closing?',
+    q: '[Sample Final Q30] At the end of the fiscal year, the Income Summary account, which has a €250,000 credit balance, needs to be closed. Which of the following statements is correct?',
     opts: ['A) The closing entry will contain a debit entry to Retained Earnings','B) The closing entry will debit "Income Statement"','C) The closing entry will decrease Equity','D) The closing entry will not affect the Dividends account'],
     ans: 3,
     exp: 'Income Summary を Retained Earnings に振替: Dr Income Summary €250,000 / Cr Retained Earnings €250,000. \n①Income Summaryをdebit (借方) で閉鎖、②Retained Earningsを credit (貸方)、③Equity 増加 (利益なので)、④Dividends は別の閉鎖仕訳で処理 (この仕訳は影響しない)。',
