@@ -9817,8 +9817,8 @@ var QUESTIONS = [
   },
   {
     id: 'q714', conceptId: 'c8_pct_receivables', ch: 8, type: 'E',
-    q: '年末のAR集計: 0–30日 €520,000@98%回収可能、30–90日 €22,000@80%、>90日 €48,000@60%。Allowance現在残高=€2,400 credit。期末Bad Debt Expense計上額は？',
-    opts: ['A) €31,600', 'B) €34,000', 'C) €36,400', 'D) €29,200', 'E) €19,200', 'F) わからない'],
+    q: 'Year-end AR aging: 0–30 days €520,000 @ 98% collectible; 30–90 days €22,000 @ 80%; over 90 days €48,000 @ 60%. The Allowance currently has a €2,400 credit balance. How much Bad Debt Expense is recorded at year-end?',
+    opts: ['A) €31,600', 'B) €34,000', 'C) €36,400', 'D) €29,200', 'E) €19,200', 'F) Not sure'],
     ans: 0,
     exp: '回収不能率 = 100% − 回収率。\n€520,000×2% = €10,400\n€22,000×20% = €4,400\n€48,000×40% = €19,200\n希望期末Allowance = €34,000。\n現在Allowance貸方€2,400 → 追加Bad Debt Expense = €34,000 − €2,400 = €31,600。',
     we: { 1: '€34,000 = 希望期末Allowance残高そのもの。現在残高€2,400を控除していない (ダブル計上のリスク)。', 2: '€36,400 = €34,000 + €2,400 (現在残高を「加算」した符号エラー)。Allowanceが既に貸方なら差額のみ計上。', 3: '€29,200 = €31,600 − €2,400 (現在残高を二度引いた)。', 4: '€19,200 = >90日カテゴリのみ。他のカテゴリも含めるべき。', 5: '「わからない」を選択。公式: Bad Debt Expense = 希望期末Allowance − 現在Allowance残高。' },
@@ -9826,16 +9826,16 @@ var QUESTIONS = [
   },
   {
     id: 'q715', conceptId: 'c8_writeoff', ch: 8, type: 'E',
-    q: 'allowance method 下で特定顧客€800 が回収不能と確定した場合の write-off 仕訳は？',
-    opts: ['A) Dr Bad Debt Expense 800 / Cr Accounts Receivable 800', 'B) Dr Allowance for Doubtful Accounts 800 / Cr Accounts Receivable 800', 'C) Dr Accounts Receivable 800 / Cr Allowance for Doubtful Accounts 800', 'D) Dr Bad Debt Expense 800 / Cr Allowance for Doubtful Accounts 800', 'E) Dr Sales Revenue 800 / Cr Accounts Receivable 800', 'F) わからない'],
+    q: 'Under the allowance method, what is the write-off entry when a specific customer\'s €800 account is determined to be uncollectible?',
+    opts: ['A) Dr Bad Debt Expense 800 / Cr Accounts Receivable 800', 'B) Dr Allowance for Doubtful Accounts 800 / Cr Accounts Receivable 800', 'C) Dr Accounts Receivable 800 / Cr Allowance for Doubtful Accounts 800', 'D) Dr Bad Debt Expense 800 / Cr Allowance for Doubtful Accounts 800', 'E) Dr Sales Revenue 800 / Cr Accounts Receivable 800', 'F) Not sure'],
     ans: 1,
     exp: 'Write-off では既に計上済の Allowance を取り崩す: Dr Allowance for Doubtful 800 / Cr Accounts Receivable 800。Bad Debt Expense は触らない (期末調整時に計上済)。AR net (= AR − Allowance) は変化しない。',
     we: { 0: 'Bad Debt Expense は直接書き落とし法 (direct write-off) のもの。Allowance法では使わない。', 2: '逆。回収不能なのに AR を増やすのは矛盾。', 3: '期末調整 (estimation) の仕訳。Write-off ではない。', 4: 'Sales Revenue は触らない。返品ではなく回収不能。', 5: '「わからない」を選択。Write-off = Dr Allowance / Cr AR。' }
   },
   {
     id: 'q716', conceptId: 'c8_writeoff_effect', ch: 8, type: 'A',
-    q: 'Allowance法下で write-off を行った時、Net AR (= AR − Allowance) はどうなる？',
-    opts: ['A) Net AR は増加する (AR よりも Allowance が大きく減るため)', 'B) Net AR は減少する (AR の減少分のみが純額に反映される)', 'C) Net AR は変化しない (AR と Allowance が同額減少するため)', 'D) Net AR は Bad Debt Expense と同額分だけ減少する', 'E) Net AR は Allowance が過大に設定されていた時のみ減少する', 'F) わからない'],
+    q: 'Under the allowance method, what happens to Net AR (= AR − Allowance) when a write-off is recorded?',
+    opts: ['A) Net AR increases (because Allowance decreases more than AR)', 'B) Net AR decreases (only the AR reduction affects the net amount)', 'C) Net AR is unchanged (because AR and Allowance decrease by the same amount)', 'D) Net AR decreases by the amount of Bad Debt Expense', 'E) Net AR decreases only when the Allowance was overstated', 'F) Not sure'],
     ans: 2,
     exp: 'Write-off では **AR と Allowance を同額減らす** (Dr Allowance X / Cr AR X)。Net AR = AR − Allowance なので、両方同額減ると差額は **不変**。例: 元AR 100, Allowance 5 → Net 95。€2 write-off 後 AR 98, Allowance 3 → Net **95 (不変)**。',
     we: { 0: 'AR は減少するため Net AR は増加しない。Allowance が同額減るので相殺し不変になる。', 1: 'AR は減るが同時に Allowance も **同額減る** ため Net AR は不変。Direct write-off 法と混同しないこと。', 3: 'Bad Debt Expense は **期末調整** (推定) で計上済 — write-off 時には影響しない。', 4: 'Allowance の過不足とは **無関係**。Allowance 法の仕訳では常に Net AR 不変。', 5: 'Direct write-off では Net AR が減るが、これは **別の方法**。Allowance 法を聞かれている。' },
@@ -9843,24 +9843,24 @@ var QUESTIONS = [
   },
   {
     id: 'q717', conceptId: 'c8_recovery', ch: 8, type: 'E',
-    q: '以前 write-off した€500のARが回収された。必要な仕訳は？',
-    opts: ['A) Dr Cash 500 / Cr Bad Debt Expense 500', 'B) Dr Cash 500 / Cr Accounts Receivable 500 のみ', 'C) (1) Dr AR 500 / Cr Allowance 500 と (2) Dr Cash 500 / Cr AR 500 の二段階', 'D) Dr Cash 500 / Cr Allowance for Doubtful Accounts 500', 'E) Dr Allowance 500 / Cr Cash 500', 'F) わからない'],
+    q: 'A €500 account that was previously written off is now collected. What entry/entries are required?',
+    opts: ['A) Dr Cash 500 / Cr Bad Debt Expense 500', 'B) Dr Cash 500 / Cr Accounts Receivable 500 only', 'C) Two steps: (1) Dr AR 500 / Cr Allowance 500, and (2) Dr Cash 500 / Cr AR 500', 'D) Dr Cash 500 / Cr Allowance for Doubtful Accounts 500', 'E) Dr Allowance 500 / Cr Cash 500', 'F) Not sure'],
     ans: 2,
     exp: 'Recovery は2仕訳で処理: (1) 顧客の支払履歴を残すため AR と Allowance を復活 (write-offを取り消し)、(2) Cash 受領を AR 減として記録。Bad Debt Expense は触らない (誤った write-off の取り消しに費用は不要)。',
     we: { 0: 'Bad Debt Expenseに逆仕訳は不要。recovery は単なる再評価。', 1: 'AR を復活させないと「以前 write-off した顧客が払った」履歴が残らない。', 3: '(1)の write-off 取消の仕訳が抜けている。AR と Allowance の復活が必要。', 4: 'Allowance を借方にすると残高が減るが、これは write-off 時の処理。', 5: '「わからない」を選択。Recovery = 2 step: write-off取消 + 通常回収。' }
   },
   {
     id: 'q718', conceptId: 'c8_factoring', ch: 8, type: 'E',
-    q: 'Selamat Makan Catering BVは€60,000のARを Flow Factoring に売却 (service charge 2.5%)。仕訳は？',
-    opts: ['A) Dr Cash 60,000 / Cr Accounts Receivable 60,000', 'B) Dr Cash 58,500 / Dr Service Charge Expense 1,500 / Cr Accounts Receivable 60,000', 'C) Dr Cash 58,500 / Cr Accounts Receivable 58,500', 'D) Dr Accounts Receivable 60,000 / Cr Cash 58,500 / Cr Service Charge Revenue 1,500', 'E) Dr Cash 61,500 / Cr Accounts Receivable 60,000 / Cr Service Charge Revenue 1,500', 'F) わからない'],
+    q: 'Selamat Makan Catering BV sells €60,000 of AR to Flow Factoring (service charge 2.5%). What is the entry?',
+    opts: ['A) Dr Cash 60,000 / Cr Accounts Receivable 60,000', 'B) Dr Cash 58,500 / Dr Service Charge Expense 1,500 / Cr Accounts Receivable 60,000', 'C) Dr Cash 58,500 / Cr Accounts Receivable 58,500', 'D) Dr Accounts Receivable 60,000 / Cr Cash 58,500 / Cr Service Charge Revenue 1,500', 'E) Dr Cash 61,500 / Cr Accounts Receivable 60,000 / Cr Service Charge Revenue 1,500', 'F) Not sure'],
     ans: 1,
     exp: 'Factoring: 手数料 = €60,000 × 2.5% = €1,500。受取現金 = €60,000 − €1,500 = €58,500。仕訳: Dr Cash 58,500 / Dr Service Charge Expense 1,500 / Cr AR 60,000 (ARを完全に消す)。',
     we: { 0: '手数料を無視している。Factor は2.5%差し引く。', 2: 'ARを€58,500しか取り消していない。実際にはAR全額€60,000が譲渡された。', 3: '完全に逆方向の仕訳。Cashが入り AR が出るのが正しい。', 4: '手数料は Revenue でなく Expense。会社にとって追加コスト。', 5: '「わからない」を選択。Factoring 公式: Cash = Net AR、Expense = 手数料、Cr AR = gross 額。' }
   },
   {
     id: 'q719', conceptId: 'c8_credit_card_sale', ch: 8, type: 'E',
-    q: 'Susanneは€300の商品をAMEXで購入。AMEXは5%手数料。Bijenkorf (店) の仕訳は？',
-    opts: ['A) Dr Cash 300 / Cr Sales Revenue 300', 'B) Dr Cash 285 / Dr Service Charge Expense 15 / Cr Sales Revenue 300', 'C) Dr Accounts Receivable 285 / Dr Service Charge Expense 15 / Cr Sales Revenue 300', 'D) Dr Cash 300 / Cr Sales Revenue 285 / Cr Service Charge Revenue 15', 'E) Dr Cash 315 / Cr Sales Revenue 300 / Cr Service Charge Revenue 15', 'F) わからない'],
+    q: 'Susanne buys €300 of goods with an American Express card. AMEX charges a 5% fee. What is the entry for Bijenkorf (the store)?',
+    opts: ['A) Dr Cash 300 / Cr Sales Revenue 300', 'B) Dr Cash 285 / Dr Service Charge Expense 15 / Cr Sales Revenue 300', 'C) Dr Accounts Receivable 285 / Dr Service Charge Expense 15 / Cr Sales Revenue 300', 'D) Dr Cash 300 / Cr Sales Revenue 285 / Cr Service Charge Revenue 15', 'E) Dr Cash 315 / Cr Sales Revenue 300 / Cr Service Charge Revenue 15', 'F) Not sure'],
     ans: 1,
     exp: 'Credit card sale (AMEX等の大手): カード会社が顧客の信用を引き受け即時入金。手数料 = €300 × 5% = €15。仕訳: Dr Cash 285 / Dr Service Charge Expense 15 / Cr Sales Revenue 300。',
     we: { 0: '手数料を無視。カード会社は必ず手数料を差し引く。', 2: 'AMEX は即時入金 (Cash)。AR にはならない。', 3: '手数料は店にとって Expense (収益ではない)。', 4: '€315入ってこない。手数料は店が払うコスト。', 5: '「わからない」を選択。Credit card sale = Factoring と同じ構造、Cashで即入金。' }
@@ -9891,24 +9891,24 @@ var QUESTIONS = [
   },
   {
     id: 'q723', conceptId: 'c8_ar_turnover', ch: 8, type: 'E',
-    q: 'Net Credit Sales €3,650,000、平均Net AR €1,237,500。Accounts Receivable Turnover は？',
-    opts: ['A) 2.95 times', 'B) 0.34 times', 'C) 3.65 times', 'D) 1.95 times', 'E) 29.5 times', 'F) わからない'],
+    q: 'Net credit sales are €3,650,000 and average net AR is €1,237,500. What is the Accounts Receivable Turnover?',
+    opts: ['A) 2.95 times', 'B) 0.34 times', 'C) 3.65 times', 'D) 1.95 times', 'E) 29.5 times', 'F) Not sure'],
     ans: 0,
     exp: 'AR Turnover = Net Credit Sales ÷ 平均Net AR = €3,650,000 ÷ €1,237,500 = **2.95 times**。「期中で平均的に売掛金が2.95回回収された」を意味する。高い = 早く回収。',
     we: { 1: '0.34 times = 平均AR ÷ Sales = 逆数。Average AR/Sales比 (意味は異なる)。', 2: '3.65 times = €3,650k ÷ €1,000k (平均ARを誤って丸めた)。', 3: '1.95 times = (€3,650k − €1,237k) ÷ €1,237k (差額方式の誤り)。', 4: '29.5 times = 桁誤り (平均ARを€124kで計算)。', 5: '「わからない」を選択。AR Turnover = Net Credit Sales ÷ 平均Net AR。回数表示。' }
   },
   {
     id: 'q724', conceptId: 'c8_collection_period', ch: 8, type: 'E',
-    q: 'AR Turnover = 2.95 timesの場合、Average Collection Period は？',
-    opts: ['A) 約124日', 'B) 約30日', 'C) 約365日', 'D) 約2.95日', 'E) 約60日', 'F) わからない'],
+    q: 'If the AR Turnover is 2.95 times, what is the Average Collection Period?',
+    opts: ['A) About 124 days', 'B) About 30 days', 'C) About 365 days', 'D) About 2.95 days', 'E) About 60 days', 'F) Not sure'],
     ans: 0,
     exp: 'Average Collection Period = 365 / AR Turnover = 365 / 2.95 ≈ 123.7日。「平均的に売掛金が回収されるまで約124日かかる」を意味する。',
     we: { 1: '30日 = ARが12回転 (turnover=12) の場合。', 2: '365日 = turnover=1 の場合。', 3: 'turnover の数値そのまま。日数換算が必要。', 4: '60日 = turnover≈6 の場合。', 5: '「わからない」を選択。Days = 365 ÷ Turnover。Turnover が高い = 早く回収。' }
   },
   {
     id: 'q725', conceptId: 'c8_presentation', ch: 8, type: 'A',
-    q: 'IFRS 9下で AR を貸借対照表に表示する原則として正しいものは？',
-    opts: ['A) Gross AR のみ表示 (Allowance は注記にも記載せず)', 'B) Net Realizable Value で表示 (Gross AR と Allowance を別開示)', 'C) Allowance を直接差し引いた Net AR のみ表示 (内訳非開示)', 'D) 信用販売額をそのまま貸借対照表に Gross 計上する', 'E) 1年超回収の AR は全て Non-current Assets に分類する', 'F) わからない'],
+    q: 'Under IFRS 9, which principle for presenting AR on the balance sheet is correct?',
+    opts: ['A) Present gross AR only (the Allowance is not even disclosed in the notes)', 'B) Present at net realizable value (disclosing gross AR and the Allowance separately)', 'C) Present only net AR after deducting the Allowance (without disclosing the components)', 'D) Record credit sales at their gross amount directly on the balance sheet', 'E) Classify all AR collectible after one year as non-current assets', 'F) Not sure'],
     ans: 1,
     exp: '**IFRS 9 Financial Instruments**: AR は **Net Realizable Value** (回収可能額) で計上。Statement of Financial Position は Gross AR と Allowance for Doubtful Accounts を区別して開示し、差額 = Net AR を示す。',
     we: { 0: 'Gross のみだと回収不能リスクが読み手に伝わらない。Allowance 開示は必須。', 2: 'Net AR だけ表示すると透明性不足。Gross と Allowance の内訳開示が要求される。', 3: '信用販売額 = Gross AR。Allowance控除なしだと AR が過大表示になる。', 4: '原則は流動資産。1年超分があれば Non-current 分類も可能だが「全て」が誤り。', 5: '「わからない」を選択。原則: NRV、開示: Gross + Allowance を別行で。' }
@@ -9919,56 +9919,56 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q730', conceptId: 'c9_ppe_def', ch: 9, type: 'A',
-    q: 'Property, Plant, and Equipment (PPE) の3要件として正しいものは？',
-    opts: ['A) 物理的実体 (touchable) を持ち、事業オペレーションで使用、顧客販売目的ではない', 'B) 物理的実体を持ち、流動性が高く換金性に優れ、毎期減価償却の対象となる資産', 'C) 物理的実体を持たない無形権利で、長期にわたって企業に経済便益をもたらす', 'D) 顧客への販売を目的とし、事業オペレーションで使用、長期保有する有形商品在庫', 'E) 物理的実体を持ち、1年以内に消費・消滅するが、減価償却の対象となる資産', 'F) わからない'],
+    q: 'Which of the following correctly states the three criteria for Property, Plant, and Equipment (PPE)?',
+    opts: ['A) Has physical substance (touchable), used in business operations, and not held for sale to customers', 'B) Has physical substance, is highly liquid and easily converted to cash, and is depreciated each period', 'C) Has no physical substance (an intangible right) but provides long-term economic benefits', 'D) Held for sale to customers, used in operations, and a long-held tangible merchandise inventory', 'E) Has physical substance, is consumed within one year, but is subject to depreciation', 'F) Not sure'],
     ans: 0,
     exp: '**PPE** = (1) 物理的実体 (touchable)、(2) 事業のオペレーションで使用、(3) 顧客への販売目的ではない。販売目的なら Inventory。物理的実体がないなら Intangible。',
     we: { 1: '流動性が高く換金性に優れるものは **Current Assets** (Cash, AR等)。PPE は Non-current。', 2: '「物理的実体を持たない」は **Intangible Assets** の特徴 (特許権、Goodwill等)。PPE は有形。', 3: '販売目的の有形商品は **Inventory** に分類 (例: 自動車販売店の在庫車)。PPE は事業使用目的。', 4: '1年以内消費は **Current Assets** (Supplies, Prepaid 等)。PPE は長期使用 (>1年)。', 5: '「わからない」を選択。3要件: 有形 + 事業使用 + 販売目的でない。' }
   },
   {
     id: 'q731', conceptId: 'c9_land_cost', ch: 9, type: 'E',
-    q: '土地$250,000を購入、不動産仲介$15,000、弁護士費$5,000、整地工事$30,000。Land勘定の取得原価は？',
-    opts: ['A) $250,000', 'B) $300,000', 'C) $270,000', 'D) $295,000', 'E) $250,000 (整地は別資産)', 'F) わからない'],
+    q: 'Land is purchased for $250,000, with $15,000 in real estate commissions, $5,000 in legal fees, and $30,000 in site grading/clearing. What is the cost recorded in the Land account?',
+    opts: ['A) $250,000', 'B) $300,000', 'C) $270,000', 'D) $295,000', 'E) $250,000 (grading is a separate asset)', 'F) Not sure'],
     ans: 1,
     exp: '土地を使用可能にするためのすべてのコストを資本化 (capitalize): $250,000 (購入価格) + $15,000 (仲介) + $5,000 (弁護士) + $30,000 (整地) = $300,000。整地は土地を「ready for use」にするための支出。',
     we: { 0: '購入価格だけでは付帯費用が含まれない。', 2: '$270,000 = 購入価格 + 仲介$15,000 + 弁護士$5,000 のみ。整地$30,000が漏れている。', 3: '$295,000 は仲介を漏らした計算。', 4: '整地は土地を使用可能にする支出なので Land に資本化。Land Improvement (構造的追加=フェンス、駐車場) とは異なる。', 5: '「わからない」を選択。Land = 購入価格 + すべての ready-for-use コスト。' }
   },
   {
     id: 'q732', conceptId: 'c9_land_improvements', ch: 9, type: 'A',
-    q: '次のうち「Land Improvements」として分類されるのは？',
-    opts: ['A) 整地・伐採', 'B) 駐車場・フェンス・照明', 'C) 不動産仲介手数料', 'D) 土地の購入価格', 'E) 弁護士費 (契約書作成)', 'F) わからない'],
+    q: 'Which of the following is classified as \'Land Improvements\'?',
+    opts: ['A) Grading and clearing', 'B) Parking lots, fences, and lighting', 'C) Real estate commissions', 'D) The purchase price of the land', 'E) Legal fees (for drafting the contract)', 'F) Not sure'],
     ans: 1,
     exp: 'Land Improvements = 土地に対する構造的追加 (driveways, parking lots, fences, landscaping, lighting)。これらは耐用年数があり「減価償却対象」。一方 Land 自体 (整地含む) は無期限なので減価償却しない。',
     we: { 0: '整地は Land の取得原価に含める (使用可能化コスト)。', 2: '仲介手数料は Land 本体の取得原価。', 3: '購入価格は Land。', 4: '弁護士費は Land の取得原価。', 5: '「わからない」を選択。重要点: Land Improvements は減価償却するが、Land 本体はしない。' }
   },
   {
     id: 'q733', conceptId: 'c9_depreciation_def', ch: 9, type: 'A',
-    q: '会計上の「減価償却 (depreciation)」の定義として最も正確なものは？',
-    opts: ['A) 資産の市場価値の下落を測定し帳簿価額を時価に再評価する', 'B) 資産の取得原価 (残存価額控除後) を耐用期間に systematic に配分', 'C) 毎期の現金支出 (CAPEX) を会計上費用として認識する処理', 'D) 資産の物理的摩耗・劣化を計測し帳簿に反映する手続', 'E) 資産売却時の Gain/Loss を予測的に当期費用化する手法', 'F) わからない'],
+    q: 'Which statement most accurately defines accounting \'depreciation\'?',
+    opts: ['A) Measuring the decline in the asset\'s market value and remeasuring its carrying amount to fair value', 'B) Systematically allocating an asset\'s cost (less residual value) over its useful life', 'C) Recognizing each period\'s cash outlay (CAPEX) as an accounting expense', 'D) Measuring the physical wear and deterioration of the asset and reflecting it in the books', 'E) Predictively expensing the gain/loss on disposal in the current period', 'F) Not sure'],
     ans: 1,
     exp: '**減価償却** = 取得原価 − 残存価額 (= Depreciable cost) を耐用年数に systematic に allocate するプロセス。市場価値評価ではなく、**Matching Principle** に基づく cost allocation。',
     we: { 0: 'これは **Revaluation / Impairment** (再評価・減損) の概念。減価償却は時価評価ではない。', 2: '現金支出は acquisition 時の1回。減価償却は会計上の費用「配分」であり現金フローと無関係。', 3: '物理的摩耗の測定ではなく、会計上の系統的な配分プロセス。摩耗の有無に関わらず計上する。', 4: '売却利益/損失は disposal 時の処理。減価償却は使用期間中の費用配分。', 5: '「わからない」を選択。Key: systematic allocation of cost (NOT valuation)。' }
   },
   {
     id: 'q734', conceptId: 'c9_sl_method', ch: 9, type: 'E',
-    q: '2020-12-31 に €50,000 で機械購入、耐用年数5年、残存価額€5,000。Straight-line 法での年間減価償却費は？',
-    opts: ['A) €10,000', 'B) €9,000', 'C) €11,000', 'D) €50,000', 'E) €5,000', 'F) わからない'],
+    q: 'On Dec 31, 2020, a machine is purchased for €50,000 with a 5-year useful life and €5,000 residual value. What is the annual straight-line depreciation?',
+    opts: ['A) €10,000', 'B) €9,000', 'C) €11,000', 'D) €50,000', 'E) €5,000', 'F) Not sure'],
     ans: 1,
     exp: 'Annual Depreciation = (Cost − Residual Value) / Useful Life = (€50,000 − €5,000) / 5 = €45,000 / 5 = €9,000/年。',
     we: { 0: '€10,000 = €50,000 / 5 (残存価額を控除していない)。', 2: '€11,000 = (€50,000 + €5,000) / 5 (残存価額を加算している)。誤り。', 3: 'これは取得原価そのもの。1年で全額償却はしない。', 4: 'これは残存価額。', 5: '「わからない」を選択。Straight-line = (Cost − Residual) / Life。' }
   },
   {
     id: 'q735', conceptId: 'c9_sl_partial', ch: 9, type: 'E',
-    q: '2024-07-01 に €700 でカードリーダー購入、耐用年数3年、残存価額€100。2024年の減価償却費は？',
-    opts: ['A) €200', 'B) €100', 'C) €233.33', 'D) €300', 'E) €600', 'F) わからない'],
+    q: 'On July 1, 2024, a card reader is purchased for €700 with a 3-year useful life and €100 residual value. What is the depreciation for 2024?',
+    opts: ['A) €200', 'B) €100', 'C) €233.33', 'D) €300', 'E) €600', 'F) Not sure'],
     ans: 1,
     exp: '年間減価償却費 = (€700 − €100) / 3 = €200/年。7/1〜12/31 は 6ヶ月 = 半年。2024年 = €200 × 6/12 = €100。',
     we: { 0: '€200 は1年分。部分年なので 6/12 を乗じる。', 2: '€233 = €700/3 (残存価額未控除、フル年)。両方間違い。', 3: '€300 = (€700-€100)/2 (耐用年数を半分)。誤り。', 4: '€600 = 償却可能額全額。1年で全額償却しない。', 5: '「わからない」を選択。部分年: 月割で日割計算 (年額 × 使用月/12)。' }
   },
   {
     id: 'q736', conceptId: 'c9_units_activity', ch: 9, type: 'E',
-    q: '€50,000の機械、生涯生産量100,000ユニット、残存価額€5,000。2021年22,000ユニット生産。Units-of-Activity法での2021年減価償却費は？',
-    opts: ['A) €11,000', 'B) €9,900', 'C) €10,000', 'D) €22,000', 'E) €4,500', 'F) わからない'],
+    q: 'A €50,000 machine has a total lifetime output of 100,000 units and a €5,000 residual value. In 2021, 22,000 units are produced. Under the units-of-activity method, what is the 2021 depreciation?',
+    opts: ['A) €11,000', 'B) €9,900', 'C) €10,000', 'D) €22,000', 'E) €4,500', 'F) Not sure'],
     ans: 1,
     exp: 'ステップ1：単位あたり = (€50,000 − €5,000) / 100,000 = €0.45/単位。ステップ2：2021年減価償却 = €0.45 × 22,000 = €9,900。',
     we: { 0: '€11,000 = €50,000/100,000 × 22,000（残存価額未控除）。', 2: '€10,000 は概数の誤り。正解は €9,900。', 3: '€22,000 は単位数そのまま（単価を乗じていない）。', 4: '€4,500 は残存価額×0.9 など計算根拠不明。', 5: '「わからない」を選択。2段階：①単位あたり = 償却対象額/総単位、②費用 = 単価 × 実際単位。' },
