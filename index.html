@@ -21708,10 +21708,12 @@ function loadFilterState() {
 function setPassMode(p) {
   if (typeof quizState === 'undefined') return;
   if (!Array.isArray(quizState.passModes)) quizState.passModes = [0];
-  if (p === 0 || p === 8) {
-    quizState.passModes = [p];
+  if (p === 0) {
+    // 「全範囲」は排他（他を全クリア）
+    quizState.passModes = [0];
   } else {
-    var arr = quizState.passModes.filter(function(x){ return x !== 0 && x !== 8; });
+    // 教科書/過去問/Canvas は複数選択トグル（「全範囲」だけ外す）
+    var arr = quizState.passModes.filter(function(x){ return x !== 0; });
     var i = arr.indexOf(p);
     if (i >= 0) arr.splice(i,1); else arr.push(p);
     if (arr.length === 0) arr = [0];
@@ -21730,11 +21732,8 @@ function setPassMode(p) {
     if (typeof quizState === 'undefined' || !Array.isArray(quizState.passModes)) return base;
     var pm = quizState.passModes;
     if (pm.length === 0 || pm.indexOf(0) >= 0) return base;
-    var canvasOnly = (pm.indexOf(8) >= 0);
     return base.filter(function(q){
-      var sid = getQuestionSourceId(q);
-      if (canvasOnly) return sid === 8;
-      return pm.indexOf(sid) >= 0;
+      return pm.indexOf(getQuestionSourceId(q)) >= 0;
     });
   };
 })();
