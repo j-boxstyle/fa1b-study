@@ -9992,64 +9992,64 @@ var QUESTIONS = [
   },
   {
     id: 'q739', conceptId: 'c9_method_compare', ch: 9, type: 'A',
-    q: '減価償却方法の比較について正しい記述は？',
-    opts: ['A) Straight-line は毎年同額の償却費を計上する (Cost − Residual ÷ 耐用年数)', 'B) Units-of-activity は実際使用量に比例して償却 (per unit × actual units)', 'C) Double-declining-balance は初期に多く後期に少なく償却する (accelerated)', 'D) 3方法とも耐用期間全体の累計償却額 = Depreciable cost (Cost − Residual)', 'E) 上記 (A) (B) (C) (D) のすべての記述が同時に正しい (3方法とも特性は異なるが累計額は同じ)', 'F) わからない'],
+    q: 'Which statement about comparing depreciation methods is correct?',
+    opts: ['A) Straight-line records the same depreciation each year ((Cost − Residual) ÷ useful life)', 'B) Units-of-activity depreciates in proportion to actual usage (per unit × actual units)', 'C) Double-declining-balance depreciates more in early years and less later (accelerated)', 'D) For all three methods, total depreciation over the life = Depreciable cost (Cost − Residual)', 'E) All of (A), (B), (C), and (D) above are simultaneously correct (the methods differ in pattern but total the same)', 'F) Not sure'],
     ans: 4,
     exp: '3方法とも (1) 各特徴 (A)(B)(C) は正、(2) 耐用年数全体での累計償却額 = Depreciable cost (= Cost − Residual) で同じ。違うのは **「いつ」どれだけ償却するかの時期分布** のみ。',
     we: { 0: '(A) Straight-line の説明は正しいが、(B)(C)(D) も同時に正しいので **すべて正しい** が完全な答え。', 1: '(B) Units-of-activity の説明は正しいが、(A)(C)(D) も正しい。**すべて正しい** が完全。', 2: '(C) DDB の説明は正しいが、他の選択肢も正しい。**すべて正しい** が完全。', 3: '(D) 累計償却額の特性は正しいが、(A)(B)(C) も同時に正しい。**すべて正しい** が完全。', 5: '「わからない」を選択。3方法とも合計償却額は同じ、時期分布が違うだけ。' }
   },
   {
     id: 'q740', conceptId: 'c9_reassessment', ch: 9, type: 'E',
-    q: 'Year1初: $3,500機械、耐用10年、残存$500、SL償却。2年後 (Year3初) に「残り4年しかもたない」と再評価。Year3の償却費は？',
-    opts: ['A) $300/年 (当初SL継続)', 'B) $600/年', 'C) $725/年', 'D) $750/年', 'E) $500/年', 'F) わからない'],
+    q: 'Start of Year 1: a $3,500 machine, 10-year life, $500 residual, straight-line. After 2 years (start of Year 3), it is re-estimated to last only 4 more years. What is the Year 3 depreciation?',
+    opts: ['A) $300/year (continue original SL)', 'B) $600/year', 'C) $725/year', 'D) $750/year', 'E) $500/year', 'F) Not sure'],
     ans: 1,
     exp: 'Change in estimate (見積変更) はprospective に適用。\nStep 1: 当初年額 = ($3,500−$500)/10 = $300/年。\nStep 2: 2年経過後 NBV = $3,500 − ($300×2) = $2,900。\nStep 3: 残存価額$500変わらず、残存耐用4年に変更。\nStep 4: 新年額 = (NBV $2,900 − Residual $500) / 残存耐用 4年 = $2,400 / 4 = **$600/年**。',
     we: { 0: '$300 は当初SL額。見積変更後はprospectiveに再計算する。', 2: '$725 = $2,900/4 (残存価額$500を控除し忘れ)。', 3: '$750 = $3,000/4 (NBV計算とResidual控除の両方を誤る)。', 4: '$500 = $2,000/4 (基準金額の計算誤り、NBVが$2,500だった場合)。', 5: '「わからない」を選択。見積変更: 新年額 = (現在NBV − 残存価額) / 残存耐用年数。' }
   },
   {
     id: 'q741', conceptId: 'c9_revaluation_gain', ch: 9, type: 'E',
-    q: 'Equipment cost ¥600,000、Accumulated Dep ¥150,000 (NBV ¥450,000)。Fair value 評価 ¥550,000 → Revaluation model の仕訳は？',
-    opts: ['A) Dr Equipment 100,000 / Cr Revaluation Surplus 100,000', 'B) Dr Accumulated Dep 150,000 / Cr Equipment 50,000 / Cr Revaluation Surplus 100,000', 'C) Dr Equipment 100,000 / Cr Gain on Revaluation 100,000', 'D) Dr Equipment 550,000 / Cr Accumulated Dep 150,000 / Cr Revaluation Surplus 400,000', 'E) Dr Revaluation Surplus 100,000 / Cr Equipment 100,000', 'F) わからない'],
+    q: 'Equipment cost ¥600,000, accumulated depreciation ¥150,000 (NBV ¥450,000). It is revalued to a fair value of ¥550,000. Under the revaluation model, what is the entry?',
+    opts: ['A) Dr Equipment 100,000 / Cr Revaluation Surplus 100,000', 'B) Dr Accumulated Dep 150,000 / Cr Equipment 50,000 / Cr Revaluation Surplus 100,000', 'C) Dr Equipment 100,000 / Cr Gain on Revaluation 100,000', 'D) Dr Equipment 550,000 / Cr Accumulated Dep 150,000 / Cr Revaluation Surplus 400,000', 'E) Dr Revaluation Surplus 100,000 / Cr Equipment 100,000', 'F) Not sure'],
     ans: 1,
     exp: 'Revaluation gain = ¥550,000 − ¥450,000 = ¥100,000。一般的手法: Acc Dep を eliminate し、Equipment 帳簿価額を fair value にする。Dr Acc Dep 150,000 / Cr Equipment 50,000 (差額調整: 600-550) / Cr Revaluation Surplus 100,000。',
     we: { 0: '形式的にはOKだが、Acc Dep の取り扱いが正しくない。実務的には Acc Dep を一掃する。', 2: 'Revaluation gain は P&L (Income Statement) でなく Other Comprehensive Income (OCI) → Revaluation Surplus。Gain 勘定は使わない。', 3: '€400,000という大きすぎる金額。差額のみOCIに認識。', 4: '完全に逆 (損失処理)。', 5: '「わからない」を選択。Revaluation Gain → OCI 経由 Revaluation Surplus。' }
   },
   {
     id: 'q742', conceptId: 'c9_revaluation_loss', ch: 9, type: 'E',
-    q: 'Equipment cost ¥600,000、Accumulated Dep ¥150,000 (NBV ¥450,000)。Fair value 評価 ¥250,000 → 仕訳は？',
-    opts: ['A) Dr Loss on Revaluation 200,000 / Cr Equipment 200,000', 'B) Dr Acc Dep 150,000 / Dr Impairment Loss 200,000 / Cr Equipment 350,000', 'C) Dr Revaluation Surplus 200,000 / Cr Equipment 200,000', 'D) Dr Impairment Loss 250,000 / Cr Equipment 250,000', 'E) Dr Acc Dep 200,000 / Cr Equipment 200,000', 'F) わからない'],
+    q: 'Equipment cost ¥600,000, accumulated depreciation ¥150,000 (NBV ¥450,000). It is revalued to a fair value of ¥250,000. What is the entry?',
+    opts: ['A) Dr Loss on Revaluation 200,000 / Cr Equipment 200,000', 'B) Dr Acc Dep 150,000 / Dr Impairment Loss 200,000 / Cr Equipment 350,000', 'C) Dr Revaluation Surplus 200,000 / Cr Equipment 200,000', 'D) Dr Impairment Loss 250,000 / Cr Equipment 250,000', 'E) Dr Acc Dep 200,000 / Cr Equipment 200,000', 'F) Not sure'],
     ans: 1,
     exp: 'Loss = ¥450,000 − ¥250,000 = ¥200,000。Acc Dep をeliminate (Dr ¥150k)、Impairment Loss を計上 (Dr ¥200k、P&L)、Equipment を fair value まで減らす (Cr ¥350k = ¥600k - ¥250k)。',
     we: { 0: 'Acc Dep の eliminationを忘れている。総額の調整が必要。', 2: '損失だが Revaluation Surplus はゼロ。OCI から取り崩しできない (まず P&L で認識)。', 3: '減価償却累計を無視。fair value への調整は Acc Dep を ゼロにすることが含まれる。', 4: '損失額に減価償却累計150kがダブってしまっている。', 5: '「わからない」を選択。Revaluation Loss → P&L Impairment Loss (Surplus がない場合)。' }
   },
   {
     id: 'q743', conceptId: 'c9_capex_vs_revexp', ch: 9, type: 'A',
-    q: 'Capital expenditure (CAPEX) と Revenue expenditure (RevEx) の正しい区分は？',
-    opts: ['A) CAPEX = 資産化 (B/S)、RevEx = 当期費用 (I/S)', 'B) CAPEX = 当期費用 (I/S)、RevEx = 資産化 (B/S)', 'C) 両方とも当期費用 (I/S) として即時認識する', 'D) 両方とも資産化 (B/S) し耐用期間で償却する', 'E) 金額の大小のみで資産化/費用化を判定する', 'F) わからない'],
+    q: 'Which is the correct distinction between a capital expenditure (CAPEX) and a revenue expenditure (RevEx)?',
+    opts: ['A) CAPEX = capitalized (B/S); RevEx = current expense (I/S)', 'B) CAPEX = current expense (I/S); RevEx = capitalized (B/S)', 'C) Both are recognized immediately as current expenses (I/S)', 'D) Both are capitalized (B/S) and depreciated over the useful life', 'E) Capitalize vs. expense is decided solely by the size of the amount', 'F) Not sure'],
     ans: 0,
     exp: '**CAPEX** = 耐用年数延長・性能向上をもたらす支出 → 資産化 (B/S)。**RevEx** = 通常の修繕・保守 → 当期費用 (I/S)。重要性 (materiality) により判断。',
     we: { 1: '完全に逆方向。CAPEX が資産化、RevEx が費用が正しい。', 2: '両方費用にすると資産価値が増加する支出も即時費用化され Matching違反。', 3: '両方資産化すると通常維持コストも資産計上し純利益が過大に。', 4: '金額のみでなく**性質** (耐用延長/性能向上 vs 通常維持) で判断する。', 5: '「わからない」を選択。耐用延長 = CAPEX (資産化)、通常維持 = RevEx (費用)。' }
   },
   {
     id: 'q744', conceptId: 'c9_disposal_sale', ch: 9, type: 'E',
-    q: '機械: Cost €40,000、Acc Dep €30,000 (NBV €10,000)。€12,000で売却。仕訳に含まれるGain/Lossは？',
-    opts: ['A) Loss €2,000', 'B) Gain €2,000', 'C) Loss €28,000', 'D) Gain €12,000', 'E) Gain/Loss なし', 'F) わからない'],
+    q: 'A machine has a cost of €40,000 and accumulated depreciation of €30,000 (NBV €10,000). It is sold for €12,000. What gain/loss is included in the entry?',
+    opts: ['A) Loss €2,000', 'B) Gain €2,000', 'C) Loss €28,000', 'D) Gain €12,000', 'E) No gain/loss', 'F) Not sure'],
     ans: 1,
     exp: 'Gain/(Loss) = Sale price − NBV = €12,000 − €10,000 = +€2,000 (Gain)。\n仕訳: Dr Cash 12,000 / Dr Acc Dep 30,000 / Cr Equipment 40,000 / Cr Gain on Disposal 2,000。',
     we: { 0: '損失ではなく利益。売値 > NBV。', 2: '€28,000 = NBV ではなく Acc Dep を引いた値。基準は NBV。', 3: 'Cash受取額そのままを利益とすれば帳簿価額の控除を忘れている。', 4: 'Gain か Loss は必ず発生する (売値 ≠ NBV)。', 5: '「わからない」を選択。Disposal Gain = Sale Price − NBV (= Cost − Acc Dep)。' }
   },
   {
     id: 'q745', conceptId: 'c9_intangibles', ch: 9, type: 'A',
-    q: '無形固定資産 (Intangible Assets) について正しい記述は？',
-    opts: ['A) 物理的実体がない', 'B) Goodwill は耐用年数限定で償却', 'C) すべての無形資産は減価償却', 'D) 自社開発の Goodwill は計上可能', 'E) 特許権は20年で必ず償却', 'F) わからない'],
+    q: 'Which statement about intangible assets is correct?',
+    opts: ['A) They have no physical substance', 'B) Goodwill is amortized over a finite useful life', 'C) All intangible assets are depreciated', 'D) Internally generated goodwill can be recorded', 'E) Patents are always amortized over 20 years', 'F) Not sure'],
     ans: 0,
     exp: 'Intangible Assets = 物理的実体を持たない長期資産 (Goodwill, Patents, Copyrights, Trademarks)。これが唯一の正解。',
     we: { 1: 'Goodwill は無期限 (indefinite life)、償却しない (年1回 impairment test)。', 2: '無期限耐用 (Goodwill, Trademarks) は償却せず、Impairment Test のみ。', 3: '自社開発 Goodwill は計上不可。買収時に外部支払金額のみ。', 4: '特許は法的耐用 (20年) と経済的耐用 (より短い) のうち短い方で償却。', 5: '「わからない」を選択。Intangible = 物理的実体なし、Goodwill は不償却。' }
   },
   {
     id: 'q746', conceptId: 'c9_asset_turnover', ch: 9, type: 'E',
-    q: 'Net Sales €1,000,000、平均 Total Assets €500,000。Asset Turnover Ratio は？',
-    opts: ['A) 2.0 times', 'B) 0.5 times', 'C) 1.5 times', 'D) 2.5 times', 'E) 0.2 times', 'F) わからない'],
+    q: 'Net sales are €1,000,000 and average total assets are €500,000. What is the asset turnover ratio?',
+    opts: ['A) 2.0 times', 'B) 0.5 times', 'C) 1.5 times', 'D) 2.5 times', 'E) 0.2 times', 'F) Not sure'],
     ans: 0,
     exp: 'Asset Turnover = Net Sales ÷ Average Total Assets = €1,000,000 ÷ €500,000 = **2.0 times**。「資産1円あたり2円の売上を生む」= 資産活用効率指標。',
     we: { 1: '0.5 times = Total Assets ÷ Net Sales = 逆数 (Sales/Asset の逆方向)。', 2: '1.5 times = (€1,000k − €250k) ÷ €500k (差額アプローチの誤り)。', 3: '2.5 times = €1,000k ÷ €400k (期首/期末いずれかのみ使用、平均でない)。', 4: '0.2 times = €1,000k ÷ €5,000k (桁誤り、Assetsを1桁多く計算)。', 5: '「わからない」を選択。Asset Turnover = Net Sales ÷ 平均Total Assets。回数表示。' }
@@ -10060,8 +10060,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q750', conceptId: 'c10_current_def', ch: 10, type: 'A',
-    q: '流動負債 (Current Liability) の定義として正しいものは？',
-    opts: ['A) 1年以内 or 営業循環内に決済される債務 (長い方基準)', 'B) 通常5年以内に解消される予定の中短期債務全般', 'C) 利息が発生しない無利子の取引債務に限られる', 'D) 仕入先・取引先からの債務 (AP系) のみが該当する', 'E) 金額が一定水準以下の小規模な経常的債務', 'F) わからない'],
+    q: 'Which is the correct definition of a current liability?',
+    opts: ['A) An obligation settled within one year or the operating cycle (whichever is longer)', 'B) Any short-to-medium-term obligation expected to be settled within about five years', 'C) Limited to non-interest-bearing trade obligations', 'D) Only obligations to suppliers/vendors (accounts payable) qualify', 'E) Only small, recurring obligations below a certain amount', 'F) Not sure'],
     ans: 0,
     exp: '**Current Liability** = (1) 1年以内、または (2) 通常の事業循環期間 (operating cycle) 内に解消される債務。**長い方**を基準とする。',
     we: { 1: '基準は「1年 or 営業循環の長い方」。5年は Non-current (固定負債)。', 2: '利息有無は分類基準ではない。Notes Payable は利息ありでも Current になりうる。', 3: '従業員 (Salaries Payable)・政府 (Tax Payable)・金融機関 (Notes Payable) への債務も Current に含まれる。', 4: '金額の大小は分類基準ではない。期間 (1年/営業循環) が唯一の判断基準。', 5: '「わからない」を選択。1年 or 営業循環の長い方 = Current Liability。' }
@@ -10084,8 +10084,8 @@ var QUESTIONS = [
   },
   {
     id: 'q753', conceptId: 'c10_sales_tax', ch: 10, type: 'E',
-    q: '商品 (税抜) €1,000、VAT 21%で販売。販売時の仕訳は？',
-    opts: ['A) Dr Cash 1,000 / Cr Sales Revenue 1,000', 'B) Dr Cash 1,210 / Cr Sales Revenue 1,000 / Cr Sales Tax Payable 210', 'C) Dr Cash 1,210 / Cr Sales Revenue 1,210', 'D) Dr Cash 1,000 / Cr Sales Revenue 826 / Cr Sales Tax Payable 174', 'E) Dr Cash 1,000 / Cr Sales Revenue 790 / Cr Sales Tax Payable 210', 'F) わからない'],
+    q: 'Goods (excluding tax) of €1,000 are sold with 21% VAT. What is the entry at the time of sale?',
+    opts: ['A) Dr Cash 1,000 / Cr Sales Revenue 1,000', 'B) Dr Cash 1,210 / Cr Sales Revenue 1,000 / Cr Sales Tax Payable 210', 'C) Dr Cash 1,210 / Cr Sales Revenue 1,210', 'D) Dr Cash 1,000 / Cr Sales Revenue 826 / Cr Sales Tax Payable 174', 'E) Dr Cash 1,000 / Cr Sales Revenue 790 / Cr Sales Tax Payable 210', 'F) Not sure'],
     ans: 1,
     exp: '税抜€1,000の販売 + VAT 21% = €210。顧客受取総額 €1,210。会社は VAT €210 を Sales Tax Payable (政府への債務) として計上。Sales Revenue は税抜€1,000。',
     we: { 0: '税金を無視している。VAT 徴収義務 (€210を政府に納める債務) を反映していない仕訳。', 2: '税金を Revenue に含めると **過大表示**。VAT は会社の収益でなく顧客から預かって政府に渡す Liability。', 3: 'これは「税込€1,000」を税抜と税に分解した場合 (€1,000/1.21 ≈ €826、税€174)。本問は税抜€1,000なので顧客から€1,210受領。', 4: '€1,000受領で Revenue €790という分配は会計上根拠なし。VAT税率21%の分配ロジックと一致しない。', 5: '「わからない」を選択。VAT = 顧客から預かり政府に渡す Liability。Revenue は税抜額のみ。' }
@@ -10108,16 +10108,16 @@ var QUESTIONS = [
   },
   {
     id: 'q756', conceptId: 'c10_current_maturities', ch: 10, type: 'A',
-    q: '長期借入金€500,000のうち、来期 (12ヶ月以内) に€40,000の返済予定。貸借対照表の表示は？',
-    opts: ['A) Non-current Liab €500,000、Current Liab €0', 'B) Current Maturities of LT Debt €40,000、Non-current Liab €460,000', 'C) Notes Payable (Current) €40,000、Non-current Liab €500,000', 'D) Notes Payable (Current) €40,000、Non-current Liab €460,000', 'E) Current Maturities of LT Debt €500,000、Non-current Liab €0', 'F) わからない'],
+    q: 'Of a €500,000 long-term loan, €40,000 is due for repayment next year (within 12 months). How is this presented on the balance sheet?',
+    opts: ['A) Non-current Liability €500,000; Current Liability €0', 'B) Current Maturities of LT Debt €40,000; Non-current Liability €460,000', 'C) Notes Payable (Current) €40,000; Non-current Liability €500,000', 'D) Notes Payable (Current) €40,000; Non-current Liability €460,000', 'E) Current Maturities of LT Debt €500,000; Non-current Liability €0', 'F) Not sure'],
     ans: 1,
     exp: '長期負債のうち**1年以内返済予定分** (€40,000) を Current Maturities of Long-term Debt として流動負債に振替表示。残り€460,000 は Non-current。これにより読者は短期の支払い予定額が明確に分かる。',
     we: { 0: '12ヶ月以内返済予定分 (€40k) は流動に再分類すべき。Non-current だけにすると短期支払予定が読み手に伝わらない。', 2: '勘定名が誤り。"Notes Payable" でなく "Current Maturities of LT Debt"。また Non-current は€500,000ではなく€460,000 (€40kを引いた額)。', 3: '勘定名が誤り。"Notes Payable" でなく "Current Maturities of LT Debt"。金額分割は正しい。', 4: '€500,000全額を流動に分類するのは誤り。1年超返済分は Non-current。', 5: '「わからない」を選択。1年以内分は Current Maturities of LT Debt として流動分類、残りは Non-current。' }
   },
   {
     id: 'q757', conceptId: 'c10_salaries_payable', ch: 10, type: 'E',
-    q: '従業員給与€10,000/月、月末締め翌月10日支払い。12月31日の調整仕訳は？',
-    opts: ['A) Dr Salaries Expense 10,000 / Cr Cash 10,000', 'B) Dr Salaries Expense 10,000 / Cr Salaries Payable 10,000', 'C) Dr Salaries Payable 10,000 / Cr Salaries Expense 10,000', 'D) Dr Cash 10,000 / Cr Salaries Payable 10,000', 'E) 仕訳不要 (1月支払時に計上)', 'F) わからない'],
+    q: 'Employee salaries are €10,000/month, with month-end cutoff paid on the 10th of the next month. What is the December 31 adjusting entry?',
+    opts: ['A) Dr Salaries Expense 10,000 / Cr Cash 10,000', 'B) Dr Salaries Expense 10,000 / Cr Salaries Payable 10,000', 'C) Dr Salaries Payable 10,000 / Cr Salaries Expense 10,000', 'D) Dr Cash 10,000 / Cr Salaries Payable 10,000', 'E) No entry required (record it when paid in January)', 'F) Not sure'],
     ans: 1,
     exp: '12月発生の給与は12月の費用 (matching)。未払なので Salaries Payable (流動負債) に計上。1月10日の支払時に Dr Salaries Payable / Cr Cash で取り崩す。',
     we: { 0: 'Cashはまだ支払っていない (12月31日時点)。', 2: '借方/貸方が逆。費用は借方、負債は貸方。', 3: '逆方向。Cashは流入していない。給与支払では現金流出。', 4: 'matching違反。発生期間に認識。', 5: '「わからない」を選択。未払給与 = 発生主義で Dr Salaries Exp / Cr Salaries Payable。' }
@@ -10128,32 +10128,32 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q760', conceptId: 'c11_bond_par', ch: 11, type: 'E',
-    q: '社債€100,000 額面、Stated rate 5%、Market rate 5%、5年満期で発行。発行価額は？',
-    opts: ['A) €100,000 (額面 = at par)', 'B) €95,000 (Discount)', 'C) €105,000 (Premium)', 'D) €125,000 (元利合計)', 'E) €25,000 (利息のみ)', 'F) わからない'],
+    q: 'A €100,000 face value bond with a 5% stated rate is issued when the market rate is 5%, maturing in 5 years. What is the issue price?',
+    opts: ['A) €100,000 (face value = at par)', 'B) €95,000 (Discount)', 'C) €105,000 (Premium)', 'D) €125,000 (principal + total interest)', 'E) €25,000 (interest only)', 'F) Not sure'],
     ans: 0,
     exp: 'Stated rate = Market rate の時、社債は額面 (face value) で発行 (at par)。投資家にとって他の同等投資と利回りが同じため、額面通り買う。',
     we: { 1: 'Discount は Market > Stated の時 (発行体の利息が市場より低い → 値引き)。', 2: 'Premium は Stated > Market の時 (発行体の利息が市場より高い → 上乗せ)。', 3: '元利合計は満期受取総額。発行価額は割引現在価値。', 4: '利息のみは発行価額ではない。', 5: '「わからない」を選択。Stated = Market → at par。' }
   },
   {
     id: 'q761', conceptId: 'c11_bond_discount', ch: 11, type: 'A',
-    q: '社債が「Discount で発行」される条件は？',
-    opts: ['A) Stated rate > Market rate', 'B) Stated rate < Market rate', 'C) Stated rate = Market rate', 'D) 信用格付が高い', 'E) 為替変動の影響', 'F) わからない'],
+    q: 'Under what condition is a bond issued at a Discount?',
+    opts: ['A) Stated rate > Market rate', 'B) Stated rate < Market rate', 'C) Stated rate = Market rate', 'D) The credit rating is high', 'E) The effect of currency fluctuations', 'F) Not sure'],
     ans: 1,
     exp: 'Stated rate < Market rate → 投資家は市場利回り以下の利息しか受け取れない → 補償として割引価格で発行 (Discount)。発行体は満期に額面を返すので、差額が「実効利息」を増やす。',
     we: { 0: 'Stated > Market → Premium (上乗せ)。逆。', 2: 'Stated = Market → at par。', 3: '信用格付は利率に影響するが Discount/Premium の直接定義ではない。', 4: '為替変動は無関係 (社債発行時の話)。', 5: '「わからない」を選択。覚え方: Stated 低い → 投資家不利 → 割引 (Discount)。' }
   },
   {
     id: 'q762', conceptId: 'c11_bond_premium', ch: 11, type: 'A',
-    q: '社債が「Premium で発行」される条件と意味は？',
-    opts: ['A) Stated < Market、額面より低い価格', 'B) Stated > Market、額面より高い価格', 'C) Stated = Market、額面どおり', 'D) 信用力低下時', 'E) 発行体に有利な状況とは言えない', 'F) わからない'],
+    q: 'What is the condition for, and meaning of, a bond issued at a Premium?',
+    opts: ['A) Stated < Market; a price below face value', 'B) Stated > Market; a price above face value', 'C) Stated = Market; priced at face value', 'D) When creditworthiness declines', 'E) It cannot be said to favor the issuer', 'F) Not sure'],
     ans: 1,
     exp: 'Stated rate > Market rate → 投資家は市場利回り以上の利息を受け取れる → 投資家は高い価格 (Premium) を払ってでも買いたい。発行体は額面以上の現金を受け取るが、満期返済は額面のみ → Premiumは実効利息を「下げる」。',
     we: { 0: 'Discount の条件。逆。', 2: 'at par の条件。', 3: '信用力低下は逆 (利率上昇/Discount要因)。', 4: '発行体はPremium で多くの現金を受け取り、実効利息も低下するため有利な状況。', 5: '「わからない」を選択。Stated 高い → 投資家有利 → 上乗せ価格 (Premium)。' }
   },
   {
     id: 'q763', conceptId: 'c11_bond_issuance_par', ch: 11, type: 'E',
-    q: 'Bonds €100,000 を額面発行。仕訳は？',
-    opts: ['A) Dr Cash 100,000 / Cr Bonds Payable 100,000', 'B) Dr Bonds Payable 100,000 / Cr Cash 100,000', 'C) Dr Cash 100,000 / Cr Premium on Bonds 100,000', 'D) Dr Cash 95,000 / Dr Discount on Bonds 5,000 / Cr Bonds Payable 100,000', 'E) Dr Cash 100,000 / Cr Notes Payable 100,000', 'F) わからない'],
+    q: 'Bonds of €100,000 are issued at face value. What is the entry?',
+    opts: ['A) Dr Cash 100,000 / Cr Bonds Payable 100,000', 'B) Dr Bonds Payable 100,000 / Cr Cash 100,000', 'C) Dr Cash 100,000 / Cr Premium on Bonds 100,000', 'D) Dr Cash 95,000 / Dr Discount on Bonds 5,000 / Cr Bonds Payable 100,000', 'E) Dr Cash 100,000 / Cr Notes Payable 100,000', 'F) Not sure'],
     ans: 0,
     exp: '額面発行 (at par): Cash 受領額 = 額面 = €100,000。Dr Cash 100,000 / Cr Bonds Payable 100,000。',
     we: { 1: '逆方向 (償還時の仕訳)。', 2: 'at parなら Premium はゼロ。', 3: 'Discount で発行された場合の仕訳。問題は at par。', 4: '社債 (Bonds) は Notes Payable と別勘定。', 5: '「わからない」を選択。at par = 額面額をCash と Bonds Payable に両建て。' }
