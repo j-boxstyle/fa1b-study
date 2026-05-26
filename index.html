@@ -492,10 +492,10 @@ details[open] > .review-concept-name::before { content:'▼ '; }
 
 /* ===== FLOATING BREAK BUTTON ===== */
 .float-break-btn {
-  position:fixed; bottom:20px; right:20px; z-index:998;
+  position:fixed; bottom:90px; right:20px; z-index:998;
   background:#065f46; color:#34d399; border:2px solid #34d399;
-  border-radius:50%; width:60px; height:60px;
-  font-size:24px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  border-radius:50%; width:52px; height:52px;
+  font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center;
   box-shadow:0 4px 20px rgba(52,211,153,0.3); transition:all 0.2s;
 }
 .float-break-btn:hover { background:#047857; transform:scale(1.1); }
@@ -847,6 +847,196 @@ body { padding-top:112px; }
 .fml sup{font-size:0.65em;vertical-align:0.65em;color:#fcd34d;}
 .fml .pm{color:#fbbf24;}
 
+/* ═══════════════════════════════════════════════════════
+   Phase 2: Navigation FABs (Back-to-top / 略語 / ロードマップ)
+   ─ accent: accounting gold #eab308 ─
+   ═══════════════════════════════════════════════════════ */
+
+/* ── wave-fab (既存 HTML だが CSS 未定義だったので新規定義) ── */
+.wave-fab{
+  position:fixed;bottom:160px;right:20px;z-index:90;
+  width:52px;height:52px;border-radius:50%;
+  background:#3b82f6;border:none;color:white;
+  font-size:24px;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,0.4);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.wave-fab:hover{background:#2563eb;transform:scale(1.08);}
+.wave-fab:active{transform:scale(0.95);}
+
+/* ── Back-to-top floating button ── */
+.back-top{
+  position:fixed;bottom:24px;right:20px;z-index:90;
+  width:52px;height:52px;border-radius:50%;
+  background:#eab308;border:none;color:white;
+  font-size:24px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.4);
+  display:none;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.back-top.visible{display:flex;}
+.back-top:hover{background:#ca8a04;transform:scale(1.08);}
+.back-top:active{transform:scale(0.95);}
+
+/* ── 略語 FAB (Abbreviations) ── */
+.abbr-fab{
+  position:fixed;bottom:230px;right:20px;z-index:90;
+  width:52px;height:52px;border-radius:50%;
+  background:#06b6d4;border:none;color:white;
+  font-size:22px;font-weight:800;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,0.4);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.abbr-fab:hover{background:#0891b2;transform:scale(1.08);}
+.abbr-fab:active{transform:scale(0.95);}
+.abbr-fab.active{background:#dc2626;}
+
+/* ── ロードマップ FAB ── */
+.roadmap-fab{
+  position:fixed;bottom:300px;right:20px;z-index:90;
+  width:52px;height:52px;border-radius:50%;
+  background:#9a6ad9;border:none;color:white;
+  font-size:24px;font-weight:800;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,0.4);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.roadmap-fab:hover{background:#7c4dc4;transform:scale(1.08);}
+.roadmap-fab:active{transform:scale(0.95);}
+
+/* ── ロードマップ モーダル ── */
+.roadmap-modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.75);
+  z-index:300;opacity:0;pointer-events:none;
+  transition:opacity .25s;
+}
+.roadmap-modal-overlay.open{opacity:1;pointer-events:auto;}
+.roadmap-modal{
+  position:fixed;top:2vh;left:50%;
+  width:min(1200px, 96vw);height:96vh;
+  background:#0a0e1a;border:1px solid #2d3a55;border-radius:14px;
+  transform:translateX(-50%) scale(.95);opacity:0;pointer-events:none;
+  z-index:310;transition:all .25s;
+  overflow-y:auto;overflow-x:hidden;
+}
+.roadmap-modal.open{opacity:1;pointer-events:auto;transform:translateX(-50%) scale(1);}
+.roadmap-modal-header{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;background:#131b2d;border-bottom:1px solid #243047;
+}
+.roadmap-modal-title{font-size:18px;font-weight:700;color:#eab308;}
+.roadmap-modal-close{
+  margin-left:auto;background:#2d3a55;border:none;color:#fff;
+  width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;
+}
+.roadmap-modal-body{
+  background:#0a0e1a;padding:16px 20px 60px;
+}
+.roadmap-modal-body h3{
+  color:#eab308;font-size:16px;margin:18px 0 8px;
+  padding-bottom:6px;border-bottom:1px solid #243047;
+}
+.roadmap-modal-body .rm-chapter{
+  background:#131b2d;border:1px solid #243047;border-radius:8px;
+  padding:12px 14px;margin:8px 0;cursor:pointer;
+  transition:all .15s;
+}
+.roadmap-modal-body .rm-chapter:hover{border-color:#eab308;background:#1a253b;}
+.roadmap-modal-body .rm-chapter-title{
+  font-weight:700;color:#fcd34d;font-size:14px;margin-bottom:4px;
+}
+.roadmap-modal-body .rm-chapter-sub{
+  color:#94a3b8;font-size:12px;line-height:1.5;
+}
+
+/* ── 略語モーダル (popup overlay) ── */
+.abbr-modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.65);
+  z-index:300;opacity:0;pointer-events:none;
+  transition:opacity .25s;
+}
+.abbr-modal-overlay.open{opacity:1;pointer-events:auto;}
+.abbr-modal{
+  position:fixed;top:5vh;left:50%;
+  width:min(900px, 92vw);max-height:90vh;
+  transform:translate(-50%, 20px);opacity:0;pointer-events:none;
+  background:#0f1c2e;border:2px solid #06b6d4;border-radius:16px;
+  z-index:301;
+  display:flex;flex-direction:column;
+  box-shadow:0 12px 40px rgba(0,0,0,0.6);
+  transition:opacity .25s, transform .25s;
+}
+.abbr-modal.open{
+  opacity:1;pointer-events:auto;
+  transform:translate(-50%, 0);
+}
+.abbr-modal-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 24px;border-bottom:2px solid #1e3a5f;
+  background:#0f1c2e;border-radius:14px 14px 0 0;
+}
+.abbr-modal-title{
+  font-size:22px;font-weight:800;color:#22d3ee;
+}
+.abbr-modal-close{
+  background:#1a2940;border:2px solid #ef4444;border-radius:50%;
+  color:#ef4444;width:40px;height:40px;font-size:22px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.abbr-modal-body{
+  padding:14px 20px 20px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;flex:1;
+}
+.abbr-search-wrap{
+  display:flex;gap:8px;margin-bottom:12px;
+}
+.abbr-search-wrap input{
+  flex:1;background:#0a1421;border:1px solid #1e3a5f;border-radius:8px;
+  color:#e8eef7;padding:9px 12px;font-size:14px;
+}
+.abbr-search-wrap input:focus{outline:none;border-color:#22d3ee;}
+.abbr-cat-pills{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;
+}
+.abbr-cat-pill{
+  background:#1a2940;border:1px solid #2d3a55;color:#94a3b8;
+  padding:5px 12px;border-radius:20px;font-size:12px;cursor:pointer;
+  transition:all .15s;
+}
+.abbr-cat-pill.active{background:#06b6d4;border-color:#06b6d4;color:#fff;}
+.abbr-cat-pill:hover{border-color:#22d3ee;}
+#abbr-list{display:flex;flex-direction:column;gap:6px;}
+.abbr-row{
+  display:grid;grid-template-columns:90px 1fr;gap:12px;
+  background:#0a1421;border:1px solid #1e3a5f;border-radius:8px;
+  padding:10px 14px;
+}
+.abbr-row .ab{
+  font-weight:800;color:#fcd34d;font-family:'SF Mono',monospace;font-size:14px;
+}
+.abbr-row .td{font-size:13px;color:#e8eef7;line-height:1.5;}
+.abbr-row .td .en{color:#94a3b8;font-size:11px;margin-top:2px;}
+.abbr-row .ch-chip{
+  display:inline-block;background:#1e3a5f;color:#22d3ee;
+  font-size:10px;padding:2px 6px;border-radius:8px;margin-left:6px;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 600px) {
+  .float-break-btn,.wave-fab,.back-top,.abbr-fab,.roadmap-fab{
+    width:46px;height:46px;font-size:20px;right:14px;
+  }
+  .float-break-btn{bottom:80px;}
+  .back-top{bottom:22px;}
+  .wave-fab{bottom:138px;}
+  .abbr-fab{bottom:196px;}
+  .roadmap-fab{bottom:254px;}
+  .roadmap-modal{top:1vh;height:98vh;width:98vw;border-radius:10px;}
+  .abbr-modal{width:96vw;max-height:92vh;}
+  .abbr-row{grid-template-columns:78px 1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -863,7 +1053,7 @@ body { padding-top:112px; }
   </aside>
 
   <nav class="tab-bar">
-    <button class="tab-btn active" data-tab="tab-textbook" onclick="switchTab('tab-textbook')">📖 教科書</button>
+    <button class="tab-btn active" data-tab="tab-textbook" onclick="roadmapGoTo('tab-textbook')">📖 教科書</button>
     <button class="tab-btn" data-tab="tab-quiz" onclick="switchTab('tab-quiz')">❓ クイズ</button>
     <button class="tab-btn" data-tab="tab-compare" onclick="switchTab('tab-compare')">⚖️ 比較</button>
     <button class="tab-btn" data-tab="tab-calc" onclick="switchTab('tab-calc')">🧮 計算機</button>
@@ -7201,6 +7391,506 @@ var QUESTIONS = [
     exp: 'Income Summary を Retained Earnings に振替: Dr Income Summary €250,000 / Cr Retained Earnings €250,000. \n①Income Summaryをdebit (借方) で閉鎖、②Retained Earningsを credit (貸方)、③Equity 増加 (利益なので)、④Dividends は別の閉鎖仕訳で処理 (この仕訳は影響しない)。',
     we: { 0: 'RE はCredit (利益)', 1: '"Income Statement" 勘定はない', 2: '利益なのでEquity増加' }
   },
+];
+
+/* ═══════════════════════════════════════════════════════
+   Phase 3: QUESTIONS_FA1B_MOCK  (Sample Midterm 25問)
+   問題文・選択肢は英語のまま、解説は日本語
+   計算問題には keyword / formula / example を必須付与
+   ═══════════════════════════════════════════════════════ */
+var QUESTIONS_FA1B_MOCK = [
+  {
+    id:'mock-01', ch:1, week:1, type:'A',
+    q:'Which of the following is correct?',
+    opts:[
+      "An asset's historical cost is always higher than its fair value",
+      "An asset's historical cost is always lower than its fair value",
+      "An asset's historical cost is always equal to its fair value",
+      "An asset's historical cost can be equal to, higher than, or lower than its fair value"
+    ],
+    ans:3,
+    exp:'歴史的原価 (Historical Cost) は取得時点の価格、公正価値 (Fair Value) は現在の市場価格。両者の関係は固定されておらず、状況によって等しい・高い・低いいずれもあり得る。',
+    we:{0:'always higher は誤り。値下がりすればFVの方が低くなることもある',1:'always lower も誤り。値下がりではFVが下がる',2:'always equal は誤り。取得後に価値変動があれば一致しない'},
+    keyword:'Historical Cost vs Fair Value',
+    memory:'Historical = 取得時、Fair = 今。「いつの値段か」で違うだけ。',
+    source:'FA1B Sample Midterm Q1'
+  },
+  {
+    id:'mock-02', ch:2, week:1, type:'A',
+    q:'Which account will normally have a credit balance?',
+    opts:['Accounts Receivable','Supplies Expense','Unearned Revenues','Dividends'],
+    ans:2,
+    exp:'通常残高 (Normal Balance) は勘定科目の種類で決まる。資産・費用・配当 = Debit残高 / 負債・資本・収益 = Credit残高。Unearned Revenues は「前受収益」= 負債 → Credit。',
+    we:{0:'AR は資産 → Debit残高',1:'費用 → Debit残高',3:'配当 → Debit残高 (RE のマイナス)'},
+    keyword:'Normal Balance',
+    formula:'資産・費用・配当 = Dr / 負債・資本・収益 = Cr',
+    example:'AR(資産)→Dr、Unearned Rev(負債)→Cr、Service Rev(収益)→Cr',
+    memory:'DEAD CLIC : Debit (Expense Asset Dividend) / Credit (Liability Income Capital)',
+    source:'FA1B Sample Midterm Q2'
+  },
+  {
+    id:'mock-03', ch:2, week:1, type:'A',
+    q:'On November 30 Random Comp Inc. pays its monthly electricity bill, which is $1,200. Which journal entry can be a correct way of accounting for this transaction?',
+    opts:[
+      'Dr. Utilities Expense 1,200 / Cr. Cash 1,200',
+      'Dr. Utilities Expense 1,200 / Cr. Prepaid Expenses 1,200',
+      'Dr. Prepaid Expenses 1,200 / Cr. Utilities Expense 1,200',
+      'Dr. Supplies 1,200 / Cr. Cash 1,200'
+    ],
+    ans:0,
+    exp:'当月分の電気代を現金で支払い → 費用発生 (Dr Utilities Expense) + 現金減少 (Cr Cash)。月次の経常費用は前払処理不要。',
+    we:{1:'Prepaid Expense は減らない (前払なし)',2:'借方貸方が逆',3:'Supplies (消耗品) ではなく Utilities (光熱費)'},
+    keyword:'Monthly bill paid in cash',
+    formula:'Dr Expense / Cr Cash',
+    example:'家賃支払: Dr Rent Expense / Cr Cash',
+    memory:'「払って消費した」→ Expense Dr / Cash Cr の鉄板パターン',
+    source:'FA1B Sample Midterm Q3'
+  },
+  {
+    id:'mock-04', ch:5, week:2, type:'C',
+    q:'MokumEet BV buys merchandise inventory with an invoice price of €25,000 and credit terms 5/10, n/60. What is the net costs of the goods if MokumEetBV pays within the discount period?',
+    opts:['€23,750','€25,000','€12,500','€22,500'],
+    ans:0,
+    exp:'5/10, n/60 = 10日以内支払で5%割引、なければ60日以内全額。割引適用: €25,000 × (1 − 0.05) = €25,000 × 0.95 = €23,750。',
+    we:{1:'割引を適用していない',2:'50%割引と勘違い (5%ではない)',3:'10%割引と勘違い'},
+    keyword:'2/10 n/30 形式 / Credit terms',
+    formula:'Net Cost = Invoice Price × (1 − Discount %)',
+    example:'€25,000 × 0.95 = €23,750',
+    memory:'「a/b, n/c」→ b日以内に払えばa%引き / c日まで全額。最初の数字が割引率',
+    source:'FA1B Sample Midterm Q4',
+    visual:{
+      type:'formula-box',
+      title:'5/10, n/60 の構造',
+      eq:'Net Cost = €25,000 × (1 − 0.05) = €23,750',
+      legend:[
+        {label:'5', value:'割引率 5%'},
+        {label:'10', value:'割引期間 10日'},
+        {label:'n/60', value:'最終支払期限 60日'}
+      ]
+    }
+  },
+  {
+    id:'mock-05', ch:2, week:1, type:'C',
+    q:'Before posting a payment of €2,000, the Accounts Payable account of Breathlite had a normal balance of €19,000. The balance after posting was:',
+    opts:['€19,000 credit','€21,000 debit','€17,000 credit','€21,000 debit'],
+    ans:2,
+    exp:'AP (買掛金) は負債 → 通常Credit残高。支払い (€2,000) は AP を減らす → Dr AP €2,000 / Cr Cash €2,000。残高 = €19,000 − €2,000 = €17,000 Credit。',
+    we:{0:'支払いを反映していない',1:'Debit 残高は誤り (AP は負債)',3:'増えるのではなく減る'},
+    keyword:'Accounts Payable payment',
+    formula:'AP残高(Cr) − 支払額 = 新AP残高(Cr)',
+    example:'€19,000 Cr − €2,000 = €17,000 Cr',
+    memory:'AP=負債=Cr残高。支払うと減る (Dr AP / Cr Cash)',
+    source:'FA1B Sample Midterm Q5'
+  },
+  {
+    id:'mock-06', ch:3, week:2, type:'A',
+    q:'For an adjusting entry, the account Unearned Service Revenue is debited. Which account will be credited?',
+    opts:['Cash','Service Revenue','Income Summary','Cost of Goods Sold'],
+    ans:1,
+    exp:'Unearned Service Revenue (前受収益・負債) を Dr で減らす = サービスを提供して収益認識 (Earned)。対応する Cr は Service Revenue (収益)。Adjusting entry の典型パターン。',
+    we:{0:'Cash は前受時に既に受領済み',2:'Income Summary は期末締切でのみ使用',3:'COGS は商品売買にのみ関係'},
+    keyword:'Unearned Revenue → Earned',
+    formula:'Dr Unearned Revenue / Cr Service Revenue',
+    example:'前受 €1,000 のうち €300 分のサービス提供 → Dr Unearned Rev 300 / Cr Service Rev 300',
+    memory:'前受 (負債) が減る ⇄ 収益が立つ。負債→収益への変換',
+    source:'FA1B Sample Midterm Q6'
+  },
+  {
+    id:'mock-07', ch:6, week:3, type:'C',
+    q:"Quincy Boots Company uses a periodic inventory system. Balance Jul 1: 30,000 units @ £2.25 = £67,500; Jul 6 purchase 20,000 @ £2.55 = £51,000; Jul 26 purchase 27,000 @ £2.60 = £70,200; Jul 7 sale 25,000; Jul 31 sale 40,000. What should be the inventory reported on Jul 31 using the average-cost method? (round to 2 decimals)",
+    opts:['£29,610','£31,500','£27,000','£29,400'],
+    ans:3,
+    exp:'加重平均法 (Periodic): 平均単価 = 総コスト ÷ 総数量 = (67,500+51,000+70,200) ÷ (30,000+20,000+27,000) = £188,700 ÷ 77,000 = £2.45。期末数量 = 77,000 − 25,000 − 40,000 = 12,000 units。EI = 12,000 × £2.45 = £29,400。',
+    we:{0:'平均単価の計算ミス',1:'販売数量を控除していない',2:'期首単価のみで計算'},
+    keyword:'Weighted Average / 加重平均',
+    formula:'平均単価 = 総コスト ÷ 総数量\nEI = 期末数量 × 平均単価',
+    example:'総コスト£188,700÷総数量77,000=£2.45 / EI 12,000×£2.45=£29,400',
+    memory:'Periodic + WA = 期末にまとめて平均。Perpetual だと移動平均で値が変わる',
+    source:'FA1B Sample Midterm Q7',
+    visual:{
+      type:'steps',
+      title:'加重平均法 (Periodic) の手順',
+      steps:[
+        {label:'Step 1', detail:'総コスト = 67,500 + 51,000 + 70,200 = £188,700'},
+        {label:'Step 2', detail:'総数量 = 30,000 + 20,000 + 27,000 = 77,000 units'},
+        {label:'Step 3', detail:'平均単価 = 188,700 ÷ 77,000 = £2.45'},
+        {label:'Step 4', detail:'期末数量 = 77,000 − 25,000 − 40,000 = 12,000 units'},
+        {label:'Step 5', detail:'EI = 12,000 × £2.45 = £29,400 ✓'}
+      ]
+    }
+  },
+  {
+    id:'mock-08', ch:6, week:3, type:'C',
+    q:'(Same data as Q7) What should be the Cost of Goods Sold in July if Quincy Boots Company used the LIFO inventory method?',
+    opts:['£161,700','£159,250','£157,500','£124,450'],
+    ans:0,
+    exp:'LIFO Periodic: 新しい仕入から先に COGS へ。販売 65,000 units の COGS を新しい層から取る:\n①Jul 26: 27,000 @£2.60 = £70,200\n②Jul 6:  20,000 @£2.55 = £51,000\n③Jul 1:  18,000 @£2.25 = £40,500\n合計 COGS = £161,700。期末は最古層から残り 12,000 @£2.25 = £27,000。',
+    we:{1:'計算ミス',2:'FIFO の値 (古い層から COGS = 古い安い値)',3:'EI の値 (£27,000 ではないが近似値)'},
+    keyword:'LIFO Periodic',
+    formula:'COGS = Σ (新しい層の数量 × 単価) ※販売数まで\nIFRS では LIFO 禁止、US GAAP のみ',
+    example:'65,000 売却: 27,000@2.60 + 20,000@2.55 + 18,000@2.25 = £161,700',
+    memory:'LIFO = Last In First Out = 新しいものから先に COGS へ',
+    source:'FA1B Sample Midterm Q8',
+    visual:{
+      type:'compare-table',
+      title:'LIFO Periodic: 販売 65,000 units の COGS 層別計算',
+      cols:[
+        {label:'層 (新→古)', cls:'highlight'},
+        {label:'単価', cls:'good'},
+        {label:'数量', cls:'good'},
+        {label:'小計', cls:'good'}
+      ],
+      rows:[
+        {label:'① Jul 26 仕入', cells:['£2.60','27,000','£70,200']},
+        {label:'② Jul 6 仕入',  cells:['£2.55','20,000','£51,000']},
+        {label:'③ Jul 1 期首',  cells:['£2.25','18,000','£40,500']},
+        {label:'COGS 合計',     cells:['—','65,000','£161,700 ✓']}
+      ],
+      note:'残り 期末 = Jul 1 期首の残り 12,000 units × £2.25 = £27,000 (一番古い層)'
+    }
+  },
+  {
+    id:'mock-09', ch:6, week:3, type:'A',
+    q:'When closing the books at the end of the accounting period, companies using a periodic inventory system…',
+    opts:[
+      'debit the Income Summary account for the value of the ending inventory',
+      'credit the Income Summary account for the value of the ending inventory',
+      'credit the Inventory account for the Cost of Goods Sold',
+      'credit the Income Summary account for the value of the beginning inventory'
+    ],
+    ans:1,
+    exp:'Periodic system の期末締切: ①Dr Inventory (EI) / Cr Income Summary  ②Dr Income Summary / Cr Inventory (BI)。つまり Income Summary は EI 分を Cr (貸方)、BI 分を Dr (借方)。',
+    we:{0:'EI は Dr ではなく Cr',2:'COGS は期末に自動計算 (Periodic は仕訳しない)',3:'BI は Dr Income Summary'},
+    keyword:'Periodic closing entries',
+    formula:'Dr Inventory(EI) / Cr Income Summary\nDr Income Summary / Cr Inventory(BI)',
+    example:'EI €5,000, BI €3,000 → Dr Inv 5,000 / Cr IS 5,000 と Dr IS 3,000 / Cr Inv 3,000',
+    memory:'EI=Cr Income Summary (利益増)、BI=Dr Income Summary (利益減)',
+    source:'FA1B Sample Midterm Q9'
+  },
+  {
+    id:'mock-10', ch:5, week:2, type:'C',
+    q:'If a company has net sales of $200,000 and a gross profit rate of 35%, Cost of Goods Sold is',
+    opts:['$70,000','$130,000','$45,500','$571,429'],
+    ans:1,
+    exp:'Gross Profit Rate (粗利率) 35% → GP = $200,000 × 0.35 = $70,000。COGS = Net Sales − GP = $200,000 − $70,000 = $130,000。または COGS率 = 1 − 0.35 = 65% → $200,000 × 0.65 = $130,000。',
+    we:{0:'GP の値で COGS ではない',2:'35% × 65% などの誤計算',3:'Sales ÷ 0.35 の誤計算'},
+    keyword:'Gross Profit Rate / 粗利率',
+    formula:'GP = Net Sales × GP rate\nCOGS = Net Sales − GP\nまたは COGS = Net Sales × (1 − GP rate)',
+    example:'Sales $200,000 × (1−0.35) = $130,000 = COGS',
+    memory:'GP率35%ならCOGS率65%。両方足したら100%',
+    source:'FA1B Sample Midterm Q10',
+    visual:{
+      type:'formula-box',
+      title:'売上の内訳: GP率 35%',
+      eq:'Sales $200,000  =  COGS $130,000 (65%)  +  GP $70,000 (35%)',
+      legend:[
+        {label:'GP率', value:'35% → GP = $70,000'},
+        {label:'COGS率', value:'65% → COGS = $130,000'},
+        {label:'関係', value:'GP率 + COGS率 = 100%'}
+      ]
+    }
+  },
+  {
+    id:'mock-11', ch:6, week:3, type:'A',
+    q:"The inventory reported on Lazy B Company's statement of financial position is understated by €12,000. The company's net income for the period will be",
+    opts:['understated by €12,000','overstated by €12,000','overstated by more than €12,000','correct'],
+    ans:0,
+    exp:'EI 過少計上 (understated) → COGS = BI + P − EI が過大 (overstated) → GP 過少 → NI 過少 (understated)。誤差は同額 €12,000。',
+    we:{1:'方向が逆',2:'同額の誤差 (more than ではない)',3:'EI 誤りは NI に必ず影響'},
+    keyword:'EI 誤謬の影響',
+    formula:'EI↓ → COGS↑ → GP↓ → NI↓ (同額)',
+    example:'EI €12,000 過少 → COGS €12,000 過大 → NI €12,000 過少',
+    memory:'「EI と NI は同じ方向に動く」(EI↓ なら NI↓)',
+    source:'FA1B Sample Midterm Q11'
+  },
+  {
+    id:'mock-12', ch:5, week:2, type:'A',
+    q:'If a company uses a perpetual inventory system',
+    opts:[
+      'the Inventory account does NOT change until the end of the year',
+      'the Inventory account is debited when inventory is purchased and Cost of Goods Sold is debited when inventory is sold',
+      'sale of inventory requires a credit entry to the Accounts payable account',
+      'the purchase of inventory requires a debit entry to the Purchases account'
+    ],
+    ans:1,
+    exp:'Perpetual system (継続記録法): 仕入時に Dr Inventory、販売時に Dr COGS / Cr Inventory を即座に記録。常に在庫帳簿価額がリアルタイムで更新される。',
+    we:{0:'Periodic の説明 (Perpetual はリアルタイム更新)',2:'販売は Cr Sales Rev で AP ではない',3:'Purchases 勘定は Periodic で使う (Perpetual は Inventory 勘定直接)'},
+    keyword:'Perpetual vs Periodic',
+    formula:'Perpetual 仕入: Dr Inventory / Cr Cash or AP\nPerpetual 販売: Dr COGS / Cr Inventory + Dr Cash/AR / Cr Sales',
+    example:'仕入€1,000: Dr Inv 1,000 / Cr AP 1,000 → 販売€1,500 (原価€800): Dr COGS 800/Cr Inv 800 + Dr Cash 1,500/Cr Sales 1,500',
+    memory:'Perpetual = Per (per moment) ＝毎回更新。Periodic = Period終わりにまとめて',
+    source:'FA1B Sample Midterm Q12'
+  },
+  {
+    id:'mock-13', ch:5, week:2, type:'A',
+    q:'Observe the following journal entry: 17-11 Dr. Accounts Payable 800 / Cr. Inventory 800. This journal entry can be used to register which transaction?',
+    opts:[
+      'Purchase of merchandise from a supplier',
+      'Sale of merchandise to a customer',
+      'Return of merchandize by a customer',
+      'Return of purchased merchandize to a supplier'
+    ],
+    ans:3,
+    exp:'Dr AP (買掛金減少) + Cr Inventory (在庫減少) → 仕入返品 (Purchase Return)。仕入先に商品を返品 → 買掛金が消える + 在庫も減る (Perpetual)。',
+    we:{0:'仕入は Dr Inv / Cr AP (逆方向)',1:'販売は Dr Cash/AR / Cr Sales + COGS仕訳',2:'顧客返品は Dr Sales Return / Cr AR + Dr Inv / Cr COGS'},
+    keyword:'Purchase Return to supplier',
+    formula:'Dr AP / Cr Inventory (Perpetual)',
+    example:'€800 商品を仕入先に返品: Dr AP 800 / Cr Inv 800',
+    memory:'「AP↓ + Inv↓」=「払うべきだった分が消えた + 商品も無くなった」=仕入返品',
+    source:'FA1B Sample Midterm Q13'
+  },
+  {
+    id:'mock-14', ch:5, week:2, type:'C',
+    q:'If Cost of Goods Purchased is €80,000, Cost of Goods Sold is €90,000 and the Ending Inventory is €50,000, then',
+    opts:[
+      'Cost of Goods Available for Sale is €60,000',
+      'the change in Inventory is + €10,000',
+      'the change in Inventory is - €40,000',
+      'the Beginning Inventory is €60,000'
+    ],
+    ans:3,
+    exp:'COGS = BI + P − EI → 90,000 = BI + 80,000 − 50,000 → BI = 90,000 + 50,000 − 80,000 = €60,000。在庫変化 = EI − BI = 50,000 − 60,000 = −€10,000 (減少)。',
+    we:{0:'CGAS = BI + P = 60,000 + 80,000 = €140,000 (誤り)',1:'実際は −€10,000',2:'実際は −€10,000'},
+    keyword:'COGS から BI を逆算',
+    formula:'COGS = BI + P − EI\n⇒ BI = COGS + EI − P',
+    example:'BI = 90,000 + 50,000 − 80,000 = €60,000',
+    memory:'COGS の公式を変形すれば BI が出る。CGAS = BI + P を意識',
+    source:'FA1B Sample Midterm Q14',
+    visual:{
+      type:'flow',
+      title:'COGS 公式の流れ (BI を逆算)',
+      nodes:[
+        {text:'BI', sub:'= €60,000', cls:'highlight'},
+        {text:'+ P', sub:'€80,000'},
+        {text:'− EI', sub:'€50,000'},
+        {text:'= COGS', sub:'€90,000', cls:'good'}
+      ]
+    }
+  },
+  {
+    id:'mock-15', ch:6, week:3, type:'C',
+    q:'Jolly Jumper Menswear SA estimates the cost of its ending inventory using the retail inventory method. Its cost-to-retail ratio is 60%, goods available for sale at retail is €300,000, and net sales is €60,000. What is the estimated cost of the ending inventory?',
+    opts:['€216,000','€96,000','€120,000','€144,000'],
+    ans:3,
+    exp:'小売棚卸法 (Retail Inventory Method): ①期末小売額 = CGAS(小売) − Net Sales = 300,000 − 60,000 = €240,000 ②期末原価 = 期末小売額 × cost-to-retail ratio = 240,000 × 0.60 = €144,000。',
+    we:{0:'CGAS(小売) × 0.72 などの誤計算',1:'Net Sales × 1.6 などの誤計算',2:'Net Sales × 2 などの誤計算'},
+    keyword:'Retail Inventory Method',
+    formula:'EI(小売) = CGAS(小売) − Net Sales\nEI(原価) = EI(小売) × Cost-to-Retail Ratio',
+    example:'(300,000 − 60,000) × 0.60 = €144,000',
+    memory:'①小売で残りを出す ②比率で原価に変換 の2ステップ',
+    source:'FA1B Sample Midterm Q15',
+    visual:{
+      type:'steps',
+      title:'小売棚卸法 (Retail Inventory Method) の2ステップ',
+      steps:[
+        {label:'Step 1: 小売額ベースで EI', detail:'CGAS(小売) €300,000 − Net Sales €60,000 = €240,000'},
+        {label:'Step 2: 比率で原価へ変換', detail:'€240,000 × 60% (Cost-to-Retail Ratio) = €144,000 ✓'}
+      ],
+      note:'cost-to-retail ratio はその年に仕入れた商品の「原価/小売」の平均比率。期末EIを推定する間接法'
+    }
+  },
+  {
+    id:'mock-16', ch:3, week:2, type:'A',
+    q:'After all the closing entries have been posted, the balance of the Income Summary account will be',
+    opts:[
+      'a debit if a net income has occurred',
+      'a debit if a net loss has occurred',
+      'a credit if a net loss has occurred',
+      'zero'
+    ],
+    ans:3,
+    exp:'Income Summary は決算用の一時勘定。①収益を Cr で集約、②費用を Dr で集約、③差額 (利益or損失) を Retained Earnings に振替で全額閉鎖 → 残高は必ず ゼロ になる。',
+    we:{0:'NI 振替後はゼロ',1:'Net loss 振替後もゼロ',2:'Net loss 振替後もゼロ'},
+    keyword:'Income Summary 残高',
+    formula:'閉鎖仕訳後の Income Summary 残高 = 0',
+    example:'NI €50,000 → Dr IS 50,000 / Cr RE 50,000 → IS残高=0',
+    memory:'「全部 RE に振り替える」=一時勘定なので必ずゼロで終わる',
+    source:'FA1B Sample Midterm Q16'
+  },
+  {
+    id:'mock-17', ch:3, week:2, type:'C',
+    q:"Nina's Gifts signs a three-month note payable to help finance increases in inventory for the Christmas shopping season. The note is signed on November 1 in the amount of $50,000 with annual interest of 6%. What is the adjusting entry to be made on December 31 for the interest expense accrued to that date, if no entries have been made previously for the interest?",
+    opts:[
+      'Dr. Interest Expense 500 / Cr. Interest Payable 500',
+      'Dr. Interest Expense 7,500 / Cr. Interest Payable 7,500',
+      'Dr. Interest Payable 500 / Cr. Interest Expense 500',
+      'Dr. Interest Expense 500 / Cr. Notes Payable 500'
+    ],
+    ans:0,
+    exp:'未払利息の見越計上 (Accrued Interest)。11/1〜12/31 = 2か月分。Interest = Principal × Rate × Time = $50,000 × 6% × (2/12) = $500。Dr Interest Expense 500 / Cr Interest Payable 500。',
+    we:{1:'年率 6% を全期間として計算 ($50,000×0.06×30/12 などの誤り)',2:'借方貸方が逆',3:'貸方は Notes Payable ではなく Interest Payable (元本と利息は別勘定)'},
+    keyword:'Accrued Interest / 未払利息',
+    formula:'Interest = Principal × Rate × Time (年率 × 月数/12)',
+    example:'$50,000 × 0.06 × (2/12) = $500',
+    memory:'「P×R×T」+ Dr Expense / Cr Payable。元本と利息は別勘定',
+    source:'FA1B Sample Midterm Q17',
+    visual:{
+      type:'formula-box',
+      title:'未払利息の計算 (Nov 1 → Dec 31 = 2か月)',
+      eq:'Interest = $50,000 × 6% × (2 ÷ 12) = $500',
+      legend:[
+        {label:'Principal', value:'$50,000 (元本)'},
+        {label:'Rate', value:'6% (年率)'},
+        {label:'Time', value:'2/12 (経過月/12)'},
+        {label:'仕訳', value:'Dr Interest Expense 500 / Cr Interest Payable 500'}
+      ]
+    }
+  },
+  {
+    id:'mock-18', ch:3, week:2, type:'A',
+    q:'The Depreciation Expense account is',
+    opts:[
+      'closed using a debit entry',
+      'closed using a credit entry',
+      'not closed',
+      'a contra asset account'
+    ],
+    ans:1,
+    exp:'Depreciation Expense (減価償却費) は費用 = Debit残高。期末締切は逆仕訳 → Dr Income Summary / Cr Depreciation Expense (Credit で閉鎖)。Accumulated Depreciation (contra asset) は閉鎖しない (永久勘定)。',
+    we:{0:'Dr で閉鎖は誤り (元が Dr 残高だから Cr で閉じる)',2:'費用は必ず期末閉鎖',3:'contra asset は Accumulated Depreciation の方'},
+    keyword:'費用勘定の締切',
+    formula:'費用 (Dr残高) は Cr で閉鎖 → Dr Income Summary / Cr Expense',
+    example:'DE €5,000: Dr Income Summary 5,000 / Cr Depreciation Expense 5,000',
+    memory:'「Dr 残高 → 反対の Cr で閉じる」が締切の基本ルール',
+    source:'FA1B Sample Midterm Q18'
+  },
+  {
+    id:'mock-19', ch:1, week:1, type:'C',
+    q:'Equity at the beginning of the year is €235,000. Total assets decrease €18,000 during the year and total liabilities increase €3,000 during the year. What is equity at the end of the year?',
+    opts:['€256,000','€220,000','€214,000','Impossible to say based on this information only.'],
+    ans:2,
+    exp:'会計方程式 A = L + E ⇒ E = A − L。変化分: ΔE = ΔA − ΔL = (−18,000) − (+3,000) = −€21,000。期末 E = 235,000 − 21,000 = €214,000。',
+    we:{0:'符号ミス (足し算してしまった)',1:'ΔL を引いていない',3:'情報十分。会計方程式で解ける'},
+    keyword:'A = L + E (会計方程式)',
+    formula:'ΔE = ΔA − ΔL',
+    example:'(−18,000) − (+3,000) = −21,000 → 235,000 − 21,000 = €214,000',
+    memory:'A=L+E の変化形 ΔE = ΔA − ΔL。資産↓・負債↑ なら資本は必ず↓',
+    source:'FA1B Sample Midterm Q19',
+    visual:{
+      type:'formula-box',
+      title:'会計方程式の変化分析',
+      eq:'ΔE = ΔA − ΔL = (−€18,000) − (+€3,000) = −€21,000',
+      legend:[
+        {label:'期首 E', value:'€235,000'},
+        {label:'ΔA', value:'−€18,000 (資産減少)'},
+        {label:'ΔL', value:'+€3,000 (負債増加)'},
+        {label:'期末 E', value:'€235,000 − €21,000 = €214,000 ✓'}
+      ]
+    }
+  },
+  {
+    id:'mock-20', ch:2, week:1, type:'A',
+    q:'Posting:',
+    opts:[
+      'Is an optional step in the recording process',
+      'Transfers ledger transaction data to the journal',
+      'Normally occurs after preparing the trial balance',
+      "Affects the balances on a company's accounts"
+    ],
+    ans:3,
+    exp:'転記 (Posting) = 仕訳帳から元帳 (Ledger) への転記。元帳の各勘定残高を更新する。順序: Journal → Posting → Trial Balance。元帳の残高に影響する。',
+    we:{0:'必須ステップ (省略不可)',1:'方向が逆 (Journal → Ledger)',2:'順序が逆 (Posting → Trial Balance)'},
+    keyword:'Posting (転記)',
+    formula:'Journalize → Post → Trial Balance → Adjust → Statements → Close',
+    example:'仕訳帳の Dr Cash 1,000 / Cr Sales 1,000 → 元帳の Cash と Sales 各勘定に転記',
+    memory:'「仕訳した内容を元帳に書き写す」のが Posting。会計サイクル2番目',
+    source:'FA1B Sample Midterm Q20'
+  },
+  {
+    id:'mock-21', ch:5, week:2, type:'A',
+    q:'Which account might be debited after a customer returns a defective product?',
+    opts:['Inventory','Purchase Returns and Allowances','Sales Discounts','Cost of Goods Sold'],
+    ans:0,
+    exp:'顧客返品 (Sales Return) の Perpetual 仕訳: ①Dr Sales Returns & Allowances / Cr AR (or Cash) ②Dr Inventory / Cr COGS (商品が再入庫)。よって Inventory が Dr される。',
+    we:{1:'Purchase Returns は自社が仕入返品する時',2:'Sales Discounts は早期支払割引',3:'COGS は Cr (商品が戻ってくるので減る)'},
+    keyword:'Sales Return / 顧客返品',
+    formula:'Dr Sales Returns / Cr AR\n＋ Dr Inventory / Cr COGS',
+    example:'返品商品 (原価€800, 売価€1,200): Dr Sales Ret 1,200/Cr AR 1,200 + Dr Inv 800/Cr COGS 800',
+    memory:'返品 = 商品が戻る = Inventory Dr で再入庫',
+    source:'FA1B Sample Midterm Q21'
+  },
+  {
+    id:'mock-22', ch:3, week:2, type:'A',
+    q:'On November 9, Wendelas renews its fire insurance policy by paying €5,400 in cash to the insurance company. The insurance policy is for 12 months, starting on December 1, 2018. Which journal entry is correct?',
+    opts:[
+      'Dr. Prepaid Insurance 5,400 / Cr. Retained Earnings 5,400',
+      'Dr. Cash 5,400 / Cr. Prepaid Insurance 5,400',
+      'Dr. Insurance Expense 5,400 / Cr. Cash 5,400',
+      'Dr. Prepaid Insurance 5,400 / Cr. Cash 5,400'
+    ],
+    ans:3,
+    exp:'前払保険料 (Prepaid Insurance) の支払い。12か月分の保険料を現金で先払い → Dr Prepaid Insurance 5,400 / Cr Cash 5,400。費用ではなく資産 (前払費用) として計上。',
+    we:{0:'RE は関係ない',1:'借方貸方が逆 (Cash 減なら Cr)',2:'まだサービスを受けていないので Expense ではない'},
+    keyword:'Prepaid Insurance 支払',
+    formula:'Dr Prepaid Insurance (資産) / Cr Cash',
+    example:'12か月分€5,400 前払: Dr Prepaid Ins 5,400 / Cr Cash 5,400',
+    memory:'前払い時点では資産。月次の adjusting entry で費用化していく',
+    source:'FA1B Sample Midterm Q22'
+  },
+  {
+    id:'mock-23', ch:5, week:2, type:'A',
+    q:'On December 15, 200 bathrobes intended for sale to customers were purchased on account from Mouton AG for a total of €9,000, FOB Destination, credit terms 3/10, n/30. Which journal entry is correct?',
+    opts:[
+      'Dr. Purchases 9,000 / Cr. Accounts Payable 9,000',
+      'Dr. Inventory 9,000 / Cr. Accounts payable 9,000',
+      'Dr. Accounts payable 9,000 / Cr. Inventory 9,000',
+      'Dr. Inventory 8,730 / Cr. Accounts Payable 8,730'
+    ],
+    ans:1,
+    exp:'Perpetual system + 信用購入: Dr Inventory €9,000 / Cr AP €9,000。3/10, n/30 は条件付き割引のため購入時点では全額計上 (割引は支払時に判明)。Perpetual なので Purchases 勘定は使わない。',
+    we:{0:'Perpetual は Inventory 勘定 (Purchases は Periodic)',2:'借方貸方が逆',3:'割引は支払時に確定 (購入時は全額)'},
+    keyword:'Perpetual + 信用購入',
+    formula:'Dr Inventory (Gross) / Cr AP (Gross)',
+    example:'€9,000 信用購入: Dr Inv 9,000 / Cr AP 9,000',
+    memory:'Perpetual = Inventory 勘定。割引は払う時に決まるので gross で記帳',
+    source:'FA1B Sample Midterm Q23'
+  },
+  {
+    id:'mock-24', ch:3, week:2, type:'A',
+    q:'On December 28, €3,000 cash was received as a prepayment for a wellness weekend of a field hockey team that will take place in January 2019. Which journal entry is correct?',
+    opts:[
+      'Dr. Cash 3,000 / Cr. Sales Revenue 3,000',
+      'Dr. Cash 3,000 / Cr. Prepaid Expenses 3,000',
+      'Dr. Cash 3,000 / Cr. Unearned Revenue 3,000',
+      'Dr. Unearned Revenue 3,000 / Cr. Cash 3,000'
+    ],
+    ans:2,
+    exp:'前受金 (Unearned Revenue): 現金は受領したがサービスは未提供 → 負債計上。Dr Cash 3,000 / Cr Unearned Revenue 3,000。実際にサービス提供時 (1月) に Unearned Rev → Service Revenue へ振替 (adjusting entry)。',
+    we:{0:'未提供なので Revenue 認識は誤り (Revenue Recognition 原則違反)',1:'Prepaid Expense は自社が前払い時',3:'借方貸方が逆'},
+    keyword:'Unearned Revenue / 前受金',
+    formula:'Dr Cash / Cr Unearned Revenue (負債)',
+    example:'€3,000 前受: Dr Cash 3,000 / Cr Unearned Rev 3,000',
+    memory:'「お金もらった + サービスまだ」=義務=負債 (Unearned Revenue)',
+    source:'FA1B Sample Midterm Q24'
+  },
+  {
+    id:'mock-25', ch:3, week:2, type:'C',
+    q:'(Adjustment entry for Q22) An adjustment entry needs to be made to recognize the fire insurance expense for the month of December 2018.',
+    opts:[
+      'Dr. Prepaid Insurance 450 / Cr. Insurance Expense 450',
+      'Dr. Cash 5,400 / Cr. Insurance Expense 5,400',
+      'Dr. Insurance Expense 5,400 / Cr. Prepaid Insurance 5,400',
+      'Dr. Insurance Expense 450 / Cr. Prepaid Insurance 450'
+    ],
+    ans:3,
+    exp:'12か月で€5,400 → 月額 = 5,400 ÷ 12 = €450。12月分のみ adjusting → Dr Insurance Expense 450 / Cr Prepaid Insurance 450。Prepaid (資産) を取り崩して費用化。',
+    we:{0:'借方貸方が逆',1:'Cash は関係ない (既に支払い済み)',2:'12か月分まとめてではなく1か月分のみ'},
+    keyword:'Prepaid → Expense (月次調整)',
+    formula:'1か月分 = 総額 ÷ 期間\nDr Insurance Expense / Cr Prepaid Insurance',
+    example:'€5,400÷12 = €450 / Dr Ins Exp 450 / Cr Prepaid Ins 450',
+    memory:'前払資産→費用化。月次按分は「総額÷月数」',
+    source:'FA1B Sample Midterm Q25',
+    visual:{
+      type:'flow',
+      title:'Prepaid Insurance の流れ (12か月契約)',
+      nodes:[
+        {text:'Nov 9 支払い', sub:'Dr Prepaid Ins 5,400 / Cr Cash 5,400', cls:'highlight'},
+        {text:'Dec 31 調整', sub:'Dr Ins Exp 450 / Cr Prepaid Ins 450', cls:'good'},
+        {text:'Prepaid 残', sub:'€5,400 − €450 = €4,950 (資産)'}
+      ],
+      note:'残り11か月分は翌期以降にも同様に按分。総額 €5,400 ÷ 12 = €450/月'
+    }
+  }
 ];
 
 var COMPARISONS = [
@@ -16736,6 +17426,396 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('beforeunload', function() { recordStudyTime(); });
   document.addEventListener('touchstart', function() { initAudio(); }, {once: true});
 });
+
+/* ═══════════════════════════════════════════════════════
+   Phase 2: ABBREVIATIONS + FAB / Modal functions
+   ═══════════════════════════════════════════════════════ */
+
+var ABBREVIATIONS = [
+  // ── Ch1 基礎 ─────────────────────────
+  {abbr:'GAAP',  term:'Generally Accepted Accounting Principles', defJA:'米国会計基準', ch:1},
+  {abbr:'IFRS',  term:'International Financial Reporting Standards', defJA:'国際会計基準（LIFO禁止）', ch:1},
+  {abbr:'FASB',  term:'Financial Accounting Standards Board', defJA:'米国の基準設定機関', ch:1},
+  {abbr:'IASB',  term:'International Accounting Standards Board', defJA:'国際基準設定機関', ch:1},
+  {abbr:'A=L+E', term:'Assets = Liabilities + Equity', defJA:'会計方程式（バランスシート恒等式）', ch:1},
+  {abbr:'IS',    term:'Income Statement', defJA:'損益計算書（収益−費用＝当期純利益）', ch:1},
+  {abbr:'BS/SFP',term:'Balance Sheet / Statement of Financial Position', defJA:'貸借対照表（一時点の資産・負債・資本）', ch:1},
+  {abbr:'AP',    term:'Accounts Payable', defJA:'買掛金（負債）', ch:1},
+  {abbr:'AR',    term:'Accounts Receivable', defJA:'売掛金（資産）', ch:1},
+  {abbr:'JE',    term:'Journal Entry', defJA:'仕訳（借方 Dr / 貸方 Cr）', ch:1},
+  {abbr:'TB',    term:'Trial Balance', defJA:'試算表（Dr合計＝Cr合計の検証）', ch:1},
+  {abbr:'DR/CR', term:'Debit / Credit', defJA:'借方/貸方（資産・費用は Dr で増加）', ch:1},
+
+  // ── Ch5 商品売買 ─────────────────────
+  {abbr:'COGS',  term:'Cost of Goods Sold', defJA:'売上原価 ＝ 期首棚卸 + 仕入 − 期末棚卸', ch:5},
+  {abbr:'GP',    term:'Gross Profit', defJA:'粗利益 ＝ 売上 − COGS', ch:5},
+  {abbr:'BI',    term:'Beginning Inventory', defJA:'期首棚卸資産', ch:5},
+  {abbr:'EI',    term:'Ending Inventory', defJA:'期末棚卸資産', ch:5},
+  {abbr:'P',     term:'Purchases', defJA:'仕入', ch:5},
+  {abbr:'PR',    term:'Purchase Returns & Allowances', defJA:'仕入返品・値引', ch:5},
+  {abbr:'PD',    term:'Purchase Discounts', defJA:'仕入割引（早期支払割引）', ch:5},
+  {abbr:'FOB',   term:'Free On Board', defJA:'FOB shipping point=出荷時に所有権移転 / FOB destination=到着時', ch:5},
+  {abbr:'2/10,n/30', term:'2/10 net 30', defJA:'10日以内支払で2%割引、なければ30日以内全額', ch:5},
+  {abbr:'FIFO',  term:'First-In, First-Out', defJA:'先入先出法（古い在庫から払出）', ch:5},
+  {abbr:'LIFO',  term:'Last-In, First-Out', defJA:'後入先出法（IFRS禁止／米国GAAPのみ）', ch:5},
+  {abbr:'WA',    term:'Weighted Average', defJA:'加重平均法（総コスト÷総数量）', ch:5},
+  {abbr:'NRV',   term:'Net Realizable Value', defJA:'純実現可能価額 ＝ 予想売価 − 販売費', ch:5},
+  {abbr:'LCNRV', term:'Lower of Cost or Net Realizable Value', defJA:'取得原価とNRVの低い方で評価（IFRS）', ch:5},
+  {abbr:'LCM',   term:'Lower of Cost or Market', defJA:'低価法（US GAAP）', ch:5},
+
+  // ── Ch9 有形固定資産 ──────────────────
+  {abbr:'PPE',   term:'Property, Plant and Equipment', defJA:'有形固定資産', ch:9},
+  {abbr:'NBV',   term:'Net Book Value', defJA:'帳簿価額 ＝ 取得原価 − 累計減価償却額', ch:9},
+  {abbr:'UL',    term:'Useful Life', defJA:'耐用年数', ch:9},
+  {abbr:'SV',    term:'Salvage Value / Residual Value', defJA:'残存価額', ch:9},
+  {abbr:'SL',    term:'Straight-Line Method', defJA:'定額法 ＝ (取得原価 − 残存価額) ÷ 耐用年数', ch:9},
+  {abbr:'DDB',   term:'Double-Declining Balance', defJA:'倍率定率法 ＝ 期首NBV × (2 ÷ 耐用年数)', ch:9},
+  {abbr:'UOP',   term:'Units of Production', defJA:'生産高比例法 ＝ (取得原価−残存)×当期生産量÷総生産量', ch:9},
+  {abbr:'AD',    term:'Accumulated Depreciation', defJA:'減価償却累計額（資産のマイナス勘定）', ch:9},
+  {abbr:'DE',    term:'Depreciation Expense', defJA:'減価償却費（費用）', ch:9},
+
+  // ── Ch13 株主資本 ────────────────────
+  {abbr:'SE',    term:'Stockholders / Shareholders Equity', defJA:'株主資本（資産 − 負債）', ch:13},
+  {abbr:'CS',    term:'Common Stock', defJA:'普通株式（資本金）', ch:13},
+  {abbr:'PIC',   term:'Paid-In Capital in Excess of Par', defJA:'資本剰余金（額面超過払込資本）', ch:13},
+  {abbr:'RE',    term:'Retained Earnings', defJA:'利益剰余金 ＝ 期首RE + 当期純利益 − 配当', ch:13},
+  {abbr:'Div',   term:'Dividends', defJA:'配当（株主への利益分配）', ch:13},
+  {abbr:'TS',    term:'Treasury Stock', defJA:'自己株式（買戻し済み株式）', ch:13},
+  {abbr:'PS',    term:'Preferred Stock', defJA:'優先株式（配当優先・議決権なし）', ch:13},
+
+  // ── Ch14 キャッシュフロー ────────────
+  {abbr:'CF',    term:'Cash Flow', defJA:'キャッシュフロー', ch:14},
+  {abbr:'OCF',   term:'Operating Cash Flow', defJA:'営業活動によるCF（本業）', ch:14},
+  {abbr:'ICF',   term:'Investing Cash Flow', defJA:'投資活動によるCF（固定資産・有価証券）', ch:14},
+  {abbr:'FCF',   term:'Financing Cash Flow', defJA:'財務活動によるCF（借入・株式・配当）', ch:14},
+  {abbr:'NCF',   term:'Net Cash Flow', defJA:'純キャッシュフロー（3区分合計）', ch:14},
+  {abbr:'Indirect',term:'Indirect Method', defJA:'間接法（純利益から調整）', ch:14},
+  {abbr:'Direct', term:'Direct Method', defJA:'直接法（現金収支そのもの）', ch:14},
+
+  // ── Ch15 財務分析 ────────────────────
+  {abbr:'EPS',   term:'Earnings Per Share', defJA:'1株当たり利益 ＝ 当期純利益 ÷ 加重平均発行済株式数', ch:15},
+  {abbr:'P/E',   term:'Price-to-Earnings ratio', defJA:'株価収益率 ＝ 株価 ÷ EPS', ch:15},
+  {abbr:'ROA',   term:'Return on Assets', defJA:'総資産利益率 ＝ 当期純利益 ÷ 平均総資産', ch:15},
+  {abbr:'ROE',   term:'Return on Equity', defJA:'自己資本利益率 ＝ 当期純利益 ÷ 平均株主資本', ch:15},
+  {abbr:'CR',    term:'Current Ratio', defJA:'流動比率 ＝ 流動資産 ÷ 流動負債（健全性 ≧ 2）', ch:15},
+  {abbr:'QR',    term:'Quick Ratio / Acid-Test', defJA:'当座比率 ＝ (現金+AR+有価証券) ÷ 流動負債', ch:15},
+  {abbr:'DR',    term:'Debt Ratio', defJA:'負債比率 ＝ 総負債 ÷ 総資産', ch:15},
+  {abbr:'AT',    term:'Asset Turnover', defJA:'総資産回転率 ＝ 売上 ÷ 平均総資産', ch:15},
+  {abbr:'IT',    term:'Inventory Turnover', defJA:'棚卸資産回転率 ＝ COGS ÷ 平均棚卸資産', ch:15},
+  {abbr:'DSO',   term:'Days Sales Outstanding', defJA:'売上債権回転日数 ＝ 365 ÷ AR回転率', ch:15}
+];
+
+var _abbrCat = 'all';
+
+function renderAbbreviations() {
+  var list = document.getElementById('abbr-list');
+  if (!list) return;
+  var searchEl = document.getElementById('abbr-search');
+  var q = (searchEl && searchEl.value || '').trim().toLowerCase();
+  var html = ABBREVIATIONS.filter(function(a){
+    if (_abbrCat !== 'all' && String(a.ch) !== _abbrCat) return false;
+    if (!q) return true;
+    return (a.abbr.toLowerCase().indexOf(q) !== -1) ||
+           (a.term.toLowerCase().indexOf(q) !== -1) ||
+           (a.defJA.indexOf(q) !== -1);
+  }).map(function(a){
+    return '<div class="abbr-row">'
+         +   '<div class="ab">'+a.abbr+'</div>'
+         +   '<div class="td">'+a.defJA+'<span class="ch-chip">Ch'+a.ch+'</span>'
+         +     '<div class="en">'+a.term+'</div>'
+         +   '</div>'
+         + '</div>';
+  }).join('');
+  list.innerHTML = html || '<div style="color:#94a3b8;padding:20px;text-align:center;">該当なし</div>';
+}
+
+function filterAbbr() { renderAbbreviations(); }
+
+function filterAbbrCat(cat) {
+  _abbrCat = cat;
+  var pills = document.querySelectorAll('.abbr-cat-pill');
+  pills.forEach(function(p){
+    p.classList.toggle('active', p.getAttribute('data-cat') === cat);
+  });
+  renderAbbreviations();
+}
+
+function toggleAbbrModal() {
+  var overlay = document.getElementById('abbr-modal-overlay');
+  var modal   = document.getElementById('abbr-modal');
+  var fab     = document.getElementById('abbr-fab');
+  if (!overlay || !modal) return;
+  var isOpen = modal.classList.contains('open');
+  if (isOpen) {
+    modal.classList.remove('open');
+    overlay.classList.remove('open');
+    if (fab) fab.classList.remove('active');
+  } else {
+    renderAbbreviations();
+    modal.classList.add('open');
+    overlay.classList.add('open');
+    if (fab) fab.classList.add('active');
+    setTimeout(function(){
+      var s = document.getElementById('abbr-search');
+      if (s) s.focus();
+    }, 200);
+  }
+}
+
+function toggleRoadmapModal() {
+  var overlay = document.getElementById('roadmap-modal-overlay');
+  var modal   = document.getElementById('roadmap-modal');
+  if (!overlay || !modal) return;
+  var isOpen = modal.classList.contains('open');
+  if (isOpen) {
+    modal.classList.remove('open');
+    overlay.classList.remove('open');
+  } else {
+    modal.classList.add('open');
+    overlay.classList.add('open');
+  }
+}
+
+function roadmapGoTo(tabId) {
+  try { switchTab(tabId); } catch(e) { console.warn('switchTab failed', e); }
+  toggleRoadmapModal();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// Back-to-top scroll listener
+window.addEventListener('scroll', function() {
+  var bt = document.getElementById('back-top');
+  if (bt) bt.classList.toggle('visible', window.scrollY > 300);
+});
+
+// ESC key closes modals
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var am = document.getElementById('abbr-modal');
+    var rm = document.getElementById('roadmap-modal');
+    if (am && am.classList.contains('open')) toggleAbbrModal();
+    if (rm && rm.classList.contains('open')) toggleRoadmapModal();
+  }
+});
+
+// Initial render
+document.addEventListener('DOMContentLoaded', function() {
+  renderAbbreviations();
+});
+
+/* ═══════════════════════════════════════════════════════
+   Phase 3.3: Mock 試験モード (QUESTIONS_FA1B_MOCK)
+   既存 quizState を流用して 25問連続モード
+   ═══════════════════════════════════════════════════════ */
+
+function startMockExam() {
+  if (typeof QUESTIONS_FA1B_MOCK === 'undefined' || !QUESTIONS_FA1B_MOCK.length) {
+    alert('Mock試験データが読み込まれていません');
+    return;
+  }
+  if (typeof quizState === 'undefined') {
+    alert('クイズシステムが初期化されていません');
+    return;
+  }
+  quizState.mode = 'mock';
+  quizState.isMock = true;
+  quizState.block = QUESTIONS_FA1B_MOCK.slice();  // 25問順番通り
+  quizState.index = 0;
+  quizState.answered = false;
+  quizState.chosen = -1;
+  quizState.blockResults = [];
+  quizState.active = true;
+  var qHome = document.getElementById('quiz-home');
+  var qRev  = document.getElementById('quiz-review');
+  var qAct  = document.getElementById('quiz-active');
+  if (qHome) qHome.classList.add('hidden');
+  if (qRev)  qRev.classList.add('hidden');
+  if (qAct)  qAct.classList.remove('hidden');
+  if (typeof renderQuestion === 'function') renderQuestion();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// renderQuizHome wrapper to inject Mock exam button
+(function() {
+  var _origQH = typeof renderQuizHome === 'function' ? renderQuizHome : null;
+  if (!_origQH) return;
+  renderQuizHome = function() {
+    _origQH();
+    var tabQuiz = document.getElementById('tab-quiz');
+    if (!tabQuiz) return;
+    if (tabQuiz.querySelector('.mock-exam-card')) return; // already added
+    var mockCard = document.createElement('div');
+    mockCard.className = 'mock-exam-card';
+    mockCard.style.cssText =
+      'background:linear-gradient(135deg,#7c2d12,#dc2626);' +
+      'border:2px solid #fbbf24;border-radius:14px;padding:18px 22px;' +
+      'margin:14px 0;color:#fff;';
+    mockCard.innerHTML =
+      '<div style="font-size:22px;font-weight:800;color:#fde68a;margin-bottom:6px;">' +
+        '📝 Sample Midterm 完走モード' +
+      '</div>' +
+      '<div style="font-size:14px;color:#fef3c7;margin-bottom:12px;line-height:1.6;">' +
+        '本番想定 25問を順番通り連続出題。各問に <b>キーワード対応</b>・<b>公式</b>・<b>例題</b> 付き解説。' +
+      '</div>' +
+      '<button onclick="startMockExam()" style="' +
+        'background:#fbbf24;color:#7c2d12;border:none;border-radius:10px;' +
+        'padding:12px 24px;font-size:16px;font-weight:800;cursor:pointer;' +
+        'box-shadow:0 2px 8px rgba(0,0,0,0.3);">' +
+        '▶ Mock試験を開始 (25問)' +
+      '</button>';
+    var quizHomeDiv = document.getElementById('quiz-home');
+    if (quizHomeDiv && quizHomeDiv.firstChild) {
+      // insert after the progress ring section, before mode grid
+      quizHomeDiv.insertBefore(mockCard, quizHomeDiv.children[1] || null);
+    }
+  };
+})();
+
+// selectOption wrapper: append keyword / formula / example / memory for Mock questions
+(function() {
+  var _origSO = typeof selectOption === 'function' ? selectOption : null;
+  if (!_origSO) return;
+  window.selectOption = function(idx) {
+    _origSO(idx);
+    var q = quizState && quizState.block && quizState.block[quizState.index];
+    if (!q) return;
+    if (!q.keyword && !q.formula && !q.example && !q.memory && !q.visual) return;
+    var expEl = document.getElementById('q-explanation');
+    if (!expEl) return;
+    if (expEl.querySelector('.mock-extra')) return;
+    var extra = document.createElement('div');
+    extra.className = 'mock-extra';
+    extra.style.cssText = 'margin-top:14px;display:flex;flex-direction:column;gap:10px;';
+    var html = '';
+    if (q.visual && typeof renderMockVisual === 'function') {
+      html += renderMockVisual(q.visual);
+    }
+    if (q.keyword) {
+      html += '<div style="background:#0f1c2e;border-left:4px solid #22d3ee;border-radius:8px;padding:10px 14px;">' +
+        '<div style="font-size:12px;color:#22d3ee;font-weight:800;letter-spacing:0.05em;margin-bottom:4px;">🔑 この単語が出てきたらこれ！</div>' +
+        '<div style="font-size:15px;color:#e8eef7;">' + escapeHtmlSafe(q.keyword) + '</div>' +
+      '</div>';
+    }
+    if (q.formula) {
+      html += '<div style="background:#1a1500;border-left:4px solid #fbbf24;border-radius:8px;padding:10px 14px;">' +
+        '<div style="font-size:12px;color:#fbbf24;font-weight:800;letter-spacing:0.05em;margin-bottom:4px;">📐 公式</div>' +
+        '<div style="font-size:15px;color:#fde68a;font-family:\'SF Mono\',monospace;white-space:pre-wrap;line-height:1.6;">' + escapeHtmlSafe(q.formula) + '</div>' +
+      '</div>';
+    }
+    if (q.example) {
+      html += '<div style="background:#0a2e1a;border-left:4px solid #34d399;border-radius:8px;padding:10px 14px;">' +
+        '<div style="font-size:12px;color:#34d399;font-weight:800;letter-spacing:0.05em;margin-bottom:4px;">🎯 例題</div>' +
+        '<div style="font-size:15px;color:#d1fae5;font-family:\'SF Mono\',monospace;">' + escapeHtmlSafe(q.example) + '</div>' +
+      '</div>';
+    }
+    if (q.memory) {
+      html += '<div style="background:#2e1065;border-left:4px solid #a78bfa;border-radius:8px;padding:10px 14px;">' +
+        '<div style="font-size:12px;color:#a78bfa;font-weight:800;letter-spacing:0.05em;margin-bottom:4px;">💡 記憶のコツ</div>' +
+        '<div style="font-size:14px;color:#ede9fe;">' + escapeHtmlSafe(q.memory) + '</div>' +
+      '</div>';
+    }
+    if (q.source) {
+      html += '<div style="font-size:11px;color:#64748b;text-align:right;">📖 ' + escapeHtmlSafe(q.source) + '</div>';
+    }
+    extra.innerHTML = html;
+    expEl.appendChild(extra);
+  };
+})();
+
+// Safe HTML escape helper (uses existing escapeHtml if available)
+function escapeHtmlSafe(s) {
+  if (typeof escapeHtml === 'function') return escapeHtml(String(s));
+  return String(s).replace(/[&<>"']/g, function(c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   Phase 3.4: renderMockVisual — Mock計算問題用の軽量ビジュアル
+   types: flow / formula-box / compare-table / steps
+   ═══════════════════════════════════════════════════════ */
+
+function renderMockVisual(v) {
+  if (!v || !v.type) return '';
+  var h = '<div class="visual-block" style="background:#0d1f38;border:1.5px solid rgba(59,130,246,0.4);border-radius:14px;padding:16px 18px;margin:12px 0;">';
+  if (v.title) {
+    h += '<div style="font-size:14px;font-weight:800;color:#fbbf24;margin-bottom:10px;">' + escapeHtmlSafe(v.title) + '</div>';
+  }
+
+  if (v.type === 'flow') {
+    // v.nodes = [{text, sub?, cls?}], joined by →
+    h += '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;">';
+    for (var i = 0; i < (v.nodes || []).length; i++) {
+      var n = v.nodes[i];
+      if (i > 0) {
+        h += '<div style="font-size:20px;color:#94a3b8;flex:0 0 auto;">→</div>';
+      }
+      var bg = n.cls === 'good' ? '#0a2e1a' : n.cls === 'bad' ? '#3f0a0a' : n.cls === 'highlight' ? '#1a1500' : '#1a2940';
+      var bd = n.cls === 'good' ? '#34d399' : n.cls === 'bad' ? '#f87171' : n.cls === 'highlight' ? '#fbbf24' : '#3b82f6';
+      h += '<div style="background:' + bg + ';border:1.5px solid ' + bd + ';border-radius:10px;padding:8px 12px;min-width:80px;text-align:center;">';
+      h += '<div style="font-size:13px;font-weight:700;color:#e8eef7;">' + escapeHtmlSafe(n.text) + '</div>';
+      if (n.sub) h += '<div style="font-size:11px;color:#94a3b8;margin-top:2px;">' + escapeHtmlSafe(n.sub) + '</div>';
+      h += '</div>';
+    }
+    h += '</div>';
+  }
+
+  else if (v.type === 'formula-box') {
+    // v.eq = string with = and operators, v.legend = [{label, value}]
+    h += '<div style="background:#1a1500;border-left:4px solid #fbbf24;border-radius:8px;padding:12px 16px;font-family:\'SF Mono\',monospace;font-size:15px;color:#fde68a;text-align:center;line-height:1.8;">';
+    h += escapeHtmlSafe(v.eq || '');
+    h += '</div>';
+    if (v.legend && v.legend.length) {
+      h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px;margin-top:10px;font-size:12px;color:#cbd5e1;">';
+      for (var i = 0; i < v.legend.length; i++) {
+        var l = v.legend[i];
+        h += '<div><b style="color:#fcd34d;">' + escapeHtmlSafe(l.label) + ':</b> ' + escapeHtmlSafe(l.value) + '</div>';
+      }
+      h += '</div>';
+    }
+  }
+
+  else if (v.type === 'compare-table') {
+    // v.cols = [{label, cls}], v.rows = [{label, cells:[...]}]
+    h += '<div style="overflow-x:auto;">';
+    h += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+    h += '<thead><tr><th style="padding:8px;border-bottom:2px solid #1e3a5f;text-align:left;color:#94a3b8;"></th>';
+    for (var i = 0; i < (v.cols || []).length; i++) {
+      var c = v.cols[i];
+      var color = c.cls === 'good' ? '#34d399' : c.cls === 'bad' ? '#f87171' : '#22d3ee';
+      h += '<th style="padding:8px;border-bottom:2px solid #1e3a5f;text-align:left;color:' + color + ';">' + escapeHtmlSafe(c.label) + '</th>';
+    }
+    h += '</tr></thead><tbody>';
+    for (var i = 0; i < (v.rows || []).length; i++) {
+      var row = v.rows[i];
+      h += '<tr><td style="padding:8px;border-bottom:1px solid #1e3a5f;color:#fcd34d;font-weight:700;">' + escapeHtmlSafe(row.label) + '</td>';
+      for (var j = 0; j < row.cells.length; j++) {
+        h += '<td style="padding:8px;border-bottom:1px solid #1e3a5f;color:#e8eef7;">' + escapeHtmlSafe(row.cells[j]) + '</td>';
+      }
+      h += '</tr>';
+    }
+    h += '</tbody></table></div>';
+  }
+
+  else if (v.type === 'steps') {
+    // v.steps = [{label, detail?}]
+    h += '<ol style="margin:0;padding-left:22px;color:#e8eef7;font-size:14px;line-height:1.7;">';
+    for (var i = 0; i < (v.steps || []).length; i++) {
+      var s = v.steps[i];
+      h += '<li style="margin-bottom:6px;"><b style="color:#fbbf24;">' + escapeHtmlSafe(s.label) + '</b>';
+      if (s.detail) h += ' <span style="color:#94a3b8;">— ' + escapeHtmlSafe(s.detail) + '</span>';
+      h += '</li>';
+    }
+    h += '</ol>';
+  }
+
+  if (v.note) {
+    h += '<div style="margin-top:10px;padding:8px 12px;border-left:3px solid #f59e0b;background:rgba(245,158,11,0.06);border-radius:0 6px 6px 0;font-size:12px;color:#fcd34d;">⚠ ' + escapeHtmlSafe(v.note) + '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
 </script>
 
 <!-- Enhancement overlays & panels -->
@@ -16746,5 +17826,94 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="celebration-container"></div>
 
 <div id="float-break-btn" class="float-break-btn hidden" onclick="manualBreak()" title="休憩する">☕</div>
+
+<!-- ═══ Phase 2: Navigation FABs (Back-top / 略語 / ロードマップ) ═══ -->
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="トップへ戻る">⬆</button>
+
+<button class="abbr-fab" id="abbr-fab" onclick="toggleAbbrModal()" title="略語早見表">🔤</button>
+<div class="abbr-modal-overlay" id="abbr-modal-overlay" onclick="toggleAbbrModal()"></div>
+<div class="abbr-modal" id="abbr-modal" role="dialog" aria-modal="true">
+  <div class="abbr-modal-header">
+    <div class="abbr-modal-title">🔤 会計 略語早見表</div>
+    <button class="abbr-modal-close" onclick="toggleAbbrModal()" aria-label="閉じる">×</button>
+  </div>
+  <div class="abbr-modal-body">
+    <div class="abbr-search-wrap">
+      <input id="abbr-search" type="text" placeholder="略語または日本語で検索…" oninput="filterAbbr()">
+    </div>
+    <div class="abbr-cat-pills" id="abbr-cat-pills">
+      <span class="abbr-cat-pill active" data-cat="all" onclick="filterAbbrCat('all')">All</span>
+      <span class="abbr-cat-pill" data-cat="1" onclick="filterAbbrCat('1')">Ch1 基礎</span>
+      <span class="abbr-cat-pill" data-cat="5" onclick="filterAbbrCat('5')">Ch5 商品売買</span>
+      <span class="abbr-cat-pill" data-cat="9" onclick="filterAbbrCat('9')">Ch9 固定資産</span>
+      <span class="abbr-cat-pill" data-cat="13" onclick="filterAbbrCat('13')">Ch13 資本</span>
+      <span class="abbr-cat-pill" data-cat="14" onclick="filterAbbrCat('14')">Ch14 CF</span>
+      <span class="abbr-cat-pill" data-cat="15" onclick="filterAbbrCat('15')">Ch15 分析</span>
+    </div>
+    <div id="abbr-list"></div>
+  </div>
+</div>
+
+<button class="roadmap-fab" id="roadmap-fab" onclick="toggleRoadmapModal()" title="学習ロードマップ">🏠</button>
+<div class="roadmap-modal-overlay" id="roadmap-modal-overlay" onclick="toggleRoadmapModal()"></div>
+<div class="roadmap-modal" id="roadmap-modal" role="dialog" aria-modal="true">
+  <div class="roadmap-modal-header">
+    <div class="roadmap-modal-title">🏠 FA1B 学習ロードマップ</div>
+    <button class="roadmap-modal-close" onclick="toggleRoadmapModal()" aria-label="閉じる">×</button>
+  </div>
+  <div class="roadmap-modal-body" id="roadmap-modal-body">
+    <h3>Week 1-2 ── 基礎 (Ch1-2)</h3>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch1 会計の基礎</div>
+      <div class="rm-chapter-sub">会計方程式 A = L + E / GAAP・IFRS / 4つの財務諸表 / 取引分析</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch2 記録プロセス</div>
+      <div class="rm-chapter-sub">仕訳 (Journal Entry) / T勘定 / 試算表 / 借方・貸方ルール</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch3 会計サイクル</div>
+      <div class="rm-chapter-sub">期末調整 4種 (前払・前受・未収・未払) / 締切仕訳</div>
+    </div>
+
+    <h3>Week 2-3 ── 商品売買・棚卸 (Ch5-6)</h3>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-calc')">
+      <div class="rm-chapter-title">Ch5 商品売買取引</div>
+      <div class="rm-chapter-sub">COGS = BI + Purchases − EI / 仕入諸掛 / 値引・返品 / 2/10 n/30</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-calc')">
+      <div class="rm-chapter-title">Ch6 棚卸資産</div>
+      <div class="rm-chapter-sub">FIFO / LIFO / 加重平均 / Lower of Cost or NRV / 棚卸誤謬の影響</div>
+    </div>
+
+    <h3>Week 3+ ── 期末・財務分析 (Ch9-15)</h3>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch9 有形固定資産 (PPE)</div>
+      <div class="rm-chapter-sub">取得原価 / 減価償却 SL・DDB・UOP / NBV / 売却・廃棄</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch13 株主資本</div>
+      <div class="rm-chapter-sub">CS・PIC / Retained Earnings / 配当 / 自己株式</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch14 キャッシュフロー計算書</div>
+      <div class="rm-chapter-sub">OCF (Indirect) / ICF / FCF / 直接法 vs 間接法</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-textbook')">
+      <div class="rm-chapter-title">Ch15 財務諸表分析</div>
+      <div class="rm-chapter-sub">流動比率・当座比率 / ROA・ROE / EPS / P/E ratio</div>
+    </div>
+
+    <h3>📝 試験対策</h3>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-quiz')">
+      <div class="rm-chapter-title">クイズ 254問 + Mock 25問</div>
+      <div class="rm-chapter-sub">通常モード (章別) / Mock試験モード (Sample Midterm 連続出題)</div>
+    </div>
+    <div class="rm-chapter" onclick="roadmapGoTo('tab-calc')">
+      <div class="rm-chapter-title">🎯 計算問題 完全マスター 18パターン</div>
+      <div class="rm-chapter-sub">キーワード→公式 / 例題 / 計算ミス TOP5</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
