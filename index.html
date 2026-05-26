@@ -10790,6 +10790,192 @@ var QUESTIONS = [
     exp:'決算整理仕訳は必ず損益計算書の勘定1つとSFPの勘定1つに影響し、現金は動かさない（現金主義との違い）。',
     we:{ 1: '現金は動かさないのが原則。', 2: '発生主義では必須。', 3: '損益勘定にも影響する。', 4: '期末に行う。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_1', conceptId:'c4_closing', ch:4, type:'A',
+    q:'Which group of accounts is closed by the closing entries at year-end?',
+    opts:['A) Revenues, expenses, and dividends','B) Assets, liabilities, and equity','C) Only revenues and expenses','D) Cash and retained earnings','E) Only the dividends account','F) わからない'],
+    ans:0,
+    exp:'締切仕訳は一時勘定（temporary）＝収益・費用・配当をゼロに締め切り、利益剰余金へ振り替える。資産・負債・資本（permanent）は締め切らない。',
+    we:{ 1: '資産・負債・資本は永久勘定で締め切らない。', 2: '配当も締め切る。', 3: '現金・利益剰余金は永久勘定。', 4: '収益・費用も締め切る。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_2', conceptId:'c4_closing', ch:4, type:'A',
+    q:'After all closing entries have been posted, what is the balance of the Income Summary account?',
+    opts:['A) Zero','B) Equal to net income','C) Equal to ending retained earnings','D) Equal to total revenues','E) A debit equal to total expenses','F) わからない'],
+    ans:0,
+    exp:'Income Summary は収益・費用を集計後、その純額（純利益/損失）を Retained Earnings へ振り替えて締め切るため、最終残高はゼロ。',
+    we:{ 1: '純利益は RE へ振替済み（残高ゼロ）。', 2: '期末RE とは別。', 3: '収益は閉鎖済み。', 4: '費用も振替済み。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_3', conceptId:'c4_post_closing_tb', ch:4, type:'A',
+    q:'Which account would appear on a post-closing trial balance?',
+    opts:['A) Retained Earnings','B) Service Revenue','C) Depreciation Expense','D) Dividends','E) Income Summary','F) わからない'],
+    ans:0,
+    exp:'締切後試算表には永久勘定（資産・負債・資本）のみが残る。Retained Earnings は永久勘定。収益・費用・配当・Income Summary は締め切られ残高ゼロ。',
+    we:{ 1: 'Service Revenue は締切済み。', 2: 'Depreciation Expense は締切済み。', 3: 'Dividends は締切済み。', 4: 'Income Summary は締切済み。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_4', conceptId:'c4_closing', ch:4, type:'A',
+    q:'Using the adjusted trial balance below, what net income is transferred to Retained Earnings by the closing entries?',
+    opts:['A) €43,000','B) €88,000','C) €45,000','D) €49,000','E) €37,000','F) わからない'],
+    ans:0,
+    exp:'純利益 = 収益 − 費用 = 88,000 − (30,000 + 9,000 + 6,000) = €43,000。これを Income Summary 経由で RE へ振替。',
+    we:{ 1: '€88,000 は収益総額。', 2: '€45,000 は費用合計。', 3: '€49,000 は費用の計算誤り。', 4: '€37,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Adjusted trial balance (selected, year)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Service revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€88,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Salaries expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€30,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Rent expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€9,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Depreciation expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€6,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_5', conceptId:'c4_classified_assets', ch:4, type:'A',
+    q:'On a classified statement of financial position, which item is a CURRENT asset?',
+    opts:['A) Prepaid Insurance','B) Equipment','C) Goodwill','D) Bonds Payable','E) Share Capital—Ordinary','F) わからない'],
+    ans:0,
+    exp:'流動資産は1年以内（または営業循環内）に現金化・費消される。Prepaid Insurance は前払費用＝流動資産。',
+    we:{ 1: 'Equipment は非流動資産。', 2: 'Goodwill は非流動（無形）資産。', 3: 'Bonds Payable は非流動負債。', 4: 'Share Capital は資本。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_6', conceptId:'c4_current_noncurrent', ch:4, type:'A',
+    q:'An asset is classified as current if it is expected to be converted to cash or consumed within:',
+    opts:['A) One year OR the operating cycle, whichever is longer','B) Exactly one calendar year','C) Six months','D) The operating cycle only','E) Three years','F) わからない'],
+    ans:0,
+    exp:'流動資産の基準は「1年または正常営業循環のいずれか長い方」。営業循環が1年超の業種に対応する二重基準。',
+    we:{ 1: '厳密に1年ではない。', 2: '6か月ではない。', 3: '営業循環のみではなく「長い方」。', 4: '3年は長すぎる。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp4_7', conceptId:'c4_closing', ch:4, type:'C',
+    q:'Hana Ltd. had beginning retained earnings of €50,000, net income of €43,000, and declared dividends of €12,000. What is ending retained earnings?',
+    opts:['A) €81,000','B) €93,000','C) €105,000','D) €19,000','E) €62,000','F) わからない'],
+    ans:0,
+    exp:'期末RE = 50,000 + 43,000 − 12,000 = €81,000。',
+    we:{ 1: '€93,000 は配当を引き忘れ。', 2: '€105,000 は配当を加算。', 3: '€19,000 は純利益を引いた誤り。', 4: '€62,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_1', conceptId:'c5_multistep_is', ch:5, type:'A',
+    q:'Using the data below, what is net sales for the period?',
+    opts:['A) €472,000','B) €500,000','C) €480,000','D) €492,000','E) €172,000','F) わからない'],
+    ans:0,
+    exp:'Net sales = Sales 500,000 − Sales returns & allowances 20,000 − Sales discounts 8,000 = €472,000。',
+    we:{ 1: '€500,000 は総売上（控除前）。', 2: '€480,000 は割引の引き忘れ。', 3: '€492,000 は返品の引き忘れ。', 4: '€172,000 は粗利。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Sales data (period)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Sales revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€500,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales returns &amp; allowances</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€20,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales discounts</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€8,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Cost of goods sold</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€300,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Operating expenses</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€90,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_2', conceptId:'c5_cogs', ch:5, type:'A',
+    q:'Using the same data below, what is gross profit?',
+    opts:['A) €172,000','B) €200,000','C) €82,000','D) €472,000','E) €300,000','F) わからない'],
+    ans:0,
+    exp:'Gross profit = Net sales 472,000 − COGS 300,000 = €172,000。',
+    we:{ 1: '€200,000 は総売上ベースの誤り。', 2: '€82,000 は営業利益。', 3: '€472,000 は純売上。', 4: '€300,000 は COGS。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Sales data (period)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Sales revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€500,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales returns &amp; allowances</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€20,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales discounts</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€8,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Cost of goods sold</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€300,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Operating expenses</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€90,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_3', conceptId:'c5_multistep_is', ch:5, type:'A',
+    q:'Using the same data below, what is income from operations (operating income)?',
+    opts:['A) €82,000','B) €172,000','C) €110,000','D) €92,000','E) €382,000','F) わからない'],
+    ans:0,
+    exp:'Operating income = Gross profit 172,000 − Operating expenses 90,000 = €82,000。',
+    we:{ 1: '€172,000 は粗利。', 2: '€110,000 は計算誤り。', 3: '€92,000 は計算誤り。', 4: '€382,000 は誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Sales data (period)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Sales revenue</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€500,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales returns &amp; allowances</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€20,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Sales discounts</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€8,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Cost of goods sold</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€300,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Operating expenses</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€90,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_4', conceptId:'c5_purchase', ch:5, type:'C',
+    q:'Yuki Ltd. (perpetual system) purchases €40,000 of merchandise, terms 2/10, n/30, and pays within the discount period. What is the net cost added to Inventory?',
+    opts:['A) €39,200','B) €40,000','C) €38,000','D) €40,800','E) €36,000','F) わからない'],
+    ans:0,
+    exp:'割引 = 40,000 × 2% = 800。正味原価 = 40,000 − 800 = €39,200（継続記録法では Inventory を割引分減額）。',
+    we:{ 1: '€40,000 は割引前。', 2: '€38,000 は割引率の誤り。', 3: '€40,800 は割引を加算。', 4: '€36,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_5', conceptId:'c5_fob', ch:5, type:'A',
+    q:'Under FOB destination terms, who bears the freight cost and when does ownership (title) transfer to the buyer?',
+    opts:['A) The seller pays freight; title transfers when goods reach the buyer','B) The buyer pays freight; title transfers at shipping point','C) The seller pays freight; title transfers at shipping point','D) The buyer pays freight; title transfers at destination','E) Freight is shared equally; title transfers at shipping','F) わからない'],
+    ans:0,
+    exp:'FOB destination（仕向地渡し）：売手が運賃負担し、商品が買手に到着した時点で所有権が移転する。',
+    we:{ 1: 'それは FOB shipping point。', 2: '運賃は売手負担。', 3: '運賃は売手で、移転は到着時。', 4: '運賃は分担しない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_6', conceptId:'c5_sales_recording', ch:5, type:'C',
+    q:'A company using a perpetual system sells goods for €1,000 (cost €600). In addition to recording the sale, what second entry is required?',
+    opts:['A) Dr Cost of Goods Sold 600 / Cr Inventory 600','B) Dr Inventory 600 / Cr Cost of Goods Sold 600','C) Dr Cost of Goods Sold 1,000 / Cr Inventory 1,000','D) No second entry is required','E) Dr Inventory 1,000 / Cr Sales Revenue 1,000','F) わからない'],
+    ans:0,
+    exp:'継続記録法では販売の都度、原価を計上：Dr Cost of Goods Sold 600 / Cr Inventory 600（売価1,000とは別に原価600）。',
+    we:{ 1: '方向が逆（販売は在庫減・COGS増）。', 2: '原価は600（売価1,000ではない）。', 3: '継続記録法では原価記録が必要。', 4: 'これは売上の記録（原価の記録が別途必要）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp5_7', conceptId:'c5_contra', ch:5, type:'A',
+    q:'In a multi-step income statement, "Sales Returns and Allowances" and "Sales Discounts" are:',
+    opts:['A) Contra-revenue accounts deducted from Sales to get Net Sales','B) Operating expenses','C) Added to Sales to get Net Sales','D) Part of Cost of Goods Sold','E) Non-operating losses','F) わからない'],
+    ans:0,
+    exp:'両者は売上のマイナス（contra-revenue）勘定で、総売上から控除して純売上を求める。',
+    we:{ 1: '営業費用ではない。', 2: '加算ではなく控除。', 3: 'COGS の一部ではない。', 4: '非営業損失ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_1', conceptId:'c6_fifo', ch:6, type:'A',
+    q:'Using the inventory data below (periodic), what is the ending inventory under FIFO?',
+    opts:['A) €700','B) €600','C) €500','D) €1,700','E) €2,400','F) わからない'],
+    ans:0,
+    exp:'販売可能 400単位/€2,400。販売300 → 期末100単位。FIFOでは新しい原価が残る → 100 × €7 = €700。',
+    we:{ 1: '€600 は加重平均（100×6）。', 2: '€500 は期首単価ベース。', 3: '€1,700 は FIFO の COGS。', 4: '€2,400 は販売可能商品原価。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Inventory data (period)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;"></th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost</th></tr><tr><td style="padding:5px;border:1px solid #475569;">Beginning inventory</td><td style="padding:5px;border:1px solid #475569;text-align:right;">100</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€5</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Purchase #1</td><td style="padding:5px;border:1px solid #475569;text-align:right;">200</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€6</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Purchase #2</td><td style="padding:5px;border:1px solid #475569;text-align:right;">100</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€7</td></tr></tbody></table></div><div style="color:#94a3b8;font-size:0.85em;margin-top:4px;">300 units were sold during the period.</div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_2', conceptId:'c6_avg_cost', ch:6, type:'A',
+    q:'Using the same inventory data below (periodic), what is cost of goods sold under the weighted-average method?',
+    opts:['A) €1,800','B) €1,700','C) €600','D) €2,400','E) €1,900','F) わからない'],
+    ans:0,
+    exp:'平均単価 = 2,400 ÷ 400 = €6.00。COGS = 300 × 6 = €1,800。期末 = 100 × 6 = €600。',
+    we:{ 1: '€1,700 は FIFO の COGS。', 2: '€600 は加重平均の期末在庫。', 3: '€2,400 は販売可能商品原価。', 4: '€1,900 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Inventory data (period)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;"></th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost</th></tr><tr><td style="padding:5px;border:1px solid #475569;">Beginning inventory</td><td style="padding:5px;border:1px solid #475569;text-align:right;">100</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€5</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Purchase #1</td><td style="padding:5px;border:1px solid #475569;text-align:right;">200</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€6</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Purchase #2</td><td style="padding:5px;border:1px solid #475569;text-align:right;">100</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€7</td></tr></tbody></table></div><div style="color:#94a3b8;font-size:0.85em;margin-top:4px;">300 units were sold during the period.</div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_3', conceptId:'c6_lcnrv', ch:6, type:'C',
+    q:'Inventory has a cost of €8,000 and a net realizable value (NRV) of €7,200. Under LCNRV (IAS 2), at what amount is the inventory reported?',
+    opts:['A) €7,200','B) €8,000','C) €800','D) €15,200','E) €7,600','F) わからない'],
+    ans:0,
+    exp:'低価法（Lower of Cost or NRV）：取得原価8,000とNRV7,200の低い方 → €7,200で計上（€800の評価減を費用化）。',
+    we:{ 1: '€8,000 は取得原価（低い方を選ぶ）。', 2: '€800 は評価減額。', 3: '€15,200 は合算の誤り。', 4: '€7,600 は中間値の誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_4', conceptId:'c6_inv_errors_is', ch:6, type:'C',
+    q:'If ending inventory is understated by €5,000, what is the effect on this period’s net income?',
+    opts:['A) Net income is understated by €5,000','B) Net income is overstated by €5,000','C) Net income is unaffected','D) Net income is understated by €10,000','E) Cannot be determined','F) わからない'],
+    ans:0,
+    exp:'期末在庫の過小計上 → COGS 過大 → 純利益 過小（同額 €5,000）。COGS = 期首+仕入−期末 なので、期末が小さいと COGS が大きくなる。',
+    we:{ 1: '過大ではなく過小。', 2: '影響あり（COGSを通じて）。', 3: '€10,000 ではなく €5,000。', 4: '判定可能。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_5', conceptId:'c6_turnover', ch:6, type:'C',
+    q:'A company has cost of goods sold of €480,000 and average inventory of €80,000. What is the inventory turnover?',
+    opts:['A) 6.0 times','B) 0.17 times','C) 60 times','D) 4.8 times','E) 8.0 times','F) わからない'],
+    ans:0,
+    exp:'棚卸資産回転率 = COGS ÷ 平均在庫 = 480,000 ÷ 80,000 = 6.0 回。',
+    we:{ 1: '0.17 は逆数。', 2: '60 は桁誤り。', 3: '4.8 は計算誤り。', 4: '8.0 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp6_6', conceptId:'c6_fifo_avg_lifo_compare', ch:6, type:'A',
+    q:'In a period of RISING prices, which inventory method generally produces the HIGHEST ending inventory?',
+    opts:['A) FIFO','B) LIFO','C) Weighted-average','D) Specific identification','E) All methods give the same result','F) わからない'],
+    ans:0,
+    exp:'物価上昇時、FIFO は新しい（高い）原価が期末在庫に残るため期末在庫が最大（かつ COGS 最小・利益最大）。',
+    we:{ 1: 'LIFO は期末在庫が最小。', 2: '加重平均は中間。', 3: '個別法は物の特定による（一般化できない）。', 4: '価格変動時は方法で異なる。' },
+    source:'FA1B Predicted'
   }
 ];
 
