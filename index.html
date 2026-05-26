@@ -1213,6 +1213,19 @@ body { padding-top:112px; }
 .jfrac>.den{padding:3px 10px 1px;display:block;}
 .wk-tbl .jfrac{font-size:18px;color:#cbd5e1;}
 .jeq{font-weight:700;margin:0 4px;}
+.fx-head{margin:4px 0 18px;}
+.fx-head h2{font-size:26px;color:#22d3ee;margin:0 0 6px;}
+.fx-head p{font-size:15px;color:#94a3b8;margin:0;}
+.fx-sec{margin-bottom:18px;background:#0f1c2e;border:1px solid #1e3a5f;border-radius:12px;padding:16px 18px;}
+.fx-sec-head{font-size:21px;font-weight:800;color:#e2e8f0;border-bottom:2px solid #1e3a5f;padding-bottom:10px;margin-bottom:8px;}
+.fx-sec-head .fx-en{font-size:14px;color:#94a3b8;font-weight:600;}
+.fx-sec-head .fx-ch{float:right;font-size:13px;color:#fbbf24;background:rgba(234,179,8,0.12);padding:3px 12px;border-radius:12px;font-weight:700;}
+.fx-row{padding:13px 0;border-bottom:1px solid #1a2940;}
+.fx-row:last-child{border-bottom:none;padding-bottom:2px;}
+.fx-name{font-size:17px;font-weight:700;color:#e2e8f0;margin-bottom:8px;}
+.fx-name .fx-jp{font-size:14px;color:#7dd3fc;margin-left:10px;font-weight:600;}
+.fx-formula{font-size:18px;color:#e2e8f0;padding:11px 16px;background:#0a1628;border-radius:8px;border-left:3px solid #22d3ee;overflow-x:auto;}
+.fx-note{font-size:13.5px;color:#94a3b8;margin-top:7px;padding-left:2px;line-height:1.6;}
 /* ═══════ 🗺️ 概念ツリー型ロードマップ ═══════ */
 #tab-roadmap{padding:14px 18px 90px;}
 .rm-hero{background:linear-gradient(135deg,#0f766e,#0891b2);color:#fff;padding:20px 24px;border-radius:16px;margin-bottom:16px;box-shadow:0 6px 20px rgba(8,145,178,0.3);}
@@ -1417,6 +1430,7 @@ body { padding-top:112px; }
 
     <button class="tab-btn" data-tab="tab-roadmap" onclick="switchTab('tab-roadmap')">🗺️ ロードマップ</button>
     <button class="tab-btn" data-tab="tab-radar" onclick="switchTab('tab-radar')">📊 レーダー</button>
+    <button class="tab-btn" data-tab="tab-formulas" onclick="switchTab('tab-formulas')">📐 公式集</button>
   <div class="mode-switch-wrap">
     <button class="mode-btn active" data-mode="browse" onclick="setStudyMode('browse')">📖 流し見</button>
     <button class="mode-btn" data-mode="study" onclick="setStudyMode('study')">⏱ 勉強モード</button>
@@ -4002,6 +4016,10 @@ body { padding-top:112px; }
 
   <div class="panel" id="tab-radar">
     <div id="radar-content"></div>
+  </div>
+
+  <div class="panel" id="tab-formulas">
+    <div id="formulas-content"></div>
   </div>
 
 
@@ -12090,6 +12108,102 @@ function switchTab(tabName) {
     STUDY_SESSION_START = Date.now();
   }
 }
+
+/* ═══════════ 覚える公式集 (Formula Collection) — 日本式（縦分数）表記 ═══════════ */
+function jf(n, d){ return '<span class="jfrac"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+var FORMULAS = [
+  { ch:'Ch 1 · 4', cat:'① 会計の基礎等式', en:'Foundational Equations', items:[
+    {name:'Accounting Equation', jp:'会計等式', f:'Assets <span class="jeq">=</span> Liabilities ＋ Equity'},
+    {name:'Expanded Accounting Equation', jp:'拡張会計等式', f:'Assets <span class="jeq">=</span> Liabilities ＋ Share Capital ＋ Retained Earnings ＋ Revenues − Expenses − Dividends'},
+    {name:'Net Income', jp:'純利益', f:'Net Income <span class="jeq">=</span> Revenues − Expenses'},
+    {name:'Ending Retained Earnings', jp:'期末利益剰余金', f:'Ending RE <span class="jeq">=</span> Beginning RE ＋ Net Income − Dividends', note:'利益剰余金計算書の基本。純損失なら Net Income はマイナス。'},
+    {name:'Ending Equity', jp:'期末資本（株主資本）', f:'Ending Equity <span class="jeq">=</span> Beginning Equity ＋ Net Income ＋ Share Issuances − Dividends − Treasury Shares', note:'資本全体の期末残高。出資・自己株式取得・配当などすべての資本変動を反映する。'},
+    {name:'Owners\' Equity (residual)', jp:'自己資本（残余持分）', f:'Equity <span class="jeq">=</span> Assets − Liabilities'},
+  ]},
+  { ch:'Ch 5', cat:'② 商品売買・粗利', en:'Merchandising & Gross Profit', items:[
+    {name:'Net Sales', jp:'純売上高', f:'Net Sales <span class="jeq">=</span> Sales Revenue − Sales Returns &amp; Allowances − Sales Discounts'},
+    {name:'Gross Profit', jp:'売上総利益（粗利）', f:'Gross Profit <span class="jeq">=</span> Net Sales − Cost of Goods Sold'},
+    {name:'Gross Profit Rate', jp:'粗利率', f:'Gross Profit Rate <span class="jeq">=</span> ' + jf('Gross Profit','Net Sales')},
+    {name:'Income from Operations', jp:'営業利益', f:'Operating Income <span class="jeq">=</span> Gross Profit − Operating Expenses'},
+    {name:'Net Income (multi-step)', jp:'純利益（多区分損益）', f:'Net Income <span class="jeq">=</span> Operating Income ＋ Other Revenues &amp; Gains − Other Expenses &amp; Losses'},
+  ]},
+  { ch:'Ch 6', cat:'③ 棚卸資産', en:'Inventory', items:[
+    {name:'Cost of Goods Available for Sale', jp:'販売可能商品原価', f:'COGAS <span class="jeq">=</span> Beginning Inventory ＋ Net Purchases'},
+    {name:'Cost of Goods Sold', jp:'売上原価', f:'COGS <span class="jeq">=</span> Beginning Inventory ＋ Net Purchases − Ending Inventory'},
+    {name:'Inventory Turnover', jp:'棚卸資産回転率', f:'Inventory Turnover <span class="jeq">=</span> ' + jf('Cost of Goods Sold','Average Inventory')},
+    {name:'Days in Inventory', jp:'棚卸日数', f:'Days in Inventory <span class="jeq">=</span> ' + jf('365','Inventory Turnover')},
+    {name:'Gross Profit Method (estimate)', jp:'売上総利益法（期末在庫推定）', f:'Est. Ending Inventory <span class="jeq">=</span> COGAS − [ Net Sales × ( 1 − Gross Profit Rate ) ]', note:'実地棚卸できないときの推定。角括弧内が推定 COGS。'},
+  ]},
+  { ch:'Ch 7 · 8', cat:'④ 現金・売上債権', en:'Cash & Receivables', items:[
+    {name:'Net Realizable Value of A/R', jp:'売掛金の正味実現可能価額', f:'Net A/R <span class="jeq">=</span> Accounts Receivable − Allowance for Doubtful Accounts'},
+    {name:'Bad Debt Expense (% of receivables)', jp:'貸倒費用（期末売掛金法）', f:'Bad Debt Expense <span class="jeq">=</span> Required Ending Allowance − Existing Credit Balance', note:'Allowance に借方残があるときは「＋ 借方残」。差額補充法。'},
+    {name:'A/R Turnover', jp:'売上債権回転率', f:'A/R Turnover <span class="jeq">=</span> ' + jf('Net Credit Sales','Average Net A/R')},
+    {name:'Average Collection Period', jp:'平均回収期間', f:'Avg Collection Period <span class="jeq">=</span> ' + jf('365','A/R Turnover')},
+  ]},
+  { ch:'Ch 9', cat:'⑤ 有形固定資産・減価償却', en:'Plant Assets & Depreciation', items:[
+    {name:'Capitalized Cost', jp:'取得原価（資産計上額）', f:'Cost <span class="jeq">=</span> Purchase Price ＋ all costs to get the asset ready for use', note:'据付・運送・試運転費は資産化。経常的な維持修繕は費用処理。'},
+    {name:'Straight-Line Depreciation', jp:'定額法', f:'Annual Depr. <span class="jeq">=</span> ' + jf('Cost − Residual Value','Useful Life (years)')},
+    {name:'Units-of-Activity', jp:'生産高比例法', f:'Depr. <span class="jeq">=</span> ' + jf('Cost − Residual Value','Total Estimated Units') + ' × Units used this period'},
+    {name:'Double-Declining-Balance', jp:'定率法（200%）', f:'Depr. <span class="jeq">=</span> Beginning Book Value × ' + jf('2','Useful Life'), note:'残存価額は計算に使わない（簿価が残存価額に達したら停止）。初年度は満額。'},
+    {name:'Book Value (Carrying Amount)', jp:'帳簿価額', f:'Book Value <span class="jeq">=</span> Cost − Accumulated Depreciation'},
+    {name:'Gain / Loss on Disposal', jp:'処分損益', f:'Gain (Loss) <span class="jeq">=</span> Proceeds − Book Value', note:'正なら Gain、負なら Loss。'},
+    {name:'Revaluation Surplus (IFRS)', jp:'再評価剰余金', f:'Revaluation Surplus <span class="jeq">=</span> Fair Value − Carrying Amount', note:'増加は OCI（Revaluation Surplus）、減少は P/L（Impairment Loss）。'},
+    {name:'Asset Turnover', jp:'総資産回転率', f:'Asset Turnover <span class="jeq">=</span> ' + jf('Net Sales','Average Total Assets')},
+  ]},
+  { ch:'Ch 10 · 11', cat:'⑥ 負債・社債', en:'Liabilities & Bonds', items:[
+    {name:'Interest', jp:'利息', f:'Interest <span class="jeq">=</span> Principal × Annual Rate × ' + jf('Time (months)','12'), note:'P × R × T。期間は年換算（経過月数 ÷ 12）。'},
+    {name:'Sales Tax Payable (from gross)', jp:'仮受消費税（税込から逆算）', f:'Sales Tax <span class="jeq">=</span> ' + jf('Total Receipts','1 ＋ Tax Rate') + ' × Tax Rate'},
+    {name:'Bond Carrying Value', jp:'社債の帳簿価額', f:'Carrying Value <span class="jeq">=</span> Face Value ± Unamortized Premium / Discount', note:'プレミアムは ＋、ディスカウントは −。NET 法で記帳。'},
+    {name:'Bond Interest Expense (effective)', jp:'社債利息費用（実効金利法）', f:'Interest Expense <span class="jeq">=</span> Carrying Value × Market (Effective) Rate'},
+    {name:'Cash Interest Paid', jp:'現金利払額', f:'Cash Interest <span class="jeq">=</span> Face Value × Stated (Coupon) Rate'},
+    {name:'Times Interest Earned', jp:'インタレスト・カバレッジ', f:'TIE <span class="jeq">=</span> ' + jf('Net Income ＋ Interest Expense ＋ Income Tax Expense','Interest Expense'), note:'分子は EBIT（利払前・税引前利益）。'},
+  ]},
+  { ch:'Ch 12', cat:'⑦ 株主資本', en:'Equity', items:[
+    {name:'Total Equity', jp:'株主資本合計', f:'Total Equity <span class="jeq">=</span> Share Capital ＋ Share Premium ＋ Retained Earnings ＋ OCI − Treasury Shares'},
+    {name:'Share Premium', jp:'株式払込剰余金', f:'Share Premium <span class="jeq">=</span> ( Issue Price − Par Value ) × Shares Issued'},
+    {name:'Cash Dividend (total)', jp:'現金配当総額', f:'Dividend <span class="jeq">=</span> Dividend per Share × Shares Outstanding', note:'自己株式（Treasury）には配当しない。'},
+    {name:'Book Value per Share', jp:'1株当たり純資産', f:'BV per Share <span class="jeq">=</span> ' + jf('Ordinary Shareholders\' Equity','Ordinary Shares Outstanding')},
+  ]},
+  { ch:'Ch 14', cat:'⑧ キャッシュフロー計算書', en:'Statement of Cash Flows', items:[
+    {name:'Net Change in Cash', jp:'現金の純増減', f:'Δ Cash <span class="jeq">=</span> Operating CF ＋ Investing CF ＋ Financing CF'},
+    {name:'Free Cash Flow', jp:'フリーキャッシュフロー', f:'FCF <span class="jeq">=</span> Operating Cash Flow − Capital Expenditures − Cash Dividends'},
+    {name:'Operating CF (indirect method)', jp:'営業CF（間接法）', f:'Operating CF <span class="jeq">=</span> Net Income ＋ Depreciation ＋ Losses − Gains − ↑Current Assets ＋ ↑Current Liabilities', note:'非現金費用は加算。流動資産の増加は減算、流動負債の増加は加算。'},
+  ]},
+  { ch:'Ch 15', cat:'⑨ 財務分析：収益性', en:'Profitability Ratios', items:[
+    {name:'Profit Margin', jp:'売上高純利益率', f:'Profit Margin <span class="jeq">=</span> ' + jf('Net Income','Net Sales')},
+    {name:'Return on Assets (ROA)', jp:'総資産利益率', f:'ROA <span class="jeq">=</span> ' + jf('Net Income','Average Total Assets')},
+    {name:'Return on Equity (ROE)', jp:'普通株主資本利益率', f:'ROE <span class="jeq">=</span> ' + jf('Net Income − Preference Dividends','Average Ordinary Shareholders\' Equity')},
+    {name:'Earnings per Share (EPS)', jp:'1株当たり利益', f:'EPS <span class="jeq">=</span> ' + jf('Net Income − Preference Dividends','Weighted Avg Ordinary Shares')},
+    {name:'Price-Earnings (P/E) Ratio', jp:'株価収益率', f:'P/E <span class="jeq">=</span> ' + jf('Market Price per Share','Earnings per Share')},
+    {name:'Payout Ratio', jp:'配当性向', f:'Payout Ratio <span class="jeq">=</span> ' + jf('Cash Dividends on Ordinary Shares','Net Income')},
+    {name:'DuPont (ROA decomposition)', jp:'デュポン分解', f:'ROA <span class="jeq">=</span> Profit Margin × Asset Turnover', note:'本コースは2要素分解（ROA ＝ 利益率 × 総資産回転率）。'},
+  ]},
+  { ch:'Ch 15', cat:'⑩ 財務分析：流動性・支払能力', en:'Liquidity & Solvency Ratios', items:[
+    {name:'Working Capital', jp:'運転資本', f:'Working Capital <span class="jeq">=</span> Current Assets − Current Liabilities'},
+    {name:'Current Ratio', jp:'流動比率', f:'Current Ratio <span class="jeq">=</span> ' + jf('Current Assets','Current Liabilities')},
+    {name:'Acid-Test (Quick) Ratio', jp:'当座比率', f:'Acid-Test <span class="jeq">=</span> ' + jf('Cash ＋ Short-term Investments ＋ Net A/R','Current Liabilities')},
+    {name:'Inventory Turnover', jp:'棚卸資産回転率', f:'Inventory Turnover <span class="jeq">=</span> ' + jf('Cost of Goods Sold','Average Inventory')},
+    {name:'A/R Turnover', jp:'売上債権回転率', f:'A/R Turnover <span class="jeq">=</span> ' + jf('Net Credit Sales','Average Net A/R')},
+    {name:'Asset Turnover', jp:'総資産回転率', f:'Asset Turnover <span class="jeq">=</span> ' + jf('Net Sales','Average Total Assets')},
+    {name:'Debt to Assets', jp:'負債比率', f:'Debt to Assets <span class="jeq">=</span> ' + jf('Total Liabilities','Total Assets')},
+    {name:'Times Interest Earned', jp:'利息カバー率', f:'TIE <span class="jeq">=</span> ' + jf('Net Income ＋ Interest Exp ＋ Tax Exp','Interest Expense')},
+  ]},
+];
+function renderFormulas(){
+  var el = document.getElementById('formulas-content'); if(!el) return;
+  var h = '<div class="fx-head"><h2>📐 覚える公式集</h2><p>試験で使う公式を章別に網羅。数式はすべて<b>日本式（縦分数）</b>表記。</p></div>';
+  for (var s=0;s<FORMULAS.length;s++){
+    var sec = FORMULAS[s];
+    h += '<div class="fx-sec"><div class="fx-sec-head"><span class="fx-ch">' + sec.ch + '</span>' + sec.cat + ' <span class="fx-en">' + sec.en + '</span></div>';
+    for (var i=0;i<sec.items.length;i++){
+      var it = sec.items[i];
+      h += '<div class="fx-row"><div class="fx-name">' + it.name + '<span class="fx-jp">' + it.jp + '</span></div><div class="fx-formula">' + it.f + '</div>' + (it.note ? '<div class="fx-note">💡 ' + it.note + '</div>' : '') + '</div>';
+    }
+    h += '</div>';
+  }
+  el.innerHTML = h;
+}
+document.addEventListener('DOMContentLoaded', function(){ try{ renderFormulas(); }catch(e){} });
 
 // ============================================================
 // HELPERS
