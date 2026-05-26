@@ -8181,7 +8181,7 @@ var QUESTIONS = [
 { id:'q366',conceptId:'c6_fifo',ch:6,type:'E', q:'FIFO periodic: Beg 30@$4; Buy1 50@$6; Buy2 40@$8. Sold 90 units. FIFO COGS =', opts:['A) $500','B) $580','C) $460','D) $540'], ans:0, exp:'FIFO: 最も古いものから売る。30@$4=$120; 50@$6=$300; 10@$8=$80。30+50+10=90単位 ✓。COGS = $120+$300+$80 = $500。', we:{1:'$580 = 不適切な按分 (40@$8 + 30@$6 + 20@$4 など、FIFOの順序を誤った場合)。',2:'$460 = 90 × $5.11 (平均単価) — FIFOではなくAverage Cost法。',3:'$540 = 90 × $6 (中間バッチの単価で全て計算)。'} },
 { id:'q367',conceptId:'c6_avg_cost',ch:6,type:'E', q:'Weighted avg: Beg 30@$4; Buy 50@$6; Buy 40@$8. Sold 90 units. Total units available =', opts:['A) 90','B) 120','C) 80','D) 140'], ans:1, exp:'販売可能総数 = 30 + 50 + 40 = 120。90販売、残り30。', we:{ 0: '90 は販売数で、販売可能総数ではありません。', 2: '80 は合計ではありません。', 3: '140 は過大計上です。' } },
 { id:'q368',conceptId:'c6_avg_cost',ch:6,type:'E', q:'From q367: total cost = 30×$4 + 50×$6 + 40×$8 = $120+$300+$320=$740. Weighted avg cost/unit =', opts:['A) $6.00','B) $6.17','C) $6.50','D) $7.00'], ans:1, exp:'平均 = $740 ÷ 120単位 = 単価$6.17。', we:{ 0: '$6.00 は $4,$6,$8 の単純平均 ÷ 3 です。', 2: '$6.50 は $6 と $7 の単純平均（誤り）です。', 3: '$7.00 は誤った合計を使っています。' } },
-{ id:'q369',conceptId:'c6_avg_cost',ch:6,type:'E', q:'From q368 ($6.17/unit): COGS for 90 units sold =', opts:['A) $540','B) $555','C) $617','D) $500'], ans:1, exp:'COGS = 90 × $6.17 = $555.30 ≒ $555。', we:{ 0: '$540 = 90 × $6.00（単純平均で、加重平均ではない）。', 2: '$617 は単価そのまま（数量を乗じ忘れ）。', 3: '$500 は FIFO の COGS（本問は加重平均法）。' } },
+{ id:'q369',conceptId:'c6_avg_cost',ch:6,type:'E', q:'From q368 ($6.17/unit): COGS for 90 units sold =', opts:['A) $540','B) $555','C) $617','D) $500'], ans:1, exp:'加重平均法で COGS = 90個 × 単価$6.17 = $555.30 ≒ $555 です。', we:{ 0: '$540 = 90 × $6.00（単純平均で、加重平均ではない）。', 2: '$617 は単価そのまま（数量を乗じ忘れ）。', 3: '$500 は FIFO の COGS（本問は加重平均法）。' } },
 { id:'q370',conceptId:'c6_fifo_avg_lifo_compare',ch:6,type:'E', q:'Using results from q366-q369: FIFO COGS=$500; WA COGS=$555. Ending inventory: FIFO=30@$8=$240; WA=30×$6.17=$185. Which gives higher ending inventory in this rising-price scenario?', opts:['A) FIFO gives higher ending inventory ($240 vs WA $185 — newest costs in inventory)','B) Weighted Average gives higher ending inventory ($185 exceeds FIFO $240)','C) Both methods give equal ending inventory amounts when applied to the same data','D) Cannot determine from the data provided — additional assumptions are needed'], ans:0, exp:'この場面は価格が『上昇』（$4→$6→$8）。FIFO の期末棚卸は新しい（高い）価格を使い $240 > 加重平均 $185。物価上昇時は『FIFO が常に期末棚卸最大』（かつ COGS 最小）。', we:{ 1: '加重平均 $185 < FIFO $240。物価上昇時、加重平均は『低く』、高くありません。', 2: '価格が変動すれば、原価配分法ごとに『異なる』在庫額になります（本問のように）。', 3: '答えは『決定可能』です。両数値（$240 と $185）が直接与えられています。' } },
 { id:'q371',conceptId:'c6_turnover',ch:6,type:'E', q:'Company 1: COGS $720,000; avg inventory $90,000. Company 2: COGS $600,000; avg inventory $120,000. Which company manages inventory more efficiently?', opts:['A) Company 1 — turnover 8× ($720k÷$90k) beats Company 2\'s 5× ($600k÷$120k)','B) Company 2 — higher inventory balance indicates more product variety and depth','C) Both companies are equally efficient because their COGS and inventory differ','D) Company 2 — lower COGS means it sells higher-value items more profitably'], ans:0, exp:'棚卸資産回転率 = COGS ÷ 平均棚卸。会社1：$720,000 ÷ $90,000 = 8回。会社2：$600,000 ÷ $120,000 = 5回。回転率が高い = 速く売れる = 効率的。会社1が明らかに優れています。', we:{ 1: '売上に対し在庫残高が多いのは実は『効率が低い』ことを意味します。動きの遅い在庫に資本が拘束されています。', 2: '8回 ≠ 5回 で2つの比率は明らかに異なります。効率が等しいには回転率が等しい必要があります。', 3: 'COGS が低いことは在庫効率とは無関係です。重要なのは比率（COGS ÷ 平均棚卸）であって COGS の絶対額ではありません。' } },
 { id:'q372',conceptId:'c6_lcnrv',ch:6,type:'E', q:'Inventory items: Item X cost $1,200, NRV $1,000; Item Y cost $800, NRV $850; Item Z cost $600, NRV $580. LCNRV inventory value =', opts:['A) $2,600','B) $2,380','C) $2,430','D) $2,450'], ans:1, exp:'LCNRV (Lower of Cost or NRV) は項目ごとに低い方を選ぶ:\nX = min($1,200, $1,000) = $1,000\nY = min($800, $850) = $800\nZ = min($600, $580) = $580\n合計 = $1,000 + $800 + $580 = $2,380。', we:{0:'$2,600 = Cost合計 ($1,200+$800+$600)。LCNRVではない。',2:'$2,430 = NRV合計 ($1,000+$850+$580)。LCNRVは項目ごと低い方を選ぶ。',3:'$2,450 = 計算誤り (混合)。'} },
@@ -8233,216 +8233,216 @@ var QUESTIONS = [
     q: 'A $750 cash payment for Salaries Expense was journalized correctly but posted as a debit to Rent Expense. Which correcting entry is needed?',
     opts: ['A) Debit Salaries Expense $750; Credit Rent Expense $750','B) Debit Rent Expense $750; Credit Salaries Expense $750','C) Debit Cash $750; Credit Rent Expense $750','D) Debit Salaries Expense $1,500; Credit Rent Expense $750; Credit Cash $750'],
     ans: 0,
-    exp: 'The debit of $750 was posted to Rent Expense instead of Salaries Expense. Correcting entry: Debit Salaries Expense $750 (put it where it belongs); Credit Rent Expense $750 (remove it from wrong account). Cash and Accounts Payable are correct and unaffected.',
-    we: { 1: 'This reverses the correction — it would add more to Rent Expense.', 2: 'Cash was correctly recorded; this entry would create a double-counting of cash.', 3: '$1,500 over-corrects; only $750 needs to be moved.' }
+    exp: '$750 の借方が Salaries Expense ではなく Rent Expense に転記されました。訂正仕訳：借方 Salaries Expense $750（正しい勘定へ）/ 貸方 Rent Expense $750（誤った勘定から除く）。Cash と Accounts Payable は正しく、影響を受けません。',
+    we: { 1: 'これは訂正を逆にし、Rent Expense にさらに加えてしまいます。', 2: 'Cash は正しく記録済みで、この仕訳は現金の二重計上を生みます。', 3: '$1,500 は過剰訂正で、移すべきは$750だけです。' }
   },
   {
     id: 'q395', conceptId: 'c4_classified_assets', ch: 4, type: 'A',
     q: 'On a classified SFP, which order correctly lists current assets from most to least liquid?',
     opts: ['A) Inventory, Prepaid expenses, Accounts receivable, Cash','B) Cash, Short-term investments, Accounts receivable, Inventory, Prepaid expenses','C) Accounts receivable, Cash, Inventory, Prepaid expenses','D) Prepaid expenses, Inventory, Accounts receivable, Cash'],
     ans: 1,
-    exp: 'Current assets are listed from most liquid: Cash → Short-term investments → Accounts receivable → Inventory → Prepaid expenses. Cash is the most liquid; prepaid expenses are the least liquid current asset.',
-    we: { 0: 'Inventory should follow accounts receivable, not precede it; cash should be first.', 2: 'Cash is the most liquid and must be listed first.', 3: 'This is essentially reversed from the correct liquidity order.' }
+    exp: '流動資産は流動性の高い順に並べます：Cash → 短期投資 → 売掛金 → 棚卸資産 → 前払費用。Cash が最も流動的で、前払費用が最も流動性の低い流動資産です。',
+    we: { 0: '棚卸資産は売掛金の後で、前ではありません。Cash が最初です。', 2: 'Cash が最も流動的で、最初に並べる必要があります。', 3: 'これは正しい流動性順とほぼ逆です。' }
   },
   {
     id: 'q396', conceptId: 'c4_classified_assets', ch: 4, type: 'A',
     q: 'A company has a $200,000 mortgage payable. $15,000 is due within the next year; the rest is due over the next 9 years. How is this presented on the classified SFP?',
     opts: ['A) $200,000 as a non-current liability only','B) $15,000 as current liability; $185,000 as non-current liability','C) $200,000 as a current liability','D) $15,000 as non-current; $185,000 as current'],
     ans: 1,
-    exp: 'The current portion of long-term debt ($15,000 due within one year) is classified as a current liability. The remaining $185,000 due beyond one year is classified as a non-current liability.',
-    we: { 0: 'The $15,000 current portion must be reclassified to current liabilities.', 2: 'Only the $15,000 due within one year is current; the rest is non-current.', 3: 'The classification is reversed — the $15,000 due within one year is current, not non-current.' }
+    exp: '長期債務の流動部分（1年以内に返済期限の来る$15,000）は流動負債に分類します。1年超で残る$185,000は非流動負債に分類します。',
+    we: { 0: '$15,000 の流動部分は流動負債に振り替える必要があります。', 2: '1年以内に来る$15,000だけが流動で、残りは非流動です。', 3: '分類が逆です。1年以内に来る$15,000が流動で、非流動ではありません。' }
   },
   {
     id: 'q397', conceptId: 'c4_current_noncurrent', ch: 4, type: 'A',
     q: 'Which of the following is classified as a CURRENT asset?',
     opts: ['A) Land','B) Patent (10-year life)','C) Long-term investment in bonds','D) Accounts receivable'],
     ans: 3,
-    exp: 'Accounts receivable is a current asset — it is expected to be collected within one year (or the operating cycle). Land, patents, and long-term investments are non-current assets.',
-    we: { 0: 'Land is a non-current (long-term) asset.', 1: 'A patent with a 10-year life is a non-current intangible asset.', 2: 'Long-term investments are non-current assets by definition.' }
+    exp: '売掛金は流動資産で、1年（または営業循環）以内に回収見込みです。土地・特許・長期投資は非流動資産です。',
+    we: { 0: '土地は非流動（長期）資産です。', 1: '耐用10年の特許は非流動の無形資産です。', 2: '長期投資は定義上、非流動資産です。' }
   },
   {
     id: 'q398', conceptId: 'c4_current_noncurrent', ch: 4, type: 'A',
     q: "A merchandising company's operating cycle flows in which order?",
     opts: ['A) Cash → Accounts receivable → Inventory → Cash','B) Cash → Inventory → Accounts receivable (from credit sales) → Cash','C) Inventory → Cash → Accounts receivable → Cash','D) Accounts receivable → Inventory → Cash → Accounts receivable'],
     ans: 1,
-    exp: 'The operating cycle for a merchandiser: Cash is used to buy Inventory → Inventory is sold on credit creating Accounts Receivable → Cash is collected from customers. This cycle repeats continuously.',
-    we: { 0: 'Cash does not convert directly to accounts receivable without going through inventory first.', 2: 'The cycle starts with cash (to purchase inventory), not inventory.', 3: 'Accounts receivable does not come before inventory in the operating cycle.' }
+    exp: '商品売買業の営業循環：現金で在庫を購入 → 在庫を掛けで販売し売掛金が生じる → 顧客から現金を回収。この循環が継続的に繰り返されます。',
+    we: { 0: '現金はまず在庫を経ずに直接売掛金には変わりません。', 2: '循環は（在庫購入のための）現金から始まり、在庫からではありません。', 3: '営業循環では売掛金は在庫の前には来ません。' }
   },
   {
     id: 'q399', conceptId: 'c4_reversing', ch: 4, type: 'A',
     q: 'A reversing entry for accrued salaries payable at year end would be recorded:',
     opts: ['A) On December 31, the same day as the adjusting entry','B) On January 1 (or the first day of the new period), as the opposite of the adjusting entry','C) On the date the salaries are actually paid in January','D) Reversing entries are never used for accrued expenses'],
     ans: 1,
-    exp: 'Reversing entries are optional entries made on the FIRST DAY of the new accounting period. They are the exact reverse of certain year-end accrual adjustments, simplifying the recording of the subsequent cash payment.',
-    we: { 0: 'Reversing entries are made at the start of the next period, not on the same day as the adjusting entry.', 2: 'Reversing entries are made on the first day of the new period, not on the actual payment date.', 3: 'Reversing entries are commonly used for accrued expenses (and accrued revenues).' }
+    exp: '再振替仕訳は新会計期間の『初日』に行う任意の仕訳です。特定の期末見越し調整のちょうど逆で、その後の現金支払の記録を簡素化します。',
+    we: { 0: '再振替仕訳は次期の初めに行い、決算整理仕訳と同じ日ではありません。', 2: '再振替仕訳は新期間の初日に行い、実際の支払日ではありません。', 3: '再振替仕訳は未払費用（や未収収益）でよく使われます。' }
   },
   {
     id: 'q400', conceptId: 'c5_merch_service', ch: 5, type: 'A',
     q: "Which of the following appears on a merchandiser's income statement but NOT on a service company's income statement?",
     opts: ['A) Service revenue','B) Salaries expense','C) Cost of goods sold','D) Depreciation expense'],
     ans: 2,
-    exp: 'Cost of goods sold (COGS) is unique to merchandisers. It represents the cost of inventory sold to generate sales revenue. Service companies have no inventory and therefore no COGS.',
-    we: { 0: "Service revenue appears on a service company's income statement, not a merchandiser's (which uses Sales Revenue).", 1: 'Both merchandisers and service companies have salaries expense.', 3: 'Both types of companies can have depreciation expense on plant assets.' }
+    exp: '売上原価（COGS）は商品売買業に固有です。売上収益を生むために販売した在庫の原価を表します。サービス業は在庫がないため COGS もありません。',
+    we: { 1: '商品売買業もサービス業も給料費用があります。', 3: 'どちらの業種も有形固定資産の減価償却費を持ち得ます。' }
   },
   {
     id: 'q401', conceptId: 'c5_cogs', ch: 5, type: 'B',
     q: 'Net sales are $180,000 and COGS is $108,000. What is the gross profit ratio (gross profit margin)?',
     opts: ['A) 60%','B) 40%','C) 108%','D) 167%'],
     ans: 1,
-    exp: 'Gross profit = $180,000 − $108,000 = $72,000. Gross profit ratio = Gross profit ÷ Net sales = $72,000 ÷ $180,000 = 40%.',
-    we: { 0: '60% is COGS ÷ Net sales (COGS ratio), not the gross profit ratio.', 2: '108% incorrectly divides COGS by gross profit.', 3: '167% inverts the formula.' }
+    exp: '売上総利益 = $180,000 − $108,000 = $72,000。売上総利益率 = 売上総利益 ÷ 純売上 = $72,000 ÷ $180,000 = 40%。',
+    we: { 0: '60% は COGS ÷ 純売上（原価率）で、売上総利益率ではありません。', 2: '108% は COGS を売上総利益で誤って割っています。', 3: '167% は公式を逆にしています。' }
   },
   {
     id: 'q402', conceptId: 'c5_perpetual_periodic', ch: 5, type: 'A',
     q: 'Under the PERIODIC inventory system, which statement is TRUE?',
     opts: ['A) Inventory records are updated after every purchase and sale','B) COGS is determined only at period end after a physical inventory count','C) A separate COGS entry is made every time inventory is sold','D) The Inventory account always reflects the current balance of goods on hand'],
     ans: 1,
-    exp: 'Under the periodic system, no COGS entry is made during the period. COGS is calculated only at period end: Beginning Inventory + Net Purchases − Ending Inventory (from physical count) = COGS.',
-    we: { 0: 'Continuously updating inventory records describes the perpetual system.', 2: 'Making a COGS entry each time goods are sold describes the perpetual system.', 3: 'The Inventory account always reflecting current balance describes the perpetual system.' }
+    exp: '棚卸計算法では期中に COGS の仕訳をしません。COGS は期末にのみ計算：期首棚卸 + 純仕入 − 期末棚卸（実地棚卸）= COGS。',
+    we: { 0: '在庫記録を継続的に更新するのは継続記録法の説明です。', 2: '販売の都度 COGS を仕訳するのは継続記録法の説明です。', 3: 'Inventory 勘定が常に現在残高を反映するのは継続記録法の説明です。' }
   },
   {
     id: 'q403', conceptId: 'c5_purchase', ch: 5, type: 'B',
     q: 'Under the perpetual system, freight costs paid by the buyer on purchased inventory are recorded as:',
     opts: ['A) Debit Freight Expense; Credit Cash','B) Debit Inventory; Credit Cash','C) Debit COGS; Credit Cash','D) Debit Purchases; Credit Cash'],
     ans: 1,
-    exp: 'Under the perpetual system, freight-in (freight costs paid by buyer on inbound merchandise) is added to the cost of inventory: Debit Inventory; Credit Cash. This increases the cost of the goods purchased.',
-    we: { 0: 'Freight-in is not expensed immediately; it is added to inventory cost under the perpetual system.', 2: 'COGS is recorded when goods are sold, not when freight is paid.', 3: 'Purchases is a periodic system account; under perpetual, freight-in goes to Inventory.' }
+    exp: '継続記録法では、引取運賃（buyer が払う仕入側の運賃）は在庫原価に加えます：借方 Inventory / 貸方 Cash。仕入れた商品の原価が増えます。',
+    we: { 0: '引取運賃は即費用化せず、継続記録法では在庫原価に加えます。', 2: 'COGS は販売時に記録し、運賃支払時ではありません。', 3: 'Purchases は棚卸計算法の勘定です。継続記録法では引取運賃は Inventory へ。' }
   },
   {
     id: 'q404', conceptId: 'c5_fob', ch: 5, type: 'A',
     q: 'Goods shipped FOB DESTINATION. Which statement is correct?',
     opts: ['A) The buyer pays freight; title transfers at the shipping point','B) The seller pays freight; title transfers when goods arrive at the buyer\'s location','C) The buyer pays freight; title transfers when goods arrive at the buyer\'s location','D) The seller pays freight; title transfers at the shipping point'],
     ans: 1,
-    exp: "FOB destination: the seller pays freight costs and title transfers when goods ARRIVE at the buyer's location. Goods in transit belong to the seller and are included in the seller's inventory.",
-    we: { 0: 'Under FOB destination the SELLER pays freight, not the buyer.', 2: 'The buyer pays freight under FOB SHIPPING POINT, not FOB destination.', 3: "Under FOB destination title transfers at the buyer's location (destination), not the shipping point." }
+    exp: 'FOB destination（到着地条件）：売手が運賃を負担し、商品が買手の場所に『到着』した時点で所有権が移転します。輸送中の商品は売手の所有で、売手の棚卸資産に含めます。',
+    we: { 0: 'FOB destination では『売手』が運賃を負担し、買手ではありません。', 2: '買手が運賃を負担するのは FOB shipping point で、FOB destination ではありません。' }
   },
   {
     id: 'q405', conceptId: 'c5_purchase_returns', ch: 5, type: 'B',
     q: 'A company receives a $400 allowance on a prior purchase still on account (perpetual system). What entry is recorded?',
     opts: ['A) Debit Accounts Payable $400; Credit Purchase Returns $400','B) Debit Accounts Payable $400; Credit Inventory $400','C) Debit Inventory $400; Credit Accounts Payable $400','D) Debit Cash $400; Credit Accounts Payable $400'],
     ans: 1,
-    exp: 'A purchase allowance under the perpetual system: Debit Accounts Payable $400 (reduce the amount owed) and Credit Inventory $400 (reduce inventory cost). No separate Purchase Returns account exists in the perpetual system.',
-    we: { 0: 'Purchase Returns is a periodic system account; under perpetual, Inventory is credited.', 2: 'This is reversed — AP should be debited (reduced) and Inventory credited (reduced).', 3: 'Cash is not received for an allowance on an account still outstanding; AP is reduced.' }
+    exp: '継続記録法での仕入値引：借方 Accounts Payable $400（債務を減らす）/ 貸方 Inventory $400（在庫原価を減らす）。継続記録法には別の Purchase Returns 勘定はありません。',
+    we: { 0: 'Purchase Returns は棚卸計算法の勘定です。継続記録法では Inventory を貸方にします。', 2: 'これは逆です。AP を借方（減らす）、Inventory を貸方（減らす）にします。', 3: '未決済の掛けに対する値引で現金は受け取りません。AP を減らします。' }
   },
   {
     id: 'q406', conceptId: 'c5_purchase_returns', ch: 5, type: 'B',
     q: 'A company buys $6,000 of inventory on terms 2/10, n/30 and pays on day 8. Under the perpetual system, what is the payment entry?',
     opts: ['A) Debit Accounts Payable $6,000; Credit Cash $6,000','B) Debit Accounts Payable $6,000; Credit Inventory $120; Credit Cash $5,880','C) Debit Accounts Payable $5,880; Credit Cash $5,880','D) Debit Accounts Payable $6,000; Credit Purchase Discounts $120; Credit Cash $5,880'],
     ans: 1,
-    exp: 'Discount = $6,000 × 2% = $120. Cash paid = $5,880. Under perpetual: Debit Accounts Payable $6,000 (full liability); Credit Inventory $120 (discount reduces inventory cost); Credit Cash $5,880.',
-    we: { 0: 'Paying full $6,000 forfeits the discount — but payment is made within the discount period.', 2: 'Only debiting AP $5,880 leaves a $120 balance in AP that should be cleared.', 3: 'Purchase Discounts is a periodic system account; under perpetual, the discount reduces Inventory.' }
+    exp: '割引 = $6,000 × 2% = $120。支払現金 = $5,880。継続記録法：借方 Accounts Payable $6,000（全債務）/ 貸方 Inventory $120（割引が在庫原価を減らす）/ 貸方 Cash $5,880。',
+    we: { 0: '全額$6,000を払うと割引を放棄しますが、割引期間内に支払っています。', 2: 'AP を$5,880だけ借方にすると、$120が AP に残り、消去すべきです。', 3: 'Purchase Discounts は棚卸計算法の勘定です。継続記録法では割引が Inventory を減らします。' }
   },
   {
     id: 'q407', conceptId: 'c5_sales_recording', ch: 5, type: 'B',
     q: 'A retailer sells goods for $5,000 on account; inventory cost was $3,000 (perpetual system). What are the two required entries?',
     opts: ['A) Debit Accounts Receivable $5,000; Credit Sales Revenue $5,000 only','B) Entry 1: Dr Accounts Receivable $5,000, Cr Sales Revenue $5,000. Entry 2: Dr COGS $3,000, Cr Inventory $3,000','C) Debit Accounts Receivable $3,000; Credit Inventory $3,000','D) Debit COGS $5,000; Credit Sales Revenue $5,000'],
     ans: 1,
-    exp: 'Under the perpetual system, every sale requires two entries: (1) record the revenue at selling price, and (2) record the cost — remove inventory at cost and debit COGS.',
-    we: { 0: 'One entry alone omits the required cost entry under the perpetual system.', 2: 'This records only the cost entry at the wrong amount; the revenue entry is missing.', 3: 'COGS should be $3,000 (cost), not $5,000 (selling price).' }
+    exp: '継続記録法では各販売に2つの仕訳が必要です：(1)売価で収益を記録、(2)原価を記録 — 在庫を原価で減らし COGS を借方にする。',
+    we: { 0: '1仕訳だけでは継続記録法で必須の原価仕訳が漏れます。', 2: 'これは誤った金額で原価仕訳だけを記録し、収益仕訳が漏れています。', 3: 'COGS は$3,000（原価）であるべきで、$5,000（売価）ではありません。' }
   },
   {
     id: 'q408', conceptId: 'c5_sales_returns', ch: 5, type: 'B',
     q: 'A customer returns merchandise with a selling price of $600 (cost $350). The goods are still saleable (perpetual system). What entries does the SELLER record?',
     opts: ['A) Single entry only: Dr Sales Returns & Allowances $600, Cr Cash $600 (no inventory restoration recorded since goods physically returned)','B) Two entries: (1) Dr Sales Returns & Allowances $600, Cr Accounts Receivable $600. (2) Dr Inventory $350, Cr COGS $350 (restore at cost)','C) Single entry at selling price: Dr Inventory $600, Cr Sales Returns & Allowances $600 (combining both effects in one journal entry)','D) Single entry only: Dr COGS $350, Cr Inventory $350 (records inventory cost reversal but omits the revenue/AR reversal)'],
     ans: 1,
-    exp: '**Two entries required** under perpetual system: (1) **Reverse the sale** — Dr Sales Returns & Allowances $600, Cr AR $600 (since sale was on account). (2) **Restore inventory at cost** — Dr Inventory $350, Cr COGS $350 (because the goods are saleable and back in inventory).',
-    we: { 0: 'Only **one entry is insufficient** — inventory must also be restored. Also, Cr Cash is wrong because the original sale was on credit (Cr AR is correct).', 2: 'Inventory is restored at **cost ($350)**, not selling price ($600). Also, Sales Returns must be DEBITED (a contra-revenue) not credited.', 3: 'This entry **alone records only the cost reversal** — the revenue/AR reversal (Entry 1) is missing. Both entries are required.' }
+    exp: '継続記録法では2つの仕訳が必要：(1)売上の取消 — 借方 Sales Returns & Allowances $600 / 貸方 AR $600（掛け売上のため）。(2)在庫を原価で戻す — 借方 Inventory $350 / 貸方 COGS $350（商品が販売可能で在庫に戻るため）。',
+    we: { 0: '1仕訳だけでは不十分です。在庫も戻す必要があります。また元の売上は掛けなので Cr Cash は誤り（Cr AR が正しい）。', 2: '在庫は『原価$350』で戻し、売価$600ではありません。また Sales Returns は借方（評価収益）で、貸方ではありません。', 3: 'これは原価の取消だけで、収益/AR の取消（仕訳1）が漏れています。両方必要です。' }
   },
   {
     id: 'q409', conceptId: 'c5_sales_returns', ch: 5, type: 'B',
     q: 'A company sells $8,000 of goods on terms 1/15, n/45. The customer pays on day 12. What does the SELLER record for the cash receipt?',
     opts: ['A) Debit Cash $8,000; Credit Accounts Receivable $8,000','B) Debit Cash $7,920; Debit Sales Discounts $80; Credit Accounts Receivable $8,000','C) Debit Cash $7,920; Credit Sales Revenue $7,920','D) Debit Cash $8,000; Credit Sales Discounts $80; Credit Accounts Receivable $7,920'],
     ans: 1,
-    exp: 'Discount = $8,000 × 1% = $80. Cash received = $7,920. Entry: Debit Cash $7,920; Debit Sales Discounts $80 (contra revenue); Credit Accounts Receivable $8,000 (full balance cleared).',
-    we: { 0: 'Receiving full $8,000 ignores the 1% discount available within 15 days.', 2: 'Crediting only Sales Revenue $7,920 leaves $80 in Accounts Receivable uncollected.', 3: 'Cash should be $7,920 (reduced by discount) and AR is cleared at $8,000.' }
+    exp: '割引 = $8,000 × 1% = $80。受取現金 = $7,920。仕訳：借方 Cash $7,920 / 借方 Sales Discounts $80（評価収益）/ 貸方 Accounts Receivable $8,000（全額消去）。',
+    we: { 0: '全額$8,000を受け取るのは15日以内の1%割引を無視しています。', 2: 'Sales Revenue $7,920だけを貸方にすると、$80が売掛金に未回収で残ります。', 3: '現金は$7,920（割引分減）で、AR は$8,000で消去します。' }
   },
   {
     id: 'q410', conceptId: 'c5_contra', ch: 5, type: 'A',
     q: 'Net sales is computed as:',
     opts: ['A) Gross sales − COGS','B) Gross sales − Sales Returns and Allowances − Sales Discounts','C) Gross sales + Sales Returns and Allowances + Sales Discounts','D) Gross sales − Operating expenses'],
     ans: 1,
-    exp: 'Net sales = Gross (total) sales − Sales Returns and Allowances − Sales Discounts. Sales Returns & Allowances and Sales Discounts are contra revenue accounts deducted from gross sales.',
-    we: { 0: 'Subtracting COGS from gross sales gives gross profit, not net sales.', 2: 'Contra revenue accounts are subtracted, not added.', 3: 'Operating expenses are deducted from gross profit to get operating income, not from sales to get net sales.' }
+    exp: '純売上 = 総売上 − 売上戻り・値引 − 売上割引。Sales Returns & Allowances と Sales Discounts は総売上から差し引く評価収益勘定です。',
+    we: { 0: '総売上から COGS を引くと売上総利益で、純売上ではありません。', 2: '評価収益勘定は差し引くもので、足すのではありません。', 3: '営業費は売上総利益から引いて営業利益にするもので、純売上を出すために売上から引くのではありません。' }
   },
   {
     id: 'q411', conceptId: 'c5_multistep_is', ch: 5, type: 'B',
     q: 'A company reports: Net sales $300,000; COGS $180,000; Selling expenses $40,000; Admin expenses $25,000; Interest expense $5,000. What is operating income?',
     opts: ['A) $120,000','B) $55,000','C) $50,000','D) $95,000'],
     ans: 1,
-    exp: 'Gross profit = $300,000 − $180,000 = $120,000. Operating income = $120,000 − $40,000 (selling) − $25,000 (admin) = $55,000. Interest expense is a non-operating item subtracted after operating income.',
-    we: { 0: '$120,000 is gross profit, not operating income.', 2: '$50,000 also deducts interest expense, which is non-operating.', 3: '$95,000 deducts only one of the operating expense categories.' }
+    exp: '売上総利益 = $300,000 − $180,000 = $120,000。営業利益 = $120,000 − $40,000（販売費）− $25,000（管理費）= $55,000。支払利息は営業利益の後で差し引く営業外項目です。',
+    we: { 0: '$120,000 は売上総利益で、営業利益ではありません。', 2: '$50,000 は営業外の支払利息も引いています。', 3: '$95,000 は営業費を1区分だけ引いています。' }
   },
   {
     id: 'q412', conceptId: 'c5_periodic_appendix', ch: 5, type: 'B',
     q: 'Under the periodic system, a company has: Purchases $95,000; Purchase Returns $3,000; Purchase Discounts $1,500; Freight-in $2,500. What are net purchases?',
     opts: ['A) $93,000','B) $91,000','C) $98,000','D) $95,000'],
     ans: 0,
-    exp: 'Net purchases = Purchases − Purchase Returns − Purchase Discounts + Freight-in = $95,000 − $3,000 − $1,500 + $2,500 = $93,000.',
-    we: { 1: '$91,000 omits freight-in from the calculation.', 2: '$98,000 adds returns and discounts instead of subtracting.', 3: '$95,000 is gross purchases ignoring adjustments.' }
+    exp: '純仕入 = 仕入 − 仕入戻し − 仕入割引 + 引取運賃 = $95,000 − $3,000 − $1,500 + $2,500 = $93,000。',
+    we: { 1: '$91,000 は引取運賃を計算から漏らしています。', 2: '$98,000 は戻しと割引を引かずに足しています。', 3: '$95,000 は調整前の総仕入です。' }
   },
   {
     id: 'q413', conceptId: 'c5_cogs', ch: 5, type: 'B',
     q: 'Beginning inventory $25,000; Net purchases $93,000; Ending inventory $18,000. What is COGS?',
     opts: ['A) $118,000','B) $93,000','C) $100,000','D) $136,000'],
     ans: 2,
-    exp: 'COGS = Beginning Inventory + Net Purchases − Ending Inventory = $25,000 + $93,000 − $18,000 = $100,000.',
-    we: { 0: '$118,000 adds ending inventory instead of subtracting it.', 1: '$93,000 ignores beginning and ending inventory.', 3: '$136,000 adds all three amounts.' }
+    exp: 'COGS = 期首棚卸 + 純仕入 − 期末棚卸 = $25,000 + $93,000 − $18,000 = $100,000。',
+    we: { 0: '$118,000 は期末棚卸を引かずに足しています。', 1: '$93,000 は期首・期末棚卸を無視しています。', 3: '$136,000 は3つの金額を全部足しています。' }
   },
   {
     id: 'q414', conceptId: 'c6_inv_types', ch: 6, type: 'A',
     q: "A manufacturing company's \"work in process\" inventory consists of:",
     opts: ['A) Raw materials not yet placed into production','B) Goods partially completed in the production process','C) Finished goods ready to be sold to customers','D) Goods held on consignment for another company'],
     ans: 1,
-    exp: 'Work in process (WIP) inventory consists of goods that have been started in production but are not yet complete. They are between raw materials (input) and finished goods (output).',
-    we: { 0: 'Raw materials not yet in production are the raw materials inventory.', 2: 'Completed goods ready for sale are finished goods inventory.', 3: 'Goods on consignment are held for another party — unrelated to the WIP classification.' }
+    exp: '仕掛品（WIP）在庫は、生産に着手したがまだ完成していない財です。原材料（投入）と完成品（産出）の中間にあります。',
+    we: { 0: 'まだ生産に入っていない原材料は原材料在庫です。', 2: '販売可能な完成財は完成品在庫です。', 3: '委託品は他者のために保有するもので、WIP の分類とは無関係です。' }
   },
   {
     id: 'q415', conceptId: 'c6_ownership', ch: 6, type: 'A',
     q: 'At year end, Company A has goods in transit shipped FOB destination. Should these goods be included in Company A (the buyer\'s) inventory?',
     opts: ['A) Yes — goods are already paid for so they belong to the buyer','B) No — under FOB destination, title transfers when goods arrive; goods still in transit belong to the seller','C) Yes — all goods in transit are always the buyer\'s responsibility','D) No — goods in transit are never counted in inventory until received and inspected'],
     ans: 1,
-    exp: "FOB destination: title transfers only when goods arrive at the buyer's location. If goods are still in transit at year end, they belong to the SELLER and should be included in the seller's inventory, not the buyer's.",
-    we: { 0: 'Payment does not determine ownership — the FOB terms determine when title transfers.', 2: 'Under FOB destination, goods in transit belong to the seller, not the buyer.', 3: 'Inspection is not the relevant criterion; the FOB terms determine title.' }
+    exp: 'FOB destination：商品が買手の場所に到着して初めて所有権が移転します。期末に輸送中なら、その商品は『売手』の所有で、買手ではなく売手の棚卸資産に含めます。',
+    we: { 0: '支払いは所有権を決めません。FOB 条件が所有権移転の時点を決めます。', 2: 'FOB destination では輸送中の商品は売手の所有で、買手ではありません。', 3: '検査は関係する基準ではありません。FOB 条件が所有権を決めます。' }
   },
   {
     id: 'q416', conceptId: 'c6_specific_id', ch: 6, type: 'A',
     q: 'Under the specific identification method, COGS is based on:',
     opts: ['A) The average cost of all units available for sale','B) The actual cost of each specific unit sold','C) The cost of the oldest units in inventory','D) The cost of the most recently purchased units'],
     ans: 1,
-    exp: 'Specific identification matches the actual cost of each specific item sold to COGS. Each unit is tracked individually by serial number or other identifier. It is used for unique, high-value items.',
-    we: { 0: 'Using average cost is the weighted-average cost method.', 2: 'Using oldest costs first is FIFO.', 3: 'Using most recently purchased costs is LIFO.' }
+    exp: '個別法は、販売した各特定品の実際原価を COGS に対応させます。各単位をシリアル番号などで個別追跡します。固有で高価な品に使います。',
+    we: { 0: '平均原価を使うのは加重平均法です。', 2: '古い原価を先に使うのは FIFO です。', 3: '直近に仕入れた原価を使うのは LIFO です。' }
   },
   {
     id: 'q417', conceptId: 'c6_fifo', ch: 6, type: 'B',
     q: 'Beginning inventory: 50 units @ $20. Purchase: 100 units @ $25. Sold: 80 units. Using FIFO, what is COGS?',
     opts: ['A) $2,000','B) $1,750','C) $1,867','D) $1,500'],
     ans: 1,
-    exp: 'FIFO: sell oldest first. 50 units @ $20 = $1,000; then 30 more units @ $25 = $750. Total COGS = $1,000 + $750 = $1,750.',
-    we: { 0: '$2,000 = 80 × $25, using only the new purchase price — ignores that older cheaper units are sold first.', 2: '$1,867 is the weighted-average answer.', 3: '$1,500 uses only beginning inventory cost (50 × $30 error) — incorrect.' }
+    exp: 'FIFO：古い単位から販売。50単位@$20 = $1,000、次に30単位@$25 = $750。COGS 合計 = $1,000 + $750 = $1,750。',
+    we: { 0: '$2,000 = 80 × $25 は新規仕入価格だけを使い、安い古い単位が先に売れることを無視。', 2: '$1,867 は加重平均の答えです。', 3: '$1,500 は期首棚卸原価だけ（50 × $30 の誤り）で不正確です。' }
   },
   {
     id: 'q418', conceptId: 'c6_avg_cost', ch: 6, type: 'B',
     q: 'Beginning: 50 units @ $20 ($1,000). Purchase: 100 units @ $25 ($2,500). Sold: 80 units. Using weighted-average cost, what is COGS?',
     opts: ['A) $1,867','B) $1,750','C) $2,000','D) $1,600'],
     ans: 0,
-    exp: 'Weighted-average cost = ($1,000 + $2,500) ÷ (50 + 100) = $3,500 ÷ 150 = $23.33/unit. COGS = 80 × $23.33 = $1,866.67 ≈ $1,867.',
-    we: { 1: '$1,750 is the FIFO answer (oldest costs first).', 2: '$2,000 uses only the purchase price per unit.', 3: '$1,600 uses only beginning inventory price.' }
+    exp: '加重平均単価 = ($1,000 + $2,500) ÷ (50 + 100) = $3,500 ÷ 150 = 単価$23.33。COGS = 80 × $23.33 = $1,866.67 ≒ $1,867。',
+    we: { 1: '$1,750 は FIFO の答え（古い原価が先）です。', 2: '$2,000 は仕入単価だけを使っています。', 3: '$1,600 は期首棚卸価格だけを使っています。' }
   },
   {
     id: 'q419', conceptId: 'c6_lifo', ch: 6, type: 'B',
     q: 'Beginning: 50 units @ $20. Purchase: 100 units @ $25. Sold: 80 units. Under LIFO, what is COGS?',
     opts: ['A) $1,750','B) $2,000','C) $1,867','D) $1,500'],
     ans: 1,
-    exp: 'LIFO: sell most recently purchased first. 80 units all from the purchase @ $25 = 80 × $25 = $2,000. (All 80 units come from the 100-unit purchase at $25.)',
-    we: { 0: '$1,750 is the FIFO answer (oldest costs first).', 2: '$1,867 is the weighted-average answer.', 3: '$1,500 uses beginning inventory cost only.' }
+    exp: 'LIFO：直近に仕入れた分から販売。80単位すべてが@$25の仕入から = 80 × $25 = $2,000。（80単位すべてが100単位@$25の仕入から）',
+    we: { 0: '$1,750 は FIFO の答え（古い原価が先）です。', 2: '$1,867 は加重平均の答えです。', 3: '$1,500 は期首棚卸原価だけを使っています。' }
   },
   {
     id: 'q420', conceptId: 'c6_fifo_avg_lifo_compare', ch: 6, type: 'C',
     q: 'In a period of RISING prices, rank FIFO, weighted-average, and LIFO from LOWEST to HIGHEST ending inventory value:',
     opts: ['A) FIFO < Weighted-average < LIFO','B) LIFO < Weighted-average < FIFO','C) Weighted-average < FIFO < LIFO','D) All three produce the same ending inventory'],
     ans: 1,
-    exp: 'In rising prices: LIFO assigns the most recent (highest) costs to COGS, leaving the oldest (lowest) costs in ending inventory — giving the LOWEST ending inventory. FIFO assigns oldest (lowest) costs to COGS, leaving newest (highest) costs in ending inventory — giving the HIGHEST ending inventory. Weighted-average falls in between.',
-    we: { 0: 'FIFO gives the HIGHEST ending inventory in rising prices, not the lowest.', 2: 'Weighted-average falls between LIFO and FIFO, not at the bottom.', 3: 'The three methods produce different results when prices change.' }
+    exp: '物価上昇時：LIFO は直近（最も高い）原価を COGS にし、古い（安い）原価を期末棚卸に残す → 期末棚卸が最小。FIFO は古い（安い）原価を COGS にし、新しい（高い）原価を期末棚卸に残す → 期末棚卸が最大。加重平均はその中間です。',
+    we: { 0: 'FIFO は物価上昇時、期末棚卸が『最大』で、最小ではありません。', 2: '加重平均は LIFO と FIFO の中間で、最下位ではありません。', 3: '価格が変動すると3方法は異なる結果を生みます。' }
   },
   {
     id: 'q421', conceptId: 'c6_inv_errors_is', ch: 6, type: 'C',
