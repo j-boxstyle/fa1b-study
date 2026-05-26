@@ -10976,6 +10976,142 @@ var QUESTIONS = [
     exp:'物価上昇時、FIFO は新しい（高い）原価が期末在庫に残るため期末在庫が最大（かつ COGS 最小・利益最大）。',
     we:{ 1: 'LIFO は期末在庫が最小。', 2: '加重平均は中間。', 3: '個別法は物の特定による（一般化できない）。', 4: '価格変動時は方法で異なる。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qp7_1', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'A company has one employee who receives cash from customers, records the cash receipts in the books, and makes the bank deposits. Which internal control principle is violated?',
+    opts:['A) Segregation of duties','B) Establishment of responsibility','C) Physical controls','D) Independent internal verification','E) Human resource controls','F) わからない'],
+    ans:0,
+    exp:'1人が「受領・記録・入金」を兼任 → 職務分掌（Segregation of Duties）の欠如。相互牽制が働かず不正・誤謬を発見できない。',
+    we:{ 1: '責任の明確化の問題ではない（複数職務の集中が問題）。', 2: '物理的統制ではない。', 3: '独立検証の不在も関連するが、最も直接的な違反は職務分掌。', 4: '人的資源統制ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp7_2', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'Using the bank reconciliation data below, what is the adjusted (correct) cash balance at March 31?',
+    opts:['A) €8,800','B) €8,500','C) €7,880','D) €7,840','E) €9,700','F) わからない'],
+    ans:0,
+    exp:'銀行側：8,500 + 預金未達1,200 − 未取付小切手900 = €8,800。帳簿側：7,880 − 手数料40 = €7,840… 一致しないため帳簿側に未記帳項目あり。調整後の正しい残高は銀行側計算 = €8,800。',
+    we:{ 1: '€8,500 は調整前の銀行残高。', 2: '€7,880 は調整前の帳簿残高。', 3: '€7,840 は手数料のみ調整した帳簿側（他の未記帳項目が残る）。', 4: '€9,700 は符号誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Bank reconciliation data (March 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Balance per bank statement</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€8,500</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Deposit in transit</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€1,200</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Outstanding checks</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€900</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Bank service charge</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€40</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Balance per books (before adjustment)</td><td style="padding:5px;border:1px solid #475569;text-align:right;">€7,880</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp7_3', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'Which of the following would be classified as a "cash equivalent"?',
+    opts:['A) A 90-day government treasury bill','B) Accounts receivable due in 30 days','C) Inventory expected to sell within a week','D) A 2-year bond investment','E) Listed equity shares held for trading','F) わからない'],
+    ans:0,
+    exp:'現金同等物は「取得時の満期が3か月以内・換金容易・価値変動僅少」の短期投資。90日国債は該当。',
+    we:{ 1: '売掛金は現金同等物ではない（受取債権）。', 2: '在庫は現金同等物ではない。', 3: '2年債は満期が長すぎる。', 4: '上場株式は価格変動が大きく該当しない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp8_1', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'Mira Ltd. estimates bad debts as 4% of its €600,000 ending accounts receivable. The Allowance for Doubtful Accounts has a €5,000 credit balance before adjustment. What is the bad debt expense?',
+    opts:['A) €19,000','B) €24,000','C) €29,000','D) €5,000','E) €23,000','F) わからない'],
+    ans:0,
+    exp:'期末必要額 = 600,000 × 4% = 24,000。調整前残高（貸方）5,000。貸倒費用 = 24,000 − 5,000 = €19,000。',
+    we:{ 1: '€24,000 は必要な期末残高（当期費用ではない）。', 2: '€29,000 は調整前残高を加算した誤り。', 3: '€5,000 は調整前残高。', 4: '€23,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp8_2', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'Kano Ltd. estimates bad debts as 1% of its €900,000 net credit sales (percentage-of-sales method). The Allowance has a €2,000 credit balance before adjustment. What is the bad debt expense?',
+    opts:['A) €9,000','B) €7,000','C) €11,000','D) €2,000','E) €900','F) わからない'],
+    ans:0,
+    exp:'売上高百分率法では、推定額 = 売上 × 率 をそのまま費用計上（調整前残高は考慮しない）。費用 = 900,000 × 1% = €9,000。',
+    we:{ 1: '€7,000 は誤って調整前残高を引いた（売上法では引かない）。', 2: '€11,000 は加算した誤り。', 3: '€2,000 は調整前残高。', 4: '€900 は桁誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp8_3', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'A company writes off a €3,000 account using the allowance method. What is the effect on the net realizable value of receivables?',
+    opts:['A) No effect on net realizable value','B) Decreases NRV by €3,000','C) Increases NRV by €3,000','D) Decreases NRV by €6,000','E) Increases bad debt expense by €3,000','F) わからない'],
+    ans:0,
+    exp:'引当金法の貸倒償却：Dr Allowance / Cr Accounts Receivable 3,000。売掛金と引当金が同額減るため、正味実現可能価額（AR − Allowance）は不変。',
+    we:{ 1: 'NRV は変わらない（両建てで相殺）。', 2: '増加もしない。', 3: '€6,000 の影響はない。', 4: '費用は計上されない（見積時に計上済み）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp8_4', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'On October 1, a company accepts a €24,000, 8%, 6-month note receivable. How much interest revenue is accrued at December 31?',
+    opts:['A) €480','B) €1,920','C) €960','D) €160','E) €1,440','F) わからない'],
+    ans:0,
+    exp:'利息 = 元本 × 利率 × 期間 = 24,000 × 8% × 3/12（10/1〜12/31 = 3か月）= €480。',
+    we:{ 1: '€1,920 は12か月分。', 2: '€960 は6か月分。', 3: '€160 は1か月分。', 4: '€1,440 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp8_5', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'A firm has net credit sales of €1,200,000, beginning net accounts receivable of €180,000, and ending net accounts receivable of €220,000. What is the accounts receivable turnover?',
+    opts:['A) 6.0 times','B) 5.45 times','C) 6.67 times','D) 60.8 days','E) 0.17 times','F) わからない'],
+    ans:0,
+    exp:'AR回転率 = 純信用売上 ÷ 平均純売掛金 = 1,200,000 ÷ ((180,000+220,000)/2 = 200,000) = 6.0 回。',
+    we:{ 1: '5.45 は期末のみ使用の誤り。', 2: '6.67 は期首のみ使用。', 3: '60.8 days は平均回収期間（365/6）。', 4: '0.17 は逆数。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_1', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Sora Ltd. buys equipment for €90,000 with a €10,000 residual value and an 8-year life, using double-declining-balance. What is depreciation expense in YEAR 1?',
+    opts:['A) €22,500','B) €20,000','C) €10,000','D) €11,250','E) €17,500','F) わからない'],
+    ans:0,
+    exp:'DDB率 = 2 ÷ 8 = 25%。1年目 = 簿価90,000 × 25% = €22,500（残存価額は初年度計算では無視）。',
+    we:{ 1: '€20,000 は定額法（(90,000−10,000)/8 × 2 ?）の誤り。', 2: '€10,000 は残存価額。', 3: '€11,250 は率の誤り。', 4: '€17,500 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_2', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Toa Ltd. buys a vehicle for €60,000 (residual €6,000) expected to run 180,000 km over its life. It drives 40,000 km in year 1. Under units-of-activity, what is year-1 depreciation?',
+    opts:['A) €12,000','B) €13,333','C) €6,750','D) €54,000','E) €10,000','F) わからない'],
+    ans:0,
+    exp:'単位当たり = (60,000 − 6,000) ÷ 180,000 = €0.30/km。1年目 = 40,000 × 0.30 = €12,000。',
+    we:{ 1: '€13,333 は残存価額を引かない誤り。', 2: '€6,750 は計算誤り。', 3: '€54,000 は減価償却対象額。', 4: '€10,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_3', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Equipment costing €50,000 with accumulated depreciation of €38,000 is sold for €15,000 cash. What gain or loss is recognized?',
+    opts:['A) Gain of €3,000','B) Loss of €3,000','C) Gain of €15,000','D) Loss of €12,000','E) No gain or loss','F) わからない'],
+    ans:0,
+    exp:'簿価 = 50,000 − 38,000 = 12,000。売却益 = 売却額15,000 − 簿価12,000 = €3,000の利益。',
+    we:{ 1: '符号が逆（売却額>簿価のため利益）。', 2: '€15,000 は売却額。', 3: '€12,000 は簿価。', 4: '簿価と売却額が異なるため損益が出る。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_4', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Under the IFRS revaluation model, equipment with a carrying amount of €400,000 is revalued upward to a fair value of €460,000 (first revaluation). How is the €60,000 increase recorded?',
+    opts:['A) Credit to Revaluation Surplus (OCI)','B) Credit to Gain on Disposal (profit or loss)','C) Debit to Impairment Loss','D) Credit to Retained Earnings','E) Credit to Share Premium','F) わからない'],
+    ans:0,
+    exp:'IFRS再評価モデル：初回の増価は Revaluation Surplus（その他の包括利益, OCI）で計上。減価の場合は減損損失（P/L）。',
+    we:{ 1: '増価は P/L の利益にはしない（OCIへ）。', 2: '増価は減損ではない。', 3: '利益剰余金ではない。', 4: '株式払込剰余金ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_5', conceptId:'c3_depreciation', ch:9, type:'A',
+    q:'Which intangible asset is NOT amortized but instead tested for impairment annually?',
+    opts:['A) Goodwill','B) A patent with a 10-year legal life','C) A 5-year franchise','D) A copyright with a finite life','E) A licensing agreement for 8 years','F) わからない'],
+    ans:0,
+    exp:'耐用年数が確定できない無形資産（Goodwill）は償却せず、毎期 減損テストを行う。耐用年数が確定できる特許・フランチャイズ等は償却する。',
+    we:{ 1: '特許は法定年数で償却。', 2: 'フランチャイズは契約年数で償却。', 3: '有限の著作権は償却。', 4: 'ライセンスは契約年数で償却。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_6', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A company purchases machinery: invoice price €120,000, freight €3,000, installation €5,000, and a €2,000 annual insurance premium. What amount is capitalized as the cost of the machinery?',
+    opts:['A) €128,000','B) €130,000','C) €120,000','D) €123,000','E) €125,000','F) わからない'],
+    ans:0,
+    exp:'取得原価には、資産を使用可能にするための支出（運送・据付）を含める：120,000 + 3,000 + 5,000 = €128,000。年次保険料2,000は経常費用で資産化しない。',
+    we:{ 1: '€130,000 は保険料を資産化した誤り。', 2: '€120,000 は付随費用を除外。', 3: '€123,000 は据付を除外。', 4: '€125,000 は運送を除外。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp9_7', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A company has net sales of €960,000 and average total assets of €640,000. What is its asset turnover?',
+    opts:['A) 1.5 times','B) 0.67 times','C) 2.0 times','D) 1.2 times','E) 6.7 times','F) わからない'],
+    ans:0,
+    exp:'総資産回転率 = 純売上 ÷ 平均総資産 = 960,000 ÷ 640,000 = 1.5 回。',
+    we:{ 1: '0.67 は逆数。', 2: '2.0 は計算誤り。', 3: '1.2 は計算誤り。', 4: '6.7 は桁誤り。' },
+    source:'FA1B Predicted'
   }
 ];
 
