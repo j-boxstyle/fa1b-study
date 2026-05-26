@@ -11334,6 +11334,116 @@ var QUESTIONS = [
     we:{ 1: '£58,380 は減価償却累計額 6,000 を控除していない（34,400 を総額で計上）。', 2: '£44,400 は資本合計。', 3: '£28,400 は非流動資産（純設備）のみ。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Basten Tax Services</b> — year-end items (July 31, 2025): Service revenue £63,000; Rent revenue £8,500; Salaries &amp; wages expense £48,700; Utilities expense £22,600; Depreciation expense £4,000; Dividends £3,000; Equipment £34,400; Accumulated depreciation £6,000; Cash £14,200; Accounts receivable £9,780; Accounts payable £4,100; Salaries payable £2,080; Notes payable (long-term) £1,800; Share capital £20,000; Retained earnings (beg.) £31,200.</div>',
     source:'FA1B Canvas Homework T2'
+  },
+  {
+    id:'q_hw_t3_1', conceptId:'c5_cogs', ch:5, type:'C',
+    q:'[Canvas HW T3 / E5.18] Using Scott Enterprises&#39; data below, compute the 2025 gross profit.',
+    opts:['A) $333,000','B) $351,000','C) $822,000','D) $489,000'],
+    ans:0,
+    exp:'Net sales = 840,000 − 7,000 − 11,000 = 822,000。Net purchases = 509,000 − 6,000 − 8,000 = 495,000；+ Freight-in 4,000 = 499,000。COGAFS = 50,000 + 499,000 = 549,000。COGS = 549,000 − 60,000 = 489,000。Gross profit = 822,000 − 489,000 = $333,000。',
+    we:{ 1: '$351,000 は Sales 値引・返品を引き忘れ等の誤り。', 2: '$822,000 は純売上高（COGS 未控除）。', 3: '$489,000 は売上原価（COGS）そのもの。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Scott Enterprises</b> — for the year ended Dec 31, 2025 (periodic system). Beginning inventory $50,000; Ending inventory $60,000. Account balances: Purchases $509,000; Purchase Discounts $6,000; Purchase Returns &amp; Allowances $8,000; Freight-in $4,000; Sales Revenue $840,000; Sales Discounts $7,000; Sales Returns &amp; Allowances $11,000.</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_2', conceptId:'c5_multistep_is', ch:5, type:'C',
+    q:'[Canvas HW T3 / E5.18] Using Scott Enterprises&#39; data below, if net income is $130,000 and there are no non-operating items, what are operating expenses?',
+    opts:['A) $203,000','B) $130,000','C) $463,000','D) $333,000'],
+    ans:0,
+    exp:'Gross profit 333,000 − Operating expenses = Net income 130,000 → Operating expenses = 333,000 − 130,000 = $203,000。',
+    we:{ 1: '$130,000 は純利益。', 2: '$463,000 は計算誤り。', 3: '$333,000 は売上総利益。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Scott Enterprises</b> — for the year ended Dec 31, 2025 (periodic system). Beginning inventory $50,000; Ending inventory $60,000. Account balances: Purchases $509,000; Purchase Discounts $6,000; Purchase Returns &amp; Allowances $8,000; Freight-in $4,000; Sales Revenue $840,000; Sales Discounts $7,000; Sales Returns &amp; Allowances $11,000.</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_3', conceptId:'c5_cogs', ch:5, type:'C',
+    q:'[Canvas HW T3 / P5.6] Using Hotai Department Store&#39;s data below, what is net sales for the year?',
+    opts:['A) NT$21,030,000','B) NT$21,540,000','C) NT$20,520,000','D) NT$22,050,000'],
+    ans:0,
+    exp:'Net sales = Sales revenue 21,540,000 − Sales returns & allowances 510,000 = NT$21,030,000。',
+    we:{ 1: 'NT$21,540,000 は総売上（返品控除前）。', 2: 'NT$20,520,000 は計算誤り。', 3: 'NT$22,050,000 は返品を加算した誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hotai Department Store</b> — adjusted trial balance, Dec 31, 2025 (periodic). Inventory (Jan 1) NT$1,215,000; Purchases NT$13,200,000; Purchase discounts NT$360,000; Purchase returns &amp; allowances NT$192,000; Freight-in NT$165,000; Sales Revenue NT$21,540,000; Sales Returns &amp; Allowances NT$510,000. Ending inventory (Dec 31) = NT$1,950,000.</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_4', conceptId:'c6_cost_available', ch:5, type:'C',
+    q:'[Canvas HW T3 / P5.6] Using Hotai Department Store&#39;s data below, what is cost of goods sold for the year?',
+    opts:['A) NT$12,078,000','B) NT$14,028,000','C) NT$12,648,000','D) NT$13,200,000'],
+    ans:0,
+    exp:'Net purchases = 13,200,000 − 360,000 − 192,000 = 12,648,000；+ Freight-in 165,000 = 12,813,000。COGAFS = 1,215,000 + 12,813,000 = 14,028,000。COGS = 14,028,000 − 期末1,950,000 = NT$12,078,000。',
+    we:{ 1: 'NT$14,028,000 は販売可能商品原価（期末在庫を引く前）。', 2: 'NT$12,648,000 は純仕入のみ（期首・運賃・期末未調整）。', 3: 'NT$13,200,000 は総仕入。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hotai Department Store</b> — adjusted trial balance, Dec 31, 2025 (periodic). Inventory (Jan 1) NT$1,215,000; Purchases NT$13,200,000; Purchase discounts NT$360,000; Purchase returns &amp; allowances NT$192,000; Freight-in NT$165,000; Sales Revenue NT$21,540,000; Sales Returns &amp; Allowances NT$510,000. Ending inventory (Dec 31) = NT$1,950,000.</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_5', conceptId:'c5_multistep_is', ch:5, type:'C',
+    q:'[Canvas HW T3 / P5.6] Using Hotai Department Store&#39;s data below, what is gross profit for the year?',
+    opts:['A) NT$8,952,000','B) NT$9,462,000','C) NT$8,442,000','D) NT$21,030,000'],
+    ans:0,
+    exp:'Gross profit = Net sales 21,030,000 − COGS 12,078,000 = NT$8,952,000。',
+    we:{ 1: 'NT$9,462,000 は計算誤り。', 2: 'NT$8,442,000 は計算誤り。', 3: 'NT$21,030,000 は純売上。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Hotai Department Store</b> — adjusted trial balance, Dec 31, 2025 (periodic). Inventory (Jan 1) NT$1,215,000; Purchases NT$13,200,000; Purchase discounts NT$360,000; Purchase returns &amp; allowances NT$192,000; Freight-in NT$165,000; Sales Revenue NT$21,540,000; Sales Returns &amp; Allowances NT$510,000. Ending inventory (Dec 31) = NT$1,950,000.</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_6', conceptId:'c6_fifo', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.5] Using Senta Ltd.&#39;s October data below (periodic), what is the ending inventory under FIFO?',
+    opts:['A) €1,260','B) €1,185','C) €1,080','D) €1,440'],
+    ans:0,
+    exp:'期末45単位。FIFOでは最新の仕入が在庫に残る → 45 × €28（Oct 25 仕入単価）= €1,260。',
+    we:{ 1: '€1,185 は加重平均法の期末在庫（45 × 26.33）。', 2: '€1,080 は LIFO の期末在庫（45 × 24）。', 3: '€1,440 は期首在庫（60 × 24）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.88em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Senta Ltd.</b> — month ended October 31, 2025 (periodic):<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost / sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Oct 1</td><td style="padding:4px;border:1px solid #475569;">Beginning inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">60</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 11</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€35</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 17</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">70</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€27</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 22</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">65</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 25</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">80</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€28</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 29</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr></tbody></table><div style="margin-top:4px;">Goods available 330 units / €8,690; units sold 285; ending inventory 45 units.</div></div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_7', conceptId:'c6_avg_cost', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.5] Using Senta Ltd.&#39;s October data below (periodic), what is the cost of goods sold under the average-cost method?',
+    opts:['A) €7,505','B) €7,430','C) €7,610','D) €8,690'],
+    ans:0,
+    exp:'平均単価 = COGAFS 8,690 ÷ 330単位 = €26.33。期末 = 45 × 26.33 = €1,185。COGS = 8,690 − 1,185 = €7,505。',
+    we:{ 1: '€7,430 は FIFO の COGS。', 2: '€7,610 は LIFO の COGS。', 3: '€8,690 は販売可能商品原価（COGS ではない）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.88em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Senta Ltd.</b> — month ended October 31, 2025 (periodic):<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost / sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Oct 1</td><td style="padding:4px;border:1px solid #475569;">Beginning inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">60</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 11</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€35</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 17</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">70</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€27</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 22</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">65</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 25</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">80</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€28</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 29</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr></tbody></table><div style="margin-top:4px;">Goods available 330 units / €8,690; units sold 285; ending inventory 45 units.</div></div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_8', conceptId:'c6_fifo', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.5] Using Senta Ltd.&#39;s October data below, what is the gross profit under FIFO? (Net sales €10,900)',
+    opts:['A) €3,470','B) €3,395','C) €3,290','D) €10,900'],
+    ans:0,
+    exp:'FIFO: COGS = 8,690 − 期末1,260 = 7,430。Gross profit = Net sales 10,900 − 7,430 = €3,470（粗利率 31.8%）。',
+    we:{ 1: '€3,395 は加重平均法の粗利。', 2: '€3,290 は LIFO の粗利。', 3: '€10,900 は純売上高。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.88em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Senta Ltd.</b> — month ended October 31, 2025 (periodic):<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost / sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Oct 1</td><td style="padding:4px;border:1px solid #475569;">Beginning inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">60</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 11</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€35</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 17</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">70</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€27</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 22</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">65</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 25</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">80</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€28</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 29</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr></tbody></table><div style="margin-top:4px;">Goods available 330 units / €8,690; units sold 285; ending inventory 45 units.</div></div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_9', conceptId:'c6_lifo', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.12] Using Senta Ltd.&#39;s October data below (periodic), what is the ending inventory under LIFO?',
+    opts:['A) €1,080','B) €1,260','C) €1,185','D) €1,120'],
+    ans:0,
+    exp:'LIFO（periodic）では最も古い原価が在庫に残る → 期末45単位 × €24（期首単価）= €1,080。',
+    we:{ 1: '€1,260 は FIFO の期末在庫。', 2: '€1,185 は加重平均法。', 3: '€1,120 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.88em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Senta Ltd.</b> — month ended October 31, 2025 (periodic):<table style="width:100%;border-collapse:collapse;margin-top:6px;"><thead><tr style="background:#1e3a5f;"><th style="padding:5px;border:1px solid #475569;">Date</th><th style="padding:5px;border:1px solid #475569;">Description</th><th style="padding:5px;border:1px solid #475569;">Units</th><th style="padding:5px;border:1px solid #475569;">Unit cost / sell</th></tr></thead><tbody><tr><td style="padding:4px;border:1px solid #475569;">Oct 1</td><td style="padding:4px;border:1px solid #475569;">Beginning inventory</td><td style="padding:4px;border:1px solid #475569;text-align:right;">60</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€24</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 9</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€26</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 11</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">100</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€35</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 17</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">70</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€27</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 22</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">65</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 25</td><td style="padding:4px;border:1px solid #475569;">Purchase</td><td style="padding:4px;border:1px solid #475569;text-align:right;">80</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€28</td></tr><tr><td style="padding:4px;border:1px solid #475569;">Oct 29</td><td style="padding:4px;border:1px solid #475569;">Sale</td><td style="padding:4px;border:1px solid #475569;text-align:right;">120</td><td style="padding:4px;border:1px solid #475569;text-align:right;">€40</td></tr></tbody></table><div style="margin-top:4px;">Goods available 330 units / €8,690; units sold 285; ending inventory 45 units.</div></div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_10', conceptId:'c6_gross_profit_method', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.10] Using Lisbon Pottery&#39;s data below, what is the gross profit rate for February?',
+    opts:['A) 40%','B) 60%','C) 36%','D) 45%'],
+    ans:0,
+    exp:'Feb の COGS = 期首4,500 + 純仕入197,800 + 運賃2,900 − 期末25,200 = 180,000。Gross profit = 300,000 − 180,000 = 120,000。粗利率 = 120,000 ÷ 300,000 = 40%。',
+    we:{ 1: '60% は COGS 率（1 − 40%）。', 2: '36% は計算誤り。', 3: '45% は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Lisbon Pottery</b> lost 70% of its inventory in a fire on March 25, 2025. Gross profit data: <b>February</b> — Net sales €300,000, Net purchases €197,800, Freight-in €2,900, Beginning inventory €4,500, Ending inventory €25,200. <b>March (to 3/25)</b> — Net sales €260,000, Net purchases €191,000, Freight-in €4,000, Beginning inventory €25,200, Ending inventory = ?</div>',
+    source:'FA1B Canvas Homework T3'
+  },
+  {
+    id:'q_hw_t3_11', conceptId:'c6_gross_profit_method', ch:6, type:'C',
+    q:'[Canvas HW T3 / P6.10] Using Lisbon Pottery&#39;s data and February&#39;s 40% gross profit rate, what is the estimated inventory LOST in the fire (70% of inventory)?',
+    opts:['A) €44,940','B) €64,200','C) €19,260','D) €156,000'],
+    ans:0,
+    exp:'3月 推定COGS = Net sales 260,000 × (1 − 40%) = 156,000。COGAFS(3月) = 期首25,200 + 仕入191,000 + 運賃4,000 = 220,200。推定期末在庫 = 220,200 − 156,000 = 64,200。火災損失 = 70% × 64,200 = €44,940。',
+    we:{ 1: '€64,200 は推定期末在庫の総額（焼失分は70%）。', 2: '€19,260 は焼け残った30%分。', 3: '€156,000 は3月の推定COGS。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Lisbon Pottery</b> lost 70% of its inventory in a fire on March 25, 2025. Gross profit data: <b>February</b> — Net sales €300,000, Net purchases €197,800, Freight-in €2,900, Beginning inventory €4,500, Ending inventory €25,200. <b>March (to 3/25)</b> — Net sales €260,000, Net purchases €191,000, Freight-in €4,000, Beginning inventory €25,200, Ending inventory = ?</div>',
+    source:'FA1B Canvas Homework T3'
   }
 ];
 
