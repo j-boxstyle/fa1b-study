@@ -11704,6 +11704,96 @@ var QUESTIONS = [
     we:{ 1: '分割では株数が増え額面は下がる（株数48,000・額面€125 は逆）。', 2: '額面も1/5になる（€25 のままではない）。', 3: '9,600株は1/5（分割は増加）。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Prasad SpA</b> — Jan 1, 2025: Share Capital—Ordinary (€25 par, 48,000 shares issued). On April 1 the company announced a 5-for-1 share split (market price was €36 before the split).</div>',
     source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t6_1', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[Canvas HW T6 / P14.3] Using Toby Zed NV&#39;s data below, what is net cash provided by operating activities (indirect method)?',
+    opts:['A) €1,215,000','B) €1,450,000','C) €1,535,000','D) €1,085,000'],
+    ans:0,
+    exp:'純利益 1,450,000 ＋ 減価償却 85,000 − A/R増 200,000 ＋ 在庫減 500,000 − 前払増 175,000 − A/P減 340,000 − 未払費用減 105,000 = €1,215,000。',
+    we:{ 1: '€1,450,000 は純利益（運転資本・減価償却の調整前）。', 2: '€1,535,000 は減価償却だけ足した値。', 3: '€1,085,000 は符号の取り違え。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Toby Zed NV</b> — Income Statement, year ended Nov 30, 2025: Sales €7,500,000; COGS €4,900,000; Gross profit €2,600,000; Operating expenses €1,150,000; Net income €1,450,000. Additional info during the year: A/R increased €200,000; inventory decreased €500,000; prepaid expenses increased €175,000; accounts payable decreased €340,000; accrued expenses payable decreased €105,000; operating expenses include depreciation of €85,000.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_2', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[Canvas HW T6 / P14.7] Using Rajesh Ltd.&#39;s data below, what is net cash from operating activities (indirect method)?',
+    opts:['A) £29,300','B) £32,000','C) £45,300','D) £19,300'],
+    ans:0,
+    exp:'純利益 32,000 ＋ 減価償却 13,300 − A/R増 19,000 − 在庫増 10,000 ＋ A/P増 14,000 − 未払法人税減 1,000 = £29,300。設備売却は簿価=売却額のため損益調整なし。',
+    we:{ 1: '£32,000 は純利益（調整前）。', 2: '£45,300 は減価償却だけ足した値。', 3: '£19,300 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rajesh Ltd.</b> — comparative data. Equipment £60,000 (2025) vs £78,000 (2024); Accum. depr. £29,000 vs £24,000; Inventory £30,000 vs £20,000; A/R £33,000 vs £14,000; Cash £37,000 vs £20,000. Share capital £18,000 vs £14,000; Retained earnings £50,000 vs £38,000; Bonds payable £27,000 vs £33,000; Accounts payable £29,000 vs £15,000; Income taxes payable £7,000 vs £8,000. Income statement: Net income £32,000. Additional data: depreciation £13,300; dividends paid £20,000; equipment that cost £18,000 (accum. depr. £8,300) was sold for £9,700 cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_3', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'[Canvas HW T6 / P14.7] Rajesh sold equipment costing £18,000 (accumulated depreciation £8,300) for £9,700 cash (below). What gain or loss arises?',
+    opts:['A) No gain or loss','B) Gain of £9,700','C) Loss of £8,300','D) Gain of £1,400'],
+    ans:0,
+    exp:'簿価 = 18,000 − 8,300 = £9,700。売却額 9,700 − 簿価 9,700 = £0 → 損益なし。だから間接法でも損益調整は不要。',
+    we:{ 1: '£9,700 は売却額（=簿価）であり損益ではない。', 2: '£8,300 は減価償却累計額。', 3: '簿価と売却額が一致するため利益は出ない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rajesh Ltd.</b> — comparative data. Equipment £60,000 (2025) vs £78,000 (2024); Accum. depr. £29,000 vs £24,000; Inventory £30,000 vs £20,000; A/R £33,000 vs £14,000; Cash £37,000 vs £20,000. Share capital £18,000 vs £14,000; Retained earnings £50,000 vs £38,000; Bonds payable £27,000 vs £33,000; Accounts payable £29,000 vs £15,000; Income taxes payable £7,000 vs £8,000. Income statement: Net income £32,000. Additional data: depreciation £13,300; dividends paid £20,000; equipment that cost £18,000 (accum. depr. £8,300) was sold for £9,700 cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_4', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[Canvas HW T6 / P14.7] Using Rajesh Ltd.&#39;s data below, what is net cash used by financing activities?',
+    opts:['A) £22,000 outflow','B) £20,000 outflow','C) £26,000 outflow','D) £18,000 outflow'],
+    ans:0,
+    exp:'財務CF = 配当 −20,000 ＋ 株式発行 +4,000（資本金 14,000→18,000）− 社債返済 6,000（33,000→27,000）= −£22,000（流出）。',
+    we:{ 1: '£20,000 は配当のみ（社債返済・株式発行を含めていない）。', 2: '£26,000 は株式発行 +4,000 を考慮していない。', 3: '£18,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rajesh Ltd.</b> — comparative data. Equipment £60,000 (2025) vs £78,000 (2024); Accum. depr. £29,000 vs £24,000; Inventory £30,000 vs £20,000; A/R £33,000 vs £14,000; Cash £37,000 vs £20,000. Share capital £18,000 vs £14,000; Retained earnings £50,000 vs £38,000; Bonds payable £27,000 vs £33,000; Accounts payable £29,000 vs £15,000; Income taxes payable £7,000 vs £8,000. Income statement: Net income £32,000. Additional data: depreciation £13,300; dividends paid £20,000; equipment that cost £18,000 (accum. depr. £8,300) was sold for £9,700 cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_5', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'[Canvas HW T6 / P14.7] Using Rajesh Ltd.&#39;s data below, what is net cash from investing activities?',
+    opts:['A) £9,700 inflow','B) £18,000 inflow','C) £9,700 outflow','D) £0'],
+    ans:0,
+    exp:'投資CF = 設備の売却収入 +£9,700 のみ。設備勘定 78,000 − 売却分18,000 = 60,000 = 期末なので新規購入なし。よって投資CF = +£9,700（流入）。',
+    we:{ 1: '£18,000 は売却資産の取得原価（受取現金ではない）。', 2: '符号が逆（売却は流入）。', 3: '設備売却で現金流入があるため £0 ではない。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Rajesh Ltd.</b> — comparative data. Equipment £60,000 (2025) vs £78,000 (2024); Accum. depr. £29,000 vs £24,000; Inventory £30,000 vs £20,000; A/R £33,000 vs £14,000; Cash £37,000 vs £20,000. Share capital £18,000 vs £14,000; Retained earnings £50,000 vs £38,000; Bonds payable £27,000 vs £33,000; Accounts payable £29,000 vs £15,000; Income taxes payable £7,000 vs £8,000. Income statement: Net income £32,000. Additional data: depreciation £13,300; dividends paid £20,000; equipment that cost £18,000 (accum. depr. £8,300) was sold for £9,700 cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_6', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'[Canvas HW T6 / P15.3] Using Clarence Ltd.&#39;s 2025 data below, what is the profit margin for 2025?',
+    opts:['A) 6.3%','B) 6.0%','C) 10.5%','D) 40.0%'],
+    ans:0,
+    exp:'Profit margin = 純利益 ÷ 純売上 = 44,000 ÷ 700,000 = 6.3%。',
+    we:{ 1: '6.0% は計算誤り。', 2: '10.5% は計算誤り。', 3: '40.0% は売上総利益率（280,000/700,000）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Clarence Ltd.</b> — 2025: Net sales £700,000; COGS £420,000; Gross profit £280,000; Net income £44,000. Total assets £640,000 (2025) vs £600,000 (2024). Total liabilities = Non-current £80,000 + Current £70,000. Retained earnings £145,000 (2025) vs £123,000 (2024). Ordinary shares £10 par; weighted-average shares 32,000 (2025). Market price per share £7.00 at end of 2025. All dividends paid in cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_7', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'[Canvas HW T6 / P15.3] Using Clarence Ltd.&#39;s 2025 data below, what is earnings per share (EPS) for 2025? (Weighted-average ordinary shares 32,000)',
+    opts:['A) £1.38','B) £1.42','C) £2.19','D) £0.73'],
+    ans:0,
+    exp:'EPS = 純利益 ÷ 加重平均株式数 = 44,000 ÷ 32,000 = £1.375 ≈ £1.38。',
+    we:{ 1: '£1.42 は前年株式数（31,000）で計算した誤り。', 2: '£2.19 は計算誤り。', 3: '£0.73 は逆数的な誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Clarence Ltd.</b> — 2025: Net sales £700,000; COGS £420,000; Gross profit £280,000; Net income £44,000. Total assets £640,000 (2025) vs £600,000 (2024). Total liabilities = Non-current £80,000 + Current £70,000. Retained earnings £145,000 (2025) vs £123,000 (2024). Ordinary shares £10 par; weighted-average shares 32,000 (2025). Market price per share £7.00 at end of 2025. All dividends paid in cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_8', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'[Canvas HW T6 / P15.3] Using Clarence Ltd.&#39;s data below (Retained earnings rose from £123,000 to £145,000 with net income £44,000), what is the 2025 payout ratio?',
+    opts:['A) 50%','B) 100%','C) 32%','D) 18%'],
+    ans:0,
+    exp:'配当 = 期首RE 123,000 + 純利益 44,000 − 期末RE 145,000 = 22,000。Payout = 配当 22,000 ÷ 純利益 44,000 = 50%。',
+    we:{ 1: '100% は配当=純利益の誤り。', 2: '32% は計算誤り。', 3: '18% は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Clarence Ltd.</b> — 2025: Net sales £700,000; COGS £420,000; Gross profit £280,000; Net income £44,000. Total assets £640,000 (2025) vs £600,000 (2024). Total liabilities = Non-current £80,000 + Current £70,000. Retained earnings £145,000 (2025) vs £123,000 (2024). Ordinary shares £10 par; weighted-average shares 32,000 (2025). Market price per share £7.00 at end of 2025. All dividends paid in cash.</div>',
+    source:'FA1B Canvas Homework T6'
+  },
+  {
+    id:'q_hw_t6_9', conceptId:'c15_solvency', ch:15, type:'C',
+    q:'[Canvas HW T6 / P15.3] Using Clarence Ltd.&#39;s 2025 data below (total liabilities = non-current £80,000 + current £70,000), what is the debt-to-assets ratio for 2025?',
+    opts:['A) 23.4%','B) 21.9%','C) 10.9%','D) 76.6%'],
+    ans:0,
+    exp:'Debt to Assets = 総負債 ÷ 総資産 = (80,000 + 70,000) ÷ 640,000 = 150,000 ÷ 640,000 = 23.4%。',
+    we:{ 1: '21.9% は前年データでの値。', 2: '10.9% は非流動負債のみ（80,000/640,000）。', 3: '76.6% は自己資本比率（1 − 23.4%）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Clarence Ltd.</b> — 2025: Net sales £700,000; COGS £420,000; Gross profit £280,000; Net income £44,000. Total assets £640,000 (2025) vs £600,000 (2024). Total liabilities = Non-current £80,000 + Current £70,000. Retained earnings £145,000 (2025) vs £123,000 (2024). Ordinary shares £10 par; weighted-average shares 32,000 (2025). Market price per share £7.00 at end of 2025. All dividends paid in cash.</div>',
+    source:'FA1B Canvas Homework T6'
   }
 ];
 
