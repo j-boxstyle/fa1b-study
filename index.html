@@ -11574,6 +11574,136 @@ var QUESTIONS = [
     we:{ 1: '特許は7年で償却する。', 2: 'フランチャイズは8年で償却する。', 3: 'Goodwill は償却しない（減損のみ）。' },
     fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Nelson Company</b> (organized 2025) intangible-asset transactions, all for cash: Jan 2 — purchased a patent (7-year life) $560,000; Apr 1 — goodwill (indefinite life) $360,000; Jul 1 — 8-year franchise $440,000; Nov 1 — R&amp;D costs incurred prior to technological feasibility $448,000.</div>',
     source:'FA1B Canvas Homework T4'
+  },
+  {
+    id:'q_hw_t5_1', conceptId:'c3_prepaid', ch:10, type:'C',
+    q:'[Canvas HW T5 / P10.1] For Chuan-Kwang&#39;s Jan 5 sale (below) of NT$20,520 cash including 8% sales tax, what is the Sales Taxes Payable recorded?',
+    opts:['A) NT$1,520','B) NT$1,642','C) NT$20,520','D) NT$19,000'],
+    ans:0,
+    exp:'税込 20,520 = 売上 × 1.08。売上 = 20,520 ÷ 1.08 = 19,000。仮受消費税 = 20,520 − 19,000 = NT$1,520（= 19,000 × 8%）。',
+    we:{ 1: 'NT$1,642 は 20,520 × 8% と誤って税込額に税率を掛けた値。', 2: 'NT$20,520 は税込総額。', 3: 'NT$19,000 は税抜売上高。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Chuan-Kwang Luggage</b> — Jan 1, 2025 liability balances (NT$ thousands): Accounts Payable 52,000; Sales Taxes Payable 7,700; Unearned Service Revenue 16,000. January transactions: Jan 5 sold merchandise for cash NT$20,520 (includes 8% sales tax); Jan 12 performed services for customers who had prepaid NT$10,000; Jan 14 paid the Dec sales tax NT$7,700; Jan 20 sold 900 units on credit at NT$50/unit plus 8% sales tax (1-year warranty; warranty cost est. 7% of these sales); Jan 21 borrowed NT$27,000 on a 3-month 8% note; Jan 25 sold merchandise for cash NT$12,420 (includes 8% tax).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_2', conceptId:'c3_prepaid', ch:10, type:'C',
+    q:'[Canvas HW T5 / P10.1] For Chuan-Kwang (below), the Jan 20 credit sale was 900 units at NT$50 (warranty cost estimated at 7% of these sales). What is the warranty expense recorded at January 31?',
+    opts:['A) NT$3,150','B) NT$3,402','C) NT$315','D) NT$45,000'],
+    ans:0,
+    exp:'当該売上 = 900 × NT$50 = 45,000（税抜）。保証費用 = 45,000 × 7% = NT$3,150。Dr Warranty Expense / Cr Warranty Liability 3,150。',
+    we:{ 1: 'NT$3,402 は税込 48,600 × 7% の誤り（保証は税抜売上ベース）。', 2: 'NT$315 は桁誤り。', 3: 'NT$45,000 は売上高そのもの。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Chuan-Kwang Luggage</b> — Jan 1, 2025 liability balances (NT$ thousands): Accounts Payable 52,000; Sales Taxes Payable 7,700; Unearned Service Revenue 16,000. January transactions: Jan 5 sold merchandise for cash NT$20,520 (includes 8% sales tax); Jan 12 performed services for customers who had prepaid NT$10,000; Jan 14 paid the Dec sales tax NT$7,700; Jan 20 sold 900 units on credit at NT$50/unit plus 8% sales tax (1-year warranty; warranty cost est. 7% of these sales); Jan 21 borrowed NT$27,000 on a 3-month 8% note; Jan 25 sold merchandise for cash NT$12,420 (includes 8% tax).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_3', conceptId:'c4_classified_assets', ch:10, type:'C',
+    q:'[Canvas HW T5 / P10.1] Using Chuan-Kwang&#39;s data below, what is total current liabilities at January 31, 2025?',
+    opts:['A) NT$94,250','B) NT$91,100','C) NT$88,210','D) NT$87,700'],
+    ans:0,
+    exp:'Notes 27,000 + A/P 52,000 + Unearned Service Rev 6,000（16,000−10,000）+ Sales Taxes Payable 6,040（7,700−7,700+1,520+3,600+920）+ Warranty 3,150 + Interest Payable 60（27,000×8%×1/12×1/3）= NT$94,250。',
+    we:{ 1: 'NT$91,100 は保証負債 3,150 等の漏れ。', 2: 'NT$88,210 は計算誤り。', 3: 'NT$87,700 は当初 A/P+Sales tax 等のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Chuan-Kwang Luggage</b> — Jan 1, 2025 liability balances (NT$ thousands): Accounts Payable 52,000; Sales Taxes Payable 7,700; Unearned Service Revenue 16,000. January transactions: Jan 5 sold merchandise for cash NT$20,520 (includes 8% sales tax); Jan 12 performed services for customers who had prepaid NT$10,000; Jan 14 paid the Dec sales tax NT$7,700; Jan 20 sold 900 units on credit at NT$50/unit plus 8% sales tax (1-year warranty; warranty cost est. 7% of these sales); Jan 21 borrowed NT$27,000 on a 3-month 8% note; Jan 25 sold merchandise for cash NT$12,420 (includes 8% tax).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_4', conceptId:'c3_accrued_rev', ch:10, type:'C',
+    q:'[Canvas HW T5 / P10.2] For Deok-moon (below), what interest is accrued on the Nan note at March 31 (9%, ₩30,000, issued Feb 1)?',
+    opts:['A) ₩450','B) ₩2,700','C) ₩225','D) ₩675'],
+    ans:0,
+    exp:'利息 = ₩30,000 × 9% × 2/12（2/1〜3/31 = 2か月）= ₩450。',
+    we:{ 1: '₩2,700 は12か月分（30,000×9%）。', 2: '₩225 は1か月分。', 3: '₩675 は3か月分の誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Deok-moon Group</b> notes: Feb 1 issued a 9%, 2-month, ₩30,000 note to Nan; July 1 signed a 10%, 3-month, ₩60,000 note for equipment; Dec 1 borrowed ₩24,000 on a 3-month, 8% note. (Quarterly statements; accrue interest at each period-end and at Dec 31.)</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_5', conceptId:'c3_accrued_rev', ch:10, type:'C',
+    q:'[Canvas HW T5 / P10.2] For Deok-moon (below), what is the TOTAL interest expense for the year (Nan + Ji-yoo + Wonju notes)?',
+    opts:['A) ₩2,110','B) ₩1,950','C) ₩2,560','D) ₩450'],
+    ans:0,
+    exp:'Nan: 30,000×9%×2/12 = 450。Ji-yoo: 60,000×10%×3/12 = 1,500。Wonju: 24,000×8%×1/12 = 160。合計 = ₩2,110。',
+    we:{ 1: '₩1,950 は Wonju の 160 漏れ等。', 2: '₩2,560 は期間の取り違え。', 3: '₩450 は Nan のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Deok-moon Group</b> notes: Feb 1 issued a 9%, 2-month, ₩30,000 note to Nan; July 1 signed a 10%, 3-month, ₩60,000 note for equipment; Dec 1 borrowed ₩24,000 on a 3-month, 8% note. (Quarterly statements; accrue interest at each period-end and at Dec 31.)</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_6', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'[Canvas HW T5 / P11.1] For Herron Industries (below, issued at face value May 1), what is the December 31, 2025 adjusting entry for accrued interest?',
+    opts:['A) Dr Interest Expense 36,000 / Cr Interest Payable 36,000','B) Dr Interest Expense 54,000 / Cr Interest Payable 54,000','C) Dr Interest Expense 36,000 / Cr Cash 36,000','D) Dr Interest Expense 4,500 / Cr Interest Payable 4,500'],
+    ans:0,
+    exp:'5/1〜12/31 = 8か月分。利息 = 600,000 × 9% × 8/12 = CHF36,000。未払なので Cr Interest Payable。',
+    we:{ 1: '54,000 は12か月分（600,000×9%）。経過は8か月。', 2: '貸方は現金ではなく未払利息（決算日にはまだ支払っていない）。', 3: '4,500 は1か月分。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Herron Industries AG</b> issued CHF600,000, 9%, 5-year bonds at face value on May 1, 2025 (interest paid annually each May 1; financial statements prepared Dec 31).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_7', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'[Canvas HW T5 / P11.1] Herron (below) calls its CHF600,000 face-value bonds at 102 on Jan 1, 2027 (issued at face value). What is the loss on redemption?',
+    opts:['A) CHF12,000 loss','B) CHF12,000 gain','C) CHF612,000 loss','D) No gain or loss'],
+    ans:0,
+    exp:'額面発行なので帳簿価額 = 600,000。買戻額 = 600,000 × 1.02 = 612,000。損失 = 612,000 − 600,000 = CHF12,000。Dr Bonds Payable 600,000 + Dr Loss 12,000 / Cr Cash 612,000。',
+    we:{ 1: '買戻額が帳簿価額を上回るため損失（利益ではない）。', 2: '612,000 は支払総額であり損失額ではない。', 3: '102 での買戻しは額面超過なので損失が発生する。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Herron Industries AG</b> issued CHF600,000, 9%, 5-year bonds at face value on May 1, 2025 (interest paid annually each May 1; financial statements prepared Dec 31).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_8', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'[Canvas HW T5 / P11.2] For Kershaw Electric (below), how much cash is received at issuance (£6,000,000 bonds sold at 98)?',
+    opts:['A) £5,880,000','B) £6,000,000','C) £6,120,000','D) £5,888,000'],
+    ans:0,
+    exp:'発行価額 = 額面 × 98% = 6,000,000 × 0.98 = £5,880,000（ディスカウント発行：£120,000 の割引）。',
+    we:{ 1: '£6,000,000 は額面（98 での発行なので割引）。', 2: '£6,120,000 は 102（打歩）での金額。', 3: '£5,888,000 は1年償却後の帳簿価額。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Kershaw Electric Ltd.</b> sold £6,000,000, 10%, 15-year bonds on January 1, 2025 at 98 (interest paid Jan 1). On January 1, 2027 the carrying value was £5,896,000 and the company redeemed the bonds at 102 (interest already paid).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_9', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'[Canvas HW T5 / P11.2] Kershaw (below) redeems the bonds at 102 on Jan 1, 2027 when the carrying value is £5,896,000. What is the loss on redemption?',
+    opts:['A) £224,000 loss','B) £120,000 loss','C) £104,000 loss','D) £224,000 gain'],
+    ans:0,
+    exp:'買戻額 = 6,000,000 × 1.02 = 6,120,000。損失 = 6,120,000 − 帳簿価額 5,896,000 = £224,000。',
+    we:{ 1: '£120,000 は当初の割引額。', 2: '£104,000 は未償却割引。', 3: '符号が逆（買戻額>帳簿価額のため損失）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Kershaw Electric Ltd.</b> sold £6,000,000, 10%, 15-year bonds on January 1, 2025 at 98 (interest paid Jan 1). On January 1, 2027 the carrying value was £5,896,000 and the company redeemed the bonds at 102 (interest already paid).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_10', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'[Canvas HW T5 / E11.4] For Pueblo Company (below, €500,000 8% 5-year bonds issued at 97), what is the total cost of borrowing?',
+    opts:['A) €215,000','B) €200,000','C) €185,000','D) €15,000'],
+    ans:0,
+    exp:'年利払 = 500,000 × 8% = 40,000 × 5年 = 200,000。割引発行（97）の割引額 = 500,000 × 3% = 15,000 も借入コスト。総借入コスト = 200,000 + 15,000 = €215,000。',
+    we:{ 1: '€200,000 は利払のみ（割引を含めていない）。', 2: '€185,000 は割引を控除した誤り（割引は加算）。', 3: '€15,000 は割引額のみ。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Pueblo Company</b> issued €500,000 of 5-year, 8% bonds at 97 on January 1, 2025 (interest paid annually).</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_11', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'[Canvas HW T5 / P12.1] For Gão Limited (below), the Jan 10 issue of 100,000 no-par ordinary shares (stated value HK$20) at HK$48 records what Share Premium—Ordinary?',
+    opts:['A) HK$2,800,000','B) HK$4,800,000','C) HK$2,000,000','D) HK$0'],
+    ans:0,
+    exp:'Share Premium = (発行価格 − 額面) × 株数 = (48 − 20) × 100,000 = HK$2,800,000。Dr Cash 4,800,000 / Cr SC-Ordinary 2,000,000 / Cr Share Premium 2,800,000。',
+    we:{ 1: 'HK$4,800,000 は受取現金総額。', 2: 'HK$2,000,000 は額面分（Share Capital）。', 3: '無額面でも stated value 超過分は Share Premium に計上する。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Gão Limited</b> — Jan 10, 2025 issued 100,000 no-par ordinary shares (stated value HK$20) for cash at HK$48 per share.</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_12', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'[Canvas HW T5 / P12.2] Elston (cost method, below) bought 5,000 treasury shares at £9 then sold 500 at £12 on June 1. What does the June 1 sale credit to Share Premium—Treasury?',
+    opts:['A) £1,500','B) £6,000','C) £4,500','D) £600'],
+    ans:0,
+    exp:'原価 £9 の自己株式を £12 で売却 → 差額 (12−9) × 500 = £1,500 を Share Premium—Treasury（貸方）。Dr Cash 6,000 / Cr Treasury Shares 4,500 / Cr Share Premium—Treasury 1,500。',
+    we:{ 1: '£6,000 は受取現金（500×12）。', 2: '£4,500 は自己株式の原価（500×9）。', 3: '£600 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Elston Limited</b> (cost method for treasury shares) — Mar 1 purchased 5,000 treasury shares at £9 each; June 1 sold 500 of them at £12 each.</div>',
+    source:'FA1B Canvas Homework T5'
+  },
+  {
+    id:'q_hw_t5_13', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'[Canvas HW T5 / P12.4] Prasad SpA (below) announces a 5-for-1 share split. After the split, what are the number of shares and the par value?',
+    opts:['A) 240,000 shares at €5 par','B) 48,000 shares at €125 par','C) 240,000 shares at €25 par','D) 9,600 shares at €5 par'],
+    ans:0,
+    exp:'5-for-1 分割：株数は5倍 = 48,000 × 5 = 240,000株、額面は1/5 = €25 ÷ 5 = €5。総額（資本金）は不変。仕訳は不要（注記のみ）。',
+    we:{ 1: '分割では株数が増え額面は下がる（株数48,000・額面€125 は逆）。', 2: '額面も1/5になる（€25 のままではない）。', 3: '9,600株は1/5（分割は増加）。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><b>Prasad SpA</b> — Jan 1, 2025: Share Capital—Ordinary (€25 par, 48,000 shares issued). On April 1 the company announced a 5-for-1 share split (market price was €36 before the split).</div>',
+    source:'FA1B Canvas Homework T5'
   }
 ];
 
