@@ -12736,6 +12736,46 @@ function shuffleArray(arr) {
   return a;
 }
 
+// Randomize the option order of a question so the correct answer is not always
+// in the same position (the authored bank is heavily skewed toward "B").
+// Returns a NEW object (originals untouched). Keeps any "Not sure / わからない"
+// option pinned last, re-letters via the renderer, and remaps `ans` and `we`.
+function shuffleQuestionOptions(q) {
+  if (!q || !Array.isArray(q.opts) || q.opts.length < 2) return q;
+  var n = q.opts.length;
+  var notSure = -1;
+  for (var i = 0; i < n; i++) {
+    if (/わから(ない|ん)|not\s*sure/i.test(q.opts[i])) { notSure = i; break; }
+  }
+  var idxs = [];
+  for (var i = 0; i < n; i++) if (i !== notSure) idxs.push(i);
+  for (var k = idxs.length - 1; k > 0; k--) {
+    var r = Math.floor(Math.random() * (k + 1));
+    var t = idxs[k]; idxs[k] = idxs[r]; idxs[r] = t;
+  }
+  if (notSure >= 0) idxs.push(notSure);
+  var newOpts = [], newAns = (typeof q.ans === 'number' ? q.ans : 0), newWe = {};
+  var hasWe = q.we && typeof q.we === 'object';
+  for (var k = 0; k < idxs.length; k++) {
+    var oldI = idxs[k];
+    newOpts.push(String(q.opts[oldI]).replace(/^[A-F]\)\s*/, ''));
+    if (oldI === q.ans) newAns = k;
+    if (hasWe && q.we[oldI] !== undefined) newWe[k] = q.we[oldI];
+  }
+  var copy = {};
+  for (var key in q) { if (Object.prototype.hasOwnProperty.call(q, key)) copy[key] = q[key]; }
+  copy.opts = newOpts;
+  copy.ans = newAns;
+  if (hasWe) copy.we = newWe;
+  return copy;
+}
+function shuffleBlockOptions(block) {
+  if (!Array.isArray(block)) return block;
+  var out = [];
+  for (var i = 0; i < block.length; i++) out.push(shuffleQuestionOptions(block[i]));
+  return out;
+}
+
 function startQuiz() {
   var pool = getFilteredQuestions();
   if (pool.length === 0) {
@@ -12743,7 +12783,7 @@ function startQuiz() {
     return;
   }
   var shuffled = shuffleArray(pool);
-  quizState.block = shuffled.slice(0, 5);
+  quizState.block = shuffleBlockOptions(shuffled.slice(0, 5));
   quizState.index = 0;
   quizState.answered = false;
   quizState.chosen = -1;
@@ -20022,7 +20062,7 @@ function startInterleavedQuiz() {
   }
   // Use existing quiz system with these questions
   quizState.mode = 'interleave';
-  quizState.block = result.slice(0, 20); // 20 questions
+  quizState.block = shuffleBlockOptions(result.slice(0, 20)); // 20 questions, options randomized
   quizState.index = 0;
   quizState.active = true;
   quizState.answered = false;
@@ -20435,7 +20475,7 @@ function startDueTodayQuiz() {
     return;
   }
   quizState.mode = 'due';
-  quizState.block = shuffleArray(due).slice(0, Math.min(20, due.length));
+  quizState.block = shuffleBlockOptions(shuffleArray(due).slice(0, Math.min(20, due.length)));
   quizState.index = 0;
   quizState.active = true;
   quizState.answered = false;
