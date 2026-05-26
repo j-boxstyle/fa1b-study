@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J-BOX BV — 会計学習 全体ロードマップ</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f172a;
+    --bg2: #1e293b;
+    --fg: #f1f5f9;
+    --muted: #94a3b8;
+    --line: #475569;
+    --accent: #fbbf24;
+    --link: #38bdf8;
+    --warn: #f87171;
+    --ok: #34d399;
+  }
+  body {
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    overflow: hidden;
+    height: 100vh;
+  }
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 60px; background: var(--bg2); border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; padding: 0 20px; z-index: 100;
+    gap: 16px;
+  }
+  header h1 { font-size: 16px; font-weight: 700; }
+  header .subtitle { font-size: 12px; color: var(--muted); }
+  #search {
+    background: var(--bg); border: 1px solid var(--line); color: var(--fg);
+    padding: 6px 12px; border-radius: 6px; font-size: 13px; width: 220px;
+  }
+  .legend { display: flex; gap: 8px; font-size: 11px; color: var(--muted); margin-left: auto; }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 50%; }
+  #canvas-wrap {
+    position: fixed; top: 60px; left: 0; right: 400px; bottom: 0;
+    overflow: auto; background:
+      radial-gradient(circle at 20% 30%, #1e293b 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, #1e3a5f 0%, transparent 50%),
+      var(--bg);
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+  }
+  #tree { display: block; touch-action: manipulation; }
+  .node { touch-action: manipulation; -webkit-tap-highlight-color: rgba(251,191,36,0.4); }
+  .node-bg { stroke: var(--line); stroke-width: 1; fill: var(--bg2); cursor: pointer; transition: 0.2s; touch-action: manipulation; }
+  .node-bg:hover { stroke: var(--accent); stroke-width: 2; }
+  .node-bg.selected { stroke: var(--accent); stroke-width: 3; fill: #334155; }
+  .node-bg.related { stroke: var(--link); stroke-width: 2; }
+  .node-bg.examNG { fill: #4c1d24; }
+  .node-bg.examOK-app { fill: #14532d; }
+  .node-label { font-size: 13px; font-weight: 600; fill: var(--fg); pointer-events: none; }
+  .node-sub { font-size: 10px; fill: var(--muted); pointer-events: none; }
+  .edge { stroke: var(--line); stroke-width: 1.5; fill: none; opacity: 0.5; }
+  .edge.root { stroke: var(--accent); stroke-width: 2; opacity: 0.8; }
+  .xlink { stroke-width: 1.5; fill: none; stroke-dasharray: 5,3; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+  .xlink.show { opacity: 0.9; }
+  .xlabel { font-size: 10px; fill: var(--accent); opacity: 0; pointer-events: none; }
+  .xlabel.show { opacity: 1; }
+  #detail {
+    position: fixed; top: 60px; right: 0; width: 400px; bottom: 0;
+    background: var(--bg2); border-left: 1px solid var(--line);
+    overflow-y: auto; padding: 24px; z-index: 50;
+    -webkit-overflow-scrolling: touch;
+  }
+  #detail-close {
+    display: none; position: absolute; top: 10px; right: 10px;
+    background: var(--bg); color: var(--fg); border: 1px solid var(--line);
+    width: 36px; height: 36px; border-radius: 50%; font-size: 18px;
+    cursor: pointer; z-index: 60;
+  }
+  #detail h2 { font-size: 18px; margin-bottom: 4px; color: var(--accent); }
+  #detail .chip { display: inline-block; background: var(--bg); border: 1px solid var(--line); padding: 2px 8px; border-radius: 10px; font-size: 10px; color: var(--muted); margin-right: 4px; margin-bottom: 8px; }
+  #detail .chip.warn { color: var(--warn); border-color: var(--warn); }
+  #detail .chip.ok { color: var(--ok); border-color: var(--ok); }
+  #detail h3 { font-size: 12px; color: var(--muted); margin-top: 16px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+  #detail p, #detail li { font-size: 13px; line-height: 1.6; color: var(--fg); }
+  #detail ul { padding-left: 18px; }
+  #detail .formula { background: var(--bg); padding: 10px; border-radius: 6px; font-family: 'SF Mono', monospace; font-size: 12px; margin: 6px 0; border-left: 3px solid var(--accent); white-space: pre-wrap; }
+  #detail .memo { background: #1e3a5f; padding: 10px; border-radius: 6px; border-left: 3px solid var(--link); font-size: 12px; }
+  #detail .related-list a { display: block; padding: 6px 8px; background: var(--bg); border-radius: 4px; margin: 4px 0; font-size: 12px; color: var(--link); text-decoration: none; cursor: pointer; }
+  #detail .related-list a:hover { background: #334155; }
+  #intro { padding: 20px; }
+  #intro p { font-size: 13px; line-height: 1.7; margin-bottom: 12px; color: var(--muted); }
+  #intro strong { color: var(--fg); }
+  .controls { position: fixed; bottom: 20px; left: 20px; display: flex; gap: 8px; z-index: 90; }
+  .controls button { background: var(--bg2); border: 1px solid var(--line); color: var(--fg); padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+  .controls button:hover { background: #334155; }
+  @media (max-width: 900px) {
+    #canvas-wrap { right: 0; bottom: 0; }
+    #detail {
+      top: auto; left: 0; right: 0; bottom: 0; height: 70vh; width: auto;
+      border-left: none; border-top: 2px solid var(--accent);
+      transform: translateY(100%); transition: transform 0.3s ease;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+      z-index: 200;
+    }
+    #detail.open { transform: translateY(0); }
+    #detail-close { display: block; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🏢 J-BOX BV — 会計学習ロードマップ</h1>
+    <div class="subtitle">Week 1〜最終週 統合 / 全概念マップ</div>
+  </div>
+  <input id="search" type="text" placeholder="🔍 概念を検索...">
+  <div class="legend">
+    <span><span class="dot" style="background:#3b82f6"></span>基礎</span>
+    <span><span class="dot" style="background:#a855f7"></span>プロセス</span>
+    <span><span class="dot" style="background:#ec4899"></span>商品売買</span>
+    <span><span class="dot" style="background:#10b981"></span>資産</span>
+    <span><span class="dot" style="background:#f59e0b"></span>負債・資本</span>
+    <span><span class="dot" style="background:#06b6d4"></span>CFS・分析</span>
+  </div>
+</header>
+
+<div id="canvas-wrap">
+  <svg id="tree"></svg>
+</div>
+
+<div id="detail">
+  <button id="detail-close" onclick="closeDetail()">×</button>
+  <div id="intro">
+    <h2 style="color: var(--accent); margin-bottom: 12px;">🗺️ 使い方</h2>
+    <p>左の家系図は <strong>J-BOX BV</strong>（架空のオランダ法人）の取引を例に、Week1〜最終週の <strong>全概念</strong> を統合した1枚マップです。</p>
+    <p>📌 <strong>ノードをクリック</strong> すると、ここに意味・公式・覚えるべきポイントが表示されます。</p>
+    <p>🔗 ノードをクリックすると、関連概念へ <strong>黄色の点線</strong> が引かれます（例：「売上」をクリックすると AR / COGS / Sales Returns へ繋がります）。</p>
+    <p>🎨 色は大カテゴリを表します（凡例上部）。</p>
+    <p>🚫 <span style="color: var(--warn)">赤背景</span> = 試験範囲外の Appendix / ✅ <span style="color: var(--ok)">緑背景</span> = 試験範囲の Appendix。</p>
+    <p>🔍 検索ボックスで概念名（日本語/英語）を絞り込めます。</p>
+  </div>
+</div>
+
+<div class="controls">
+  <button onclick="expandAll()">📂 全展開</button>
+  <button onclick="collapseToLevel(1)">📁 大部屋のみ</button>
+  <button onclick="collapseToLevel(2)">📁 中部屋まで</button>
+  <button onclick="resetView()">🔄 リセット</button>
+</div>
+
+<script>
+// === 概念ツリーデータ（後続スクリプトで注入） ===
+window.TREE = null;
+window.XLINKS = [];
+</script>
+<script src="roadmap-data.js"></script>
+<script src="roadmap-render.js"></script>
+</body>
+</html>
