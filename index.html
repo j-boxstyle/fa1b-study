@@ -2760,6 +2760,36 @@ body { padding-top:112px; }
         <span style="font-size:0.85em;">⚠ "Per Bank" 側の Deposits in Transit や Outstanding Checks には<b>仕訳しない</b>（時差で自然解消）。</span>
       </div>
 
+      <h3 class="wk-section-h">💵 Ch7 — Petty Cash（小口現金）＋ Cash Over and Short</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        少額支払用の現金ファンド。<b>担当者（custodian）1名</b>が管理。重要ルール：<b>支払の都度は仕訳せず、補充（replenishment）時にまとめて費用認識</b>。
+      </div>
+      <div class="post-flow">
+        <div class="post-box"><span class="ic">🏦</span><span class="lb">① 設置</span><span class="ds">Dr Petty Cash<br>Cr Cash</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">🛒</span><span class="lb">② 期中の支払</span><span class="ds"><b>仕訳なし</b><br>領収書を保管</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">🔁</span><span class="lb">③ 補充</span><span class="ds" style="color:#a5f3fc;">各 Expense を計上<br>Cr Cash</span></div>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">Petty Cash — 授業の M&amp;H 例</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">01-01</td><td class="acct-debit">Petty Cash <span style="color:#94a3b8;font-size:14px;">(設置)</span></td><td class="amt">3,000</td><td></td></tr>
+          <tr class="entry-end"><td></td><td class="acct-credit">Cash</td><td></td><td class="amt">3,000</td></tr>
+          <tr><td class="date">31-03</td><td class="acct-debit">Freight-out <span style="color:#94a3b8;font-size:14px;">(補充時に費用認識)</span></td><td class="amt">1,500</td><td></td></tr>
+          <tr><td></td><td class="acct-debit">Marketing Expense</td><td class="amt">250</td><td></td></tr>
+          <tr><td></td><td class="acct-debit">Miscellaneous Expense</td><td class="amt">250</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Cash <span style="color:#94a3b8;font-size:14px;">(Petty Cash は動かさない！)</span></td><td></td><td class="amt">2,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">補充は Cash → ファンドへ戻すだけ。Petty Cash 勘定残高は €3,000 のまま</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>Cash Over and Short（現金過不足）：</b>実査と帳簿が合わない時に使う勘定。<br>
+        ・現金<b>不足</b> → <b>Dr Cash Over and Short</b>（損失・IS費用）<br>
+        ・現金<b>過剰</b> → <b>Cr Cash Over and Short</b>（利益）<br>
+        <span style="font-size:0.85em;">原因: 計算ミス・釣り銭間違い等。期末に補充は必ず行う。</span>
+      </div>
+
       <h3 class="wk-section-h">🎯 核心の1行（Ch9 PPE）</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「使用期間にわたり、取得原価を費用化する＝減価償却」</b><br>現金支出は取得時の一回だけ。費用は耐用年数にわたり配分。<b>Land は減価償却しない</b>。</div>
       <h3 class="wk-section-h">💰 取得原価に含めるもの</h3>
@@ -3113,40 +3143,67 @@ body { padding-top:112px; }
         <tr><td>Stated &gt; Market</td><td>&gt; Face（額面超）</td><td style="color:#86efac;"><b>Premium</b></td></tr>
       </table></div>
 
-      <h3 class="wk-section-h">🎨 Bonds 仕訳ビジュアル（Discount 発行の例）</h3>
+      <div class="wk-callout" style="margin-top:10px;"><b>⚠️ FA1B 重要（授業準拠）：</b>この講座は <b>NET 法</b>で記帳する。<b>Bonds Payable を「受取現金額」で直接計上</b>し、<b>"Discount/Premium on Bonds Payable" の独立勘定は使わない</b>。また発行価額（割引・割増の大きさ）の計算は <b>範囲外</b>（問題で与えられる）。</div>
+
+      <h3 class="wk-section-h">🎨 Bonds 仕訳ビジュアル（NET 法・授業の Candycane 例）</h3>
       <div class="wk-formula-box" style="margin-bottom:14px;">
-        <span class="label">設定：</span>額面 $100,000、5年、表面利率 8%（年1回払）、市場利率 10% → 発行価額 <b>$92,418</b>（Discount $7,582）
+        <span class="label">設定：</span>額面 €1,500,000、5年、表面利率 10%（年1回払・現金利息 €150,000/年）。<b>割引発行で受取現金 €1,270,000</b>（Discount €230,000）。
       </div>
       <div class="je-doc">
-        <div class="je-doc-title">① 発行時（Issuance at Discount）</div>
+        <div class="je-doc-title">① 発行時（Issuance at Discount — NET法）</div>
         <table class="je-tbl">
           <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
-          <tr><td class="date">Jan 1</td><td class="acct-debit">Cash</td><td class="amt">92,418</td><td></td></tr>
-          <tr><td></td><td class="acct-debit" style="color:#b91c1c;">Discount on Bonds Payable</td><td class="amt">7,582</td><td></td></tr>
-          <tr><td></td><td class="acct-credit">Bonds Payable（額面）</td><td></td><td class="amt">100,000</td></tr>
-          <tr><td></td><td class="desc" colspan="3">Discount は <b>contra-liability</b>（Bonds Payable の控除）</td></tr>
+          <tr><td class="date">01-01</td><td class="acct-debit">Cash</td><td class="amt">1,270,000</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Bonds Payable <span style="color:#94a3b8;font-size:14px;">(= 受取現金額)</span></td><td></td><td class="amt">1,270,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">Bonds Payable を <b>受取額で直接計上</b>（独立 Discount 勘定なし）</td></tr>
         </table>
       </div>
       <div class="je-doc">
-        <div class="je-doc-title">② 利払日（Effective Interest Method）</div>
+        <div class="je-doc-title">② 利払・利息認識（概念）</div>
         <table class="je-tbl">
           <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
-          <tr><td class="date">Dec 31</td><td class="acct-debit">Interest Expense <span style="color:#94a3b8;font-size:14px;">(92,418×10%)</span></td><td class="amt">9,242</td><td></td></tr>
-          <tr><td></td><td class="acct-credit">Cash <span style="color:#94a3b8;font-size:14px;">(100,000×8%)</span></td><td></td><td class="amt">8,000</td></tr>
-          <tr><td></td><td class="acct-credit" style="color:#b91c1c;">Discount on Bonds Payable <span style="color:#94a3b8;font-size:14px;">(差額=償却)</span></td><td></td><td class="amt">1,242</td></tr>
-          <tr><td></td><td class="desc" colspan="3">Discount 償却 → Carrying Value が $92,418→$93,660 に増加</td></tr>
+          <tr><td class="date">31-12</td><td class="acct-debit">Interest Expense</td><td class="amt">XXX</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Interest Payable <span style="color:#94a3b8;font-size:14px;">(Face×Stated = 150,000)</span></td><td></td><td class="amt">150,000</td></tr>
+          <tr><td></td><td class="acct-credit">Bonds Payable <span style="color:#94a3b8;font-size:14px;">(償却額)</span></td><td></td><td class="amt">XXX</td></tr>
+          <tr><td></td><td class="desc" colspan="3">Discount 発行: Interest Expense = 現金利息 + 償却額 → <b>Bonds Payable が Face に向け増加</b></td></tr>
         </table>
       </div>
-      <div class="fs-articulation">🔗 <b>Effective Interest Method の鉄則：</b><br>
-        ・<b>Interest Expense = 期首 Carrying Value × Market Rate</b><br>
-        ・<b>Cash 支払 = Face Value × Stated Rate</b>（毎期一定）<br>
-        ・差額が <b>Discount/Premium の償却額</b><br>
-        <span style="font-size:0.85em;">Discount: Expense &gt; Cash → 差額で Discount 減・CV 増。Premium は逆（Expense &lt; Cash → Premium 減・CV 減）。満期で CV = Face になる。</span>
+      <div class="fs-articulation">⚠️ <b>償却額の計算方法は試験範囲外（Appendix 11A 定額法 / 11B 実効金利法）：</b><br>
+        本講座で<b>覚えるべきは概念だけ</b>：<br>
+        ・<b>Interest Expense = 現金利息（Face×Stated）± 償却額</b><br>
+        ・<b>Discount 発行 → 償却で Bonds Payable 増加（Interest Expense &gt; 現金利息）</b><br>
+        ・<b>Premium 発行 → 償却で Bonds Payable 減少（Interest Expense &lt; 現金利息）</b><br>
+        ・どの場合も <b>満期で Bonds Payable = Face Value</b> に収束<br>
+        <span style="font-size:0.85em;">償却の具体的金額（定額法/実効金利法の計算）は出題されない。問題で与えられるか、与件から逆算する。</span>
       </div>
-      <div class="wk-callout"><b>償還（Redemption）：</b>買戻価額と <b>Carrying Value</b> を比較。<br>
-        ・買戻 &lt; CV → <b>Gain on Redemption</b>（Cr）<br>
-        ・買戻 &gt; CV → <b>Loss on Redemption</b>（Dr）<br>
-        仕訳: <code>Dr. Bonds Payable / Dr. Loss or Cr. Gain / Cr. Discount(残) / Cr. Cash</code>
+      <div class="wk-callout"><b>💰 総借入コスト（Total Cost of Borrowing — 範囲内）：</b><br>
+        Discount 発行: 総利息支払（5×150,000=750,000）<b>＋ Discount 230,000 = €980,000</b>（割引は<b>追加コスト</b>）<br>
+        Premium 発行: 総利息支払 <b>− Premium</b>（割増は<b>コスト減</b>）
+      </div>
+
+      <h3 class="wk-section-h">🎨 Bonds 償還（Redemption）ビジュアル</h3>
+      <div class="je-doc">
+        <div class="je-doc-title">満期償還（At Maturity — 必ず Face で返済）</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">31-12</td><td class="acct-debit">Bonds Payable</td><td class="amt">1,500,000</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td></td><td class="amt">1,500,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">満期では Discount/Premium は償却済 → 帳簿額 = Face Value</td></tr>
+        </table>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">期中早期償還（Early — 例: 帳簿価額 €1,316,000 を 102 = €1,530,000 で買戻）</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">31-12</td><td class="acct-debit">Bonds Payable <span style="color:#94a3b8;font-size:14px;">(帳簿価額)</span></td><td class="amt">1,316,000</td><td></td></tr>
+          <tr><td></td><td class="acct-debit" style="color:#ef4444;">Loss on Redemption</td><td class="amt">214,000</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td></td><td class="amt">1,530,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">買戻額 &gt; 帳簿価額 → Loss（Dr）。買戻額 &lt; 帳簿価額なら Gain（Cr）</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>早期償還の判定：</b>Cash 買戻額 と <b>Bonds Payable 帳簿価額</b>を比較。<br>
+        ・買戻 &gt; 帳簿価額 → <b style="color:#fca5a5;">Loss on Redemption</b>（Dr）<br>
+        ・買戻 &lt; 帳簿価額 → <b style="color:#86efac;">Gain on Redemption</b>（Cr）
       </div>
 
       <h3 class="wk-section-h">🧾 Ch10 — Current Liabilities（流動負債）完全整理</h3>
@@ -3158,18 +3215,72 @@ body { padding-top:112px; }
         <tr><td><b>Current portion of LTD</b></td><td>1年内返済分を分離</td><td>長期債務から Current へ振替表示</td></tr>
         <tr><td><b>Payroll Liabilities</b></td><td>源泉所得税・社会保険の預り</td><td>給与総額 − 控除 = 手取り。控除分は負債</td></tr>
       </table></div>
-      <div class="wk-formula-box" style="margin-top:10px;">
-        <span class="label">VAT 計算例：</span>税込売上 $1,260（VAT 26%* 仮）→ 税抜売上 = 1,260 ÷ 1.26 = <b>$1,000</b>、VAT Payable = <b>$260</b><br>
-        仕訳: <code>Dr. Cash 1,260 / Cr. Sales 1,000 / Cr. VAT Payable 260</code><br>
-        <span style="font-size:0.8em;color:#94a3b8;">* オランダ標準VATは21%。問題文の率を必ず使用。</span>
+      <h3 class="wk-section-h">🧾 Ch10 — VAT（付加価値税）売上・仕入の両側（授業準拠）</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        VAT は <b>売上（預り＝VAT Payable）</b>と <b>仕入（仮払＝VAT Receivable）</b>の<b>両方</b>で仕訳が必要。差額を国に納付。税込価格から税抜を逆算する。
       </div>
+      <div class="je-doc">
+        <div class="je-doc-title">売上側 — 税込 €6.50（VAT 9% 込）で販売</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">27-09</td><td class="acct-debit">Cash</td><td class="amt">6.50</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Sales Revenue <span style="color:#94a3b8;font-size:14px;">(6.50 ÷ 109% × 100)</span></td><td></td><td class="amt">5.96</td></tr>
+          <tr><td></td><td class="acct-credit">VAT Payable <span style="color:#94a3b8;font-size:14px;">(6.50 ÷ 109% × 9)</span></td><td></td><td class="amt">0.54</td></tr>
+        </table>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">仕入側 — €1,200（VAT 9% 込）で仕入</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">27-09</td><td class="acct-debit">Inventory <span style="color:#94a3b8;font-size:14px;">(1,200 ÷ 109% × 100)</span></td><td class="amt">1,100</td><td></td></tr>
+          <tr><td></td><td class="acct-debit">VAT Receivable <span style="color:#94a3b8;font-size:14px;">(国から回収)</span></td><td class="amt">100</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Accounts Payable</td><td></td><td class="amt">1,200</td></tr>
+        </table>
+      </div>
+      <div class="wk-tip"><b>📌 逆算公式：</b>税抜 = 税込 ÷ (1 + 税率)。VAT 額 = 税込 ÷ (1+税率) × 税率。<br>納付額 = <b>VAT Payable（売上で預った）− VAT Receivable（仕入で払った）</b>。</div>
+
+      <h3 class="wk-section-h">⚖️ Ch10 — Warranty Provision（保証引当）授業の実例</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        将来の保証修理費を <b>売上と同じ期に見積計上</b>（Matching Principle）。Provision は <b>金額・時期が不確実な負債</b>。
+      </div>
+      <div class="wk-formula-box" style="margin-bottom:12px;">
+        <span class="label">設定（CrazyCargo Ltd. 2024）：</span>cargo bike 100台販売・1年保証。10%が修理必要・平均£80と見積。2024年中に4台修理・実費£320。
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">① 期中の実際修理（発生の都度）</div>
+        <table class="je-tbl">
+          <tr><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="acct-debit">Warranty Expense</td><td class="amt">320</td><td></td></tr>
+          <tr><td class="acct-credit">Repair Parts <span style="color:#94a3b8;font-size:14px;">(実費)</span></td><td></td><td class="amt">320</td></tr>
+        </table>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">② 期末の引当調整（見積総額 − 実費）</div>
+        <table class="je-tbl">
+          <tr><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="acct-debit">Warranty Expense <span style="color:#94a3b8;font-size:14px;">(10%×100×£80 − £320 = £480)</span></td><td class="amt">480</td><td></td></tr>
+          <tr><td class="acct-credit">Warranty Provision (Liability)</td><td></td><td class="amt">480</td></tr>
+        </table>
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">③ 翌期の保証修理（Provision を取崩）</div>
+        <table class="je-tbl">
+          <tr><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="acct-debit">Warranty Provision</td><td class="amt">75</td><td></td></tr>
+          <tr><td class="acct-credit">Repair Parts</td><td></td><td class="amt">75</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>3段階の流れ：</b>① 期中の実費は都度 Warranty Expense → ② 期末に「見積総額 − 既計上」を Provision として追加計上 → ③ 翌期の修理は <b>Provision を取崩</b>（費用は計上済みなので再計上しない）。<br><span style="font-size:0.85em;">見積総額 = £800（10%×100台×£80）。期末 Provision = £800 − £320 = £480。</span></div>
 
       <h3 class="wk-section-h">🔑 試験キーワード → アクション</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl wk-keyword-tbl">
         <tr><th>キーワード</th><th>判断</th><th>処理</th></tr>
         <tr><td>"Write off uncollectible"</td><td>Allowance 法</td><td><code>Dr. Allowance / Cr. A/R</code></td></tr>
         <tr><td>"$X note, 8%, 90 days"</td><td>Interest = X × 8% × 90/360</td><td>満期に Cash & Int Rev 計上</td></tr>
-        <tr><td>"Sales tax 6%"</td><td>売上 = X / 1.06</td><td>Cr. Sales Tax Payable</td></tr>
+        <tr><td>"VAT/Sales tax 9% inclusive"</td><td>税抜 = 税込 ÷ 1.09</td><td>Cr. VAT Payable（売上）/ Dr. VAT Receivable（仕入）</td></tr>
+        <tr><td>"Warranty 10% of units, €80 each"</td><td>売上期に見積引当</td><td>期末: Dr. Warranty Exp / Cr. Warranty Provision</td></tr>
+        <tr><td>"Bond issued at 95 (discount)"</td><td>NET法・受取額で計上</td><td>Dr. Cash 95% / Cr. Bonds Payable 95%</td></tr>
+        <tr><td>"Redeem bond at 102, CV &lt; price"</td><td>買戻 &gt; 帳簿 → Loss</td><td>Dr. Bonds Payable + Dr. Loss / Cr. Cash</td></tr>
         <tr><td>"Goodwill"</td><td>償却しない</td><td>毎年 impairment test</td></tr>
       </table></div>
       <h3 class="wk-section-h">⚠ よくある間違い</h3>
@@ -3178,22 +3289,23 @@ body { padding-top:112px; }
         <li><b>Aging 法で Allowance に加算：</b>Aging は <b>目標残高</b>。差額のみ Expense。</li>
         <li><b>Sales Tax を売上に含める：</b>Sales Tax は <b>負債</b>。</li>
         <li><b>Goodwill を償却する：</b>減損のみ。</li>
-        <li><b>Bond の Discount を資産に計上：</b>Discount は <b>contra-liability</b>（Bonds Payable の控除）。</li>
-        <li><b>Interest Expense に Stated Rate を使う：</b>Effective Interest 法では <b>Market Rate × Carrying Value</b>。</li>
+        <li><b>Bond を独立 Discount 勘定で記帳：</b>本講座は <b>NET法</b> — Bonds Payable を受取現金額で直接計上（contra 勘定を使わない）。</li>
+        <li><b>償却の計算方法を暗記しようとする：</b>定額法/実効金利法は <b>Appendix=範囲外</b>。概念（償却で BP が Face に収束）だけ押さえる。</li>
       </ul></div>
       <h3 class="wk-section-h">💡 暗記フック</h3>
       <div class="wk-hooks"><ul>
         <li><b>"Write off" は Expense を経由しない：</b>Allowance ↓ / A/R ↓ のみ。</li>
         <li><b>Aging = 目標、% of Sales = 増分。</b></li>
         <li><b>Goodwill・Trademark は不滅・償却なし。</b></li>
-        <li><b>Bond：</b>「Stated &lt; Market → Discount」「Stated &gt; Market → Premium」。<b>CV は満期で必ず Face に収束</b>。</li>
-        <li><b>Interest Exp = 期首CV × Market、Cash = Face × Stated、差額が償却。</b></li>
+        <li><b>Bond：</b>「Stated &lt; Market → Discount」「Stated &gt; Market → Premium」。<b>Bonds Payable は満期で必ず Face に収束</b>。</li>
+        <li><b>NET法：</b>発行時 Dr Cash / Cr Bonds Payable（受取額）。利息認識で償却が BP を増減。</li>
+        <li><b>総借入コスト：</b>Discount は追加コスト（＋）、Premium はコスト減（−）。</li>
       </ul></div>
     </section>
 
     <section class="wk-summary" id="wk-sum-6">
       <h2 class="wk-title">📓 Week 6 ── 株主資本 + キャッシュフロー (Ch12, Ch14)</h2>
-      <p class="wk-meta">CS / PIC / RE / Preferred Stock / 累積配当 / Treasury / 配当3日付 / OCF・ICF・FCF / Direct & Indirect / FCF</p>
+      <p class="wk-meta">Share Capital / Premium / RE / Preference・累積配当 / Treasury / OCI / OCF・ICF・FCF / Direct & Indirect / FCF</p>
       <h3 class="wk-section-h">🎯 核心の1行</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「Equity の中身を分けて表示」</b>＝ Contributed Capital（投資された）と Retained Earnings（稼いだ）。<br>Cash Flow Statement は <b>NI と Cash の差</b>を 3 区分で説明する装置。</div>
       <h3 class="wk-section-h">🏛 株主資本の構造</h3>
@@ -3264,9 +3376,24 @@ body { padding-top:112px; }
         期首 Total Equity<br>
         + Share Issuance（株式発行）<br>
         + Net Income<br>
+        + Other Comprehensive Income（OCI）<br>
         − Dividends（配当）<br>
         − Treasury Stock 取得<br>
         = <b style="color:#fcd34d;">期末 Total Equity</b>
+      </div>
+
+      <h3 class="wk-section-h">🌐 Other Comprehensive Income（OCI）の概念（Ch12 LO5）</h3>
+      <div class="wk-overview" style="margin-bottom:12px;">
+        利益のうち <b>当期純利益（NI）を経由せず、直接 Equity に計上</b>される項目が OCI。BS では <b>Accumulated Other Comprehensive Income</b> として資本の部に蓄積される。
+      </div>
+      <div class="wk-formula-box">
+        <b style="color:#fde68a;">Comprehensive Income = Net Income + Other Comprehensive Income</b><br>
+        <span style="font-size:0.85em;color:#94a3b8;">NI は IS の最終利益。OCI は未実現の損益などを集めた区分。</span>
+      </div>
+      <div class="wk-tip"><b>📌 FA1B での主な OCI 項目：</b><b>Revaluation Surplus</b>（Ch9 — PPE を公正価値に再評価した際の評価益）。<br>
+        ・再評価<b>益</b> → Revaluation Surplus（OCI/Equity）に計上、NI には入れない<br>
+        ・再評価<b>損</b> → Impairment Loss（IS の費用）として NI を減らす<br>
+        <span style="font-size:0.85em;">保守主義：含み益は Equity に留保、含み損は即費用化。</span>
       </div>
 
       <h3 class="wk-section-h">💵 配当 3つのキー日付</h3>
@@ -3453,14 +3580,16 @@ body { padding-top:112px; }
         <li><b>配当支払を OCF に：</b>GAAP では FCF。</li>
         <li><b>Dividends in arrears を負債計上：</b>宣言まで負債ではない → <b>注記のみ</b>。</li>
         <li><b>Cumulative 優先株で過年度未払を忘れる：</b>arrears を先に Preferred へ配分。</li>
+        <li><b>OCI を Net Income に含める：</b>OCI は <b>NI の外</b>（Equity に直接）。Comprehensive Income = NI + OCI。</li>
       </ul></div>
       <h3 class="wk-section-h">💡 暗記フック</h3>
       <div class="wk-hooks"><ul>
-        <li><b>"par" は法的最低額：</b>差が PIC。</li>
+        <li><b>"par" は法的最低額：</b>差が Share Premium（PIC）。</li>
         <li><b>Stock Split は仕訳ナシ。</b></li>
         <li><b>OCF 間接法：A↑ なら −、L↑ なら +。</b></li>
         <li><b>配当支払だけが FCF、利息は OCF。</b></li>
         <li><b>Cumulative：</b>未払は繰越・先取り。Non-cumulative は消滅。</li>
+        <li><b>Comprehensive Income = NI + OCI（Revaluation Surplus 等）。</b></li>
         <li><b>FCF = OCF − CapEx − 配当 = 自由に使える現金。</b></li>
         <li><b>Direct と Indirect は OCF が同額。表示法だけの違い。</b></li>
       </ul></div>
@@ -3667,11 +3796,11 @@ body { padding-top:112px; }
         <span class="wk-pill">A=L+E</span><span class="wk-pill">DEAD CLR</span><span class="wk-pill">調整仕訳4種</span><span class="wk-pill">締切4ステップ</span>
         <span class="wk-pill">Multi-step IS</span><span class="wk-pill">Perpetual/Periodic</span><span class="wk-pill">Classified BS</span>
         <span class="wk-pill">FIFO/LIFO物価上昇</span><span class="wk-pill">LCNRV</span><span class="wk-pill">棚卸誤謬</span><span class="wk-pill">Inv Turnover</span>
-        <span class="wk-pill">Fraud Triangle</span><span class="wk-pill">内部統制5原則</span><span class="wk-pill">Bank Reconciliation</span>
+        <span class="wk-pill">Fraud Triangle</span><span class="wk-pill">内部統制5原則</span><span class="wk-pill">Bank Reconciliation</span><span class="wk-pill">Petty Cash</span>
         <span class="wk-pill">Allowance法</span><span class="wk-pill">PPE取得原価</span><span class="wk-pill">SL/DDB/UOP</span><span class="wk-pill">Disposal</span>
-        <span class="wk-pill">Revaluation/Depletion</span><span class="wk-pill">Bonds Disc/Prem</span><span class="wk-pill">Effective Interest</span>
-        <span class="wk-pill">VAT/Sales Tax</span><span class="wk-pill">CS+PIC+RE−TS</span><span class="wk-pill">Preferred累積</span><span class="wk-pill">配当3日付</span>
-        <span class="wk-pill">CF 3区分</span><span class="wk-pill">OCF間接法</span><span class="wk-pill">Direct法</span><span class="wk-pill">FCF</span>
+        <span class="wk-pill">Revaluation/Depletion</span><span class="wk-pill">Bonds NET法</span><span class="wk-pill">Bond償還Gain/Loss</span>
+        <span class="wk-pill">VAT 売上+仕入</span><span class="wk-pill">Warranty Provision</span><span class="wk-pill">Share Cap+Premium</span><span class="wk-pill">Preference累積</span><span class="wk-pill">配当3日付</span>
+        <span class="wk-pill">OCI/Revaluation Surplus</span><span class="wk-pill">CF 3区分</span><span class="wk-pill">OCF間接法</span><span class="wk-pill">Direct法</span><span class="wk-pill">FCF</span>
         <span class="wk-pill">DuPont</span><span class="wk-pill">15比率公式</span>
       </div>
     </section>
