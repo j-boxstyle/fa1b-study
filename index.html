@@ -21723,14 +21723,29 @@ function renderMockVisual(v) {
 
 var PASSES = [
   { id:0, label:'🌐 全範囲',  desc:'全ソース' },
-  { id:2, label:'📚 教科書',  desc:'教科書練習問題 (254問)' },
-  { id:3, label:'📝 過去問',  desc:'Sample Midterm 等' },
+  { id:2, label:'📚 教科書',  desc:'教科書練習問題' },
+  { id:3, label:'📝 過去問',  desc:'Sample Final/Midterm' },
   { id:8, label:'🎨 Canvas',  desc:'Canvas のみ' }
 ];
 
+// Auto-assign a `source` to every question by ID (user mapping):
+//   q700–q907 = Canvas / q1–q699 = Textbook / Sample Final (q_fe*) = Past Exam.
+// Runs once; respects any pre-existing source. (Mock array keeps its own source.)
+(function assignQuestionSources(){
+  if (typeof QUESTIONS === 'undefined' || !Array.isArray(QUESTIONS)) return;
+  for (var i = 0; i < QUESTIONS.length; i++) {
+    var q = QUESTIONS[i];
+    if (!q || q.source) continue;
+    if (/^q_fe/.test(q.id || '') || /^\s*\[Sample (Final|Midterm)/i.test(q.q || '')) { q.source = 'Sample Final Exam'; continue; }
+    var m = (q.id || '').match(/^q(\d+)$/);
+    if (m && +m[1] >= 700) { q.source = 'Canvas'; continue; }
+    q.source = 'Textbook';
+  }
+})();
+
 function getQuestionSource(q) {
   if (!q) return '教科書';
-  if (q.source && /Sample Midterm|Past Exam|過去問/i.test(q.source)) return '過去問';
+  if (q.source && /Sample (Midterm|Final|Exam)|Past Exam|過去問/i.test(q.source)) return '過去問';
   if (q.source && /Canvas/i.test(q.source)) return 'Canvas';
   return q.source || '教科書';
 }
@@ -22067,6 +22082,8 @@ function showAiMilestone() {
           'title="' + p.desc.replace(/"/g,'&quot;') + '">' + p.label + '</button>';
       }).join('');
       ph += '</div>';
+      var poolN = (typeof getFilteredQuestions === 'function') ? getFilteredQuestions().length : 0;
+      ph += '<div style="font-size:12px;color:#94a3b8;margin-top:8px;">対象問題数: <b style="color:#fde68a;">' + poolN + '問</b></div>';
       passBar.innerHTML = ph;
       // insert near top
       var firstChild = quizHomeDiv.firstChild;
