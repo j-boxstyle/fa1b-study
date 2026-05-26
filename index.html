@@ -9537,7 +9537,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe9', conceptId: 'c11_bonds_basics', ch: 11, type: 'C',
-    q: '[Sample Final Q9] 10-year, 12%, €1,000,000 bonds at 105 (Premium発行). Total cost of borrowing:',
+    q: '[Sample Final Q9] A company issues 10-year, 12%, €1,000,000 bonds at 105 (issued at a premium). The total cost of borrowing is:',
     opts: ['A) €120,000','B) €1,200,000','C) €1,150,000','D) €1,250,000'],
     ans: 2,
     exp: 'Cash received = €1,000,000 × 105% = €1,050,000. Interest payments over 10 years = €1,000,000 × 12% × 10 = €1,200,000. Total cash paid = €1,200,000 (interest) + €1,000,000 (principal) = €2,200,000. Total cost = Cash paid − Cash received = €2,200,000 − €1,050,000 = €1,150,000. または: €1,200,000 (interest) − €50,000 (premium amort) = €1,150,000.',
@@ -9633,15 +9633,15 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe21', conceptId: 'c9_disposal', ch: 9, type: 'B',
-    q: '[Sample Final Q21] May 1, 2017: Sells furniture for €80,000. Original cost €200,000 (1/1/2010). SL depreciation, 10年, residual €20,000. Gain?',
-    opts: ['A) €6,000 — current year YTD depreciation (4 months) mistakenly used as Gain','B) €12,000 — Sale Price €80,000 − NBV €68,000 (after 7.33 years SL Dep)','C) €20,000 — Sale Price minus Residual Value (ignored Accumulated Depreciation)','D) €25,000 — used 8 full years of depreciation (ignored partial year)'],
+    q: '[Sample Final Q21] On May 1, 2017, a company sells furniture for €80,000. The furniture originally cost €200,000 (purchased Jan 1, 2010) and is depreciated straight-line over 10 years with a €20,000 residual value. What gain is recognized on the sale?',
+    opts: ['A) €6,000', 'B) €12,000', 'C) €20,000', 'D) €25,000'],
     ans: 1,
     exp: '**Annual Dep** = (€200,000 − €20,000)/10 = €18,000。**期間** = Jan 1 2010 → May 1 2017 = **7年4ヶ月**。**Accum Dep** = 7×€18,000 + €18,000×4/12 = €126,000 + €6,000 = **€132,000**。**NBV** = €200,000 − €132,000 = €68,000。**Gain** = €80,000 − €68,000 = **€12,000**。',
     we: { 0: '€6,000 = 2017年1〜4月の部分年償却額 (€18,000×4/12)。これは Accum Dep の一部であり、Gain ではない。', 2: '€20,000 = €80,000 − €20,000 (Residual を NBV と混同)。NBV は Cost − Accum Dep であり、Residual ではない。', 3: '€25,000 = 計算誤り (例: 8年フル償却 €144k → NBV €56k → Gain €24k近似)。実際は 7年4ヶ月分のみで Accum Dep €132k。' }
   },
   {
     id: 'q_fe22', conceptId: 'c9_depreciation_methods', ch: 9, type: 'C',
-    q: '[Sample Final Q22] Machinery list £160k, 10% discount, +£1k shipping, +£7.5k sales tax, 10年, residual £50k. SL annual depreciation:',
+    q: '[Sample Final Q22] Machinery has a list price of £160,000 with a 10% discount, plus £1,000 shipping and £7,500 sales tax. Useful life is 10 years with a £50,000 residual value. Using straight-line depreciation, the annual depreciation is:',
     opts: ['A) £10,180','B) £15,250','C) £10,250','D) £9,400'],
     ans: 2,
     exp: '原価 = £160,000 × 90% + £1,000 + £7,500 = £144,000 + £8,500 = £152,500。年間減価償却 = (£152,500 − £50,000)/10 = £10,250。',
@@ -9689,7 +9689,7 @@ var QUESTIONS = [
   },
   {
     id: 'q_fe28', conceptId: 'c9_revaluation', ch: 9, type: 'D',
-    q: '[Sample Final Q28] Dec 1 2017: Fair value €200k, computer bought Dec 1 2015 €600k, SL 10年 residual €25k, Accum Dep €115,000. Revaluation entry includes:',
+    q: '[Sample Final Q28] On Dec 1, 2017, the fair value of a computer system is €200,000. It was bought on Dec 1, 2015 for €600,000, depreciated straight-line over 10 years with a €25,000 residual value; accumulated depreciation is €115,000. The journal entry to record the revaluation includes:',
     opts: ['A) Debit Loss on Disposal €260,000','B) Debit Loss on Disposal €285,000','C) Credit to Equipment €285,000','D) Debit Impairment Loss €285,000'],
     ans: 3,
     exp: 'NBV = €600,000 − €115,000 = €485,000。Fair Value €200,000 < NBV → Impairment Loss = €485,000 − €200,000 = €285,000。Loss on Disposal は売却/廃棄時、Impairment Lossは保有中の評価減。仕訳: Dr Accum Dep €115k, **Dr Impairment Loss €285k** / Cr Equipment €400k.',
@@ -9717,64 +9717,64 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q700', conceptId: 'c7_cash_def', ch: 7, type: 'A',
-    q: '"Cash equivalents" として分類できる項目は次のうちどれか？',
-    opts: ['A) 6ヶ月満期の財務省証券 (T-Bill)', 'B) 取得時点で満期まで90日以内の短期投資', 'C) 上場株式 (流動性は高い)', 'D) 1年満期の譲渡性預金 (CD)', 'E) 顧客から受け取った90日先付小切手', 'F) わからない'],
+    q: 'Which of the following can be classified as a \'cash equivalent\'?',
+    opts: ['A) A 6-month Treasury bill (T-Bill)', 'B) A short-term investment maturing within 90 days of acquisition', 'C) Listed shares (highly liquid)', 'D) A 1-year certificate of deposit (CD)', 'E) A 90-day postdated check received from a customer', 'F) Not sure'],
     ans: 1,
     exp: 'IFRS / IAS 7 では Cash equivalents = 取得時に満期まで3ヶ月以内 (≤90 days) かつ価額変動リスクが小さい短期投資。これにより「ほぼ現金」と扱える。',
     we: { 0: '6ヶ月満期は3ヶ月の基準を超えるため Short-term investments に分類。', 2: '株式は価額変動リスクが大きく cash equivalent ではない (たとえ流動性が高くても)。', 3: '1年満期 CD は 3ヶ月基準を超え、Cash equivalent ではない。', 4: '先付小切手 (post-dated check) は現在現金化できないため Receivable 扱い。', 5: '「わからない」を選択。判定基準は「取得時点で満期まで90日以内」と覚えること。' }
   },
   {
     id: 'q701', conceptId: 'c7_petty_cash', ch: 7, type: 'E',
-    q: 'M&H社は1月1日に€3,000のpetty cash fundを設立した。設立時の正しい仕訳は？',
-    opts: ['A) Dr Cash 3,000 / Cr Petty Cash 3,000', 'B) Dr Petty Cash 3,000 / Cr Cash 3,000', 'C) Dr Petty Cash 3,000 / Cr Cash Over and Short 3,000', 'D) Dr Cash 3,000 / Cr Petty Cash Expense 3,000', 'E) 仕訳不要 (現金の場所が変わるだけ)', 'F) わからない'],
+    q: 'On January 1, M&H Co. established a €3,000 petty cash fund. What is the correct entry to establish the fund?',
+    opts: ['A) Dr Cash 3,000 / Cr Petty Cash 3,000', 'B) Dr Petty Cash 3,000 / Cr Cash 3,000', 'C) Dr Petty Cash 3,000 / Cr Cash Over and Short 3,000', 'D) Dr Cash 3,000 / Cr Petty Cash Expense 3,000', 'E) No entry required (only the location of the cash changes)', 'F) Not sure'],
     ans: 1,
     exp: 'Petty Cash 設立: Cash (銀行口座) から Petty Cash (現金箱) へ現金を移すので、Dr Petty Cash 3,000 / Cr Cash 3,000。両方とも資産勘定だが、Petty Cashという独立勘定を作る。',
     we: { 0: '借方/貸方が逆。Petty Cashを作るのが目的なのでPetty Cashが借方。', 2: 'Cash Over and Shortは差額があった時の処理。設立時は使わない。', 3: '"Petty Cash Expense"という勘定は存在しない。', 4: '別の勘定 (Petty Cash) を新たに作るので仕訳は必要。', 5: '「わからない」を選択。Petty Cash設立は単純な資産間振替と覚える。' }
   },
   {
     id: 'q702', conceptId: 'c7_petty_cash_replenish', ch: 7, type: 'E',
-    q: '€3,000のpetty cashから€2,000 freight-out、€500 marketing、€250 miscellaneous が支出され、残り€250。replenishmentの仕訳は？',
-    opts: ['A) Dr各費用合計2,750 / Cr Petty Cash 2,750', 'B) Dr各費用合計2,750 / Cr Cash 2,750', 'C) Dr Petty Cash 2,750 / Cr Cash 2,750', 'D) Dr Cash 2,750 / Cr各費用合計2,750', 'E) Dr各費用合計3,000 / Cr Cash 3,000', 'F) わからない'],
+    q: 'From a €3,000 petty cash fund, €2,000 of freight-out, €500 of marketing, and €250 of miscellaneous expenses were paid, leaving €250 on hand. What is the replenishment entry?',
+    opts: ['A) Dr each expense (total 2,750) / Cr Petty Cash 2,750', 'B) Dr each expense (total 2,750) / Cr Cash 2,750', 'C) Dr Petty Cash 2,750 / Cr Cash 2,750', 'D) Dr Cash 2,750 / Cr each expense (total 2,750)', 'E) Dr each expense (total 3,000) / Cr Cash 3,000', 'F) Not sure'],
     ans: 1,
     exp: 'Replenishmentでは(1)発生した費用を借方に計上、(2)Cash (銀行口座) を貸方で減らす。Petty Cash残高は€3,000のままなので Petty Cash 勘定は触らない。仕訳: Dr Freight-out 2,000 / Dr Marketing Expense 500 / Dr Miscellaneous Expense 250 / Cr Cash 2,750。',
     we: { 0: 'Petty Cash残高は補充後も€3,000のまま。Petty Cashを貸方にすると残高が減ってしまう。', 2: '逆。費用を借方、現金 (銀行) を貸方にしないと費用が認識されない。', 3: '完全に逆。費用は借方、Cashは貸方が正しい。', 4: '€3,000は補充前の残高で、実際使った費用は€2,750のみ。', 5: '「わからない」を選択。Replenishment = 費用認識 + Cash減少と覚える。' }
   },
   {
     id: 'q703', conceptId: 'c7_cash_over_short', ch: 7, type: 'A',
-    q: '"Cash Over and Short" 勘定について正しい記述は？',
-    opts: ['A) 貸借対照表の現金項目', 'B) 損益計算書勘定で、借方残高は不足、貸方残高は過剰', 'C) 損益計算書勘定で、借方残高は過剰、貸方残高は不足', 'D) 株主資本のContra勘定', 'E) 累積差額を貸借対照表に表示', 'F) わからない'],
+    q: 'Which statement about the \'Cash Over and Short\' account is correct?',
+    opts: ['A) It is a cash item on the balance sheet', 'B) It is an income statement account; a debit balance = shortage, a credit balance = overage', 'C) It is an income statement account; a debit balance = overage, a credit balance = shortage', 'D) It is a contra-equity account', 'E) Its cumulative balance is presented on the balance sheet', 'F) Not sure'],
     ans: 1,
     exp: 'Cash Over and Short = 損益計算書勘定 (income statement account)。費用 (損失) または収益 (利得) のような性質を持つ。借方残高 (Dr balance) = 現金不足 (shortage、費用扱い)、貸方残高 (Cr balance) = 現金過剰 (overage、収益扱い)。',
     we: { 0: '貸借対照表でなく損益計算書勘定。', 2: '借方/貸方の意味が逆。費用 (損失) は借方が正常残高なので、Drが不足。', 3: 'Contra勘定ではなく独立した損益勘定。', 4: '損益勘定なので累積ではなく期間ごとの認識。', 5: '「わからない」を選択。Dr = 不足 (Shortage)、Cr = 過剰 (Over) と覚える。' }
   },
   {
     id: 'q704', conceptId: 'c7_cash_over_short', ch: 7, type: 'E',
-    q: 'レジ売上は記録上€500あったが、実際に集計したら€485しかなかった。仕訳は？',
-    opts: ['A) Dr Cash 485 / Dr Cash Over and Short 15 / Cr Sales Revenue 500', 'B) Dr Cash 500 / Cr Sales Revenue 500', 'C) Dr Cash 485 / Cr Sales Revenue 485', 'D) Dr Cash 500 / Cr Cash Over and Short 15 / Cr Sales Revenue 485', 'E) Dr Cash 485 / Cr Sales Revenue 485 / Cr Cash Over and Short 15', 'F) わからない'],
+    q: 'Register sales were recorded at €500, but the actual cash count was only €485. What is the journal entry?',
+    opts: ['A) Dr Cash 485 / Dr Cash Over and Short 15 / Cr Sales Revenue 500', 'B) Dr Cash 500 / Cr Sales Revenue 500', 'C) Dr Cash 485 / Cr Sales Revenue 485', 'D) Dr Cash 500 / Cr Cash Over and Short 15 / Cr Sales Revenue 485', 'E) Dr Cash 485 / Cr Sales Revenue 485 / Cr Cash Over and Short 15', 'F) Not sure'],
     ans: 0,
     exp: '記録上€500の売上だが実際の現金は€485しか入金されなかった → €15不足 (Shortage)。Cashは実際入った金額€485で借方、不足分€15は Cash Over and Short の借方 (損失)、売上は記録通り€500を貸方。',
     we: { 1: '実際の現金は€485しかないのに€500計上すると現金が水増しになる。', 2: '売上は€500発生しているのに€485しか計上していない (売上過少計上)。', 3: 'Over and Shortが貸方=過剰になっているが、これは不足のケース。', 4: '不足の場合 Cash Over and Short は借方が正解。', 5: '「わからない」を選択。不足 → Dr Cash Over and Short, 過剰 → Cr Cash Over and Short。' }
   },
   {
     id: 'q705', conceptId: 'c7_cash_classification', ch: 7, type: 'A',
-    q: '次のうち貸借対照表で「Cash and cash equivalents」として表示されるのはどれか？',
-    opts: ['A) 90日以内満期のMoney Market Fund (短期高流動性投資)', 'B) 6ヶ月物定期預金 (Certificate of Deposit、満期1/2年)', 'C) 顧客振出の小切手 (90日後決済日付の postdated check)', 'D) 売掛金回収用の銀行小切手 (cashier check、即時換金可)', 'E) (A) Money Market Fund と (D) 銀行小切手 の両方が該当する', 'F) わからない'],
+    q: 'Which of the following is reported as \'Cash and cash equivalents\' on the balance sheet?',
+    opts: ['A) A money market fund maturing within 90 days (short-term, highly liquid)', 'B) A 6-month certificate of deposit (CD, half-year maturity)', 'C) A customer\'s postdated check (dated for settlement 90 days later)', 'D) A cashier\'s check received in collection of receivables (immediately convertible)', 'E) Both (A) the money market fund and (D) the cashier\'s check', 'F) Not sure'],
     ans: 4,
     exp: '**Cash equivalents** = 取得時に満期3ヶ月以内 (≤90日) かつ価額変動リスク低い投資。(A) 90日以内のMoney Market Fundは該当。(D) 受領した銀行小切手 (cashier check) は即時に銀行で現金化できるためCash そのもの。**両方該当**するためE。',
     we: { 0: '(A) Money Market Fund は正解だが、(D) 銀行小切手も該当するので **両方** が完全な答え。', 1: '6ヶ月物定期預金は **3ヶ月の基準を超える** ため Short-term Investments に分類。', 2: '先付小切手 (postdated check) は今すぐ現金化できないため **Accounts Receivable** として扱う。', 3: '(D) 銀行小切手 は正解だが、(A) Money Market Fund も該当するので **両方** が完全な答え。', 5: '「わからない」を選択。Cash equivalent 判定は「取得時に≤90日」かつ「価額変動リスク低」が鍵。' }
   },
   {
     id: 'q706', conceptId: 'c7_internal_control', ch: 7, type: 'A',
-    q: '内部統制 (internal control) の基本原則として「職務分掌 (segregation of duties)」が要求する分離は？',
-    opts: ['A) 資産の保管者 (custody) と取引の記録担当者 (recordkeeping) を分離する', 'B) 売上担当部署と仕入担当部署を機能別に分離して相互牽制させる', 'C) 会計担当者と監査役・内部監査人を分離して独立性を確保する', 'D) (A) 保管者と記録者の分離 と (C) 会計と監査の分離 が両方とも該当する', 'E) 組織内のすべての従業員を完全に異なる職務に分離して兼務をなくす', 'F) わからない'],
+    q: 'Under internal control, what separation does \'segregation of duties\' require?',
+    opts: ['A) Separate the custody of assets from the recordkeeping of transactions', 'B) Separate the sales department from the purchasing department by function for mutual checks', 'C) Separate the accountant from the auditor/internal auditor to ensure independence', 'D) Both (A) custody vs. recordkeeping and (C) accounting vs. auditing apply', 'E) Separate every employee into completely different duties with no overlap', 'F) Not sure'],
     ans: 3,
     exp: '**Segregation of duties** は不正と誤りを防ぐため: (1) 資産の保管 (custody) と記録 (recordkeeping) を分離、(2) 取引の承認・実行・記録・保管を別人にする。(C) の会計と監査の分離も独立性確保のため重要な分離原則。',
     we: { 0: '(A) 保管者と記録者の分離は正解だが、(C) 会計と監査の分離も基本原則なので **両方** が完全な答え。', 1: '売上と仕入の機能別分離は組織設計の一部にすぎず、内部統制の SoD 原則の核心ではない。', 2: '(C) 会計と監査の分離は正解だが、(A) 保管と記録の分離も同様に重要。**両方** が完全。', 4: '全従業員の完全分離は **非現実的・非効率**。重要な不正リスクのある職務のみ分離する。', 5: '「わからない」を選択。SoD = 「保管 vs 記録」「承認 vs 実行」「会計 vs 監査」が基本軸。' }
   },
   {
     id: 'q707', conceptId: 'c7_bank_recon', ch: 7, type: 'A',
-    q: '銀行勘定調整 (bank reconciliation) で「銀行残高」に加算する項目は次のうちどれか？',
-    opts: ['A) 預金未達 (Deposits in transit)', 'B) 未取付小切手 (Outstanding checks)', 'C) NSF (不渡) 小切手', 'D) 銀行手数料', 'E) 銀行が代理回収した手形利息', 'F) わからない'],
+    q: 'In a bank reconciliation, which item is ADDED to the bank balance?',
+    opts: ['A) Deposits in transit', 'B) Outstanding checks', 'C) An NSF (non-sufficient funds) check', 'D) A bank service charge', 'E) A note\'s interest collected by the bank on the company\'s behalf', 'F) Not sure'],
     ans: 0,
     exp: 'Deposits in transit = 会社が入金したが銀行未記録 → 銀行残高に加算。Outstanding checks = 会社振出だが銀行未決済 → 銀行残高から減算。NSF/手数料/利息は会社側残高で調整。',
     we: { 1: '未取付小切手は銀行残高から「減算」する (まだ引き落とされていないので)。', 2: 'NSFは会社側残高で減算 (帳簿で売掛金を増やしCashを減らす)。', 3: '銀行手数料は会社側残高で減算 (Cash Expenseで処理)。', 4: '代理回収利息は会社側残高で加算 (まだ会社帳簿に記録していない)。', 5: '「わからない」を選択。銀行側調整は「未達入金 (+)」「未取付小切手 (−)」のみ。' }
@@ -9785,32 +9785,32 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q710', conceptId: 'c8_ar_recording', ch: 8, type: 'E',
-    q: 'Foreigncandy.nlは8月15日に€300の商品を信用販売 (terms 2/12, n/40)。8月15日の仕訳は？',
-    opts: ['A) Dr Cash 294 / Dr Sales Discount 6 / Cr Sales Revenue 300', 'B) Dr Accounts Receivable 300 / Cr Sales Revenue 300', 'C) Dr Accounts Receivable 294 / Cr Sales Revenue 294', 'D) Dr Sales Revenue 300 / Cr Accounts Receivable 300', 'E) Dr Cash 300 / Cr Accounts Receivable 300', 'F) わからない'],
+    q: 'On August 15, Foreigncandy.nl sells €300 of goods on credit (terms 2/12, n/40). What is the August 15 journal entry?',
+    opts: ['A) Dr Cash 294 / Dr Sales Discount 6 / Cr Sales Revenue 300', 'B) Dr Accounts Receivable 300 / Cr Sales Revenue 300', 'C) Dr Accounts Receivable 294 / Cr Sales Revenue 294', 'D) Dr Sales Revenue 300 / Cr Accounts Receivable 300', 'E) Dr Cash 300 / Cr Accounts Receivable 300', 'F) Not sure'],
     ans: 1,
     exp: '信用販売 (sale on account) では、収益認識時点で AR 借方/売上貸方を gross 額€300 で計上。割引は支払期間内に実際に支払われた時に認識する (もしくはNet method で別処理)。',
     we: { 0: 'Cashは受け取っていない (信用販売)。割引も支払時点まで認識しない。', 2: '€300のSales額全額を計上する。割引は実現するか不明な時点では計上しない。', 3: '借方/貸方が完全に逆。売上は貸方が増加。', 4: 'Cashで受領していない。信用販売はAR借方。', 5: '「わからない」を選択。信用販売 = Dr AR / Cr Sales を gross 額で。' }
   },
   {
     id: 'q711', conceptId: 'c8_ar_returns', ch: 8, type: 'E',
-    q: '8月15日に€300の売上 (信用)、8月18日に€50分が返品された。8月18日の仕訳は？',
-    opts: ['A) Dr Sales Revenue 50 / Cr Accounts Receivable 50', 'B) Dr Sales Returns and Allowances 50 / Cr Accounts Receivable 50', 'C) Dr Sales Returns and Allowances 50 / Cr Cash 50', 'D) Dr Accounts Receivable 50 / Cr Sales Returns and Allowances 50', 'E) Dr Cash 50 / Cr Sales Returns and Allowances 50', 'F) わからない'],
+    q: 'After an August 15 credit sale of €300, €50 of goods are returned on August 18. What is the August 18 journal entry?',
+    opts: ['A) Dr Sales Revenue 50 / Cr Accounts Receivable 50', 'B) Dr Sales Returns and Allowances 50 / Cr Accounts Receivable 50', 'C) Dr Sales Returns and Allowances 50 / Cr Cash 50', 'D) Dr Accounts Receivable 50 / Cr Sales Returns and Allowances 50', 'E) Dr Cash 50 / Cr Sales Returns and Allowances 50', 'F) Not sure'],
     ans: 1,
     exp: '返品処理ではSales Revenueを直接減らすのではなく、Contra-revenue勘定「Sales Returns and Allowances」(借方が正常残高) を使う。AR は credit note の発行により減少 (貸方)。',
     we: { 0: 'Sales Revenueを直接減らすのは情報を失う。Contra-revenueで別管理。', 2: '信用販売なのでCashは出ていない。減らすのはAR。', 3: '借方/貸方が逆。Sales R&A は借方が正常。', 4: 'Cashは受け取っていないし返金もしていない。減らすのはAR。', 5: '「わからない」を選択。返品 = Dr Sales Returns / Cr AR (or Cash)。' }
   },
   {
     id: 'q712', conceptId: 'c8_bad_debt_methods', ch: 8, type: 'A',
-    q: 'Direct write-off methodの欠点として正しいものは？',
-    opts: ['A) Matching principle に反する', 'B) ARが net realizable value で表示されない', 'C) IFRS下では一般的に容認されない (重要性低い場合除く)', 'D) すべて正しい (A, B, C)', 'E) 計算が複雑', 'F) わからない'],
+    q: 'Which of the following is a disadvantage of the direct write-off method?',
+    opts: ['A) It violates the matching principle', 'B) Accounts receivable is not stated at net realizable value', 'C) It is generally not allowed under IFRS (except when amounts are immaterial)', 'D) All of the above (A, B, C)', 'E) It is complicated to compute', 'F) Not sure'],
     ans: 3,
     exp: 'Direct write-off は (1) bad debt expense を売上計上時でなく回収不能確定時に認識するため Matching原則違反、(2) AR を gross 額で表示するため net realizable value にならない、(3) IFRSでは一般に認められず例外的扱い、(4) むしろ計算は単純で容認できない理由は計算でなく会計理論上の欠点。',
     we: { 0: 'A だけでは部分的。BとCも該当するので「すべて正しい」が完全。', 1: 'B だけでは部分的。', 2: 'C だけでは部分的。', 4: '計算は単純なので欠点ではない。欠点は会計理論上のもの。', 5: '「わからない」を選択。Direct write-off = matching違反 + NRV違反 + 容認されない の3点セット。' }
   },
   {
     id: 'q713', conceptId: 'c8_allowance_method', ch: 8, type: 'E',
-    q: '期末に bad debt 見積額€2を allowance method で計上する仕訳は？',
-    opts: ['A) Dr Bad Debt Expense 2 / Cr Accounts Receivable 2', 'B) Dr Bad Debt Expense 2 / Cr Allowance for Doubtful Accounts 2', 'C) Dr Allowance for Doubtful Accounts 2 / Cr Accounts Receivable 2', 'D) Dr Accounts Receivable 2 / Cr Allowance for Doubtful Accounts 2', 'E) Dr Sales Revenue 2 / Cr Bad Debt Expense 2', 'F) わからない'],
+    q: 'Under the allowance method, what is the entry to record an estimated bad debt of €2 at year-end?',
+    opts: ['A) Dr Bad Debt Expense 2 / Cr Accounts Receivable 2', 'B) Dr Bad Debt Expense 2 / Cr Allowance for Doubtful Accounts 2', 'C) Dr Allowance for Doubtful Accounts 2 / Cr Accounts Receivable 2', 'D) Dr Accounts Receivable 2 / Cr Allowance for Doubtful Accounts 2', 'E) Dr Sales Revenue 2 / Cr Bad Debt Expense 2', 'F) Not sure'],
     ans: 1,
     exp: 'Allowance method の period-end adjusting entry: Dr Bad Debt Expense (損益: 費用認識) / Cr Allowance for Doubtful Accounts (Contra-asset: AR純額を減らす)。AR自体は触らない (どの特定顧客が支払不能か不明だから)。',
     we: { 0: '具体的なAR (どの顧客?) を減らせない段階では Allowance 勘定を使う。', 2: 'これは「実際にwrite-off時」の仕訳。期末見積時点では Allowanceを増やす。', 3: '逆。Allowanceは貸方が正常残高 (contra-asset)。', 4: '逆。Bad debt expense と Allowance の両方を増やす。', 5: '「わからない」を選択。期末見積 = Dr Bad Debt Exp / Cr Allowance for Doubtful。' }
