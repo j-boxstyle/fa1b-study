@@ -1947,6 +1947,198 @@ body { padding-top:112px; }
         <span class="wk-flow-step">④ Cash Flow<br>Statement</span>
       </div>
       <div class="wk-callout"><b>順序を覚えるコツ：</b>NI 出さないと RE 出ない → RE 出ないと BS の Equity 出ない → BS 出ないと CF の Cash 検証できない。</div>
+
+      <h3 class="wk-section-h">🎨 仕訳 → 転記 → 4財務諸表 完全ビジュアルフロー</h3>
+      <div class="wk-overview" style="margin-bottom:18px;">
+        <b style="color:#fde68a;">ABC Co. の 10月の取引</b>を例に、<b>仕訳 → T勘定 → 4 財務諸表</b>までの全工程を実際の書式で見る。<br>
+        <span style="font-size:0.85em;color:#94a3b8;">期首残高: Cash $5,000 / Equipment $2,000 / Common Stock $7,000</span>
+      </div>
+
+      <!-- ───────── 転記フロー (5ステップ) ───────── -->
+      <div class="post-flow">
+        <div class="post-box"><span class="ic">📝</span><span class="lb">① 取引</span><span class="ds">日々の取引を識別</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">📒</span><span class="lb">② 仕訳帳</span><span class="ds">Journal に Dr/Cr 記入</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">📚</span><span class="lb">③ 元帳転記</span><span class="ds">T勘定に Post</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">⚖️</span><span class="lb">④ 試算表</span><span class="ds">Dr 合計 = Cr 合計</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">📑</span><span class="lb">⑤ 4財務諸表</span><span class="ds">IS → RE → BS → CFS</span></div>
+      </div>
+
+      <!-- ───────── ② 仕訳帳 ───────── -->
+      <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">② 仕訳帳 (General Journal)</h4>
+      <div class="je-doc">
+        <div class="je-doc-title">General Journal</div>
+        <table class="je-tbl">
+          <tr><th style="width:90px;">Date</th><th>Account Title</th><th style="width:50px;">Ref</th><th style="width:110px;">Debit</th><th style="width:110px;">Credit</th></tr>
+          <tr><td class="date">Oct 5</td><td class="acct-debit">Cash</td><td class="ref">101</td><td class="amt">3,000</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Service Revenue</td><td class="ref">400</td><td class="amt"></td><td class="amt">3,000</td></tr>
+          <tr class="entry-end"><td></td><td class="desc">(To record service performed for cash)</td><td colspan="3" class="desc"></td></tr>
+          <tr><td class="date">Oct 12</td><td class="acct-debit">Rent Expense</td><td class="ref">510</td><td class="amt">500</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td class="ref">101</td><td class="amt"></td><td class="amt">500</td></tr>
+          <tr class="entry-end"><td></td><td class="desc">(To record monthly rent payment)</td><td colspan="3" class="desc"></td></tr>
+          <tr><td class="date">Oct 20</td><td class="acct-debit">Dividends</td><td class="ref">320</td><td class="amt">200</td><td class="amt"></td></tr>
+          <tr><td></td><td class="acct-credit">Cash</td><td class="ref">101</td><td class="amt"></td><td class="amt">200</td></tr>
+          <tr><td></td><td class="desc">(To record cash dividend)</td><td colspan="3" class="desc"></td></tr>
+        </table>
+      </div>
+      <div class="wk-tip" style="margin-top:6px;"><b>📌 仕訳のお作法：</b>Debit が先・左揃え、Credit が後・字下げ。説明文 (narrative) は <i>イタリック・括弧</i>。Ref 列は元帳ページ番号。</div>
+
+      <!-- ───────── ③ T勘定 (元帳転記) ───────── -->
+      <h4 style="color:#fcd34d;font-size:22px;margin:24px 0 8px;">③ T勘定 (元帳への転記)</h4>
+      <div class="tacc-row">
+        <div class="tacc">
+          <div class="tacc-title">Cash (101)</div>
+          <div class="tacc-body">
+            <div class="tacc-side dr">
+              <div class="tacc-head">Debit (+)</div>
+              <div class="tacc-entry"><span class="lbl">Beg</span><span>5,000</span></div>
+              <div class="tacc-entry"><span class="lbl">Oct 5</span><span>3,000</span></div>
+            </div>
+            <div class="tacc-mid"></div>
+            <div class="tacc-side cr">
+              <div class="tacc-head">Credit (−)</div>
+              <div class="tacc-entry"><span class="lbl">Oct 12</span><span>500</span></div>
+              <div class="tacc-entry"><span class="lbl">Oct 20</span><span>200</span></div>
+            </div>
+          </div>
+          <div class="tacc-bal"><span>Bal.</span><span>7,300 Dr</span></div>
+        </div>
+        <div class="tacc">
+          <div class="tacc-title">Service Revenue (400)</div>
+          <div class="tacc-body">
+            <div class="tacc-side dr">
+              <div class="tacc-head">Debit (−)</div>
+            </div>
+            <div class="tacc-mid"></div>
+            <div class="tacc-side cr">
+              <div class="tacc-head">Credit (+)</div>
+              <div class="tacc-entry"><span class="lbl">Oct 5</span><span>3,000</span></div>
+            </div>
+          </div>
+          <div class="tacc-bal"><span>Bal.</span><span>3,000 Cr</span></div>
+        </div>
+        <div class="tacc">
+          <div class="tacc-title">Rent Expense (510)</div>
+          <div class="tacc-body">
+            <div class="tacc-side dr">
+              <div class="tacc-head">Debit (+)</div>
+              <div class="tacc-entry"><span class="lbl">Oct 12</span><span>500</span></div>
+            </div>
+            <div class="tacc-mid"></div>
+            <div class="tacc-side cr">
+              <div class="tacc-head">Credit (−)</div>
+            </div>
+          </div>
+          <div class="tacc-bal"><span>Bal.</span><span>500 Dr</span></div>
+        </div>
+        <div class="tacc">
+          <div class="tacc-title">Dividends (320)</div>
+          <div class="tacc-body">
+            <div class="tacc-side dr">
+              <div class="tacc-head">Debit (+)</div>
+              <div class="tacc-entry"><span class="lbl">Oct 20</span><span>200</span></div>
+            </div>
+            <div class="tacc-mid"></div>
+            <div class="tacc-side cr">
+              <div class="tacc-head">Credit (−)</div>
+            </div>
+          </div>
+          <div class="tacc-bal"><span>Bal.</span><span>200 Dr</span></div>
+        </div>
+      </div>
+      <div class="wk-tip" style="margin-top:6px;"><b>📌 T勘定の読み方：</b>左 = Debit, 右 = Credit。残高は <b>多い方 − 少ない方</b>。資産 / 費用 / 配当 は通常 <span style="color:#1d4ed8;font-weight:700;">Dr 残高</span>、負債 / 資本 / 収益 は通常 <span style="color:#b91c1c;font-weight:700;">Cr 残高</span>。</div>
+
+      <!-- ───────── ④ 4 財務諸表 (連動) ───────── -->
+      <h4 style="color:#fcd34d;font-size:22px;margin:26px 0 8px;">⑤ 4 財務諸表 — 数字の連動</h4>
+
+      <!-- ① Income Statement -->
+      <div class="fs-link"><span class="fs-link-tag">① Income Statement (P/L)</span></div>
+      <div class="fs-doc">
+        <div class="fs-doc-head">
+          <div class="fs-doc-co">ABC Co.</div>
+          <div class="fs-doc-title">Income Statement</div>
+          <div class="fs-doc-period">For the Month Ended October 31, 2025</div>
+        </div>
+        <div class="fs-row section">Revenues</div>
+        <div class="fs-row indent"><span>Service Revenue</span><span class="fs-amt">$ 3,000</span></div>
+        <div class="fs-row sub"><span>Total Revenues</span><span class="fs-amt">3,000</span></div>
+        <div class="fs-row section">Expenses</div>
+        <div class="fs-row indent"><span>Rent Expense</span><span class="fs-amt">500</span></div>
+        <div class="fs-row sub"><span>Total Expenses</span><span class="fs-amt">(500)</span></div>
+        <div class="fs-row total"><span>Net Income</span><span class="fs-amt">$ 2,500</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>連動：</b>この <b>Net Income $2,500</b> が次の Retained Earnings Statement の「+ Net Income」行へ流れる。<br><span style="font-size:0.85em;">⚠ Dividends は IS に <b>含めない</b>（所有者への分配であり費用ではない）。</span></div>
+
+      <!-- ② Retained Earnings Statement -->
+      <div class="fs-link" style="margin-top:18px;"><span class="fs-link-tag">② Retained Earnings Statement</span></div>
+      <div class="fs-doc">
+        <div class="fs-doc-head">
+          <div class="fs-doc-co">ABC Co.</div>
+          <div class="fs-doc-title">Retained Earnings Statement</div>
+          <div class="fs-doc-period">For the Month Ended October 31, 2025</div>
+        </div>
+        <div class="fs-row"><span>Retained Earnings, October 1</span><span class="fs-amt">$ 0</span></div>
+        <div class="fs-row"><span>Add: Net Income <span class="note">(from IS)</span></span><span class="fs-amt">2,500</span></div>
+        <div class="fs-row sub"><span></span><span class="fs-amt">2,500</span></div>
+        <div class="fs-row"><span>Less: Dividends</span><span class="fs-amt neg">(200)</span></div>
+        <div class="fs-row total"><span>Retained Earnings, October 31</span><span class="fs-amt">$ 2,300</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>連動：</b>この <b>End RE $2,300</b> が Balance Sheet の Stockholders' Equity の「Retained Earnings」行へ。<br><span style="font-size:0.85em;">公式: <code style="color:#fcd34d;">End RE = Beg RE + NI − Dividends</code> = 0 + 2,500 − 200 = 2,300</span></div>
+
+      <!-- ③ Balance Sheet -->
+      <div class="fs-link" style="margin-top:18px;"><span class="fs-link-tag">③ Balance Sheet</span></div>
+      <div class="fs-doc">
+        <div class="fs-doc-head">
+          <div class="fs-doc-co">ABC Co.</div>
+          <div class="fs-doc-title">Balance Sheet</div>
+          <div class="fs-doc-period">October 31, 2025</div>
+        </div>
+        <div class="fs-row section">Assets</div>
+        <div class="fs-row indent"><span>Cash <span class="note">(← CFS End Cash)</span></span><span class="fs-amt">$ 7,300</span></div>
+        <div class="fs-row indent"><span>Equipment</span><span class="fs-amt">2,000</span></div>
+        <div class="fs-row total"><span>Total Assets</span><span class="fs-amt">$ 9,300</span></div>
+        <div class="fs-row section">Liabilities &amp; Stockholders' Equity</div>
+        <div class="fs-row indent" style="font-weight:700;color:#7c2d12;">Liabilities</div>
+        <div class="fs-row indent2"><span>(none)</span><span class="fs-amt">0</span></div>
+        <div class="fs-row indent" style="font-weight:700;color:#7c2d12;">Stockholders' Equity</div>
+        <div class="fs-row indent2"><span>Common Stock</span><span class="fs-amt">7,000</span></div>
+        <div class="fs-row indent2"><span>Retained Earnings <span class="note">(← RE Stmt)</span></span><span class="fs-amt">2,300</span></div>
+        <div class="fs-row sub"><span>Total Stockholders' Equity</span><span class="fs-amt">9,300</span></div>
+        <div class="fs-row total"><span>Total Liabilities &amp; Equity</span><span class="fs-amt">$ 9,300</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>検証：</b>Total Assets ($9,300) = Total L + E ($9,300) ✓ &nbsp;&nbsp; 会計方程式 <b>A = L + E</b> が成立。<br><span style="font-size:0.85em;">Cash $7,300 は CFS の Ending Cash と一致しなければならない（次で検証）。</span></div>
+
+      <!-- ④ Cash Flow Statement -->
+      <div class="fs-link" style="margin-top:18px;"><span class="fs-link-tag">④ Cash Flow Statement</span></div>
+      <div class="fs-doc">
+        <div class="fs-doc-head">
+          <div class="fs-doc-co">ABC Co.</div>
+          <div class="fs-doc-title">Statement of Cash Flows</div>
+          <div class="fs-doc-period">For the Month Ended October 31, 2025</div>
+        </div>
+        <div class="fs-row section">Cash Flows from Operating Activities</div>
+        <div class="fs-row indent"><span>Cash received from customers</span><span class="fs-amt">$ 3,000</span></div>
+        <div class="fs-row indent"><span>Cash paid for rent</span><span class="fs-amt neg">(500)</span></div>
+        <div class="fs-row sub"><span>Net cash from operating</span><span class="fs-amt">2,500</span></div>
+        <div class="fs-row section">Cash Flows from Investing Activities</div>
+        <div class="fs-row indent"><span>(none this month)</span><span class="fs-amt">0</span></div>
+        <div class="fs-row section">Cash Flows from Financing Activities</div>
+        <div class="fs-row indent"><span>Cash paid for dividends</span><span class="fs-amt neg">(200)</span></div>
+        <div class="fs-row sub"><span>Net cash from financing</span><span class="fs-amt">(200)</span></div>
+        <div class="fs-row sub" style="margin-top:8px;"><span>Net Increase in Cash</span><span class="fs-amt">2,300</span></div>
+        <div class="fs-row"><span>Cash, October 1</span><span class="fs-amt">5,000</span></div>
+        <div class="fs-row total"><span>Cash, October 31 <span class="note" style="color:#fef3c7;">→ matches BS Cash</span></span><span class="fs-amt">$ 7,300</span></div>
+      </div>
+      <div class="fs-articulation">🔗 <b>最終検証：</b>CFS の Ending Cash <b>$7,300</b> = Balance Sheet の Cash <b>$7,300</b> ✓ &nbsp; 全てが繋がった！<br><span style="font-size:0.85em;">CFS の 3 区分: <b>O</b>perating（本業）/ <b>I</b>nvesting（投資）/ <b>F</b>inancing（資金調達）= <b>"OIF"</b> と覚える。</span></div>
+
+      <div class="wk-callout" style="margin-top:18px;"><b>🎯 流れ全体の暗記フック：</b><br>
+        <span style="font-size:1.05em;">「<b>取引</b> → <b>仕訳</b> → <b>転記</b> → <b>試算表</b> → <b>IS</b>（NI）→ <b>RE Stmt</b>（End RE）→ <b>BS</b>（Equity）→ <b>CFS</b>（End Cash）」</span><br>
+        各諸表は <b>独立した書類</b> ではなく <b>数字が必ず連動</b>している。試験では「どの数字がどこから来るか」を必ず問われる。
+      </div>
+
       <h3 class="wk-section-h">🧭 借方・貸方 完全ルール</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
         <tr><th>勘定タイプ</th><th>増加</th><th>減少</th><th>通常残高</th></tr>
