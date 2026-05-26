@@ -811,6 +811,42 @@ body { padding-top:112px; }
 .overview-stat-num { font-size:28px; font-weight:800; color:#d4af37; }
 .overview-stat-label { font-size:12px; color:#64748b; }
 
+/* ── Formula box ── */
+.formula-box{
+  background:linear-gradient(135deg,#1a2940,#0f1c2e);
+  border:3px solid #f97316;border-radius:14px;
+  padding:26px 28px;margin:18px 0;
+  font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;
+  font-size:30px;line-height:1.7;
+  text-align:center;color:#fde68a;letter-spacing:0.01em;
+  box-shadow:0 4px 12px rgba(249,115,22,0.15);
+  overflow-x:auto;
+}
+.formula-box .formula-label{
+  display:block;font-size:15px;color:#fbbf24;
+  font-family:"Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  letter-spacing:0.08em;
+  margin-bottom:14px;font-weight:700;
+}
+@media (max-width: 720px){
+  .formula-box{font-size:24px;padding:20px 18px;}
+  .formula-box .formula-label{font-size:14px;}
+}
+
+/* ─── 日本式数式表記 ─── */
+.fml{display:inline-flex;align-items:center;vertical-align:middle;margin:0 4px;}
+.fml .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 6px;line-height:1;}
+.fml .frac .num{display:block;padding:0 8px 6px;border-bottom:2.5px solid #fde68a;}
+.fml .frac .den{display:block;padding:6px 8px 0;}
+.fml .sqrt{position:relative;display:inline-flex;align-items:center;padding:0 6px;margin:0 4px;}
+.fml .sqrt::before{content:"√";font-size:1.2em;margin-right:2px;color:#fde68a;}
+.fml .sqrt .radicand{border-top:2.5px solid #fde68a;padding:0 6px;}
+.fml .op{margin:0 8px;color:#fbbf24;font-weight:700;}
+.fml .eq{margin:0 12px;color:#f97316;font-weight:800;}
+.fml sub{font-size:0.65em;vertical-align:-0.25em;color:#fcd34d;}
+.fml sup{font-size:0.65em;vertical-align:0.65em;color:#fcd34d;}
+.fml .pm{color:#fbbf24;}
+
 </style>
 </head>
 <body>
@@ -869,6 +905,479 @@ body { padding-top:112px; }
   </div>
 
   <div class="panel" id="tab-calc">
+    <!-- ════════════ FA1B 全計算問題ガイド ════════════ -->
+    <div class="section-title" style="background:linear-gradient(135deg,#f97316,#dc2626);color:#fff;padding:18px 22px;border-radius:14px;font-size:26px;margin-bottom:14px;">🎯 FA1B 全計算問題 完全マスターガイド</div>
+
+    <div style="background:#1a2940;border:2px solid #f97316;border-radius:12px;padding:18px 22px;margin-bottom:24px;color:#fde68a;font-size:18px;line-height:1.8;">
+      <div style="font-size:22px;font-weight:800;color:#fbbf24;margin-bottom:10px;">📋 試験概要</div>
+      <div style="color:#cbd5e1;font-size:17px;">Sample Midterm = 25 MCQ, 各問1点（標準）。<b>Inventory計算 (Ch5)</b> と <b>仕訳 (Ch1-3)</b> が頻出。IFRS基準のため <b style="color:#fca5a5;">LIFO は禁止</b>（GAAPのみ）。</div>
+    </div>
+
+    <!-- ════════ 🟢 Midterm 基礎（Ch 1-3） ════════ -->
+
+    <!-- ① Accounting Equation -->
+    <div style="background:#0f1c2e;border:2px solid #10b981;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#10b981;margin-bottom:6px;">① Accounting Equation（会計方程式）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">accounting equation / services on account / effect</code></div>
+      <div class="formula-box">
+        <span class="formula-label">資産 = 負債 + 資本</span>
+        <span class="fml">Assets <span class="eq">=</span> Liabilities <span class="op">+</span> Equity</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q3 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "When a company performs services on account, the effect on the accounting equation is:"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) Increase assets and decrease owner's equity</span><span style="color:#10b981;font-weight:700;">(b) Increase assets and increase owner's equity ✓</span><span>(c) Decrease liabilities and increase owner's equity</span><span>(d) Increase assets and increase liabilities</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・"On account" = 売掛金（AR）発生 → <b>Assets ↑</b><br>
+        ・サービス提供で <b>Revenue ↑</b> → Equity ↑（収益は資本を増やす）<br>
+        ・<b style="color:#fde68a;font-size:22px;">Assets ↑ & Equity ↑</b>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> "On account" は <b>現金ではなく後払い</b>。負債発生ではなく、お客側に売掛金（AR = 資産）が発生。
+      </div>
+    </div>
+
+    <!-- ② Net Income -->
+    <div style="background:#0f1c2e;border:2px solid #10b981;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#10b981;margin-bottom:6px;">② Net Income（当期純利益）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">net income / revenues / expenses</code></div>
+      <div class="formula-box">
+        <span class="formula-label">純利益 = 収益 − 費用</span>
+        <span class="fml">Net Income <span class="eq">=</span> Revenues <span class="op">−</span> Expenses</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q2 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Net income results when:"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) Assets exceed liabilities</span><span>(b) Revenues equal expenses</span><span>(c) Owner's equity exceeds liabilities</span><span style="color:#10b981;font-weight:700;">(d) Revenues exceed expenses ✓</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・Revenues > Expenses → <b style="color:#fde68a;">Net Income（黒字）</b><br>
+        ・Revenues = Expenses → Break-even（収支トントン）<br>
+        ・Revenues &lt; Expenses → Net Loss（赤字）
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> Net income と Owner's equity 増加は別概念。Equity = 過去の純利益累積 + 出資 − 配当。
+      </div>
+    </div>
+
+    <!-- ③ Journal Entry -->
+    <div style="background:#0f1c2e;border:2px solid #10b981;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#10b981;margin-bottom:6px;">③ Journal Entry（仕訳）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">journal entry / debit / credit / record the transaction</code></div>
+      <div class="formula-box">
+        <span class="formula-label">借方合計 = 貸方合計</span>
+        <span class="fml">Σ Debits <span class="eq">=</span> Σ Credits</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;margin-top:14px;color:#e2e8f0;font-size:16px;">
+        <tr style="background:#1e293b;"><th style="padding:10px;border:1px solid #334155;text-align:left;">勘定タイプ</th><th style="padding:10px;border:1px solid #334155;text-align:left;">増加</th><th style="padding:10px;border:1px solid #334155;text-align:left;">減少</th></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Asset（資産）</td><td style="padding:10px;border:1px solid #334155;color:#10b981;"><b>Debit ↑</b></td><td style="padding:10px;border:1px solid #334155;color:#ef4444;">Credit ↓</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Liability（負債）</td><td style="padding:10px;border:1px solid #334155;color:#ef4444;">Credit ↑</td><td style="padding:10px;border:1px solid #334155;color:#10b981;">Debit ↓</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Equity（資本）</td><td style="padding:10px;border:1px solid #334155;color:#ef4444;">Credit ↑</td><td style="padding:10px;border:1px solid #334155;color:#10b981;">Debit ↓</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Revenue（収益）</td><td style="padding:10px;border:1px solid #334155;color:#ef4444;">Credit ↑</td><td style="padding:10px;border:1px solid #334155;color:#10b981;">Debit ↓</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Expense（費用）</td><td style="padding:10px;border:1px solid #334155;color:#10b981;"><b>Debit ↑</b></td><td style="padding:10px;border:1px solid #334155;color:#ef4444;">Credit ↓</td></tr>
+      </table>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 例題 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "On Sep 1, a company purchased equipment for €5,000 cash. Which journal entry is correct?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) Dr Cash 5,000 / Cr Equipment 5,000</span><span style="color:#10b981;font-weight:700;">(b) Dr Equipment 5,000 / Cr Cash 5,000 ✓</span><span>(c) Dr Equipment 5,000 / Cr AP 5,000</span><span>(d) Dr AP 5,000 / Cr Cash 5,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・Equipment（資産）↑ → <b>Debit</b><br>
+        ・Cash（資産）↓ → <b>Credit</b><br>
+        ・<b style="color:#fde68a;font-size:18px;">Dr Equipment 5,000 / Cr Cash 5,000</b>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> "On account" なら Cr は AP（買掛金）。"Cash" なら Cr は Cash。読み分け必須。
+      </div>
+    </div>
+
+    <!-- ④ T-Account Balance -->
+    <div style="background:#0f1c2e;border:2px solid #10b981;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#10b981;margin-bottom:6px;">④ T-Account 残高計算</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">balance after posting / T-account / posting</code></div>
+      <div class="formula-box">
+        <span class="formula-label">残高 = 借方合計 − 貸方合計（または逆）</span>
+        <span class="fml">Balance <span class="eq">=</span> <span class="frac"><span class="num">Σ Debits</span><span class="den">Σ Credits</span></span> の差額</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q5 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Accounts Payable had an opening credit balance of €19,000. During the month, the company paid €2,000 of this AP in cash. What is the balance after posting?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) €21,000 credit</span><span style="color:#10b981;font-weight:700;">(b) €17,000 credit ✓</span><span>(c) €17,000 debit</span><span>(d) €2,000 credit</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・AP（負債）は通常 <b>Credit balance</b><br>
+        ・支払 = AP 減少 → <b>Debit</b> 側に €2,000<br>
+        ・残高 = €19,000 (Cr) − €2,000 (Dr) = <b style="color:#fde68a;font-size:22px;">€17,000 Credit</b>
+      </div>
+    </div>
+
+    <!-- ⑤ Adjusting Entry -->
+    <div style="background:#0f1c2e;border:2px solid #10b981;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#10b981;margin-bottom:6px;">⑤ Adjusting Entry（修正仕訳）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">accrual / deferral / unearned revenue / prepaid expense</code></div>
+      <table style="width:100%;border-collapse:collapse;color:#e2e8f0;font-size:16px;">
+        <tr style="background:#1e293b;"><th style="padding:10px;border:1px solid #334155;text-align:left;">タイプ</th><th style="padding:10px;border:1px solid #334155;text-align:left;">説明</th><th style="padding:10px;border:1px solid #334155;text-align:left;">仕訳</th></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Accrued Revenue</td><td style="padding:10px;border:1px solid #334155;">サービス済みだが未請求</td><td style="padding:10px;border:1px solid #334155;color:#fde68a;">Dr AR / Cr Revenue</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Accrued Expense</td><td style="padding:10px;border:1px solid #334155;">発生済みだが未払</td><td style="padding:10px;border:1px solid #334155;color:#fde68a;">Dr Expense / Cr Payable</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Unearned Revenue</td><td style="padding:10px;border:1px solid #334155;">前受 → 提供済みに変換</td><td style="padding:10px;border:1px solid #334155;color:#fde68a;">Dr Unearned Rev / Cr Revenue</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;">Prepaid Expense</td><td style="padding:10px;border:1px solid #334155;">前払 → 費消分を費用化</td><td style="padding:10px;border:1px solid #334155;color:#fde68a;">Dr Expense / Cr Prepaid</td></tr>
+      </table>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 例題 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "A company received €12,000 on Jan 1 for a 12-month subscription. By Dec 31, all services were delivered. What adjusting entry is needed?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) Dr Cash / Cr Revenue</span><span style="color:#10b981;font-weight:700;">(b) Dr Unearned Revenue 12,000 / Cr Service Revenue 12,000 ✓</span><span>(c) Dr Revenue / Cr Cash</span><span>(d) No entry</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ 🟣 Inventory & Merchandising（Ch 4-5） ════════ -->
+
+    <!-- ⑥ Net Sales / Net Purchases -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑥ Net Sales / Net Purchases</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">net sales / sales returns / sales allowances / sales discounts</code></div>
+      <div class="formula-box">
+        <span class="formula-label">純売上 = 総売上 − 返品 − 値引 − 割引</span>
+        <span class="fml">Net Sales <span class="eq">=</span> Gross Sales <span class="op">−</span> Returns <span class="op">−</span> Allowances <span class="op">−</span> Discounts</span>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> Net Purchases も同様: <b>Net Purchases = Purchases + Freight-in − Returns − Allowances − Discounts</b>。<b style="color:#fca5a5;">Freight-in は加算</b>（送料は仕入原価に含む）。
+      </div>
+    </div>
+
+    <!-- ⑦ Cash Discount -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑦ Cash Discount（現金割引）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">2/10, n/30 / 5/10, n/60 / discount period / net cost</code></div>
+      <div class="formula-box">
+        <span class="formula-label">純額 = 請求額 × (1 − 割引率)</span>
+        <span class="fml">Net Cost <span class="eq">=</span> Invoice <span class="op">×</span> (1 <span class="op">−</span> rate)</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q4 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Goods are purchased for €25,000 with credit terms 5/10, n/60. What is the net cost if the company pays within the discount period?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) €25,000</span><span style="color:#10b981;font-weight:700;">(b) €23,750 ✓</span><span>(c) €22,500</span><span>(d) €20,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・"5/10, n/60" = <b>10日以内なら 5%割引、なければ60日以内全額</b><br>
+        ・割引額 = €25,000 × 5% = €1,250<br>
+        ・<span class="fml">Net Cost <span class="eq">=</span> 25,000 <span class="op">×</span> 0.95 <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">€23,750</b></span>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> 割引は <b>商品代金のみ</b>。Freight-in（送料）には<b style="color:#fca5a5;">割引かからない</b>。
+      </div>
+    </div>
+
+    <!-- ⑧ COGS -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑧ COGS（売上原価）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">cost of goods sold / schedule of COGS / beginning inventory / ending inventory</code></div>
+      <div class="formula-box">
+        <span class="formula-label">売上原価 = 期首在庫 + 純仕入 − 期末在庫</span>
+        <span class="fml">COGS <span class="eq">=</span> BI <span class="op">+</span> Net Purchases <span class="op">−</span> EI</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 例題 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Beginning Inventory = $50,000, Net Purchases = $200,000, Ending Inventory = $40,000. What is the Cost of Goods Sold?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) $190,000</span><span>(b) $200,000</span><span style="color:#10b981;font-weight:700;">(c) $210,000 ✓</span><span>(d) $250,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・<span class="fml">COGS <span class="eq">=</span> 50,000 <span class="op">+</span> 200,000 <span class="op">−</span> 40,000 <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">$210,000</b></span><br>
+        ・在庫が増えれば COGS は減る（売り切ってない＝原価未計上）
+      </div>
+    </div>
+
+    <!-- ⑨ Gross Profit Reverse -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑨ Gross Profit 逆算</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">gross profit rate / gross margin / net sales</code></div>
+      <div class="formula-box">
+        <span class="formula-label">粗利率 = 粗利 ÷ 純売上</span>
+        <span class="fml">GP Rate <span class="eq">=</span> <span class="frac"><span class="num">Gross Profit</span><span class="den">Net Sales</span></span></span>
+        &nbsp;&nbsp;⇔&nbsp;&nbsp;
+        <span class="fml">COGS <span class="eq">=</span> Net Sales <span class="op">×</span> (1 <span class="op">−</span> GP Rate)</span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q10 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Net Sales = $200,000, Gross Profit Rate = 35%. What is the Cost of Goods Sold?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) $70,000</span><span style="color:#10b981;font-weight:700;">(b) $130,000 ✓</span><span>(c) $165,000</span><span>(d) $200,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・GP = $200,000 × 35% = $70,000<br>
+        ・<span class="fml">COGS <span class="eq">=</span> 200,000 <span class="op">×</span> (1 <span class="op">−</span> 0.35) <span class="eq">=</span> 200,000 <span class="op">×</span> 0.65 <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">$130,000</b></span>
+      </div>
+    </div>
+
+    <!-- ⑩ Weighted Average -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑩ Weighted Average Cost（加重平均）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">weighted average / average cost / IFRS</code></div>
+      <div class="formula-box">
+        <span class="formula-label">単価平均 = 総原価 ÷ 総数量</span>
+        <span class="fml">Avg Cost <span class="eq">=</span> <span class="frac"><span class="num">Total Cost</span><span class="den">Total Units</span></span></span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q7 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Beginning inventory: 100 units @ $10. Purchases: 200 units @ $13. 150 units sold. Under Weighted Average, what is the cost of ending inventory (150 units)?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) $1,500</span><span>(b) $1,800</span><span style="color:#10b981;font-weight:700;">(c) $1,800 ✓</span><span>(d) $1,950</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・Total Cost = 100×10 + 200×13 = 1,000 + 2,600 = $3,600<br>
+        ・Total Units = 100 + 200 = 300<br>
+        ・Avg Cost = $3,600 ÷ 300 = <b>$12/unit</b><br>
+        ・EI = 150 × $12 = <b style="color:#fde68a;font-size:22px;">$1,800</b>
+      </div>
+    </div>
+
+    <!-- ⑪ FIFO -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑪ FIFO（先入先出法）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">first-in first-out / FIFO / oldest cost sold first</code></div>
+      <div class="formula-box" style="font-size:22px;">
+        <span class="formula-label">期末在庫 = 直近購入の単価で構成</span>
+        EI<sub>FIFO</sub> = 最新の購入単価 × 期末数量
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 例: 上記Q7と同じ条件で FIFO の場合</b><br>
+        ・150 sold → 古い 100単位 @ $10 + 50単位 @ $13 を払出<br>
+        ・EI = 残 150 単位 @ $13 = <b style="color:#fde68a;">$1,950</b><br>
+        ・<b>物価上昇期は EI が高く COGS が低い → 利益高め</b>
+      </div>
+    </div>
+
+    <!-- ⑫ LIFO -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑫ LIFO（後入先出法）<span style="font-size:13px;background:#dc2626;color:#fff;padding:3px 8px;border-radius:4px;margin-left:8px;">IFRS 禁止</span></div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">last-in first-out / LIFO / newest cost sold first / GAAP only</code></div>
+      <div class="formula-box" style="font-size:22px;">
+        <span class="formula-label">期末在庫 = 古い購入の単価で構成</span>
+        EI<sub>LIFO</sub> = 古い単価 × 期末数量
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q8 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Same data as Q7. Under LIFO, what is the cost of ending inventory (150 units)?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span style="color:#10b981;font-weight:700;">(a) $1,650 ✓</span><span>(b) $1,800</span><span>(c) $1,950</span><span>(d) Not allowed</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・LIFO: 新しい 150 単位 @ $13 から売る（COGS = 150×$13 = $1,950）<br>
+        ・EI = 残 100 単位 @ $10 + 50 単位 @ $13 = $1,000 + $650 = <b style="color:#fde68a;">$1,650</b><br>
+        ・<b>物価上昇期は EI が低く COGS が高い → 税金低め</b>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 最重要:</b> <b style="color:#fca5a5;">IFRSではLIFO禁止</b>。FA1Bは IFRS 基準なので、LIFO は「使えない」が正解の問題が出る可能性大。
+      </div>
+    </div>
+
+    <!-- ⑬ Retail Inventory -->
+    <div style="background:#0f1c2e;border:2px solid #8b5cf6;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#a78bfa;margin-bottom:6px;">⑬ Retail Inventory Method（小売棚卸法）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">retail inventory method / cost-to-retail ratio / estimated ending inventory</code></div>
+      <div class="formula-box" style="font-size:22px;">
+        <span class="formula-label">期末在庫(原価) = 期末在庫(売価) × 原価率</span>
+        <span class="fml">Cost Ratio <span class="eq">=</span> <span class="frac"><span class="num">Cost</span><span class="den">Retail</span></span></span>
+        <br>
+        EI<sub>cost</sub> = EI<sub>retail</sub> × Cost Ratio
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 Q15 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Goods available for sale: Cost = $60,000, Retail = $100,000. Net Sales = $80,000. Estimate the cost of ending inventory using the retail inventory method."
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) $8,000</span><span style="color:#10b981;font-weight:700;">(b) $12,000 ✓</span><span>(c) $20,000</span><span>(d) $48,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・Cost Ratio = 60,000 ÷ 100,000 = <b>60%</b><br>
+        ・EI<sub>retail</sub> = 100,000 − 80,000 = $20,000<br>
+        ・<span class="fml">EI<sub>cost</sub> <span class="eq">=</span> 20,000 <span class="op">×</span> 0.60 <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">$12,000</b></span>
+      </div>
+    </div>
+
+    <!-- ════════ 🔷 Final 範囲（Ch 6-15） ════════ -->
+
+    <!-- ⑭ Straight-line Depreciation -->
+    <div style="background:#0f1c2e;border:2px solid #06b6d4;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#22d3ee;margin-bottom:6px;">⑭ Straight-line Depreciation（定額法）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">straight-line / useful life / salvage value / residual value</code></div>
+      <div class="formula-box">
+        <span class="formula-label">年額減価償却費 = (取得原価 − 残存価値) ÷ 耐用年数</span>
+        <span class="fml">Dep <span class="eq">=</span> <span class="frac"><span class="num">Cost <span class="op">−</span> Salvage</span><span class="den">Useful Life</span></span></span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 例題 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "Equipment cost €50,000, salvage value €5,000, useful life 5 years. Calculate the annual depreciation expense using the straight-line method."
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) €5,000</span><span style="color:#10b981;font-weight:700;">(b) €9,000 ✓</span><span>(c) €10,000</span><span>(d) €11,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・<span class="fml">Dep <span class="eq">=</span> <span class="frac"><span class="num">50,000 <span class="op">−</span> 5,000</span><span class="den">5</span></span> <span class="eq">=</span> <span class="frac"><span class="num">45,000</span><span class="den">5</span></span> <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">€9,000/年</b></span>
+      </div>
+      <div style="margin-top:12px;color:#cbd5e1;font-size:16px;">
+        <b style="color:#f97316;">⚠️ 注意:</b> 期中購入なら <b>(月数/12)</b> で按分。例: 7月購入なら年額 × 6/12。
+      </div>
+    </div>
+
+    <!-- ⑮ Declining Balance -->
+    <div style="background:#0f1c2e;border:2px solid #06b6d4;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#22d3ee;margin-bottom:6px;">⑮ Declining Balance（定率法 / 倍率定率法）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">declining balance / double-declining / accelerated depreciation / book value</code></div>
+      <div class="formula-box" style="font-size:24px;">
+        <span class="formula-label">減価償却費 = 簿価 × 2 × (1 ÷ 耐用年数)</span>
+        <span class="fml">Dep <span class="eq">=</span> NBV <span class="op">×</span> <span class="frac"><span class="num">2</span><span class="den">Useful Life</span></span></span>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 例:</b> Cost €50,000, UL=5年, double-declining<br>
+        ・Year 1 rate = 2/5 = 40%、Dep = 50,000 × 40% = <b>€20,000</b><br>
+        ・Year 2 NBV = 50,000 − 20,000 = 30,000、Dep = 30,000 × 40% = <b>€12,000</b><br>
+        ・<b>残存価値以下にはならない</b>よう注意
+      </div>
+    </div>
+
+    <!-- ⑯ Inventory Turnover -->
+    <div style="background:#0f1c2e;border:2px solid #06b6d4;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#22d3ee;margin-bottom:6px;">⑯ Inventory Turnover（在庫回転率）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">inventory turnover / turnover ratio / average inventory</code></div>
+      <div class="formula-box">
+        <span class="formula-label">回転率 = 売上原価 ÷ 平均在庫</span>
+        <span class="fml">Turnover <span class="eq">=</span> <span class="frac"><span class="num">COGS</span><span class="den">Avg Inventory</span></span></span>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 例:</b> COGS = $210,000, BI = $50,000, EI = $40,000<br>
+        ・Avg Inv = (50,000 + 40,000) ÷ 2 = $45,000<br>
+        ・<span class="fml">Turnover <span class="eq">=</span> <span class="frac"><span class="num">210,000</span><span class="den">45,000</span></span> <span class="eq">≈</span> <b style="color:#fde68a;font-size:22px;">4.67 回/年</b></span>
+      </div>
+    </div>
+
+    <!-- ⑰ Days in Inventory -->
+    <div style="background:#0f1c2e;border:2px solid #06b6d4;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#22d3ee;margin-bottom:6px;">⑰ Days in Inventory（在庫日数）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">days in inventory / inventory days / 365</code></div>
+      <div class="formula-box">
+        <span class="formula-label">在庫日数 = 365 ÷ 回転率</span>
+        <span class="fml">Days <span class="eq">=</span> <span class="frac"><span class="num">365</span><span class="den">Turnover</span></span></span>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 例:</b> Turnover = 4.67 回<br>
+        ・<span class="fml">Days <span class="eq">=</span> <span class="frac"><span class="num">365</span><span class="den">4.67</span></span> <span class="eq">≈</span> <b style="color:#fde68a;font-size:22px;">78 日</b></span><br>
+        ・短いほど良い（在庫が早く回転 = キャッシュ化が早い）
+      </div>
+    </div>
+
+    <!-- ⑱ Notes Receivable Interest -->
+    <div style="background:#0f1c2e;border:2px solid #06b6d4;border-radius:14px;padding:20px 22px;margin-bottom:20px;">
+      <div style="font-size:24px;font-weight:800;color:#22d3ee;margin-bottom:6px;">⑱ Notes Receivable Interest（受取手形利息）</div>
+      <div style="color:#94a3b8;font-size:15px;margin-bottom:14px;">キーワード: <code style="background:#1e293b;padding:2px 8px;border-radius:4px;color:#fcd34d;">note receivable / interest / principal × rate × time</code></div>
+      <div class="formula-box">
+        <span class="formula-label">利息 = 元本 × 年利率 × (月数 ÷ 12)</span>
+        <span class="fml">Interest <span class="eq">=</span> Principal <span class="op">×</span> Rate <span class="op">×</span> <span class="frac"><span class="num">Months</span><span class="den">12</span></span></span>
+      </div>
+      <div style="background:#0a1322;border:1px solid #1e3a5f;border-radius:8px;padding:14px 18px;margin-top:14px;">
+        <div style="color:#60a5fa;font-size:14px;font-weight:700;letter-spacing:0.05em;margin-bottom:6px;">📝 例題 — Original English Problem</div>
+        <div style="color:#e2e8f0;font-size:16px;line-height:1.7;font-style:italic;">
+          "A $50,000 note receivable at 6% annual interest is held for 2 months. What is the interest earned?"
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;color:#94a3b8;font-size:14px;">
+          <span>(a) $250</span><span style="color:#10b981;font-weight:700;">(b) $500 ✓</span><span>(c) $1,000</span><span>(d) $3,000</span>
+        </div>
+      </div>
+      <div style="background:#1e293b;border-left:4px solid #fbbf24;padding:12px 16px;border-radius:6px;margin-top:10px;color:#e2e8f0;font-size:17px;">
+        <b style="color:#fbbf24;">✏️ 解法:</b><br>
+        ・<span class="fml">Interest <span class="eq">=</span> 50,000 <span class="op">×</span> 0.06 <span class="op">×</span> <span class="frac"><span class="num">2</span><span class="den">12</span></span> <span class="eq">=</span> <b style="color:#fde68a;font-size:22px;">$500</b></span>
+      </div>
+    </div>
+
+    <!-- 早見表 -->
+    <div style="background:linear-gradient(135deg,#0f172a,#1e293b);border:2px solid #fbbf24;border-radius:14px;padding:22px 24px;margin:30px 0 20px;">
+      <div style="font-size:24px;font-weight:800;color:#fbbf24;margin-bottom:14px;">📋 キーワード → 公式 早見表</div>
+      <table style="width:100%;border-collapse:collapse;color:#e2e8f0;font-size:16px;">
+        <tr style="background:#1e293b;"><th style="padding:10px;border:1px solid #334155;text-align:left;">英語キーワード</th><th style="padding:10px;border:1px solid #334155;text-align:left;">使う公式</th></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">services on account</code></td><td style="padding:10px;border:1px solid #334155;">Assets ↑ / Equity ↑</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">net income</code></td><td style="padding:10px;border:1px solid #334155;">Revenues − Expenses</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">journal entry</code></td><td style="padding:10px;border:1px solid #334155;">Σ Dr = Σ Cr</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">2/10, n/30</code></td><td style="padding:10px;border:1px solid #334155;">Invoice × (1 − rate)</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">schedule of COGS</code></td><td style="padding:10px;border:1px solid #334155;">BI + Net Purchases − EI</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">gross profit rate</code></td><td style="padding:10px;border:1px solid #334155;">GP ÷ Net Sales、COGS = Sales × (1−rate)</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">weighted average</code></td><td style="padding:10px;border:1px solid #334155;">Total Cost ÷ Total Units</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">FIFO</code></td><td style="padding:10px;border:1px solid #334155;">EI = 直近購入単価</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">LIFO</code></td><td style="padding:10px;border:1px solid #334155;">IFRS禁止、GAAPのみ</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">retail inventory method</code></td><td style="padding:10px;border:1px solid #334155;">EI<sub>retail</sub> × (Cost ÷ Retail)</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">straight-line depreciation</code></td><td style="padding:10px;border:1px solid #334155;">(Cost − Salvage) ÷ UL</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">double-declining</code></td><td style="padding:10px;border:1px solid #334155;">NBV × (2 / UL)</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">inventory turnover</code></td><td style="padding:10px;border:1px solid #334155;">COGS ÷ Avg Inventory</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">days in inventory</code></td><td style="padding:10px;border:1px solid #334155;">365 ÷ Turnover</td></tr>
+        <tr><td style="padding:10px;border:1px solid #334155;"><code style="color:#fcd34d;">note interest</code></td><td style="padding:10px;border:1px solid #334155;">P × R × (Months/12)</td></tr>
+      </table>
+    </div>
+
+    <!-- ミス TOP 5 -->
+    <div style="background:linear-gradient(135deg,#7f1d1d,#991b1b);border:3px solid #ef4444;border-radius:14px;padding:22px 24px;margin:20px 0 30px;color:#fff;">
+      <div style="font-size:24px;font-weight:800;color:#fef2f2;margin-bottom:14px;">⚠️ 計算問題ミス TOP 5（accounting版）</div>
+      <ol style="font-size:18px;line-height:2;margin:0;padding-left:30px;">
+        <li><b>Debit と Credit の方向ミス</b> — 資産↑/費用↑は <b>Dr</b>、負債↑/資本↑/収益↑は <b>Cr</b></li>
+        <li><b>Net Sales vs Gross Sales の混同</b> — Returns / Allowances / Discounts を引き忘れ</li>
+        <li><b>LIFO / FIFO の払出順ミス</b> — Periodic（期末一括）と Perpetual（売上ごと）で計算順が異なる</li>
+        <li><b>Discount 計算の対象範囲</b> — 商品代金のみ、<b>Freight-in（送料）には割引かからない</b></li>
+        <li><b>Depreciation の按分忘れ</b> — 期中購入は <b>(月数/12)</b> で按分必須</li>
+      </ol>
+    </div>
+
+    <!-- ════════ 既存の動的計算機（残置） ════════ -->
+    <div class="section-title" style="margin-top:30px;">🧮 計算機ツール（数値を入れて試す）</div>
     <div id="calc-content"></div>
   </div>
 
