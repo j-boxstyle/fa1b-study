@@ -8449,224 +8449,224 @@ var QUESTIONS = [
     q: 'Year 1 ending inventory is UNDERSTATED by $6,000. What are the effects on Year 1 and Year 2 net income?',
     opts: ['A) Year 1 overstated $6,000; Year 2 understated $6,000','B) Year 1 understated $6,000; Year 2 overstated $6,000','C) Year 1 understated $6,000; Year 2 unaffected','D) Both years understated $6,000'],
     ans: 1,
-    exp: 'Understated ending inventory in Year 1 → overstated COGS in Year 1 → understated net income in Year 1. The understated EI becomes understated BI in Year 2 → understated COGS in Year 2 → overstated net income in Year 2. Errors self-correct over two years.',
-    we: { 0: 'Year 1 net income is understated (not overstated) because COGS is overstated.', 2: 'Year 2 IS affected because Year 1 EI becomes Year 2 BI.', 3: 'Year 2 net income is overstated, not understated.' }
+    exp: '1年目の期末棚卸が過小 → 1年目 COGS 過大 → 1年目純利益 過小。その過小な期末棚卸が2年目の過小な期首棚卸になる → 2年目 COGS 過小 → 2年目純利益 過大。誤りは2年で自己修正します。',
+    we: { 0: 'COGS が過大なので、1年目の純利益は過小（過大ではない）です。', 2: '1年目の期末棚卸が2年目の期首棚卸になるので、2年目も影響します。', 3: '2年目の純利益は過大で、過小ではありません。' }
   },
   {
     id: 'q422', conceptId: 'c6_inv_errors_is', ch: 6, type: 'C',
     q: 'If Year 1 ending inventory is OVERSTATED by $10,000, what is the effect on Year 1 total assets and retained earnings on the SFP?',
     opts: ['A) Assets overstated $10,000; retained earnings overstated $10,000','B) Assets understated $10,000; retained earnings understated $10,000','C) Assets overstated $10,000; retained earnings understated $10,000','D) No effect — errors cancel out on the SFP'],
     ans: 0,
-    exp: 'Overstated ending inventory → Inventory (asset) is overstated → total assets overstated $10,000. Overstated EI → understated COGS → overstated net income → overstated retained earnings. Both total assets and retained earnings are overstated by $10,000.',
-    we: { 1: 'Overstated inventory OVERSTATES assets, not understates them.', 2: 'Overstated inventory overstates net income → overstates retained earnings (not understates).', 3: 'Inventory errors do affect the SFP in the year of the error.' }
+    exp: '期末棚卸の過大 → Inventory（資産）過大 → 総資産が$10,000過大。期末棚卸過大 → COGS 過小 → 純利益過大 → 利益剰余金過大。総資産と利益剰余金がともに$10,000過大になります。',
+    we: { 1: '棚卸の過大は資産を過大にし、過小にはしません。', 2: '棚卸の過大は純利益を過大にし → 利益剰余金を過大にします（過小ではない）。', 3: '棚卸の誤りは誤りの年の SFP に影響します。' }
   },
   {
     id: 'q423', conceptId: 'c6_lcnrv', ch: 6, type: 'B',
     q: "A company's inventory cost is $80,000 and its net realizable value (NRV) is $72,000. What amount should inventory be reported at, and what is the write-down entry?",
     opts: ['A) $80,000; no entry required','B) $72,000; Debit Inventory Write-Down Expense $8,000; Credit Inventory $8,000','C) $76,000 (average); Debit Loss $4,000; Credit Inventory $4,000','D) $72,000; Debit COGS $8,000; Credit Inventory $8,000'],
     ans: 1,
-    exp: 'LCNRV requires inventory to be reported at the lower of cost ($80,000) or NRV ($72,000) = $72,000. Write-down = $8,000. Entry: Debit Inventory Write-Down Expense (or COGS) $8,000; Credit Inventory $8,000.',
-    we: { 0: 'When NRV < cost, a write-down is required under IFRS — it cannot remain at cost.', 2: 'There is no averaging rule under LCNRV; the LOWER value is used.', 3: 'Debiting COGS is also acceptable; B uses the more descriptive account name but both are valid.' }
+    exp: 'LCNRV は棚卸資産を原価（$80,000）と NRV（$72,000）の低い方 = $72,000 で計上します。切り下げ = $8,000。仕訳：借方 Inventory Write-Down Expense（または COGS）$8,000 / 貸方 Inventory $8,000。',
+    we: { 0: 'NRV < 原価のとき IFRS では切り下げが必要で、原価のままにはできません。', 2: 'LCNRV に平均ルールはなく、低い方を使います。', 3: 'COGS を借方にするのも許容されます。Bはより説明的な勘定名ですが、どちらも有効です。' }
   },
   {
     id: 'q424', conceptId: 'c6_turnover', ch: 6, type: 'B',
     q: 'COGS = $360,000; beginning inventory = $45,000; ending inventory = $55,000. What is inventory turnover and days in inventory?',
     opts: ['A) Turnover = 8 times; Days = 45.6 days','B) Turnover = 7.2 times; Days = 50.7 days','C) Turnover = 6.5 times; Days = 56.2 days','D) Turnover = 8 times; Days = 50 days'],
     ans: 1,
-    exp: 'Average inventory = ($45,000 + $55,000) ÷ 2 = $50,000. Turnover = $360,000 ÷ $50,000 = 7.2 times. Days in inventory = 365 ÷ 7.2 = 50.7 days.',
-    we: { 0: 'Turnover of 8 would require average inventory of $45,000 — that ignores ending inventory.', 2: '6.5 times uses incorrect average inventory.', 3: '8 times is incorrect; the correct average inventory gives 7.2 times.' }
+    exp: '平均棚卸 = ($45,000 + $55,000) ÷ 2 = $50,000。回転率 = $360,000 ÷ $50,000 = 7.2回。棚卸日数 = 365 ÷ 7.2 = 50.7日。',
+    we: { 0: '回転率8には平均棚卸$45,000が必要で、それは期末棚卸を無視しています。', 2: '6.5回は誤った平均棚卸を使っています。', 3: '8回は誤りで、正しい平均棚卸では7.2回です。' }
   },
   {
     id: 'q425', conceptId: 'c6_perp_period_fifo_wa', ch: 6, type: 'C',
     q: 'Under the WEIGHTED-AVERAGE cost method, does the choice between perpetual and periodic affect COGS?',
     opts: ['A) No — both produce identical COGS regardless of timing','B) Yes — perpetual uses a moving average recalculated after each purchase; periodic uses a single weighted average for the whole period','C) Yes — periodic average cost always produces higher COGS than perpetual moving average','D) No — weighted average is only available under the periodic system'],
     ans: 1,
-    exp: 'Under perpetual, the moving (weighted) average is recalculated after EACH purchase, so the average unit cost changes with every purchase. Under periodic, one weighted average is calculated for the entire period. This can produce different COGS amounts.',
-    we: { 0: 'FIFO produces identical COGS under both systems; weighted-average does NOT.', 2: 'The direction of the difference depends on the specific price movements — no universal rule.', 3: 'Weighted average can be applied under both perpetual (moving average) and periodic systems.' }
+    exp: '継続記録法では移動（加重）平均を仕入の都度再計算するため、平均単価が仕入ごとに変わります。棚卸計算法では全期間で1つの加重平均を計算します。これにより異なる COGS が生じ得ます。',
+    we: { 0: 'FIFO は両制度で同一の COGS ですが、加重平均は異なります。', 2: '差の方向は具体的な価格変動次第で、普遍的なルールはありません。', 3: '加重平均は継続（移動平均）でも棚卸でも適用できます。' }
   },
   {
     id: 'q426', conceptId: 'c6_gross_profit_method', ch: 6, type: 'B',
     q: 'Beginning inventory $15,000; net purchases $85,000; net sales $120,000; historical gross profit rate 40%. Estimate ending inventory using the gross profit method.',
     opts: ['A) $28,000','B) $48,000','C) $72,000','D) $100,000'],
     ans: 0,
-    exp: 'Estimated COGS = Net sales × (1 − gross profit rate) = $120,000 × 60% = $72,000. Cost of goods available = $15,000 + $85,000 = $100,000. Estimated ending inventory = $100,000 − $72,000 = $28,000.',
-    we: { 1: '$48,000 incorrectly applies the gross profit % to cost of goods available.', 2: '$72,000 is estimated COGS, not ending inventory.', 3: '$100,000 is cost of goods available for sale, not ending inventory.' }
+    exp: '推定 COGS = 純売上 × (1 − 粗利率) = $120,000 × 60% = $72,000。販売可能原価 = $15,000 + $85,000 = $100,000。推定期末棚卸 = $100,000 − $72,000 = $28,000。',
+    we: { 1: '$48,000 は粗利率を販売可能原価に誤って適用しています。', 2: '$72,000 は推定 COGS で、期末棚卸ではありません。', 3: '$100,000 は販売可能原価で、期末棚卸ではありません。' }
   },
   {
     id: 'q427', conceptId: 'c6_gross_profit_method', ch: 6, type: 'B',
     q: 'Beginning inventory at cost $30,000 and retail $50,000; purchases at cost $70,000 and retail $110,000; net sales at retail $120,000. Using the retail inventory method, estimate ending inventory at COST.',
     opts: ['A) $40,000','B) $25,000','C) $24,000','D) $32,000'],
     ans: 1,
-    exp: 'Cost-to-retail ratio = ($30,000+$70,000) ÷ ($50,000+$110,000) = $100,000 ÷ $160,000 = 62.5%. Ending inventory at retail = $160,000 − $120,000 = $40,000. Ending inventory at cost = $40,000 × 62.5% = $25,000.',
-    we: { 0: '$40,000 is ending inventory at retail, not cost.', 2: '$24,000 uses an incorrect ratio calculation.', 3: '$32,000 uses an incorrect ratio or sales figure.' }
+    exp: '原価率 = ($30,000+$70,000) ÷ ($50,000+$110,000) = $100,000 ÷ $160,000 = 62.5%。期末棚卸（売価）= $160,000 − $120,000 = $40,000。期末棚卸（原価）= $40,000 × 62.5% = $25,000。',
+    we: { 0: '$40,000 は売価ベースの期末棚卸で、原価ではありません。', 2: '$24,000 は誤った率計算を使っています。', 3: '$32,000 は誤った率または売上を使っています。' }
   },
   {
     id: 'q428', conceptId: 'c6_jit', ch: 6, type: 'A',
     q: 'Just-in-time (JIT) inventory management aims to:',
     opts: ['A) Maximize safety stock levels to prevent stockouts','B) Minimize inventory by receiving goods only as they are needed in production or sales','C) Use FIFO exclusively to match the physical flow of inventory','D) Maintain large buffer inventories to avoid supply disruptions'],
     ans: 1,
-    exp: 'JIT aims to eliminate or minimize inventory by coordinating supply deliveries to arrive exactly when needed. This reduces carrying costs, storage costs, and waste while requiring reliable suppliers.',
-    we: { 0: 'Maximizing safety stock is the opposite of JIT; JIT seeks to minimize inventory.', 2: 'JIT is a management approach, not an inventory cost flow method.', 3: 'Maintaining large buffer inventories contradicts the JIT philosophy.' }
+    exp: 'JIT は供給の納品を必要なちょうどの時に到着させ、在庫を排除・最小化します。これにより保管費・倉庫費・無駄を減らし、信頼できる供給業者を要します。',
+    we: { 0: '安全在庫の最大化は JIT の逆です。JIT は在庫の最小化を目指します。', 2: 'JIT は管理手法であり、在庫原価配分法ではありません。', 3: '大量のバッファ在庫を保つのは JIT の哲学に反します。' }
   },
   {
     id: 'q429', conceptId: 'c6_cost_available', ch: 6, type: 'B',
     q: 'A company had: beginning inventory $22,000; purchases $78,000; purchase returns $3,000; freight-in $4,000. What is the cost of goods available for sale?',
     opts: ['A) $100,000','B) $101,000','C) $97,000','D) $104,000'],
     ans: 1,
-    exp: 'Cost of goods available for sale = Beginning inventory + Net purchases (Purchases − Returns + Freight-in) = $22,000 + ($78,000 − $3,000 + $4,000) = $22,000 + $79,000 = $101,000.',
-    we: { 0: '$100,000 omits freight-in from the calculation.', 2: '$97,000 subtracts freight-in instead of adding it.', 3: '$104,000 adds all amounts without subtracting purchase returns.' }
+    exp: '販売可能原価 = 期首棚卸 + 純仕入（仕入 − 戻し + 引取運賃）= $22,000 + ($78,000 − $3,000 + $4,000) = $22,000 + $79,000 = $101,000。',
+    we: { 0: '$100,000 は引取運賃を計算から漏らしています。', 2: '$97,000 は引取運賃を足すべきところを引いています。', 3: '$104,000 は仕入戻しを引かずに全額を足しています。' }
   },
   {
     id: 'q430', conceptId: 'c1_three_activities', ch: 1, type: 'A',
     q: 'Which activity in the accounting process involves preparing financial statements for users?',
     opts: ['A) Identification','B) Recording','C) Communication','D) Summarization'],
     ans: 2,
-    exp: 'Communication is the third accounting activity. It involves preparing and distributing accounting reports — primarily financial statements — to interested users so they can make decisions.',
-    we: { 0: 'Identification is the first step — selecting which economic events to record.', 1: 'Recording is the second step — keeping a systematic diary of events.', 3: 'Summarization is part of the recording function, not a separate accounting activity.' }
+    exp: '伝達（Communication）は第3の会計活動です。会計報告書（主に財務諸表）を作成し利害ある利用者に配布し、意思決定できるようにします。',
+    we: { 0: '識別（Identification）は第1段階で、どの経済事象を記録するか選びます。', 1: '記録（Recording）は第2段階で、事象を体系的に記録します。', 3: '要約は記録機能の一部で、独立した会計活動ではありません。' }
   },
   {
     id: 'q431', conceptId: 'c2_accounts', ch: 2, type: 'B',
     q: 'A company pays $1,200 cash to settle an accounts payable balance. What is the journal entry?',
     opts: ['A) Debit Accounts Payable $1,200; Credit Cash $1,200','B) Debit Cash $1,200; Credit Accounts Payable $1,200','C) Debit Accounts Payable $1,200; Credit Service Revenue $1,200','D) Debit Expense $1,200; Credit Cash $1,200'],
     ans: 0,
-    exp: 'Paying cash to settle AP: Accounts Payable (liability) decreases — debit $1,200. Cash (asset) decreases — credit $1,200.',
-    we: { 1: 'Cash is paid out (credit), not received (debit); AP is reduced (debit), not increased.', 2: 'Service Revenue is not involved in paying a liability.', 3: 'The expense was already recorded when AP was created; paying AP is not a new expense.' }
+    exp: '買掛金を現金で決済：Accounts Payable（負債）減少 — 借方 $1,200。Cash（資産）減少 — 貸方 $1,200。',
+    we: { 1: '現金は支払われる（貸方）のであって受け取る（借方）のではなく、AP は減らす（借方）のであって増やすのではありません。', 2: '負債の支払いに Service Revenue は関係しません。', 3: '費用は AP が生じたときに既に記録済みで、AP の支払いは新たな費用ではありません。' }
   },
   {
     id: 'q432', conceptId: 'c3_prepaid', ch: 3, type: 'C',
     q: 'A company debits Prepaid Insurance and credits Cash when paying for insurance. At period end, if the adjusting entry is NOT made, what is the effect on the financial statements?',
     opts: ['A) Expenses overstated; net income understated; assets understated','B) Expenses understated; net income overstated; assets overstated','C) Expenses overstated; net income overstated; assets overstated','D) No effect — the error corrects itself'],
     ans: 1,
-    exp: 'If the adjusting entry to recognize expired insurance as expense is OMITTED: Insurance Expense is understated → net income is overstated. Prepaid Insurance remains at full cost → assets are overstated. Two statements are misstated.',
-    we: { 0: 'The omission means the expense is UNDERSTATED (too little expense recorded), so net income is OVERSTATED.', 2: 'Expenses are understated (not overstated) when the adjusting entry is omitted.', 3: 'Omitting an adjusting entry is an error that misstates the financial statements.' }
+    exp: '失効した保険を費用認識する決算整理仕訳を『省略』すると：Insurance Expense が過小 → 純利益が過大。Prepaid Insurance が全額のまま残る → 資産が過大。2つの財務諸表が誤表示されます。',
+    we: { 0: '省略は費用が過小（費用の計上が少なすぎ）を意味するので、純利益は『過大』です。', 2: '決算整理を省くと費用は過小（過大ではない）です。', 3: '決算整理仕訳の省略は財務諸表を誤表示させる誤りです。' }
   },
   {
     id: 'q433', conceptId: 'c4_closing', ch: 4, type: 'B',
     q: 'At year end: Service Revenue $95,000; Salaries Expense $42,000; Rent Expense $18,000; Dividends $8,000. What is the closing entry for the Income Summary to Retained Earnings?',
     opts: ['A) Debit Income Summary $35,000; Credit Retained Earnings $35,000','B) Debit Retained Earnings $35,000; Credit Income Summary $35,000','C) Debit Income Summary $95,000; Credit Retained Earnings $95,000','D) Debit Income Summary $43,000; Credit Retained Earnings $43,000'],
     ans: 0,
-    exp: 'Net income = $95,000 − $42,000 − $18,000 = $35,000. After closing revenues (credit IS $95,000) and expenses (debit IS $60,000), Income Summary has a credit balance of $35,000. Close to RE: Debit Income Summary $35,000; Credit Retained Earnings $35,000.',
-    we: { 1: 'A net income credit balance in IS is closed by DEBITING IS and CREDITING Retained Earnings.', 2: '$95,000 is total revenues, not net income.', 3: '$43,000 adds dividends ($8,000 + $35,000) — but dividends are closed in a separate entry.' }
+    exp: '純利益 = $95,000 − $42,000 − $18,000 = $35,000。収益締切（IS 貸方 $95,000）と費用締切（IS 借方 $60,000）後、Income Summary は貸方残高$35,000。RE へ締切：借方 Income Summary $35,000 / 貸方 Retained Earnings $35,000。',
+    we: { 1: 'IS の純利益（貸方残高）は IS を借方・RE を貸方にして締め切ります。', 2: '$95,000 は総収益で、純利益ではありません。', 3: '$43,000 は配当（$8,000 + $35,000）を足していますが、配当は別仕訳で締め切ります。' }
   },
   {
     id: 'q434', conceptId: 'c5_fob', ch: 5, type: 'C',
     q: 'On December 29, Seller ships goods FOB shipping point. Goods arrive at Buyer on January 3. Who includes the goods in December 31 year-end inventory?',
     opts: ['A) Seller — goods have not yet arrived at the buyer','B) Buyer — title transferred when goods left the seller\'s location on December 29','C) Both seller and buyer (split equally)','D) Neither — goods in transit belong to the shipping carrier'],
     ans: 1,
-    exp: "FOB shipping point: title transfers when goods leave the seller's location. On December 29 title transferred to Buyer. At December 31, the goods (in transit) belong to the BUYER and must be included in Buyer's December 31 inventory.",
-    we: { 0: 'Under FOB shipping point, goods in transit belong to the buyer, not the seller.', 2: 'Title belongs to only one party at a time — the buyer, since FOB shipping point transferred title on Dec 29.', 3: 'The shipping carrier holds goods as agent for the buyer; the buyer is the owner.' }
+    exp: 'FOB shipping point：商品が売手の場所を離れた時点で所有権移転。12月29日に所有権が買手へ移転。12月31日時点で輸送中の商品は『買手』の所有で、買手の12月31日の棚卸に含めます。',
+    we: { 0: 'FOB shipping point では輸送中の商品は買手の所有で、売手ではありません。', 2: '所有権は一度に一方だけ。FOB shipping point で12月29日に移転したので買手です。', 3: '運送業者は買手の代理として商品を保持し、所有者は買手です。' }
   },
   {
     id: 'q435', conceptId: 'c5_multistep_is', ch: 5, type: 'A',
     q: 'On a multi-step income statement, which section appears BETWEEN gross profit and income before income taxes?',
     opts: ['A) Cost of Goods Sold (deducted from sales to compute gross profit)','B) Net Sales (revenue figure that opens the income statement)','C) Operating Expenses (selling and administrative expenses section)','D) Dividends Declared (distributed to shareholders during the period)'],
     ans: 2,
-    exp: 'Multi-step income statement structure: **Net sales → COGS → Gross profit → Operating expenses (selling + admin) → Operating income → Other revenues/expenses → Income before tax → Income tax → Net income**. Operating expenses sit between gross profit and operating income.',
-    we: { 0: 'COGS appears **between net sales and gross profit** (not between gross profit and income before tax).', 1: 'Net sales is the **first line** of the income statement — it does not appear after gross profit.', 3: 'Dividends are **not on the income statement** at all — they appear on the Retained Earnings Statement.' }
+    exp: '多段階損益計算書の構造：純売上 → COGS → 売上総利益 → 営業費（販売費 + 管理費）→ 営業利益 → 営業外収益・費用 → 税引前利益 → 法人税 → 純利益。営業費は売上総利益と営業利益の間に位置します。',
+    we: { 0: 'COGS は『純売上と売上総利益の間』に現れ（売上総利益と税引前利益の間ではない）。', 1: '純売上は損益計算書の『最初の行』で、売上総利益の後には来ません。', 3: '配当は損益計算書には全く載らず、利益剰余金計算書に現れます。' }
   },
   {
     id: 'q436', conceptId: 'c6_lcnrv', ch: 6, type: 'A',
     q: 'Which accounting principle supports the lower of cost or net realizable value (LCNRV) rule for inventory?',
     opts: ['A) Revenue recognition principle','B) Historical cost principle','C) Conservatism (prudence)','D) Full disclosure principle'],
     ans: 2,
-    exp: 'The LCNRV rule is supported by conservatism (prudence) — when in doubt, record potential losses but do not anticipate potential gains. Writing inventory down to NRV when NRV < cost recognizes the loss before the goods are sold.',
-    we: { 0: 'Revenue recognition governs when revenue is recorded, not inventory valuation.', 1: 'Historical cost would keep inventory at cost; LCNRV overrides this when NRV is lower.', 3: 'Full disclosure requires informative notes; it does not specifically drive the LCNRV write-down.' }
+    exp: 'LCNRV ルールは保守主義（慎重性）に支えられます — 疑わしいときは潜在的損失を計上し、潜在的利益は先取りしない。NRV < 原価のとき NRV へ切り下げ、販売前に損失を認識します。',
+    we: { 0: '収益認識は収益を記録する時点を規律するもので、在庫評価ではありません。', 1: '歴史的原価なら原価のままですが、NRV が低いとき LCNRV がこれを上書きします。', 3: '完全開示は有益な注記を求めますが、LCNRV の切り下げを特に駆動しません。' }
   },
   {
     id: 'q437', conceptId: 'c1_acct_eq', ch: 1, type: 'B',
     q: 'A company issues shares for €20,000 cash and then borrows €15,000 from a bank. After these two transactions, what are total assets?',
     opts: ['A) €20,000','B) €15,000','C) €35,000','D) €5,000'],
     ans: 2,
-    exp: 'Transaction 1: Cash +€20,000, Share Capital +€20,000. Transaction 2: Cash +€15,000, Notes Payable +€15,000. Total assets = €20,000 + €15,000 = €35,000.',
-    we: { 0: '€20,000 is only the share issuance; it ignores the bank loan.', 1: '€15,000 is only the bank loan.', 3: '€5,000 would result from subtracting rather than adding.' }
+    exp: '取引1：Cash +€20,000、Share Capital +€20,000。取引2：Cash +€15,000、Notes Payable +€15,000。総資産 = €20,000 + €15,000 = €35,000。',
+    we: { 0: '€20,000 は株式発行だけで、銀行借入を無視しています。', 1: '€15,000 は銀行借入だけです。', 3: '€5,000 は足すのではなく引いた結果です。' }
   },
   {
     id: 'q438', conceptId: 'c2_accounts', ch: 2, type: 'A',
     q: 'Accumulated Depreciation has which normal balance, and how is it shown on the SFP?',
     opts: ['A) Debit balance; added to the related asset','B) Credit balance; deducted from the related asset (contra asset)','C) Credit balance; shown as a liability','D) Debit balance; shown as an expense on the income statement'],
     ans: 1,
-    exp: "Accumulated Depreciation is a contra-asset account with a credit normal balance. On the SFP it is deducted from the cost of the related asset to show book value. It offsets the asset's debit balance.",
-    we: { 0: 'As a contra asset, Accumulated Depreciation has a CREDIT balance and is subtracted, not added.', 2: 'It is a contra-asset, not a liability.', 3: 'Depreciation Expense (not Accumulated Depreciation) appears on the income statement.' }
+    exp: '減価償却累計額は貸方が通常残高の評価勘定（contra-asset）です。SFP では関連資産の原価から差し引いて簿価を示します。資産の借方残高を相殺します。',
+    we: { 0: '評価資産として減価償却累計額は『貸方』残高で、足すのではなく差し引きます。', 2: 'これは評価資産であって負債ではありません。', 3: '損益計算書に現れるのは Depreciation Expense（減価償却累計額ではない）です。' }
   },
   {
     id: 'q439', conceptId: 'c3_accrued_rev', ch: 3, type: 'C',
     q: 'A reversing entry is made on January 1 for the December 31 accrual of $3,000 salaries payable. On January 5 (payday), salaries of $7,000 are paid. What is the January 5 entry AFTER the reversing entry?',
     opts: ['A) Debit Salaries Expense $7,000; Credit Cash $7,000','B) Debit Salaries Expense $4,000; Credit Salaries Payable $3,000; Credit Cash $7,000','C) Debit Salaries Expense $4,000; Credit Cash $4,000','D) Debit Salaries Payable $3,000; Debit Salaries Expense $4,000; Credit Cash $7,000'],
     ans: 0,
-    exp: 'With a reversing entry on Jan 1: the Salaries Payable is eliminated and Salaries Expense has a $3,000 credit balance. On Jan 5, recording the full $7,000 payroll: Debit Salaries Expense $7,000; Credit Cash $7,000. The net expense in January = $7,000 − $3,000 (reversal credit) = $4,000 for January services.',
-    we: { 1: 'Without a reversing entry this would be correct; but WITH a reversing entry, the full $7,000 entry automatically allocates correctly.', 2: 'This is the correct NET expense amount, but the entry itself should be the full $7,000 to match the payroll.', 3: 'Without the reversing entry this entry is correct; but with the reversing entry, the simpler $7,000 full entry is used.' }
+    exp: '1月1日に再振替仕訳をすると：Salaries Payable が消え、Salaries Expense が$3,000の貸方残高になる。1月5日に給与全額$7,000を記録：借方 Salaries Expense $7,000 / 貸方 Cash $7,000。1月の純費用 = $7,000 − $3,000（再振替の貸方）= 1月役務分の$4,000。',
+    we: { 1: '再振替仕訳がなければこれで正しいですが、再振替がある場合は$7,000の全額仕訳が自動的に正しく配分されます。', 2: 'これは正しい『純』費用額ですが、仕訳自体は給与に合わせて$7,000全額にすべきです。', 3: '再振替仕訳がなければこの仕訳で正しいですが、再振替がある場合は$7,000全額のシンプルな仕訳を使います。' }
   },
   {
     id: 'q440', conceptId: 'c4_classified_assets', ch: 4, type: 'A',
     q: 'Which of the following would be classified as an INTANGIBLE non-current asset on a classified SFP?',
     opts: ['A) Land','B) Long-term investment in shares','C) Goodwill','D) Inventory'],
     ans: 2,
-    exp: 'Goodwill is an intangible non-current asset. Intangible assets lack physical substance and include patents, copyrights, trademarks, and goodwill. They are reported separately on the classified SFP.',
-    we: { 0: 'Land is a tangible non-current asset (property, plant, and equipment).', 1: 'Long-term investments are a separate non-current category, not intangible assets.', 3: 'Inventory is a current asset.' }
+    exp: 'Goodwill は無形の非流動資産です。無形資産は物理的実体がなく、特許・著作権・商標・暖簾を含みます。分類済み SFP で別途表示されます。',
+    we: { 0: '土地は有形の非流動資産（PPE）です。', 1: '長期投資は別の非流動区分で、無形資産ではありません。', 3: '棚卸資産は流動資産です。' }
   },
   {
     id: 'q441', conceptId: 'c5_purchase_returns', ch: 5, type: 'A',
     q: 'A company decides NOT to take a purchase discount of $150 and pays the full invoice amount. Under the perpetual system, what is the effect compared to taking the discount?',
     opts: ['A) Inventory cost is $150 higher when the discount is not taken','B) COGS is $150 lower when the discount is not taken','C) Accounts Payable is $150 higher when the discount is not taken','D) No difference — discounts never affect inventory cost'],
     ans: 0,
-    exp: 'Under the perpetual system, purchase discounts reduce the cost of inventory (credit to Inventory). If the discount is NOT taken, the full invoice price is paid, and inventory cost is $150 higher than if the discount had been taken.',
-    we: { 1: 'Higher inventory cost leads to higher COGS when sold, not lower.', 2: 'AP is cleared entirely when payment is made; the difference is in cash paid and inventory cost.', 3: 'Purchase discounts DO affect inventory cost under the perpetual system.' }
+    exp: '継続記録法では仕入割引が在庫原価を減らします（Inventory を貸方）。割引を取らない場合、請求全額を支払い、割引を取った場合より在庫原価が$150高くなります。',
+    we: { 1: '在庫原価が高いと、販売時の COGS が高くなります。低くはなりません。', 2: '支払時に AP は全額消去され、差は支払現金と在庫原価に出ます。', 3: '継続記録法では仕入割引は在庫原価に影響します。' }
   },
   {
     id: 'q442', conceptId: 'c6_inv_errors_is', ch: 6, type: 'C',
     q: 'An inventory error of $5,000 overstatement is discovered in Year 1 but corrected in Year 2 financial statements. What effect does it have on Year 2 beginning retained earnings?',
     opts: ['A) No effect — only current-year retained earnings are affected','B) Beginning retained earnings is overstated by $5,000 (because Year 1 net income was overstated)','C) Beginning retained earnings is understated by $5,000','D) Retained earnings is understated by $10,000'],
     ans: 1,
-    exp: 'Year 1 ending inventory overstated by $5,000 → Year 1 net income overstated $5,000 → Year 1 ending retained earnings overstated $5,000 → Year 2 BEGINNING retained earnings overstated $5,000.',
-    we: { 0: "Prior-year errors flow through retained earnings into the next year's beginning balance.", 2: 'Overstated Year 1 income means RE is overstated, not understated.', 3: '$10,000 double-counts the error.' }
+    exp: '1年目の期末棚卸が$5,000過大 → 1年目純利益が$5,000過大 → 1年目期末利益剰余金が$5,000過大 → 2年目の『期首』利益剰余金が$5,000過大。',
+    we: { 2: '1年目の利益過大は RE を過大にし、過小ではありません。', 3: '$10,000 は誤りを2倍にしています。' }
   },
   {
     id: 'q443', conceptId: 'c1_fin_stmts', ch: 1, type: 'A',
     q: 'Which financial statement shows HOW much cash was generated from operating, investing, and financing activities?',
     opts: ['A) Income statement','B) Retained earnings statement','C) Statement of financial position','D) Statement of cash flows'],
     ans: 3,
-    exp: 'The statement of cash flows classifies cash receipts and payments into three sections: operating activities (day-to-day business), investing activities (purchase/sale of long-term assets), and financing activities (borrowing, issuing shares, paying dividends).',
-    we: { 0: 'The income statement reports revenues and expenses on an accrual basis, not cash flows.', 1: 'The retained earnings statement shows changes in retained earnings, not cash flows.', 2: 'The SFP shows assets, liabilities, and equity at a point in time, not cash flows.' }
+    exp: 'キャッシュフロー計算書は現金収支を3区分に分類します：営業活動（日々の事業）・投資活動（長期資産の取得・売却）・財務活動（借入・株式発行・配当支払）。',
+    we: { 0: '損益計算書は発生主義で収益・費用を報告し、現金収支ではありません。', 1: '利益剰余金計算書は利益剰余金の変動を示し、現金収支ではありません。', 2: 'SFP は一時点の資産・負債・資本を示し、現金収支ではありません。' }
   },
   {
     id: 'q444', conceptId: 'c2_journal', ch: 2, type: 'A',
     q: "After posting, the account number is entered in the journal's posting reference column. Why?",
     opts: ['A) To indicate the transaction has been approved by management','B) To provide a cross-reference showing the amount has been posted to that ledger account','C) To calculate the trial balance more efficiently','D) To identify the date of the original transaction'],
     ans: 1,
-    exp: "Entering the ledger account number in the journal's posting reference column serves as a cross-reference — it shows that the amount has been posted to that specific ledger account. It also prevents double-posting of the same entry.",
-    we: { 0: 'Management approval is unrelated to the posting reference column.', 2: 'The posting reference aids cross-referencing, not trial balance calculation.', 3: 'The date is already recorded in the date column of the journal.' }
+    exp: '仕訳帳の転記参照欄に元帳勘定番号を記入するのは相互参照のためです。その特定の元帳勘定に転記済みであることを示し、同じ仕訳の二重転記を防ぎます。',
+    we: { 0: '経営者の承認は転記参照欄と無関係です。', 2: '転記参照は相互参照を助けるもので、試算表の計算ではありません。', 3: '日付は仕訳帳の日付欄に既に記録されています。' }
   },
   {
     id: 'q446', conceptId: 'c4_closing', ch: 4, type: 'C',
     q: 'Why are temporary accounts closed at the end of each accounting period?',
     opts: ['A) To prevent the accounts from accumulating balances indefinitely across periods','B) To increase the efficiency of the trial balance preparation','C) Because IFRS requires all accounts to have zero balances at year end','D) To transfer amounts from the SFP to the income statement'],
     ans: 0,
-    exp: 'Temporary accounts (revenues, expenses, dividends) are closed so that they begin each new period with a zero balance, allowing measurement of activity for ONLY that period. Permanent accounts accumulate across periods.',
-    we: { 1: 'Closing entries have no effect on trial balance efficiency.', 2: 'Only TEMPORARY accounts are zeroed; permanent accounts maintain their balances.', 3: 'Closing entries transfer amounts TO retained earnings (equity), not from SFP to income statement.' }
+    exp: '一時勘定（収益・費用・配当）を締め切るのは、各新期間をゼロ残高で始め、その期間だけの活動を測定できるようにするためです。恒久勘定は期間をまたいで累積します。',
+    we: { 1: '締切仕訳は試算表の効率とは無関係です。', 2: 'ゼロにするのは『一時』勘定だけで、恒久勘定は残高を維持します。', 3: '締切仕訳は利益剰余金（資本）『へ』金額を振り替えるもので、SFP から損益計算書へではありません。' }
   },
   {
     id: 'q447', conceptId: 'c5_sales_recording', ch: 5, type: 'A',
     q: 'Under the perpetual inventory system, which accounts are debited when a credit sale is made?',
     opts: ['A) Cash and COGS','B) Accounts Receivable and COGS','C) Sales Revenue and Inventory','D) Accounts Receivable only'],
     ans: 1,
-    exp: 'A credit sale under perpetual requires: (1) Debit Accounts Receivable (asset for money owed); (2) Credit Sales Revenue; AND (3) Debit COGS; (4) Credit Inventory. So both Accounts Receivable AND COGS are debited.',
-    we: { 0: 'Cash is not debited for a credit sale; Accounts Receivable is.', 2: 'Sales Revenue and Inventory are credited, not debited.', 3: 'COGS must also be debited in the perpetual system\'s cost entry.' }
+    exp: '継続記録法の掛け売上には：(1)借方 Accounts Receivable（債権の資産）(2)貸方 Sales Revenue、かつ (3)借方 COGS (4)貸方 Inventory。よって Accounts Receivable と COGS の両方が借方です。',
+    we: { 0: '掛け売上で借方にするのは Cash ではなく Accounts Receivable です。', 2: 'Sales Revenue と Inventory は貸方であって借方ではありません。', 3: '継続記録法の原価仕訳では COGS も借方にする必要があります。' }
   },
   {
     id: 'q448', conceptId: 'c6_fifo', ch: 6, type: 'C',
     q: 'Under FIFO in a period of rising prices, which statement is TRUE?',
     opts: ['A) COGS is higher under FIFO than under weighted-average','B) Ending inventory is lower under FIFO than under weighted-average','C) Net income is higher under FIFO than under weighted-average','D) FIFO and weighted-average produce identical COGS in rising prices'],
     ans: 2,
-    exp: 'In rising prices, FIFO assigns older (lower) costs to COGS → lower COGS → higher gross profit → higher net income compared to weighted-average. FIFO ending inventory is also higher (contains newer, higher-cost units).',
-    we: { 0: 'COGS is LOWER under FIFO (older, cheaper units) than weighted-average in rising prices.', 1: 'Ending inventory is HIGHER under FIFO (contains newer, more expensive units) in rising prices.', 3: 'The two methods produce different results when prices change.' }
+    exp: '物価上昇時、FIFO は古い（安い）原価を COGS にする → COGS 低 → 売上総利益高 → 加重平均より純利益が高い。FIFO の期末棚卸も高い（新しく高原価の単位を含む）。',
+    we: { 0: '物価上昇時、COGS は FIFO（古く安い単位）の方が加重平均より『低い』です。', 1: '物価上昇時、期末棚卸は FIFO（新しく高い単位を含む）の方が『高い』です。', 3: '価格が変動すると2方法は異なる結果を生みます。' }
   },
   {
     id: 'q449', conceptId: 'c1_biz_types', ch: 1, type: 'A',
     q: 'Which of the following is a disadvantage of the sole proprietorship form of business?',
     opts: ['A) Double taxation of business profits','B) Difficulty in transferring ownership','C) Unlimited personal liability of the owner for business debts','D) Complex legal requirements to form and operate'],
     ans: 2,
-    exp: 'A major disadvantage of a sole proprietorship is unlimited personal liability — the owner is personally responsible for all debts of the business. If the business cannot pay, creditors can pursue the owner\'s personal assets.',
-    we: { 0: 'Double taxation applies to corporations, not sole proprietorships (which are taxed once at the owner level).', 1: 'Difficulty transferring ownership is a disadvantage of partnerships, not proprietorships.', 3: 'Sole proprietorships have minimal legal formation requirements — this is actually an advantage.' }
+    exp: '個人企業の大きな欠点は無限の個人責任です — 所有者は事業の全債務に個人的に責任を負います。事業が払えなければ、債権者は所有者の個人財産を追及できます。',
+    we: { 0: '二重課税は株式会社に適用され、個人企業（所有者レベルで一度課税）ではありません。', 1: '所有権の譲渡困難は組合の欠点で、個人企業ではありません。', 3: '個人企業は設立要件が最小限で、これはむしろ利点です。' }
   },
   {
     id: 'q450', conceptId: 'c2_double_entry', ch: 2, type: 'B',
