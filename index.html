@@ -10606,8 +10606,8 @@ var QUESTIONS = [
   },
   {
     id: 'q843', conceptId: 'c8_notes_timeline', ch: 8, type: 'E',
-    q: '2024-10-01に€20,000、年利9%、6ヶ月のnote発行。2024-12-31の調整仕訳の利息額は？',
-    opts: ['A) €450', 'B) €600', 'C) €1,800', 'D) €900', 'E) €150', 'F) わからない'],
+    q: 'On Oct 1, 2024, a €20,000, 9%, 6-month note is issued. What is the interest amount in the Dec 31, 2024 adjusting entry?',
+    opts: ['A) €450', 'B) €600', 'C) €1,800', 'D) €900', 'E) €150', 'F) Not sure'],
     ans: 0,
     exp: '10/1〜12/31 = 3ヶ月。利息 = €20,000 × 9% × 3/12 = €450。',
     we: { 1: '€600 = 4ヶ月分。', 2: '€1,800 = 12ヶ月分。', 3: '€900 = 6ヶ月分 (満期日まで全部)。発生主義で経過分のみ。', 4: '€150 = 1ヶ月分。', 5: '「わからない」を選択。利息 = 元本×年利×経過月数/12。' },
@@ -10615,8 +10615,8 @@ var QUESTIONS = [
   },
   {
     id: 'q844', conceptId: 'c8_factoring_flow', ch: 8, type: 'E',
-    q: '下記のFactoring取引で、Selamat社の損益への影響額は？',
-    opts: ['A) €0 (損益影響なし)', 'B) Service Charge Expense €2,500 (費用)', 'C) Sales Revenue €100,000 (収益)', 'D) Service Charge Expense €100,000', 'E) Net Income +€97,500', 'F) わからない'],
+    q: 'In the factoring transaction below, what is the effect on Selamat\'s profit or loss?',
+    opts: ['A) €0 (no P/L effect)', 'B) Service Charge Expense €2,500 (an expense)', 'C) Sales Revenue €100,000 (revenue)', 'D) Service Charge Expense €100,000', 'E) Net Income +€97,500', 'F) Not sure'],
     ans: 1,
     exp: 'Factoring の損益影響 = 手数料部分のみ = €100,000 × 2.5% = €2,500 (Expense)。元本€100,000は AR減・Cash増 で B/S 内振替のみで損益影響なし。',
     we: { 0: '手数料発生のため損益影響あり。', 2: 'Sales Revenue は元のARが発生した時に既に計上済。Factoringは追加収益でない。', 3: '€100,000 全額が費用ではない。手数料率分のみ。', 4: 'Sales − Service Charge ではない。Sales は既存収益で再計上不可。', 5: '「わからない」を選択。Factoring損益影響 = 手数料のみ。' },
@@ -10628,8 +10628,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q850', conceptId: 'c9_sl_method', ch: 9, type: 'E',
-    q: '下記のStraight-Line減価償却スケジュールで「2024年期末のAccumulated Depreciation Balance」は？',
-    opts: ['A) €36,000', 'B) €27,000', 'C) €45,000', 'D) €9,000', 'E) €14,000', 'F) わからない'],
+    q: 'In the straight-line depreciation schedule below, what is the accumulated depreciation balance at the end of 2024?',
+    opts: ['A) €36,000', 'B) €27,000', 'C) €45,000', 'D) €9,000', 'E) €14,000', 'F) Not sure'],
     ans: 0,
     exp: '機械€50,000、残存€5,000、5年。年額 = (€50k−€5k)/5 = €9,000。2024年末 = 購入から4年後 (2021,22,23,24) なので累計 = 4 × €9,000 = €36,000。NBV = €50k − €36k = €14,000。',
     we: { 1: '€27,000 = 3年分の累計 (2021〜2023)。2024年末を聞かれているので2024年分€9,000も加算が必要 (合計4年分)。', 2: '€45,000 = 5年分=耐用期間全部 (満期2025年末の値)。2024年末はまだ1年残っているので未達。', 3: '€9,000 = 1年分のみ。Accumulated は経年で蓄積された総額なので4年分を加算する。', 4: '€14,000 は NBV (Net Book Value = Cost − Acc Dep = €50k − €36k)。質問の Acc Dep は €36,000 で別物。', 5: '「わからない」を選択。Acc Dep = 経過年数 × 年額 = 4 × €9,000 = €36,000。' },
@@ -10637,8 +10637,8 @@ var QUESTIONS = [
   },
   {
     id: 'q851', conceptId: 'c9_method_compare', ch: 9, type: 'A',
-    q: '下記のグラフは3つの償却法を示す。「最初の年に最も多く費用化される」のはどれ？',
-    opts: ['A) Straight-Line', 'B) Units-of-Activity (生産量比例)', 'C) Double-Declining-Balance', 'D) 全て同じ', 'E) Specific Identification', 'F) わからない'],
+    q: 'The graph below shows three depreciation methods. Which one expenses the most in the first year?',
+    opts: ['A) Straight-line', 'B) Units-of-activity (proportional to output)', 'C) Double-declining-balance', 'D) All the same', 'E) Specific identification', 'F) Not sure'],
     ans: 2,
     exp: 'DDB は accelerated 法で初年度に倍率 (例: 5年なら40%) × 全額NBV を償却するため初期に最大。SLは毎年一定。UoA は使用量に応じ変動。',
     we: { 0: 'SL は毎年一定 (傾斜なし)。', 1: 'UoA は使用量次第。初期に少ない可能性も。', 3: '法による違いがある (時期分布が違う)。', 4: 'Specific Identification は在庫評価法。償却法ではない。', 5: '「わからない」を選択。Accelerated = DDB → 初期多。' },
@@ -10646,8 +10646,8 @@ var QUESTIONS = [
   },
   {
     id: 'q852', conceptId: 'c9_ddb_method', ch: 9, type: 'E',
-    q: '下記のDDBスケジュールで「2023年Depreciation Expense」は？',
-    opts: ['A) €7,200', 'B) €12,000', 'C) €4,320', 'D) €20,000', 'E) €10,800', 'F) わからない'],
+    q: 'In the DDB schedule below, what is the 2023 depreciation expense?',
+    opts: ['A) €7,200', 'B) €12,000', 'C) €4,320', 'D) €20,000', 'E) €10,800', 'F) Not sure'],
     ans: 0,
     exp: 'DDB率 = 2/5 = 40%。2023年期首NBV = €50k − €20k − €12k = €18k。Depreciation = €18,000 × 40% = €7,200。',
     we: { 1: '€12,000 = 2022年の額。', 2: '€4,320 = 2024年の額 (NBV €10,800×40%)。', 3: '€20,000 = 2021年の額 (初年度)。', 4: '€10,800 = 2023年期末NBV。費用ではない。', 5: '「わからない」を選択。DDB毎年の式: NBV(期首) × 2/Life。' },
@@ -10655,8 +10655,8 @@ var QUESTIONS = [
   },
   {
     id: 'q853', conceptId: 'c9_disposal_sale', ch: 9, type: 'E',
-    q: '下記の機械売却で正しいGain/Lossは？',
-    opts: ['A) Gain €3,000', 'B) Loss €3,000', 'C) Gain €13,000', 'D) Loss €10,000', 'E) Gain/Loss なし', 'F) わからない'],
+    q: 'For the machine sale below, what is the correct gain/loss?',
+    opts: ['A) Gain €3,000', 'B) Loss €3,000', 'C) Gain €13,000', 'D) Loss €10,000', 'E) No gain/loss', 'F) Not sure'],
     ans: 0,
     exp: 'NBV = Cost €40,000 − Acc Dep €27,000 = €13,000。Sale Price €16,000。Gain = €16,000 − €13,000 = +€3,000 (利益)。',
     we: { 1: '符号が逆。売値 > NBV なら利益。', 2: '€13,000 = NBV (基準額)。利益はSale priceとの差。', 3: 'Acc Depを引かないとCostとの差で誤計算。', 4: 'NBVと売値が違うため必ず利得/損失が出る。', 5: '「わからない」を選択。Gain/Loss = Sale Price − NBV。' },
@@ -10664,8 +10664,8 @@ var QUESTIONS = [
   },
   {
     id: 'q854', conceptId: 'c9_revaluation_gain', ch: 9, type: 'E',
-    q: '下記の評価替えで「Revaluation Surplus」増加額は？',
-    opts: ['A) ¥100,000', 'B) ¥150,000', 'C) ¥50,000', 'D) ¥550,000', 'E) ¥450,000', 'F) わからない'],
+    q: 'In the revaluation below, what is the increase in \'Revaluation Surplus\'?',
+    opts: ['A) ¥100,000', 'B) ¥150,000', 'C) ¥50,000', 'D) ¥550,000', 'E) ¥450,000', 'F) Not sure'],
     ans: 0,
     exp: 'NBV = ¥600,000 − ¥150,000 = ¥450,000。公正価値 ¥550,000。利得 = ¥550,000 − ¥450,000 = ¥100,000 → Revaluation Surplus（OCI）。',
     we: { 1: '¥150,000 は減価償却累計額です。', 2: '¥50,000 は計算誤りです。', 3: '¥550,000 は公正価値全額です。', 4: '¥450,000 は NBV です。利得は差額です。', 5: '「わからない」を選択。再評価益 = 公正価値 − NBV。' },
@@ -10673,8 +10673,8 @@ var QUESTIONS = [
   },
   {
     id: 'q855', conceptId: 'c9_capex_vs_revexp', ch: 9, type: 'A',
-    q: '下記の支出表で「資産化 (CAPEX)」として処理すべき総額は？',
-    opts: ['A) €15,000', 'B) €5,000', 'C) €20,000', 'D) €10,000', 'E) €25,000', 'F) わからない'],
+    q: 'In the expenditure table below, what is the total amount that should be capitalized (CAPEX)?',
+    opts: ['A) €15,000', 'B) €5,000', 'C) €20,000', 'D) €10,000', 'E) €25,000', 'F) Not sure'],
     ans: 0,
     exp: 'エンジン交換€10,000 (耐用延長 → CAPEX) + 大規模改装€5,000 (性能向上 → CAPEX) = €15,000。日常清掃€2,000 と消耗品€3,000 は通常維持 → 当期費用 (RevEx)。',
     we: { 1: '€5,000 = 改装のみで部分的。エンジン交換€10,000 (耐用延長) も CAPEX に該当するため漏れている。', 2: '€20,000 = €15,000 + €5,000誤って加算。または日常維持の€5,000 を含めてしまった (RevEx を CAPEX 扱い)。', 3: '€10,000 = エンジン交換のみ。改装€5,000 (性能向上) も CAPEX に該当するため漏れている。', 4: '€25,000 = 全項目 (RevEx €5,000 含む) を加算。日常清掃と消耗品は通常維持で当期費用処理が正しい。', 5: '「わからない」を選択。CAPEX = 耐用延長/性能向上による支出、RevEx = 通常の維持・修繕。' },
@@ -10682,8 +10682,8 @@ var QUESTIONS = [
   },
   {
     id: 'q856', conceptId: 'c9_balance_sheet_ppe', ch: 9, type: 'E',
-    q: '下記のB/S PPE節で「Net PPE」合計は？',
-    opts: ['A) €820,000', 'B) €1,000,000', 'C) €180,000', 'D) €660,000', 'E) €740,000', 'F) わからない'],
+    q: 'In the PPE section of the balance sheet below, what is the total Net PPE?',
+    opts: ['A) €820,000', 'B) €1,000,000', 'C) €180,000', 'D) €660,000', 'E) €740,000', 'F) Not sure'],
     ans: 0,
     exp: 'Land €200,000 (償却なし) + Buildings net €500,000 (€600k−€100k) + Equipment net €120,000 (€200k−€80k) = €820,000。',
     we: { 1: '€1,000,000 = Cost合計 (Acc Dep引かず)。', 2: '€180,000 = Acc Dep合計のみ。', 3: '€660,000 = LandとEquipment 漏れ。', 4: '€740,000 = Land 漏れ。', 5: '「わからない」を選択。Net PPE = Land + Σ(Cost − Acc Dep)。' },
@@ -10695,8 +10695,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q860', conceptId: 'c10_current_liab', ch: 10, type: 'E',
-    q: '下記のB/S 流動負債節で合計額は？',
-    opts: ['A) €165,000', 'B) €150,000', 'C) €145,000', 'D) €185,000', 'E) €200,000', 'F) わからない'],
+    q: 'In the current liabilities section of the balance sheet below, what is the total?',
+    opts: ['A) €165,000', 'B) €150,000', 'C) €145,000', 'D) €185,000', 'E) €200,000', 'F) Not sure'],
     ans: 0,
     exp: 'AP €60,000 + 未払給料 €25,000 + 未払利息 €5,000 + 前受収益 €15,000 + 長期債務の流動部分 €40,000 + 未払税 €20,000 = €165,000。',
     we: { 1: '未払税が漏れています。', 2: '未払利息も漏れています。', 3: 'Mortgage の長期（非流動）部分も含めています。', 4: 'すべての負債を加算（長期分含む）しています。', 5: '「わからない」を選択。流動 = 1年以内決済予定のみ合計。' },
@@ -10704,8 +10704,8 @@ var QUESTIONS = [
   },
   {
     id: 'q861', conceptId: 'c10_interest_accrual', ch: 10, type: 'E',
-    q: '下記のNotes Payable タイムラインで「12月31日の利息発生額」は？',
-    opts: ['A) €200', 'B) €600', 'C) €100', 'D) €800', 'E) €400', 'F) わからない'],
+    q: 'In the notes payable timeline below, what is the interest accrued at December 31?',
+    opts: ['A) €200', 'B) €600', 'C) €100', 'D) €800', 'E) €400', 'F) Not sure'],
     ans: 0,
     exp: '€10,000 × 8% × 3/12 = €200 (10/1〜12/31、3ヶ月分)。',
     we: { 1: '€600 = 9ヶ月分 (1年フル想定)。', 2: '€100 = 1.5ヶ月分? 計算誤り。', 3: '€800 = 年利率×元本 (1年分)。', 4: '€400 = 6ヶ月分。', 5: '「わからない」を選択。利息 = 元本 × 年利 × 経過月/12。' },
@@ -10713,8 +10713,8 @@ var QUESTIONS = [
   },
   {
     id: 'q862', conceptId: 'c10_sales_tax', ch: 10, type: 'E',
-    q: '下記のレシートで「Sales Tax Payable」金額は？',
-    opts: ['A) €210', 'B) €1,000', 'C) €1,210', 'D) €174', 'E) €1,260', 'F) わからない'],
+    q: 'In the receipt below, what is the \'Sales Tax Payable\' amount?',
+    opts: ['A) €210', 'B) €1,000', 'C) €1,210', 'D) €174', 'E) €1,260', 'F) Not sure'],
     ans: 0,
     exp: '税抜売上 €1,000 × VAT 21% = €210 → Sales Tax Payable (政府預り)。',
     we: { 1: '税抜売上 (Sales Revenue)。Tax 部分のみ別。', 2: '総額 (Cash受領額)。', 3: '計算誤り (異なる税率)。', 4: '€1,260 = 21%加算済額が大きすぎ。', 5: '「わからない」を選択。VAT = 税抜売上 × 税率 = Liability。' },
@@ -10722,8 +10722,8 @@ var QUESTIONS = [
   },
   {
     id: 'q863', conceptId: 'c10_unearned_revenue', ch: 10, type: 'E',
-    q: '下記のサブスクスケジュールで「12月31日のUnearned Revenue残高」は？',
-    opts: ['A) €900', 'B) €1,200', 'C) €300', 'D) €600', 'E) €0', 'F) わからない'],
+    q: 'In the subscription schedule below, what is the \'Unearned Revenue\' balance at December 31?',
+    opts: ['A) €900', 'B) €1,200', 'C) €300', 'D) €600', 'E) €0', 'F) Not sure'],
     ans: 0,
     exp: '10/1に1年分€1,200受領。10〜12月の3ヶ月分 €300 はサービス提供済 → Revenue計上。残り9ヶ月分 €900 = Unearned Revenue残高。',
     we: { 1: '€1,200 = 当初受領額 (調整前)。', 2: '€300 = 認識済Revenue。', 3: '€600 = 6ヶ月分残。計算誤り。', 4: '€0 = 全額認識してしまった (誤り)。', 5: '「わからない」を選択。Unearned残 = 受領総額 − 経過分×月額。' },
@@ -10731,8 +10731,8 @@ var QUESTIONS = [
   },
   {
     id: 'q864', conceptId: 'c10_current_maturities', ch: 10, type: 'E',
-    q: '下記の長期借入 (€500,000) の月次返済表で「貸借対照表のCurrent Maturities部分」は？',
-    opts: ['A) €60,000', 'B) €40,000', 'C) €440,000', 'D) €500,000', 'E) €5,000', 'F) わからない'],
+    q: 'In the monthly repayment schedule for the €500,000 long-term loan below, what is the \'Current Maturities\' portion on the balance sheet?',
+    opts: ['A) €60,000', 'B) €40,000', 'C) €440,000', 'D) €500,000', 'E) €5,000', 'F) Not sure'],
     ans: 0,
     exp: '次の12ヶ月で返済予定の元本部分 = 1月〜12月の月次元本€5,000×12 = €60,000 → Current Maturities of LT Debt。残り€440,000 = Non-current。',
     we: { 1: '€40,000 = 8ヶ月分のみ。', 2: '€440,000 = Non-current残高。', 3: '€500,000 = 借入全額。', 4: '€5,000 = 1ヶ月分のみ。', 5: '「わからない」を選択。Current Maturities = 翌12ヶ月の元本返済合計。' },
@@ -10744,8 +10744,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q870', conceptId: 'c11_bond_pricing', ch: 11, type: 'A',
-    q: '下記のグラフで「Discount」発行を示す状況は？',
-    opts: ['A) ①: Stated 4% < Market 6%', 'B) ②: Stated 5% = Market 5%', 'C) ③: Stated 7% > Market 5%', 'D) 全て', 'E) どれも該当しない', 'F) わからない'],
+    q: 'In the graph below, which situation indicates a \'Discount\' issuance?',
+    opts: ['A) ①: Stated 4% < Market 6%', 'B) ②: Stated 5% = Market 5%', 'C) ③: Stated 7% > Market 5%', 'D) All of them', 'E) None of them', 'F) Not sure'],
     ans: 0,
     exp: 'Discount = Stated < Market。投資家不利 → 額面より低い価格で発行して補償。①が該当 (Stated 4% < Market 6%)。',
     we: { 1: '② Stated 5% = Market 5% は **at par (額面発行)**。Stated と Market が等しいので調整不要、額面で発行される。', 2: '③ Stated 7% > Market 5% は **Premium 発行** (上乗せ)。投資家有利のため額面以上の価格で発行される。', 3: 'Discount に該当するのは **① のみ**。②は at par、③は Premium で、Discount 条件 (Stated < Market) を満たすのは①だけ。', 4: 'いずれかは Discount に該当する (①が該当)。「どれも該当しない」は誤り。', 5: '「わからない」を選択。**Stated < Market → Discount** (投資家不利なので値引き発行)。' },
@@ -10753,8 +10753,8 @@ var QUESTIONS = [
   },
   {
     id: 'q871', conceptId: 'c11_bond_discount', ch: 11, type: 'E',
-    q: '下記の社債発行で受領するCash額は？',
-    opts: ['A) €95,000', 'B) €100,000', 'C) €105,000', 'D) €5,000', 'E) €0', 'F) わからない'],
+    q: 'For the bond issuance below, what is the cash amount received?',
+    opts: ['A) €95,000', 'B) €100,000', 'C) €105,000', 'D) €5,000', 'E) €0', 'F) Not sure'],
     ans: 0,
     exp: '額面€100,000、発行価格率95% → Cash受領 = €100,000 × 95% = €95,000。差額€5,000 = Discount on Bonds (contra-liability)。',
     we: { 1: 'at par 想定。問題は95%発行。', 2: 'Premium 発行 (Stated > Market) の場合。', 3: '€5,000 = Discount金額。Cashではない。', 4: '€0 = 計算誤り。', 5: '「わからない」を選択。発行Cash = 額面 × 発行価格率。' },
