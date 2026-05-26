@@ -1204,6 +1204,12 @@ body { padding-top:112px; }
 .wk-formula-box .frac>span:first-child{border-bottom:2px solid #fde68a;padding:0 8px 4px;}
 .wk-formula-box .frac>span:last-child{padding:4px 8px 0;}
 .wk-formula-box .sqrt{border-top:2px solid #fde68a;padding:4px 8px 0;}
+/* 日本式分数表記（汎用・テーブル内可） */
+.jfrac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 5px;line-height:1.2;font-size:0.95em;}
+.jfrac>.num{border-bottom:2px solid currentColor;padding:1px 10px 3px;display:block;}
+.jfrac>.den{padding:3px 10px 1px;display:block;}
+.wk-tbl .jfrac{font-size:18px;color:#cbd5e1;}
+.jeq{font-weight:700;margin:0 4px;}
 .wk-tbl-wrap{overflow-x:auto;margin:12px 0;}
 .wk-tbl{width:100%;border-collapse:collapse;font-size:20px;background:#1a2438;border-radius:10px;overflow:hidden;}
 .wk-tbl th{background:#243047;color:#fcd34d;padding:14px 16px;text-align:left;font-weight:700;border-bottom:2px solid #fcd34d;font-size:21px;line-height:1.4;}
@@ -1924,6 +1930,19 @@ body { padding-top:112px; }
       <span class="sum-week-pill" onclick="sumScrollTo(7,this)">📔 W7</span>
     </div>
 
+    <div style="background:linear-gradient(135deg,#7f1d1d,#b91c1c);border:2px solid #fca5a5;border-radius:14px;padding:20px 24px;margin-bottom:24px;color:#fff;">
+      <div style="font-size:24px;font-weight:800;margin-bottom:10px;">🎯 試験範囲（教授公式アナウンス・絶対）</div>
+      <div style="font-size:20px;line-height:1.8;">
+        <b>Final = Ch 1, 2, 3, 4, 5, 6, 7(LO1,4), 8, 9, 10(LO1-2), 11(LO1-4), 12, 14, 15</b>（<b style="color:#fde68a;">Ch13 投資は除外</b>）<br>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.3);">
+          <b>📑 教科書 Appendix の範囲（教授明確化）：</b><br>
+          ・<b>Ch11 NCL（社債）：付録は全て試験範囲外</b> → 償却の定額法(11A)・実効金利法(11B) は<b>出題されない</b>（概念のみ）<br>
+          ・<b>Ch12 Equity：12A = 範囲内</b>（授業実施）／ <b>12B = 範囲外</b><br>
+          ・<b>Ch14 CFS：14A 直接法 = 範囲内</b> ／ <b>14B（別の作成法）= 範囲外</b>
+        </div>
+      </div>
+    </div>
+
     <section class="wk-summary" id="wk-sum-1">
       <h2 class="wk-title">📘 Week 1 ── 会計の基礎 + 記録プロセス (Ch1-2)</h2>
       <p class="wk-meta">会計方程式 / 4財務諸表 / 借方貸方ルール / 仕訳 / T勘定 / 試算表</p>
@@ -2243,6 +2262,36 @@ body { padding-top:112px; }
         </tr>
       </table></div>
       <div class="wk-tip"><b>🎯 一発判定：</b>「現金がもう動いた？」→ Yes なら <b>Deferred</b>（左列）／ No なら <b>Accrued</b>（右列）。「これは収益？費用？」で行を決定。</div>
+
+      <h3 class="wk-section-h">🔄 Accounting Cycle 完全順序（試験頻出）</h3>
+      <div class="post-flow" style="font-size:0.92em;">
+        <div class="post-box"><span class="ic">①</span><span class="lb">Journalize</span><span class="ds">取引を仕訳帳へ</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">②</span><span class="lb">Post</span><span class="ds">元帳へ転記</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">③</span><span class="lb">Trial Balance</span><span class="ds">試算表（未調整）</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">④</span><span class="lb">Adjusting Entries</span><span class="ds" style="color:#a5f3fc;">期末調整</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">⑤</span><span class="lb">Adjusted TB</span><span class="ds">調整後試算表</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box" style="border-color:#fcd34d;"><span class="ic">⑥</span><span class="lb">財務諸表</span><span class="ds" style="color:#fde68a;">IS→RE→BS→CFS</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">⑦</span><span class="lb">Closing Entries</span><span class="ds">締切仕訳</span></div>
+        <span class="post-arrow">→</span>
+        <div class="post-box"><span class="ic">⑧</span><span class="lb">Post-Closing TB</span><span class="ds">締切後試算表</span></div>
+      </div>
+      <div class="wk-tip"><b>📌 試験頻出の順序問題：</b><b>Journalize → Post → Adjusting → Closing</b>。⚠ 「Adjusting を Post の前」「Closing を Adjusting の前」にする選択肢は誤り。調整も締切も <b>仕訳 → 転記</b>のサブステップを含む。</div>
+
+      <h3 class="wk-section-h">🧾 Periodic System の逆勘定・正常残高（試験頻出）</h3>
+      <div class="wk-tbl-wrap"><table class="wk-tbl" style="text-align:center;">
+        <tr><th>勘定（Periodic）</th><th>正常残高</th><th>意味</th></tr>
+        <tr><td><b>Purchases</b>（仕入）</td><td style="color:#1d4ed8;font-weight:700;">Debit</td><td>費用的・COGS計算の構成要素</td></tr>
+        <tr><td><b>Freight-in</b>（引取運賃）</td><td style="color:#1d4ed8;font-weight:700;">Debit</td><td>Purchases に加算</td></tr>
+        <tr><td><b>Purchase Returns &amp; Allowances</b></td><td style="color:#b91c1c;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
+        <tr><td><b>Purchase Discounts</b></td><td style="color:#b91c1c;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
+      </table></div>
+      <div class="wk-tip"><b>📌 暗記：</b>Purchases と Freight-in は <b>Debit</b>（増やす方向）／ Returns・Discounts は <b>Credit</b>（差し引く contra）。<br>Net Purchases = Purchases + Freight-in − Returns − Discounts。</div>
 
       <h3 class="wk-section-h">📋 Worksheet（精算表）— 期末調整から財務諸表までの流れ</h3>
       <div class="wk-overview" style="margin-bottom:14px;">
@@ -2642,6 +2691,20 @@ body { padding-top:112px; }
         ① COGS = 300,000 × 70% = $210,000<br>
         ② EI = (40,000 + 200,000) − 210,000 = <b style="color:#fcd34d;">$30,000</b>
       </div>
+
+      <h3 class="wk-section-h">🏬 Retail Inventory Method（小売棚卸法）— 在庫推定その2</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        小売業で <b>原価率（cost-to-retail ratio）</b>を使い、売価ベースの期末在庫から原価を推定する方法。中間試験で出題実績あり。
+      </div>
+      <div class="wk-formula-box">
+        <span class="label">ステップ：</span><br>
+        ① Goods Available for Sale（売価）− Net Sales（売価）= <b>Ending Inventory at Retail（売価）</b><br>
+        ② Ending Inventory at Retail × <b>Cost-to-Retail Ratio</b> = <b style="color:#fcd34d;">Estimated Ending Inventory at Cost</b><br><br>
+        <span class="label">計算例：</span>原価率 60% / 売価ベース販売可能 $300,000 / Net Sales $60,000<br>
+        ① 期末在庫（売価）= 300,000 − 60,000 = $240,000<br>
+        ② 期末在庫（原価）= 240,000 × 60% = <b style="color:#fcd34d;">$144,000</b>
+      </div>
+      <div class="wk-tip"><b>📌 2つの推定法の違い：</b>Gross Profit 法は <b>粗利率</b>を使う（火災等）／ Retail 法は <b>原価率</b>を使い <b>売価ベースの在庫</b>から逆算（小売店）。</div>
 
       <h3 class="wk-section-h">📊 Inventory Turnover & Days in Inventory（在庫回転）</h3>
       <div class="wk-formula-box">
@@ -3443,6 +3506,28 @@ body { padding-top:112px; }
           <li>仕訳 <b>なし</b></li>
         </ul></div>
       </div>
+
+      <h3 class="wk-section-h">🎨 Share Dividend（株式配当）宣言の仕訳（試験頻出）</h3>
+      <div class="wk-overview" style="margin-bottom:14px;">
+        <b style="color:#fde68a;">取引（試験例）：</b>880,000株に対し <b>1% の株式配当</b>を宣言。par €25、宣言日の市場価格 €50。<br>
+        発行株数 = 880,000 × 1% = <b>8,800株</b>（small dividend → 市場価額で評価）
+      </div>
+      <div class="je-doc">
+        <div class="je-doc-title">宣言日（Declaration — Small Share Dividend）</div>
+        <table class="je-tbl">
+          <tr><th>Date</th><th>Account Title</th><th>Debit</th><th>Credit</th></tr>
+          <tr><td class="date">11-11</td><td class="acct-debit">Share Dividends <span style="color:#94a3b8;font-size:14px;">(8,800 × €50 市場価額)</span></td><td class="amt">440,000</td><td></td></tr>
+          <tr><td></td><td class="acct-credit">Ordinary Share Dividends Distributable <span style="color:#94a3b8;font-size:14px;">(8,800 × €25 par)</span></td><td></td><td class="amt">220,000</td></tr>
+          <tr><td></td><td class="acct-credit">Share Premium – Ordinary <span style="color:#94a3b8;font-size:14px;">(差額)</span></td><td></td><td class="amt">220,000</td></tr>
+          <tr><td></td><td class="desc" colspan="3">発行日に: Dr Distributable 220,000 / Cr Share Capital–Ordinary 220,000</td></tr>
+        </table>
+      </div>
+      <div class="fs-articulation">🔗 <b>試験のキー：</b>Small share dividend（&lt;20-25%）は <b>市場価額</b>で Share Dividends を Dr。<br>
+        ・<b>Ordinary Share Dividends Distributable は par で Cr</b>（負債ではなく<b>資本</b>項目！）<br>
+        ・差額は Share Premium – Ordinary。<br>
+        <span style="font-size:0.85em;">Total Equity は不変（RE → Share Capital + Premium への振替のみ）。</span>
+      </div>
+
       <h3 class="wk-section-h">💧 Cash Flow Statement 3区分</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
         <tr><th>区分</th><th>内容</th><th>典型例</th></tr>
@@ -3600,47 +3685,51 @@ body { padding-top:112px; }
       <p class="wk-meta">流動性 / 支払能力 / 収益性 / 市場性 / Horizontal & Vertical</p>
       <h3 class="wk-section-h">🎯 核心の1行</h3>
       <div class="wk-overview"><b style="color:#fde68a;">「比率は 4 カテゴリ × 5〜6 公式」</b>を覚えるのが最効率。<br>① 流動性 ② 支払能力 ③ 収益性 ④ 市場性。</div>
-      <h3 class="wk-section-h">📐 比率 完全公式表</h3>
+      <h3 class="wk-section-h">📐 比率 完全公式表（講座準拠・日本式分数表記）</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
         <tr><th>カテゴリ</th><th>比率</th><th>公式</th></tr>
-        <tr><td rowspan="5"><b>① Liquidity</b><br>流動性</td><td>Current Ratio</td><td><code>Current Assets / Current Liab</code></td></tr>
-        <tr><td>Quick (Acid Test)</td><td><code>(Cash + ST Inv + Net A/R) / CL</code></td></tr>
-        <tr><td>A/R Turnover</td><td><code>Net Credit Sales / Avg A/R</code></td></tr>
-        <tr><td>Avg Collection Period</td><td><code>365 / A/R Turnover</code></td></tr>
-        <tr><td>Inventory Turnover / Days</td><td><code>COGS / Avg Inv</code> ／ <code>365 / Inv Turnover</code></td></tr>
-        <tr><td rowspan="3"><b>② Solvency</b><br>支払能力</td><td>Debt to Assets</td><td><code>Total Liab / Total Assets</code></td></tr>
-        <tr><td>Times Interest Earned</td><td><code>(NI + Int Exp + Tax) / Int Exp</code></td></tr>
-        <tr><td>Cash Debt Coverage</td><td><code>Net Cash from Operating / Avg Total Liab</code></td></tr>
-        <tr><td rowspan="5"><b>③ Profitability</b><br>収益性</td><td>Profit Margin</td><td><code>NI / Net Sales</code></td></tr>
-        <tr><td>Gross Profit Rate</td><td><code>(Sales − COGS) / Sales</code></td></tr>
-        <tr><td>Asset Turnover</td><td><code>Net Sales / Avg Total Assets</code></td></tr>
-        <tr><td>ROA</td><td><code>NI / Avg Total Assets</code></td></tr>
-        <tr><td>ROE</td><td><code>NI / Avg Common Equity</code></td></tr>
-        <tr><td rowspan="3"><b>④ Market</b><br>市場性</td><td>EPS</td><td><code>(NI − Pref Div) / Avg Common Shares</code></td></tr>
-        <tr><td>P/E Ratio</td><td><code>Market Price / EPS</code></td></tr>
-        <tr><td>Payout Ratio</td><td><code>Cash Dividends / NI</code></td></tr>
+        <tr><td rowspan="5"><b>① Liquidity</b><br>流動性</td><td>Working Capital<br><span style="font-size:0.8em;color:#94a3b8;">運転資本</span></td><td>Current Assets <span class="jeq">−</span> Current Liabilities</td></tr>
+        <tr><td>Current Ratio<br><span style="font-size:0.8em;color:#94a3b8;">流動比率</span></td><td><span class="jfrac"><span class="num">Current Assets</span><span class="den">Current Liabilities</span></span></td></tr>
+        <tr><td>Acid-test (Quick)<br><span style="font-size:0.8em;color:#94a3b8;">当座比率</span></td><td><span class="jfrac"><span class="num">Cash ＋ Short-term Inv ＋ Net A/R</span><span class="den">Current Liabilities</span></span></td></tr>
+        <tr><td>A/R Turnover<br>＋ Avg Collection Period</td><td><span class="jfrac"><span class="num">Net Credit Sales</span><span class="den">Average Net A/R</span></span> ｜ <span class="jfrac"><span class="num">365</span><span class="den">A/R Turnover</span></span></td></tr>
+        <tr><td>Inventory Turnover<br>＋ Avg Days in Inventory</td><td><span class="jfrac"><span class="num">Cost of Goods Sold</span><span class="den">Average Inventory</span></span> ｜ <span class="jfrac"><span class="num">365</span><span class="den">Inventory Turnover</span></span></td></tr>
+        <tr><td rowspan="2"><b>② Solvency</b><br>支払能力<br>/ レバレッジ</td><td>Debt to Assets<br><span style="font-size:0.8em;color:#94a3b8;">負債比率</span></td><td><span class="jfrac"><span class="num">Total Liabilities</span><span class="den">Total Assets</span></span></td></tr>
+        <tr><td>Times Interest Earned<br><span style="font-size:0.8em;color:#94a3b8;">利息カバー</span></td><td><span class="jfrac"><span class="num">Net Income ＋ Interest Expense ＋ Income Tax Expense</span><span class="den">Interest Expense</span></span></td></tr>
+        <tr><td rowspan="5"><b>③ Profitability</b><br>収益性</td><td>Profit Margin<br><span style="font-size:0.8em;color:#94a3b8;">売上高純利益率</span></td><td><span class="jfrac"><span class="num">Net Income</span><span class="den">Net Sales Revenue</span></span></td></tr>
+        <tr><td>Asset Turnover<br><span style="font-size:0.8em;color:#94a3b8;">総資産回転率</span></td><td><span class="jfrac"><span class="num">Net Sales Revenue</span><span class="den">Average Total Assets</span></span></td></tr>
+        <tr><td>Return on Assets (ROA)</td><td><span class="jfrac"><span class="num">Net Income</span><span class="den">Average Total Assets</span></span></td></tr>
+        <tr><td>Return on Equity (ROE)<br><span style="font-size:0.8em;color:#94a3b8;">※普通株主資本利益率</span></td><td><span class="jfrac"><span class="num">Net Income <span style="font-size:0.85em;">−</span> Preference Dividends</span><span class="den">Average Ordinary Shareholders' Equity</span></span></td></tr>
+        <tr><td>Gross Profit Rate<br><span style="font-size:0.8em;color:#94a3b8;">(Ch5)粗利率</span></td><td><span class="jfrac"><span class="num">Net Sales <span style="font-size:0.85em;">−</span> COGS</span><span class="den">Net Sales</span></span></td></tr>
+        <tr><td rowspan="3"><b>④ Market</b><br>市場性</td><td>Earnings per Share (EPS)</td><td><span class="jfrac"><span class="num">Net Income <span style="font-size:0.85em;">−</span> Preference Dividends</span><span class="den">Weighted Avg Ordinary Shares Outstanding</span></span></td></tr>
+        <tr><td>Price-Earnings (P/E)</td><td><span class="jfrac"><span class="num">Market Price per Share</span><span class="den">Earnings per Share</span></span></td></tr>
+        <tr><td>Payout Ratio<br><span style="font-size:0.8em;color:#94a3b8;">配当性向</span></td><td><span class="jfrac"><span class="num">Cash Dividends on Ordinary Shares</span><span class="den">Net Income</span></span></td></tr>
       </table></div>
+      <div class="wk-tip"><b>📌 講座の必須注意点：</b>
+        ・<b>ROE・EPS は分子から Preference Dividends を引く</b>（普通株主の取り分）<br>
+        ・<b>A/R Turnover は「Net」A/R（A/R − Allowance）の平均</b>を使う<br>
+        ・Turnover・ROA・ROE・Asset Turnover は <b>期首・期末の平均（Average）</b>を使う<br>
+        ・Acid-test は <b>Inventory と Prepaid を除外</b>
+      </div>
 
-      <h3 class="wk-section-h">🔺 DuPont 分析 — ROE を3つに分解</h3>
+      <h3 class="wk-section-h">🔺 DuPont Model — ROA を2因子に分解（講座準拠）</h3>
       <div class="wk-overview" style="margin-bottom:14px;">
-        <b style="color:#fde68a;">ROE がなぜ高い/低いのか？</b>を <b>収益性 × 効率性 × レバレッジ</b>の3因子に分解して原因を特定する強力な手法。試験頻出。
+        <b style="color:#fde68a;">ROA がなぜ高い/低いのか？</b>を <b>収益性 × 効率性</b>の2因子に分解する手法。講座の DuPont は <b>ROA = Profit Margin × Asset Turnover</b>（2因子）。
       </div>
       <div class="wk-formula-box">
-        <span class="label">DuPont 3分解：</span><br>
-        ROE = <b style="color:#22d3ee;">Profit Margin</b> × <b style="color:#fcd34d;">Asset Turnover</b> × <b style="color:#86efac;">Equity Multiplier</b><br><br>
-        = <span class="frac"><span>NI</span><span>Sales</span></span> × <span class="frac"><span>Sales</span><span>Avg Assets</span></span> × <span class="frac"><span>Avg Assets</span><span>Avg Equity</span></span><br><br>
-        <span style="font-size:0.85em;color:#94a3b8;">Sales と Assets が約分されて → NI / Equity = ROE になる（恒等式）</span>
+        <span class="label">DuPont（講座版）：</span><br>
+        Return on Assets <span class="jeq">=</span> <b style="color:#22d3ee;">Profit Margin</b> <span class="jeq">×</span> <b style="color:#fcd34d;">Asset Turnover</b><br><br>
+        <span class="jeq">=</span> <span class="frac"><span>Net Income</span><span>Net Sales Revenue</span></span> <span class="jeq">×</span> <span class="frac"><span>Net Sales Revenue</span><span>Average Total Assets</span></span><br><br>
+        <span style="font-size:0.85em;color:#94a3b8;">Net Sales が約分されて → Net Income ÷ Average Total Assets = ROA（恒等式）</span>
       </div>
       <div class="post-flow">
-        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">💵</span><span class="lb">① Profit Margin</span><span class="ds" style="color:#a5f3fc;">NI / Sales<br>「稼ぐ力」</span></div>
+        <div class="post-box" style="border-color:#22d3ee;"><span class="ic">💵</span><span class="lb">① Profit Margin</span><span class="ds" style="color:#a5f3fc;">NI ÷ Net Sales<br>「稼ぐ力」</span></div>
         <span class="post-arrow">×</span>
-        <div class="post-box" style="border-color:#fcd34d;"><span class="ic">🔄</span><span class="lb">② Asset Turnover</span><span class="ds" style="color:#fde68a;">Sales / Assets<br>「資産効率」</span></div>
-        <span class="post-arrow">×</span>
-        <div class="post-box" style="border-color:#10b981;"><span class="ic">⚖️</span><span class="lb">③ Equity Multiplier</span><span class="ds" style="color:#bbf7d0;">Assets / Equity<br>「レバレッジ」</span></div>
+        <div class="post-box" style="border-color:#fcd34d;"><span class="ic">🔄</span><span class="lb">② Asset Turnover</span><span class="ds" style="color:#fde68a;">Net Sales ÷ Avg Assets<br>「資産効率」</span></div>
         <span class="post-arrow">=</span>
-        <div class="post-box" style="border-color:#a855f7;"><span class="ic">🎯</span><span class="lb">ROE</span><span class="ds" style="color:#e9d5ff;">株主資本<br>利益率</span></div>
+        <div class="post-box" style="border-color:#a855f7;"><span class="ic">🎯</span><span class="lb">ROA</span><span class="ds" style="color:#e9d5ff;">総資産<br>利益率</span></div>
       </div>
-      <div class="wk-tip"><b>📌 使い方：</b>同業他社より ROE が高い時、「利益率が高いのか／資産を効率的に回しているのか／借入を多く使っているのか」を分解で判別。<b>③が大きいだけ = 借金頼みの危険な高ROE</b>と見抜ける。</div>
+      <div class="wk-tip"><b>📌 使い方：</b>同じ ROA でも「<b>高利益率・低回転（高級品）</b>」型か「<b>低利益率・高回転（量販）</b>」型かを判別できる。<br>
+        <b>Financial Leverage（財務レバレッジ）：</b>借入（debt）を増やすと好況時は ROE を増幅するが、不況時は ROE を悪化させる（リスク増）。Debt to Assets が高い＝レバレッジ大。</div>
       <h3 class="wk-section-h">🎨 サンプル財務諸表で全比率を計算してみる</h3>
       <div class="wk-overview" style="margin-bottom:14px;">
         <b style="color:#fde68a;">GHI Co. のデータ（2025年末）</b>を使って、4カテゴリ × 12比率をすべて実数値で計算する。
@@ -3687,65 +3776,64 @@ body { padding-top:112px; }
       </div>
 
       <!-- Ratio Dashboard -->
-      <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">📊 比率ダッシュボード（4カテゴリ × 12比率）</h4>
+      <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">📊 比率ダッシュボード（全15比率・日本式分数で計算）</h4>
 
       <!-- Liquidity -->
       <div class="fs-link"><span class="fs-link-tag" style="background:#1d4ed8;">① Liquidity 流動性</span></div>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
-        <tr><td>Current Ratio</td><td><code>CA / CL</code></td><td>110,000 / 50,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">2.20</td></tr>
-        <tr><td>Quick Ratio</td><td><code>(Cash + STI + A/R) / CL</code></td><td>(20,000 + 5,000 + 35,000) / 50,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">1.20</td></tr>
-        <tr><td>A/R Turnover</td><td><code>Net Credit Sales / Avg A/R</code></td><td>300,000 / 30,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">10.0×</td></tr>
-        <tr><td>Avg Collection Period</td><td><code>365 / A/R Turnover</code></td><td>365 / 10.0</td><td style="color:#22d3ee;font-weight:800;text-align:right;">36.5 日</td></tr>
-        <tr><td>Inventory Turnover</td><td><code>COGS / Avg Inventory</code></td><td>180,000 / 40,000*</td><td style="color:#22d3ee;font-weight:800;text-align:right;">4.5×</td></tr>
-        <tr><td>Days in Inventory</td><td><code>365 / Inv Turnover</code></td><td>365 / 4.5</td><td style="color:#22d3ee;font-weight:800;text-align:right;">81 日</td></tr>
+        <tr><th>比率</th><th>計算（日本式分数）</th><th>結果</th></tr>
+        <tr><td>Working Capital</td><td>110,000 <span class="jeq">−</span> 50,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">$60,000</td></tr>
+        <tr><td>Current Ratio</td><td><span class="jfrac"><span class="num">110,000</span><span class="den">50,000</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">2.20</td></tr>
+        <tr><td>Acid-test (Quick)</td><td><span class="jfrac"><span class="num">20,000 ＋ 5,000 ＋ 35,000</span><span class="den">50,000</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">1.20</td></tr>
+        <tr><td>A/R Turnover</td><td><span class="jfrac"><span class="num">300,000</span><span class="den">30,000</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">10.0×</td></tr>
+        <tr><td>Avg Collection Period</td><td><span class="jfrac"><span class="num">365</span><span class="den">10.0</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">36.5 日</td></tr>
+        <tr><td>Inventory Turnover</td><td><span class="jfrac"><span class="num">180,000</span><span class="den">40,000*</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">4.5×</td></tr>
+        <tr><td>Avg Days in Inventory</td><td><span class="jfrac"><span class="num">365</span><span class="den">4.5</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">81 日</td></tr>
       </table></div>
-      <div style="font-size:16px;color:#94a3b8;margin:4px 0 0;">* Avg Inventory ≈ 期末 $40,000、Net Cash from Operating $45,000、Avg Total Liab $75,000 を追加前提とする。</div>
+      <div style="font-size:16px;color:#94a3b8;margin:4px 0 0;">* Avg Inventory ≈ 期末 $40,000 を前提（簡略化）。</div>
 
       <!-- Solvency -->
-      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#7c2d12;">② Solvency 支払能力</span></div>
+      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#7c2d12;">② Solvency 支払能力 / レバレッジ</span></div>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
-        <tr><td>Debt to Assets</td><td><code>Total Liab / Total Assets</code></td><td>80,000 / 200,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">40%</td></tr>
-        <tr><td>Times Interest Earned</td><td><code>(NI + Int + Tax) / Int Exp</code></td><td>(30,000 + 5,000 + 15,000) / 5,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">10.0×</td></tr>
-        <tr><td>Cash Debt Coverage</td><td><code>Net Cash Op / Avg Total Liab</code></td><td>45,000 / 75,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">0.60×</td></tr>
+        <tr><th>比率</th><th>計算（日本式分数）</th><th>結果</th></tr>
+        <tr><td>Debt to Assets</td><td><span class="jfrac"><span class="num">80,000</span><span class="den">200,000</span></span></td><td style="color:#fcd34d;font-weight:800;text-align:right;">40%</td></tr>
+        <tr><td>Times Interest Earned</td><td><span class="jfrac"><span class="num">30,000 ＋ 5,000 ＋ 15,000</span><span class="den">5,000</span></span></td><td style="color:#fcd34d;font-weight:800;text-align:right;">10.0×</td></tr>
       </table></div>
 
       <!-- Profitability -->
       <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#059669;">③ Profitability 収益性</span></div>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
-        <tr><td>Profit Margin</td><td><code>NI / Net Sales</code></td><td>30,000 / 300,000</td><td style="color:#10b981;font-weight:800;text-align:right;">10%</td></tr>
-        <tr><td>Gross Profit Rate</td><td><code>GP / Sales</code></td><td>120,000 / 300,000</td><td style="color:#10b981;font-weight:800;text-align:right;">40%</td></tr>
-        <tr><td>Asset Turnover</td><td><code>Net Sales / Avg Total Assets</code></td><td>300,000 / 180,000</td><td style="color:#10b981;font-weight:800;text-align:right;">1.67×</td></tr>
-        <tr><td>ROA</td><td><code>NI / Avg Total Assets</code></td><td>30,000 / 180,000</td><td style="color:#10b981;font-weight:800;text-align:right;">16.7%</td></tr>
-        <tr><td>ROE</td><td><code>NI / Avg Common Equity</code></td><td>30,000 / 110,000</td><td style="color:#10b981;font-weight:800;text-align:right;">27.3%</td></tr>
+        <tr><th>比率</th><th>計算（日本式分数）</th><th>結果</th></tr>
+        <tr><td>Profit Margin</td><td><span class="jfrac"><span class="num">30,000</span><span class="den">300,000</span></span></td><td style="color:#10b981;font-weight:800;text-align:right;">10%</td></tr>
+        <tr><td>Gross Profit Rate</td><td><span class="jfrac"><span class="num">120,000</span><span class="den">300,000</span></span></td><td style="color:#10b981;font-weight:800;text-align:right;">40%</td></tr>
+        <tr><td>Asset Turnover</td><td><span class="jfrac"><span class="num">300,000</span><span class="den">180,000</span></span></td><td style="color:#10b981;font-weight:800;text-align:right;">1.67×</td></tr>
+        <tr><td>ROA</td><td><span class="jfrac"><span class="num">30,000</span><span class="den">180,000</span></span></td><td style="color:#10b981;font-weight:800;text-align:right;">16.7%</td></tr>
+        <tr><td>ROE <span style="font-size:0.8em;color:#94a3b8;">(Pref Div=0)</span></td><td><span class="jfrac"><span class="num">30,000 <span style="font-size:0.85em;">−</span> 0</span><span class="den">110,000</span></span></td><td style="color:#10b981;font-weight:800;text-align:right;">27.3%</td></tr>
       </table></div>
 
       <!-- Market -->
       <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#9333ea;">④ Market 市場性</span></div>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>比率</th><th>公式</th><th>計算</th><th>結果</th></tr>
-        <tr><td>EPS</td><td><code>(NI − Pref Div) / Avg Shares</code></td><td>(30,000 − 0) / 10,000</td><td style="color:#a855f7;font-weight:800;text-align:right;">$ 3.00</td></tr>
-        <tr><td>P/E Ratio</td><td><code>Market Price / EPS</code></td><td>$24 / $3.00</td><td style="color:#a855f7;font-weight:800;text-align:right;">8.0×</td></tr>
-        <tr><td>Payout Ratio</td><td><code>Cash Dividends / NI</code></td><td>9,000 / 30,000</td><td style="color:#a855f7;font-weight:800;text-align:right;">30%</td></tr>
+        <tr><th>比率</th><th>計算（日本式分数）</th><th>結果</th></tr>
+        <tr><td>EPS</td><td><span class="jfrac"><span class="num">30,000 <span style="font-size:0.85em;">−</span> 0</span><span class="den">10,000</span></span></td><td style="color:#a855f7;font-weight:800;text-align:right;">$ 3.00</td></tr>
+        <tr><td>P/E Ratio</td><td><span class="jfrac"><span class="num">24.00</span><span class="den">3.00</span></span></td><td style="color:#a855f7;font-weight:800;text-align:right;">8.0×</td></tr>
+        <tr><td>Payout Ratio</td><td><span class="jfrac"><span class="num">9,000</span><span class="den">30,000</span></span></td><td style="color:#a855f7;font-weight:800;text-align:right;">30%</td></tr>
       </table></div>
 
-      <!-- DuPont -->
-      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#be185d;">🔺 DuPont 検証（ROE 分解）</span></div>
+      <!-- DuPont (ROA, 2-factor — course version) -->
+      <div class="fs-link" style="margin-top:12px;"><span class="fs-link-tag" style="background:#be185d;">🔺 DuPont 検証（ROA = PM × Asset Turnover）</span></div>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th>因子</th><th>公式</th><th>計算</th><th>結果</th></tr>
-        <tr><td>Profit Margin</td><td><code>NI / Sales</code></td><td>30,000 / 300,000</td><td style="color:#22d3ee;font-weight:800;text-align:right;">0.100</td></tr>
-        <tr><td>× Asset Turnover</td><td><code>Sales / Avg Assets</code></td><td>300,000 / 180,000</td><td style="color:#fcd34d;font-weight:800;text-align:right;">1.667</td></tr>
-        <tr><td>× Equity Multiplier</td><td><code>Avg Assets / Avg Equity</code></td><td>180,000 / 110,000</td><td style="color:#86efac;font-weight:800;text-align:right;">1.636</td></tr>
-        <tr style="background:#243047;font-weight:800;"><td>= ROE</td><td>3因子の積</td><td>0.100 × 1.667 × 1.636</td><td style="color:#a855f7;text-align:right;">27.3% ✓</td></tr>
+        <tr><th>因子</th><th>計算（日本式分数）</th><th>結果</th></tr>
+        <tr><td>Profit Margin</td><td><span class="jfrac"><span class="num">30,000</span><span class="den">300,000</span></span></td><td style="color:#22d3ee;font-weight:800;text-align:right;">0.100</td></tr>
+        <tr><td><span class="jeq">×</span> Asset Turnover</td><td><span class="jfrac"><span class="num">300,000</span><span class="den">180,000</span></span></td><td style="color:#fcd34d;font-weight:800;text-align:right;">1.667</td></tr>
+        <tr style="background:#243047;font-weight:800;"><td><span class="jeq">=</span> ROA</td><td>0.100 <span class="jeq">×</span> 1.667</td><td style="color:#a855f7;text-align:right;">16.7% ✓</td></tr>
       </table></div>
-      <div class="fs-articulation">🔗 <b>検証一致：</b>DuPont 分解 27.3% = 直接計算 ROE（NI/Avg Equity = 30,000/110,000）27.3% ✓<br><span style="font-size:0.85em;">この GHI 社は <b>Asset Turnover と Equity Multiplier がそこそこ</b>あり、利益率 10% を増幅して ROE 27% を達成。</span></div>
+      <div class="fs-articulation">🔗 <b>検証一致：</b>DuPont 分解 16.7% = 直接計算 ROA（30,000 ÷ 180,000）16.7% ✓<br><span style="font-size:0.85em;">GHI 社は利益率 10%・資産回転 1.67 倍 → ROA 16.7%。これに財務レバレッジ（負債活用）が加わり ROE は 27.3% に増幅されている。</span></div>
 
       <div class="fs-articulation" style="margin-top:12px;">🎯 <b>比率の読み方：</b><br>
-        ・<b style="color:#22d3ee;">Liquidity</b> = 短期支払能力（CR &gt; 1.0 推奨、QR &gt; 1.0 でより厳格、回転日数は短いほど良い）<br>
-        ・<b style="color:#fcd34d;">Solvency</b> = 長期支払能力（D/A 低い方が安全、TIE・Cash Debt Coverage 高い方が安全）<br>
-        ・<b style="color:#10b981;">Profitability</b> = 稼ぐ力（ROE &gt; ROA は財務レバレッジ効果あり、Asset Turnover は資産効率）<br>
+        ・<b style="color:#22d3ee;">Liquidity</b> = 短期支払能力（Current &gt; 1.0 推奨、Acid-test はより厳格、回転日数は短いほど良い）<br>
+        ・<b style="color:#fcd34d;">Solvency</b> = 長期支払能力（Debt to Assets 低い方が安全、TIE 高い方が安全）<br>
+        ・<b style="color:#10b981;">Profitability</b> = 稼ぐ力（ROE &gt; ROA は財務レバレッジ効果あり）<br>
         ・<b style="color:#a855f7;">Market</b> = 市場評価（P/E 高 = 成長期待大、Payout 高 = 成熟企業）
       </div>
 
@@ -3762,6 +3850,24 @@ body { padding-top:112px; }
           <li>「Common-Size Statement」</li>
         </ul></div>
       </div>
+      <div class="wk-formula-box" style="margin-top:10px;">
+        <span class="label">Horizontal 変化率：</span><span class="frac"><span>当期 − 前期（基準年）</span><span>前期（基準年）</span></span> × 100%<br>
+        <span class="label">Vertical（構成比）：</span><span class="frac"><span>各項目</span><span>基準額（Sales or Total Assets）</span></span> × 100%
+      </div>
+
+      <h3 class="wk-section-h">♻️ Sustainable Income（持続可能利益・Ch15 LO4）</h3>
+      <div class="wk-overview" style="margin-bottom:12px;">
+        <b style="color:#fde68a;">「将来も繰り返し稼げる利益はいくらか」</b>を見る概念。一時的・非経常的な項目を除いた <b>継続事業からの利益</b>が本質的な収益力を表す。
+      </div>
+      <div class="wk-tbl-wrap"><table class="wk-tbl">
+        <tr><th>項目</th><th>性質</th><th>扱い</th></tr>
+        <tr><td><b>Income from Continuing Operations</b></td><td>本業・継続事業</td><td>持続可能 = <b>これが基準</b></td></tr>
+        <tr><td><b>Discontinued Operations</b><br>（廃止事業）</td><td>売却・閉鎖した事業の損益</td><td>区分表示（税引後）・<b>非経常</b></td></tr>
+        <tr><td><b>一時的項目</b><br>（災害損失・訴訟和解等）</td><td>稀・繰り返さない</td><td>分析時に <b>除外して</b>判断</td></tr>
+        <tr><td>Other Comprehensive Income</td><td>未実現損益</td><td>NI 外（Equity）</td></tr>
+      </table></div>
+      <div class="wk-tip"><b>📌 ポイント：</b>投資家は「来期も続く利益＝Sustainable Income」を重視。<b>一時的な利益で水増しされた NI に騙されない</b>ため、継続事業利益と非経常項目を分けて表示する。</div>
+
       <h3 class="wk-section-h">🔑 試験キーワード → アクション</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl wk-keyword-tbl">
         <tr><th>キーワード</th><th>使う比率</th><th>計算のキー</th></tr>
@@ -3778,18 +3884,19 @@ body { padding-top:112px; }
         <li><b>Quick Ratio に Inventory を入れる：</b>除外（Prepaid も除外）。</li>
         <li><b>EPS の分子から優先配当を引き忘れる。</b></li>
         <li><b>Times Interest Earned で NI のみを分子：</b>NI + 利息 + 税。</li>
-        <li><b>Turnover と Days を混同：</b>Days = 365 / Turnover（逆数×365）。</li>
-        <li><b>DuPont で Equity Multiplier を抜かす：</b>ROE = PM × AT × EM の3因子。</li>
+        <li><b>Turnover と Days を混同：</b>Days = 365 ÷ Turnover（逆数×365）。</li>
+        <li><b>DuPont を3因子で書く：</b>講座版は <b>ROA = PM × Asset Turnover の2因子</b>（Equity Multiplier は使わない）。</li>
+        <li><b>ROE の分母に総資本：</b>分母は <b>Average Ordinary Shareholders' Equity</b>、分子は NI − Pref Div。</li>
       </ul></div>
       <h3 class="wk-section-h">💡 暗記フック</h3>
       <div class="wk-hooks"><ul>
-        <li><b>Current = ざっくり / Quick = 厳しめ。</b></li>
-        <li><b>ROA・ROE は "Avg" 必須。</b></li>
-        <li><b>EPS は "NI − Pref Div" を分子に。</b></li>
-        <li><b>Horizontal = 時間軸 / Vertical = 構成比。</b></li>
-        <li><b>DuPont：ROE = 稼ぐ力(PM) × 効率(AT) × レバレッジ(EM)。</b></li>
+        <li><b>Current = ざっくり / Acid-test = 厳しめ。</b></li>
+        <li><b>ROA・ROE・Turnover は "Average" 必須。</b></li>
+        <li><b>EPS・ROE は分子 "NI − Preference Dividends"。</b></li>
+        <li><b>Horizontal = 時間軸 / Vertical = 構成比（Common-size）。</b></li>
+        <li><b>DuPont（講座版）：ROA = 稼ぐ力(PM) × 効率(Asset Turnover) の2因子。</b></li>
         <li><b>回転率（Turnover）高 = 効率良い／日数（Days）短 = 効率良い。</b></li>
-        <li><b>Cash Debt Coverage = 営業CF で負債を返せる割合。</b></li>
+        <li><b>Working Capital = 流動資産 − 流動負債（絶対額）。</b></li>
       </ul></div>
       <h3 class="wk-section-h">🏁 期末試験 直前 30秒チェック（全範囲 Ch1-12,14,15）</h3>
       <div class="wk-pill-row">
