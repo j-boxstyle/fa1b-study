@@ -10914,8 +10914,8 @@ var QUESTIONS = [
   },
   {
     id: 'q896', conceptId: 'c14_non_cash', ch: 14, type: 'A',
-    q: '下記の取引のうち「Cash Flow Statement本体には現れず注記で開示」されるのはどれ？',
-    opts: ['A) ②機械を借入金で直接取得 (非現金取引)', 'B) ①顧客から現金回収', 'C) ③社債発行による現金調達', 'D) ④機械売却 (現金受領)', 'E) ⑤配当現金支払', 'F) わからない'],
+    q: 'Which of the transactions below does NOT appear in the body of the statement of cash flows but is disclosed in the notes?',
+    opts: ['A) ② Acquiring machinery directly with borrowing (a non-cash transaction)', 'B) ① Collecting cash from customers', 'C) ③ Raising cash by issuing bonds', 'D) ④ Selling machinery (cash received)', 'E) ⑤ Paying a dividend in cash', 'F) Not sure'],
     ans: 0,
     exp: '②機械購入をローンで直接行った場合、Cashは動かない (= CF本体に現れない)。重要性ある場合「Significant Non-Cash Activities」として注記開示。',
     we: { 1: '①は Operating で表示。', 2: '③は Financing で表示。', 3: '④は Investing で表示。', 4: '⑤は Financing (またはOp) で表示。', 5: '「わからない」を選択。非現金取引 = CF本体に出ない、注記のみ。' },
@@ -10927,8 +10927,8 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q900', conceptId: 'c15_horizontal', ch: 15, type: 'E',
-    q: '下記のHorizontal Analysis表で、「2024年Salesの2023年比増加率」は？',
-    opts: ['A) +25%', 'B) +20%', 'C) +5%', 'D) +125%', 'E) +50%', 'F) わからない'],
+    q: 'In the horizontal analysis table below, what is the % increase in 2024 sales compared with 2023?',
+    opts: ['A) +25%', 'B) +20%', 'C) +5%', 'D) +125%', 'E) +50%', 'F) Not sure'],
     ans: 0,
     exp: '増加率 = (2024 − 2023) / 2023 × 100 = (€1,000k − €800k) / €800k × 100 = 25%。',
     we: { 1: '+20% = €200k / €1,000k (新しい年を基準にしている)。', 2: '+5% = 5%増加 (約€40k増)。', 3: '+125% = 増加額/基準でなく総額/基準。', 4: '+50% = €400k 増加に相当。実際は€200k増。', 5: '「わからない」を選択。増加率 = (当期−前期) ÷ 前期 ×100。' },
@@ -10936,8 +10936,8 @@ var QUESTIONS = [
   },
   {
     id: 'q901', conceptId: 'c15_vertical', ch: 15, type: 'E',
-    q: '下記のCommon-Size Income Statement (Net Sales=100%基準)で「Net Income margin」は？',
-    opts: ['A) 15%', 'B) 60%', 'C) 25%', 'D) 100%', 'E) 10%', 'F) わからない'],
+    q: 'In the common-size income statement below (Net Sales = 100% base), what is the net income margin?',
+    opts: ['A) 15%', 'B) 60%', 'C) 25%', 'D) 100%', 'E) 10%', 'F) Not sure'],
     ans: 0,
     exp: 'Net Income / Net Sales × 100 = €150k / €1,000k × 100 = 15%。Vertical Analysisでは各項目をNet Salesの%で表示。',
     we: { 1: '60% = COGS margin。', 2: '25% = Operating Expense margin。', 3: '100% = Net Sales基準値そのもの。', 4: '10% = 計算誤り。', 5: '「わからない」を選択。Common-Size: 各項目 ÷ Net Sales (I/S) または ÷ Total Assets (B/S)。' },
@@ -10945,8 +10945,8 @@ var QUESTIONS = [
   },
   {
     id: 'q902', conceptId: 'c15_ratios_dashboard', ch: 15, type: 'E',
-    q: '下記のRatio Dashboardで「Current Ratio」と「Profit Margin」の数値は？',
-    opts: ['A) 2.0 と 10%', 'B) 0.5 と 50%', 'C) 2.0 と 50%', 'D) 0.5 と 10%', 'E) 1.0 と 20%', 'F) わからない'],
+    q: 'In the ratio dashboard below, what are the \'Current Ratio\' and \'Profit Margin\'?',
+    opts: ['A) 2.0 and 10%', 'B) 0.5 and 50%', 'C) 2.0 and 50%', 'D) 0.5 and 10%', 'E) 1.0 and 20%', 'F) Not sure'],
     ans: 0,
     exp: '流動比率 = CA €300k / CL €150k = 2.0。Profit Margin = NI €100k / 純売上 €1,000k = 10%。',
     we: { 1: '流動比率が逆数（CL÷CA = €150k/€300k = 0.5）で、Profit Margin も桁誤り（50%）です。', 2: '流動比率は正しい（2.0）が、Profit Margin 50% は計算誤り（€100k/€1,000k = 10%）です。', 3: '流動比率が逆数（0.5）かつ Profit Margin も誤り（50%）。両方とも公式適用ミスです。', 4: '流動比率1.0 = CA=CL の場合（本問は €300k/€150k=2.0）、Profit Margin 20% も計算根拠なし。', 5: '「わからない」を選択。流動比率 = CA ÷ CL、Profit Margin = NI ÷ 純売上。' },
@@ -10954,8 +10954,8 @@ var QUESTIONS = [
   },
   {
     id: 'q903', conceptId: 'c15_dupont', ch: 15, type: 'E',
-    q: '下記のDuPont分解で「ROE」の計算結果は？',
-    opts: ['A) 20%', 'B) 10%', 'C) 30%', 'D) 50%', 'E) 100%', 'F) わからない'],
+    q: 'In the DuPont decomposition below, what is the resulting ROE?',
+    opts: ['A) 20%', 'B) 10%', 'C) 30%', 'D) 50%', 'E) 100%', 'F) Not sure'],
     ans: 0,
     exp: 'DuPont（3要素版）：ROE = Profit Margin × Asset Turnover × Financial Leverage = 10% × 1.0 × 2.0 = 20%。',
     we: { 1: 'Profit Margin だけです。', 2: '誤計算（×1.5 にしてしまった）です。', 3: '0.5×100=50% の計算誤りです。', 4: '加算してしまっています。', 5: '「わからない」を選択。ROE = PM × AT × Leverage（3要素の積）。' },
@@ -10963,8 +10963,8 @@ var QUESTIONS = [
   },
   {
     id: 'q904', conceptId: 'c15_liquidity_chart', ch: 15, type: 'A',
-    q: '下記のLiquidity Ratio比較棒グラフで「最も流動性が高い企業」は？',
-    opts: ['A) Company C (Current 3.0)', 'B) Company A (Current 1.5)', 'C) Company B (Current 2.0)', 'D) 同じ', 'E) 判断不可', 'F) わからない'],
+    q: 'In the liquidity ratio comparison bar chart below, which company has the highest liquidity?',
+    opts: ['A) Company C (Current 3.0)', 'B) Company A (Current 1.5)', 'C) Company B (Current 2.0)', 'D) The same', 'E) Cannot be determined', 'F) Not sure'],
     ans: 0,
     exp: 'Current Ratio が高いほど短期支払能力が強い。Company C = 3.0 が最高。一般に2.0以上が健全。',
     we: { 1: 'Aは最低 (1.5)。', 2: 'Bは中間 (2.0)。', 3: '数値に明確な差がある。', 4: '与えられたデータで判断可能。', 5: '「わからない」を選択。Current Ratio高い = Liquidity高い。' },
@@ -10972,8 +10972,8 @@ var QUESTIONS = [
   },
   {
     id: 'q905', conceptId: 'c15_trend', ch: 15, type: 'A',
-    q: '下記のEPS推移グラフから読み取れる正しい解釈は？',
-    opts: ['A) 2021→2024で右肩上がりの成長トレンド', 'B) 右肩下がりの衰退', 'C) 横ばい (一定)', 'D) 上下に振動 (volatility)', 'E) データ不足で判断不可', 'F) わからない'],
+    q: 'What is the correct interpretation of the EPS trend graph below?',
+    opts: ['A) An upward growth trend from 2021 to 2024', 'B) A downward decline', 'C) Flat (constant)', 'D) Oscillating up and down (volatility)', 'E) Insufficient data to determine', 'F) Not sure'],
     ans: 0,
     exp: 'EPSが2021 €2.00 → 2022 €2.50 → 2023 €3.20 → 2024 €4.00 と毎年増加。連続的上昇=成長トレンド。',
     we: { 1: 'グラフは実際 **右肩上がり**。€2.00→€2.50→€3.20→€4.00 と毎年増加 (右肩下がりではない)。', 2: 'EPSは毎年増加 (€2→€2.5→€3.2→€4)。横ばいなら全年同額になるはずだが明らかに異なる。', 3: '上下振動 (Volatility) は周期的に増減するパターン。本データは**単調増加**のため当てはまらない。', 4: '4年間のデータは十分 (3-5年で短期トレンド判定可能)。データ不足を理由に判断不可とするのは誤り。', 5: '「わからない」を選択。グラフから単調増加が読み取れる場合は **成長トレンド** と判定。' },
@@ -10981,8 +10981,8 @@ var QUESTIONS = [
   },
   {
     id: 'q906', conceptId: 'c15_solvency', ch: 15, type: 'E',
-    q: '下記のSolvency Ratiosで「最もリスクが高い」企業は？',
-    opts: ['A) Z社 (Debt-to-Assets 80%、TIE 1.5)', 'B) X社 (Debt-to-Assets 30%、TIE 10)', 'C) Y社 (Debt-to-Assets 50%、TIE 5)', 'D) 全て同等', 'E) 判定不可', 'F) わからない'],
+    q: 'Among the solvency ratios below, which company has the HIGHEST risk?',
+    opts: ['A) Company Z (Debt-to-Assets 80%, TIE 1.5)', 'B) Company X (Debt-to-Assets 30%, TIE 10)', 'C) Company Y (Debt-to-Assets 50%, TIE 5)', 'D) All equal', 'E) Cannot be determined', 'F) Not sure'],
     ans: 0,
     exp: 'Z社: 資産の80%が他人資本 (高レバレッジ) + 利息支払余力1.5倍 (低い)。両指標とも最悪 = 最高リスク。一般に Debt-to-Assets<50%、TIE>2.5が健全。',
     we: { 1: 'X社は **最も健全** (Debt-to-Assets 30% は低レバレッジ + TIE 10倍は利息支払余力大)。最高リスクの逆。', 2: 'Y社は **中間レベル** (D/A 50% は平均的、TIE 5倍は余裕あり)。Z社の80%・1.5倍と比べリスク低い。', 3: 'X社 30%/10倍、Y社 50%/5倍、Z社 80%/1.5倍と **明確な差**がある。全て同等は誤り。', 4: 'D/A と TIE という具体的数値が表示されているため **判定可能**。Z社が両指標で最悪値を示す。', 5: '「わからない」を選択。Debt-to-Assets 高 (>50%) かつ TIE 低 (<2.5) = 財務リスク大。' },
@@ -10990,8 +10990,8 @@ var QUESTIONS = [
   },
   {
     id: 'q907', conceptId: 'c15_eps_payout', ch: 15, type: 'E',
-    q: '下記のShareholder Metricsで「P/E Ratio」は？',
-    opts: ['A) 12.5×', 'B) 8.0×', 'C) 0.08', 'D) €50', 'E) 25%', 'F) わからない'],
+    q: 'In the shareholder metrics below, what is the P/E ratio?',
+    opts: ['A) 12.5×', 'B) 8.0×', 'C) 0.08', 'D) €50', 'E) 25%', 'F) Not sure'],
     ans: 0,
     exp: 'P/E = 株価 / EPS = €50 / €4 = 12.5×。「1円利益に対し12.5円払う」を意味する。',
     we: { 1: '8.0× = €4 ÷ €0.5 のような誤分母計算。P/E 公式は Price ÷ EPS = €50 ÷ €4 = 12.5。', 2: '0.08 = €4 ÷ €50 = **逆数** (Earnings Yield = 8%、利回り指標)。P/E は Price/EPS で逆方向。', 3: '€50 は **株価そのもの**。P/E は比率 (倍数) なので単位は「times」、金額表記は不適切。', 4: '25% は €50 ÷ €200 のような誤計算。P/E は **%表記しない** (倍数 = times で表現する慣習)。', 5: '「わからない」を選択。P/E = Market Price ÷ EPS。利益1円に対し株価何倍を支払うか。' },
