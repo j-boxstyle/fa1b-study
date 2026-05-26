@@ -1213,19 +1213,21 @@ body { padding-top:112px; }
 .jfrac>.den{padding:3px 10px 1px;display:block;}
 .wk-tbl .jfrac{font-size:18px;color:#cbd5e1;}
 .jeq{font-weight:700;margin:0 4px;}
-.fx-head{margin:4px 0 18px;}
-.fx-head h2{font-size:26px;color:#22d3ee;margin:0 0 6px;}
-.fx-head p{font-size:15px;color:#94a3b8;margin:0;}
-.fx-sec{margin-bottom:18px;background:#0f1c2e;border:1px solid #1e3a5f;border-radius:12px;padding:16px 18px;}
-.fx-sec-head{font-size:21px;font-weight:800;color:#e2e8f0;border-bottom:2px solid #1e3a5f;padding-bottom:10px;margin-bottom:8px;}
-.fx-sec-head .fx-en{font-size:14px;color:#94a3b8;font-weight:600;}
-.fx-sec-head .fx-ch{float:right;font-size:13px;color:#fbbf24;background:rgba(234,179,8,0.12);padding:3px 12px;border-radius:12px;font-weight:700;}
-.fx-row{padding:13px 0;border-bottom:1px solid #1a2940;}
+/* em units resolve against body font-size (28px desktop / smaller on mobile) so this matches the 教科書 tab at every breakpoint */
+.fx-head{margin:4px 0 22px;}
+.fx-head h2{font-size:1.25em;color:#22d3ee;margin:0 0 8px;}
+.fx-head p{font-size:0.64em;color:#94a3b8;margin:0;line-height:1.6;}
+.fx-sec{margin-bottom:22px;background:#0f1c2e;border:1px solid #1e3a5f;border-radius:12px;padding:20px 22px;}
+.fx-sec-head{font-size:1.05em;font-weight:800;color:#e2e8f0;border-bottom:2px solid #1e3a5f;padding-bottom:12px;margin-bottom:10px;}
+.fx-sec-head .fx-en{font-size:0.55em;color:#94a3b8;font-weight:600;}
+.fx-sec-head .fx-ch{float:right;font-size:0.5em;color:#fbbf24;background:rgba(234,179,8,0.12);padding:5px 13px;border-radius:12px;font-weight:700;}
+.fx-row{padding:17px 0;border-bottom:1px solid #1a2940;}
 .fx-row:last-child{border-bottom:none;padding-bottom:2px;}
-.fx-name{font-size:17px;font-weight:700;color:#e2e8f0;margin-bottom:8px;}
-.fx-name .fx-jp{font-size:14px;color:#7dd3fc;margin-left:10px;font-weight:600;}
-.fx-formula{font-size:18px;color:#e2e8f0;padding:11px 16px;background:#0a1628;border-radius:8px;border-left:3px solid #22d3ee;overflow-x:auto;}
-.fx-note{font-size:13.5px;color:#94a3b8;margin-top:7px;padding-left:2px;line-height:1.6;}
+.fx-name{font-size:1em;font-weight:700;color:#e2e8f0;margin-bottom:11px;line-height:1.4;}
+.fx-name .fx-jp{font-size:0.6em;color:#7dd3fc;margin-left:10px;font-weight:600;}
+.fx-formula{font-size:1em;color:#e2e8f0;padding:14px 18px;background:#0a1628;border-radius:8px;border-left:3px solid #22d3ee;overflow-x:auto;line-height:1.75;}
+.fx-note{font-size:0.6em;color:#94a3b8;margin-top:10px;padding-left:2px;line-height:1.7;}
+.fx-kwdef{font-size:0.95em;color:#cbd5e1;line-height:1.8;padding-left:2px;}
 /* ═══════ 🗺️ 概念ツリー型ロードマップ ═══════ */
 #tab-roadmap{padding:14px 18px 90px;}
 .rm-hero{background:linear-gradient(135deg,#0f766e,#0891b2);color:#fff;padding:20px 24px;border-radius:16px;margin-bottom:16px;box-shadow:0 6px 20px rgba(8,145,178,0.3);}
@@ -12189,6 +12191,67 @@ var FORMULAS = [
     {name:'Times Interest Earned', jp:'利息カバー率', f:'TIE <span class="jeq">=</span> ' + jf('Net Income ＋ Interest Exp ＋ Tax Exp','Interest Expense')},
   ]},
 ];
+var KEYWORDS = [
+  { cat:'① 財務諸表', items:[
+    {t:'Statement of Financial Position (SFP)', jp:'財政状態計算書（B/S）', d:'ある一時点の資産・負債・資本を示す表。Balance Sheet と同義。「as at（〜時点）」で表す。'},
+    {t:'Income Statement', jp:'損益計算書（P/L）', d:'一定期間の収益 − 費用 ＝ 純利益を示す。「for the year ended（〜の期間）」で表す。'},
+    {t:'Statement of Cash Flows', jp:'キャッシュフロー計算書', d:'現金の増減を営業・投資・財務の3活動に区分して示す表。'},
+    {t:'Retained Earnings', jp:'利益剰余金', d:'過去の純利益の累積から配当を差し引いた、社内に留保された利益。資本の一部。'},
+    {t:'Other Comprehensive Income (OCI)', jp:'その他の包括利益', d:'純利益には含めない評価差額など（例：再評価剰余金、為替換算差額）。'},
+    {t:'Articulation', jp:'財務諸表の連携', d:'各諸表が数字でつながること。純利益→利益剰余金→資本→SFP の順に流れる。'},
+  ]},
+  { cat:'② 資産まわりの用語', items:[
+    {t:'Accounts Receivable (A/R)', jp:'売掛金', d:'掛け販売による未回収の代金。資産。'},
+    {t:'Allowance for Doubtful Accounts', jp:'貸倒引当金', d:'回収不能の見込額。A/R から差し引く評価勘定（contra-asset）。'},
+    {t:'Net Realizable Value (NRV)', jp:'正味実現可能価額', d:'実際に回収・売却で得られる見込みの正味額。Net A/R ＝ 総額 − 貸倒引当金。'},
+    {t:'Carrying Amount / Book Value', jp:'帳簿価額', d:'取得原価 − 減価償却累計額。SFP に載る資産の純額。'},
+    {t:'Residual (Salvage) Value', jp:'残存価額', d:'耐用年数到来時の見積処分価値。定額法では原価から控除する。'},
+    {t:'Useful Life', jp:'耐用年数', d:'資産を使用すると見込む期間。減価償却の分母になる。'},
+    {t:'Accumulated Depreciation', jp:'減価償却累計額', d:'これまで計上した減価償却費の合計。資産の評価勘定（contra-asset）。'},
+    {t:'Prepaid Expense', jp:'前払費用', d:'先に支払った、まだ経過していない費用。資産（後で費用へ振替）。'},
+    {t:'Goods in Transit', jp:'未着品（輸送中商品）', d:'輸送中の商品。FOB 条件で所有権の所在＝在庫に含めるかを判断する。'},
+  ]},
+  { cat:'③ 負債・資本の用語', items:[
+    {t:'Accounts Payable (A/P)', jp:'買掛金', d:'掛け仕入による未払いの代金。負債。'},
+    {t:'Notes Payable', jp:'支払手形・借入金', d:'手形や借入による支払義務。利息が付くことが多い。'},
+    {t:'Unearned Revenue', jp:'前受収益', d:'先に受け取った、まだ提供していないサービスの代金。負債。'},
+    {t:'Accrued Expense (Liability)', jp:'未払費用', d:'発生済みだが未払いの費用（例：未払給与・未払利息）。'},
+    {t:'Bonds Payable', jp:'社債', d:'長期資金調達のために発行する債券。'},
+    {t:'Face (Par) Value', jp:'額面（券面額）', d:'社債・株式の名目額。現金利息は 額面 × 表面利率 で計算する。'},
+    {t:'Stated (Coupon) Rate', jp:'表面利率', d:'社債が約束する固定の利率。現金利払額を決める。'},
+    {t:'Market (Effective) Rate', jp:'市場利率（実効金利）', d:'発行時の実勢利率。利息費用を決める。表面利率との大小で premium / discount が決まる。'},
+    {t:'Premium / Discount', jp:'打歩発行／割引発行', d:'額面より高く発行＝premium（表面>市場）、低く発行＝discount（表面<市場）。'},
+    {t:'Share Premium', jp:'株式払込剰余金', d:'株式の発行価格が額面を超えた部分。資本。'},
+    {t:'Treasury Shares', jp:'自己株式', d:'買い戻した自社株。資本の控除項目で、配当も議決権もない。'},
+  ]},
+  { cat:'④ 収益・費用の用語', items:[
+    {t:'Net Sales', jp:'純売上高', d:'総売上 − 返品・値引 − 売上割引。'},
+    {t:'Cost of Goods Sold (COGS)', jp:'売上原価', d:'販売した商品の原価。期首在庫 ＋ 純仕入 − 期末在庫。'},
+    {t:'Gross Profit', jp:'売上総利益（粗利）', d:'純売上 − 売上原価。'},
+    {t:'Accrued Revenue', jp:'未収収益', d:'発生済みだが未回収の収益（例：未収利息）。'},
+    {t:'Bad Debt Expense', jp:'貸倒費用', d:'回収不能の見込みを費用として計上したもの。'},
+    {t:'Depreciation Expense', jp:'減価償却費', d:'有形固定資産の原価を耐用年数にわたり費用配分したもの。'},
+  ]},
+  { cat:'⑤ 仕訳・会計サイクルの用語', items:[
+    {t:'Debit / Credit', jp:'借方／貸方', d:'借方＝左、貸方＝右。資産・費用は借方で増加、負債・資本・収益は貸方で増加。'},
+    {t:'Trial Balance', jp:'試算表', d:'全勘定残高の一覧。借方合計＝貸方合計を確認する。'},
+    {t:'Adjusting Entries', jp:'修正（決算整理）仕訳', d:'期末に発生主義へ調整する仕訳。必ず損益1勘定＋SFP1勘定で、現金は動かさない。'},
+    {t:'Closing Entries', jp:'決算振替仕訳', d:'収益・費用・配当を締め切り、利益剰余金へ振り替える仕訳。'},
+    {t:'Contra Account', jp:'評価勘定（控除勘定）', d:'本勘定から差し引く勘定。例：減価償却累計額、貸倒引当金、自己株式。'},
+    {t:'Accrual Basis', jp:'発生主義', d:'現金の動きではなく、発生した時点で収益・費用を認識する考え方。'},
+    {t:'Matching Principle', jp:'費用収益対応の原則', d:'費用は、それが生み出す収益と同じ期間に認識する。'},
+  ]},
+  { cat:'⑥ 在庫・財務分析の用語', items:[
+    {t:'FOB Shipping Point / Destination', jp:'船積地点渡し／仕向地渡し', d:'所有権移転の時点と運賃負担者を決める条件。Shipping Point＝出荷時に買主へ、Destination＝到着時に（運賃は売主負担）。'},
+    {t:'Perpetual / Periodic', jp:'継続記録法／棚卸計算法', d:'継続記録＝販売の都度COGSを記録。棚卸計算＝期末の実地棚卸でCOGSを算定。'},
+    {t:'FIFO / Weighted Average', jp:'先入先出法／加重平均法', d:'在庫の原価配分方法。物価上昇時、FIFO は期末在庫が大きく COGS が小さい。'},
+    {t:'LCNRV', jp:'低価法', d:'Lower of Cost or NRV。取得原価と正味実現可能価額の低い方で在庫を評価（IAS 2）。'},
+    {t:'Liquidity', jp:'流動性', d:'短期の支払能力。流動比率・当座比率で測る。'},
+    {t:'Solvency', jp:'支払能力（長期）', d:'長期債務の返済能力。負債比率・利息カバー率で測る。'},
+    {t:'Working Capital', jp:'運転資本', d:'流動資産 − 流動負債。短期の余裕資金。'},
+    {t:'Weighted Avg Shares Outstanding', jp:'加重平均発行済株式数', d:'EPS 計算の分母。期中の発行株数を期間で加重平均したもの。'},
+  ]},
+];
 function renderFormulas(){
   var el = document.getElementById('formulas-content'); if(!el) return;
   var h = '<div class="fx-head"><h2>📐 覚える公式集</h2><p>試験で使う公式を章別に網羅。数式はすべて<b>日本式（縦分数）</b>表記。</p></div>';
@@ -12198,6 +12261,17 @@ function renderFormulas(){
     for (var i=0;i<sec.items.length;i++){
       var it = sec.items[i];
       h += '<div class="fx-row"><div class="fx-name">' + it.name + '<span class="fx-jp">' + it.jp + '</span></div><div class="fx-formula">' + it.f + '</div>' + (it.note ? '<div class="fx-note">💡 ' + it.note + '</div>' : '') + '</div>';
+    }
+    h += '</div>';
+  }
+  // ── 問題文キーワード解説（英語キーワード ＋ 日本語の意味）──
+  h += '<div class="fx-head" style="margin-top:34px;"><h2>🔑 問題文キーワード解説</h2><p>英文の問題でよく出る用語。英語のキーワードと、それが何を表すかの日本語解説。</p></div>';
+  for (var k=0;k<KEYWORDS.length;k++){
+    var kc = KEYWORDS[k];
+    h += '<div class="fx-sec"><div class="fx-sec-head">' + kc.cat + '</div>';
+    for (var j=0;j<kc.items.length;j++){
+      var kw = kc.items[j];
+      h += '<div class="fx-row"><div class="fx-name">' + kw.t + '<span class="fx-jp">' + kw.jp + '</span></div><div class="fx-kwdef">' + kw.d + '</div></div>';
     }
     h += '</div>';
   }
