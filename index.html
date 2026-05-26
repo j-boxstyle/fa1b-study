@@ -8673,136 +8673,136 @@ var QUESTIONS = [
     q: 'A company collects $2,000 cash from a customer for services to be performed next month. What is the journal entry?',
     opts: ['A) Debit Cash $2,000; Credit Service Revenue $2,000','B) Debit Cash $2,000; Credit Unearned Revenue $2,000','C) Debit Accounts Receivable $2,000; Credit Service Revenue $2,000','D) Debit Service Revenue $2,000; Credit Cash $2,000'],
     ans: 1,
-    exp: 'Collecting cash before performing services creates an obligation to perform in the future — a liability (Unearned Revenue). Debit Cash $2,000; Credit Unearned Revenue $2,000. Revenue is recognized when services are performed.',
-    we: { 0: 'Revenue is not yet earned; crediting Service Revenue violates the revenue recognition principle.', 2: 'Cash was received (debit Cash); Accounts Receivable is for amounts to be received, not already received.', 3: 'Cash increases (debit), not decreases; and Unearned Revenue (not SE) is credited.' }
+    exp: 'サービス提供前に現金を回収すると、将来提供する義務（負債＝Unearned Revenue）が生じます。借方 Cash $2,000 / 貸方 Unearned Revenue $2,000。収益はサービス提供時に認識します。',
+    we: { 0: '収益はまだ稼得していません。Service Revenue を貸方にするのは収益認識の原則に反します。', 2: '現金は受領済み（借方 Cash）です。Accounts Receivable はこれから受け取る金額で、既に受領した分ではありません。', 3: '現金は増加（借方）し減少しません。また Unearned Revenue（SE ではない）を貸方にします。' }
   },
   {
     id: 'q451', conceptId: 'c3_depreciation', ch: 3, type: 'C',
     q: "After 2 years of depreciation, a company's equipment shows: Cost $40,000; Accumulated Depreciation $16,000. If the annual depreciation rate is straight-line and useful life is 5 years with zero residual value, what is the book value at the END of year 3?",
     opts: ['A) $24,000','B) $16,000','C) $8,000','D) $32,000'],
     ans: 1,
-    exp: 'Annual depreciation = $40,000 ÷ 5 = $8,000. After year 2: accumulated = $16,000; book value = $24,000. After year 3: accumulated = $24,000; book value = $40,000 − $24,000 = $16,000.',
-    we: { 0: '$24,000 is book value at END of year 2, not year 3.', 2: '$8,000 would be book value at end of year 4, not year 3.', 3: '$32,000 is book value after only year 1.' }
+    exp: '年間減価償却費 = $40,000 ÷ 5 = $8,000。2年後：累計 = $16,000、簿価 = $24,000。3年後：累計 = $24,000、簿価 = $40,000 − $24,000 = $16,000。',
+    we: { 0: '$24,000 は2年『末』の簿価で、3年末ではありません。', 2: '$8,000 は4年末の簿価で、3年末ではありません。', 3: '$32,000 は1年だけ後の簿価です。' }
   },
   {
     id: 'q452', conceptId: 'c4_worksheet', ch: 4, type: 'B',
     q: 'In a 10-column worksheet, which columns appear in order from left to right?',
     opts: ['A) Adjusted TB → Unadjusted TB → Adjustments → IS → SFP','B) Unadjusted TB → Adjustments → Adjusted TB → IS → SFP','C) Adjustments → Unadjusted TB → Adjusted TB → SFP → IS','D) IS → SFP → Adjusted TB → Adjustments → Unadjusted TB'],
     ans: 1,
-    exp: 'The 10-column worksheet has columns (each with Dr/Cr): (1) Unadjusted Trial Balance, (2) Adjustments, (3) Adjusted Trial Balance, (4) Income Statement, (5) Statement of Financial Position.',
-    we: { 0: 'The unadjusted TB comes first, before the adjusted TB.', 2: 'The unadjusted TB comes before adjustments, not after.', 3: 'This order is completely reversed.' }
+    exp: '10列精算表の列（各 Dr/Cr）：(1)未調整試算表 (2)調整 (3)調整後試算表 (4)損益計算書 (5)財政状態計算書。',
+    we: { 0: '未調整試算表が最初で、調整後試算表の前です。', 2: '未調整試算表は調整の前で、後ではありません。', 3: 'この順序は完全に逆です。' }
   },
   {
     id: 'q453', conceptId: 'c5_contra', ch: 5, type: 'B',
     q: 'Gross sales = $500,000; Sales Returns = $12,000; Sales Discounts = $8,000; COGS = $280,000. What is gross profit?',
     opts: ['A) $220,000','B) $200,000','C) $480,000','D) $192,000'],
     ans: 1,
-    exp: 'Net sales = $500,000 − $12,000 − $8,000 = $480,000. Gross profit = Net sales − COGS = $480,000 − $280,000 = $200,000.',
-    we: { 0: '$220,000 calculates gross profit using gross sales ($500,000 − $280,000) without deducting sales returns and discounts.', 2: '$480,000 is net sales, not gross profit.', 3: '$192,000 makes an arithmetic error.' }
+    exp: '純売上 = $500,000 − $12,000 − $8,000 = $480,000。売上総利益 = 純売上 − COGS = $480,000 − $280,000 = $200,000。',
+    we: { 0: '$220,000 は総売上($500,000 − $280,000)で計算し、売上戻り・割引を引いていません。', 2: '$480,000 は純売上で、売上総利益ではありません。', 3: '$192,000 は計算ミスです。' }
   },
   {
     id: 'q454', conceptId: 'c6_avg_cost', ch: 6, type: 'C',
     q: 'Under the moving-average (perpetual) method, when is the average cost per unit recalculated?',
     opts: ['A) At the end of each accounting period','B) After each PURCHASE of inventory','C) After each SALE of inventory','D) At the beginning of each accounting period'],
     ans: 1,
-    exp: 'Under the moving-average (perpetual) method, a new weighted-average cost is calculated after EACH purchase. Sales are then costed at the most current moving average until the next purchase changes the average again.',
-    we: { 0: 'Recalculating only at period end describes the weighted-average under the periodic system.', 2: 'Sales do not trigger a new average calculation — purchases do.', 3: 'The average is not preset at the beginning of the period; it is recalculated as purchases occur.' }
+    exp: '移動平均（継続）法では、仕入の都度に新しい加重平均原価を計算します。販売はその時点の移動平均で原価計算し、次の仕入で平均が再び変わります。',
+    we: { 0: '期末にのみ再計算するのは棚卸計算法の加重平均です。', 2: '新しい平均計算の引き金は販売ではなく仕入です。', 3: '平均は期首に設定するのではなく、仕入が起きるたびに再計算します。' }
   },
   {
     id: 'q455', conceptId: 'c1_acct_eq', ch: 1, type: 'C',
     q: 'A company has: Cash $5,000; Accounts Receivable $8,000; Equipment $25,000; Accounts Payable $6,000; Notes Payable $12,000; Share Capital $10,000. What is retained earnings?',
     opts: ['A) $10,000','B) $20,000','C) $38,000','D) $0'],
     ans: 0,
-    exp: 'Total assets = $5,000 + $8,000 + $25,000 = $38,000. Total liabilities = $6,000 + $12,000 = $18,000. Total equity = $38,000 − $18,000 = $20,000. Retained Earnings = Total equity − Share capital = $20,000 − $10,000 = $10,000.',
-    we: { 1: '$20,000 is total equity, not retained earnings.', 2: '$38,000 is total assets.', 3: 'Retained earnings is $10,000 (total equity minus share capital).' }
+    exp: '総資産 = $5,000 + $8,000 + $25,000 = $38,000。総負債 = $6,000 + $12,000 = $18,000。総資本 = $38,000 − $18,000 = $20,000。利益剰余金 = 総資本 − 株式資本 = $20,000 − $10,000 = $10,000。',
+    we: { 1: '$20,000 は総資本で、利益剰余金ではありません。', 2: '$38,000 は総資産です。', 3: '利益剰余金は$10,000（総資本 − 株式資本）です。' }
   },
   {
     id: 'q456', conceptId: 'c3_prepaid', ch: 3, type: 'C',
     q: 'A magazine publisher collected $120,000 for annual subscriptions on July 1. At December 31, what is the balance of Unearned Subscription Revenue (liability)?',
     opts: ['A) $120,000','B) $60,000','C) $0','D) $20,000'],
     ans: 1,
-    exp: '6 months have passed (July–December) of a 12-month subscription. Earned = $120,000 × 6/12 = $60,000. Unearned (still a liability) = $120,000 − $60,000 = $60,000.',
-    we: { 0: '$120,000 is the full amount collected; 6 months have elapsed so half should be earned.', 2: '$0 would mean all 12 months have been delivered, but only 6 have passed.', 3: '$20,000 represents only 2 months, not 6.' }
+    exp: '12か月購読のうち6か月（7〜12月）が経過。稼得 = $120,000 × 6/12 = $60,000。未稼得（依然負債）= $120,000 − $60,000 = $60,000。',
+    we: { 0: '$120,000 は回収した全額で、6か月経過なので半分が稼得されるべきです。', 2: '$0 は12か月全部提供した状態ですが、経過は6か月だけです。', 3: '$20,000 は2か月分だけで、6か月ではありません。' }
   },
   {
     id: 'q457', conceptId: 'c4_cycle', ch: 4, type: 'A',
     q: 'The accounting cycle begins with analyzing transactions and ends with:',
     opts: ['A) Preparing the adjusted trial balance','B) Preparing financial statements','C) Posting closing entries','D) Preparing the post-closing trial balance'],
     ans: 3,
-    exp: 'The accounting cycle begins with analyzing transactions and ends with the preparation of the post-closing trial balance. This verifies that all temporary accounts are closed and the ledger is in balance for the new period.',
-    we: { 0: 'The adjusted trial balance is step 6 of 9 — not the last step.', 1: 'Financial statements are step 7 — closing entries and the post-closing TB come after.', 2: 'Posting closing entries is step 8 — the post-closing trial balance is step 9 (final).' }
+    exp: '会計サイクルは取引の分析から始まり、締切後試算表の作成で終わります。これにより全一時勘定が締め切られ、新期間に向け元帳の貸借が一致していることを検証します。',
+    we: { 0: '調整後試算表は9段階中の6番目で、最終段階ではありません。', 1: '財務諸表は7番目で、締切仕訳と締切後試算表はその後です。', 2: '締切仕訳の転記は8番目で、締切後試算表が9番目（最終）です。' }
   },
   {
     id: 'q458', conceptId: 'c5_perpetual_periodic', ch: 5, type: 'C',
     q: 'A company uses the periodic system. Which account does NOT exist under the periodic system?',
     opts: ['A) Purchases account — accumulates merchandise bought during the period','B) Purchase Returns and Allowances — contra account reducing total purchases','C) Cost of Goods Sold — tracked continuously transaction-by-transaction during period','D) Freight-In account — captures inbound shipping costs added to inventory cost'],
     ans: 2,
-    exp: 'Under the **periodic system**, COGS is NOT tracked continuously during the period — it is calculated only at period end using: Beginning Inv + Purchases − Ending Inv = COGS. Under the **perpetual system**, COGS is debited and Inventory credited at each sale.',
-    we: { 0: '**Purchases** IS a periodic-system account — accumulates all merchandise bought during the period (replaces direct Inventory debits).', 1: '**Purchase Returns and Allowances** IS a periodic contra-purchases account — reduces gross purchases for returns/allowances.', 3: '**Freight-In** IS a periodic-system account — captures inbound shipping costs to add to inventory cost.' }
+    exp: '棚卸計算法では COGS を期中に継続追跡せず、期末に『期首棚卸 + 仕入 − 期末棚卸 = COGS』で計算します。継続記録法では各販売時に COGS を借方・Inventory を貸方にします。',
+    we: { 0: 'Purchases は棚卸計算法の勘定で、期中の仕入を集計します（直接の Inventory 借方の代わり）。', 1: 'Purchase Returns and Allowances は棚卸計算法の評価仕入勘定で、戻し・値引で総仕入を減らします。', 3: 'Freight-In は棚卸計算法の勘定で、引取運賃を在庫原価に加えます。' }
   },
   {
     id: 'q459', conceptId: 'c6_specific_id', ch: 6, type: 'C',
     q: 'A car dealer sells three identical cars. Car #1 cost $22,000; Car #2 cost $23,500; Car #3 cost $21,000. If the dealer sells Car #2, what is COGS under specific identification?',
     opts: ['A) $21,000','B) $22,167','C) $23,500','D) $22,000'],
     ans: 2,
-    exp: 'Under specific identification, COGS = the actual cost of the specific unit sold. Car #2 cost $23,500, so COGS = $23,500. Each unit is individually tracked.',
-    we: { 0: '$21,000 is the cost of Car #3, not Car #2.', 1: '$22,167 is the weighted-average cost ((22,000+23,500+21,000)/3), not specific identification.', 3: '$22,000 is the cost of Car #1, not Car #2.' }
+    exp: '個別法では COGS = 販売した特定単位の実際原価。Car #2 の原価は $23,500 なので COGS = $23,500。各単位を個別追跡します。',
+    we: { 0: '$21,000 は Car #3 の原価で、Car #2 ではありません。', 1: '$22,167 は加重平均原価((22,000+23,500+21,000)/3)で、個別法ではありません。', 3: '$22,000 は Car #1 の原価で、Car #2 ではありません。' }
   },
   {
     id: 'q460', conceptId: 'c4_correcting', ch: 4, type: 'B',
     q: 'A $1,500 credit to Service Revenue was incorrectly posted as $1,500 to Accounts Payable. Which correcting entry is needed?',
     opts: ['A) Debit Accounts Payable $1,500; Credit Service Revenue $1,500','B) Debit Service Revenue $1,500; Credit Accounts Payable $1,500','C) Debit Service Revenue $3,000; Credit Accounts Payable $1,500; Credit Cash $1,500','D) No correcting entry needed — trial balance will still balance'],
     ans: 0,
-    exp: 'Accounts Payable was incorrectly credited $1,500 instead of Service Revenue. Correcting entry: Debit Accounts Payable $1,500 (remove wrong credit); Credit Service Revenue $1,500 (add correct credit). Note: the trial balance would still balance (both sides were credited), so it would NOT catch this error — but the ACCOUNTS are still wrong.',
-    we: { 1: 'This would add another credit to AP and debit SR — the opposite of what is needed.', 2: 'Double amounts are incorrect; only $1,500 needs to be corrected.', 3: 'The trial balance balances but the accounts are wrong — a correcting entry IS still needed.' }
+    exp: 'Service Revenue ではなく Accounts Payable に誤って$1,500貸方記入されました。訂正仕訳：借方 Accounts Payable $1,500（誤った貸方を除く）/ 貸方 Service Revenue $1,500（正しい貸方を加える）。注：両側とも貸方だったので試算表は依然一致し、この誤りは検出されませんが、勘定は誤ったままです。',
+    we: { 1: 'これは AP にさらに貸方を加え SR を借方にし、必要なことの逆です。', 2: '金額の2倍は誤りで、$1,500だけ訂正すべきです。', 3: '試算表は一致しても勘定が誤っているので、訂正仕訳は依然必要です。' }
   },
   {
     id: 'q461', conceptId: 'c2_sfp_structure', ch: 2, type: 'A',
     q: 'The ending cash balance on the statement of cash flows equals the cash balance shown on:',
     opts: ['A) The income statement','B) The retained earnings statement','C) The statement of financial position','D) The adjusted trial balance only'],
     ans: 2,
-    exp: 'The ending cash balance computed in the statement of cash flows must equal the Cash balance reported on the statement of financial position at the same date. This is the key link between these two statements.',
-    we: { 0: 'The income statement reports revenues and expenses, not cash balances.', 1: 'The retained earnings statement shows changes in retained earnings, not cash.', 3: 'The SFP (not just the adjusted trial balance) is where the ending cash balance is officially reported.' }
+    exp: 'キャッシュフロー計算書で計算した期末現金残高は、同じ日付の財政状態計算書に報告される Cash 残高に一致しなければなりません。これが2つの財務諸表を結ぶ重要な連結点です。',
+    we: { 0: '損益計算書は収益・費用を報告し、現金残高ではありません。', 1: '利益剰余金計算書は利益剰余金の変動を示し、現金ではありません。', 3: '期末現金残高が正式に報告されるのは（調整後試算表ではなく）SFP です。' }
   },
   {
     id: 'q462', conceptId: 'c6_gross_profit_method', ch: 6, type: 'A',
     q: 'The gross profit method of estimating inventory is used in which situation?',
     opts: ['A) When a company uses the perpetual inventory system exclusively','B) When inventory has been destroyed, stolen, or lost and a physical count is impossible','C) When the company wishes to switch from FIFO to weighted-average','D) When a company prepares quarterly statements under IFRS'],
     ans: 1,
-    exp: 'The gross profit method is used to estimate ending inventory when a physical count is impossible — for example after a fire, flood, or theft. It is also used for interim reporting when a full physical count is not taken.',
-    we: { 0: 'Perpetual system companies still have precise records; the gross profit method is an estimate used when records are unavailable.', 2: 'Changing cost flow methods does not require the gross profit method.', 3: 'Quarterly reporting does not automatically require the gross profit method unless a physical count is impractical.' }
+    exp: '粗利益率法は実地棚卸が不可能なとき（火災・洪水・盗難の後など）に期末棚卸を推定するために使います。実地棚卸をしない中間報告にも使います。',
+    we: { 0: '継続記録法の会社は正確な記録を持ちます。粗利益率法は記録が使えないときの推定です。', 2: '原価配分法の変更には粗利益率法は不要です。', 3: '四半期報告でも、実地棚卸が非現実的でない限り粗利益率法は自動的には不要です。' }
   },
   {
     id: 'q463', conceptId: 'c6_gross_profit_method', ch: 6, type: 'A',
     q: 'The cost-to-retail ratio used in the retail inventory method equals:',
     opts: ['A) Cost of goods available for sale at retail ÷ Cost of goods available at cost','B) Cost of goods available at cost ÷ Cost of goods available at retail','C) Net sales ÷ Gross margin','D) Ending inventory at retail ÷ Beginning inventory at cost'],
     ans: 1,
-    exp: 'Cost-to-retail ratio = Goods available at COST ÷ Goods available at RETAIL. This ratio is then applied to estimated ending inventory at retail to convert it to an estimated cost figure.',
-    we: { 0: 'This inverts the ratio — retail divided by cost gives the mark-up percentage, not the cost ratio.', 2: 'Net sales ÷ Gross margin is the gross profit rate calculation, not the retail method ratio.', 3: 'This formula has no basis in the retail inventory method.' }
+    exp: '原価率 = 販売可能（原価）÷ 販売可能（売価）。この率を売価ベースの推定期末棚卸に適用し、推定原価額に換算します。',
+    we: { 0: 'これは率を逆にしています。売価÷原価は値入率で、原価率ではありません。', 2: '純売上÷売上総利益は粗利率の計算で、小売法の率ではありません。', 3: 'この式は小売棚卸法に根拠がありません。' }
   },
   {
     id: 'q464', conceptId: 'c5_merch_service', ch: 5, type: 'A',
     q: 'A classified income statement for a merchandiser shows gross profit of $90,000 and operating expenses of $55,000. What is operating income?',
     opts: ['A) $90,000','B) $145,000','C) $35,000','D) $55,000'],
     ans: 2,
-    exp: 'Operating income = Gross profit − Operating expenses = $90,000 − $55,000 = $35,000.',
-    we: { 0: '$90,000 is gross profit before deducting operating expenses.', 1: '$145,000 adds instead of subtracts.', 3: '$55,000 is total operating expenses, not operating income.' }
+    exp: '営業利益 = 売上総利益 − 営業費 = $90,000 − $55,000 = $35,000。',
+    we: { 0: '$90,000 は営業費控除前の売上総利益です。', 1: '$145,000 は引くべきところを足しています。', 3: '$55,000 は営業費合計で、営業利益ではありません。' }
   },
   {
     id: 'q465', conceptId: 'c3_matching', ch: 3, type: 'C',
     q: 'A company pays a $24,000 annual insurance premium on January 1. At March 31 (end of Q1), how much should be on the income statement as Insurance Expense, and how much remains on the SFP as Prepaid Insurance?',
     opts: ['A) IS: $24,000; SFP: $0','B) IS: $6,000; SFP: $18,000','C) IS: $18,000; SFP: $6,000','D) IS: $2,000; SFP: $22,000'],
     ans: 1,
-    exp: 'Monthly expense = $24,000 ÷ 12 = $2,000. By March 31, 3 months have expired (Jan, Feb, Mar). Insurance Expense = 3 × $2,000 = $6,000 on IS. Prepaid Insurance remaining = $24,000 − $6,000 = $18,000 on SFP.',
-    we: { 0: '$24,000 on IS means the full year is expensed in Q1 — incorrect.', 2: '$18,000 on IS means 9 months have expired — but only 3 months have passed by March 31.', 3: '$2,000 on IS is only one month\'s expense; Q1 has 3 months.' }
+    exp: '月額費用 = $24,000 ÷ 12 = $2,000。3月31日までに3か月（1・2・3月）経過。Insurance Expense = 3 × $2,000 = $6,000（IS）。残りの Prepaid Insurance = $24,000 − $6,000 = $18,000（SFP）。',
+    we: { 0: 'IS に$24,000は第1四半期に1年分を費用化することになり誤りです。', 2: 'IS に$18,000は9か月経過を意味しますが、3月31日までに3か月だけです。', 3: 'IS に$2,000は1か月分だけで、第1四半期は3か月です。' }
   },
   {
     id: 'q466', conceptId: 'c6_turnover', ch: 6, type: 'C',
     q: 'Company A has inventory turnover of 12 times; Company B has inventory turnover of 4 times. Both are in the same industry. Which analysis is most accurate?',
     opts: ['A) Company B is more efficient — it holds inventory longer before selling','B) Company A is more efficient — it sells and replenishes inventory faster, reducing holding costs and spoilage risk','C) Company A has more inventory on hand than Company B','D) Company B generates more revenue because it sells larger quantities'],
     ans: 1,
-    exp: 'Higher inventory turnover (Company A at 12 times vs. B at 4 times) indicates that Company A sells and replaces its inventory much more quickly. This is generally favorable — lower holding costs, less risk of obsolescence, and better cash flow. In the same industry, a significantly lower turnover (Company B) may suggest slow-moving inventory or obsolescence risk.',
-    we: { 0: 'Holding inventory longer (lower turnover) is generally less efficient, not more.', 2: 'Turnover ratio is COGS ÷ average inventory; it does not directly indicate how much inventory is on hand.', 3: 'Higher turnover does not necessarily mean larger quantities sold — Company A may sell the same units but keep less inventory on hand.' }
+    exp: '棚卸資産回転率が高い（A社12回 vs B社4回）と、A社は在庫をはるかに速く販売・補充していることを示します。一般に好ましい（保管費低・陳腐化リスク低・キャッシュフロー良好）。同業でB社の回転率が著しく低いのは、滞留在庫や陳腐化リスクを示唆し得ます。',
+    we: { 0: '在庫を長く保有（回転率低）するのは一般に効率が悪いです。', 2: '回転率は COGS ÷ 平均棚卸で、手元在庫量を直接示しません。', 3: '回転率が高くても必ずしも販売数量が多いとは限りません。A社は同じ単位を売りつつ在庫を少なく保つ場合もあります。' }
   },
   // ===========================================================
   // CHAPTER 7 - Fraud, Internal Control & Cash
@@ -8812,88 +8812,88 @@ var QUESTIONS = [
     q: 'Which of the following is NOT one of the three elements of the fraud triangle?',
     opts: ['A) Opportunity — weak internal controls that allow the fraud to occur','B) Pressure or financial incentive — personal need driving the perpetrator','C) Education — formal training that could be used to commit a complex fraud','D) Rationalization — mental justification used by the perpetrator to excuse it'],
     ans: 2,
-    exp: 'The **fraud triangle** consists of three elements: (1) **Opportunity**, (2) **Pressure / Financial incentive**, (3) **Rationalization**. Education is NOT part of the triangle — in fact, ethics education tends to reduce fraud risk through awareness.',
-    we: { 0: 'Opportunity IS a fraud triangle element — weak controls let perpetrators act undetected.', 1: 'Pressure IS a fraud triangle element — financial need (debt, gambling, lifestyle) drives many frauds.', 3: 'Rationalization IS a fraud triangle element — perpetrators tell themselves "I deserve it" or "just borrowing".' }
+    exp: '不正のトライアングルは3要素：(1)機会（Opportunity）(2)圧力・動機（Pressure）(3)正当化（Rationalization）。教育はトライアングルの要素ではなく、むしろ倫理教育は認識を通じて不正リスクを減らします。',
+    we: { 0: '機会は不正トライアングルの要素です。統制が弱いと発覚せず実行できます。', 1: '圧力は不正トライアングルの要素です。金銭的困窮（借金・賭博・生活水準）が多くの不正を駆動します。', 3: '正当化は不正トライアングルの要素です。『当然の報い』『借りるだけ』と自分に言い聞かせます。' }
   },
   {
     id: 'q501', conceptId: 'c7_internal_control', ch: 7, type: 'A',
     q: 'Which internal control principle requires that different employees handle authorization, recordkeeping, and physical custody?',
     opts: ['A) Segregation of Duties','B) Establishment of Responsibility','C) Documentation Procedures','D) Independent Internal Verification'],
     ans: 0,
-    exp: 'Segregation of Duties requires that authorization (e.g., approving a purchase), recordkeeping (e.g., entering it in the journal), and physical custody (e.g., handling the cash) be separated among different employees. This prevents any single employee from committing AND concealing fraud.',
-    we: { 1: 'Establishment of Responsibility = assign tasks to specific individuals (different concept)', 2: 'Documentation = pre-numbered docs, source receipts', 3: 'Independent Verification = periodic checking by someone other than the recorder' }
+    exp: '職務分離は、承認（購入の承認など）・記録（仕訳記入など）・物理的保管（現金の取扱いなど）を別々の従業員に分けることを要求します。1人が不正の実行と隠蔽の両方を行えないようにします。',
+    we: { 1: '責任の明確化 = 特定の個人に職務を割り当てる（別概念）。', 2: '文書化 = 連番付き文書・原始証憑。', 3: '独立的検証 = 記録者以外の者による定期的なチェック。' }
   },
   {
     id: 'q502', conceptId: 'c7_bank_reconciliation', ch: 7, type: 'A',
     q: 'Outstanding checks of €500 should be reported on a bank reconciliation as:',
     opts: ['A) Deducted from the bank balance','B) Added to the bank balance','C) Deducted from the book balance','D) Added to the book balance'],
     ans: 0,
-    exp: 'Outstanding checks have been recorded by the company (book balance reflects them) but have NOT yet been cleared by the bank. They are subtracted from the bank balance to reconcile to the true cash balance. No journal entry is required.',
-    we: { 1: 'Outstanding checks reduce the bank balance, not add to it', 2: 'Book balance already reflects them', 3: 'Book balance already reflects them' }
+    exp: '未取付小切手（Outstanding checks）は会社が記帳済み（帳簿残高に反映）だが、銀行ではまだ引き落とされていません。真の現金残高に調整するため銀行残高から差し引きます。仕訳は不要です。',
+    we: { 1: '未取付小切手は銀行残高を減らし、増やしません。', 2: '帳簿残高は既にこれを反映しています。', 3: '帳簿残高は既にこれを反映しています。' }
   },
   {
     id: 'q503', conceptId: 'c7_bank_reconciliation', ch: 7, type: 'A',
     q: 'A NSF (non-sufficient funds) check of €300 returned by the bank should be:',
     opts: ['A) Deducted from BOOK balance and recorded via Dr Accounts Receivable / Cr Cash','B) Added to BANK balance because the bank made an error in recording the deposit','C) Deducted from BANK balance to reverse the original incorrect deposit recording','D) Ignored entirely if the customer has verbally agreed to make payment soon'],
     ans: 0,
-    exp: 'NSF check means the customer\'s account had insufficient funds. The company\'s books incorrectly assumed the deposit was good. Subtract from **BOOK balance** and record: **Dr Accounts Receivable / Cr Cash** (re-establish the receivable from the customer).',
-    we: { 1: 'NSF is a **book-side** adjustment, not bank. The bank correctly returned the bad check; it\'s the books that overstated cash.', 2: 'NSF is **book-side** — the bank already deducted the bad check. Adjusting the bank side again would double-count.', 3: 'NSF **must be recorded** — verbal promises do not allow ignoring a material balance correction.' }
+    exp: 'NSF 小切手は顧客の口座が残高不足だったことを意味します。会社の帳簿は入金が有効と誤って想定していました。『帳簿残高』から差し引き、記録：借方 Accounts Receivable / 貸方 Cash（顧客への債権を再計上）。',
+    we: { 1: 'NSF は『帳簿側』の調整で、銀行ではありません。銀行は正しく不渡小切手を返したので、帳簿が現金を過大計上していました。', 2: 'NSF は『帳簿側』です。銀行は既に不渡分を差し引いています。銀行側を再調整すると二重計上になります。', 3: 'NSF は『記録が必要』です。口頭の約束で重要な残高訂正を無視はできません。' }
   },
   {
     id: 'q504', conceptId: 'c7_bank_reconciliation', ch: 7, type: 'C',
     q: 'A bank reconciliation shows: Bank balance €8,400, Deposits in transit €1,200, Outstanding checks €1,800, Book balance €7,900, NSF check €100, Bank service charge €40, Interest earned €40. The adjusted (true) cash balance is:',
     opts: ['A) €7,500 (deducted everything from book balance ignoring interest earned)','B) €7,800 (correctly adjusted both bank-side and book-side balances)','C) €7,900 (book balance before any reconciling adjustments applied)','D) €8,400 (bank balance before deposits-in-transit and outstanding checks)'],
     ans: 1,
-    exp: 'Both sides must match after adjustments. **Adjusted Bank** = €8,400 + DIT €1,200 − OC €1,800 = **€7,800**. **Adjusted Books** = €7,900 + Interest €40 − NSF €100 − Service Charge €40 = **€7,800**. Both sides equal €7,800 — that is the true cash balance.',
-    we: { 0: '€7,500 = arithmetic error (e.g., subtracted interest instead of adding it). Interest is a book-side **addition**.', 2: '€7,900 is the **unadjusted** book balance before applying NSF, service charge, and interest adjustments.', 3: '€8,400 is the **unadjusted** bank balance before applying DIT and outstanding checks adjustments.' }
+    exp: '調整後は両側が一致するはずです。調整後銀行 = €8,400 + 未達入金 €1,200 − 未取付小切手 €1,800 = €7,800。調整後帳簿 = €7,900 + 利息 €40 − NSF €100 − 手数料 €40 = €7,800。両側 €7,800 = 真の現金残高。',
+    we: { 0: '€7,500 は計算ミス（利息を足すところを引いた等）です。利息は帳簿側の『加算』です。', 2: '€7,900 は NSF・手数料・利息の調整前の『未調整』帳簿残高です。', 3: '€8,400 は未達入金・未取付小切手の調整前の『未調整』銀行残高です。' }
   },
   {
     id: 'q505', conceptId: 'c7_petty_cash', ch: 7, type: 'B',
     q: 'A €200 petty cash fund has €30 cash remaining and receipts totaling €170 (postage €70, supplies €100). The entry to replenish the fund is:',
     opts: ['A) Dr Petty Cash 170 / Cr Cash 170','B) Dr Postage Exp 70, Dr Supplies Exp 100 / Cr Cash 170','C) Dr Postage Exp 70, Dr Supplies Exp 100 / Cr Petty Cash 170','D) No entry required'],
     ans: 1,
-    exp: 'Replenishment recognizes expenses (Dr each Expense) and reduces Cash (the main checking account). Petty Cash account remains at €200 imprest amount.',
-    we: { 0: 'Petty Cash stays at €200', 2: 'Petty Cash is not credited; the imprest amount is restored', 3: 'Replenishment is required to recognize expenses' }
+    exp: '補充は費用を認識（各 Expense を借方）し、Cash（メインの当座口座）を減らします。Petty Cash 勘定は定額（imprest）€200のまま残ります。',
+    we: { 0: 'Petty Cash は€200のままです。', 2: 'Petty Cash は貸方にせず、定額が回復されます。', 3: '補充は費用を認識するために必要です。' }
   },
   {
     id: 'q506', conceptId: 'c7_cash_equivalents', ch: 7, type: 'A',
     q: 'Which of the following should be classified as Cash and Cash Equivalents on the SOFP?',
     opts: ['A) 90-day Treasury Bill purchased today','B) 6-month CD','C) Postdated check from customer','D) Restricted cash for bond sinking fund'],
     ans: 0,
-    exp: 'Cash Equivalents must have original maturity of 3 months or less (90 days). A 90-day Treasury Bill qualifies. 6-month CD is too long (Short-term Investments). Postdated check is not cash until the date arrives (record as AR). Restricted cash is reported separately.',
-    we: { 1: '6 months > 3 months, classified as Short-term Investment', 2: 'Postdated checks are not yet cash', 3: 'Restricted cash is shown separately' }
+    exp: '現金同等物は当初満期3か月（90日）以内が必要。90日の財務省証券は該当。6か月のCDは長すぎ（短期投資）。先日付小切手は期日まで現金ではない（AR で記録）。拘束された現金は別途報告。',
+    we: { 1: '6か月 > 3か月で、短期投資に分類されます。', 2: '先日付小切手はまだ現金ではありません。', 3: '拘束された現金は別途表示します。' }
   },
   {
     id: 'q507', conceptId: 'c7_sox_act', ch: 7, type: 'B',
     q: 'The Sarbanes-Oxley Act (SOX) of 2002 was enacted in response to:',
     opts: ['A) The 2008 global financial crisis caused by subprime mortgage collapse','B) Major corporate accounting frauds such as Enron (2001) and WorldCom (2002)','C) The dot-com bubble burst of 2000 and resulting tech-sector losses','D) IFRS convergence efforts and the push for global accounting standards'],
     ans: 1,
-    exp: '**SOX** was enacted in 2002 after major fraud scandals at **Enron (2001)** and **WorldCom (2002)** that destroyed billions in shareholder value. SOX requires CEO/CFO certification of financial statements (Section 302) and management assessment of internal controls (Section 404).',
-    we: { 0: 'The **2008 financial crisis** led to the **Dodd-Frank Act (2010)**, not SOX. SOX was already 6 years old by then.', 2: 'The **dot-com bubble** (2000) caused tech valuations to collapse, but did not produce fraud-driven legislation like SOX. Different cause.', 3: 'SOX is a **US federal law** (Sarbanes-Oxley) about internal control and corporate governance — unrelated to IFRS convergence projects.' }
+    exp: 'SOX（サーベンス・オクスリー法）は2002年、Enron（2001）と WorldCom（2002）の大規模不正が数十億の株主価値を破壊した後に制定されました。CEO/CFO による財務諸表の証明（302条）と内部統制の評価（404条）を要求します。',
+    we: { 0: '2008年の金融危機は Dodd-Frank 法（2010）につながり、SOX ではありません。SOX はその時点で既に6年経過していました。', 2: 'ドットコムバブル（2000）はIT評価を崩壊させましたが、SOX のような不正主導の立法は生みませんでした。原因が異なります。', 3: 'SOX は内部統制とコーポレートガバナンスに関する米国連邦法で、IFRS 統合プロジェクトとは無関係です。' }
   },
   {
     id: 'q508', conceptId: 'c7_internal_control', ch: 7, type: 'B',
     q: 'Which of the following is a limitation of internal controls?',
     opts: ['A) High cost relative to expected benefit','B) Collusion between employees','C) Management override','D) All of the above'],
     ans: 3,
-    exp: 'All three are limitations: (1) Cost-benefit constraint — controls cost money; (2) Collusion — two or more employees working together can defeat segregation of duties; (3) Management override — top executives can bypass controls. SOX addresses (3) by requiring management certification.',
-    we: { 0: 'Correct limitation but not only one', 1: 'Correct but not only one', 2: 'Correct but not only one' }
+    exp: '3つすべてが限界です：(1)費用対効果の制約 — 統制には費用がかかる (2)共謀 — 2人以上が結託すると職務分離を破れる (3)経営者による無効化（override）— 経営幹部が統制を回避できる。SOX は(3)に経営者の証明を要求して対処します。',
+    we: { 0: '正しい限界ですが、唯一ではありません。', 1: '正しいですが、唯一ではありません。', 2: '正しいですが、唯一ではありません。' }
   },
   {
     id: 'q509', conceptId: 'c7_bank_reconciliation', ch: 7, type: 'B',
     q: 'After a bank reconciliation is complete, journal entries are needed for:',
     opts: ['A) Deposits in transit only (timing differences that will clear automatically)','B) Items on the BOOK side (NSF checks, service charges, interest earned, EFT receipts)','C) Outstanding checks only (checks issued by company but not yet cleared by bank)','D) Items on the BANK side (deposits in transit and outstanding checks adjustments)'],
     ans: 1,
-    exp: '**Bank-side adjustments** (deposits in transit, outstanding checks, bank errors) require **no journal entries** — they clear naturally. **Book-side adjustments** (NSF, service charges, interest earned, EFT receipts, book errors) require journal entries to update the company\'s records.',
-    we: { 0: 'No JE for **deposits in transit** — the bank will record them automatically when the deposit clears.', 2: 'No JE for **outstanding checks** — they will clear automatically when payees deposit them at the bank.', 3: 'No JE for **bank-side items** — those are timing differences that resolve themselves; only book items need correction.' }
+    exp: '銀行側の調整（未達入金・未取付小切手・銀行の誤り）は仕訳不要 — 自然に解消します。帳簿側の調整（NSF・手数料・受取利息・EFT 入金・帳簿の誤り）は会社の記録を更新するため仕訳が必要です。',
+    we: { 0: '未達入金は仕訳不要 — 入金がクリアすると銀行が自動で記録します。', 2: '未取付小切手は仕訳不要 — 受取人が銀行に持ち込むと自動でクリアします。', 3: '銀行側項目は仕訳不要 — タイミング差で自然解消し、帳簿項目だけ訂正が必要です。' }
   },
   {
     id: 'q510', conceptId: 'c7_cash_management', ch: 7, type: 'B',
     q: 'Which item should be reported separately on the SOFP, NOT included in "Cash and Cash Equivalents"?',
     opts: ['A) Money market mutual funds with daily liquidity and stable NAV','B) 60-day commercial paper purchased today (highly liquid short-term debt)','C) Restricted cash held as compensating balance required by a bank loan','D) Currency and coin on hand at the company\'s point-of-sale locations'],
     ans: 2,
-    exp: '**Restricted cash** (e.g., compensating balances, escrow funds, bond sinking funds) is **NOT freely available** for general business use and must be reported separately, often as "Other Assets" or "Restricted Cash". The other three are all liquid, unrestricted cash equivalents.',
-    we: { 0: '**Money market funds** are cash equivalents — highly liquid with minimal value risk.', 1: '**60-day commercial paper** qualifies (≤90 days from acquisition) as a cash equivalent.', 3: '**Currency on hand** is the most liquid form of cash — included in Cash, not separated.' }
+    exp: '拘束された現金（compensating balance・エスクロー・社債減債基金など）は一般的な事業利用に『自由に使えない』ため、別途『その他資産』や『拘束現金』として報告します。他の3つはすべて流動的・無拘束の現金同等物です。',
+    we: { 0: 'マネー・マーケット・ファンドは現金同等物 — 高流動性で価値リスクが極小です。', 1: '60日のコマーシャルペーパーは（取得時90日以内）現金同等物に該当します。', 3: '手元の通貨は最も流動的な現金で、別途ではなく Cash に含めます。' }
   },
   {
     id: 'q511', conceptId: 'c7_internal_control', ch: 7, type: 'A',
