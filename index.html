@@ -10160,8 +10160,8 @@ var QUESTIONS = [
   },
   {
     id: 'q764', conceptId: 'c11_mortgage', ch: 11, type: 'A',
-    q: 'Mortgage Notes Payable の特徴として正しいものは？',
-    opts: ['A) 不動産 (土地・建物) を担保 (collateral) として差し入れる借入債務である', 'B) 通常 10-30年の長期 (Non-current) として貸借対照表に分類される負債', 'C) 元利均等返済 (Fixed Installment) で各回の支払額が一定であることが一般的', 'D) 上記 (A) 不動産担保、(B) 長期負債、(C) 元利均等返済 のすべてが Mortgage の特徴である', 'E) 短期 1年以内の Current Liability に分類される短期借入金として処理する', 'F) わからない'],
+    q: 'Which statement about a mortgage note payable is correct?',
+    opts: ['A) It is a borrowing secured by real estate (land/buildings) pledged as collateral', 'B) It is typically classified on the balance sheet as long-term (non-current), usually 10–30 years', 'C) It is commonly repaid in fixed installments (equal payment each period)', 'D) All of (A) real-estate collateral, (B) long-term liability, and (C) fixed installments are features of a mortgage', 'E) It is treated as a short-term borrowing classified as a current liability due within one year', 'F) Not sure'],
     ans: 3,
     exp: '**Mortgage** = 不動産担保の長期借入金。通常 10-30年で元利均等返済 (各回の支払額は固定だが、内訳=元本/利息は変動する)。(A)(B)(C) すべてが Mortgage の中核的特徴。',
     we: { 0: '(A) 不動産担保は正しいが、(B)(C) も同時に Mortgage の特徴。**すべて正しい** が完全。', 1: '(B) 長期分類は正しいが、(A)(C) も同時に Mortgage の特徴。**すべて正しい** が完全。', 2: '(C) 元利均等返済は正しいが、(A)(B) も同時に Mortgage の特徴。**すべて正しい** が完全。', 4: '長期 (10-30年) が一般的。短期 1年以内は通常の Notes Payable であり Mortgage の典型ではない。', 5: '「わからない」を選択。Mortgage = 不動産担保 + 長期 + 元利均等 の3点セット。' }
@@ -10185,8 +10185,8 @@ var QUESTIONS = [
   },
   {
     id: 'q767', conceptId: 'c11_interest_pattern', ch: 11, type: 'A',
-    q: 'Mortgage 元利均等返済の利息部分は時間と共にどう変化するか？',
-    opts: ['A) 毎月同額 (一定)', 'B) 時間とともに減少', 'C) 時間とともに増加', 'D) 初期に減少し後に増加', 'E) 完済まで毎月利息100%', 'F) わからない'],
+    q: 'In a fixed-installment mortgage, how does the interest portion change over time?',
+    opts: ['A) The same amount each month (constant)', 'B) Decreases over time', 'C) Increases over time', 'D) Decreases early then increases later', 'E) 100% interest every month until payoff', 'F) Not sure'],
     ans: 1,
     exp: '利息 = 期首残高 × 年利 ÷ 12。元本返済により残高が毎月減るため、利息も減る。逆に元本部分は増える (支払額固定だから)。',
     we: { 0: '残高変化に応じて利息は変化。一定ではない。', 2: '残高は減るので利息も減る。', 3: '初期高 → 後期低 が一貫したパターン。逆順ではない。', 4: '利息のみではなく元本返済もある。', 5: '「わからない」を選択。利息 ∝ 残高なので残高減少 → 利息減少。' }
@@ -10197,48 +10197,48 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q770', conceptId: 'c12_corp_form', ch: 12, type: 'A',
-    q: '株式会社 (Corporation) の特徴として誤っているものは？',
-    opts: ['A) 株主の有限責任 (limited liability)', 'B) 株式の譲渡自由', 'C) 法人格を持つ独立した法的実体', 'D) 株主が会社の負債を直接負う (Unlimited liability)', 'E) 二重課税 (Double taxation) の可能性', 'F) わからない'],
+    q: 'Which of the following is NOT a characteristic of a corporation?',
+    opts: ['A) Limited liability of shareholders', 'B) Free transferability of shares', 'C) A separate legal entity with legal personhood', 'D) Shareholders are directly liable for the company\'s debts (unlimited liability)', 'E) Possibility of double taxation', 'F) Not sure'],
     ans: 3,
     exp: 'Corporation の核心は「株主の有限責任」(出資額が損失上限)。会社の負債を株主が直接負うことはない (これは Sole Proprietorship/Partnership)。これが Corporation 形態の最大メリット。',
     we: { 0: '有限責任は正しい特徴。', 1: '株式譲渡自由は Corporation の特徴。', 2: '法人格を持つのは正しい。', 4: '二重課税 (法人税 + 個人配当課税) は実際に Corporation の課題として認識されている。', 5: '「わからない」を選択。Corporation は有限責任 ≠ 無限責任。' }
   },
   {
     id: 'q771', conceptId: 'c12_share_capital', ch: 12, type: 'E',
-    q: '額面€10の普通株 (Ordinary Shares) を€15で1,000株発行。仕訳は？',
-    opts: ['A) Dr Cash 15,000 / Cr Share Capital-Ordinary 15,000', 'B) Dr Cash 15,000 / Cr Share Capital-Ordinary 10,000 / Cr Share Premium-Ordinary 5,000', 'C) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000', 'D) Dr Cash 15,000 / Cr Share Capital-Ordinary 10,000 / Cr Gain on Share Issuance 5,000', 'E) Dr Share Capital-Ordinary 10,000 / Dr Share Premium 5,000 / Cr Cash 15,000', 'F) わからない'],
+    q: '1,000 ordinary shares with a €10 par value are issued at €15. What is the entry?',
+    opts: ['A) Dr Cash 15,000 / Cr Share Capital-Ordinary 15,000', 'B) Dr Cash 15,000 / Cr Share Capital-Ordinary 10,000 / Cr Share Premium-Ordinary 5,000', 'C) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000', 'D) Dr Cash 15,000 / Cr Share Capital-Ordinary 10,000 / Cr Gain on Share Issuance 5,000', 'E) Dr Share Capital-Ordinary 10,000 / Dr Share Premium 5,000 / Cr Cash 15,000', 'F) Not sure'],
     ans: 1,
     exp: '額面 (par) × 株数 = €10 × 1,000 = €10,000 → Share Capital-Ordinary。発行価額 − 額面 = €5 × 1,000 = €5,000 → Share Premium-Ordinary (額面超過分)。Cashは受領額€15,000を借方。',
     we: { 0: '額面超過分を Share Premium に分離していない。', 2: '受領額€15,000を完全に反映していない。', 3: 'Gain ではない。Share Premium は資本剰余金 (株主資本) であり利益ではない。', 4: '逆方向 (自己株式取得や減資の場合)。', 5: '「わからない」を選択。額面 → Share Capital、超過 → Share Premium。' }
   },
   {
     id: 'q772', conceptId: 'c12_no_par', ch: 12, type: 'E',
-    q: '無額面 (no-par) 普通株を1株€20で500株発行。Stated value €5。仕訳は？',
-    opts: ['A) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000', 'B) Dr Cash 10,000 / Cr Share Capital-Ordinary 2,500 / Cr Share Premium-Ordinary 7,500', 'C) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000 / Cr Share Premium 0', 'D) Dr Cash 2,500 / Cr Share Capital-Ordinary 2,500', 'E) Dr Cash 10,000 / Cr Gain 10,000', 'F) わからない'],
+    q: '500 no-par ordinary shares with a €5 stated value are issued at €20 each. What is the entry?',
+    opts: ['A) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000', 'B) Dr Cash 10,000 / Cr Share Capital-Ordinary 2,500 / Cr Share Premium-Ordinary 7,500', 'C) Dr Cash 10,000 / Cr Share Capital-Ordinary 10,000 / Cr Share Premium 0', 'D) Dr Cash 2,500 / Cr Share Capital-Ordinary 2,500', 'E) Dr Cash 10,000 / Cr Gain 10,000', 'F) Not sure'],
     ans: 1,
     exp: 'Stated value (法定資本) = €5 × 500 = €2,500 → Share Capital-Ordinary。発行価額超過分 = (€20 − €5) × 500 = €7,500 → Share Premium-Ordinary。Cash = €10,000。',
     we: { 0: 'Stated value がある場合は超過分を Share Premium に分ける。', 2: '無額面で Stated value がある場合、超過分は必ず発生 (€20 > €5)。Share Premium ゼロは誤り。', 3: '€2,500しか受領していないことになり実態と異なる。', 4: '株主資本でなく利益として扱ってしまっている。', 5: '「わからない」を選択。No-par with stated value = stated value 部分が Share Capital、残りは Premium。' }
   },
   {
     id: 'q773', conceptId: 'c12_treasury', ch: 12, type: 'E',
-    q: '自社株 (Treasury Shares) を€8で100株購入 (Cost法)。仕訳は？',
-    opts: ['A) Dr Treasury Shares 800 / Cr Cash 800', 'B) Dr Cash 800 / Cr Treasury Shares 800', 'C) Dr Share Capital-Ordinary 800 / Cr Cash 800', 'D) Dr Treasury Shares 800 / Cr Share Premium 800', 'E) Dr Treasury Shares 800 / Cr Retained Earnings 800', 'F) わからない'],
+    q: '100 treasury shares are repurchased at €8 (cost method). What is the entry?',
+    opts: ['A) Dr Treasury Shares 800 / Cr Cash 800', 'B) Dr Cash 800 / Cr Treasury Shares 800', 'C) Dr Share Capital-Ordinary 800 / Cr Cash 800', 'D) Dr Treasury Shares 800 / Cr Share Premium 800', 'E) Dr Treasury Shares 800 / Cr Retained Earnings 800', 'F) Not sure'],
     ans: 0,
     exp: 'Cost method で自社株取得: 購入価格 × 株数 = €8 × 100 = €800 を Treasury Shares (株主資本の控除項目 / contra-equity) に計上。Cash 流出。',
     we: { 1: '逆方向。Cash 流出のはず。', 2: '自社株取得では Share Capital は触らない (まだ消却していない)。', 3: 'Treasury Shares は Cost で計上 (Share Premium は使わない)。', 4: 'Retained Earnings は配当・損失で減るが自社株取得では使わない (Cost法)。', 5: '「わからない」を選択。Treasury Shares = Cost で Dr、Cashで Cr。' }
   },
   {
     id: 'q774', conceptId: 'c12_treasury_classification', ch: 12, type: 'A',
-    q: '貸借対照表で Treasury Shares の表示位置は？',
-    opts: ['A) Current Assets — 短期保有目的の流動資産として取得原価で計上', 'B) Long-term Investments — 自社株への長期投資として固定資産分類', 'C) Equity の控除項目 (contra-equity) として株主資本合計を減らす表示', 'D) Long-term Liabilities — 将来再発行義務に基づく長期負債として計上', 'E) Intangible Assets — 会社の自己所有権利として無形資産に区分する', 'F) わからない'],
+    q: 'Where are treasury shares presented on the balance sheet?',
+    opts: ['A) Current assets — recorded at cost as a short-term holding', 'B) Long-term investments — classified as a non-current investment in the company\'s own shares', 'C) As a deduction within equity (contra-equity), reducing total shareholders\' equity', 'D) Long-term liabilities — based on a future obligation to reissue', 'E) Intangible assets — classified as an ownership right of the company', 'F) Not sure'],
     ans: 2,
     exp: '**Treasury Shares** = 自社が再取得した株式。法的には会社が所有するが、これを資産として扱うと「会社が自身を所有する」矛盾。会計上は **Equity の控除項目 (contra-equity)** として表示し、株主資本合計を減らす。',
     we: { 0: '資産ではない — 「会社が会社自身を所有する」概念は循環論理で会計上意味を持たない。', 1: 'Investments でもない — 自己投資は経済的便益を生まないため資産認識できない。', 3: '負債でもない — 返済義務なし。Treasury Shares は単なる株主資本の控除項目。', 4: '無形資産でもない — 物理性の有無の問題ではなく、自社株は資産そのものでない。', 5: '「わからない」を選択。Treasury Shares = Equity の控除項目 (マイナス表示)。' }
   },
   {
     id: 'q775', conceptId: 'c12_dividend_dates', ch: 12, type: 'A',
-    q: '配当の3つの重要日として正しいセットは？',
-    opts: ['A) Declaration Date, Record Date, Payment Date', 'B) Issue Date, Maturity Date, Settlement Date', 'C) Ex-dividend Date, Settlement Date, Closing Date', 'D) Order Date, Approval Date, Pay Date', 'E) 年度初日, 中間日, 期末', 'F) わからない'],
+    q: 'Which is the correct set of the three important dividend dates?',
+    opts: ['A) Declaration Date, Record Date, Payment Date', 'B) Issue Date, Maturity Date, Settlement Date', 'C) Ex-dividend Date, Settlement Date, Closing Date', 'D) Order Date, Approval Date, Pay Date', 'E) First day, mid-year, year-end', 'F) Not sure'],
     ans: 0,
     exp: '配当の3日: (1) Declaration Date (取締役会で配当決議 → Liability 発生)、(2) Record Date (株主名簿確定日 → 仕訳なし)、(3) Payment Date (実際に支払う → Cash 出)。',
     we: { 1: 'これは社債の日付。配当ではない。', 2: 'Ex-dividend は市場用語だが3日のうちの正式名称ではない。', 3: '一般的な業務日であり配当固有ではない。', 4: '会計用語ではない。', 5: '「わからない」を選択。Declaration → Record → Payment の3段階。' }
@@ -10261,24 +10261,24 @@ var QUESTIONS = [
   },
   {
     id: 'q778', conceptId: 'c12_share_dividend', ch: 12, type: 'A',
-    q: '株式配当 (Share Dividend / Stock Dividend) の経済実態として正しいものは？',
-    opts: ['A) 株主の所有割合は変わらず、株数のみ増加', 'B) 会社資産は減少する', 'C) 株主に追加価値が生まれる', 'D) Retained Earnings は変化しない', 'E) Cash 配当と同じ効果', 'F) わからない'],
+    q: 'Which statement about the economic substance of a share (stock) dividend is correct?',
+    opts: ['A) Each shareholder\'s ownership percentage is unchanged; only the number of shares increases', 'B) The company\'s assets decrease', 'C) Additional value is created for shareholders', 'D) Retained Earnings is unchanged', 'E) It has the same effect as a cash dividend', 'F) Not sure'],
     ans: 0,
     exp: '株式配当 = 既存株主に追加株式を発行 (Cash 支払なし)。各株主の持株数は増えるが所有比率 (%) は変わらない。会社資産も変わらず。Retained Earnings → Share Capital + Share Premium に振替のみ (株主資本内訳の組替)。',
     we: { 1: '資産は減らない (Cash支出なし)。', 2: '株主全体の価値は不変。配当後に株価が割合的に下がるため。', 3: 'Retained Earnings は減り、Share Capital が増える (振替)。', 4: 'Cash 配当とは異なる (Cashが出ない)。', 5: '「わからない」を選択。Share Dividend = Cash不要、Equity内振替のみ。' }
   },
   {
     id: 'q779', conceptId: 'c12_share_split', ch: 12, type: 'A',
-    q: '2-for-1 株式分割 (Stock Split) の影響として正しい組み合わせは？',
-    opts: ['A) 株数2倍、額面1/2、Equity総額同じ', 'B) 株数2倍、額面同じ、Retained Earnings 半減', 'C) 株数同じ、額面2倍、Cash 配当', 'D) Equity 増加、株主に有利', 'E) 仕訳が必要', 'F) わからない'],
+    q: 'Which combination correctly describes the effects of a 2-for-1 stock split?',
+    opts: ['A) Shares double, par value halves, total equity unchanged', 'B) Shares double, par value unchanged, Retained Earnings halved', 'C) Shares unchanged, par value doubles, a cash dividend', 'D) Equity increases, favorable to shareholders', 'E) A journal entry is required', 'F) Not sure'],
     ans: 0,
     exp: '2-for-1 Stock Split: 既存1株 → 2株。額面 (par value) は1/2に。Equity 総額・各勘定残高は不変。株主の所有比率も不変。会計上は「メモ的記録」のみで仕訳不要。',
     we: { 1: 'Retained Earnings は減らない。Equity 総額不変。', 2: '株式分割では株数が増え額面が減る (倍数の逆)。', 3: 'Equity 総額は不変。株主に追加価値はない。', 4: '仕訳不要 (Equity 残高に変化なし)。メモのみ。', 5: '「わからない」を選択。Stock Split = 株数×N、額面÷N、Equity 残高変化なし。' }
   },
   {
     id: 'q780', conceptId: 'c12_retained_earnings', ch: 12, type: 'A',
-    q: 'Retained Earnings (留保利益) を「減らす」原因として正しいものは？',
-    opts: ['A) Net Loss (純損失) — 期末振替で Income Summary 借方残高が RE 借方へ', 'B) Cash Dividend 宣言 — Dividends Payable 発生時 RE が借方で減少する', 'C) Share Dividend 宣言 — RE から Share Capital と Share Premium に振替', 'D) 上記 (A) 損失、(B) 現金配当、(C) 株式配当 のすべてが RE 減少要因', 'E) Share の発行 — Cash 受領で Share Capital が増えると同時に RE も減少する', 'F) わからない'],
+    q: 'Which of the following causes Retained Earnings to DECREASE?',
+    opts: ['A) Net loss — at year-end closing, the Income Summary debit balance transfers to a RE debit', 'B) Cash dividend declaration — RE is debited when Dividends Payable arises', 'C) Share dividend declaration — RE is transferred to Share Capital and Share Premium', 'D) All of (A) loss, (B) cash dividend, and (C) share dividend reduce RE', 'E) Share issuance — receiving cash increases Share Capital and also decreases RE', 'F) Not sure'],
     ans: 3,
     exp: '**RE を減らす要因**: (1) Net Loss、(2) Cash Dividend (期末振替で減少)、(3) Share Dividend (Share Capital に振替)。Share 発行は Share Capital/Premium を増やすが RE は触らない。(A)(B)(C) すべてが RE 減少要因。',
     we: { 0: '(A) Net Loss は正しいが、(B)(C) も RE 減少要因。**すべて正しい** が完全。', 1: '(B) Cash Dividend は正しいが、(A)(C) も RE 減少要因。**すべて正しい** が完全。', 2: '(C) Share Dividend は正しいが、(A)(B) も RE 減少要因。**すべて正しい** が完全。', 4: 'Share 発行は **Share Capital と Share Premium のみ増加** させる取引で、RE は一切触らない。', 5: '「わからない」を選択。RE 減少要因 = 損失 + 全種類の配当 (現金/株式)。' }
@@ -10289,40 +10289,40 @@ var QUESTIONS = [
   // ========================================================================
   {
     id: 'q790', conceptId: 'c14_cf_purpose', ch: 14, type: 'A',
-    q: 'Statement of Cash Flows (キャッシュフロー計算書) の主目的は？',
-    opts: ['A) 期間の Net Income を計算する', 'B) 期間の現金収入・支出の源泉と使途を示す', 'C) 期末資産負債の残高を示す', 'D) 株主資本の変動を示す', 'E) Sales Revenue の内訳を示す', 'F) わからない'],
+    q: 'What is the primary purpose of the statement of cash flows?',
+    opts: ['A) To calculate net income for the period', 'B) To show the sources and uses of cash receipts and payments for the period', 'C) To show period-end asset and liability balances', 'D) To show changes in shareholders\' equity', 'E) To show the breakdown of sales revenue', 'F) Not sure'],
     ans: 1,
     exp: 'CF 計算書は期中の現金の流れを Operating, Investing, Financing 活動別に示し、「どこから現金が来て、どこに使ったか」を明らかにする。発生主義の I/S では見えない現金実態を補完。',
     we: { 0: 'Net Income は Income Statement の役割。', 2: '残高は Statement of Financial Position (B/S)。', 3: 'Statement of Changes in Equity の役割。', 4: 'Sales内訳は I/S や Notes。', 5: '「わからない」を選択。CF = 現金の動き (3活動別)。' }
   },
   {
     id: 'q791', conceptId: 'c14_cf_sections', ch: 14, type: 'A',
-    q: 'Cash Flow Statement の3区分として正しいものは？',
-    opts: ['A) Operating, Investing, Financing', 'B) Revenue, Expense, Income', 'C) Assets, Liabilities, Equity', 'D) Current, Non-current, Total', 'E) Direct, Indirect, Net', 'F) わからない'],
+    q: 'What are the three sections of the statement of cash flows?',
+    opts: ['A) Operating, Investing, Financing', 'B) Revenue, Expense, Income', 'C) Assets, Liabilities, Equity', 'D) Current, Non-current, Total', 'E) Direct, Indirect, Net', 'F) Not sure'],
     ans: 0,
     exp: 'CF Statement の3区分: \n①Operating (営業活動): 通常事業から発生する現金\n②Investing (投資活動): 非流動資産・投資の取得・売却\n③Financing (財務活動): 株主・債権者との取引',
     we: { 1: 'Revenue, Expense, Income は **Income Statement (I/S)** の構成要素であり、CF Statement の区分ではない。', 2: 'Assets, Liabilities, Equity は **貸借対照表 (B/S)** の3要素であり、CF Statement の区分とは別概念。', 3: 'Current vs Non-current は B/S 上での流動性分類。CF Statement の3区分とは異なる軸。', 4: 'Direct/Indirect は **Operating 区分の計算方法 (2種類)** であり、3区分の名前ではない。', 5: '「わからない」を選択。CF Statement の3区分は OIF (Operating, Investing, Financing)。' }
   },
   {
     id: 'q792', conceptId: 'c14_operating_examples', ch: 14, type: 'A',
-    q: 'Operating activities (営業活動) に分類される現金取引は？',
-    opts: ['A) 顧客からの現金回収、仕入先への支払', 'B) 機械の現金購入、土地の売却収入', 'C) 社債発行、長期借入金の返済', 'D) 株主への配当支払、自社株の買戻', 'E) 投資先株式の取得、貸付金回収', 'F) わからない'],
+    q: 'Which cash transaction is classified under operating activities?',
+    opts: ['A) Cash collected from customers and payments to suppliers', 'B) Cash purchase of machinery and proceeds from selling land', 'C) Issuing bonds and repaying long-term debt', 'D) Paying dividends to shareholders and repurchasing treasury shares', 'E) Acquiring investment securities and collecting loans receivable', 'F) Not sure'],
     ans: 0,
     exp: '**Operating** = 通常事業活動の現金フロー。顧客回収・仕入支払・給与・税金・利息などが該当。事業の中核から生まれる現金。',
     we: { 1: '機械購入・土地売却 = **Investing** (非流動資産の売買)。', 2: '社債発行・長期借入金返済 = **Financing** (債権者との取引)。', 3: '配当支払・自社株買戻 = **Financing** (株主との取引)。注: IFRS では配当支払を Operating 選択可。', 4: '投資先株式取得・貸付金回収 = **Investing** (長期投資)。', 5: '「わからない」を選択。Operating = 通常事業から発生する現金 (顧客・仕入・給与・税金)。' }
   },
   {
     id: 'q793', conceptId: 'c14_investing_examples', ch: 14, type: 'A',
-    q: 'Investing activities に分類される現金取引は？',
-    opts: ['A) 顧客からの売掛金回収、仕入支払', 'B) PPE (機械・建物) の購入・売却収入', 'C) 社債発行、長期借入金の調達と返済', 'D) 株式配当の宣言と株主への支払', 'E) 従業員への給与支払、税金支払', 'F) わからない'],
+    q: 'Which cash transaction is classified under investing activities?',
+    opts: ['A) Collecting accounts receivable from customers and paying suppliers', 'B) Purchasing and selling PPE (machinery, buildings)', 'C) Issuing bonds and raising/repaying long-term debt', 'D) Declaring a share dividend and paying shareholders', 'E) Paying employee salaries and taxes', 'F) Not sure'],
     ans: 1,
     exp: '**Investing** = 非流動資産 (PPE, Intangibles, 長期投資, 貸付金) の取得・処分から発生する現金フロー。',
     we: { 0: '売掛金回収・仕入支払 = **Operating** (通常事業活動)。', 2: '社債発行・借入金 = **Financing** (債権者からの資金調達)。', 3: '株式配当の支払 = **Financing** (株主への分配)。宣言時点は Cash 不要なので CF に出ない。', 4: '給与・税金支払 = **Operating** (通常事業活動)。', 5: '「わからない」を選択。Investing = PPE/長期投資の購入・売却。' }
   },
   {
     id: 'q794', conceptId: 'c14_financing_examples', ch: 14, type: 'A',
-    q: 'Financing activities に分類される現金取引は？',
-    opts: ['A) 機械の現金購入、土地の売却収入', 'B) 借入金の調達・返済、株式発行、自社株買戻', 'C) 顧客からの売掛金回収、仕入支払', 'D) 仕入先への現金支払、給与・税金支払', 'E) 投資先株式の取得、貸付金の回収', 'F) わからない'],
+    q: 'Which cash transaction is classified under financing activities?',
+    opts: ['A) Cash purchase of machinery and proceeds from selling land', 'B) Raising/repaying loans, issuing shares, and repurchasing treasury shares', 'C) Collecting accounts receivable from customers and paying suppliers', 'D) Paying cash to suppliers and paying salaries/taxes', 'E) Acquiring investment securities and collecting loans receivable', 'F) Not sure'],
     ans: 1,
     exp: '**Financing** = 株主と債権者との取引: 株式発行/自己株買戻、配当支払 (IFRSではOperating選択可)、借入金調達/返済、社債発行/償還。',
     we: { 0: '機械購入・土地売却 = **Investing** (非流動資産取引)。', 2: '売掛金回収・仕入支払 = **Operating** (通常事業)。', 3: '仕入支払・給与・税金 = **Operating** (通常事業)。', 4: '投資先株式・貸付金 = **Investing** (長期投資)。', 5: '「わからない」を選択。Financing = 株主・債権者との取引 (資本調達)。' }
