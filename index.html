@@ -23139,7 +23139,8 @@ function accBuildAnalysisPrompt(records, title){
   });
   var order = Object.keys(byCh).sort(function(a,b){ return (byCh[b].wrong/Math.max(byCh[b].total,1)) - (byCh[a].wrong/Math.max(byCh[a].total,1)); });
   var totalWrong = 0; order.forEach(function(ch){ totalWrong += byCh[ch].wrong; });
-  var out = '# 苦手分野診断【Opus 4.7】\n\n';
+  var correctCount = records.filter(function(r){return r.correct;}).length;
+  var out = '# 苦手分野診断 ＋ 確認テスト【Opus 4.7】\n\n';
   out += '**解答 ' + records.length + '問 / 誤答 ' + totalWrong + '問**' + (title ? '（' + title + '）' : '') + '\n\n';
   out += '## 章別誤答率（高い順）\n';
   order.forEach(function(ch){ var c=byCh[ch]; if(!c.wrong) return; out += '- ' + ch + ': ' + c.wrong + '/' + c.total + ' 誤答 (' + Math.round(100*c.wrong/Math.max(c.total,1)) + '%)\n'; });
@@ -23148,13 +23149,25 @@ function accBuildAnalysisPrompt(records, title){
     var qShort = (it.q.q||'').replace(/\s+/g,' ').slice(0,120);
     out += '- **' + (it.q.id) + '** ' + ch + ' | 選' + String.fromCharCode(65+(it.r.chosenOrig||0)) + '/正' + String.fromCharCode(65+it.q.ans) + ' | ' + qShort + '\n';
   }); });
-  out += '\n---\n\n# 出力指示（厳守）\n\n上記の誤答パターンを分析し、以下の順序で回答。\n\n';
-  out += '## Part 1: 🎯 弱点 TOP 3\n**1. [弱点名]**（該当: Q####, Q####）\n- 誤解：1文\n- 正解ルール：1文（数式は LaTeX）\n- 5秒判別：「[キーワード]」を見たら[判断]\n- 覚え方：1行\n\n**2. ... / 3. ...**（同形式）\n\n';
-  out += '## Part 2: ⚡ 試験直前30秒チェック\n3行のみ（各弱点1行）\n\n';
+  out += '\n---\n\n# Part A: 苦手分野診断\n\n上記の誤答パターンを分析し、以下の順序で回答。\n\n';
+  out += '## 1. 🎯 弱点 TOP 3\n**1. [弱点名]**（該当: Q####, Q####）\n- 誤解：1文\n- 正解ルール：1文（数式は LaTeX）\n- 5秒判別：「[キーワード]」を見たら[判断]\n- 覚え方：1行\n\n**2. ... / 3. ...**（同形式）\n\n';
+  out += '## 2. ⚡ 試験直前30秒チェック\n3行のみ（各弱点1行）\n\n';
+  out += '---\n\n# Part B: 確認テスト（上記の分析が終わったら続けて作成）\n\n';
+  out += '上で抽出した **弱点 TOP 3 の各概念** について、**新しい5択問題を5問ずつ** 作成（合計15問）。\n\n';
+  out += '## 作問ルール\n';
+  out += '1. 元問題のコピペ禁止・新シナリオ/数値で出題\n';
+  out += '2. 5択（A〜E）+ F) わからない\n';
+  out += '3. 正解は A〜E に分散\n';
+  out += '4. 計算問題は選択肢を substitution 形式（代入式、最終値ではなく）\n';
+  out += '5. 難易度 基礎→応用 順\n\n';
+  out += '## 各問題のフォーマット\n';
+  out += '## Q1 (基礎)\n[英語問題文]\n\nA) ... B) ... C) ... D) ... E) ... F) わからない\n\n';
+  out += '<details>\n<summary>解答と解説</summary>\n\n**正解: X**\n\n[日本語：なぜ正解か / 各誤答の理由 / 覚え方]\n</details>\n\n';
+  out += '## 3. 総合判定（最後に日本語で）\n元の正答率（' + correctCount + '/' + records.length + '）と、新問題15問から推定される各弱点の理解度を 基礎理解 / 応用可 / 試験本番OK で評価。\n\n';
   out += '<details>\n<summary>🧠 推論過程</summary>\n誤答パターンの分類と弱点抽出を簡潔に。\n</details>\n\n';
-  out += '## 🌐 言語ルール\n- 問題文・選択肢：英語\n- 解説・推論：日本語\n\n';
+  out += '## 🌐 共通言語ルール\n- 問題文・選択肢：英語\n- 解説・推論・判定：日本語\n\n';
   out += '## 📐 数式\n' + ACC_LATEX + '\n\n';
-  out += '## 禁止\n- 教科書全般のまとめ / 例題追加 / 一般論\n- Part 1〜2 合わせて 1500字以内\n';
+  out += '## 禁止\n- 教科書全般のまとめ / 例題追加 / 一般論\n';
   return out;
 }
 // ── 確認テスト用プロンプト（同概念・新問題）──
@@ -23194,7 +23207,7 @@ function accSingleAnalysis(q, chosen, correct){
   var ci = chosen;
   var isDK = /わから(ない|ん)|not\s*sure|don'?t know/i.test((q.opts[ci]||''));
   var L = [];
-  L.push('# 📖 問題の徹底分析【Opus 4.7】\n');
+  L.push('# 📖 問題の徹底分析 ＋ 確認テスト【Opus 4.7】\n');
   L.push('## 問題 (Ch ' + q.ch + ')\n\n' + q.q + '\n');
   L.push('## 選択肢\n');
   for (var i=0;i<q.opts.length;i++){ var m=(i===q.ans)?'':(i===ci?' ← 自分の選択':''); L.push('- **' + letters[i] + ')** ' + q.opts[i] + m); }
@@ -23205,7 +23218,7 @@ function accSingleAnalysis(q, chosen, correct){
   else L.push('**間違えた**。私: ' + letters[ci] + ') / 正解: ' + letters[q.ans] + ')');
   L.push('');
   if (q.exp || q.expl) L.push('## 公式解説（参考）\n' + (q.exp||q.expl) + '\n');
-  L.push('---\n## 出力フォーマット\n');
+  L.push('---\n# Part A: 徹底分析\n');
   L.push('### 🎯 核心概念\n[該当章に沿って3〜5文・日英用語併記]\n');
   L.push('### なぜ正解か\n[step-by-step。計算なら途中式全部]\n');
   L.push('### ❌ 各誤答の誤解パターン（markdown表）\n');
@@ -23214,7 +23227,18 @@ function accSingleAnalysis(q, chosen, correct){
   L.push('### 🧠 覚え方（3案）\n単位ベース / 構造ベース / メタファー\n');
   L.push('### 🚦 5秒判断フロー\n番号付き5ステップ + ひっかけパターン2つ\n');
   L.push('### 🎯 1行サマリー\n> [記憶のフックになる短文]\n');
-  L.push('---\n## ルール\n- 数式は LaTeX（`\\dfrac{}{}` `\\sqrt{}`）\n- 専門用語は日英併記\n- 問題・選択肢=英語、解説=日本語\n- 一般論禁止');
+  L.push('---\n# Part B: 確認テスト（上記の分析が終わったら続けて作成）\n');
+  L.push('同じ概念について、私が理解しているか **新しい5択問題を5問** で確認。\n');
+  L.push('## 作問ルール\n');
+  L.push('1. 同じ概念・新シナリオ/数値（元問題のコピペ禁止）');
+  L.push('2. 5択（A〜E）+ F) わからない');
+  L.push('3. 正解は A〜E に分散');
+  L.push('4. 計算問題は選択肢を substitution 形式（代入式、最終値ではなく）');
+  L.push('5. 難易度 基礎 → 試験本番 で5問\n');
+  L.push('## 各問題のフォーマット\n## Q1 (基礎)\n[英語問題文]\n\nA) ... B) ... C) ... D) ... E) ... F) わからない\n');
+  L.push('<details>\n<summary>解答と解説</summary>\n\n**正解: X**\n\n[日本語：なぜ正解か / 各誤答の理由 / 覚え方]\n</details>\n');
+  L.push('## 総合判定（最後に日本語で）\n基礎理解 / 応用可 / 試験本番OK で評価\n');
+  L.push('---\n## 共通ルール\n- 数式は LaTeX（`\\dfrac{}{}` `\\sqrt{}`）\n- 専門用語は日英併記\n- 問題・選択肢=英語、解説=日本語\n- 一般論禁止');
   return L.join('\n');
 }
 // ── 1問ごと：確認テスト ──
