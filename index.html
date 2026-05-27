@@ -11303,6 +11303,228 @@ var QUESTIONS = [
     exp:'小規模株式配当（≤20-25%）は時価で資本化。配当株数 = 200,000 × 10% = 20,000株。Retained Earnings 減少 = 20,000 × €18（時価）= €360,000。',
     we:{ 1: '€100,000 は額面ベース（小規模配当は時価）。', 2: '€260,000 は差額の誤り。', 3: '€3,600,000 は桁誤り。', 4: '€36,000 は桁誤り。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_1', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'In the statement of cash flows, "purchase of equipment for cash" is classified as a cash flow from:',
+    opts:['A) Investing activities','B) Operating activities','C) Financing activities','D) A non-cash transaction','E) It is not reported','F) わからない'],
+    ans:0,
+    exp:'設備の購入（現金）は投資活動（Investing）。長期資産の取得・売却は投資区分。',
+    we:{ 1: '営業活動ではない。', 2: '財務活動ではない（株主・債権者との取引が財務）。', 3: '現金取引なので本体に表示される。', 4: 'CF計算書に表示される。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_2', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'"Issuance of ordinary shares for cash" is classified as a cash flow from:',
+    opts:['A) Financing activities','B) Investing activities','C) Operating activities','D) A non-cash transaction','E) It is not reported','F) わからない'],
+    ans:0,
+    exp:'株式発行による資金調達は財務活動（Financing）。株主・債権者との資金のやり取りは財務区分。',
+    we:{ 1: '投資活動ではない。', 2: '営業活動ではない。', 3: '現金取引なので本体表示。', 4: '表示される。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_3', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'"Cash collected from customers" is classified as a cash flow from:',
+    opts:['A) Operating activities','B) Investing activities','C) Financing activities','D) A non-cash transaction','E) It is not reported','F) わからない'],
+    ans:0,
+    exp:'顧客からの現金回収は本業に関わる → 営業活動（Operating）。',
+    we:{ 1: '投資活動ではない。', 2: '財務活動ではない。', 3: '現金取引で本体表示。', 4: '表示される。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_4', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'Using the indirect-method data below, what is net cash provided by operating activities?',
+    opts:['A) €90,000','B) €80,000','C) €100,000','D) €110,000','E) €70,000','F) わからない'],
+    ans:0,
+    exp:'営業CF（間接法）= 純利益80,000 + 減価償却15,000 − A/R増10,000 + A/P増5,000 = €90,000。',
+    we:{ 1: '€80,000 は純利益（調整前）。', 2: '€100,000 は A/R 増の符号誤り。', 3: '€110,000 は全て加算した誤り。', 4: '€70,000 は符号誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Indirect-method data (year)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Net income</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€80,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Depreciation expense</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€15,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Increase in accounts receivable</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€10,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Increase in accounts payable</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€5,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_5', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'A company has net cash from operating activities of €90,000, capital expenditures of €30,000, and cash dividends of €12,000. What is free cash flow?',
+    opts:['A) €48,000','B) €60,000','C) €78,000','D) €90,000','E) €30,000','F) わからない'],
+    ans:0,
+    exp:'フリーキャッシュフロー = 営業CF − 設備投資 − 現金配当 = 90,000 − 30,000 − 12,000 = €48,000。',
+    we:{ 1: '€60,000 は配当を引き忘れ。', 2: '€78,000 は設備投資を引き忘れ。', 3: '€90,000 は営業CF。', 4: '€30,000 は設備投資額。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_6', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'Using the cash flow sections below, what is the net change in cash for the year?',
+    opts:['A) €30,000 increase','B) €90,000 increase','C) €150,000 increase','D) €30,000 decrease','E) €50,000 increase','F) わからない'],
+    ans:0,
+    exp:'現金純増減 = 営業90,000 + 投資(−40,000) + 財務(−20,000) = €30,000 の増加。',
+    we:{ 1: '€90,000 は営業CFのみ。', 2: '€150,000 は全て加算。', 3: '符号が逆。', 4: '€50,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Cash flow sections (year)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Net cash from operating activities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€90,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Net cash used in investing activities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">(€40,000)</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Net cash used in financing activities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">(€20,000)</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_7', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'A company acquires land by issuing ordinary shares (no cash changes hands). How is this reported?',
+    opts:['A) Disclosed as a significant non-cash investing/financing activity (in a note or schedule)','B) As an investing cash outflow','C) As a financing cash inflow','D) As an operating cash flow','E) It is not disclosed at all','F) わからない'],
+    ans:0,
+    exp:'現金が動かない重要な投資・財務取引（株式発行で土地取得）は、CF計算書本体ではなく注記/別表で開示する。',
+    we:{ 1: '現金が動かないため投資キャッシュ流出にはしない。', 2: '同様に財務流入にもしない。', 3: '営業CFではない。', 4: '重要なら開示が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_8', conceptId:'c14_cf_classification', ch:14, type:'C',
+    q:'Under the DIRECT method, a company has sales revenue of €400,000 and accounts receivable increased by €25,000 during the year. What is cash collected from customers?',
+    opts:['A) €375,000','B) €400,000','C) €425,000','D) €25,000','E) €350,000','F) わからない'],
+    ans:0,
+    exp:'直接法：顧客からの現金回収 = 売上 − 売掛金の増加 = 400,000 − 25,000 = €375,000。',
+    we:{ 1: '€400,000 は売上（売掛金増を調整していない）。', 2: '€425,000 は加算した誤り。', 3: '€25,000 は売掛金増加額。', 4: '€350,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_9', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'In the indirect method, depreciation expense is:',
+    opts:['A) Added back to net income because it is a non-cash expense','B) Subtracted from net income','C) Reported as an investing outflow','D) Reported as a financing outflow','E) Ignored entirely','F) わからない'],
+    ans:0,
+    exp:'減価償却は現金支出を伴わない費用なので、間接法では純利益に足し戻す。',
+    we:{ 1: '差し引くのではなく足し戻す。', 2: '投資区分の現金流出ではない。', 3: '財務区分ではない。', 4: '調整に使う（無視しない）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_10', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'In the indirect method, a gain on the sale of equipment is:',
+    opts:['A) Subtracted from net income (the cash effect appears in investing)','B) Added to net income','C) Reported as a financing inflow','D) Ignored','E) Added to investing outflows','F) わからない'],
+    ans:0,
+    exp:'設備売却益は純利益に含まれるが、現金効果は投資区分（売却額全額）に表示されるため、営業区分では純利益から控除して二重計上を防ぐ。',
+    we:{ 1: '足すのではなく差し引く。', 2: '財務区分ではない。', 3: '調整が必要（無視しない）。', 4: '投資の流出ではなく流入（売却額）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_11', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'Payment of cash dividends to shareholders is classified as a cash flow from:',
+    opts:['A) Financing activities','B) Operating activities','C) Investing activities','D) A non-cash transaction','E) It reduces revenue','F) わからない'],
+    ans:0,
+    exp:'配当の支払は株主への分配 → 財務活動（Financing）。',
+    we:{ 1: '営業活動ではない（利息支払はOperatingだが配当はFinancing）。', 2: '投資活動ではない。', 3: '現金取引で本体表示。', 4: '収益とは無関係。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp14_12', conceptId:'c14_cf_classification', ch:14, type:'A',
+    q:'In the indirect method, an INCREASE in inventory during the year is:',
+    opts:['A) Subtracted in computing operating cash flow','B) Added in computing operating cash flow','C) Reported as an investing outflow','D) Reported as a financing outflow','E) Has no effect','F) わからない'],
+    ans:0,
+    exp:'在庫の増加は現金が在庫に拘束された状態 → 営業CFの計算では純利益から減算する（流動資産の増加は減算）。',
+    we:{ 1: '増加は減算（加算ではない）。', 2: '投資区分ではない。', 3: '財務区分ではない。', 4: '営業CFに影響する。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_1', conceptId:'c15_vertical', ch:15, type:'A',
+    q:'Using the balances below, what is the current ratio?',
+    opts:['A) 2.0','B) 0.5','C) 3.0','D) 1.5','E) 2.5','F) わからない'],
+    ans:0,
+    exp:'流動比率 = 流動資産 ÷ 流動負債 = 240,000 ÷ 120,000 = 2.0。',
+    we:{ 1: '0.5 は逆数。', 2: '3.0 は計算誤り。', 3: '1.5 は計算誤り。', 4: '2.5 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Selected balances (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Current assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€240,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Current liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€120,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€360,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€900,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_2', conceptId:'c15_vertical', ch:15, type:'A',
+    q:'Using the current items below, what is the acid-test (quick) ratio?',
+    opts:['A) 1.3','B) 2.0','C) 1.5','D) 0.7','E) 2.1','F) わからない'],
+    ans:0,
+    exp:'当座比率 = (現金 + 短期投資 + 売掛金純額) ÷ 流動負債 = (50,000+20,000+60,000) ÷ 100,000 = 130,000 ÷ 100,000 = 1.3。在庫・前払は除外。',
+    we:{ 1: '2.0 は在庫・前払を含めた流動比率に近い誤り。', 2: '1.5 は計算誤り。', 3: '0.7 は逆数的誤り。', 4: '2.1 は全流動資産/CLの誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Current items (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Cash</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€50,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Short-term investments</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€20,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Net accounts receivable</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€60,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Inventory</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€70,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Prepaid expenses</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€10,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Current liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€100,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_3', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company has net income of €60,000 and net sales of €600,000. What is the profit margin?',
+    opts:['A) 10%','B) 6%','C) 16.7%','D) 90%','E) 1.0%','F) わからない'],
+    ans:0,
+    exp:'Profit margin = 純利益 ÷ 純売上 = 60,000 ÷ 600,000 = 10%。',
+    we:{ 1: '6% は計算誤り。', 2: '16.7% は逆数的誤り。', 3: '90% は誤り。', 4: '1.0% は桁誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_4', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company has net income of €80,000 and average total assets of €800,000. What is return on assets (ROA)?',
+    opts:['A) 10%','B) 8%','C) 1.0%','D) 12.5%','E) 80%','F) わからない'],
+    ans:0,
+    exp:'ROA = 純利益 ÷ 平均総資産 = 80,000 ÷ 800,000 = 10%。',
+    we:{ 1: '8% は計算誤り。', 2: '1.0% は桁誤り。', 3: '12.5% は逆数。', 4: '80% は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_5', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company has net income of €90,000 and average ordinary shareholders’ equity of €450,000 (no preference shares). What is return on equity (ROE)?',
+    opts:['A) 20%','B) 5%','C) 50%','D) 25%','E) 2.0%','F) わからない'],
+    ans:0,
+    exp:'ROE = 純利益 ÷ 平均普通株主資本 = 90,000 ÷ 450,000 = 20%。',
+    we:{ 1: '5% は逆数的誤り。', 2: '50% は計算誤り。', 3: '25% は計算誤り。', 4: '2.0% は桁誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_6', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'Net income is €500,000, preference dividends are €50,000, and 100,000 ordinary shares are outstanding. What is earnings per share (EPS)?',
+    opts:['A) €4.50','B) €5.00','C) €5.50','D) €0.45','E) €4.00','F) わからない'],
+    ans:0,
+    exp:'EPS = (純利益 − 優先配当) ÷ 普通株式数 = (500,000 − 50,000) ÷ 100,000 = €4.50。',
+    we:{ 1: '€5.00 は優先配当を引かない誤り。', 2: '€5.50 は加算した誤り。', 3: '€0.45 は桁誤り。', 4: '€4.00 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_7', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company’s ordinary shares trade at €60 and its EPS is €4.50. What is the price-earnings (P/E) ratio?',
+    opts:['A) 13.33','B) 7.50','C) 0.075','D) 15.00','E) 12.00','F) わからない'],
+    ans:0,
+    exp:'P/E = 株価 ÷ EPS = 60 ÷ 4.50 = 13.33×。',
+    we:{ 1: '7.50 は計算誤り。', 2: '0.075 は逆数。', 3: '15.00 は計算誤り。', 4: '12.00 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_8', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company has net income of €120,000 and declares cash dividends of €30,000 on ordinary shares. What is the payout ratio?',
+    opts:['A) 25%','B) 75%','C) 40%','D) 4.0×','E) 4%','F) わからない'],
+    ans:0,
+    exp:'配当性向 = 普通株配当 ÷ 純利益 = 30,000 ÷ 120,000 = 25%。',
+    we:{ 1: '75% は留保率（1−25%）。', 2: '40% は計算誤り。', 3: '4.0× は逆数（配当カバー率）。', 4: '4% は桁誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_9', conceptId:'c15_solvency', ch:15, type:'A',
+    q:'Using the balances below, what is the debt-to-assets ratio?',
+    opts:['A) 40%','B) 60%','C) 25%','D) 2.5×','E) 13%','F) わからない'],
+    ans:0,
+    exp:'Debt to Assets = 総負債 ÷ 総資産 = 360,000 ÷ 900,000 = 40%。',
+    we:{ 1: '60% は自己資本比率。', 2: '25% は逆数的誤り。', 3: '2.5× は逆数。', 4: '13% は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Selected balances (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Current assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€240,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Current liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€120,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€360,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€900,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_10', conceptId:'c15_vertical', ch:15, type:'A',
+    q:'Using the balances below, what is working capital?',
+    opts:['A) €120,000','B) €360,000','C) €2.0','D) €240,000','E) €540,000','F) わからない'],
+    ans:0,
+    exp:'運転資本 = 流動資産 − 流動負債 = 240,000 − 120,000 = €120,000。',
+    we:{ 1: '€360,000 は総負債。', 2: '€2.0 は流動比率。', 3: '€240,000 は流動資産。', 4: '€540,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Selected balances (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Current assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€240,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Current liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€120,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total liabilities</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€360,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Total assets</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€900,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_11', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'Using the DuPont approach, a company has a profit margin of 10% and an asset turnover of 1.5. What is its return on assets (ROA)?',
+    opts:['A) 15%','B) 11.5%','C) 6.7%','D) 1.5%','E) 150%','F) わからない'],
+    ans:0,
+    exp:'デュポン分解（2要素）：ROA = 利益率 × 総資産回転率 = 10% × 1.5 = 15%。',
+    we:{ 1: '11.5% は加算の誤り。', 2: '6.7% は除算の誤り。', 3: '1.5% は桁誤り。', 4: '150% は桁誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qp15_12', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'A company has an inventory turnover of 6.0 times. What is its days in inventory (use 365 days)?',
+    opts:['A) About 61 days','B) About 6 days','C) About 30 days','D) About 90 days','E) About 6.0 days','F) わからない'],
+    ans:0,
+    exp:'棚卸日数 = 365 ÷ 棚卸資産回転率 = 365 ÷ 6.0 ≈ 60.8 ≈ 61日。',
+    we:{ 1: '6日は回転率そのもの。', 2: '30日は計算誤り。', 3: '90日は計算誤り。', 4: '6.0日は誤り。' },
+    source:'FA1B Predicted'
   }
 ];
 
