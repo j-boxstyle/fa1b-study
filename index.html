@@ -11752,6 +11752,231 @@ var QUESTIONS = [
     exp:'棚卸計算法では販売の都度COGSを記録せず、期末に実地棚卸して COGS = 期首 + 純仕入 − 期末 で算定する。',
     we:{ 1: '販売時記録は継続記録法。', 2: '移動平均は継続記録法。', 3: 'COGSは在庫式で算定する。', 4: '算定する。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qg_26', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A mine is purchased for €1,200,000 with an estimated 300,000 tons of ore. If 40,000 tons are extracted this year, what is the depletion expense?',
+    opts:['A) €160,000','B) €120,000','C) €4,000','D) €40,000','E) €300,000','F) わからない'],
+    ans:0,
+    exp:'減耗償却：単位当たり = 1,200,000 ÷ 300,000トン = €4/トン。当期 = 40,000 × 4 = €160,000。',
+    we:{ 1: '€120,000 は計算誤り。', 2: '€4,000 は桁誤り。', 3: '€40,000 は採掘トン数の誤用。', 4: '€300,000 は見積総量。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_27', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A machine has a current carrying amount of €64,000. Its useful life is revised so that the remaining life is 4 years with a new residual value of €4,000. What is the revised annual depreciation?',
+    opts:['A) €15,000','B) €16,000','C) €17,000','D) €60,000','E) €12,000','F) わからない'],
+    ans:0,
+    exp:'見積変更（prospective）：改訂後の年償却 = (現在の帳簿価額 − 新残存価額) ÷ 残存耐用年数 = (64,000 − 4,000) ÷ 4 = €15,000。',
+    we:{ 1: '€16,000 は残存価額を引かない誤り。', 2: '€17,000 は計算誤り。', 3: '€60,000 は減価償却対象額。', 4: '€12,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_28', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Equipment costing €60,000 (no residual value, 5-year life) is purchased on October 1. Under straight-line, what is depreciation expense for the FIRST (partial) year ending December 31?',
+    opts:['A) €3,000','B) €12,000','C) €9,000','D) €6,000','E) €15,000','F) わからない'],
+    ans:0,
+    exp:'年償却 = 60,000 ÷ 5 = 12,000。10/1〜12/31 = 3か月 → 12,000 × 3/12 = €3,000（部分期間）。',
+    we:{ 1: '€12,000 は満年分。', 2: '€9,000 は9か月分。', 3: '€6,000 は半年分。', 4: '€15,000 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_29', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A €40,000 expenditure extends a machine’s useful life by 4 years. This expenditure should be:',
+    opts:['A) Capitalized (added to the asset) because it is a capital expenditure','B) Expensed immediately as a revenue expenditure','C) Recorded as a liability','D) Ignored','E) Recorded as dividends','F) わからない'],
+    ans:0,
+    exp:'耐用年数を延ばす大規模支出は資本的支出（capital expenditure）として資産計上し、減価償却する。日常的な維持修繕は費用（revenue expenditure）。',
+    we:{ 1: '即時費用化は経常的維持の場合。', 2: '負債ではない。', 3: '無視しない。', 4: '配当ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_30', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'Goodwill with a carrying amount of €500,000 is tested and its recoverable amount is €420,000. What is recorded?',
+    opts:['A) An impairment loss of €80,000','B) Amortization expense of €80,000','C) A revaluation surplus of €80,000','D) No entry (goodwill is never impaired)','E) A gain of €80,000','F) わからない'],
+    ans:0,
+    exp:'のれんは償却せず減損テストのみ。回収可能額420,000 < 帳簿価額500,000 → 減損損失 €80,000を計上（P/L）。',
+    we:{ 1: 'のれんは償却しない（減損のみ）。', 2: '再評価剰余金（増価）ではない。', 3: 'のれんも減損し得る。', 4: '損失であり利益ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_31', conceptId:'c3_depreciation', ch:9, type:'A',
+    q:'Costs incurred for research and development (prior to establishing technological feasibility) should be:',
+    opts:['A) Expensed as incurred','B) Capitalized as an intangible asset and amortized','C) Capitalized as goodwill','D) Recorded as a liability','E) Added to inventory','F) わからない'],
+    ans:0,
+    exp:'技術的実現可能性以前のR&D費は、将来の便益が不確実なため発生時に即時費用処理する（資産計上しない）。',
+    we:{ 1: '無形資産として資産計上しない。', 2: 'のれんではない。', 3: '負債ではない。', 4: '在庫ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_32', conceptId:'c3_depreciation', ch:9, type:'C',
+    q:'A patent costs €280,000 and has a remaining LEGAL life of 14 years but an expected USEFUL life of 7 years. What is the annual amortization?',
+    opts:['A) €40,000','B) €20,000','C) €28,000','D) €14,000','E) €280,000','F) わからない'],
+    ans:0,
+    exp:'特許は法定年数と耐用年数の「短い方」で償却 → 7年。年償却 = 280,000 ÷ 7 = €40,000。',
+    we:{ 1: '€20,000 は14年（法定）で償却した誤り。', 2: '€28,000 は計算誤り。', 3: '€14,000 は誤り。', 4: '€280,000 は取得原価。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_33', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'Under the effective-interest method, a bond has a carrying value of €480,000 and a market (effective) rate of 10% (annual). What is the interest EXPENSE for the year?',
+    opts:['A) €48,000','B) €50,000','C) €24,000','D) €4,800','E) €52,000','F) わからない'],
+    ans:0,
+    exp:'実効金利法：利息費用 = 帳簿価額 × 市場利率 = 480,000 × 10% = €48,000。（現金利払は額面×表面利率で別計算）',
+    we:{ 1: '€50,000 は額面ベースの誤り。', 2: '€24,000 は半年分。', 3: '€4,800 は桁誤り。', 4: '€52,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_34', conceptId:'c3_accrued_rev', ch:11, type:'A',
+    q:'For a bond originally issued at a DISCOUNT, as the discount is amortized over time the carrying value of the bond:',
+    opts:['A) Increases toward face value','B) Decreases toward zero','C) Stays constant','D) Increases above face value','E) Equals the market price each year','F) わからない'],
+    ans:0,
+    exp:'ディスカウント発行：割引を償却するにつれ帳簿価額は額面に向かって増加し、満期に額面と一致する。',
+    we:{ 1: '減少ではない（増加）。', 2: '一定ではない。', 3: '額面を超えない。', 4: '市場価格と一致するとは限らない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_35', conceptId:'c3_accrued_rev', ch:11, type:'C',
+    q:'€100,000 of 6% bonds (interest paid each December 31), dated January 1, are issued at par on April 1. How much accrued interest does the buyer pay at issuance?',
+    opts:['A) €1,500','B) €6,000','C) €500','D) €4,500','E) €0','F) わからない'],
+    ans:0,
+    exp:'利払日間の発行：買手は経過利息（1/1〜4/1 = 3か月）を支払う = 100,000 × 6% × 3/12 = €1,500。発行体は次回利払時に全額返す。',
+    we:{ 1: '€6,000 は1年分。', 2: '€500 は1か月分。', 3: '€4,500 は9か月分。', 4: '€0 は経過利息を無視した誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_36', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company has 2,000 shares of 5%, €100 par CUMULATIVE preference shares. Dividends were not paid for the past 2 years. Before ordinary shareholders receive anything this year, how much must be paid to preference shareholders (including the current year)?',
+    opts:['A) €30,000','B) €10,000','C) €20,000','D) €60,000','E) €0','F) わからない'],
+    ans:0,
+    exp:'優先配当（累積的）= 2,000 × 100 × 5% = €10,000/年。2年延滞 + 当年 = 3年分 = 3 × 10,000 = €30,000を普通株主より先に支払う。',
+    we:{ 1: '€10,000 は当年分のみ（延滞を無視）。', 2: '€20,000 は延滞2年分のみ（当年を除外）。', 3: '€60,000 は計算誤り。', 4: '€0 は誤り（累積優先株は延滞分も支払う）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_37', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company declares a 30% (large) share dividend on 100,000 ordinary shares with a €5 par value (market price €18). At what amount is the share dividend recorded (Retained Earnings reduced)?',
+    opts:['A) €150,000 (at par)','B) €540,000 (at market)','C) €1,800,000','D) €30,000','E) €90,000','F) わからない'],
+    ans:0,
+    exp:'大規模株式配当（>20-25%）は額面で資本化（時価ではない）。配当株数 = 100,000 × 30% = 30,000株 × €5 = €150,000を Retained Earnings から振替。',
+    we:{ 1: '€540,000 は時価（小規模配当の扱い）。大規模は額面。', 2: '€1,800,000 は桁誤り。', 3: '€30,000 は株数。', 4: '€90,000 は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_38', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'The statement of changes in equity reconciles which of the following?',
+    opts:['A) Beginning to ending balances of each equity component (share capital, premium, retained earnings, etc.)','B) Revenues and expenses for the period','C) Cash inflows and outflows','D) Assets and liabilities','E) Only retained earnings','F) わからない'],
+    ans:0,
+    exp:'株主資本等変動計算書は、各資本構成要素（株式資本・払込剰余金・利益剰余金・OCI等）の期首から期末への変動を調整・開示する。',
+    we:{ 1: '収益・費用は損益計算書。', 2: '現金収支はCF計算書。', 3: '資産・負債はSFP。', 4: '利益剰余金だけではない（全資本要素）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_39', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'Which item is reported in Other Comprehensive Income (OCI) rather than in profit or loss?',
+    opts:['A) A revaluation surplus on property under the IFRS revaluation model','B) Sales revenue','C) Cost of goods sold','D) Depreciation expense','E) Interest expense','F) わからない'],
+    ans:0,
+    exp:'IFRS再評価モデルの増価（再評価剰余金）はOCIに計上。売上・COGS・減価償却・支払利息は純損益（P/L）項目。',
+    we:{ 1: '売上はP/L。', 2: 'COGSはP/L。', 3: '減価償却はP/L。', 4: '支払利息はP/L。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_40', conceptId:'c1_share_retained', ch:12, type:'A',
+    q:'Comprehensive income for a period equals:',
+    opts:['A) Net income plus other comprehensive income','B) Net income minus dividends','C) Revenues minus expenses only','D) Net income plus dividends','E) Retained earnings plus share capital','F) わからない'],
+    ans:0,
+    exp:'包括利益 = 純利益 + その他の包括利益（OCI）。配当は包括利益の計算に含めない。',
+    we:{ 1: '配当は引かない。', 2: 'OCIを含める（純損益だけではない）。', 3: '配当は加えない。', 4: '資本残高の合計ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_41', conceptId:'c1_share_retained', ch:12, type:'C',
+    q:'A company reissues 1,000 treasury shares (cost €9 each) for €6 each. The €3-per-share deficiency is debited first to:',
+    opts:['A) Share Premium—Treasury (then Retained Earnings if insufficient)','B) Loss on Sale of Treasury Shares (P/L)','C) Share Capital—Ordinary','D) Cash','E) Goodwill','F) わからない'],
+    ans:0,
+    exp:'自己株式を原価未満で再発行：不足額（cost法）は損益にせず、まず Share Premium—Treasury（あれば）を取り崩し、不足なら Retained Earnings を借方。',
+    we:{ 1: '損益（P/L）には計上しない。', 2: '資本金は使わない。', 3: '現金は受取側。', 4: 'のれんは無関係。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_42', conceptId:'c15_horizontal', ch:15, type:'C',
+    q:'Net sales were €1,000,000 in 2023 and €1,200,000 in 2024. In a horizontal analysis, what is the percentage increase in 2024?',
+    opts:['A) 20%','B) 16.7%','C) 120%','D) 83.3%','E) 25%','F) わからない'],
+    ans:0,
+    exp:'水平分析の増加率 = (当期 − 基準年) ÷ 基準年 = (1,200,000 − 1,000,000) ÷ 1,000,000 = 20%。',
+    we:{ 1: '16.7% は当期を分母にした誤り。', 2: '120% は比率そのもの。', 3: '83.3% は逆数的誤り。', 4: '25% は計算誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_43', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'In a common-size (vertical) income statement with net sales as the 100% base, if COGS is €600,000 and net sales is €1,000,000, COGS is shown as:',
+    opts:['A) 60%','B) 40%','C) 167%','D) 6%','E) 100%','F) わからない'],
+    ans:0,
+    exp:'垂直分析（共通サイズ）：各項目を純売上の%で表示。COGS = 600,000 ÷ 1,000,000 = 60%。',
+    we:{ 1: '40% は粗利率。', 2: '167% は逆数。', 3: '6% は桁誤り。', 4: '100% は基準（純売上）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_44', conceptId:'c15_vertical', ch:15, type:'C',
+    q:'Net cash provided by operating activities is €150,000 and average current liabilities are €100,000. What is the current cash debt coverage ratio?',
+    opts:['A) 1.5 times','B) 0.67 times','C) 15 times','D) 0.15 times','E) 2.5 times','F) わからない'],
+    ans:0,
+    exp:'流動現金負債カバレッジ = 営業CF ÷ 平均流動負債 = 150,000 ÷ 100,000 = 1.5回。',
+    we:{ 1: '0.67 は逆数。', 2: '15 は桁誤り。', 3: '0.15 は桁誤り。', 4: '2.5 は誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_45', conceptId:'c15_trend', ch:15, type:'A',
+    q:'When evaluating earnings quality, comparing net income to net cash provided by operating activities helps assess whether:',
+    opts:['A) Reported earnings are supported by cash flows','B) The company will pay dividends','C) Inventory is obsolete','D) Shares are overpriced','E) The tax rate is correct','F) わからない'],
+    ans:0,
+    exp:'利益の質（quality of earnings）：純利益と営業CFを比較し、報告利益が実際のキャッシュ創出に裏付けられているか（会計上の操作でないか）を評価する。',
+    we:{ 1: '配当支払の予測ではない。', 2: '在庫の陳腐化判定ではない。', 3: '株価評価ではない。', 4: '税率の検証ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_46', conceptId:'c15_vertical', ch:15, type:'A',
+    q:'Which best explains why the acid-test (quick) ratio can be much lower than the current ratio for some companies?',
+    opts:['A) The quick ratio excludes inventory and prepaid expenses','B) The quick ratio includes more assets','C) The quick ratio uses total assets','D) The current ratio excludes cash','E) They are always equal','F) わからない'],
+    ans:0,
+    exp:'当座比率は在庫・前払費用を除外する（換金性の低い流動資産を除く）。在庫が大きい企業ほど、流動比率より当座比率が大幅に低くなる。',
+    we:{ 1: '当座比率は資産を「より少なく」含める。', 2: '総資産は使わない。', 3: '流動比率も現金を含む。', 4: '通常等しくない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_47', conceptId:'c15_eps_payout', ch:15, type:'A',
+    q:'A company reports income from continuing operations and a separately disclosed discontinued operations loss. For predicting future performance ("sustainable income"), users focus on:',
+    opts:['A) Income from continuing operations','B) The discontinued operations loss','C) Total comprehensive income only','D) Dividends declared','E) Cash on hand','F) わからない'],
+    ans:0,
+    exp:'持続可能利益（sustainable income）の予測には、反復しない項目（廃止事業の損益など）を除いた「継続事業からの利益」に注目する。',
+    we:{ 1: '廃止事業は反復しない（除外）。', 2: '包括利益だけでは不十分。', 3: '配当は利益予測の指標ではない。', 4: '手元現金は利益ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_48', conceptId:'c8_allowance', ch:8, type:'A',
+    q:'Under the percentage-of-receivables (aging) approach, the computed estimate represents the:',
+    opts:['A) Required ending balance of the Allowance for Doubtful Accounts','B) Bad debt expense directly','C) Amount of receivables to write off','D) Net credit sales','E) Cash to be collected','F) わからない'],
+    ans:0,
+    exp:'期末売掛金法（aging）では、計算した見積額は「引当金の必要な期末残高」を表す。貸倒費用は、必要残高 − 調整前残高 で求める。',
+    we:{ 1: '直接の費用額ではない（残高ベース）。', 2: '償却額ではない。', 3: '純信用売上ではない。', 4: '回収額ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_49', conceptId:'c5_sales_returns', ch:5, type:'C',
+    q:'A company grants a customer a €2,000 sales allowance on previously sold merchandise (goods are NOT returned). The entry is:',
+    opts:['A) Dr Sales Returns and Allowances 2,000 / Cr Accounts Receivable 2,000','B) Dr Accounts Receivable 2,000 / Cr Sales Returns and Allowances 2,000','C) Dr Inventory 2,000 / Cr Cost of Goods Sold 2,000','D) Dr Cash 2,000 / Cr Sales Revenue 2,000','E) No entry is required','F) わからない'],
+    ans:0,
+    exp:'値引（allowance、返品なし）：Dr Sales Returns and Allowances（売上の控除）/ Cr Accounts Receivable 2,000。商品は戻らないため在庫・COGSの調整は不要。',
+    we:{ 1: '方向が逆。', 2: '返品なしなので在庫戻し入れは不要。', 3: '現金・売上の増加ではない。', 4: '仕訳が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_50', conceptId:'c6_inv_errors_is', ch:6, type:'C',
+    q:'If beginning inventory is OVERSTATED by €4,000 (ending inventory correct), the effect on this period’s net income is:',
+    opts:['A) Net income is understated by €4,000','B) Net income is overstated by €4,000','C) Net income is unaffected','D) Net income is understated by €8,000','E) Cannot be determined','F) わからない'],
+    ans:0,
+    exp:'期首在庫の過大計上 → COGS過大（COGS = 期首+仕入−期末）→ 純利益 過小（€4,000）。',
+    we:{ 1: '過大ではなく過小。', 2: '影響あり（COGS経由）。', 3: '€8,000 ではなく €4,000。', 4: '判定可能。' },
+    source:'FA1B Predicted'
   }
 ];
 
