@@ -14790,9 +14790,14 @@ function renderQuizHome() {
     { id:'new', label:'Not Understood' },
     { id:'unanswered', label:'Unanswered' }
   ];
+  // Ensure modes array exists (backward-compat from single quizState.mode)
+  if (!Array.isArray(quizState.modes)) {
+    quizState.modes = (typeof quizState.mode === 'string' && ['all','wrong','new','unanswered'].indexOf(quizState.mode) >= 0) ? [quizState.mode] : ['all'];
+  }
   for (var m = 0; m < modes.length; m++) {
     var md = modes[m];
-    html += '<button class="mode-btn' + (quizState.mode === md.id ? ' active' : '') + '" onclick="setQuizMode(\'' + md.id + '\')">' + md.label + '</button>';
+    var modeActive = quizState.modes.indexOf(md.id) >= 0;
+    html += '<button class="mode-btn' + (modeActive ? ' active' : '') + '" onclick="setQuizMode(\'' + md.id + '\')">' + md.label + '</button>';
   }
   html += '</div>';
   html += '<div style="font-size:26px;font-weight:700;margin:16px 0 10px;">週フィルター <span style="font-size:18px;color:#94a3b8;font-weight:400;">（複数選択可・「全て」で全週）</span></div>';
@@ -14841,7 +14846,23 @@ function renderQuizHome() {
 }
 
 function setQuizMode(mode) {
-  quizState.mode = mode;
+  if (!Array.isArray(quizState.modes)) quizState.modes = ['all'];
+  if (mode === 'all') {
+    // 'all' acts as exclusive: toggling it clears others; if already only 'all', no-op
+    quizState.modes = ['all'];
+  } else {
+    // Remove 'all' if turning on a specific filter
+    var i = quizState.modes.indexOf('all');
+    if (i >= 0) quizState.modes.splice(i, 1);
+    var j = quizState.modes.indexOf(mode);
+    if (j >= 0) quizState.modes.splice(j, 1);
+    else quizState.modes.push(mode);
+    // If now empty, default back to 'all'
+    if (quizState.modes.length === 0) quizState.modes = ['all'];
+  }
+  // Keep legacy single-mode field roughly in sync (first non-all mode, or 'all')
+  quizState.mode = (quizState.modes.indexOf('all') >= 0) ? 'all' : quizState.modes[0];
+  if (typeof saveFilterState === 'function') saveFilterState();
   renderQuizHome();
 }
 
@@ -14893,10 +14914,18 @@ function getFilteredQuestions() {
     // chapter multi-select filter (empty = all in week)
     if (quizState.selectedChs.length > 0 && quizState.selectedChs.indexOf(q.ch) < 0) continue;
     var r = ratings[q.id];
-    if (quizState.mode === 'all') { result.push(q); }
-    else if (quizState.mode === 'wrong' && r === 'notunderstood') { result.push(q); }
-    else if (quizState.mode === 'new' && r === 'new') { result.push(q); }
-    else if (quizState.mode === 'unanswered' && !r) { result.push(q); }
+    // Build active modes array (multi-select); fall back to legacy single mode
+    var activeModes = Array.isArray(quizState.modes) && quizState.modes.length
+      ? quizState.modes
+      : [quizState.mode || 'all'];
+    var matched = false;
+    if (activeModes.indexOf('all') >= 0) matched = true;
+    else {
+      if (activeModes.indexOf('wrong') >= 0 && r === 'notunderstood') matched = true;
+      if (!matched && activeModes.indexOf('new') >= 0 && r === 'new') matched = true;
+      if (!matched && activeModes.indexOf('unanswered') >= 0 && !r) matched = true;
+    }
+    if (matched) result.push(q);
   }
   return result;
 }
@@ -24014,6 +24043,7 @@ function saveFilterState() {
     localStorage.setItem('quiz_filters', JSON.stringify({
       passModes: quizState.passModes,
       mode: quizState.mode,
+      modes: quizState.modes,
       weekFilter: quizState.weekFilter,
       selectedChs: quizState.selectedChs
     }));
@@ -24027,6 +24057,8 @@ function loadFilterState() {
     if (!s) return;
     if (Array.isArray(s.passModes)) quizState.passModes = s.passModes;
     if (typeof s.mode === 'string') quizState.mode = s.mode;
+    if (Array.isArray(s.modes)) quizState.modes = s.modes;
+    else if (typeof s.mode === 'string' && ['all','wrong','new','unanswered'].indexOf(s.mode) >= 0) quizState.modes = [s.mode];
     if (typeof s.weekFilter === 'number') quizState.weekFilter = s.weekFilter;
     if (Array.isArray(s.selectedChs)) quizState.selectedChs = s.selectedChs;
   } catch(e) {}
