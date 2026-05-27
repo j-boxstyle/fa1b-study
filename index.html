@@ -1335,11 +1335,11 @@ body { padding-top:112px; }
 .je-tbl{width:100%;border-collapse:collapse;font-size:19px;}
 .je-tbl th{background:#92400e;color:#fef3c7;padding:9px 10px;font-weight:700;font-size:17px;text-align:center;border:1px solid #7c2d12;}
 .je-tbl td{padding:7px 10px;border-bottom:1px solid #d1d5db;border-left:1px solid #d1d5db;border-right:1px solid #d1d5db;}
-.je-tbl .date{font-weight:600;white-space:nowrap;}
+.je-tbl .date{font-weight:600;white-space:nowrap;color:#1f2937;}
 .je-tbl .acct-debit{color:#1d4ed8;font-weight:600;}
 .je-tbl .acct-credit{padding-left:32px;color:#b91c1c;}
 .je-tbl .ref{text-align:center;color:#6b7280;font-size:16px;}
-.je-tbl .amt{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.je-tbl .amt{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#1f2937;}
 .je-tbl .desc{font-style:italic;color:#6b7280;font-size:16px;padding-left:18px;background:#faedc0;}
 .je-tbl tr.entry-end td{border-bottom:2px solid #92400e;}
 
@@ -2133,7 +2133,7 @@ body { padding-top:112px; }
           <div class="tacc-bal"><span>Bal.</span><span>200 Dr</span></div>
         </div>
       </div>
-      <div class="wk-tip" style="margin-top:6px;"><b>📌 T勘定の読み方：</b>左 = Debit, 右 = Credit。残高は <b>多い方 − 少ない方</b>。資産 / 費用 / 配当 は通常 <span style="color:#1d4ed8;font-weight:700;">Dr 残高</span>、負債 / 資本 / 収益 は通常 <span style="color:#b91c1c;font-weight:700;">Cr 残高</span>。</div>
+      <div class="wk-tip" style="margin-top:6px;"><b>📌 T勘定の読み方：</b>左 = Debit, 右 = Credit。残高は <b>多い方 − 少ない方</b>。資産 / 費用 / 配当 は通常 <span style="color:#60a5fa;font-weight:700;">Dr 残高</span>、負債 / 資本 / 収益 は通常 <span style="color:#f87171;font-weight:700;">Cr 残高</span>。</div>
 
       <!-- ───────── ④ 4 財務諸表 (連動) ───────── -->
       <h4 style="color:#fcd34d;font-size:22px;margin:26px 0 8px;">⑤ 4 財務諸表 — 数字の連動</h4>
@@ -2214,7 +2214,7 @@ body { padding-top:112px; }
         <div class="fs-row sub"><span>Net cash from financing</span><span class="fs-amt">(200)</span></div>
         <div class="fs-row sub" style="margin-top:8px;"><span>Net Increase in Cash</span><span class="fs-amt">2,300</span></div>
         <div class="fs-row"><span>Cash, October 1</span><span class="fs-amt">5,000</span></div>
-        <div class="fs-row total"><span>Cash, October 31 <span class="note" style="color:#fef3c7;">→ matches BS Cash</span></span><span class="fs-amt">$ 7,300</span></div>
+        <div class="fs-row total"><span>Cash, October 31 <span class="note" style="color:#047857;font-weight:700;">→ matches BS Cash</span></span><span class="fs-amt">$ 7,300</span></div>
       </div>
       <div class="fs-articulation">🔗 <b>最終検証：</b>CFS の Ending Cash <b>$7,300</b> = Balance Sheet の Cash <b>$7,300</b> ✓ &nbsp; 全てが繋がった！<br><span style="font-size:0.85em;">CFS の 3 区分: <b>O</b>perating（本業）/ <b>I</b>nvesting（投資）/ <b>F</b>inancing（資金調達）= <b>"OIF"</b> と覚える。</span></div>
 
@@ -2351,10 +2351,10 @@ body { padding-top:112px; }
       <h3 class="wk-section-h">🧾 Periodic System の逆勘定・正常残高（試験頻出）</h3>
       <div class="wk-tbl-wrap"><table class="wk-tbl" style="text-align:center;">
         <tr><th>勘定（Periodic）</th><th>正常残高</th><th>意味</th></tr>
-        <tr><td><b>Purchases</b>（仕入）</td><td style="color:#1d4ed8;font-weight:700;">Debit</td><td>費用的・COGS計算の構成要素</td></tr>
-        <tr><td><b>Freight-in</b>（引取運賃）</td><td style="color:#1d4ed8;font-weight:700;">Debit</td><td>Purchases に加算</td></tr>
-        <tr><td><b>Purchase Returns &amp; Allowances</b></td><td style="color:#b91c1c;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
-        <tr><td><b>Purchase Discounts</b></td><td style="color:#b91c1c;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
+        <tr><td><b>Purchases</b>（仕入）</td><td style="color:#60a5fa;font-weight:700;">Debit</td><td>費用的・COGS計算の構成要素</td></tr>
+        <tr><td><b>Freight-in</b>（引取運賃）</td><td style="color:#60a5fa;font-weight:700;">Debit</td><td>Purchases に加算</td></tr>
+        <tr><td><b>Purchase Returns &amp; Allowances</b></td><td style="color:#f87171;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
+        <tr><td><b>Purchase Discounts</b></td><td style="color:#f87171;font-weight:700;">Credit</td><td>contra-purchase（控除）</td></tr>
       </table></div>
       <div class="wk-tip"><b>📌 暗記：</b>Purchases と Freight-in は <b>Debit</b>（増やす方向）／ Returns・Discounts は <b>Credit</b>（差し引く contra）。<br>Net Purchases = Purchases + Freight-in − Returns − Discounts。</div>
 
@@ -2689,7 +2689,7 @@ body { padding-top:112px; }
       <!-- Net Income comparison -->
       <h4 style="color:#fcd34d;font-size:22px;margin:22px 0 8px;">📈 NI への影響比較（物価上昇局面）</h4>
       <div class="wk-tbl-wrap"><table class="wk-tbl">
-        <tr><th></th><th style="color:#1d4ed8;">FIFO</th><th style="color:#b91c1c;">LIFO</th><th style="color:#7c2d12;">Weighted Avg</th></tr>
+        <tr><th></th><th style="color:#60a5fa;">FIFO</th><th style="color:#f87171;">LIFO</th><th style="color:#fbbf24;">Weighted Avg</th></tr>
         <tr><td>Sales (仮: 20 units × $20)</td><td class="amt" style="text-align:right;">400</td><td class="amt" style="text-align:right;">400</td><td class="amt" style="text-align:right;">400</td></tr>
         <tr><td>COGS</td><td style="text-align:right;color:#22d3ee;">(220) 最小</td><td style="text-align:right;color:#fca5a5;">(260) 最大</td><td style="text-align:right;">(240) 中間</td></tr>
         <tr><td><b>Gross Profit</b></td><td style="text-align:right;color:#22d3ee;font-weight:800;">180 最大</td><td style="text-align:right;color:#fca5a5;font-weight:800;">140 最小</td><td style="text-align:right;font-weight:800;">160</td></tr>
@@ -3046,13 +3046,13 @@ body { padding-top:112px; }
 
         <!-- Scrap -->
         <div class="je-doc" style="padding:14px 16px;">
-          <div class="je-doc-title" style="font-size:18px;color:#fcd34d;">③ 廃棄 (Cash $0)<br>(Loss = NBV 全額)</div>
+          <div class="je-doc-title" style="font-size:18px;color:#ef4444;">③ 廃棄 (Cash $0)<br>(Loss = NBV 全額)</div>
           <table class="je-tbl" style="font-size:17px;">
             <tr><td class="acct-debit">Acc Dep</td><td class="amt">30,000</td><td></td></tr>
             <tr><td class="acct-debit" style="color:#ef4444;">Loss on Disposal</td><td class="amt">20,000</td><td></td></tr>
             <tr><td class="acct-credit">Equipment</td><td></td><td class="amt">50,000</td></tr>
           </table>
-          <div style="font-size:16px;color:#fcd34d;margin-top:8px;text-align:center;font-weight:700;">Cash 0 − NBV 20,000 = Loss</div>
+          <div style="font-size:16px;color:#ef4444;margin-top:8px;text-align:center;font-weight:700;">Cash 0 − NBV 20,000 = Loss</div>
         </div>
       </div>
       <div class="fs-articulation">🔗 <b>Disposal 仕訳の鉄則：</b><br>
@@ -3653,7 +3653,7 @@ body { padding-top:112px; }
         <!-- BOTTOM LINE -->
         <div class="fs-row sub" style="margin-top:12px;font-size:22px;"><span>Net Increase in Cash</span><span class="fs-amt">53,000</span></div>
         <div class="fs-row"><span>Cash, January 1</span><span class="fs-amt">17,000</span></div>
-        <div class="fs-row total"><span>Cash, December 31 <span class="note" style="color:#fef3c7;">→ matches BS Cash</span></span><span class="fs-amt">$ 70,000</span></div>
+        <div class="fs-row total"><span>Cash, December 31 <span class="note" style="color:#047857;font-weight:700;">→ matches BS Cash</span></span><span class="fs-amt">$ 70,000</span></div>
       </div>
 
       <h4 style="color:#fcd34d;font-size:22px;margin:18px 0 8px;">🎯 各調整の理由（NI を Cash に戻す論理）</h4>
