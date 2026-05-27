@@ -11525,6 +11525,233 @@ var QUESTIONS = [
     exp:'棚卸日数 = 365 ÷ 棚卸資産回転率 = 365 ÷ 6.0 ≈ 60.8 ≈ 61日。',
     we:{ 1: '6日は回転率そのもの。', 2: '30日は計算誤り。', 3: '90日は計算誤り。', 4: '6.0日は誤り。' },
     source:'FA1B Predicted'
+  },
+  {
+    id:'qg_01', conceptId:'c1_measurement', ch:1, type:'A',
+    q:'Under the historical cost principle, after acquisition an asset’s carrying amount compared with its current fair value:',
+    opts:['A) Can be equal to, higher than, or lower than fair value','B) Is always equal to fair value','C) Is always higher than fair value','D) Is always lower than fair value','E) Is always zero','F) わからない'],
+    ans:0,
+    exp:'取得後、帳簿価額（取得原価ベース）と公正価値の関係は固定されない。市場変動により等しい・高い・低いのいずれもあり得る。',
+    we:{ 1: '常に一致するわけではない。', 2: '常に高いわけではない。', 3: '常に低いわけではない。', 4: 'ゼロではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_02', conceptId:'c3_qualitative', ch:1, type:'A',
+    q:'Which combination correctly lists the components of RELEVANCE?',
+    opts:['A) Predictive value, confirmatory value, and materiality','B) Complete, neutral, and free from error','C) Comparability and consistency','D) Timeliness and understandability','E) Verifiability and faithfulness','F) わからない'],
+    ans:0,
+    exp:'Relevance（関連性）= 予測価値 + 確認価値 +（重要性 materiality）。一方 Faithful Representation = 完全・中立・誤謬なし。',
+    we:{ 1: 'これは忠実な表現の構成要素。', 2: '比較可能性・一貫性は補強的特性。', 3: '適時性・理解可能性は補強的特性。', 4: '検証可能性は補強的特性。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_03', conceptId:'c3_qualitative', ch:1, type:'A',
+    q:'Which combination correctly lists the components of FAITHFUL REPRESENTATION?',
+    opts:['A) Complete, neutral, and free from material error','B) Predictive and confirmatory value','C) Comparability and timeliness','D) Relevance and materiality','E) Verifiability and understandability','F) わからない'],
+    ans:0,
+    exp:'Faithful Representation（忠実な表現）= 完全（Complete）+ 中立（Neutral）+ 重大な誤りがない（Free from material error）。',
+    we:{ 1: 'これは関連性の構成要素。', 2: '比較可能性・適時性は補強的特性。', 3: '関連性・重要性は別概念。', 4: '検証・理解可能性は補強的特性。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_04', conceptId:'c3_going_concern', ch:1, type:'A',
+    q:'The assumption that justifies recording assets at historical cost (rather than liquidation value) and depreciating them over time is the:',
+    opts:['A) Going concern assumption','B) Monetary unit assumption','C) Economic entity assumption','D) Periodicity assumption','E) Full disclosure principle','F) わからない'],
+    ans:0,
+    exp:'継続企業の前提（Going Concern）：事業が継続するとの仮定があるため、清算価値でなく取得原価で記録し、耐用年数にわたり減価償却できる。',
+    we:{ 1: '貨幣単位の仮定は別。', 2: '企業実体の仮定は別。', 3: '期間性の仮定は別（継続を期間に区切る）。', 4: '完全開示は別原則。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_05', conceptId:'c2_journal', ch:2, type:'A',
+    q:'Reversing entries, if used, are made at the beginning of the next period and are most commonly applied to:',
+    opts:['A) Accrual adjusting entries (accrued revenues and accrued expenses)','B) Deferral adjusting entries for prepaid assets','C) Closing entries','D) Correcting entries','E) Depreciation adjusting entries','F) わからない'],
+    ans:0,
+    exp:'再振替仕訳（任意）は新期間初日に、主に「見越し（accrual）」の調整仕訳（未収収益・未払費用）を逆仕訳して、その後の現金取引の記録を簡素化する。',
+    we:{ 1: '前払資産の繰延には通常使わない。', 2: '締切仕訳とは別。', 3: '訂正仕訳とは別。', 4: '減価償却には使わない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_06', conceptId:'c3_deferral_alt', ch:3, type:'C',
+    q:'On October 1, a company pays €6,000 for a one-year insurance policy and records the entire amount in Insurance Expense (alternative method, App 3B). What is the December 31 adjusting entry?',
+    opts:['A) Dr Prepaid Insurance 4,500 / Cr Insurance Expense 4,500','B) Dr Insurance Expense 1,500 / Cr Prepaid Insurance 1,500','C) Dr Prepaid Insurance 1,500 / Cr Insurance Expense 1,500','D) No adjusting entry is needed','E) Dr Insurance Expense 6,000 / Cr Prepaid Insurance 6,000','F) わからない'],
+    ans:0,
+    exp:'別法（App 3B）では支払時に全額費用計上。月額500、経過3か月=1,500が費用として正しく残るべき。未経過9か月=4,500を資産へ振替：Dr Prepaid Insurance 4,500 / Cr Insurance Expense 4,500。標準法と期末残高は一致。',
+    we:{ 1: '1,500は経過分（費用に残す）。振り替えるのは未経過4,500。', 2: '金額が未経過分4,500であるべき。', 3: '別法でも調整必須。', 4: '全額を資産化するのは誤り。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_07', conceptId:'c4_worksheet', ch:4, type:'A',
+    q:'The 10-column worksheet used in the accounting cycle is best described as:',
+    opts:['A) An internal working tool that is NOT a formal financial statement','B) A required financial statement filed with regulators','C) Part of the general journal','D) A substitute for the ledger','E) The post-closing trial balance','F) わからない'],
+    ans:0,
+    exp:'ワークシート（10桁精算表）は財務諸表作成を補助する内部の作業用ツールであり、正式な財務諸表でも仕訳帳・元帳の代替でもない。',
+    we:{ 1: '正式な財務諸表ではない。', 2: '仕訳帳の一部ではない。', 3: '元帳の代替ではない。', 4: '締切後試算表とは別。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_08', conceptId:'c4_correcting', ch:4, type:'A',
+    q:'How does a correcting entry differ from an adjusting entry?',
+    opts:['A) A correcting entry fixes a previously recorded error; an adjusting entry allocates revenues/expenses to the correct period','B) They are identical','C) Correcting entries are only made at period-end','D) Adjusting entries fix errors','E) Correcting entries never involve the ledger','F) わからない'],
+    ans:0,
+    exp:'訂正仕訳は過去に記録した「誤り」を直すもの。調整仕訳は発生主義に基づき収益・費用を正しい期間に配分するもの（誤りの訂正ではない）。',
+    we:{ 1: '同一ではない。', 2: '訂正仕訳は誤り発見時に随時行う。', 3: '誤りを直すのは訂正仕訳。', 4: '元帳に影響する。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_09', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'In a bank reconciliation, which item requires an adjusting journal entry on the company’s books?',
+    opts:['A) A bank service charge','B) A deposit in transit','C) An outstanding check','D) A bank error in the company’s favor','E) Cash on hand not yet deposited','F) わからない'],
+    ans:0,
+    exp:'帳簿に未記帳の項目（銀行手数料・代理回収・NSF小切手・利息）は会社側で仕訳が必要。預金未達・未取付小切手・銀行側の誤りは銀行側調整で、会社の仕訳は不要。',
+    we:{ 1: '預金未達は銀行側調整（仕訳不要）。', 2: '未取付小切手は銀行側調整。', 3: '銀行の誤りは銀行が修正。', 4: '手元現金は仕訳対象外（この文脈）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_10', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'When a customer’s check is returned by the bank as NSF (not sufficient funds), the company records:',
+    opts:['A) Dr Accounts Receivable / Cr Cash','B) Dr Cash / Cr Accounts Receivable','C) Dr Bad Debt Expense / Cr Cash','D) Dr Cash / Cr Sales Revenue','E) No entry is required','F) わからない'],
+    ans:0,
+    exp:'NSF小切手：入金が無効になったため現金を減らし、顧客への請求権（売掛金）を復活：Dr Accounts Receivable / Cr Cash。',
+    we:{ 1: '方向が逆。', 2: '貸倒費用ではない（まだ回収を試みる）。', 3: '売上ではない。', 4: '仕訳が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_11', conceptId:'c7_petty_cash', ch:7, type:'C',
+    q:'To ESTABLISH a €500 petty cash fund, the journal entry is:',
+    opts:['A) Dr Petty Cash 500 / Cr Cash 500','B) Dr Cash 500 / Cr Petty Cash 500','C) Dr Petty Cash 500 / Cr Petty Cash Expense 500','D) Dr various expenses / Cr Cash 500','E) No entry until the fund is used','F) わからない'],
+    ans:0,
+    exp:'小口現金の設定：Dr Petty Cash 500 / Cr Cash 500。設定時のみ Petty Cash 勘定を使う。',
+    we:{ 1: '方向が逆。', 2: '費用勘定は使わない（設定時）。', 3: '補充時は費用/Cash（Petty Cashは動かさない）。', 4: '設定時に仕訳が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_12', conceptId:'c7_petty_cash', ch:7, type:'A',
+    q:'When REPLENISHING the petty cash fund, the credit is to:',
+    opts:['A) Cash','B) Petty Cash','C) Accounts Payable','D) Petty Cash Expense','E) Retained Earnings','F) わからない'],
+    ans:0,
+    exp:'補充時：使った費用を借方、貸方は Cash（小口現金へ補充する元の現金）。Petty Cash 勘定は設定額のまま動かさない。',
+    we:{ 1: 'Petty Cashは補充時に動かさない。', 2: '買掛金ではない。', 3: 'そのような勘定はない。', 4: '利益剰余金ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_13', conceptId:'c7_cash_def', ch:7, type:'C',
+    q:'During a week, register receipts were €2,000 but the cash count was €1,985. How is the €15 difference recorded?',
+    opts:['A) Dr Cash Over and Short €15 (an expense/loss)','B) Cr Cash Over and Short €15 (a gain)','C) Dr Cash €15','D) Dr Sales Revenue €15','E) No entry','F) わからない'],
+    ans:0,
+    exp:'実査額(1,985) < 記録額(2,000) → 現金不足€15。Cash Over and Short を借方（損失）に計上。Dr Cash Over and Short 15。',
+    we:{ 1: '不足なので貸方（利益）ではない。', 2: '現金は不足（増やさない）。', 3: '売上の調整ではない。', 4: '差異は記録する。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_14', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'Requiring that only designated employees handle cash and approve transactions is an example of which internal control principle?',
+    opts:['A) Establishment of responsibility','B) Segregation of duties','C) Independent internal verification','D) Documentation procedures','E) Physical controls','F) わからない'],
+    ans:0,
+    exp:'特定の担当者のみが現金を扱い承認する＝責任の明確化（Establishment of Responsibility）。誰が責任を負うか明確にする原則。',
+    we:{ 1: '職務分掌は複数職務の分離。', 2: '独立検証は別。', 3: '文書化手続は別。', 4: '物理的統制は別。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_15', conceptId:'c7_cash_def', ch:7, type:'A',
+    q:'The "fraud triangle" consists of which three elements?',
+    opts:['A) Opportunity, financial pressure, and rationalization','B) Assets, liabilities, and equity','C) Relevance, reliability, and comparability','D) Cash, receivables, and inventory','E) Planning, execution, and review','F) わからない'],
+    ans:0,
+    exp:'不正のトライアングル：機会（Opportunity）・動機/プレッシャー（Pressure）・正当化（Rationalization）の3要素。',
+    we:{ 1: '会計等式の要素。', 2: '質的特性。', 3: '資産項目。', 4: '監査手続段階。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_16', conceptId:'c8_allowance', ch:8, type:'A',
+    q:'Using the aging data below, what is the bad debt expense for the year (allowance method)?',
+    opts:['A) €9,000','B) €12,000','C) €15,000','D) €3,000','E) €36,000','F) わからない'],
+    ans:0,
+    exp:'貸倒費用 = 必要な期末引当金 − 調整前貸方残高 = 12,000 − 3,000 = €9,000。',
+    we:{ 1: '€12,000 は必要な期末残高（当期費用ではない）。', 2: '€15,000 は加算した誤り。', 3: '€3,000 は調整前残高。', 4: '€36,000 は誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Aging of receivables (Dec 31)</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Required Allowance (per aging)</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€12,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Allowance for Doubtful Accounts (credit balance, before adjustment)</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€3,000</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_17', conceptId:'c8_allowance', ch:8, type:'A',
+    q:'Why is the direct write-off method generally NOT acceptable under IFRS for material amounts?',
+    opts:['A) It violates the expense recognition (matching) principle and overstates receivables','B) It records too much bad debt expense','C) It requires an allowance account','D) It is only used by large companies','E) It understates net income every year','F) わからない'],
+    ans:0,
+    exp:'直接償却法は、貸倒れが確定した期に費用計上するため、売上と同じ期に費用を対応させられず（matching違反）、売掛金も正味実現可能価額で表示されない。重要な金額ではIFRS/GAAP不可。',
+    we:{ 1: '費用が過大になるわけではない（むしろ期ずれ）。', 2: '引当金を使わない方法（だから問題）。', 3: '規模の問題ではない。', 4: '毎年過小とは限らない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_18', conceptId:'c8_allowance', ch:8, type:'C',
+    q:'A €10,000, 6%, 3-month note receivable is dishonored at maturity (the maker does not pay, but eventual collection is expected). The entry to record the dishonor includes:',
+    opts:['A) A debit to Accounts Receivable for €10,150 (principal plus interest)','B) A debit to Cash for €10,150','C) A credit to Interest Revenue for €600','D) A debit to Bad Debt Expense for €10,000','E) No entry until cash is collected','F) わからない'],
+    ans:0,
+    exp:'不渡り（回収見込みあり）：満期の元利合計を売掛金へ振替。利息 = 10,000×6%×3/12 = 150。Dr Accounts Receivable 10,150 / Cr Notes Receivable 10,000 / Cr Interest Revenue 150。',
+    we:{ 1: '現金は受け取っていない。', 2: '利息は150（600は1年分）。', 3: '回収見込みがあるため貸倒費用にはしない。', 4: '不渡り時に振替仕訳が必要。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_19', conceptId:'c6_gross_profit_method', ch:6, type:'A',
+    q:'Using the gross profit method data below, what is the estimated ending inventory?',
+    opts:['A) €60,000','B) €120,000','C) €80,000','D) €30,000','E) €100,000','F) わからない'],
+    ans:0,
+    exp:'推定COGS = 純売上 × (1 − 粗利率) = 200,000 × 60% = 120,000。COGAFS = 期首30,000 + 仕入150,000 = 180,000。推定期末在庫 = 180,000 − 120,000 = €60,000。',
+    we:{ 1: '€120,000 は推定COGS。', 2: '€80,000 は計算誤り。', 3: '€30,000 は期首在庫。', 4: '€100,000 は計算誤り。' },
+    fig:'<div style="color:#cbd5e1;font-size:0.9em;background:#0f1c2e;border-left:3px solid #22d3ee;padding:10px 14px;border-radius:0 8px 8px 0;"><div style="font-weight:700;margin-bottom:6px;">Gross profit method data</div><table style="width:100%;border-collapse:collapse;"><tbody><tr><td style="padding:5px;border:1px solid #475569;">Beginning inventory</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€30,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Net purchases</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€150,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Net sales</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">€200,000</td></tr><tr><td style="padding:5px;border:1px solid #475569;">Historical gross profit rate</td><td style="padding:5px;border:1px solid #475569;text-align:right;white-space:nowrap;">40%</td></tr></tbody></table></div>',
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_20', conceptId:'c6_ownership', ch:6, type:'C',
+    q:'At year-end, goods costing €8,000 held by Alpha Ltd. on consignment from Beta Ltd. are physically in Alpha’s warehouse. Whose inventory should include these goods?',
+    opts:['A) Beta Ltd. (the consignor) includes them','B) Alpha Ltd. (the consignee) includes them','C) Both companies include them','D) Neither company includes them','E) They are expensed immediately','F) わからない'],
+    ans:0,
+    exp:'委託品（consignment）は所有権が委託者（consignor＝Beta）に残るため、物理的に受託者（Alpha）が保管していても Beta の在庫に含める。',
+    we:{ 1: '受託者Alphaは含めない（所有権なし）。', 2: '二重計上は誤り。', 3: 'どちらかが含める（Beta）。', 4: '費用化しない（在庫資産）。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_21', conceptId:'c6_ownership', ch:6, type:'C',
+    q:'Goods costing €5,000 are in transit at year-end, shipped FOB shipping point. Which party includes them in inventory?',
+    opts:['A) The buyer (title passed at shipment)','B) The seller (title passes at destination)','C) Both parties','D) Neither party','E) The shipping company','F) わからない'],
+    ans:0,
+    exp:'FOB shipping point：出荷時に所有権が買手へ移転 → 輸送中でも買手の在庫に含める。',
+    we:{ 1: '売手ではない（FOB destinationなら売手）。', 2: '二重計上は誤り。', 3: '買手が含める。', 4: '運送会社は所有しない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_22', conceptId:'c3_matching', ch:3, type:'A',
+    q:'The expense recognition (matching) principle requires that expenses be recognized:',
+    opts:['A) In the same period as the revenues they help to generate','B) Only when cash is paid','C) At the beginning of each period','D) Only at year-end','E) When the supplier is paid','F) わからない'],
+    ans:0,
+    exp:'費用収益対応（matching）：費用は、それが生み出すのに貢献した収益と同じ期間に認識する（現金支払時ではない）。',
+    we:{ 1: '現金支払時は現金主義。', 2: '期首ではない。', 3: '年度末だけではない。', 4: '仕入先への支払時ではない。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_23', conceptId:'c2_double_entry', ch:2, type:'A',
+    q:'Under double-entry bookkeeping, every transaction:',
+    opts:['A) Affects at least two accounts and keeps total debits equal to total credits','B) Affects only one account','C) Always increases total assets','D) Always involves cash','E) Is recorded only in the ledger','F) わからない'],
+    ans:0,
+    exp:'複式簿記：各取引は少なくとも2つの勘定に影響し、借方合計＝貸方合計を常に保つ。',
+    we:{ 1: '1勘定のみではない。', 2: '総資産が常に増えるわけではない。', 3: '現金が常に動くわけではない。', 4: 'まず仕訳帳に記録する。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_24', conceptId:'c4_cycle', ch:4, type:'A',
+    q:'Which is the correct order of these accounting-cycle steps?',
+    opts:['A) Journalize, post, prepare trial balance, adjusting entries, financial statements, closing entries','B) Post, journalize, closing entries, adjusting entries','C) Adjusting entries, journalize, post, closing entries','D) Financial statements, journalize, post, closing entries','E) Closing entries, adjusting entries, post, journalize','F) わからない'],
+    ans:0,
+    exp:'会計サイクル：仕訳→転記→試算表→調整仕訳→財務諸表→締切仕訳（→締切後試算表）の順。',
+    we:{ 1: '順序が誤り。', 2: '調整が先に来るのは誤り。', 3: '財務諸表が先ではない。', 4: '逆順。' },
+    source:'FA1B Predicted'
+  },
+  {
+    id:'qg_25', conceptId:'c5_periodic_appendix', ch:5, type:'A',
+    q:'Under a PERIODIC inventory system, cost of goods sold is determined:',
+    opts:['A) At period-end: Beginning Inventory + Net Purchases − Ending Inventory','B) At the time of each sale','C) Using a moving-average updated after each purchase','D) As Sales minus Gross Profit only','E) It is never calculated','F) わからない'],
+    ans:0,
+    exp:'棚卸計算法では販売の都度COGSを記録せず、期末に実地棚卸して COGS = 期首 + 純仕入 − 期末 で算定する。',
+    we:{ 1: '販売時記録は継続記録法。', 2: '移動平均は継続記録法。', 3: 'COGSは在庫式で算定する。', 4: '算定する。' },
+    source:'FA1B Predicted'
   }
 ];
 
