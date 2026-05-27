@@ -13867,10 +13867,86 @@ function shuffleQuestionOptions(q) {
   if (hasWe) copy.we = newWe;
   return copy;
 }
+// Place the correct answer at a specific target slot (0..p-1), shuffle the other distractors.
+// notSure (わからない) stays at the end. Returns a new question object.
+function shuffleQuestionOptionsAt(q, targetSlot) {
+  if (!q || !Array.isArray(q.opts) || q.opts.length < 2) return q;
+  var n = q.opts.length;
+  var notSure = -1;
+  for (var i = 0; i < n; i++) {
+    if (/わから(ない|ん)|not\s*sure/i.test(q.opts[i])) { notSure = i; break; }
+  }
+  // Build distractor list (non-correct, non-notSure)
+  var distractors = [];
+  for (var i = 0; i < n; i++) if (i !== q.ans && i !== notSure) distractors.push(i);
+  // Shuffle distractors
+  for (var k = distractors.length - 1; k > 0; k--) {
+    var r = Math.floor(Math.random() * (k + 1));
+    var t = distractors[k]; distractors[k] = distractors[r]; distractors[r] = t;
+  }
+  // p = number of non-notSure slots
+  var p = (notSure >= 0 ? n - 1 : n);
+  if (typeof targetSlot !== 'number' || targetSlot < 0 || targetSlot >= p) {
+    targetSlot = Math.floor(Math.random() * p);
+  }
+  // Assemble idxs of length p: correct at targetSlot, distractors fill the rest in shuffled order
+  var idxs = new Array(p);
+  idxs[targetSlot] = q.ans;
+  var di = 0;
+  for (var k = 0; k < p; k++) { if (k !== targetSlot) { idxs[k] = distractors[di++]; } }
+  if (notSure >= 0) idxs.push(notSure);
+  var newOpts = [], newAns = targetSlot, newWe = {};
+  var hasWe = q.we && typeof q.we === 'object';
+  for (var k = 0; k < idxs.length; k++) {
+    var oldI = idxs[k];
+    newOpts.push(String(q.opts[oldI]).replace(/^[A-F]\)\s*/, ''));
+    if (hasWe && q.we[oldI] !== undefined) newWe[k] = q.we[oldI];
+  }
+  var copy = {};
+  for (var key in q) { if (Object.prototype.hasOwnProperty.call(q, key)) copy[key] = q[key]; }
+  copy.opts = newOpts;
+  copy.ans = newAns;
+  if (hasWe) copy.we = newWe;
+  return copy;
+}
 function shuffleBlockOptions(block) {
-  if (!Array.isArray(block)) return block;
+  if (!Array.isArray(block) || !block.length) return block;
+  // Determine number of non-notSure slots from first question with わからない
+  // Assume uniform option count across block (typically 5 with わからない as last → p=4)
+  var p = 0;
+  for (var i = 0; i < block.length; i++) {
+    var q = block[i]; if (!q || !Array.isArray(q.opts)) continue;
+    var hasNS = false;
+    for (var j = 0; j < q.opts.length; j++) if (/わから(ない|ん)|not\s*sure/i.test(q.opts[j])) { hasNS = true; break; }
+    var pp = hasNS ? q.opts.length - 1 : q.opts.length;
+    if (pp > p) p = pp;
+  }
+  if (p < 2) p = 4;
+  // Build stratified target slots: round-robin then shuffle (Fisher-Yates) → even distribution + random order
+  var targets = [];
+  for (var i = 0; i < block.length; i++) targets.push(i % p);
+  for (var k = targets.length - 1; k > 0; k--) {
+    var r = Math.floor(Math.random() * (k + 1));
+    var t = targets[k]; targets[k] = targets[r]; targets[r] = t;
+  }
+  // Anti-streak: prevent 3-in-a-row by swapping with a non-matching neighbor when needed
+  for (var i = 2; i < targets.length; i++) {
+    if (targets[i] === targets[i-1] && targets[i] === targets[i-2]) {
+      for (var j = i + 1; j < targets.length; j++) {
+        if (targets[j] !== targets[i]) { var t = targets[i]; targets[i] = targets[j]; targets[j] = t; break; }
+      }
+    }
+  }
   var out = [];
-  for (var i = 0; i < block.length; i++) out.push(shuffleQuestionOptions(block[i]));
+  for (var i = 0; i < block.length; i++) {
+    var q = block[i]; if (!q || !Array.isArray(q.opts)) { out.push(q); continue; }
+    // Per-question p may differ; clamp target
+    var hasNS = false;
+    for (var j = 0; j < q.opts.length; j++) if (/わから(ない|ん)|not\s*sure/i.test(q.opts[j])) { hasNS = true; break; }
+    var pp = hasNS ? q.opts.length - 1 : q.opts.length;
+    var ts = targets[i]; if (ts >= pp) ts = ts % pp;
+    out.push(shuffleQuestionOptionsAt(q, ts));
+  }
   return out;
 }
 
