@@ -1972,10 +1972,8 @@ body { padding-top:112px; }
   </div>
 
   <div class="quiz-footer hidden" id="quiz-footer">
-    <button class="rate-btn rate-done" onclick="rateAnswer('done')">Done</button>
-    <button class="rate-btn rate-misclick" onclick="rateAnswer('misclick')">Misclick</button>
-    <button class="rate-btn rate-new" onclick="rateAnswer('new')">New</button>
-    <button class="rate-btn rate-notunderstood" onclick="rateAnswer('notunderstood')">Not Understood</button>
+    <button class="rate-btn" id="quiz-prev-btn" onclick="prevQuestion()" style="background:#475569;color:#fff;flex:0 0 auto;min-width:120px;">◀ 前の問題</button>
+    <button class="rate-btn" id="quiz-next-btn" onclick="nextQuestion()" style="background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;flex:1;font-weight:800;">次へ ▶</button>
   </div>
 
   <!-- ═══════════════════ 📋 Week まとめ パネル ═══════════════════ -->
@@ -14690,8 +14688,10 @@ function renderQuestion() {
   var q = quizState.block[quizState.index];
   var footer = document.getElementById('quiz-footer');
   footer.classList.add('hidden');
-  quizState.answered = false;
-  quizState.chosen = -1;
+  // If this question was already answered (e.g., navigating back via Prev), restore state
+  var prior = (quizState.blockResults || [])[quizState.index];
+  quizState.answered = !!prior;
+  quizState.chosen = prior ? prior.chosen : -1;
   var chStr = CHAPTERS[q.ch] ? CHAPTERS[q.ch].title : 'CH' + q.ch;
   var html = '';
   // メニュー戻りボタン (クイズ中いつでも戻れる)
@@ -14714,6 +14714,55 @@ function renderQuestion() {
   html += '<div id="q-explanation" class="hidden"></div>';
   html += '</div>';
   document.getElementById('quiz-active').innerHTML = html;
+  // Update Prev button enabled/disabled state
+  var prevBtn = document.getElementById('quiz-prev-btn');
+  if (prevBtn) {
+    prevBtn.disabled = (quizState.index <= 0);
+    prevBtn.style.opacity = (quizState.index <= 0) ? '0.4' : '1';
+    prevBtn.style.cursor = (quizState.index <= 0) ? 'not-allowed' : 'pointer';
+  }
+  // If prior answer exists, replay it visually (without re-recording)
+  if (prior) {
+    var correctIdx = q.ans;
+    for (var pi = 0; pi < q.opts.length; pi++) {
+      var pb = document.getElementById('qopt-' + pi);
+      if (!pb) continue;
+      pb.onclick = null;
+      if (pi === correctIdx) pb.classList.add('correct');
+      else if (pi === prior.chosen) pb.classList.add('wrong');
+    }
+    // Render explanation
+    var expEl = document.getElementById('q-explanation');
+    if (expEl) {
+      var expHtml = '<div class="q-exp"><strong>✅ 正解の解説:</strong><br>' + escapeHtml(q.exp || '') + '</div>';
+      if (q.we) {
+        expHtml += '<div class="q-wrong-exp-all" style="margin-top:12px;padding:12px;background:rgba(239,68,68,0.08);border-left:4px solid #ef4444;border-radius:6px;">';
+        expHtml += '<strong>❌ 他の選択肢がなぜ間違いか:</strong><br>';
+        var qLabelsExp = ['A','B','C','D','E','F'];
+        for (var wi = 0; wi < q.opts.length; wi++) {
+          if (wi === correctIdx) continue;
+          if (q.we[wi] !== undefined) {
+            var isChosen = (wi === prior.chosen);
+            expHtml += '<div style="margin-top:8px;' + (isChosen ? 'color:#fca5a5;font-weight:600;' : 'color:#cbd5e1;') + '">';
+            expHtml += '<strong>' + qLabelsExp[wi] + ')</strong> ' + escapeHtml(q.we[wi]);
+            if (isChosen) expHtml += ' <span style="color:#ef4444;">← あなたの回答</span>';
+            expHtml += '</div>';
+          }
+        }
+        expHtml += '</div>';
+      }
+      // Single-question AI buttons
+      expHtml += '<div class="acc-single-ai" style="margin-top:14px;padding:12px 14px;background:rgba(59,130,246,0.08);border-radius:10px;border:1px dashed #3b82f6;">' +
+        '<div style="font-size:16px;color:#3b82f6;font-weight:700;margin-bottom:8px;">🤖 AI でさらに学ぶ（この問題）</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+        '<button onclick="accCopySingle(\'analysis\',this)" style="background:#3b82f6;color:#fff;border:none;padding:9px 14px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;">📋 分析プロンプト</button>' +
+        '<button onclick="accCopySingle(\'verify\',this)" style="background:#a855f7;color:#fff;border:none;padding:9px 14px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;">🎯 確認テスト</button>' +
+        '</div></div>';
+      expEl.innerHTML = expHtml;
+      expEl.classList.remove('hidden');
+    }
+    footer.classList.remove('hidden');
+  }
 }
 
 function confirmExitQuiz() {
@@ -14728,6 +14777,16 @@ function selectOption(idx) {
   quizState.chosen = idx;
   var q = quizState.block[quizState.index];
   var correct = q.ans;
+  var isCorrect = (idx === correct);
+  var isDk = /わから(ない|ん)|not\s*sure/i.test((q.opts[idx]||''));
+  // Auto-categorize: dk > wrong > correct (usedPrompt updated later)
+  var category = isDk ? 'dk' : (isCorrect ? 'correct' : 'wrong');
+  // Store per-question result for navigation/categorization
+  quizState.blockResults = quizState.blockResults || [];
+  quizState.blockResults[quizState.index] = {
+    q: q, chosen: idx, correct: isCorrect, isDk: isDk,
+    usedAnalysis: false, usedVerify: false, category: category
+  };
   for (var i = 0; i < q.opts.length; i++) {
     var btn = document.getElementById('qopt-' + i);
     if (!btn) continue;
@@ -14765,12 +14824,16 @@ function selectOption(idx) {
   footer.classList.remove('hidden');
 }
 
-function rateAnswer(rating) {
+function nextQuestion() {
+  // Save rating based on auto-category (kept for backwards-compat)
   var q = quizState.block[quizState.index];
-  var ratings = loadState('ratings', {});
-  ratings[q.id] = rating;
-  saveState('ratings', ratings);
-  quizState.blockResults.push({ q: q, rating: rating, chosen: quizState.chosen });
+  var result = (quizState.blockResults || [])[quizState.index];
+  if (result) {
+    var ratings = loadState('ratings', {});
+    var ratingMap = { 'dk':'notunderstood', 'wrong':'notunderstood', 'wrong_studied':'notunderstood', 'review':'misclick', 'correct':'done' };
+    ratings[q.id] = ratingMap[result.category] || 'done';
+    saveState('ratings', ratings);
+  }
   updateProgress();
   quizState.index++;
   var footer = document.getElementById('quiz-footer');
@@ -14781,20 +14844,29 @@ function rateAnswer(rating) {
     renderQuestion();
   }
 }
+// Backwards-compat: any leftover call to rateAnswer just advances.
+function rateAnswer(_rating) { nextQuestion(); }
+function prevQuestion() {
+  if (quizState.index <= 0) return;
+  quizState.index--;
+  renderQuestion();
+}
 
 function showBlockReview() {
   document.getElementById('quiz-active').classList.add('hidden');
   var html = '<h2 style="font-size:32px;font-weight:700;margin-bottom:16px;">Block Review</h2>';
-  var ratingLabels = { done:'✅ Done', misclick:'🔵 Misclick', new:'🟣 New', notunderstood:'❌ Not Understood' };
-  var ratingClasses = { done:'r-done', misclick:'r-new', new:'r-new', notunderstood:'r-wrong' };
+  var catLabels = { correct:'✅ 完全正解', review:'🔍 正解だがプロンプト確認 (review)', dk:'❓ わからない (not understand)', wrong:'❌ 誤答 (wrong)', wrong_studied:'⚠️ 誤答かつプロンプト確認 (wrong+studied)' };
+  var catClasses = { correct:'r-done', review:'r-new', dk:'r-wrong', wrong:'r-wrong', wrong_studied:'r-wrong' };
   for (var i = 0; i < quizState.blockResults.length; i++) {
     var result = quizState.blockResults[i];
-    var rc = ratingClasses[result.rating] || '';
+    if (!result) continue;
+    var cat = result.category || (result.isDk ? 'dk' : (result.correct ? (result.usedAnalysis||result.usedVerify ? 'review' : 'correct') : (result.usedAnalysis||result.usedVerify ? 'wrong_studied' : 'wrong')));
+    var rc = catClasses[cat] || '';
     html += '<div class="review-card ' + rc + '">';
     html += '<div style="font-size:24px;font-weight:700;margin-bottom:6px;">' + (i+1) + '. ' + escapeHtml(result.q.q) + '</div>';
     html += '<div style="font-size:22px;color:#94a3b8;">Your choice: ' + escapeHtml(result.q.opts[result.chosen] || '—') + '</div>';
     html += '<div style="font-size:22px;color:#22c55e;">Correct: ' + escapeHtml(result.q.opts[result.q.ans]) + '</div>';
-    html += '<div style="font-size:22px;color:#eab308;">' + (ratingLabels[result.rating] || result.rating) + '</div>';
+    html += '<div style="font-size:22px;color:#eab308;">' + (catLabels[cat] || cat) + '</div>';
     html += '</div>';
   }
   var poolN = (typeof getFilteredQuestions === 'function') ? getFilteredQuestions().length : 0;
@@ -23656,18 +23728,38 @@ function getActiveBatch() {
   return active;
 }
 
-function logAnswer(qid, chosenOrig, correct) {
+function logAnswer(qid, chosenOrig, correct, isDk) {
   var arr = loadBatches();
   var active = arr.filter(function(b){ return !b.sealed; })[0];
   if (!active) {
     active = { id: 'batch-' + Date.now(), sealed: false, createdAt: Date.now(), answers: [] };
     arr.push(active);
   }
-  active.answers.push({ qid: qid, chosenOrig: chosenOrig, correct: correct, ts: Date.now() });
+  var category = isDk ? 'dk' : (correct ? 'correct' : 'wrong');
+  active.answers.push({ qid: qid, chosenOrig: chosenOrig, correct: correct, isDk: !!isDk, category: category, usedAnalysis: false, usedVerify: false, ts: Date.now() });
   saveBatches(arr);
-  // Milestone notification at 50 answers
   if (active.answers.length === 50 && typeof window !== 'undefined') {
     try { showAiMilestone(); } catch(e){}
+  }
+}
+// Update the most recent batch entry for this qid to mark prompt usage (recategorize)
+function markPromptUsed(qid, kind) {
+  var arr = loadBatches();
+  var active = arr.filter(function(b){ return !b.sealed; })[0];
+  if (!active) return;
+  // Find last entry for this qid
+  for (var i = active.answers.length - 1; i >= 0; i--) {
+    if (active.answers[i].qid === qid) {
+      if (kind === 'analysis') active.answers[i].usedAnalysis = true;
+      else if (kind === 'verify') active.answers[i].usedVerify = true;
+      // Recategorize: dk stays dk; wrong + prompt → wrong_studied; correct + prompt → review
+      var a = active.answers[i];
+      if (a.isDk) a.category = 'dk';
+      else if (!a.correct) a.category = 'wrong_studied';
+      else a.category = 'review';
+      saveBatches(arr);
+      return;
+    }
   }
 }
 
@@ -23682,18 +23774,22 @@ function findQuestionById(qid) {
   return null;
 }
 
-// Patch selectOption to log answers into active batch
+// Patch selectOption to log answers into active batch (only on first answer, not on Prev replay)
 (function patchSO_log(){
   var orig = typeof selectOption === 'function' ? selectOption : null;
   if (!orig) return;
   var _origLogPatched = window.selectOption;
   window.selectOption = function(idx) {
+    // capture pre-state to detect "first answer this turn"
+    var wasAnswered = (typeof quizState !== 'undefined') && quizState && quizState.answered;
     _origLogPatched(idx);
     try {
+      if (wasAnswered) return; // already answered (e.g., re-render of viewed question)
       if (typeof quizState === 'undefined' || !quizState.block) return;
       var q = quizState.block[quizState.index];
       if (!q || !q.id) return;
-      logAnswer(q.id, idx, idx === q.ans);
+      var isDk = /わから(ない|ん)|not\s*sure/i.test((q.opts[idx]||''));
+      logAnswer(q.id, idx, idx === q.ans, isDk);
     } catch(e){}
   };
 })();
@@ -23703,9 +23799,17 @@ function findQuestionById(qid) {
 function buildAiPrompt(batch) {
   if (!batch || !batch.answers || batch.answers.length === 0) return '';
   var total = batch.answers.length;
-  var wrong = batch.answers.filter(function(a){ return !a.correct; });
-  var chCount = {};
-  var chWrong = {};
+  // Derive category for any entry missing it (backward-compat with old logs)
+  function catOf(a){
+    if (a.category) return a.category;
+    if (a.isDk) return 'dk';
+    if (!a.correct) return (a.usedAnalysis||a.usedVerify) ? 'wrong_studied' : 'wrong';
+    return (a.usedAnalysis||a.usedVerify) ? 'review' : 'correct';
+  }
+  var byCat = { wrong:[], wrong_studied:[], dk:[], review:[], correct:[] };
+  batch.answers.forEach(function(a){ var c=catOf(a); (byCat[c]=byCat[c]||[]).push(a); });
+  var wrong = byCat.wrong.concat(byCat.wrong_studied);
+  var chCount = {}, chWrong = {};
   for (var i = 0; i < batch.answers.length; i++) {
     var a = batch.answers[i];
     var q = findQuestionById(a.qid);
@@ -23721,22 +23825,36 @@ function buildAiPrompt(batch) {
     return { ch: ch, line: '- ' + ch + ': ' + w + '/' + tot + ' (' + pct + '%)', pct: pct };
   }).sort(function(a,b){ return b.pct - a.pct; });
 
-  var wrongLines = wrong.slice(0, 30).map(function(a){
+  function fmtLine(a){
     var q = findQuestionById(a.qid);
     if (!q) return '- ' + a.qid + ': (問題情報なし)';
     var chosenLet = String.fromCharCode(65 + a.chosenOrig);
     var ansLet = String.fromCharCode(65 + q.ans);
     var qSummary = (q.q || '').replace(/\s+/g,' ').slice(0, 120);
-    return '- ' + (q.id || a.qid) + ': 選' + chosenLet + '/正' + ansLet + ' | ' + qSummary;
-  });
+    var tag = '';
+    if (a.usedAnalysis && a.usedVerify) tag = ' [📋🎯両プロンプト確認済]';
+    else if (a.usedAnalysis) tag = ' [📋分析プロンプト確認済]';
+    else if (a.usedVerify) tag = ' [🎯確認テスト確認済]';
+    return '- ' + (q.id || a.qid) + ': 選' + chosenLet + '/正' + ansLet + tag + ' | ' + qSummary;
+  }
+  var wrongLines = byCat.wrong.slice(0, 20).map(fmtLine);
+  var wrongStudiedLines = byCat.wrong_studied.slice(0, 20).map(fmtLine);
+  var dkLines = byCat.dk.slice(0, 20).map(fmtLine);
+  var reviewLines = byCat.review.slice(0, 20).map(fmtLine);
 
   var p = '';
   p += '# 苦手分析＋確認テスト【Opus 4.7】\n\n';
-  p += '**解答 ' + total + '問 / 誤答 ' + wrong.length + '問**\n\n';
+  p += '**解答 ' + total + '問**：誤答 ' + wrong.length + '問 / わからない ' + byCat.dk.length + '問 / 正解だが不安(プロンプト確認) ' + byCat.review.length + '問 / 完全正解 ' + byCat.correct.length + '問\n\n';
   p += '## 章別誤答率（高い順）\n';
   p += (chLines.map(function(x){ return x.line; }).join('\n') || '- (データなし)') + '\n\n';
-  p += '## 誤答リスト\n';
-  p += (wrongLines.join('\n') || '- (誤答なし)') + '\n\n';
+  p += '## ❌ 単純誤答（プロンプト未確認）\n';
+  p += (wrongLines.join('\n') || '- (なし)') + '\n\n';
+  p += '## ⚠️ 誤答かつ AI プロンプト確認済 — 同じミスを繰り返した可能性\n';
+  p += (wrongStudiedLines.join('\n') || '- (なし)') + '\n\n';
+  p += '## ❓ わからないを選択（基礎理解不足）\n';
+  p += (dkLines.join('\n') || '- (なし)') + '\n\n';
+  p += '## 🔍 正解だが不安で AI プロンプト確認（要復習）\n';
+  p += (reviewLines.join('\n') || '- (なし)') + '\n\n';
   p += '---\n\n';
   p += '# 出力フォーマット\n\n';
   p += '以下を **4パート** で順に出力。\n\n';
@@ -23920,28 +24038,48 @@ var ACC_LATEX = 'LaTeX：分数 `\\dfrac{}{}` / 平方根 `\\sqrt{}` / 添字 `_
 // ── 分析用プロンプト（弱点診断 / Part 1-2）──
 function accBuildAnalysisPrompt(records, title){
   if (!records || !records.length) return '';
+  function catOf(r){
+    if (r.category) return r.category;
+    if (r.isDk) return 'dk';
+    if (!r.correct) return (r.usedAnalysis||r.usedVerify) ? 'wrong_studied' : 'wrong';
+    return (r.usedAnalysis||r.usedVerify) ? 'review' : 'correct';
+  }
   var byCh = {};
+  var byCat = { wrong:[], wrong_studied:[], dk:[], review:[] };
   records.forEach(function(r){
     var q = findQuestionById(r.qid); if (!q) return;
     var key = 'Ch' + q.ch;
     if (!byCh[key]) byCh[key] = { total:0, wrong:0, items:[] };
     byCh[key].total++;
-    if (!r.correct || r.rating==='notunderstood'){ byCh[key].wrong++; byCh[key].items.push({ q:q, r:r }); }
+    var c = catOf(r);
+    if (c !== 'correct') { byCh[key].wrong++; byCh[key].items.push({ q:q, r:r, cat:c }); }
+    if (byCat[c]) byCat[c].push({ q:q, r:r });
   });
   var order = Object.keys(byCh).sort(function(a,b){ return (byCh[b].wrong/Math.max(byCh[b].total,1)) - (byCh[a].wrong/Math.max(byCh[a].total,1)); });
-  var totalWrong = 0; order.forEach(function(ch){ totalWrong += byCh[ch].wrong; });
-  var correctCount = records.filter(function(r){return r.correct;}).length;
+  var totalWrong = byCat.wrong.length + byCat.wrong_studied.length;
+  var correctCount = records.filter(function(r){return r.correct && !r.isDk;}).length;
+  function fmtItem(it){
+    var qShort = (it.q.q||'').replace(/\s+/g,' ').slice(0,110);
+    var tag = '';
+    if (it.r.usedAnalysis && it.r.usedVerify) tag = ' [📋🎯確認済]';
+    else if (it.r.usedAnalysis) tag = ' [📋分析確認済]';
+    else if (it.r.usedVerify) tag = ' [🎯確認テスト確認済]';
+    return '- **' + (it.q.id) + '** Ch' + it.q.ch + ' | 選' + String.fromCharCode(65+(it.r.chosenOrig||0)) + '/正' + String.fromCharCode(65+it.q.ans) + tag + ' | ' + qShort;
+  }
   var out = '# 苦手分野診断 ＋ 確認テスト【Opus 4.7】\n\n';
-  out += '**解答 ' + records.length + '問 / 誤答 ' + totalWrong + '問**' + (title ? '（' + title + '）' : '') + '\n\n';
+  out += '**解答 ' + records.length + '問**' + (title ? '（' + title + '）' : '') + '：誤答 ' + totalWrong + '問 / わからない ' + byCat.dk.length + '問 / 正解だがプロンプト確認 ' + byCat.review.length + '問 / 完全正解 ' + correctCount + '問\n\n';
   out += '## 章別誤答率（高い順）\n';
   order.forEach(function(ch){ var c=byCh[ch]; if(!c.wrong) return; out += '- ' + ch + ': ' + c.wrong + '/' + c.total + ' 誤答 (' + Math.round(100*c.wrong/Math.max(c.total,1)) + '%)\n'; });
-  out += '\n## 誤答リスト（圧縮）\n';
-  order.forEach(function(ch){ byCh[ch].items.forEach(function(it){
-    var qShort = (it.q.q||'').replace(/\s+/g,' ').slice(0,120);
-    out += '- **' + (it.q.id) + '** ' + ch + ' | 選' + String.fromCharCode(65+(it.r.chosenOrig||0)) + '/正' + String.fromCharCode(65+it.q.ans) + ' | ' + qShort + '\n';
-  }); });
-  out += '\n---\n\n# Part A: 苦手分野診断\n\n上記の誤答パターンを分析し、以下の順序で回答。\n\n';
-  out += '## 1. 🎯 弱点 TOP 3\n**1. [弱点名]**（該当: Q####, Q####）\n- 誤解：1文\n- 正解ルール：1文（数式は LaTeX）\n- 5秒判別：「[キーワード]」を見たら[判断]\n- 覚え方：1行\n\n**2. ... / 3. ...**（同形式）\n\n';
+  out += '\n## ❌ 単純誤答（プロンプト未確認）\n';
+  out += (byCat.wrong.map(fmtItem).join('\n') || '- (なし)') + '\n\n';
+  out += '## ⚠️ 誤答かつ AI プロンプト確認済 — 同じ概念で再度ミスの可能性大（最優先）\n';
+  out += (byCat.wrong_studied.map(fmtItem).join('\n') || '- (なし)') + '\n\n';
+  out += '## ❓ わからない選択（基礎理解不足、まず概念定着が必要）\n';
+  out += (byCat.dk.map(fmtItem).join('\n') || '- (なし)') + '\n\n';
+  out += '## 🔍 正解だがプロンプト確認（自信なし、要復習）\n';
+  out += (byCat.review.map(fmtItem).join('\n') || '- (なし)') + '\n\n';
+  out += '---\n\n# Part A: 苦手分野診断\n\n上記の **4 カテゴリ** を踏まえて以下の順で出力：\n- **⚠️ 誤答かつプロンプト確認済** — 同じ概念で再ミス → 最重要。なぜ理解が定着しないか深掘り。\n- **❌ 単純誤答** — まだプロンプトを見ていない弱点。\n- **❓ わからない** — 概念が全く分からない → 基礎から教える。\n- **🔍 正解だがプロンプト確認** — 自信なし。なぜ自信が持てないか分析し、典型ミス回避策を示す。\n\n';
+  out += '## 1. 🎯 弱点 TOP 3\n**1. [弱点名]**（該当: Q####, Q####、由来カテゴリ: 例「⚠️ 再ミス＋❓ わからない」）\n- 誤解：1文\n- 正解ルール：1文（数式は LaTeX）\n- 5秒判別：「[キーワード]」を見たら[判断]\n- 覚え方：1行\n\n**2. ... / 3. ...**（同形式）\n\n';
   out += '## 2. ⚡ 試験直前30秒チェック\n3行のみ（各弱点1行）\n\n';
   out += '---\n\n# Part B: 確認テスト（上記の分析が終わったら続けて作成）\n\n';
   out += '上で抽出した **弱点 TOP 3 の各概念** について、**新しい5択問題を5問ずつ** 作成（合計15問）。\n\n';
@@ -24101,6 +24239,18 @@ function accCopySingle(type, btn){
     var correct = (chosen === q.ans);
     var p = (type==='verify') ? accSingleVerify(q,chosen,correct) : accSingleAnalysis(q,chosen,correct);
     copyTextToClipboard(p, btn);
+    // Mark prompt usage on per-question state + batch entry → enables category 'review' / 'wrong_studied'
+    try {
+      var result = (quizState.blockResults||[])[quizState.index];
+      if (result) {
+        if (type === 'verify') result.usedVerify = true;
+        else result.usedAnalysis = true;
+        if (result.isDk) result.category = 'dk';
+        else if (!result.correct) result.category = 'wrong_studied';
+        else result.category = 'review';
+      }
+      if (typeof markPromptUsed === 'function') markPromptUsed(q.id, type === 'verify' ? 'verify' : 'analysis');
+    } catch(_e){}
   } catch(e){ alert('生成失敗'); }
 }
 // ── 1問ごとAIボタンを解答フィードバックに注入（閾値ゼロ）──
